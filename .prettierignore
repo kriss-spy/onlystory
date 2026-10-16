@@ -1,0 +1,14 @@
+node_modules
+dist
+test-results
+playwright-report
+package-lock.json
+public/demo
+public/private
+src/generated
+private-review
+.cache
+public/vendor
+docs/UI-ANTI-PATTERNS.md
+docs/reader-design.md
+docs/story-reader-feasibility.md

@@ -1,0 +1,209 @@
+{
+  "measuredOn": "2026-10-16",
+  "units": "bytes; decimal MB/GB in plan",
+  "exportedFiles": 4729,
+  "exportedBytes": 2520968481,
+  "packages": {
+    "covers": {
+      "files": 6,
+      "bytes": 5338486
+    },
+    "gfl2-effects": {
+      "files": 4,
+      "bytes": 104780
+    },
+    "gfl2-event": {
+      "files": 1107,
+      "bytes": 421426916
+    },
+    "gfl2-ilion": {
+      "files": 3608,
+      "bytes": 2086252652
+    },
+    "gfl2-opening": {
+      "files": 4,
+      "bytes": 7845647
+    }
+  },
+  "extensions": {
+    ".jpg": {
+      "files": 4,
+      "bytes": 1708420
+    },
+    ".png": {
+      "files": 236,
+      "bytes": 481072898
+    },
+    ".json": {
+      "files": 2764,
+      "bytes": 92325782
+    },
+    ".moc3": {
+      "files": 223,
+      "bytes": 76345728
+    },
+    ".ogg": {
+      "files": 1272,
+      "bytes": 448595003
+    },
+    ".webp": {
+      "files": 216,
+      "bytes": 476951094
+    },
+    ".mp4": {
+      "files": 12,
+      "bytes": 943969065
+    },
+    ".vtt": {
+      "files": 2,
+      "bytes": 491
+    }
+  },
+  "exactDuplicateGroups": 469,
+  "exactDuplicateRedundantBytes": 145167742,
+  "manifestListedBytes": 2104828735,
+  "manifestCaveat": "Unlisted does not mean unused. Direct URLs, nested model references, opening previews and old URLs need separate reachability checks.",
+  "legacyMovieCandidates": [
+    {
+      "file": "public/private/gfl2-ilion/videos/12201.a0a63b120102.mp4",
+      "bytes": 161871932
+    },
+    {
+      "file": "public/private/gfl2-ilion/videos/12202.f408112a8939.mp4",
+      "bytes": 11004508
+    },
+    {
+      "file": "public/private/gfl2-ilion/videos/12301.a110c8d4b8ff.mp4",
+      "bytes": 89406440
+    },
+    {
+      "file": "public/private/gfl2-ilion/videos/12401.786cfe78b435.mp4",
+      "bytes": 56789791
+    }
+  ],
+  "legacyMovieCandidateBytes": 319072671,
+  "movieStreamCopyExperiment": [
+    {
+      "id": "12201",
+      "currentBytes": 317226960,
+      "sharedBytes": 161746388,
+      "savedBytes": 155480572,
+      "sameVideoElementaryStream": true,
+      "elementaryStreamSha256": "SHA256=5bfebcabf99759dec025446e73da95bf7678bb20a6555f316134396c485a51c2",
+      "videoBytes": 155467274,
+      "audio": [
+        {
+          "file": ".cache\\storage-experiments\\12201.zh-CN.m4a",
+          "bytes": 3138882
+        },
+        {
+          "file": ".cache\\storage-experiments\\12201.ja.m4a",
+          "bytes": 3140232
+        }
+      ]
+    },
+    {
+      "id": "12202",
+      "currentBytes": 20937098,
+      "sharedBytes": 10729804,
+      "savedBytes": 10207294,
+      "sameVideoElementaryStream": true,
+      "elementaryStreamSha256": "SHA256=d55262ede671bc73dd0d9ef7a7966605571dcb69d7001cf74f6d54a052edefbe",
+      "videoBytes": 10196608,
+      "audio": [
+        {
+          "file": ".cache\\storage-experiments\\12202.zh-CN.m4a",
+          "bytes": 266598
+        },
+        {
+          "file": ".cache\\storage-experiments\\12202.ja.m4a",
+          "bytes": 266598
+        }
+      ]
+    },
+    {
+      "id": "12301",
+      "currentBytes": 175469848,
+      "sharedBytes": 89341298,
+      "savedBytes": 86128550,
+      "sameVideoElementaryStream": true,
+      "elementaryStreamSha256": "SHA256=88d71bf9d72184c71a8c75d09a4a2f07d6da62e5f5e2199f28a8e893cfae9cf1",
+      "videoBytes": 86115240,
+      "audio": [
+        {
+          "file": ".cache\\storage-experiments\\12301.zh-CN.m4a",
+          "bytes": 1612678
+        },
+        {
+          "file": ".cache\\storage-experiments\\12301.ja.m4a",
+          "bytes": 1613380
+        }
+      ]
+    },
+    {
+      "id": "12401",
+      "currentBytes": 111262488,
+      "sharedBytes": 56746978,
+      "savedBytes": 54515510,
+      "sameVideoElementaryStream": true,
+      "elementaryStreamSha256": "SHA256=aea4ee932373b8e37445193ef41b0b61b0e3fc058e21e80ef25cc2b57cb02137",
+      "videoBytes": 54504916,
+      "audio": [
+        {
+          "file": ".cache\\storage-experiments\\12401.zh-CN.m4a",
+          "bytes": 1120964
+        },
+        {
+          "file": ".cache\\storage-experiments\\12401.ja.m4a",
+          "bytes": 1121098
+        }
+      ]
+    }
+  ],
+  "imageLosslessExperiment": [
+    {
+      "source": "public/private/gfl2-event/characters/CHA_Easley_01/CHA_Easley_01.2048/texture_00.png",
+      "pngBytes": 4169579,
+      "webpBytes": 2603590,
+      "sameRGBA": true,
+      "width": 2048,
+      "height": 2048,
+      "seconds": 2.43
+    },
+    {
+      "source": "public/private/gfl2-ilion/characters/CHA_Dragon_Big_01/CHA_Dragon_Big_01.2048/texture_00.png",
+      "pngBytes": 3774536,
+      "webpBytes": 2444718,
+      "sameRGBA": true,
+      "width": 2048,
+      "height": 2048,
+      "seconds": 1.85
+    },
+    {
+      "source": "public/private/gfl2-ilion/characters/CHA_Enfield_01/CHA_Enfield_01.2048/texture_00.png",
+      "pngBytes": 2173040,
+      "webpBytes": 1339200,
+      "sameRGBA": true,
+      "width": 2048,
+      "height": 2048,
+      "seconds": 1.77
+    },
+    {
+      "source": "public/private/gfl2-event/characters/CHA_Springfield_NPC_SP/CHA_Springfield_NPC_SP.2048/texture_00.png",
+      "pngBytes": 1650594,
+      "webpBytes": 1010610,
+      "sameRGBA": true,
+      "width": 2048,
+      "height": 2048,
+      "seconds": 1.51
+    }
+  ],
+  "workspaceBeforeExperiments": {
+    "distBytes": 2523264434,
+    "cacheBytes": 1889923486,
+    "privateReviewBytes": 28512591,
+    "nodeModulesBytes": 212203996
+  },
+  "ffmpegVersion": "ffmpeg version 9.0.1-full_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers",
+  "pillowVersion": "12.3.0"
+}

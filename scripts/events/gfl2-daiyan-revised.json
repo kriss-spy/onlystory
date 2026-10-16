@@ -1,0 +1,20 @@
+{
+  "id": "gfl2-daiyan-revised",
+  "title": "异乡乐徽 · 于灰败的羽翼中（重制版）",
+  "branding": "异乡乐徽",
+  "edition": "revised",
+  "versionLabel": "重制版",
+  "date": "2024-11-19",
+  "releaseDate": "2023-12-25",
+  "chapters": [
+    {
+      "id": 3001,
+      "title": "于灰败的羽翼中",
+      "label": "于灰败的羽翼中"
+    }
+  ],
+  "allowSourceEof": true,
+  "presentationCommands": ["Shake", "SetShader"],
+  "expectedSections": 10,
+  "expectedScripts": 16
+}

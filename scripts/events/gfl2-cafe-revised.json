@@ -1,0 +1,26 @@
+{
+  "id": "gfl2-cafe-revised",
+  "title": "方糖特调沙龙 · 苦涩荆棘与矢车菊（重制版）",
+  "branding": "方糖特调沙龙",
+  "edition": "revised",
+  "versionLabel": "重制版",
+  "date": "2025-01-21",
+  "releaseDate": "2024-01-30",
+  "chapters": [
+    {
+      "id": 3002,
+      "title": "苦涩荆棘与矢车菊",
+      "label": "苦涩荆棘与矢车菊"
+    }
+  ],
+  "expectedSections": 10,
+  "expectedScripts": 17,
+  "presentationCommands": [
+    "WaitInput",
+    "EndPage",
+    "SetShader",
+    "Shake",
+    "RuleFadeIn"
+  ],
+  "allowSourceEof": true
+}

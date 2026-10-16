@@ -1,0 +1,12 @@
+node_modules/
+dist/
+test-results/
+test-results-*/
+playwright-report/
+*.local
+.DS_Store
+*.tsbuildinfo
+public/private/
+src/generated/
+private-review/
+.cache/

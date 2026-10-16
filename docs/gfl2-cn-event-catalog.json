@@ -1,0 +1,649 @@
+{
+  "asOf": "2026-10-16",
+  "scope": "CN named theme/story event identities, grouped across parts and repeated configurations; not every login, shop, combat or web campaign.",
+  "configuredRows": 38,
+  "uniqueEventNames": 36,
+  "ordering": "First configuration ID order, not a verified release timeline.",
+  "cautions": [
+    "A table record is not proof that an event or chapter has opened on the server.",
+    "Original event branding and later rewritten archive stories are recorded together for lookup, not claimed to contain identical text.",
+    "Chapter titles and archive categories do not imply that every original event version remains installed or recoverable.",
+    "ActivityListData timestamps are not used as verified release dates; at least one differs from official announcements."
+  ],
+  "sources": {
+    "LangPackageTableCnData": {
+      "file": "LangPackageTableCnData.bytes",
+      "sha256": "2b1ca85aa5a8cc55efeaa8032ea768aa77d34f4a7f4e606d815b0435b60b43c5"
+    },
+    "ActivityConfigData": {
+      "file": "ActivityConfigData.bytes",
+      "sha256": "f77c2d7337e0fd473dbfb7b0c5fd988b25af7bc28276ed2f8d60abb06d9363e5"
+    },
+    "ChapterData": {
+      "file": "ChapterData.bytes",
+      "sha256": "dd1a474c0309602e6a94b03eb7f8b17f48e7d283fcbffd209812ef403a1cfff6"
+    },
+    "ChapterAvgCsData": {
+      "file": "ChapterAvgCsData.bytes",
+      "sha256": "0c7d2ca62541122a009215f24177b6585fd487c9dd70ec15e33a4042dce5bbc0"
+    },
+    "ActivityEntranceData": {
+      "file": "ActivityEntranceData.bytes",
+      "sha256": "475d231ffe7de3f0b05276f0db0813e07264e3f9dc84ae442d4d67437260b955"
+    }
+  },
+  "events": [
+    {
+      "number": 1,
+      "title": "异乡乐徽",
+      "configTitle": "异乡乐徽",
+      "configIds": [1],
+      "entranceIds": [99901, 99902, 99903],
+      "chapterTitles": ["于灰败的羽翼中"],
+      "chapterIds": [1001, 3001, 4001, 91009, 93001, 94001, 994001],
+      "archiveRecords": [
+        {
+          "id": 10,
+          "title": "于灰败的羽翼中",
+          "rawArchiveType": 1
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "方糖特调沙龙",
+      "configTitle": "苦涩荆棘与矢车菊",
+      "configIds": [2],
+      "entranceIds": [99905, 99906],
+      "chapterTitles": ["苦涩荆棘与矢车菊"],
+      "chapterIds": [1002, 3002, 4002, 91010, 93002, 94002, 994002],
+      "archiveRecords": [
+        {
+          "id": 11,
+          "title": "苦涩荆棘与矢车菊",
+          "rawArchiveType": 1
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "交织突进",
+      "configTitle": "交织突进",
+      "configIds": [6, 200],
+      "entranceIds": [20, 312, 313],
+      "chapterTitles": ["交织突进"],
+      "chapterIds": [1009, 3003, 4006, 91017, 93003, 94006, 994004],
+      "archiveRecords": [
+        {
+          "id": 18,
+          "title": "交织突进",
+          "rawArchiveType": 1
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": "循迹追演",
+      "configTitle": "循迹追演",
+      "configIds": [4001, 24001],
+      "entranceIds": [501, 502, 2401],
+      "chapterTitles": ["循迹追演"],
+      "chapterIds": [
+        3004, 3028, 4007, 4031, 93004, 93028, 94007, 94031, 994007, 994031
+      ],
+      "archiveRecords": []
+    },
+    {
+      "number": 5,
+      "title": "狂想四重奏",
+      "configTitle": "狂想四重奏",
+      "configIds": [5001],
+      "entranceIds": [511, 512],
+      "chapterTitles": ["狂想四重奏"],
+      "chapterIds": [3005, 4008, 93005, 94008, 994008],
+      "archiveRecords": [
+        {
+          "id": 1001,
+          "title": "狂想四重奏",
+          "rawArchiveType": 2
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "title": "玻璃岛的驻行者",
+      "configTitle": "玻璃岛的驻行者",
+      "configIds": [6001],
+      "entranceIds": [601],
+      "chapterTitles": ["驻行者·上篇", "驻行者·下篇"],
+      "chapterIds": [
+        1005, 1006, 3006, 3007, 4009, 4010, 91013, 91014, 93006, 93007, 94009,
+        94010
+      ],
+      "archiveRecords": [
+        {
+          "id": 14,
+          "title": "驻行者·上篇",
+          "rawArchiveType": 1
+        },
+        {
+          "id": 15,
+          "title": "驻行者·下篇",
+          "rawArchiveType": 1
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "title": "驻足之地",
+      "configTitle": "驻足之地",
+      "configIds": [7001],
+      "entranceIds": [701, 702],
+      "chapterTitles": ["驻足之地"],
+      "chapterIds": [3008, 4011, 93008, 94011, 994011],
+      "archiveRecords": [
+        {
+          "id": 1005,
+          "title": "驻足之地",
+          "rawArchiveType": 2
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "title": "拂晓的回响",
+      "configTitle": "拂晓的回响",
+      "configIds": [8001],
+      "entranceIds": [801, 802],
+      "chapterTitles": ["拂晓的回响"],
+      "chapterIds": [3009, 4012, 93009, 94012, 994012],
+      "archiveRecords": [
+        {
+          "id": 1002,
+          "title": "拂晓的回响",
+          "rawArchiveType": 2
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "title": "远日点",
+      "configTitle": "远日点",
+      "configIds": [9001],
+      "entranceIds": [901],
+      "chapterTitles": ["远日点·上篇", "远日点·下篇"],
+      "chapterIds": [
+        1003, 1004, 3010, 3011, 4013, 4014, 91011, 91012, 93010, 93011, 94013,
+        94014, 994013, 994014
+      ],
+      "archiveRecords": [
+        {
+          "id": 12,
+          "title": "远日点·上篇",
+          "rawArchiveType": 1
+        },
+        {
+          "id": 13,
+          "title": "远日点·下篇",
+          "rawArchiveType": 1
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "title": "逃离赛博格",
+      "configTitle": "逃离赛博格",
+      "configIds": [10001],
+      "entranceIds": [1001, 1002],
+      "chapterTitles": ["逃离赛博格"],
+      "chapterIds": [3012, 4015, 93012, 94015, 994015],
+      "archiveRecords": [
+        {
+          "id": 1007,
+          "title": "逃离赛博格",
+          "rawArchiveType": 2
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "title": "纪念日礼赞",
+      "configTitle": "纪念日礼赞",
+      "configIds": [12001],
+      "entranceIds": [1201, 1202],
+      "chapterTitles": ["纪念日礼赞"],
+      "chapterIds": [3013, 4016, 93013, 94016, 994016],
+      "archiveRecords": [
+        {
+          "id": 1008,
+          "title": "纪念日礼赞",
+          "rawArchiveType": 2
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "title": "共诉隐匿时",
+      "configTitle": "共诉隐匿时",
+      "configIds": [13001],
+      "entranceIds": [1301],
+      "chapterTitles": ["共诉隐匿时"],
+      "chapterIds": [3014, 4017, 93014, 94017, 994017],
+      "archiveRecords": [
+        {
+          "id": 1009,
+          "title": "共诉隐匿时",
+          "rawArchiveType": 2
+        }
+      ]
+    },
+    {
+      "number": 13,
+      "title": "密米尔的返演",
+      "configTitle": "密米尔的返演",
+      "configIds": [14001],
+      "entranceIds": [1401],
+      "chapterTitles": ["密米尔的返演·上篇", "密米尔的返演·下篇"],
+      "chapterIds": [
+        3015, 3016, 4018, 4019, 93015, 93016, 94018, 94019, 994018, 994019
+      ],
+      "archiveRecords": [
+        {
+          "id": 1003,
+          "title": "密米尔的返演·上篇",
+          "rawArchiveType": 2
+        },
+        {
+          "id": 1004,
+          "title": "密米尔的返演·下篇",
+          "rawArchiveType": 2
+        }
+      ]
+    },
+    {
+      "number": 14,
+      "title": "烟火迎春归",
+      "configTitle": "烟火迎春归",
+      "configIds": [15001],
+      "entranceIds": [1501],
+      "chapterTitles": ["烟火迎春归"],
+      "chapterIds": [3017, 4020, 93017, 94020, 994020],
+      "archiveRecords": [
+        {
+          "id": 1010,
+          "title": "烟火迎春归",
+          "rawArchiveType": 2
+        }
+      ]
+    },
+    {
+      "number": 15,
+      "title": "素银匿信",
+      "configTitle": "素银匿信",
+      "configIds": [16001],
+      "entranceIds": [1601],
+      "chapterTitles": ["素银匿信"],
+      "chapterIds": [3018, 4021, 93018, 94021, 994021],
+      "archiveRecords": [
+        {
+          "id": 1011,
+          "title": "素银匿信",
+          "rawArchiveType": 2
+        }
+      ]
+    },
+    {
+      "number": 16,
+      "title": "匿影而生",
+      "configTitle": "匿影而生",
+      "configIds": [17001],
+      "entranceIds": [1701],
+      "chapterTitles": ["匿影而生"],
+      "chapterIds": [3019, 4022, 93019, 94022, 994022],
+      "archiveRecords": [
+        {
+          "id": 1006,
+          "title": "匿影而生",
+          "rawArchiveType": 2
+        }
+      ]
+    },
+    {
+      "number": 17,
+      "title": "错位锚定",
+      "configTitle": "错位锚定",
+      "configIds": [18001],
+      "entranceIds": [1801],
+      "chapterTitles": ["错位锚定·上篇", "错位锚定·下篇"],
+      "chapterIds": [
+        1007, 1008, 3020, 3021, 4023, 4024, 91015, 91016, 93020, 93021, 94023,
+        94024, 994023, 994024
+      ],
+      "archiveRecords": [
+        {
+          "id": 16,
+          "title": "错位锚定·上篇",
+          "rawArchiveType": 1
+        },
+        {
+          "id": 17,
+          "title": "错位锚定·下篇",
+          "rawArchiveType": 1
+        }
+      ]
+    },
+    {
+      "number": 18,
+      "title": "镜茧与囚蝶",
+      "configTitle": "镜茧与囚蝶",
+      "configIds": [19001],
+      "entranceIds": [1901],
+      "chapterTitles": ["镜茧与囚蝶"],
+      "chapterIds": [3022, 4025, 93022, 94025, 994025],
+      "archiveRecords": [
+        {
+          "id": 1012,
+          "title": "镜茧与囚蝶",
+          "rawArchiveType": 2
+        }
+      ]
+    },
+    {
+      "number": 19,
+      "title": "心跳游乐园",
+      "configTitle": "心跳游乐园",
+      "configIds": [20001],
+      "entranceIds": [2001],
+      "chapterTitles": ["心跳游乐园"],
+      "chapterIds": [3023, 4026, 93023, 94026, 994026],
+      "archiveRecords": [
+        {
+          "id": 1013,
+          "title": "心跳游乐园",
+          "rawArchiveType": 2
+        }
+      ]
+    },
+    {
+      "number": 20,
+      "title": "沉没夜潮",
+      "configTitle": "沉没夜潮",
+      "configIds": [21001],
+      "entranceIds": [2101],
+      "chapterTitles": ["沉没夜潮"],
+      "chapterIds": [3024, 4027, 93024, 94027, 994027],
+      "archiveRecords": [
+        {
+          "id": 1014,
+          "title": "沉没夜潮",
+          "rawArchiveType": 2
+        }
+      ]
+    },
+    {
+      "number": 21,
+      "title": "火花之罪",
+      "configTitle": "火花之罪",
+      "configIds": [22001],
+      "entranceIds": [2201],
+      "chapterTitles": ["火花之罪·上篇", "火花之罪·中篇", "火花之罪·下篇"],
+      "chapterIds": [
+        1010, 1011, 1012, 3025, 3026, 3027, 4028, 4029, 4030, 91018, 91019,
+        93025, 93027, 94028, 94030, 994028, 994030
+      ],
+      "archiveRecords": [
+        {
+          "id": 19,
+          "title": "火花之罪·上篇",
+          "rawArchiveType": 1
+        },
+        {
+          "id": 20,
+          "title": "火花之罪·中篇",
+          "rawArchiveType": 1
+        },
+        {
+          "id": 21,
+          "title": "火花之罪·下篇",
+          "rawArchiveType": 1
+        }
+      ]
+    },
+    {
+      "number": 22,
+      "title": "虚境新始",
+      "configTitle": "虚境新始",
+      "configIds": [25001],
+      "entranceIds": [2501],
+      "chapterTitles": ["虚境新始"],
+      "chapterIds": [3029, 4032, 93029, 94032, 994032],
+      "archiveRecords": [
+        {
+          "id": 1016,
+          "title": "虚境新始",
+          "rawArchiveType": 2
+        }
+      ]
+    },
+    {
+      "number": 23,
+      "title": "歧路双轨",
+      "configTitle": "歧路双轨",
+      "configIds": [27001],
+      "entranceIds": [2701],
+      "chapterTitles": ["歧路双轨·上篇", "歧路双轨·下篇"],
+      "chapterIds": [
+        1013, 1014, 3030, 3031, 4033, 4034, 91020, 91021, 93030, 93031, 94033,
+        94034, 994033, 994034
+      ],
+      "archiveRecords": [
+        {
+          "id": 23,
+          "title": "歧路双轨·上篇",
+          "rawArchiveType": 1
+        },
+        {
+          "id": 24,
+          "title": "歧路双轨·下篇",
+          "rawArchiveType": 1
+        }
+      ]
+    },
+    {
+      "number": 24,
+      "title": "前进吧，王牌配送员！",
+      "configTitle": "前进吧，王牌配送员！",
+      "configIds": [28001],
+      "entranceIds": [2801],
+      "chapterTitles": ["前进吧，王牌配送员！"],
+      "chapterIds": [3032, 4035, 93032, 94035, 994035],
+      "archiveRecords": [
+        {
+          "id": 1015,
+          "title": "前进吧，王牌配送员！",
+          "rawArchiveType": 2
+        }
+      ]
+    },
+    {
+      "number": 25,
+      "title": "铸碑者的黎明",
+      "configTitle": "铸碑者的黎明",
+      "configIds": [30001],
+      "entranceIds": [3001],
+      "chapterTitles": ["铸碑者的黎明·上篇", "铸碑者的黎明·下篇"],
+      "chapterIds": [
+        1015, 1016, 3034, 3035, 4037, 4038, 91022, 91023, 93034, 93035, 94037,
+        94038, 994037, 994038
+      ],
+      "archiveRecords": [
+        {
+          "id": 26,
+          "title": "铸碑者的黎明·上篇",
+          "rawArchiveType": 1
+        },
+        {
+          "id": 27,
+          "title": "铸碑者的黎明·下篇",
+          "rawArchiveType": 1
+        }
+      ]
+    },
+    {
+      "number": 26,
+      "title": "信号波重度依赖",
+      "configTitle": "信号波重度依赖",
+      "configIds": [31001],
+      "entranceIds": [3101],
+      "chapterTitles": ["信号波重度依赖"],
+      "chapterIds": [1017, 3036, 4039, 91024, 93036, 94039, 994039],
+      "archiveRecords": [
+        {
+          "id": 28,
+          "title": "信号波重度依赖",
+          "rawArchiveType": 1
+        }
+      ]
+    },
+    {
+      "number": 27,
+      "title": "瑞骋迎春至",
+      "configTitle": "瑞骋迎春至",
+      "configIds": [32001],
+      "entranceIds": [3201],
+      "chapterTitles": ["瑞骋迎春至"],
+      "chapterIds": [3037, 4040, 93037, 94040, 994040],
+      "archiveRecords": [
+        {
+          "id": 1017,
+          "title": "瑞骋迎春至",
+          "rawArchiveType": 2
+        }
+      ]
+    },
+    {
+      "number": 28,
+      "title": "月下安魂曲",
+      "configTitle": "月下安魂曲",
+      "configIds": [33001],
+      "entranceIds": [3301],
+      "chapterTitles": ["月下安魂曲"],
+      "chapterIds": [3038, 4041, 93038, 94041, 994041],
+      "archiveRecords": [
+        {
+          "id": 1018,
+          "title": "月下安魂曲",
+          "rawArchiveType": 2
+        }
+      ]
+    },
+    {
+      "number": 29,
+      "title": "镜像冗余",
+      "configTitle": "镜像冗余",
+      "configIds": [34001],
+      "entranceIds": [3401],
+      "chapterTitles": ["镜像冗余·上篇", "镜像冗余·下篇"],
+      "chapterIds": [
+        1018, 1019, 3039, 3040, 4042, 4043, 91025, 91026, 93039, 93040, 94042,
+        94043, 994042, 994043
+      ],
+      "archiveRecords": [
+        {
+          "id": 29,
+          "title": "镜像冗余·上篇",
+          "rawArchiveType": 1
+        },
+        {
+          "id": 30,
+          "title": "镜像冗余·下篇",
+          "rawArchiveType": 1
+        }
+      ]
+    },
+    {
+      "number": 30,
+      "title": "琥珀月光",
+      "configTitle": "琥珀月光",
+      "configIds": [35001],
+      "entranceIds": [3501],
+      "chapterTitles": ["琥珀月光"],
+      "chapterIds": [3041, 4044, 93041, 94044, 994044],
+      "archiveRecords": []
+    },
+    {
+      "number": 31,
+      "title": "忒弥斯棋局",
+      "configTitle": "忒弥斯棋局",
+      "configIds": [36001],
+      "entranceIds": [3601],
+      "chapterTitles": ["忒弥斯棋局"],
+      "chapterIds": [3042, 4045, 93042, 94045, 994045],
+      "archiveRecords": []
+    },
+    {
+      "number": 32,
+      "title": "梦中的永无岛",
+      "configTitle": "梦中的永无岛",
+      "configIds": [37001],
+      "entranceIds": [3701],
+      "chapterTitles": ["梦中的永无岛"],
+      "chapterIds": [3043, 4046, 93043, 94046, 994046],
+      "archiveRecords": []
+    },
+    {
+      "number": 33,
+      "title": "伊利昂之围",
+      "configTitle": "伊利昂之围",
+      "configIds": [38001],
+      "entranceIds": [3801],
+      "chapterTitles": [
+        "伊利昂之围·上篇",
+        "伊利昂之围·中篇",
+        "伊利昂之围·下篇"
+      ],
+      "chapterIds": [
+        3044, 3045, 3046, 4047, 4048, 4049, 93044, 93045, 94047, 94048
+      ],
+      "archiveRecords": []
+    },
+    {
+      "number": 34,
+      "title": "寂静的匹丝缇",
+      "configTitle": "寂静的匹丝缇",
+      "configIds": [39001],
+      "entranceIds": [3901],
+      "chapterTitles": ["寂静的匹丝缇"],
+      "chapterIds": [3047, 4050, 93046, 94050, 994050],
+      "archiveRecords": []
+    },
+    {
+      "number": 35,
+      "title": "金翅雀与橄榄枝",
+      "configTitle": "金翅雀与橄榄枝",
+      "configIds": [40001],
+      "entranceIds": [4001],
+      "chapterTitles": ["金翅雀与橄榄枝"],
+      "chapterIds": [3048, 4051, 93047, 94051, 994051],
+      "archiveRecords": []
+    },
+    {
+      "number": 36,
+      "title": "静默突触",
+      "configTitle": "静默突触",
+      "configIds": [41001],
+      "entranceIds": [4101],
+      "chapterTitles": [
+        "静默突触·初篇",
+        "静默突触·承篇",
+        "静默突触·终篇",
+        "静默突触·转篇"
+      ],
+      "chapterIds": [
+        3049, 3050, 3051, 3052, 4052, 4053, 4054, 4055, 93048, 93049, 94052,
+        94055
+      ],
+      "archiveRecords": []
+    }
+  ]
+}

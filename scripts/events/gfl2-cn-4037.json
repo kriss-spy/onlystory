@@ -1,0 +1,23 @@
+{
+  "id": "gfl2-cn-4037",
+  "title": "铸碑者的黎明",
+  "branding": "铸碑者的黎明",
+  "edition": "current",
+  "date": "2025-12-02",
+  "releaseDateSource": "https://iopwiki.com/wiki/GFL2_Events",
+  "chapters": [
+    {
+      "id": 4037,
+      "title": "铸碑者的黎明·上篇",
+      "label": "上篇"
+    },
+    {
+      "id": 4038,
+      "title": "铸碑者的黎明·下篇",
+      "label": "下篇"
+    }
+  ],
+  "expectedSections": 38,
+  "expectedScripts": 60,
+  "presentationCommands": ["RuleFadeOut"]
+}

@@ -1,0 +1,25 @@
+import { cpSync, mkdirSync } from 'node:fs';
+import { resolve } from 'node:path';
+import { libraryMiddleware } from './library-server.mjs';
+export function libraryPlugin() {
+  return {
+    name: 'onlystory-library',
+    configureServer(server) {
+      server.middlewares.use(
+        libraryMiddleware(resolve(process.env.ONLYSTORY_LIBRARY || 'public')),
+      );
+    },
+    configurePreviewServer(server) {
+      server.middlewares.use(
+        libraryMiddleware(resolve(process.env.ONLYSTORY_LIBRARY || 'public')),
+      );
+    },
+    closeBundle() {
+      mkdirSync('dist', { recursive: true });
+      for (const name of ['demo', 'vendor', 'favicon.svg'])
+        cpSync(resolve('public', name), resolve('dist', name), {
+          recursive: true,
+        });
+    },
+  };
+}

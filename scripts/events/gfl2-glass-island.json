@@ -1,0 +1,15 @@
+{
+  "id": "gfl2-glass-island",
+  "title": "玻璃岛的驻行者",
+  "branding": "玻璃岛的驻行者",
+  "edition": "current",
+  "date": "2024-06-05",
+  "chapters": [
+    { "id": 4009, "title": "驻行者·上篇", "label": "上篇" },
+    { "id": 4010, "title": "驻行者·下篇", "label": "下篇" }
+  ],
+  "expectedSections": 19,
+  "expectedScripts": 44,
+  "allowSourceEof": true,
+  "presentationCommands": ["SetShader", "Shake"]
+}

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#182123" />
+    <meta
+      name="description"
+      content="Your stories, at your pace. A private, cross-game visual novel reader."
+    />
+    <title>Onlystory</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <script>
+      try {
+        const p = JSON.parse(
+          localStorage.getItem('onlystory.v1') || '{}',
+        ).preferences;
+        const theme = p?.theme || 'system';
+        document.documentElement.dataset.theme = theme;
+        document.documentElement.style.colorScheme =
+          theme === 'system' ? 'light dark' : theme;
+      } catch {}
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

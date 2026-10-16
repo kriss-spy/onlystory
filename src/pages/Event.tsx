@@ -1,0 +1,125 @@
+import { useLayoutEffect, useMemo, useRef } from 'react';
+import {
+  Link,
+  useLocation,
+  useParams,
+  useSearchParams,
+} from 'react-router-dom';
+import { Search } from 'lucide-react';
+import { gameById } from '../content';
+import { groupStoryEvents, storyRows } from '../catalog';
+import { catalogMode, catalogSource, modeSearch } from '../catalog-source';
+import { EmptyState } from '../components/Primitives';
+import { PageTitle } from '../components/Shell';
+import { StorySections } from '../components/StorySections';
+import { eventArtwork } from '../covers';
+
+const scrollPositions = new Map<string, number>();
+export function EventPage() {
+  const { game: id, event: eventId } = useParams();
+  const game = gameById(id);
+  const [params, setParams] = useSearchParams();
+  const location = useLocation();
+  const scroll = useRef<HTMLDivElement>(null);
+  const { examples, previews, stress } = catalogMode(params);
+  const events = useMemo(
+    () =>
+      groupStoryEvents(catalogSource(game?.id, { examples, previews, stress })),
+    [game?.id, examples, previews, stress],
+  );
+  const event = events.find((event) => event.id === eventId);
+  const cover = event ? eventArtwork(event) : undefined;
+  const query = params.get('q') ?? '';
+  const rows = useMemo(
+    () => (event ? storyRows(event, query) : { main: [], independent: [] }),
+    [event, query],
+  );
+  const fallback = `/games/${id}${modeSearch(params)}`;
+  const from =
+    typeof location.state?.from === 'string' &&
+    location.state.from.startsWith(`/games/${id}`)
+      ? location.state.from
+      : fallback;
+  const key = location.pathname + location.search;
+  useLayoutEffect(() => {
+    if (scroll.current)
+      scroll.current.scrollTop = scrollPositions.get(key) ?? 0;
+  }, [key]);
+  if (!game || !event)
+    return (
+      <main className="page">
+        <EmptyState
+          title="Event not found"
+          action={<Link to={fallback}>Return to events</Link>}
+        >
+          This event is not in the current library.
+        </EmptyState>
+      </main>
+    );
+  return (
+    <main
+      className="page event-page"
+      style={{ '--game-accent': game.accent } as React.CSSProperties}
+    >
+      <div className="event-heading">
+        <PageTitle
+          eyebrow={`${game.shortName} · ${event.category}`}
+          title={event.title}
+          back={from}
+        >
+          <p>
+            {event.stories.length} stories
+            {event.branches.length
+              ? ` · ${event.main.length} main · ${event.stories.length - event.main.length} side`
+              : ''}
+          </p>
+          {event.notice ? <p role="note">{event.notice}</p> : null}
+        </PageTitle>
+        {cover ? (
+          <img
+            className="event-heading-cover"
+            src={cover.url}
+            alt=""
+            width={cover.width}
+            height={cover.height}
+            style={{ objectPosition: cover.position }}
+          />
+        ) : null}
+      </div>
+      <div className="catalog-toolbar">
+        <label className="search-field">
+          <Search size={17} />
+          <input
+            type="search"
+            aria-label="Search stories"
+            placeholder="Find a story…"
+            value={query}
+            onChange={(e) => {
+              const next = new URLSearchParams(params);
+              if (e.target.value) next.set('q', e.target.value);
+              else next.delete('q');
+              setParams(next, { replace: true });
+            }}
+          />
+        </label>
+      </div>
+      {!rows.main.length && !rows.independent.length ? (
+        <EmptyState title="No matching stories">Try another title.</EmptyState>
+      ) : (
+        <div
+          className="event-outline"
+          ref={scroll}
+          onScroll={(e) => scrollPositions.set(key, e.currentTarget.scrollTop)}
+        >
+          <StorySections
+            key={event.id}
+            event={event}
+            query={query}
+            from={key}
+            catalogFrom={from}
+          />
+        </div>
+      )}
+    </main>
+  );
+}

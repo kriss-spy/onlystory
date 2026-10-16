@@ -1,0 +1,18 @@
+{
+  "id": "gfl2-quartet",
+  "title": "狂想四重奏",
+  "branding": "狂想四重奏",
+  "edition": "current",
+  "date": "2024-04-30",
+  "chapters": [{ "id": 4008, "title": "狂想四重奏", "label": "狂想四重奏" }],
+  "expectedSections": 10,
+  "expectedScripts": 24,
+  "allowSourceEof": true,
+  "presentationCommands": [
+    "Shake",
+    "SetShader",
+    "RuleFadeIn",
+    "WaitInput",
+    "EndPage"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "gfl2-cn-4018",
+  "title": "密米尔的返演",
+  "branding": "密米尔的返演",
+  "edition": "current",
+  "date": "2024-12-10",
+  "releaseDateSource": "https://iopwiki.com/wiki/GFL2_Events",
+  "chapters": [
+    {
+      "id": 4018,
+      "title": "密米尔的返演·上篇",
+      "label": "上篇"
+    },
+    {
+      "id": 4019,
+      "title": "密米尔的返演·下篇",
+      "label": "下篇"
+    }
+  ],
+  "expectedSections": 35,
+  "expectedScripts": 107,
+  "presentationCommands": ["Shake"],
+  "allowSourceEof": true
+}

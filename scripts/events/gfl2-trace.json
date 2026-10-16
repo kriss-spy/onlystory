@@ -1,0 +1,26 @@
+{
+  "id": "gfl2-trace",
+  "title": "循迹追演",
+  "branding": "循迹追演",
+  "edition": "current",
+  "versionLabel": "当前安装版",
+  "date": "2024-03-26",
+  "chapters": [
+    {
+      "id": 4007,
+      "title": "循迹追演",
+      "label": "循迹追演"
+    }
+  ],
+  "relatedRuns": [
+    {
+      "chapterId": 4031,
+      "kind": "rerun",
+      "sameScripts": true
+    }
+  ],
+  "expectedSections": 4,
+  "expectedScripts": 5,
+  "presentationCommands": ["SetShader"],
+  "allowSourceEof": true
+}
