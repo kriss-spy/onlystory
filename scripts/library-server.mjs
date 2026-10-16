@@ -2,6 +2,7 @@ import { createReadStream, existsSync, readFileSync, statSync } from 'node:fs';
 import { createServer } from 'node:http';
 import { resolve, extname, relative, isAbsolute } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { libraryRoot, localPort } from './local-environment.mjs';
 const types = {
   '.json': 'application/json',
   '.mp4': 'video/mp4',
@@ -121,10 +122,8 @@ if (
   resolve(process.argv[1]) === fileURLToPath(import.meta.url)
 ) {
   const root = resolve(fileURLToPath(new URL('..', import.meta.url)));
-  const publicRoot = resolve(
-    process.env.ONLYSTORY_LIBRARY || resolve(root, 'public'),
-  );
-  const port = Number(process.env.PORT || 4173);
+  const publicRoot = libraryRoot;
+  const port = localPort;
   createServer(libraryMiddleware(publicRoot, resolve(root, 'dist'))).listen(
     port,
     '127.0.0.1',

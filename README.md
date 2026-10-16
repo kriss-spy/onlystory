@@ -27,7 +27,15 @@ Read the [current GFL2 import report](docs/gfl2-remaining-import.md), [text impo
 
 For a production build, run `npm run build`, then `npm run preview` or `npm start`. The frontend build excludes the media library. The provided hosts serve it separately from `public/private`; set `ONLYSTORY_LIBRARY` to an external directory containing `private` to use another library root. Keep that library alongside the frontend when deploying. The host also resolves previous asset URLs and supports media byte ranges. App routes have an `index.html` fallback; missing media returns an error.
 
-Follow [deployment and archive restoration instructions](docs/deployment.md) to move to another machine. A prebuilt copy needs Node, `dist`, `scripts/library-server.mjs` and the complete media library. A source rebuild also needs `src/generated`, `public/vendor` and the locked npm dependencies. Media and generated imports are ignored by Git, so a code-only checkout is not a library backup.
+Follow [deployment and archive restoration instructions](docs/deployment.md) to move to another machine. A prebuilt copy needs Node, `dist`, `scripts/library-server.mjs`, `scripts/local-environment.mjs` and the complete media library. A source rebuild also needs `src/generated`, `public/vendor` and the locked npm dependencies. Media and generated imports are ignored by Git, so a code-only checkout is not a library backup.
+
+### Codex worktrees
+
+The `onlystory` local environment in `.codex/environments/environment.toml` runs `node scripts/setup-worktree.mjs` when Codex creates a worktree. Select this environment when starting a worktree chat. Setup runs `npm ci`, copies missing `src/generated` files from the main checkout, and links `public/private` to the main media library without copying its contents. Windows uses a directory junction. The main checkout must retain its imported library. Set `ONLYSTORY_SOURCE` or `ONLYSTORY_LIBRARY` before setup to use another source checkout or library root.
+
+Each worktree saves its media path and a separate server port in ignored `.codex/worktree.local.json`. Run, Build and Test actions are available in Codex. Ordinary `npm run dev`, `npm run preview`, `npm start` and Playwright checks also read this configuration, so no manual environment variable is needed. `ONLYSTORY_LIBRARY` and `PORT` remain explicit overrides. Servers fail if their selected port is occupied instead of silently switching ports. Existing generated files are preserved when setup runs again; use a new worktree for a fresh copy.
+
+Only dependencies, generated imports, build output and test artifacts consume additional worktree storage. Importer caches stay in the main checkout. The linked media are shared and writable: run importers, media conversion and cleanup in the main checkout, or use a separate library for asset-changing work. Do not point a setup script at a media copy you intend to edit independently.
 
 ## Included
 

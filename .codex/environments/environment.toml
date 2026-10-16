@@ -1,0 +1,21 @@
+version = 1
+name = "onlystory"
+
+[setup]
+script = "node scripts/setup-worktree.mjs"
+
+[[actions]]
+name = "Run"
+icon = "run"
+command = "npm run dev"
+
+[[actions]]
+name = "Build"
+icon = "tool"
+command = "npm run build"
+
+[[actions]]
+name = "Test"
+icon = "run"
+command = "npm run test"
+

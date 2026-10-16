@@ -1,18 +1,21 @@
 import { defineConfig } from '@playwright/test';
+import { localPort } from './scripts/local-environment.mjs';
+
+const baseURL = `http://127.0.0.1:${localPort}`;
 
 export default defineConfig({
   testDir: './tests',
   fullyParallel: true,
   workers: 3,
   use: {
-    baseURL: 'http://127.0.0.1:4173',
+    baseURL,
     channel: 'chrome',
     viewport: { width: 1365, height: 900 },
     trace: 'retain-on-failure',
   },
   webServer: {
     command: 'npm run dev',
-    url: 'http://127.0.0.1:4173',
+    url: baseURL,
     reuseExistingServer: !process.env.CI,
   },
 });

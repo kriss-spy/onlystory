@@ -1,18 +1,15 @@
 import { cpSync, mkdirSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { libraryMiddleware } from './library-server.mjs';
+import { libraryRoot } from './local-environment.mjs';
 export function libraryPlugin() {
   return {
     name: 'onlystory-library',
     configureServer(server) {
-      server.middlewares.use(
-        libraryMiddleware(resolve(process.env.ONLYSTORY_LIBRARY || 'public')),
-      );
+      server.middlewares.use(libraryMiddleware(libraryRoot));
     },
     configurePreviewServer(server) {
-      server.middlewares.use(
-        libraryMiddleware(resolve(process.env.ONLYSTORY_LIBRARY || 'public')),
-      );
+      server.middlewares.use(libraryMiddleware(libraryRoot));
     },
     closeBundle() {
       mkdirSync('dist', { recursive: true });

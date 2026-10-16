@@ -59,6 +59,7 @@ On the source machine, run `npm run build`. Copy these paths to the destination,
 onlystory/
   dist/                     frontend, bundled demo and vendor runtime
   scripts/library-server.mjs
+  scripts/local-environment.mjs
   public/private/           entire imported library, including shared/index.json
 ```
 
