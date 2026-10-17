@@ -3,6 +3,7 @@ import { createContext, useContext } from 'react';
 export type ReaderCommand =
   | 'previous'
   | 'next'
+  | 'next-repeat'
   | 'auto'
   | 'skip'
   | 'history'

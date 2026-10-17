@@ -1,15 +1,19 @@
 import { cpSync, mkdirSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { libraryMiddleware } from './library-server.mjs';
-import { libraryRoot } from './local-environment.mjs';
+import { libraryRoot, pjskLibraryRoot } from './local-environment.mjs';
 export function libraryPlugin() {
   return {
     name: 'onlystory-library',
     configureServer(server) {
-      server.middlewares.use(libraryMiddleware(libraryRoot));
+      server.middlewares.use(
+        libraryMiddleware(libraryRoot, undefined, [pjskLibraryRoot]),
+      );
     },
     configurePreviewServer(server) {
-      server.middlewares.use(libraryMiddleware(libraryRoot));
+      server.middlewares.use(
+        libraryMiddleware(libraryRoot, undefined, [pjskLibraryRoot]),
+      );
     },
     closeBundle() {
       mkdirSync('dist', { recursive: true });

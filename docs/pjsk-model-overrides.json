@@ -1,0 +1,1413 @@
+{
+  "schemaVersion": 1,
+  "preservesNativeSourceAndModels": true,
+  "overrides": {
+    "sub_aratablack": {
+      "bases": [
+        "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/sub/sub_arata_motion_base/"
+      ],
+      "reason": "The native silhouette has no published motion base. Use exact source-named original tracks from the named character owner, preserving the native silhouette model.",
+      "limitation": "The silhouette lacks ParamArmL4, ParamHandA and ParamHandB used by the original owner look-down track. Cubism ignores those absent channels; the remaining original curves are preserved.",
+      "evidence": {
+        "coreVersion": "5.1.0",
+        "models": [
+          {
+            "id": "sub_arata",
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/model/v1/sub/sub_arata/sub_arata_t08.moc3",
+            "sha256": "8d29b07268b10aac30ba59bcd3876cf442299b33ce4199d31bc9beaef2a1c152",
+            "bytes": 435648,
+            "parameterCount": 66
+          },
+          {
+            "id": "sub_aratablack",
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/model/v1/sub/sub_aratablack/sub_aratablack_t01.moc3",
+            "sha256": "35533198061de368309571a2c15312350935772ed884e1e408b2372ceac7017b",
+            "bytes": 389504,
+            "parameterCount": 63
+          }
+        ],
+        "tracks": [
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/sub/sub_arata_motion_base/motion/s-common-lookdown01.motion3.json",
+            "sha256": "179ffe7ea035c21fa7d67259e6e8ac8e3bd35708793b2c779ba1d95d690b2205",
+            "bytes": 5905,
+            "missingParameters": ["ParamArmL4", "ParamHandA", "ParamHandB"]
+          },
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/sub/sub_arata_motion_base/facial/face_normal_01.motion3.json",
+            "sha256": "7fc566d9a5015846f7a10050e8c653454a4f30b487a42386c2471c2ae21765c4",
+            "bytes": 5049,
+            "missingParameters": []
+          }
+        ]
+      }
+    },
+    "sub_divablack": {
+      "bases": [
+        "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/sub/sub_diva_motion_base/"
+      ],
+      "reason": "The native silhouette and named owner MOCs are byte-identical. Use the original owner tracks while preserving the silhouette model and textures.",
+      "evidence": {
+        "coreVersion": "5.1.0",
+        "models": [
+          {
+            "id": "sub_divablack",
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/model/v1/sub/sub_divablack/sub_divablack_t01.moc3",
+            "sha256": "fc620bfb19d55b32d2551f02d5abf778f92a8c122af922b4ac90f543ae5abb9a",
+            "bytes": 753472,
+            "parameterCount": 84
+          },
+          {
+            "id": "sub_diva",
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/model/v1/sub/sub_diva/sub_diva_t04.moc3",
+            "sha256": "fc620bfb19d55b32d2551f02d5abf778f92a8c122af922b4ac90f543ae5abb9a",
+            "bytes": 753472,
+            "parameterCount": 84
+          }
+        ],
+        "tracks": []
+      }
+    },
+    "sub_yuukablack": {
+      "bases": [
+        "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/sub/sub_yuuka_motion_base/"
+      ],
+      "reason": "The native silhouette and named owner MOCs are byte-identical. Use the original owner tracks while preserving the silhouette model and textures.",
+      "evidence": {
+        "coreVersion": "5.1.0",
+        "models": [
+          {
+            "id": "sub_yuukablack",
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/model/v1/sub/sub_yuukablack/sub_yuukablack_t02.moc3",
+            "sha256": "440c8d87e1a58a664be7941aba8e84d86b5f0641e353a2e7dab4bf84c3cfb262",
+            "bytes": 502400,
+            "parameterCount": 67
+          },
+          {
+            "id": "sub_yuuka",
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/model/v1/sub/sub_yuuka/sub_longingactor_t03.moc3",
+            "sha256": "440c8d87e1a58a664be7941aba8e84d86b5f0641e353a2e7dab4bf84c3cfb262",
+            "bytes": 502400,
+            "parameterCount": 67
+          }
+        ],
+        "tracks": []
+      }
+    },
+    "sub_arisablack": {
+      "bases": [
+        "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/sub/sub_arisa_motion_base/"
+      ],
+      "reason": "The native silhouette has no published motion base. Use exact source-named original tracks from the named character owner, preserving the native silhouette model.",
+      "limitation": "The silhouette and owner share all 77 parameter IDs and ranges; ParamSize defaults differ (silhouette 10, owner 8). Exact original tracks are applied to the native silhouette without replacing its default.",
+      "evidence": {
+        "coreVersion": "5.1.0",
+        "models": [
+          {
+            "id": "sub_arisa",
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/model/v1/sub/sub_arisa/sub_arisa_t02.moc3",
+            "sha256": "30a74874fdb8f422cdba4f6b413b880b8801cbc87c85cebe19f4b8dd1d87af5c",
+            "bytes": 555968,
+            "parameterCount": 76
+          },
+          {
+            "id": "sub_arisablack",
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/model/v1/sub/sub_arisablack/sub_arisablack_t01.moc3",
+            "sha256": "44866ec3cb6b0c12c446dd58fa3552e841a320983a6ee37d2f5dd8148329d3bf",
+            "bytes": 555840,
+            "parameterCount": 76
+          }
+        ],
+        "tracks": [
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/sub/sub_arisa_motion_base/motion/s-common-sad01.motion3.json",
+            "sha256": "c4c2cad13c9841f89a73012ea838861861df05b36f07a92d37cc3d075482a609",
+            "missingParameters": ["ParamLegLZ", "ParamLegRZ"]
+          },
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/sub/sub_arisa_motion_base/motion/s-common-tilthead01.motion3.json",
+            "sha256": "abfe236aec25e19f586cccbaf11cd68a07c0ac6a05cecbdb562454e4aa692e62",
+            "missingParameters": ["ParamLegLZ", "ParamLegRZ"]
+          }
+        ],
+        "parameterComparison": {
+          "sharedParameterCount": 77,
+          "ownerOnly": [],
+          "nativeOnly": [],
+          "rangeDifferences": [],
+          "defaultDifferences": [
+            {
+              "id": "ParamSize",
+              "owner": 8,
+              "native": 10
+            }
+          ]
+        }
+      }
+    },
+    "06haruka_fancostume": {
+      "bases": [
+        "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v2/main/06_haruka/v2_06haruka_motion_base/"
+      ],
+      "reason": "event_174_08 requests exact v2 Haruka track names on the native v1 fan costume. The named v2 owner publishes all 24 requested body/facial tracks; use these exact original files only after the native costume base misses.",
+      "limitation": "The native costume has 128 parameters; the v2 owner has 139. Finger channels and ParamFaceShadow2 may be absent, and ParamArmL1, ParamArmR1 and ParamMouthForm2 ranges differ. Cubism projects the original curves onto the native costume; this is not full pose equivalence.",
+      "evidence": {
+        "scenarioId": "event_174_08",
+        "coreVersion": "5.1.0",
+        "tracks": [
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v2/main/06_haruka/v2_06haruka_motion_base/motion/w-adult01-nod.motion3.json",
+            "sha256": "9354ab5ce58931d87dec3c1012c30d3ff26e7cbe0bd2bfef1d5159e28133c8e0",
+            "bytes": 12132,
+            "missingParameters": [],
+            "rangeDifferences": ["ParamArmR1", "ParamArmL1"]
+          },
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v2/main/06_haruka/v2_06haruka_motion_base/motion/w-adult01-think.motion3.json",
+            "sha256": "3acdc754089ff707f97120e80444945ee90da92a13f0bf440515e0933d0111f0",
+            "bytes": 13020,
+            "missingParameters": [],
+            "rangeDifferences": ["ParamArmR1", "ParamArmL1"]
+          },
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v2/main/06_haruka/v2_06haruka_motion_base/motion/w-normal03-tilthead.motion3.json",
+            "sha256": "0053766bb802045a9ead033b717f48445ef28ebe332bea2dbe56fbc9b9eaf398",
+            "bytes": 13499,
+            "missingParameters": [
+              "ParamHandRL",
+              "ParamHandRM",
+              "ParamHandRN",
+              "ParamHandRO",
+              "ParamHandRP",
+              "ParamHandLL",
+              "ParamHandLM",
+              "ParamHandLN",
+              "ParamHandLO",
+              "ParamHandLP"
+            ],
+            "rangeDifferences": ["ParamArmR1", "ParamArmL1"]
+          },
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v2/main/06_haruka/v2_06haruka_motion_base/motion/w-adult01-tilthead.motion3.json",
+            "sha256": "089a2dcfb07a139c50bec4fb323654d718fc8a64cda1cc593a9a634121126db1",
+            "bytes": 12065,
+            "missingParameters": [],
+            "rangeDifferences": ["ParamArmR1", "ParamArmL1"]
+          },
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v2/main/06_haruka/v2_06haruka_motion_base/motion/w-adult01-blushed.motion3.json",
+            "sha256": "0f50000c94ef10544778687bface9540c3c9807029dd52d489c97483592d536c",
+            "bytes": 13319,
+            "missingParameters": [],
+            "rangeDifferences": ["ParamArmR1", "ParamArmL1"]
+          },
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v2/main/06_haruka/v2_06haruka_motion_base/motion/w-normal03-trouble.motion3.json",
+            "sha256": "d0c2e8b91a3c33841c8380ee7fdf97dd7f0d4617cd9ccf749c2d855489189d8d",
+            "bytes": 13030,
+            "missingParameters": [
+              "ParamHandRL",
+              "ParamHandRM",
+              "ParamHandRN",
+              "ParamHandRO",
+              "ParamHandRP",
+              "ParamHandLL",
+              "ParamHandLM",
+              "ParamHandLN",
+              "ParamHandLO",
+              "ParamHandLP"
+            ],
+            "rangeDifferences": ["ParamArmR1", "ParamArmL1"]
+          },
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v2/main/06_haruka/v2_06haruka_motion_base/motion/w-normal15-shy.motion3.json",
+            "sha256": "d3a3fb01ed0d8b400ccd8861baf9dd8fe1d1579dd276f4ccb7efa1f1ed935213",
+            "bytes": 13209,
+            "missingParameters": [
+              "ParamHandRL",
+              "ParamHandRM",
+              "ParamHandRN",
+              "ParamHandRO",
+              "ParamHandRP",
+              "ParamHandLL",
+              "ParamHandLM",
+              "ParamHandLN",
+              "ParamHandLO",
+              "ParamHandLP"
+            ],
+            "rangeDifferences": ["ParamArmR1", "ParamArmL1"]
+          },
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v2/main/06_haruka/v2_06haruka_motion_base/motion/w-normal15-tilthead.motion3.json",
+            "sha256": "1b0eb3598292e6ff566954eb22541f376d2aa63a20e8f1c9d8d0e92e2fdf2ba1",
+            "bytes": 13576,
+            "missingParameters": [
+              "ParamHandRL",
+              "ParamHandRM",
+              "ParamHandRN",
+              "ParamHandRO",
+              "ParamHandRP",
+              "ParamHandLL",
+              "ParamHandLM",
+              "ParamHandLN",
+              "ParamHandLO",
+              "ParamHandLP"
+            ],
+            "rangeDifferences": ["ParamArmR1", "ParamArmL1"]
+          },
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v2/main/06_haruka/v2_06haruka_motion_base/motion/w-normal04-tilthead.motion3.json",
+            "sha256": "3b19bfc979670f245a04e5161eb8db6320b77a9e053b4ba47fca844857b5d5a6",
+            "bytes": 13359,
+            "missingParameters": [
+              "ParamHandRL",
+              "ParamHandRM",
+              "ParamHandRN",
+              "ParamHandRO",
+              "ParamHandRP",
+              "ParamHandLL",
+              "ParamHandLM",
+              "ParamHandLN",
+              "ParamHandLO",
+              "ParamHandLP"
+            ],
+            "rangeDifferences": ["ParamArmR1", "ParamArmL1"]
+          },
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v2/main/06_haruka/v2_06haruka_motion_base/motion/w-normal04-trouble.motion3.json",
+            "sha256": "6acfac5470491f36a1a31231d65527f6af5c036e027581f466e2c2f1f6255490",
+            "bytes": 13069,
+            "missingParameters": [
+              "ParamHandRL",
+              "ParamHandRM",
+              "ParamHandRN",
+              "ParamHandRO",
+              "ParamHandRP",
+              "ParamHandLL",
+              "ParamHandLM",
+              "ParamHandLN",
+              "ParamHandLO",
+              "ParamHandLP"
+            ],
+            "rangeDifferences": ["ParamArmR1", "ParamArmL1"]
+          },
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v2/main/06_haruka/v2_06haruka_motion_base/motion/w-cool02-tilthead.motion3.json",
+            "sha256": "9af5fa8a7b6cbb2a9e8925b6efd486824b5c4a4004ad35030b7d5d2adbc8c720",
+            "bytes": 14462,
+            "missingParameters": [
+              "ParamHandRL",
+              "ParamHandRM",
+              "ParamHandRN",
+              "ParamHandRO",
+              "ParamHandRP",
+              "ParamHandLL",
+              "ParamHandLM",
+              "ParamHandLN",
+              "ParamHandLO",
+              "ParamHandLP"
+            ],
+            "rangeDifferences": ["ParamArmR1", "ParamArmL1"]
+          },
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v2/main/06_haruka/v2_06haruka_motion_base/motion/w-cool09-pose.motion3.json",
+            "sha256": "2d7f654c0aaee44f500195b39d069b7f7b906ee1120cd654e15c8494c10ddb0a",
+            "bytes": 11219,
+            "missingParameters": [
+              "ParamHandRL",
+              "ParamHandRM",
+              "ParamHandRN",
+              "ParamHandRO",
+              "ParamHandRP",
+              "ParamHandLL",
+              "ParamHandLM",
+              "ParamHandLN",
+              "ParamHandLO",
+              "ParamHandLP"
+            ],
+            "rangeDifferences": ["ParamArmR1", "ParamArmL1"]
+          },
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v2/main/06_haruka/v2_06haruka_motion_base/motion/w-animal01-nod.motion3.json",
+            "sha256": "acca0cfbb5fc8dbc03196422a96980ea90def8de5740c3cc431b3805d660b11d",
+            "bytes": 13489,
+            "missingParameters": [
+              "ParamHandRL",
+              "ParamHandRM",
+              "ParamHandRN",
+              "ParamHandRO",
+              "ParamHandRP",
+              "ParamHandLL",
+              "ParamHandLM",
+              "ParamHandLN",
+              "ParamHandLO",
+              "ParamHandLP"
+            ],
+            "rangeDifferences": ["ParamArmR1", "ParamArmL1"]
+          },
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v2/main/06_haruka/v2_06haruka_motion_base/motion/w-normal01-nod.motion3.json",
+            "sha256": "35425c82ae994fb613fd337ec525c3f82a5fb8cb8e7dc588e1043f69c7f05c67",
+            "bytes": 13526,
+            "missingParameters": [
+              "ParamHandRL",
+              "ParamHandRM",
+              "ParamHandRN",
+              "ParamHandRO",
+              "ParamHandRP",
+              "ParamHandLL",
+              "ParamHandLM",
+              "ParamHandLN",
+              "ParamHandLO",
+              "ParamHandLP"
+            ],
+            "rangeDifferences": ["ParamArmR1", "ParamArmL1"]
+          },
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v2/main/06_haruka/v2_06haruka_motion_base/motion/w-normal01-tilthead.motion3.json",
+            "sha256": "d24d4c229a3a335fe0148e062cd4a9da581f14f773853a996d77aceee0c1cdd2",
+            "bytes": 13936,
+            "missingParameters": [
+              "ParamHandRL",
+              "ParamHandRM",
+              "ParamHandRN",
+              "ParamHandRO",
+              "ParamHandRP",
+              "ParamHandLL",
+              "ParamHandLM",
+              "ParamHandLN",
+              "ParamHandLO",
+              "ParamHandLP"
+            ],
+            "rangeDifferences": ["ParamArmL1", "ParamArmR1"]
+          },
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v2/main/06_haruka/v2_06haruka_motion_base/motion/w-normal03-nod.motion3.json",
+            "sha256": "2ca54c6fa5bb28d16093489f17280be2aa602299ecc6ad99d6caee6dc80725a5",
+            "bytes": 13351,
+            "missingParameters": [
+              "ParamHandRL",
+              "ParamHandRM",
+              "ParamHandRN",
+              "ParamHandRO",
+              "ParamHandRP",
+              "ParamHandLL",
+              "ParamHandLM",
+              "ParamHandLN",
+              "ParamHandLO",
+              "ParamHandLP"
+            ],
+            "rangeDifferences": ["ParamArmR1", "ParamArmL1"]
+          },
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v2/main/06_haruka/v2_06haruka_motion_base/facial/face_sad_01.motion3.json",
+            "sha256": "418c68472141d007bb26153daa0f12682a2d8d22119ce80de3a22cc12e7745c0",
+            "bytes": 4973,
+            "missingParameters": ["ParamFaceShadow2"],
+            "rangeDifferences": ["ParamMouthForm2"]
+          },
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v2/main/06_haruka/v2_06haruka_motion_base/facial/face_trouble_01.motion3.json",
+            "sha256": "25692948d41a9b3b0b7d355ae806f9a29faaad4ab76e54c36b3a9e4f23532683",
+            "bytes": 4955,
+            "missingParameters": ["ParamFaceShadow2"],
+            "rangeDifferences": ["ParamMouthForm2"]
+          },
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v2/main/06_haruka/v2_06haruka_motion_base/facial/face_sad_04.motion3.json",
+            "sha256": "b5335f6c8cb538a68618a1af51a3c0d0f29b9721676ef3c72db9a4b81bcd7058",
+            "bytes": 4965,
+            "missingParameters": ["ParamFaceShadow2"],
+            "rangeDifferences": ["ParamMouthForm2"]
+          },
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v2/main/06_haruka/v2_06haruka_motion_base/facial/face_surprise_01.motion3.json",
+            "sha256": "20b932c4b6a315f7b09f2d6f63ba79ceaf41785bb00ad677a401be91945aa2c1",
+            "bytes": 4915,
+            "missingParameters": ["ParamFaceShadow2"],
+            "rangeDifferences": ["ParamMouthForm2"]
+          },
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v2/main/06_haruka/v2_06haruka_motion_base/facial/face_smile_06.motion3.json",
+            "sha256": "cf53dd159eccd13f800995c8782e38fa4cb14309222f1d86c33da3af2fee6f55",
+            "bytes": 4921,
+            "missingParameters": ["ParamFaceShadow2"],
+            "rangeDifferences": ["ParamMouthForm2"]
+          },
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v2/main/06_haruka/v2_06haruka_motion_base/facial/face_smile_01.motion3.json",
+            "sha256": "64455777941003002e2c3c6da1ab16b291795b680b1eb5d75bcbab145969392a",
+            "bytes": 4917,
+            "missingParameters": ["ParamFaceShadow2"],
+            "rangeDifferences": ["ParamMouthForm2"]
+          },
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v2/main/06_haruka/v2_06haruka_motion_base/facial/face_smile_03.motion3.json",
+            "sha256": "67055c2d4ea6f6168173871a75470091bdbd1c50f94a02995e18d8428a513ad0",
+            "bytes": 4913,
+            "missingParameters": ["ParamFaceShadow2"],
+            "rangeDifferences": ["ParamMouthForm2"]
+          },
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v2/main/06_haruka/v2_06haruka_motion_base/facial/face_serious_01.motion3.json",
+            "sha256": "a7761f986ed0a7d47cc69fa5657afe17875b479c0820b52d4c71418215c0aa19",
+            "bytes": 4948,
+            "missingParameters": [],
+            "rangeDifferences": ["ParamMouthForm2"]
+          }
+        ],
+        "models": [
+          {
+            "id": "06haruka_fancostume",
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/model/v1/main/06_haruka/06haruka_fancostume/06haruka_fancostume_t02.moc3",
+            "sha256": "8d4b290e84127e850e32eda1a1425efc3caf91c57b40c7920a29b55182298a5a",
+            "bytes": 1191040,
+            "parameterCount": 128
+          },
+          {
+            "id": "v2_06haruka_unit",
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/model/v2/main/06_haruka/v2_06haruka_unit/v2_06_haruka_unit_t05.moc3",
+            "sha256": "f71e8c861be2765f8dd975a7f00a7ae77b49561ac3c91b497734dcf9ca344dbf",
+            "bytes": 1300928,
+            "parameterCount": 139
+          }
+        ],
+        "parameterComparison": {
+          "nativeParameterCount": 128,
+          "ownerParameterCount": 139,
+          "rangeDifferences": ["ParamArmL1", "ParamArmR1", "ParamMouthForm2"],
+          "missingParameters": [
+            "ParamFaceShadow2",
+            "ParamHandLL",
+            "ParamHandLM",
+            "ParamHandLN",
+            "ParamHandLO",
+            "ParamHandLP",
+            "ParamHandRL",
+            "ParamHandRM",
+            "ParamHandRN",
+            "ParamHandRO",
+            "ParamHandRP"
+          ]
+        }
+      }
+    },
+    "sub_kanadefather02": {
+      "bases": [
+        "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/sub/sub_kanadefather_motion_base/"
+      ],
+      "reason": "The native model version has no separately published motion base. Use exact source-named original tracks from the reviewed character owner, preserving the requested native MOC and textures.",
+      "limitation": "All requested tracks address native parameters with the same ranges. The native PARAM_SIZE default is 10 versus owner 20; preserve the native default and geometry.",
+      "evidence": {
+        "coreVersion": "5.1.0",
+        "scenarios": [
+          "wl_night_02_01",
+          "wl_night_02_02",
+          "wl_night_02_03",
+          "wl_night_02_10"
+        ],
+        "models": [
+          {
+            "id": "sub_kanadefather02",
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/model/v1/sub/sub_kanadefather02/extra31_01_1031a_wl2_t01.moc3",
+            "sha256": "06ec4272df83cfefb32b863077b2d1deff7e31efde92f23870f8be3b8f91e3a3",
+            "bytes": 374208,
+            "parameterCount": 99
+          },
+          {
+            "id": "sub_kanadefather",
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/model/v1/sub/sub_kanadefather/extra31_01_1031a_t02.moc3",
+            "sha256": "565e8e205a7a5fda7988228d8d6a807b119827cf2bd9756379014135763b3770",
+            "bytes": 354944,
+            "parameterCount": 99
+          }
+        ],
+        "metadata": {
+          "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/sub/sub_kanadefather_motion_base/BuildMotionData.json",
+          "sha256": "a654eec44f2a1c3bfad6a3832a3806187d18cc3236eb3d3a0a46f25ac63fa199",
+          "bytes": 812
+        },
+        "missingParameters": [],
+        "additionalParameters": [],
+        "parameterDifferences": [
+          {
+            "original": {
+              "id": "PARAM_SIZE",
+              "min": 0,
+              "max": 20,
+              "initial": 20
+            },
+            "target": {
+              "id": "PARAM_SIZE",
+              "min": 0,
+              "max": 20,
+              "initial": 10
+            }
+          }
+        ],
+        "tracks": [
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/sub/sub_kanadefather_motion_base/motion/s-common-blushed01.motion3.json",
+            "sha256": "28611624ecaa7d864483ef453c7094987b88b2cf596a4b825f39d121eac6e24f",
+            "bytes": 10096,
+            "missingParameters": []
+          },
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/sub/sub_kanadefather_motion_base/motion/s-common-tilthead02.motion3.json",
+            "sha256": "9801878750936a8537c4269e6ea6a2dec41e978df086fa4adcf62e07ea762795",
+            "bytes": 10280,
+            "missingParameters": []
+          },
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/sub/sub_kanadefather_motion_base/motion/s-common-nod01.motion3.json",
+            "sha256": "d9ecf9c5687e6379f4fd4fc40655810ff67a918ba81b8b11fbaf05f5eea812f8",
+            "bytes": 10282,
+            "missingParameters": []
+          },
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/sub/sub_kanadefather_motion_base/motion/s-common-tilthead01.motion3.json",
+            "sha256": "b99d8eee298e90df52dc9fe7ef9966822aa7e37336aca1da04a22d144dc116d9",
+            "bytes": 10536,
+            "missingParameters": []
+          },
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/sub/sub_kanadefather_motion_base/motion/s-common-sad01.motion3.json",
+            "sha256": "ff4b1e2d010167e985aaa108d39d87ca9e0c5c0b5c11f44d25bc719dfa5fbb5f",
+            "bytes": 9811,
+            "missingParameters": []
+          },
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/sub/sub_kanadefather_motion_base/motion/s-common-lookdown01.motion3.json",
+            "sha256": "1f84f46ef8d848a0a300a4704d9cbc0491570e9af8b95c9fd4be369712666679",
+            "bytes": 10564,
+            "missingParameters": []
+          },
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/sub/sub_kanadefather_motion_base/facial/face_closeeye_02.motion3.json",
+            "sha256": "972ee4b49fd0492cc56ef80baa03362e47f67f70df50393e29fe6b5e560d437a",
+            "bytes": 5309,
+            "missingParameters": []
+          },
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/sub/sub_kanadefather_motion_base/facial/face_smile_01.motion3.json",
+            "sha256": "7665361a227a4b095386c4276db9b2cfd2e10a373a1921681e650ee1ffd3bb1e",
+            "bytes": 5297,
+            "missingParameters": []
+          },
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/sub/sub_kanadefather_motion_base/facial/face_smile_02.motion3.json",
+            "sha256": "54de20b1ad5444e7378018199346f8f59d3fbecbd3ac7799d17ebe301202cdcc",
+            "bytes": 5344,
+            "missingParameters": []
+          },
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/sub/sub_kanadefather_motion_base/facial/face_normal_01.motion3.json",
+            "sha256": "f868ffdc05356f21527cb5e78afcd78e34d2d54e749ab4944f1c5415e0774344",
+            "bytes": 5281,
+            "missingParameters": []
+          },
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/sub/sub_kanadefather_motion_base/facial/face_surprise_01.motion3.json",
+            "sha256": "eb3373ea660f6e3f94c5460af1e2f3d4415ac54be70366790d9845e0e3b4dc74",
+            "bytes": 5475,
+            "missingParameters": []
+          }
+        ]
+      }
+    },
+    "sub_sakaki02": {
+      "bases": [
+        "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/sub/sub_sakaki_motion_base/"
+      ],
+      "reason": "The native model version has no separately published motion base. Use exact source-named original tracks from the reviewed character owner, preserving the requested native MOC and textures.",
+      "limitation": "The native model lacks six owner cloth/swing channels, but none of the 27 requested original tracks uses them. Native eye-smile defaults are -0.3 versus owner 0 and remain native.",
+      "evidence": {
+        "coreVersion": "5.1.0",
+        "scenarios": [
+          "event_172_02",
+          "event_172_03",
+          "event_172_04",
+          "event_172_07",
+          "event_172_08",
+          "event_178_01",
+          "event_178_07",
+          "event_178_08"
+        ],
+        "models": [
+          {
+            "id": "sub_sakaki02",
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/model/v1/sub/sub_sakaki02/sub_sakaki02_t03.moc3",
+            "sha256": "c0bbeaaf4d52cbd6a1b6f293639f38ad0c3256064ca9bb399213d5dec0a5e912",
+            "bytes": 538560,
+            "parameterCount": 58
+          },
+          {
+            "id": "sub_sakaki",
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/model/v1/sub/sub_sakaki/sub_sakaki_t03.moc3",
+            "sha256": "c5aabc4344d6c76572d9f7b458e43b62fcf0dc26453c357b1d77b37721cd0209",
+            "bytes": 508416,
+            "parameterCount": 64
+          }
+        ],
+        "metadata": {
+          "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/sub/sub_sakaki_motion_base/BuildMotionData.json",
+          "sha256": "96655e303dbf9ae006ef3c23c74a4e043856ebc23f57de847086a422cf4b491b",
+          "bytes": 1051
+        },
+        "missingParameters": [
+          {
+            "id": "ParamBodyHangZ",
+            "min": -30,
+            "max": 30,
+            "initial": 0
+          },
+          {
+            "id": "ParamClothHuwaA",
+            "min": -1,
+            "max": 1,
+            "initial": 0
+          },
+          {
+            "id": "ParamBodySwingA",
+            "min": -1,
+            "max": 1,
+            "initial": 0
+          },
+          {
+            "id": "ParamClothHuwaB",
+            "min": -1,
+            "max": 1,
+            "initial": 0
+          },
+          {
+            "id": "ParamBodySwingB",
+            "min": -1,
+            "max": 1,
+            "initial": 0
+          },
+          {
+            "id": "ParamBodySwingC",
+            "min": -1,
+            "max": 1,
+            "initial": 0
+          }
+        ],
+        "additionalParameters": [],
+        "parameterDifferences": [
+          {
+            "original": {
+              "id": "ParamEyeRSmile",
+              "min": -1,
+              "max": 1,
+              "initial": 0
+            },
+            "target": {
+              "id": "ParamEyeRSmile",
+              "min": -1,
+              "max": 1,
+              "initial": -0.30000001192092896
+            }
+          },
+          {
+            "original": {
+              "id": "ParamEyeLSmile",
+              "min": -1,
+              "max": 1,
+              "initial": 0
+            },
+            "target": {
+              "id": "ParamEyeLSmile",
+              "min": -1,
+              "max": 1,
+              "initial": -0.30000001192092896
+            }
+          }
+        ],
+        "tracks": [
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/sub/sub_sakaki_motion_base/motion/s-common-tilthead02.motion3.json",
+            "sha256": "43aa6f131a3899fd3f4fa422be739771863b9c4227f94e95203b997ce8c24e62",
+            "bytes": 5023,
+            "missingParameters": []
+          },
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/sub/sub_sakaki_motion_base/motion/s-common-nod01.motion3.json",
+            "sha256": "d45984fe6097316b2a78e0c4ba3d99e20f03dee09097b4aaad20ba5793322d2d",
+            "bytes": 4909,
+            "missingParameters": []
+          },
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/sub/sub_sakaki_motion_base/motion/s-common-tilthead01.motion3.json",
+            "sha256": "3acbcc9e4998669ec94f9b6a4f9b387045a3088b7df0b97a6da12187e8a6a427",
+            "bytes": 5068,
+            "missingParameters": []
+          },
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/sub/sub_sakaki_motion_base/motion/s-common-blushed01.motion3.json",
+            "sha256": "50450e8260705336521e0ca2fc2f22c17533e849fd8670199a52f66433c9330f",
+            "bytes": 4730,
+            "missingParameters": []
+          },
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/sub/sub_sakaki_motion_base/motion/s-common-sad01.motion3.json",
+            "sha256": "15d82e41b62da20457dd69f730e64d0a428b18f9f05b5ad6ca04fe7bc9b286e0",
+            "bytes": 4376,
+            "missingParameters": []
+          },
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/sub/sub_sakaki_motion_base/motion/s-common-lookdown01.motion3.json",
+            "sha256": "0046d7aa8888c3a172138ddeaf62a8bdfcb790ed65532bfda8b8cf083fee72a8",
+            "bytes": 4970,
+            "missingParameters": []
+          },
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/sub/sub_sakaki_motion_base/motion/s-common-pose01.motion3.json",
+            "sha256": "43fe4587404da0ee26dea8f4fb831af699ad4253938b9625953f5506b23cad7b",
+            "bytes": 3349,
+            "missingParameters": []
+          },
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/sub/sub_sakaki_motion_base/facial/face_smile_05.motion3.json",
+            "sha256": "e057228de52e24c579f82e2f2136e4a5456f1bb08583665c81fb92de6bf3426c",
+            "bytes": 5501,
+            "missingParameters": []
+          },
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/sub/sub_sakaki_motion_base/facial/face_smile_01.motion3.json",
+            "sha256": "db2f385f713f2a1900bf00907da07f09713682c2b26550b8e519821a7a01a85e",
+            "bytes": 5527,
+            "missingParameters": []
+          },
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/sub/sub_sakaki_motion_base/facial/face_smile_02.motion3.json",
+            "sha256": "1a7bec35151dac92d1bb00c076d140d3d69535407f307df07513823c6e790b7e",
+            "bytes": 5553,
+            "missingParameters": []
+          },
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/sub/sub_sakaki_motion_base/facial/face_smallmouth_02.motion3.json",
+            "sha256": "3d12a56b6de3b7b883f0c237fc6610b47fdb2728bb3efa0f714745cc70f7f32d",
+            "bytes": 5678,
+            "missingParameters": []
+          },
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/sub/sub_sakaki_motion_base/facial/face_smile_06.motion3.json",
+            "sha256": "ea1dd975e5841ebe58756c9c55d75496cedead525a6b673b8602a676c98379dd",
+            "bytes": 5529,
+            "missingParameters": []
+          },
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/sub/sub_sakaki_motion_base/facial/face_mdsmile_01.motion3.json",
+            "sha256": "8920de5b091b14d2cb44ac54c56976d4dd6aa8226b092e41e6056c7898ec2f64",
+            "bytes": 5557,
+            "missingParameters": []
+          },
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/sub/sub_sakaki_motion_base/facial/face_mdsmallmouth_01.motion3.json",
+            "sha256": "ea02e0563d9997cb2ee100ee1fd3dfb84f4c7aa13c2bc6db7fc02fcd95043487",
+            "bytes": 5537,
+            "missingParameters": []
+          },
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/sub/sub_sakaki_motion_base/facial/face_normal_01.motion3.json",
+            "sha256": "5cf0cf6e7c5b6656ac6631d516ffa316db7915982af4b81f0408e6c7a7ef31ad",
+            "bytes": 5501,
+            "missingParameters": []
+          },
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/sub/sub_sakaki_motion_base/facial/face_normal_02.motion3.json",
+            "sha256": "70c597c5f5bd5cd58ac638c48dcf717d2ca4d5e144898dffdfbc704d7b9b961f",
+            "bytes": 5658,
+            "missingParameters": []
+          },
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/sub/sub_sakaki_motion_base/facial/face_closeeye_01.motion3.json",
+            "sha256": "3c8a9e1ff2c37efe111243d099b4ab596f7c6061b975724e4992fe1e6857ef9d",
+            "bytes": 5501,
+            "missingParameters": []
+          },
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/sub/sub_sakaki_motion_base/facial/face_sad_02.motion3.json",
+            "sha256": "7468509bf82ab3337615fcefcda9d98a9a47f440990677019ab8159692eb951a",
+            "bytes": 5517,
+            "missingParameters": []
+          },
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/sub/sub_sakaki_motion_base/facial/face_angry_02.motion3.json",
+            "sha256": "8b3a9cc08850f41ee39dbf1c905199b9d0b670700f113c5b4ba9cfdf893371f5",
+            "bytes": 5563,
+            "missingParameters": []
+          },
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/sub/sub_sakaki_motion_base/facial/face_smallmouth_01.motion3.json",
+            "sha256": "321ca81e32dd15918f0c3e7f4fe4959d051c8b3f90565eaca3de23eac4bcfb11",
+            "bytes": 5509,
+            "missingParameters": []
+          },
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/sub/sub_sakaki_motion_base/facial/face_smile_03.motion3.json",
+            "sha256": "bcb72ce54605fba65f00a4826b584d8112614bcff680a633f930b00f3d216b5a",
+            "bytes": 5553,
+            "missingParameters": []
+          },
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/sub/sub_sakaki_motion_base/facial/face_smile_04.motion3.json",
+            "sha256": "6de7014ea726f3dca457da8caadedcf128adbeb94d63d8b97e8645b858917963",
+            "bytes": 5271,
+            "missingParameters": []
+          },
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/sub/sub_sakaki_motion_base/facial/face_mdsmile_03.motion3.json",
+            "sha256": "dba3999bd43c6fa75763b8c317a751dbe19530a75d40332fa1493368ba178f64",
+            "bytes": 5549,
+            "missingParameters": []
+          },
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/sub/sub_sakaki_motion_base/facial/face_surprise_01.motion3.json",
+            "sha256": "df6be023534150cc802ceb8e396b415c18a1178dd9e8aef75b54e8286a0201cf",
+            "bytes": 5547,
+            "missingParameters": []
+          },
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/sub/sub_sakaki_motion_base/facial/face_mdnormal_03.motion3.json",
+            "sha256": "b0fb5f3c34ed7446df4704363fd00daa4cd4c6b0cc9d578fd5957a7269c61849",
+            "bytes": 5561,
+            "missingParameters": []
+          },
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/sub/sub_sakaki_motion_base/facial/face_mdsmile_02.motion3.json",
+            "sha256": "b4be9794d1102507862fc38fb5c38d0b04d991fd3ba959e5cda03dafcfc58470",
+            "bytes": 5573,
+            "missingParameters": []
+          },
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/sub/sub_sakaki_motion_base/facial/face_mdsmallmouth_02.motion3.json",
+            "sha256": "b199e9dd499a326e180fc9bb2b341db5c91735175faa8dcee7e781c33e4ecfe3",
+            "bytes": 5706,
+            "missingParameters": []
+          }
+        ]
+      }
+    },
+    "sub_rivaltwins_cedric02": {
+      "bases": [
+        "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/sub/sub_rivaltwins_cedric_motion_base/"
+      ],
+      "reason": "The native model version has no separately published motion base. Use exact source-named original tracks from the reviewed character owner, preserving the requested native MOC and textures.",
+      "limitation": "Native ParamArmL4 default is 1.01 versus owner 0. The exact original facial track also contains ParamFaceShadow2, absent in both native target and owner; Cubism ignores this absent channel.",
+      "evidence": {
+        "coreVersion": "5.1.0",
+        "scenarios": ["event_175_05"],
+        "models": [
+          {
+            "id": "sub_rivaltwins_cedric02",
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/model/v1/sub/sub_rivaltwins_cedric02/sub_rivaltwins_cedric02_t01.moc3",
+            "sha256": "89d7bd02ee18522531ae278f92b4b5108f95dac47b3be80a812643fb7f14ff38",
+            "bytes": 600704,
+            "parameterCount": 63
+          },
+          {
+            "id": "sub_rivaltwins_cedric",
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/model/v1/sub/sub_rivaltwins_cedric/sub_rivaltwins_cedric_t06.moc3",
+            "sha256": "955c809c05d369aaf49455b2208bdc9ed98e99a0e1c7b67f384320179c717289",
+            "bytes": 600704,
+            "parameterCount": 63
+          }
+        ],
+        "metadata": {
+          "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/sub/sub_rivaltwins_cedric_motion_base/BuildMotionData.json",
+          "sha256": "1479967416f2db6e9ff0f77e3dbbcefbab91f67dd906dfc439026f9b296df2f0",
+          "bytes": 1244
+        },
+        "missingParameters": [],
+        "additionalParameters": [],
+        "parameterDifferences": [
+          {
+            "original": {
+              "id": "ParamArmL4",
+              "min": 0,
+              "max": 1.0099999904632568,
+              "initial": 0
+            },
+            "target": {
+              "id": "ParamArmL4",
+              "min": 0,
+              "max": 1.0099999904632568,
+              "initial": 1.0099999904632568
+            }
+          }
+        ],
+        "tracks": [
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/sub/sub_rivaltwins_cedric_motion_base/motion/s-common02-sing.motion3.json",
+            "sha256": "3292334800c296daab3e518aeda22db86b338c643d92fde5f27c5c960acf61ae",
+            "bytes": 5782,
+            "missingParameters": []
+          },
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/sub/sub_rivaltwins_cedric_motion_base/facial/face_serious_03.motion3.json",
+            "sha256": "24da24c87cfd67a28b3bae30eee2194105d483dccb7c403bcc5150be911aefab",
+            "bytes": 4944,
+            "missingParameters": ["ParamFaceShadow2"]
+          }
+        ]
+      }
+    },
+    "v2_20mizuki_school_v1_back": {
+      "bases": [
+        "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v2/sub/v2_20mizuki_back_motion_base/"
+      ],
+      "reason": "The native model version has no separately published motion base. Use exact source-named original tracks from the reviewed character owner, preserving the requested native MOC and textures.",
+      "limitation": "Original back-pose and sigh tracks match native parameters. The original facial track includes Param2 and ParamSpecialEye01 absent from both the native target and compared school-back owner. Several native ranges differ from the compared school-back owner. Keep native geometry and apply supported original curves without claiming full pose equivalence.",
+      "evidence": {
+        "coreVersion": "5.1.0",
+        "scenarios": ["wl_night_02_07"],
+        "models": [
+          {
+            "id": "v2_20mizuki_school_v1_back",
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/model/v2/sub/v2_20mizuki_school_v1_back/v2_20mizuki_school_v1_back_t01.moc3",
+            "sha256": "a25053b2990b81f0d4de6bdc735992130b0bf2c9b06c20e05a895cf7b868a7c4",
+            "bytes": 783168,
+            "parameterCount": 131
+          },
+          {
+            "id": "v2_20mizuki_school_back",
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/model/v2/sub/v2_20mizuki_school_back/v2_20mizuki_school_back_t12.moc3",
+            "sha256": "fd03be68b444855e883e62b1f6dfb94ebdd8fda83564aff2d81b00f9a9df7132",
+            "bytes": 1016000,
+            "parameterCount": 155
+          }
+        ],
+        "metadata": {
+          "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v2/sub/v2_20mizuki_back_motion_base/BuildMotionData.json",
+          "sha256": "c7424cb84b9aa4f387ab94e11e97049a8fcf9be4aedc41c4fab33f1899c4aaff",
+          "bytes": 174
+        },
+        "missingParameters": [
+          {
+            "id": "ParamMouthShadow",
+            "min": 0,
+            "max": 1,
+            "initial": 0
+          },
+          {
+            "id": "ParamCry",
+            "min": 0,
+            "max": 1,
+            "initial": 0
+          },
+          {
+            "id": "ParamTearR2",
+            "min": 0,
+            "max": 10,
+            "initial": 0
+          },
+          {
+            "id": "ParamTearL2",
+            "min": 0,
+            "max": 10,
+            "initial": 0
+          },
+          {
+            "id": "ParamEyeRWrinkle",
+            "min": 0,
+            "max": 1,
+            "initial": 0
+          },
+          {
+            "id": "ParamEyeLWrinkle",
+            "min": 0,
+            "max": 1,
+            "initial": 0
+          },
+          {
+            "id": "ParamBrowRWrinkle2",
+            "min": 0,
+            "max": 1,
+            "initial": 0
+          },
+          {
+            "id": "ParamBrowLWrinkle2",
+            "min": 0,
+            "max": 1,
+            "initial": 0
+          },
+          {
+            "id": "ParamHandRL",
+            "min": 0,
+            "max": 1,
+            "initial": 0
+          },
+          {
+            "id": "ParamHandRM",
+            "min": 0,
+            "max": 1,
+            "initial": 0
+          },
+          {
+            "id": "ParamHandRN",
+            "min": 0,
+            "max": 1,
+            "initial": 0
+          },
+          {
+            "id": "ParamHandRO",
+            "min": 0,
+            "max": 1,
+            "initial": 0
+          },
+          {
+            "id": "ParamHandRP",
+            "min": 0,
+            "max": 1,
+            "initial": 0
+          },
+          {
+            "id": "ParamHandLL",
+            "min": 0,
+            "max": 1,
+            "initial": 0
+          },
+          {
+            "id": "ParamHandLM",
+            "min": 0,
+            "max": 1,
+            "initial": 0
+          },
+          {
+            "id": "ParamHandLN",
+            "min": 0,
+            "max": 1,
+            "initial": 0
+          },
+          {
+            "id": "ParamHandLO",
+            "min": 0,
+            "max": 1,
+            "initial": 0
+          },
+          {
+            "id": "ParamHandLP",
+            "min": 0,
+            "max": 1,
+            "initial": 0
+          },
+          {
+            "id": "ParamUnderBodyHangZ",
+            "min": -30,
+            "max": 30,
+            "initial": 0
+          },
+          {
+            "id": "ParamHairFront2",
+            "min": -1,
+            "max": 1,
+            "initial": 0
+          },
+          {
+            "id": "ParamHairBackB2",
+            "min": -1,
+            "max": 1,
+            "initial": 0
+          },
+          {
+            "id": "ParamBustX",
+            "min": -1,
+            "max": 1,
+            "initial": 0
+          },
+          {
+            "id": "ParamBustY",
+            "min": -1,
+            "max": 1,
+            "initial": 0
+          },
+          {
+            "id": "ParamHeadSwingB",
+            "min": -1,
+            "max": 1,
+            "initial": 0
+          },
+          {
+            "id": "ParamHeadSwingD",
+            "min": -1,
+            "max": 1,
+            "initial": 0
+          },
+          {
+            "id": "ParamBodySwingA",
+            "min": -1,
+            "max": 1,
+            "initial": 0
+          },
+          {
+            "id": "ParamBodySwingB",
+            "min": -1,
+            "max": 1,
+            "initial": 0
+          },
+          {
+            "id": "ParamBodySwingC",
+            "min": -1,
+            "max": 1,
+            "initial": 0
+          },
+          {
+            "id": "ParamBodySwingD",
+            "min": -1,
+            "max": 1,
+            "initial": 0
+          },
+          {
+            "id": "ParamBodySwingE",
+            "min": -1,
+            "max": 1,
+            "initial": 0
+          },
+          {
+            "id": "ParamBodySwingF",
+            "min": -1,
+            "max": 1,
+            "initial": 0
+          },
+          {
+            "id": "ParamHuwaControl",
+            "min": -1,
+            "max": 1,
+            "initial": 0
+          },
+          {
+            "id": "ParamSize2",
+            "min": 0,
+            "max": 1,
+            "initial": 1
+          }
+        ],
+        "additionalParameters": [
+          {
+            "id": "ParamSweatView",
+            "min": 0,
+            "max": 1,
+            "initial": 0
+          },
+          {
+            "id": "ParamHeadSwingZ",
+            "min": -30,
+            "max": 30,
+            "initial": 0
+          },
+          {
+            "id": "ParamSwingHeadribbon",
+            "min": -1,
+            "max": 1,
+            "initial": 0
+          },
+          {
+            "id": "ParamSwingA",
+            "min": -1,
+            "max": 1,
+            "initial": 0
+          },
+          {
+            "id": "ParamSwingB",
+            "min": -1,
+            "max": 1,
+            "initial": 0
+          },
+          {
+            "id": "ParamSwingC",
+            "min": -1,
+            "max": 1,
+            "initial": 0
+          },
+          {
+            "id": "ParamSwingD",
+            "min": -1,
+            "max": 1,
+            "initial": 0
+          },
+          {
+            "id": "ParamSwingE",
+            "min": -1,
+            "max": 1,
+            "initial": 0
+          },
+          {
+            "id": "ParamSwingF",
+            "min": -1,
+            "max": 1,
+            "initial": 0
+          }
+        ],
+        "parameterDifferences": [
+          {
+            "original": {
+              "id": "ParamBrowRX",
+              "min": -1.2000000476837158,
+              "max": 1,
+              "initial": 0
+            },
+            "target": {
+              "id": "ParamBrowRX",
+              "min": -1,
+              "max": 1,
+              "initial": 0
+            }
+          },
+          {
+            "original": {
+              "id": "ParamBrowRY",
+              "min": -1.2000000476837158,
+              "max": 1,
+              "initial": 0
+            },
+            "target": {
+              "id": "ParamBrowRY",
+              "min": -1,
+              "max": 1,
+              "initial": 0
+            }
+          },
+          {
+            "original": {
+              "id": "ParamBrowLX",
+              "min": -1.2000000476837158,
+              "max": 1,
+              "initial": 0
+            },
+            "target": {
+              "id": "ParamBrowLX",
+              "min": -1,
+              "max": 1,
+              "initial": 0
+            }
+          },
+          {
+            "original": {
+              "id": "ParamBrowLY",
+              "min": -1.2000000476837158,
+              "max": 1,
+              "initial": 0
+            },
+            "target": {
+              "id": "ParamBrowLY",
+              "min": -1,
+              "max": 1,
+              "initial": 0
+            }
+          },
+          {
+            "original": {
+              "id": "ParamEyeSize",
+              "min": -1.5,
+              "max": 1,
+              "initial": 0
+            },
+            "target": {
+              "id": "ParamEyeSize",
+              "min": -1,
+              "max": 1,
+              "initial": 0
+            }
+          },
+          {
+            "original": {
+              "id": "ParamEyeTeary",
+              "min": -1,
+              "max": 1,
+              "initial": 0
+            },
+            "target": {
+              "id": "ParamEyeTeary",
+              "min": 0,
+              "max": 1,
+              "initial": 0
+            }
+          },
+          {
+            "original": {
+              "id": "ParamEyeSpecial",
+              "min": -1,
+              "max": 1,
+              "initial": 0
+            },
+            "target": {
+              "id": "ParamEyeSpecial",
+              "min": 0,
+              "max": 1,
+              "initial": 0
+            }
+          },
+          {
+            "original": {
+              "id": "ParamArmR1",
+              "min": -50,
+              "max": 60,
+              "initial": 0
+            },
+            "target": {
+              "id": "ParamArmR1",
+              "min": -55,
+              "max": 60,
+              "initial": 0
+            }
+          },
+          {
+            "original": {
+              "id": "ParamArmL1",
+              "min": -50,
+              "max": 60,
+              "initial": 0
+            },
+            "target": {
+              "id": "ParamArmL1",
+              "min": -55,
+              "max": 60,
+              "initial": 0
+            }
+          }
+        ],
+        "tracks": [
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v2/sub/v2_20mizuki_back_motion_base/motion/w-back16-pose.motion3.json",
+            "sha256": "32ca5be816d8179921c047c8b27f39aa0b52542d4aa189d74db7665e4fd904f0",
+            "bytes": 9689,
+            "missingParameters": []
+          },
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v2/sub/v2_20mizuki_back_motion_base/motion/w-back16-sigh.motion3.json",
+            "sha256": "dc616b78061cdb22af40745b302633a77f4e35db8f99791687705e1e28295562",
+            "bytes": 12032,
+            "missingParameters": []
+          },
+          {
+            "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v2/sub/v2_20mizuki_back_motion_base/facial/face_normal_01.motion3.json",
+            "sha256": "3bb37eac3d6cb3e267e31b7892b39f9544ffe16ff58e0b5175f13097e08640e6",
+            "bytes": 5492,
+            "missingParameters": ["Param2", "ParamSpecialEye01"]
+          }
+        ]
+      }
+    }
+  },
+  "absentModelMetadata": {
+    "sub_mafuyufather": {
+      "DisplayInfo": {
+        "reference": "sub_mahuyufather_t03.cdi3.json",
+        "reason": "Optional editor display labels are referenced by native settings but absent from the complete original directory listing. Runtime MOC/physics/textures remain unchanged.",
+        "listingUrl": "https://storage.sekai.best/sekai-live2d-assets/?list-type=2&prefix=live2d%2Fmodel%2Fv1%2Fsub%2Fsub_mafuyufather%2F",
+        "listingSha256": "fb22bd49ef137e447fd455216410f29d28f3df93a5accf193e37f102050aa5cb",
+        "listingTruncated": false
+      }
+    },
+    "sub_bakunoreki_black": {
+      "DisplayInfo": {
+        "reference": "sub_bakuyakoyomi_black_t01.cdi3.json",
+        "reason": "Optional editor display labels are referenced by native settings but absent from the complete original directory listing. Runtime MOC/physics/textures remain unchanged.",
+        "listingUrl": "https://storage.sekai.best/sekai-live2d-assets/?list-type=2&prefix=live2d%2Fmodel%2Fv1%2Fsub%2Fsub_bakunoreki_black%2F",
+        "listingSha256": "2a1c920fcbfe8212d16051e1262270b86f9eec6b565cf20fd4a58ca3021c3665",
+        "listingTruncated": false
+      }
+    }
+  }
+}

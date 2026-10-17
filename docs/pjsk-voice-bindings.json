@@ -1,0 +1,42 @@
+{
+  "bindings": [
+    {
+      "scenarioId": "event_121_02",
+      "talkIndex": 25,
+      "originalReference": "voice_ev_band_16_02_26b_01",
+      "resolvedReference": "voice_ev_band_16_02_26_01",
+      "cnSha256": "bdbfdcea3e913a092b19253fa6226484e4d20510b7c581672348ab7c825cf894",
+      "jpSourceUrl": "https://storage.sekai.best/sekai-jp-assets/event_story/event_lead_2024/scenario/event_121_02.asset",
+      "jpSha256": "db49e919cae69665508b444d0c4b288e36aeb523478ecd4408154c5b4aeacd27",
+      "character2dId": 278,
+      "reason": "Original JP scenario assigns this voice ID to the corresponding native dialogue; CN source has a distinct malformed suffix. Raw CN text/reference retained.",
+      "audio": {
+        "sourceUrl": "https://storage.sekai.best/sekai-jp-assets/sound/scenario/voice/event_121_02/voice_ev_band_16_02_26_01.mp3",
+        "sha256": "6c4e08e256de235d2702b3e6514b7b186b10d24351a28d4d93e0909f983079d6",
+        "md5": "7f6173b0f249a40a5122fa50a197dfc1",
+        "bytes": 89042
+      },
+      "evidence": {
+        "cnBody": "所以你也可以试着想想自己有没有什么想做的事，\n或者什么事能让你感到高兴，\n这样说不定很快就能找到答案了。",
+        "jpBody": "だから穂波も、自分が嬉しいって思うことや好きなこと、\nやりたいって思うことから考えたら、\n案外簡単に答えが出るんじゃないかな",
+        "speaker": "一歌",
+        "motions": [
+          {
+            "Character2dId": 278,
+            "MotionName": "w-cool02-tilthead",
+            "FacialName": "face_smile_02",
+            "TimingSyncValue": 0
+          }
+        ],
+        "listing": {
+          "url": "https://storage.sekai.best/sekai-jp-assets/?list-type=2&prefix=sound%2Fscenario%2Fvoice%2Fevent_121_02%2F",
+          "sha256": "5b3efa4dfad39f140949e1fb40587fb97f1301e787ad36964b020017957e388c"
+        },
+        "distinctFlashback": {
+          "talkIndex": 94,
+          "voiceId": "voice_ev_band_16b_02_26_01"
+        }
+      }
+    }
+  ]
+}

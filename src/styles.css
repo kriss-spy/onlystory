@@ -706,6 +706,39 @@ kbd {
   font-size: 19px;
   margin: 0;
 }
+.event-meta,
+.event-summary {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.group-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 6px;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--group-color);
+  border-radius: 4px;
+  background: #fff;
+  color: #253030;
+  font-size: 11px;
+  font-weight: 650;
+  line-height: 1;
+  white-space: nowrap;
+}
+.group-mark img {
+  width: 48px;
+  height: 22px;
+  object-fit: contain;
+}
+.pjsk-event-cover {
+  object-fit: contain;
+}
+.event-heading-cover.pjsk-event-cover {
+  aspect-ratio: auto;
+}
 .event-page {
   display: flex;
   flex-direction: column;
@@ -1354,6 +1387,13 @@ kbd {
   min-height: 0;
   overflow: hidden;
 }
+.pjsk-movie {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  display: flex;
+  background: #000;
+}
 .scene-background {
   width: 100%;
   height: 100%;
@@ -1707,6 +1747,18 @@ input.reader-progress {
   font-size: 11px;
   flex-shrink: 0;
 }
+.song-performance {
+  position: absolute;
+  inset: 15% 10% 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #edf4f4;
+  pointer-events: none;
+  z-index: 1;
+}
 .movie-actions .icon-button {
   width: 30px;
   height: 30px;
@@ -1834,6 +1886,12 @@ input.reader-progress {
   }
 }
 @media (max-width: 760px) {
+  .pjsk-event-row {
+    height: 164px;
+  }
+  .pjsk-event-row h2 {
+    font-size: 16px;
+  }
   .first-story:has(.featured-event-cover) {
     grid-template-columns: minmax(0, 1fr) auto;
     gap: 14px;
@@ -2308,4 +2366,27 @@ input.reader-progress {
   .layout-text .speaker-row {
     margin-bottom: 18px;
   }
+}
+.pjsk-caption {
+  position: absolute;
+  top: 16%;
+  left: 12%;
+  right: 12%;
+  pointer-events: none;
+  color: white;
+  font-size: clamp(18px, 3vw, 32px);
+  text-align: center;
+  white-space: pre-line;
+  text-shadow: 0 2px 5px black;
+}
+.pjsk-loading {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 4px 8px;
+  color: white;
+  background: #0009;
+  border-radius: 4px;
+  font-size: 12px;
+  pointer-events: none;
 }

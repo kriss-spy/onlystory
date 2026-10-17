@@ -37,6 +37,68 @@
       "sha256": "3b3979056a34da2989746f2b84c314d8c48d22633b5b17d9559aa92fdd6dc9d7"
     }
   },
+  "groups": {
+    "pjsk:idol": {
+      "url": "/private/pjsk/assets/269dfd094ae769d3adbe54335698bb459c10376a0a20a8ee90ea7985b3d6173e.png",
+      "width": 208,
+      "height": 84,
+      "position": "center",
+      "source": "https://raw.githubusercontent.com/Sekai-World/sekai-viewer/163bb49e2fca0998461a1718ea1dba4e098cac59/public/images/cn/logos_outline/logo_idol.png",
+      "sha256": "269dfd094ae769d3adbe54335698bb459c10376a0a20a8ee90ea7985b3d6173e",
+      "bytes": 18571,
+      "description": "Original CN group logo, pinned viewer asset"
+    },
+    "pjsk:light_sound": {
+      "url": "/private/pjsk/assets/1a47b817e0fad0d407ed5f8b4ce2a0e51cb70b02d2ccdfdaf2f7d59ba0d73c9d.png",
+      "width": 300,
+      "height": 96,
+      "position": "center",
+      "source": "https://raw.githubusercontent.com/Sekai-World/sekai-viewer/163bb49e2fca0998461a1718ea1dba4e098cac59/public/images/cn/logos_outline/logo_light_sound.png",
+      "sha256": "1a47b817e0fad0d407ed5f8b4ce2a0e51cb70b02d2ccdfdaf2f7d59ba0d73c9d",
+      "bytes": 11478,
+      "description": "Original CN group logo, pinned viewer asset"
+    },
+    "pjsk:piapro": {
+      "url": "/private/pjsk/assets/f29deaa2195a273f1ebe2e11ed43788db1509f1d6557c07c2800879e854614fc.png",
+      "width": 300,
+      "height": 96,
+      "position": "center",
+      "source": "https://raw.githubusercontent.com/Sekai-World/sekai-viewer/163bb49e2fca0998461a1718ea1dba4e098cac59/public/images/cn/logos_outline/logo_piapro.png",
+      "sha256": "f29deaa2195a273f1ebe2e11ed43788db1509f1d6557c07c2800879e854614fc",
+      "bytes": 10627,
+      "description": "Original CN group logo, pinned viewer asset"
+    },
+    "pjsk:school_refusal": {
+      "url": "/private/pjsk/assets/8356d2d9f030a3f65b7a8c049693de7e096eaa498393ec398d88bd1901dae590.png",
+      "width": 300,
+      "height": 96,
+      "position": "center",
+      "source": "https://raw.githubusercontent.com/Sekai-World/sekai-viewer/163bb49e2fca0998461a1718ea1dba4e098cac59/public/images/cn/logos_outline/logo_school_refusal.png",
+      "sha256": "8356d2d9f030a3f65b7a8c049693de7e096eaa498393ec398d88bd1901dae590",
+      "bytes": 13077,
+      "description": "Original CN group logo, pinned viewer asset"
+    },
+    "pjsk:street": {
+      "url": "/private/pjsk/assets/a568cba58adff6d4dcf6339bfd7306b7f823a78c6faf791090175603b0dd9c2b.png",
+      "width": 196,
+      "height": 95,
+      "position": "center",
+      "source": "https://raw.githubusercontent.com/Sekai-World/sekai-viewer/163bb49e2fca0998461a1718ea1dba4e098cac59/public/images/cn/logos_outline/logo_street.png",
+      "sha256": "a568cba58adff6d4dcf6339bfd7306b7f823a78c6faf791090175603b0dd9c2b",
+      "bytes": 17263,
+      "description": "Original CN group logo, pinned viewer asset"
+    },
+    "pjsk:theme_park": {
+      "url": "/private/pjsk/assets/63f70a39e709c52865eb095aec0fe320d539d00acff794e45f62005df32f1108.png",
+      "width": 300,
+      "height": 96,
+      "position": "center",
+      "source": "https://raw.githubusercontent.com/Sekai-World/sekai-viewer/163bb49e2fca0998461a1718ea1dba4e098cac59/public/images/cn/logos_outline/logo_theme_park.png",
+      "sha256": "63f70a39e709c52865eb095aec0fe320d539d00acff794e45f62005df32f1108",
+      "bytes": 22173,
+      "description": "Original CN group logo, pinned viewer asset"
+    }
+  },
   "events": {
     "gfl2:gfl2-activity33-text": {
       "url": "/private/covers/gfl2-gfl2-activity33-text.a528173c8587.jpg",
@@ -463,6 +525,2046 @@
       "officialVideoId": 93,
       "officialTitle": "【镜像突触】-活动PV",
       "sha256": "48a21af9f967a7016f5a929ecab8b8962302da51451d844672f53c3afade0591"
+    },
+    "pjsk:pjsk-cn-event-1": {
+      "url": "/private/pjsk/assets/e14053e4971284dff8f9d4b9ff8b4f5b6da51afd27d00c231108e04d27c3ae2e.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_stella_2020/screen_image/banner_event_story.png",
+      "sha256": "e14053e4971284dff8f9d4b9ff8b4f5b6da51afd27d00c231108e04d27c3ae2e",
+      "bytes": 121195,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-100": {
+      "url": "/private/pjsk/assets/726d94579350d3cd743f848e18c6d280d35a7c607e321ba633b3f32c3f02640d.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_persona_2023/screen_image/banner_event_story.png",
+      "sha256": "726d94579350d3cd743f848e18c6d280d35a7c607e321ba633b3f32c3f02640d",
+      "bytes": 120732,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-150": {
+      "url": "/private/pjsk/assets/34a6a8d3e8f308002e218d4315d6b2b8879b7110a298b848321a605d37daa91e.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_scratch_2024/screen_image/banner_event_story.png",
+      "sha256": "34a6a8d3e8f308002e218d4315d6b2b8879b7110a298b848321a605d37daa91e",
+      "bytes": 131120,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-2": {
+      "url": "/private/pjsk/assets/8e325af197f85c9ed5c04801519ce16fb0bc1d4f0f2df6e2ff5bd88f647905d9.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_jackpod_2020/screen_image/banner_event_story.png",
+      "sha256": "8e325af197f85c9ed5c04801519ce16fb0bc1d4f0f2df6e2ff5bd88f647905d9",
+      "bytes": 172045,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-3": {
+      "url": "/private/pjsk/assets/bb9d6ffadeec8ed7e57422588a6d072f2e381cf56af65d58f07f7708ba9d718a.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_potato_2020/screen_image/banner_event_story.png",
+      "sha256": "bb9d6ffadeec8ed7e57422588a6d072f2e381cf56af65d58f07f7708ba9d718a",
+      "bytes": 152226,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-4": {
+      "url": "/private/pjsk/assets/ba2b37f658be622840cc396674e09988010d5162e4411bf1843dcdbd063c4550.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_sportsfestival_2020/screen_image/banner_event_story.png",
+      "sha256": "ba2b37f658be622840cc396674e09988010d5162e4411bf1843dcdbd063c4550",
+      "bytes": 155434,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-5": {
+      "url": "/private/pjsk/assets/2281bf7d7ee38c2a3e642e7a928d6fe7f59db19df3dc1791dbf7ca11795c0bb2.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_restart_2020/screen_image/banner_event_story.png",
+      "sha256": "2281bf7d7ee38c2a3e642e7a928d6fe7f59db19df3dc1791dbf7ca11795c0bb2",
+      "bytes": 136062,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-6": {
+      "url": "/private/pjsk/assets/3a5c8aea949b4d002ed264618cd6accc6430b0d3baa705a414eec97f9c07d9aa.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_forward_2020/screen_image/banner_event_story.png",
+      "sha256": "3a5c8aea949b4d002ed264618cd6accc6430b0d3baa705a414eec97f9c07d9aa",
+      "bytes": 135481,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-9": {
+      "url": "/private/pjsk/assets/a0b29da2b49501ad6f6ccac6e4495df11f43d357d1a66375520d4cd094301507.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_newyear_2020/screen_image/banner_event_story.png",
+      "sha256": "a0b29da2b49501ad6f6ccac6e4495df11f43d357d1a66375520d4cd094301507",
+      "bytes": 161860,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-idol-main": {
+      "url": "/private/pjsk/assets/9ab9ceb7c3d12c8a85234d82dc09ff7aa8bc4771e591d529ef337fbe1939742d.png",
+      "width": 350,
+      "height": 250,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-jp-assets/story/chapter_image/chapter1/idol-story-chapter.png",
+      "sha256": "9ab9ceb7c3d12c8a85234d82dc09ff7aa8bc4771e591d529ef337fbe1939742d",
+      "bytes": 176539,
+      "description": "Original unit main-story chapter artwork"
+    },
+    "pjsk:pjsk-cn-light_sound-main": {
+      "url": "/private/pjsk/assets/6372240da235582b98b32dfd93041db6900fe7ef8d259663b1c94e14805514bc.png",
+      "width": 350,
+      "height": 250,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-jp-assets/story/chapter_image/chapter1/light-sound-story-chapter.png",
+      "sha256": "6372240da235582b98b32dfd93041db6900fe7ef8d259663b1c94e14805514bc",
+      "bytes": 168874,
+      "description": "Original unit main-story chapter artwork"
+    },
+    "pjsk:pjsk-cn-piapro-main": {
+      "url": "/private/pjsk/assets/ada91bddf479c443274a40e1f8e257015c900377c63f916c2f653fa811a43c69.png",
+      "width": 350,
+      "height": 250,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-jp-assets/story/chapter_image/chapter1/piapro-story-chapter.png",
+      "sha256": "ada91bddf479c443274a40e1f8e257015c900377c63f916c2f653fa811a43c69",
+      "bytes": 161597,
+      "description": "Original unit main-story chapter artwork"
+    },
+    "pjsk:pjsk-cn-school_refusal-main": {
+      "url": "/private/pjsk/assets/7898c76eefb61d3ddd2bf06a0847c1c6f1c6bfefa723339722f1de16a69f269b.png",
+      "width": 350,
+      "height": 250,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-jp-assets/story/chapter_image/chapter1/school-refusal-story-chapter.png",
+      "sha256": "7898c76eefb61d3ddd2bf06a0847c1c6f1c6bfefa723339722f1de16a69f269b",
+      "bytes": 153261,
+      "description": "Original unit main-story chapter artwork"
+    },
+    "pjsk:pjsk-cn-street-main": {
+      "url": "/private/pjsk/assets/6d4995e4a57ab816ae990abae2513756148a407d1c66f853c9fd0221b74b7386.png",
+      "width": 350,
+      "height": 250,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-jp-assets/story/chapter_image/chapter1/street-story-chapter.png",
+      "sha256": "6d4995e4a57ab816ae990abae2513756148a407d1c66f853c9fd0221b74b7386",
+      "bytes": 167867,
+      "description": "Original unit main-story chapter artwork"
+    },
+    "pjsk:pjsk-cn-theme_park-main": {
+      "url": "/private/pjsk/assets/2ef63612e529bf38538845dacf56dfef3ef304b74b0b59923f1b425e797b0720.png",
+      "width": 350,
+      "height": 250,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-jp-assets/story/chapter_image/chapter1/theme-park-story-chapter.png",
+      "sha256": "2ef63612e529bf38538845dacf56dfef3ef304b74b0b59923f1b425e797b0720",
+      "bytes": 173146,
+      "description": "Original unit main-story chapter artwork"
+    },
+    "pjsk:pjsk-cn-event-10": {
+      "url": "/private/pjsk/assets/945fe33e465cf852c9c61aa5dbaa4326bc28a4dc70de84ddab4ea14da90bef4f.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_hareomatsu_2021/screen_image/banner_event_story.png",
+      "sha256": "945fe33e465cf852c9c61aa5dbaa4326bc28a4dc70de84ddab4ea14da90bef4f",
+      "bytes": 128009,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-101": {
+      "url": "/private/pjsk/assets/acc67f37bdbe55c2aaad4f61628e70d1ea596d2236b19a19d8d91aacb72ee742.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_connect_2023/screen_image/banner_event_story.png",
+      "sha256": "acc67f37bdbe55c2aaad4f61628e70d1ea596d2236b19a19d8d91aacb72ee742",
+      "bytes": 151887,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-102": {
+      "url": "/private/pjsk/assets/db17ee2cdbda5ec58cd68279da217a3eb47bba0e709280fecef8fa7f382dd105.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_recording_2023/screen_image/banner_event_story.png",
+      "sha256": "db17ee2cdbda5ec58cd68279da217a3eb47bba0e709280fecef8fa7f382dd105",
+      "bytes": 159777,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-103": {
+      "url": "/private/pjsk/assets/7f204ac6c8cc7c46ff44829145a3081508399618bd53518712cfb5ec6e429653.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_onyourfeet_2023/screen_image/banner_event_story.png",
+      "sha256": "7f204ac6c8cc7c46ff44829145a3081508399618bd53518712cfb5ec6e429653",
+      "bytes": 154338,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-104": {
+      "url": "/private/pjsk/assets/7d8a24a5b600e90090f9b67b1264cdd218f8f53f4b59beb5cfb364553cabdb18.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_ourhappy_2023/screen_image/banner_event_story.png",
+      "sha256": "7d8a24a5b600e90090f9b67b1264cdd218f8f53f4b59beb5cfb364553cabdb18",
+      "bytes": 137727,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-105": {
+      "url": "/private/pjsk/assets/8a994b5bfd1e973a47ca8f726e9d3beaab2458bc301eb0ec0baa0f02813072e9.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_resound_2023/screen_image/banner_event_story.png",
+      "sha256": "8a994b5bfd1e973a47ca8f726e9d3beaab2458bc301eb0ec0baa0f02813072e9",
+      "bytes": 163477,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-106": {
+      "url": "/private/pjsk/assets/923e8af04f4625e8879da745a8685d47e49c933c8ca8c1299b0b8d726fa4219b.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_preciousmemories_2023/screen_image/banner_event_story.png",
+      "sha256": "923e8af04f4625e8879da745a8685d47e49c933c8ca8c1299b0b8d726fa4219b",
+      "bytes": 139215,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-107": {
+      "url": "/private/pjsk/assets/96da7ed5ab04612e4861df2784216a319a7587642439802da350985b66bcdfa1.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_study_2023/screen_image/banner_event_story.png",
+      "sha256": "96da7ed5ab04612e4861df2784216a319a7587642439802da350985b66bcdfa1",
+      "bytes": 142790,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-108": {
+      "url": "/private/pjsk/assets/4c63ee5b99cdb99cffa948e1d1c2d06bbf5b3edbbed9e2c5cb13e3ca82a427de.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_hello_2023/screen_image/banner_event_story.png",
+      "sha256": "4c63ee5b99cdb99cffa948e1d1c2d06bbf5b3edbbed9e2c5cb13e3ca82a427de",
+      "bytes": 140023,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-109": {
+      "url": "/private/pjsk/assets/09718d52e69b90521c2c91b7e65c072c90e5cf1c5b652e27ef5c3525c4e86398.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_burn_2023/screen_image/banner_event_story.png",
+      "sha256": "09718d52e69b90521c2c91b7e65c072c90e5cf1c5b652e27ef5c3525c4e86398",
+      "bytes": 129308,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-11": {
+      "url": "/private/pjsk/assets/f8e81b6135b69229fa2d25b1d0bcea74f1d43252eaf03126ef0fb17540ada8bf.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_color_2021/screen_image/banner_event_story.png",
+      "sha256": "f8e81b6135b69229fa2d25b1d0bcea74f1d43252eaf03126ef0fb17540ada8bf",
+      "bytes": 131797,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-110": {
+      "url": "/private/pjsk/assets/a3b3f8ef1f0cbc1bf24e26b3d6d9369f89e3a8e6c6df5d00b85cdd81f8766117.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_stickto_2023/screen_image/banner_event_story.png",
+      "sha256": "a3b3f8ef1f0cbc1bf24e26b3d6d9369f89e3a8e6c6df5d00b85cdd81f8766117",
+      "bytes": 120963,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-111": {
+      "url": "/private/pjsk/assets/7a8cede43ec3807c800a85c8971279ca19d641cef853c0a0fa4de6a6c5ba8b99.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_warmth_2023/screen_image/banner_event_story.png",
+      "sha256": "7a8cede43ec3807c800a85c8971279ca19d641cef853c0a0fa4de6a6c5ba8b99",
+      "bytes": 138055,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-112": {
+      "url": "/private/pjsk/assets/953cac4d7fb62d7567c147a1e807e10600517544bc58f0767353a87d67cfe8d5.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_underwater_2023/screen_image/banner_event_story.png",
+      "sha256": "953cac4d7fb62d7567c147a1e807e10600517544bc58f0767353a87d67cfe8d5",
+      "bytes": 106913,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-113": {
+      "url": "/private/pjsk/assets/43fc935a845f7aeb25b5783d79ab8cc0af6ce300307d6be9b246da34feac6bda.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_supporting_2023/screen_image/banner_event_story.png",
+      "sha256": "43fc935a845f7aeb25b5783d79ab8cc0af6ce300307d6be9b246da34feac6bda",
+      "bytes": 145153,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-114": {
+      "url": "/private/pjsk/assets/6516c11a7e233959fe5a518df029fbe2676c074e51f09356fe36fab839c9b8e9.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_crankup_2023/screen_image/banner_event_story.png",
+      "sha256": "6516c11a7e233959fe5a518df029fbe2676c074e51f09356fe36fab839c9b8e9",
+      "bytes": 149172,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-115": {
+      "url": "/private/pjsk/assets/c418a71acbfe7fd44c4410cf55166694ba4a735a2299eea5af833a2321489fcd.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_keeper_2023/screen_image/banner_event_story.png",
+      "sha256": "c418a71acbfe7fd44c4410cf55166694ba4a735a2299eea5af833a2321489fcd",
+      "bytes": 165375,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-116": {
+      "url": "/private/pjsk/assets/db5fa4723671b13e76d530e39aa693ca95ee27d3d1fa222598899206bde9d890.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_tone_2023/screen_image/banner_event_story.png",
+      "sha256": "db5fa4723671b13e76d530e39aa693ca95ee27d3d1fa222598899206bde9d890",
+      "bytes": 129723,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-117": {
+      "url": "/private/pjsk/assets/fdff1c324b0da14260cea3e125dd079e4c94afaf648f1d7d59d9dcf45c201632.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_cuddle_2023/screen_image/banner_event_story.png",
+      "sha256": "fdff1c324b0da14260cea3e125dd079e4c94afaf648f1d7d59d9dcf45c201632",
+      "bytes": 130007,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-118": {
+      "url": "/private/pjsk/assets/a9bad5fd3142bfdc498754c7225134ed652c016b59e768cff5adf3d2d69841a3.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_breakdown_2024/screen_image/banner_event_story.png",
+      "sha256": "a9bad5fd3142bfdc498754c7225134ed652c016b59e768cff5adf3d2d69841a3",
+      "bytes": 143347,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-119": {
+      "url": "/private/pjsk/assets/5bee10b3e5f27514b32ba668e82d8bc63640c73c639d03fd6cd00a57c71e1209.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_lensflare_2024/screen_image/banner_event_story.png",
+      "sha256": "5bee10b3e5f27514b32ba668e82d8bc63640c73c639d03fd6cd00a57c71e1209",
+      "bytes": 152653,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-12": {
+      "url": "/private/pjsk/assets/313bdc5a213aadeb970b605b3a14448fba2ccb9f89fdc4fbfe5cc6718ead1869.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_nocturne_2021/screen_image/banner_event_story.png",
+      "sha256": "313bdc5a213aadeb970b605b3a14448fba2ccb9f89fdc4fbfe5cc6718ead1869",
+      "bytes": 126196,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-120": {
+      "url": "/private/pjsk/assets/bbbd6ce11b8171fee7b5303f6b926f8873b225c547234ec2f4eda88d93462c88.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_bestshot_2024/screen_image/banner_event_story.png",
+      "sha256": "bbbd6ce11b8171fee7b5303f6b926f8873b225c547234ec2f4eda88d93462c88",
+      "bytes": 156241,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-121": {
+      "url": "/private/pjsk/assets/da5d588095ff7fc55058db270683a9bd61defd32df8f89dc42280d70ce670bcd.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_lead_2024/screen_image/banner_event_story.png",
+      "sha256": "da5d588095ff7fc55058db270683a9bd61defd32df8f89dc42280d70ce670bcd",
+      "bytes": 152915,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-122": {
+      "url": "/private/pjsk/assets/3257ea352d33c7218f0e9760e9037c9c223d9db1af3553227445c77290da6b97.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_graven_2024/screen_image/banner_event_story.png",
+      "sha256": "3257ea352d33c7218f0e9760e9037c9c223d9db1af3553227445c77290da6b97",
+      "bytes": 148792,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-123": {
+      "url": "/private/pjsk/assets/68131c3d79c2297922012e117ec3979816ef843c42a16411fddd69d8e37cce48.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_teatime_2024/screen_image/banner_event_story.png",
+      "sha256": "68131c3d79c2297922012e117ec3979816ef843c42a16411fddd69d8e37cce48",
+      "bytes": 154955,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-124": {
+      "url": "/private/pjsk/assets/7f952b541ffff2f9b5770199694ed9026f58ef18bf85d0be22b5c2a115c083aa.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_yosoro_2024/screen_image/banner_event_story.png",
+      "sha256": "7f952b541ffff2f9b5770199694ed9026f58ef18bf85d0be22b5c2a115c083aa",
+      "bytes": 130232,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-125": {
+      "url": "/private/pjsk/assets/c15e71413bf2db650ea117255db43fa8ddb480aa69f8b5c2677279e2b398c398.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_concerto_2024/screen_image/banner_event_story.png",
+      "sha256": "c15e71413bf2db650ea117255db43fa8ddb480aa69f8b5c2677279e2b398c398",
+      "bytes": 133805,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-126": {
+      "url": "/private/pjsk/assets/08c48d122ebc96ae40032c899b837d40623c023d72d76aeabffcbcfbe16ec559.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_rise_2024/screen_image/banner_event_story.png",
+      "sha256": "08c48d122ebc96ae40032c899b837d40623c023d72d76aeabffcbcfbe16ec559",
+      "bytes": 139053,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-127": {
+      "url": "/private/pjsk/assets/cd71734a0aa058871889db65318692e4e3a5f592fa3fa74304ee5c88bcd644fd.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_unseen_2024/screen_image/banner_event_story.png",
+      "sha256": "cd71734a0aa058871889db65318692e4e3a5f592fa3fa74304ee5c88bcd644fd",
+      "bytes": 127691,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-128": {
+      "url": "/private/pjsk/assets/6ac2c1e9b8c3c01d9a8f633395a90fb1fb11c61322461e7c451ece0041399e5f.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_parallel_2024/screen_image/banner_event_story.png",
+      "sha256": "6ac2c1e9b8c3c01d9a8f633395a90fb1fb11c61322461e7c451ece0041399e5f",
+      "bytes": 125658,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-129": {
+      "url": "/private/pjsk/assets/43fee972bce3541fc40d63b54b7add0387a14da9d41e80cb58492b1369ee8123.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_whip_2024/screen_image/banner_event_story.png",
+      "sha256": "43fee972bce3541fc40d63b54b7add0387a14da9d41e80cb58492b1369ee8123",
+      "bytes": 156235,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-13": {
+      "url": "/private/pjsk/assets/5123a04ee4ccc780a72f5b89275243994ec29dcdb1e0b57a014714e3c9041f61.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_parade_2021/screen_image/banner_event_story.png",
+      "sha256": "5123a04ee4ccc780a72f5b89275243994ec29dcdb1e0b57a014714e3c9041f61",
+      "bytes": 146224,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-130": {
+      "url": "/private/pjsk/assets/befc9e7e8e7cca90f0c760aee79427a7ff3912eeef5560e67f3e3e22ea2d26c4.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_blooming_2024/screen_image/banner_event_story.png",
+      "sha256": "befc9e7e8e7cca90f0c760aee79427a7ff3912eeef5560e67f3e3e22ea2d26c4",
+      "bytes": 127060,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-131": {
+      "url": "/private/pjsk/assets/738035a8eb9c79a4f29f3056b2dc2b793d76ce411499536415b913320b095711.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_smile_2024/screen_image/banner_event_story.png",
+      "sha256": "738035a8eb9c79a4f29f3056b2dc2b793d76ce411499536415b913320b095711",
+      "bytes": 146720,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-132": {
+      "url": "/private/pjsk/assets/b26d7009ae3b64abfde6073f9cf749e2726ccedbc85cbb994f0c50d5bfbc1e76.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_wedding_2024/screen_image/banner_event_story.png",
+      "sha256": "b26d7009ae3b64abfde6073f9cf749e2726ccedbc85cbb994f0c50d5bfbc1e76",
+      "bytes": 142156,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-133": {
+      "url": "/private/pjsk/assets/490e16c0d24295f90792d0d8509c6cadf87d417fbf6db2429343dfede4c81cdc.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_shine_2024/screen_image/banner_event_story.png",
+      "sha256": "490e16c0d24295f90792d0d8509c6cadf87d417fbf6db2429343dfede4c81cdc",
+      "bytes": 119561,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-134": {
+      "url": "/private/pjsk/assets/347e61a8420f318ce49512f611c7fab14951c4b808eabaf6ed94f9f02720d2bf.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_tomoshibi_2024/screen_image/banner_event_story.png",
+      "sha256": "347e61a8420f318ce49512f611c7fab14951c4b808eabaf6ed94f9f02720d2bf",
+      "bytes": 145073,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-135": {
+      "url": "/private/pjsk/assets/e644c528e1d06bd4c884df963b16aa1a1d1317d063ea5a711e97e603409b3e85.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_overrad_2024/screen_image/banner_event_story.png",
+      "sha256": "e644c528e1d06bd4c884df963b16aa1a1d1317d063ea5a711e97e603409b3e85",
+      "bytes": 137466,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-136": {
+      "url": "/private/pjsk/assets/9d988f9566b7b8a059a9168626b5872c9166555f98c08f62ee6925c8f839b1cb.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_torimonothou_2024/screen_image/banner_event_story.png",
+      "sha256": "9d988f9566b7b8a059a9168626b5872c9166555f98c08f62ee6925c8f839b1cb",
+      "bytes": 147448,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-137": {
+      "url": "/private/pjsk/assets/8c43292f4a9c90e41f4e706105afa44895e04b1ed85646dc4efbafce15171975.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_nightsky_2024/screen_image/banner_event_story.png",
+      "sha256": "8c43292f4a9c90e41f4e706105afa44895e04b1ed85646dc4efbafce15171975",
+      "bytes": 131610,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-138": {
+      "url": "/private/pjsk/assets/e717d34651b6150122b1e1417c6a462b1070d9995b65687627851355868b25b3.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_chase_2024/screen_image/banner_event_story.png",
+      "sha256": "e717d34651b6150122b1e1417c6a462b1070d9995b65687627851355868b25b3",
+      "bytes": 128555,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-139": {
+      "url": "/private/pjsk/assets/a46f73dce5847ed09f17415f373380b8436bdc200fcbe5781df99f11edf197c0.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_beautifulsound_2024/screen_image/banner_event_story.png",
+      "sha256": "a46f73dce5847ed09f17415f373380b8436bdc200fcbe5781df99f11edf197c0",
+      "bytes": 155924,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-14": {
+      "url": "/private/pjsk/assets/755ae75c48c20d712cee521dc63ca2f22657814b4c585328bdb38ef1e51320d9.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_infinitelygray_2021/screen_image/banner_event_story.png",
+      "sha256": "755ae75c48c20d712cee521dc63ca2f22657814b4c585328bdb38ef1e51320d9",
+      "bytes": 138191,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-140": {
+      "url": "/private/pjsk/assets/9ce0175bd47aa9f9ee71fdd111926db7e7a2bf358c77cb640ae386e96370a854.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_beginning_2024/screen_image/banner_event_story.png",
+      "sha256": "9ce0175bd47aa9f9ee71fdd111926db7e7a2bf358c77cb640ae386e96370a854",
+      "bytes": 121019,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-141": {
+      "url": "/private/pjsk/assets/699dce0353f4b05c9f64d61a5467d9cfc8efb1504df0f653f9b30935d77fa23a.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_horror_2024/screen_image/banner_event_story.png",
+      "sha256": "699dce0353f4b05c9f64d61a5467d9cfc8efb1504df0f653f9b30935d77fa23a",
+      "bytes": 158981,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-142": {
+      "url": "/private/pjsk/assets/53bab033e8968419b9d64fce6378751f3d4d0dcb25eb6237856de1bc2ce7d39c.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_muscle_2024/screen_image/banner_event_story.png",
+      "sha256": "53bab033e8968419b9d64fce6378751f3d4d0dcb25eb6237856de1bc2ce7d39c",
+      "bytes": 139871,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-143": {
+      "url": "/private/pjsk/assets/ddd1f42f4ac448e34211e69865138f290964fda8479aa0e3ca3a1f0c7b046aa0.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_moment_2024/screen_image/banner_event_story.png",
+      "sha256": "ddd1f42f4ac448e34211e69865138f290964fda8479aa0e3ca3a1f0c7b046aa0",
+      "bytes": 144676,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-144": {
+      "url": "/private/pjsk/assets/2cdefd06b2f8e631eb055b5a80c0279cd855dffdfc1e8f2c0580bc90762a0f75.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_dreamstage_2024/screen_image/banner_event_story.png",
+      "sha256": "2cdefd06b2f8e631eb055b5a80c0279cd855dffdfc1e8f2c0580bc90762a0f75",
+      "bytes": 162088,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-145": {
+      "url": "/private/pjsk/assets/0713bfe207a6689c03d55b276108c567aad953e5d84d0f2a511934d5ebc02608.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_thorns_2024/screen_image/banner_event_story.png",
+      "sha256": "0713bfe207a6689c03d55b276108c567aad953e5d84d0f2a511934d5ebc02608",
+      "bytes": 138138,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-146": {
+      "url": "/private/pjsk/assets/a833bdf619015f3673148987862469b7aae6aa3ce5ec21f09e6b47d88f64e2c7.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_rekindle_2024/screen_image/banner_event_story.png",
+      "sha256": "a833bdf619015f3673148987862469b7aae6aa3ce5ec21f09e6b47d88f64e2c7",
+      "bytes": 118748,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-147": {
+      "url": "/private/pjsk/assets/88d2a73c20356f07a78a3148298274197136e36e83d360fbbb1437bf7648e4db.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_enjoymusic_2024/screen_image/banner_event_story.png",
+      "sha256": "88d2a73c20356f07a78a3148298274197136e36e83d360fbbb1437bf7648e4db",
+      "bytes": 138491,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-148": {
+      "url": "/private/pjsk/assets/29467c27c0428e3cebee24cfd22baf3ea686d96231aee0f4828919022bd3a600.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_foliage_2024/screen_image/banner_event_story.png",
+      "sha256": "29467c27c0428e3cebee24cfd22baf3ea686d96231aee0f4828919022bd3a600",
+      "bytes": 144813,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-149": {
+      "url": "/private/pjsk/assets/1213fe0448e3ba8502ca0d14488dc965f72f3a9875f7ed073f6a0f8e4240cad9.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_regret_2024/screen_image/banner_event_story.png",
+      "sha256": "1213fe0448e3ba8502ca0d14488dc965f72f3a9875f7ed073f6a0f8e4240cad9",
+      "bytes": 127513,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-15": {
+      "url": "/private/pjsk/assets/d6de5d45ff874b8ebe6003ece77c337c70f7ee32e8bd08634b820b16f5656352.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_dream_2021/screen_image/banner_event_story.png",
+      "sha256": "d6de5d45ff874b8ebe6003ece77c337c70f7ee32e8bd08634b820b16f5656352",
+      "bytes": 136537,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-151": {
+      "url": "/private/pjsk/assets/2637ac919882121de1c252852a299848ee743ffb0f89d4c51078eb7d0958cf33.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_grow_2024/screen_image/banner_event_story.png",
+      "sha256": "2637ac919882121de1c252852a299848ee743ffb0f89d4c51078eb7d0958cf33",
+      "bytes": 146408,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-152": {
+      "url": "/private/pjsk/assets/5257a0c51d7786902b162ba8dc18bdf18e8ce0e0acfc16e1d53d63a210cfe7a0.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_specialpresent_2024/screen_image/banner_event_story.png",
+      "sha256": "5257a0c51d7786902b162ba8dc18bdf18e8ce0e0acfc16e1d53d63a210cfe7a0",
+      "bytes": 135424,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-153": {
+      "url": "/private/pjsk/assets/e4c64b3d79963e1bae84a238995e76dfeb409e67a4e228099c5b1e81071be3a4.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_unfading_2024/screen_image/banner_event_story.png",
+      "sha256": "e4c64b3d79963e1bae84a238995e76dfeb409e67a4e228099c5b1e81071be3a4",
+      "bytes": 121921,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-154": {
+      "url": "/private/pjsk/assets/ac282f426ec050ba9675e728f2b0763023413f4800fb311bfbe8bce01e440893.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_takeoff_2025/screen_image/banner_event_story.png",
+      "sha256": "ac282f426ec050ba9675e728f2b0763023413f4800fb311bfbe8bce01e440893",
+      "bytes": 133297,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-155": {
+      "url": "/private/pjsk/assets/ef8d76376f45071f22855dc6914222b71423a6ae903ec343512ab0b68052140a.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_yourshine_2025/screen_image/banner_event_story.png",
+      "sha256": "ef8d76376f45071f22855dc6914222b71423a6ae903ec343512ab0b68052140a",
+      "bytes": 140625,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-156": {
+      "url": "/private/pjsk/assets/310d033b6753c4775f691b936be5f3abd795e1a84a149d5715a3c30d47bf21a3.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_needle_2025/screen_image/banner_event_story.png",
+      "sha256": "310d033b6753c4775f691b936be5f3abd795e1a84a149d5715a3c30d47bf21a3",
+      "bytes": 140965,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-157": {
+      "url": "/private/pjsk/assets/97e3aae49f501f3364a49913af6888ec1be36daaeb2edc7ccbaf6e146581767f.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_strive_2025/screen_image/banner_event_story.png",
+      "sha256": "97e3aae49f501f3364a49913af6888ec1be36daaeb2edc7ccbaf6e146581767f",
+      "bytes": 123872,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-158": {
+      "url": "/private/pjsk/assets/e9dc5da1efcd4e3e7e7b63d78fed9e79439a8c01f11bfa66db91cb580e443fc0.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_readaloud_2025/screen_image/banner_event_story.png",
+      "sha256": "e9dc5da1efcd4e3e7e7b63d78fed9e79439a8c01f11bfa66db91cb580e443fc0",
+      "bytes": 139598,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-159": {
+      "url": "/private/pjsk/assets/ea197245761f0463a9582349685cbc73a43a4a0e9c9e1f4442b3387cebc91113.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_heartsmessage_2025/screen_image/banner_event_story.png",
+      "sha256": "ea197245761f0463a9582349685cbc73a43a4a0e9c9e1f4442b3387cebc91113",
+      "bytes": 125327,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-16": {
+      "url": "/private/pjsk/assets/5aa49bf5f57c03df0967bdf59d918e1010619296f35b1435ed0276630eac53da.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_hinamatsuri_2021/screen_image/banner_event_story.png",
+      "sha256": "5aa49bf5f57c03df0967bdf59d918e1010619296f35b1435ed0276630eac53da",
+      "bytes": 126138,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-160": {
+      "url": "/private/pjsk/assets/96a77b42eabea5fe34748919d3005dd1681c62f83b265b5cc4d626e6613a7c89.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_myhero_2025/screen_image/banner_event_story.png",
+      "sha256": "96a77b42eabea5fe34748919d3005dd1681c62f83b265b5cc4d626e6613a7c89",
+      "bytes": 129211,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-161": {
+      "url": "/private/pjsk/assets/ba20d7400698a7b7149316a64f93464f347db8d6aae54510b5e44067238c9868.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_notes_2025/screen_image/banner_event_story.png",
+      "sha256": "ba20d7400698a7b7149316a64f93464f347db8d6aae54510b5e44067238c9868",
+      "bytes": 150341,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-162": {
+      "url": "/private/pjsk/assets/208e40ebcf3593c91f61ed5e9ebcd4fdcb4142c9f7880999664162ddc0f8aaf5.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_dreamview_2025/screen_image/banner_event_story.png",
+      "sha256": "208e40ebcf3593c91f61ed5e9ebcd4fdcb4142c9f7880999664162ddc0f8aaf5",
+      "bytes": 141890,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-163": {
+      "url": "/private/pjsk/assets/2a085eb6ffd59c61f10d7a1b30c476c6e01ad9b1d1378de9871fc65a4c46f9ff.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_wl_2nd_street_2025/screen_image/banner_event_story.png",
+      "sha256": "2a085eb6ffd59c61f10d7a1b30c476c6e01ad9b1d1378de9871fc65a4c46f9ff",
+      "bytes": 136604,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-164": {
+      "url": "/private/pjsk/assets/975bdf0d1ce971211e0ffbf902c88e1d3b003f394a73fb13a8a54f690d9eb790.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_choicesfuture_2025/screen_image/banner_event_story.png",
+      "sha256": "975bdf0d1ce971211e0ffbf902c88e1d3b003f394a73fb13a8a54f690d9eb790",
+      "bytes": 115606,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-165": {
+      "url": "/private/pjsk/assets/be1490dc15a29ddc969821c58c87b66e98318dc957131bbf175c87555d31d418.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_needlemoving_2025/screen_image/banner_event_story.png",
+      "sha256": "be1490dc15a29ddc969821c58c87b66e98318dc957131bbf175c87555d31d418",
+      "bytes": 137361,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-167": {
+      "url": "/private/pjsk/assets/3759b7193ebd89086242bc27000b58f90dd620286a87748280431ceed05ca7b4.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_wl_2nd_themepark_2025/screen_image/banner_event_story.png",
+      "sha256": "3759b7193ebd89086242bc27000b58f90dd620286a87748280431ceed05ca7b4",
+      "bytes": 131594,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-168": {
+      "url": "/private/pjsk/assets/d76a4c8353d0e56f883c339456b1997b36645963157f0d7e1b670af23ac8427a.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_cheerheart_2025/screen_image/banner_event_story.png",
+      "sha256": "d76a4c8353d0e56f883c339456b1997b36645963157f0d7e1b670af23ac8427a",
+      "bytes": 122919,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-169": {
+      "url": "/private/pjsk/assets/3ff4d1ba55fc330304ce6150157fed48deae20fc9d2add0aeb621eb5fbb6569c.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_higher_2025/screen_image/banner_event_story.png",
+      "sha256": "3ff4d1ba55fc330304ce6150157fed48deae20fc9d2add0aeb621eb5fbb6569c",
+      "bytes": 147023,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-17": {
+      "url": "/private/pjsk/assets/6e46b25d1ef670d2fc4f8ca0865cab5be6b74f3bd3f91d9a66a64e5da2a5b2a4.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_angelclover_2021/screen_image/banner_event_story.png",
+      "sha256": "6e46b25d1ef670d2fc4f8ca0865cab5be6b74f3bd3f91d9a66a64e5da2a5b2a4",
+      "bytes": 143568,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-170": {
+      "url": "/private/pjsk/assets/a7e4d544075508c5d47eb3fc740a158d3bdfc729ae7b601fcc483657557da76e.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_wl_2nd_schoolrefusal_2025/screen_image/banner_event_story.png",
+      "sha256": "a7e4d544075508c5d47eb3fc740a158d3bdfc729ae7b601fcc483657557da76e",
+      "bytes": 103474,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-171": {
+      "url": "/private/pjsk/assets/c8096e892e686d85a33b917801df6b501efdb69c31c09f20885523ff8aa42f2c.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_wl_2nd_lightsound_2025/screen_image/banner_event_story.png",
+      "sha256": "c8096e892e686d85a33b917801df6b501efdb69c31c09f20885523ff8aa42f2c",
+      "bytes": 119458,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-172": {
+      "url": "/private/pjsk/assets/e4e3918c14c95dbb9159afb9f56f88bd0c1727aef7e8de8d10f2eaf6c1358f50.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_deeper_2025/screen_image/banner_event_story.png",
+      "sha256": "e4e3918c14c95dbb9159afb9f56f88bd0c1727aef7e8de8d10f2eaf6c1358f50",
+      "bytes": 118019,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-173": {
+      "url": "/private/pjsk/assets/b49cf11c842e36aa7c1c82349dcd67bf8fd8f561d82daf0d4d70c987cc116808.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_unsteady_2025/screen_image/banner_event_story.png",
+      "sha256": "b49cf11c842e36aa7c1c82349dcd67bf8fd8f561d82daf0d4d70c987cc116808",
+      "bytes": 135685,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-174": {
+      "url": "/private/pjsk/assets/b6d312745277edcea36a2b19edc272cf2879d7ceab27d7d94d79451763562730.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_crossing_2025/screen_image/banner_event_story.png",
+      "sha256": "b6d312745277edcea36a2b19edc272cf2879d7ceab27d7d94d79451763562730",
+      "bytes": 118660,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-175": {
+      "url": "/private/pjsk/assets/2154fe021ca43a8ce97baea7b910a4b0e0a905115def5c9772ef6fd21b1c8576.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_competitive_2025/screen_image/banner_event_story.png",
+      "sha256": "2154fe021ca43a8ce97baea7b910a4b0e0a905115def5c9772ef6fd21b1c8576",
+      "bytes": 126966,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-176": {
+      "url": "/private/pjsk/assets/0ee6d736636891d1eca4ff6dfb890a13fdb0607b9be0bcfec54996e16d7a342a.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_wl_2nd_idol_2025/screen_image/banner_event_story.png",
+      "sha256": "0ee6d736636891d1eca4ff6dfb890a13fdb0607b9be0bcfec54996e16d7a342a",
+      "bytes": 121664,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-177": {
+      "url": "/private/pjsk/assets/0992c0e0460b6cbf2c0c03815a0f688a8479237eaad974136a1f428853faf211.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_tomorrow_2025/screen_image/banner_event_story.png",
+      "sha256": "0992c0e0460b6cbf2c0c03815a0f688a8479237eaad974136a1f428853faf211",
+      "bytes": 126705,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-178": {
+      "url": "/private/pjsk/assets/e9bd5662e03d37d9f3dd770b4cdb6a6e8e8406ee6d9eb7ebfb2f01e0c1b70248.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_forlight_2025/screen_image/banner_event_story.png",
+      "sha256": "e9bd5662e03d37d9f3dd770b4cdb6a6e8e8406ee6d9eb7ebfb2f01e0c1b70248",
+      "bytes": 114871,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-179": {
+      "url": "/private/pjsk/assets/8329b1642665d58a0e73b06f033d5a690046db39a6676276fa93a4e2abd511f6.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_wl_2nd_piapro_2025/screen_image/banner_event_story.png",
+      "sha256": "8329b1642665d58a0e73b06f033d5a690046db39a6676276fa93a4e2abd511f6",
+      "bytes": 102550,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-18": {
+      "url": "/private/pjsk/assets/4ce7274b0a68b77bf809a79671a5c6cb6423ff1f7d801f59e78d5b249a1859bc.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_ohanami_2021/screen_image/banner_event_story.png",
+      "sha256": "4ce7274b0a68b77bf809a79671a5c6cb6423ff1f7d801f59e78d5b249a1859bc",
+      "bytes": 139261,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-180": {
+      "url": "/private/pjsk/assets/63c687ec68344ec3a70fd40ba637c85b8c3fadd847f4ee947634e6b1d86a92ab.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_wl_2nd_finale_2025/screen_image/banner_event_story.png",
+      "sha256": "63c687ec68344ec3a70fd40ba637c85b8c3fadd847f4ee947634e6b1d86a92ab",
+      "bytes": 112557,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-181": {
+      "url": "/private/pjsk/assets/2bb3a2181bb6a10bcd3feca3d1f36f78e7a5a144c0250548db2f3c0356ae1a30.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_golden_2025/screen_image/banner_event_story.png",
+      "sha256": "2bb3a2181bb6a10bcd3feca3d1f36f78e7a5a144c0250548db2f3c0356ae1a30",
+      "bytes": 141493,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-182": {
+      "url": "/private/pjsk/assets/1096c680f2ce0a3299ecf075078e326b11903178e31d83dfd4b041b799cb1e4d.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_heartbeat_2025/screen_image/banner_event_story.png",
+      "sha256": "1096c680f2ce0a3299ecf075078e326b11903178e31d83dfd4b041b799cb1e4d",
+      "bytes": 134464,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-183": {
+      "url": "/private/pjsk/assets/037ceabd99cd58f1db05e41a977e81bada824baf9926ee4ed09f5354a4d97f31.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_colorcross_2025/screen_image/banner_event_story.png",
+      "sha256": "037ceabd99cd58f1db05e41a977e81bada824baf9926ee4ed09f5354a4d97f31",
+      "bytes": 132453,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-184": {
+      "url": "/private/pjsk/assets/01fc3420bcf4122812776c2f2cc31725d34b0582a6eca6f168dae5667f1e98dd.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-jp-assets/event_story/event_colors_2025/screen_image/banner_event_story.png",
+      "sha256": "01fc3420bcf4122812776c2f2cc31725d34b0582a6eca6f168dae5667f1e98dd",
+      "bytes": 143531,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-185": {
+      "url": "/private/pjsk/assets/28bd999e9cee27269cecc701ed377b0e0305ab46eddfc36dc4376b0e75666964.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-jp-assets/event_story/event_protagonist_2025/screen_image/banner_event_story.png",
+      "sha256": "28bd999e9cee27269cecc701ed377b0e0305ab46eddfc36dc4376b0e75666964",
+      "bytes": 148732,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-187": {
+      "url": "/private/pjsk/assets/267e11ee115cef34edee96558d6b68fc50352594a8e5affc04fdf3269f78d57a.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-jp-assets/event_story/event_overcome_2025/screen_image/banner_event_story.png",
+      "sha256": "267e11ee115cef34edee96558d6b68fc50352594a8e5affc04fdf3269f78d57a",
+      "bytes": 151641,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-188": {
+      "url": "/private/pjsk/assets/fa9556f2bd26188c9bf35fab9abe99642934980ae3d49d8e397bee49e70cef6f.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-jp-assets/event_story/event_lookup_2025/screen_image/banner_event_story.png",
+      "sha256": "fa9556f2bd26188c9bf35fab9abe99642934980ae3d49d8e397bee49e70cef6f",
+      "bytes": 146569,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-189": {
+      "url": "/private/pjsk/assets/e410327978746caa5f917309f2ef695ab8d1a5a16a630c6a59485335c9835819.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-jp-assets/event_story/event_trueroute_2025/screen_image/banner_event_story.png",
+      "sha256": "e410327978746caa5f917309f2ef695ab8d1a5a16a630c6a59485335c9835819",
+      "bytes": 125207,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-19": {
+      "url": "/private/pjsk/assets/20f405dee5923c807688af9afd0cca9329b59a4a91b75f7747cc7c8d8aaf7c86.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_secret_2021/screen_image/banner_event_story.png",
+      "sha256": "20f405dee5923c807688af9afd0cca9329b59a4a91b75f7747cc7c8d8aaf7c86",
+      "bytes": 147269,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-190": {
+      "url": "/private/pjsk/assets/d1af626fb0a5fa9c9c3fef5d905f09fb6f2babbccd40db3387d2df74c87b2b49.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-jp-assets/event_story/event_hope_2025/screen_image/banner_event_story.png",
+      "sha256": "d1af626fb0a5fa9c9c3fef5d905f09fb6f2babbccd40db3387d2df74c87b2b49",
+      "bytes": 127998,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-191": {
+      "url": "/private/pjsk/assets/28b23f553483ec25f0bf6ef4a1afdf3ae0f87cfa566f1769418a0e35183dc216.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-jp-assets/event_story/event_celebrate_2025/screen_image/banner_event_story.png",
+      "sha256": "28b23f553483ec25f0bf6ef4a1afdf3ae0f87cfa566f1769418a0e35183dc216",
+      "bytes": 150751,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-192": {
+      "url": "/private/pjsk/assets/78982f53ba5c13838ca94177d0ac094528246a04f7038dc58a10834c825ec858.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-jp-assets/event_story/event_knock_2026/screen_image/banner_event_story.png",
+      "sha256": "78982f53ba5c13838ca94177d0ac094528246a04f7038dc58a10834c825ec858",
+      "bytes": 111484,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-193": {
+      "url": "/private/pjsk/assets/c0c49ad00874d75b71435044a5d971cfc587dc002fea3d69b39371f1450a8e00.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-jp-assets/event_story/event_allout_2026/screen_image/banner_event_story.png",
+      "sha256": "c0c49ad00874d75b71435044a5d971cfc587dc002fea3d69b39371f1450a8e00",
+      "bytes": 116505,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-194": {
+      "url": "/private/pjsk/assets/43bee066a9cec53b004ab509bf1d17599d33e73f1056d582d2ff2c4b300178e7.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-jp-assets/event_story/event_revenge_2026/screen_image/banner_event_story.png",
+      "sha256": "43bee066a9cec53b004ab509bf1d17599d33e73f1056d582d2ff2c4b300178e7",
+      "bytes": 165815,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-195": {
+      "url": "/private/pjsk/assets/fb547b3ee1e6a4e5aac3c0c6feb25a6d2ea84307d7f43ffa1ab949c500dd34b1.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-jp-assets/event_story/event_path_2026/screen_image/banner_event_story.png",
+      "sha256": "fb547b3ee1e6a4e5aac3c0c6feb25a6d2ea84307d7f43ffa1ab949c500dd34b1",
+      "bytes": 142024,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-196": {
+      "url": "/private/pjsk/assets/75909efddd4af8082a7080753f1ddec9b0c50a5e992aa16bb370cee8fb6077ac.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-jp-assets/event_story/event_princess_2026/screen_image/banner_event_story.png",
+      "sha256": "75909efddd4af8082a7080753f1ddec9b0c50a5e992aa16bb370cee8fb6077ac",
+      "bytes": 143946,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-197": {
+      "url": "/private/pjsk/assets/af9e4c95e03c2c24090786a050350bd35f7788eff714209502e790a123a4dcf9.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-jp-assets/event_story/event_nightmare_2026/screen_image/banner_event_story.png",
+      "sha256": "af9e4c95e03c2c24090786a050350bd35f7788eff714209502e790a123a4dcf9",
+      "bytes": 151706,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-198": {
+      "url": "/private/pjsk/assets/a3be88037089e7d7f70bc0776f9146ab268b8cd880a78cecf3db066402fb663a.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-jp-assets/event_story/event_horizons_2026/screen_image/banner_event_story.png",
+      "sha256": "a3be88037089e7d7f70bc0776f9146ab268b8cd880a78cecf3db066402fb663a",
+      "bytes": 117786,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-199": {
+      "url": "/private/pjsk/assets/5b10198de536d05bcd1bd10cce29601bc2de4848512606c4ccb8f71c2336b494.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-jp-assets/event_story/event_wavering_2026/screen_image/banner_event_story.png",
+      "sha256": "5b10198de536d05bcd1bd10cce29601bc2de4848512606c4ccb8f71c2336b494",
+      "bytes": 128498,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-20": {
+      "url": "/private/pjsk/assets/382361d34243788ff3929b9f1d2eb002497cf52442d417758ce220eaaadfa0f3.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_resonate_2021/screen_image/banner_event_story.png",
+      "sha256": "382361d34243788ff3929b9f1d2eb002497cf52442d417758ce220eaaadfa0f3",
+      "bytes": 127297,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-200": {
+      "url": "/private/pjsk/assets/5a961bbe8175642d57bdf0bf51e3167de037b6800fd9031945e6ea4abe37fe61.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-jp-assets/event_story/event_direction_2026/screen_image/banner_event_story.png",
+      "sha256": "5a961bbe8175642d57bdf0bf51e3167de037b6800fd9031945e6ea4abe37fe61",
+      "bytes": 131441,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-21": {
+      "url": "/private/pjsk/assets/1611dc3b0114a1d0f18da87cb542e46c1cb0d0230270f5a9591fc082fcfe48d8.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_stray_2021/screen_image/banner_event_story.png",
+      "sha256": "1611dc3b0114a1d0f18da87cb542e46c1cb0d0230270f5a9591fc082fcfe48d8",
+      "bytes": 127399,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-22": {
+      "url": "/private/pjsk/assets/6fc4da89ab8a1813a5dd767a43fb302d7405c2bf599e894346f59837f3187062.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_picnic_2021/screen_image/banner_event_story.png",
+      "sha256": "6fc4da89ab8a1813a5dd767a43fb302d7405c2bf599e894346f59837f3187062",
+      "bytes": 131971,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-23": {
+      "url": "/private/pjsk/assets/949b82fd4d4d7dc9446d529e7bdd49f9ea42022f79cc7705faf9458b9014ac59.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_breaktime_2021/screen_image/banner_event_story.png",
+      "sha256": "949b82fd4d4d7dc9446d529e7bdd49f9ea42022f79cc7705faf9458b9014ac59",
+      "bytes": 130499,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-24": {
+      "url": "/private/pjsk/assets/3bd0994e37da85ae22aa15e3fca77e9c6e631ea742a85b555565a479bcbc10a2.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_bridal_2021/screen_image/banner_event_story.png",
+      "sha256": "3bd0994e37da85ae22aa15e3fca77e9c6e631ea742a85b555565a479bcbc10a2",
+      "bytes": 149180,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-25": {
+      "url": "/private/pjsk/assets/5f38300ee79e2f2305de1395c39d714aa5a50516af645526e50472dc68a6804a.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_wonders_2021/screen_image/banner_event_story.png",
+      "sha256": "5f38300ee79e2f2305de1395c39d714aa5a50516af645526e50472dc68a6804a",
+      "bytes": 150358,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-26": {
+      "url": "/private/pjsk/assets/bc8ec3176cc169dffb34c2f9ffa29356fd90d6d16ea97e2751200bdce214aa01.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_carnation_2021/screen_image/banner_event_story.png",
+      "sha256": "bc8ec3176cc169dffb34c2f9ffa29356fd90d6d16ea97e2751200bdce214aa01",
+      "bytes": 115473,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-27": {
+      "url": "/private/pjsk/assets/4ee9d2fb41cc9ebaae05a7fe0e4baa2e4b8ea3faae9b9847e7413ce5354c9e23.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_unnamed_2021/screen_image/banner_event_story.png",
+      "sha256": "4ee9d2fb41cc9ebaae05a7fe0e4baa2e4b8ea3faae9b9847e7413ce5354c9e23",
+      "bytes": 129435,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-28": {
+      "url": "/private/pjsk/assets/dc69f299255958d02d7a9120f3e717b6c4e1438dd44e89b9d26984286c54a1cc.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_awakening_2021/screen_image/banner_event_story.png",
+      "sha256": "dc69f299255958d02d7a9120f3e717b6c4e1438dd44e89b9d26984286c54a1cc",
+      "bytes": 136954,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-29": {
+      "url": "/private/pjsk/assets/3682e590b4ceba8de1b654131fadcfe9149697cff8aa59b1b99ad68aaf623407.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_natsumatsuri_2021/screen_image/banner_event_story.png",
+      "sha256": "3682e590b4ceba8de1b654131fadcfe9149697cff8aa59b1b99ad68aaf623407",
+      "bytes": 145240,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-30": {
+      "url": "/private/pjsk/assets/070d8ca6a7475fe277a4341c20c653f573d5c832c5759fc1886ebc6b47648a61.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_summer_2021/screen_image/banner_event_story.png",
+      "sha256": "070d8ca6a7475fe277a4341c20c653f573d5c832c5759fc1886ebc6b47648a61",
+      "bytes": 140992,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-31": {
+      "url": "/private/pjsk/assets/7aa1175dccab589208573642ad3da4c2af3905bf086d5073ce6fc6c10e69ad62.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_everyday_2021/screen_image/banner_event_story.png",
+      "sha256": "7aa1175dccab589208573642ad3da4c2af3905bf086d5073ce6fc6c10e69ad62",
+      "bytes": 123796,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-32": {
+      "url": "/private/pjsk/assets/9a0ab79d8c1aca6d45b39577fff7b1effd3fdeaf29061a3047944c556e74359b.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_mermaid_2021/screen_image/banner_event_story.png",
+      "sha256": "9a0ab79d8c1aca6d45b39577fff7b1effd3fdeaf29061a3047944c556e74359b",
+      "bytes": 135531,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-33": {
+      "url": "/private/pjsk/assets/6a4e917558e53d96c36e1af3314c443b80b56c18a78778a199146cfbbfa8ce40.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_moonrabbit_2021/screen_image/banner_event_story.png",
+      "sha256": "6a4e917558e53d96c36e1af3314c443b80b56c18a78778a199146cfbbfa8ce40",
+      "bytes": 144715,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-34": {
+      "url": "/private/pjsk/assets/0814745deaa8a04250a5dbf9d520e651091af3515b39e4e1b1d74ff695e8f522.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_future_2021/screen_image/banner_event_story.png",
+      "sha256": "0814745deaa8a04250a5dbf9d520e651091af3515b39e4e1b1d74ff695e8f522",
+      "bytes": 112855,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-35": {
+      "url": "/private/pjsk/assets/3ffc86bda38a4d08490bcc840369e58be21b4cf9b4037cb0bb217078a7aab97a.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_mirage_2021/screen_image/banner_event_story.png",
+      "sha256": "3ffc86bda38a4d08490bcc840369e58be21b4cf9b4037cb0bb217078a7aab97a",
+      "bytes": 141068,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-36": {
+      "url": "/private/pjsk/assets/03a532c7ea22db49667dc495afe6cd55da631cdcf8b922fd8a9bb2dc08d25d45.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_scramble_2021/screen_image/banner_event_story.png",
+      "sha256": "03a532c7ea22db49667dc495afe6cd55da631cdcf8b922fd8a9bb2dc08d25d45",
+      "bytes": 130610,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-37": {
+      "url": "/private/pjsk/assets/9630df0ab2b243be8e5cf2552a5328e44818857b3b95da7b67b9c01e2ddd424b.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_besideyou_2021/screen_image/banner_event_story.png",
+      "sha256": "9630df0ab2b243be8e5cf2552a5328e44818857b3b95da7b67b9c01e2ddd424b",
+      "bytes": 131166,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-38": {
+      "url": "/private/pjsk/assets/bf0bf14dada9657a51f4b41c8fa181f60dc16bd3ca5011bcdf2108b825f8957e.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_revival_2021/screen_image/banner_event_story.png",
+      "sha256": "bf0bf14dada9657a51f4b41c8fa181f60dc16bd3ca5011bcdf2108b825f8957e",
+      "bytes": 140970,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-39": {
+      "url": "/private/pjsk/assets/b6bfeb2edd1e37e6043d796e4bf6bd5dd7fa13101bfa6300277a355d73a15d5c.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_ashiato_2021/screen_image/banner_event_story.png",
+      "sha256": "b6bfeb2edd1e37e6043d796e4bf6bd5dd7fa13101bfa6300277a355d73a15d5c",
+      "bytes": 129216,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-40": {
+      "url": "/private/pjsk/assets/8adbc9a57ff32b3fac97e59474bf5957f9ca62348b674c4afa5956f22ae1fc02.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_stage_2021/screen_image/banner_event_story.png",
+      "sha256": "8adbc9a57ff32b3fac97e59474bf5957f9ca62348b674c4afa5956f22ae1fc02",
+      "bytes": 126217,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-41": {
+      "url": "/private/pjsk/assets/1a8a37278804bfdb5eda863b56f29ec1c47dbc12b91f33399bd7e409acb8f56d.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_buddy_2021/screen_image/banner_event_story.png",
+      "sha256": "1a8a37278804bfdb5eda863b56f29ec1c47dbc12b91f33399bd7e409acb8f56d",
+      "bytes": 138499,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-42": {
+      "url": "/private/pjsk/assets/ba85258ff8e7f130976e8b2a9d08af681df11e8c91ddead2b18a23bdac49e650.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_melody_2021/screen_image/banner_event_story.png",
+      "sha256": "ba85258ff8e7f130976e8b2a9d08af681df11e8c91ddead2b18a23bdac49e650",
+      "bytes": 136181,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-43": {
+      "url": "/private/pjsk/assets/d8423aa05f74ddc43b1e1640b5797c2d87350de7b22d57bd1cc68069a3a61b52.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_makingxmas_2021/screen_image/banner_event_story.png",
+      "sha256": "d8423aa05f74ddc43b1e1640b5797c2d87350de7b22d57bd1cc68069a3a61b52",
+      "bytes": 140389,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-44": {
+      "url": "/private/pjsk/assets/5769043543e9bfb447c42451060c299eab4010c0f667b85aed8c0268bf6d0675.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_camp_2021/screen_image/banner_event_story.png",
+      "sha256": "5769043543e9bfb447c42451060c299eab4010c0f667b85aed8c0268bf6d0675",
+      "bytes": 142128,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-45": {
+      "url": "/private/pjsk/assets/a5cdd6c891b0f6fb0d8e5f9f22ccad801a2ce0b541ca51e2e59c4f288eff0d2c.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_prayer_2022/screen_image/banner_event_story.png",
+      "sha256": "a5cdd6c891b0f6fb0d8e5f9f22ccad801a2ce0b541ca51e2e59c4f288eff0d2c",
+      "bytes": 130184,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-46": {
+      "url": "/private/pjsk/assets/84eb5bda4b181dbe64a58f5375b3eb31936c33757584285dfe8c245af1ea4d4e.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_nikkori_2022/screen_image/banner_event_story.png",
+      "sha256": "84eb5bda4b181dbe64a58f5375b3eb31936c33757584285dfe8c245af1ea4d4e",
+      "bytes": 133159,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-47": {
+      "url": "/private/pjsk/assets/bb9f3697e80141de8dd91ec11c5374e3e40be5f7f5cc70508c25c780fabe1385.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_tricolo_2022/screen_image/banner_event_story.png",
+      "sha256": "bb9f3697e80141de8dd91ec11c5374e3e40be5f7f5cc70508c25c780fabe1385",
+      "bytes": 139700,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-48": {
+      "url": "/private/pjsk/assets/926ba86b414d4278ef20ecaf5eee3713c55b00cda772e4fabf51e61612f902b8.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_valentine_2022/screen_image/banner_event_story.png",
+      "sha256": "926ba86b414d4278ef20ecaf5eee3713c55b00cda772e4fabf51e61612f902b8",
+      "bytes": 133060,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-49": {
+      "url": "/private/pjsk/assets/fda2dd42daee25c7f26ca458bfc71eaee353445b713503ed3cf9acae1d8cbfd2.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_legend_2022/screen_image/banner_event_story.png",
+      "sha256": "fda2dd42daee25c7f26ca458bfc71eaee353445b713503ed3cf9acae1d8cbfd2",
+      "bytes": 112705,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-50": {
+      "url": "/private/pjsk/assets/ac49f79a19b6aecc8aa62db7a1879ce3d61ec4d1ed813c7798fc9ebbea28b103.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_peaky_2022/screen_image/banner_event_story.png",
+      "sha256": "ac49f79a19b6aecc8aa62db7a1879ce3d61ec4d1ed813c7798fc9ebbea28b103",
+      "bytes": 125117,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-51": {
+      "url": "/private/pjsk/assets/ae11ab9492fa1674fbc0a5f4a2ea606a01adf61b138275f8a9cdd5c7ed78cda8.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_whiteday_2022/screen_image/banner_event_story.png",
+      "sha256": "ae11ab9492fa1674fbc0a5f4a2ea606a01adf61b138275f8a9cdd5c7ed78cda8",
+      "bytes": 127593,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-52": {
+      "url": "/private/pjsk/assets/50516de6de838cb2360c439caf5f9698b18fe374717aded99ed93c3fa4539f72.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_castspell_2022/screen_image/banner_event_story.png",
+      "sha256": "50516de6de838cb2360c439caf5f9698b18fe374717aded99ed93c3fa4539f72",
+      "bytes": 133371,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-53": {
+      "url": "/private/pjsk/assets/85cfda5c4c999c49e4e7ae39605865caec7f6198811bf8f9c4d4b96ba004d722.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_canvas_2022/screen_image/banner_event_story.png",
+      "sha256": "85cfda5c4c999c49e4e7ae39605865caec7f6198811bf8f9c4d4b96ba004d722",
+      "bytes": 152494,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-54": {
+      "url": "/private/pjsk/assets/ca1c182575fea2f11a204625489be5f85fe10160e0d95aa1ba3416514cd1da53.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_sakura_2022/screen_image/banner_event_story.png",
+      "sha256": "ca1c182575fea2f11a204625489be5f85fe10160e0d95aa1ba3416514cd1da53",
+      "bytes": 143116,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-55": {
+      "url": "/private/pjsk/assets/dcb6871817498d71f659d29fa3e400dba27b9e6952156ab3a6de4c74df95e32c.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_star_2022/screen_image/banner_event_story.png",
+      "sha256": "dcb6871817498d71f659d29fa3e400dba27b9e6952156ab3a6de4c74df95e32c",
+      "bytes": 146760,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-56": {
+      "url": "/private/pjsk/assets/e520df5d5c4bb049d14de607330536fa8e19eab6f2f5f48ea472c74ab76d0f24.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_memories_2022/screen_image/banner_event_story.png",
+      "sha256": "e520df5d5c4bb049d14de607330536fa8e19eab6f2f5f48ea472c74ab76d0f24",
+      "bytes": 161083,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-57": {
+      "url": "/private/pjsk/assets/d3109e1897327d17b605a150dcb016b28f0c6f02aa1da729bf4820741b449679.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_painful_2022/screen_image/banner_event_story.png",
+      "sha256": "d3109e1897327d17b605a150dcb016b28f0c6f02aa1da729bf4820741b449679",
+      "bytes": 139111,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-58": {
+      "url": "/private/pjsk/assets/3992114871cc7fed2fed0b5c3e49f02b674282a43ee327c7616dbf1b11ffc1ef.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_cheerteam_2022/screen_image/banner_event_story.png",
+      "sha256": "3992114871cc7fed2fed0b5c3e49f02b674282a43ee327c7616dbf1b11ffc1ef",
+      "bytes": 135742,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-59": {
+      "url": "/private/pjsk/assets/347aa23434d093258ccfb6f88d988c6c8e30436e40cf998c1fcba9a5df069b6f.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_unity_2022/screen_image/banner_event_story.png",
+      "sha256": "347aa23434d093258ccfb6f88d988c6c8e30436e40cf998c1fcba9a5df069b6f",
+      "bytes": 145491,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-60": {
+      "url": "/private/pjsk/assets/57fc2498e0bed8c6986756b29727d140fc8d6a727732de0d5e2d641823f3d04e.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_happiness_2022/screen_image/banner_event_story.png",
+      "sha256": "57fc2498e0bed8c6986756b29727d140fc8d6a727732de0d5e2d641823f3d04e",
+      "bytes": 132158,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-61": {
+      "url": "/private/pjsk/assets/3f336c7c77698a1e21bdea03d3e97150a2427db455a0500f2027f337b54c7fd0.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_maigo_2022/screen_image/banner_event_story.png",
+      "sha256": "3f336c7c77698a1e21bdea03d3e97150a2427db455a0500f2027f337b54c7fd0",
+      "bytes": 145145,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-62": {
+      "url": "/private/pjsk/assets/560c6fa2dd17c8be303cb199866e5e75d0e64a5c53308795d20b2715ac766662.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_island_2022/screen_image/banner_event_story.png",
+      "sha256": "560c6fa2dd17c8be303cb199866e5e75d0e64a5c53308795d20b2715ac766662",
+      "bytes": 153694,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-63": {
+      "url": "/private/pjsk/assets/81c7b15dd748a8bc3f3d840b117abd969696731bc234f8c9945158737b842e30.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_sports_2022/screen_image/banner_event_story.png",
+      "sha256": "81c7b15dd748a8bc3f3d840b117abd969696731bc234f8c9945158737b842e30",
+      "bytes": 147313,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-64": {
+      "url": "/private/pjsk/assets/4e8774c4a4cdf43c1a0252a738cee60ca9e568148e8868c8ed850c25b4941f7c.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_tale_2022/screen_image/banner_event_story.png",
+      "sha256": "4e8774c4a4cdf43c1a0252a738cee60ca9e568148e8868c8ed850c25b4941f7c",
+      "bytes": 120991,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-65": {
+      "url": "/private/pjsk/assets/99bd2fded1e1ddc2ebbae9aa5bdca33e1654f2effc6c0554b2a4585cb4776062.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_noseek_2022/screen_image/banner_event_story.png",
+      "sha256": "99bd2fded1e1ddc2ebbae9aa5bdca33e1654f2effc6c0554b2a4585cb4776062",
+      "bytes": 121699,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-66": {
+      "url": "/private/pjsk/assets/bad3693e2c8d7dad9e635d840cffe7802043d82c358cc0cfdff6afe5fd502adb.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_cyber_2022/screen_image/banner_event_story.png",
+      "sha256": "bad3693e2c8d7dad9e635d840cffe7802043d82c358cc0cfdff6afe5fd502adb",
+      "bytes": 146948,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-67": {
+      "url": "/private/pjsk/assets/b654b09afab4dfdfabc2cfc66edef270d36dc25ad35542276b94eda5f399cd3f.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_blue_2022/screen_image/banner_event_story.png",
+      "sha256": "b654b09afab4dfdfabc2cfc66edef270d36dc25ad35542276b94eda5f399cd3f",
+      "bytes": 143602,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-68": {
+      "url": "/private/pjsk/assets/9f6399088b874e8f1c87172bc14c96e47c2c361e5fcc0964c0617d14197dbe31.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_ribbon_2022/screen_image/banner_event_story.png",
+      "sha256": "9f6399088b874e8f1c87172bc14c96e47c2c361e5fcc0964c0617d14197dbe31",
+      "bytes": 136482,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-69": {
+      "url": "/private/pjsk/assets/74b74c1d3ae174d02447e110e3fc5172ad63716a57422276184a510896037d1f.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_faith_2022/screen_image/banner_event_story.png",
+      "sha256": "74b74c1d3ae174d02447e110e3fc5172ad63716a57422276184a510896037d1f",
+      "bytes": 156088,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-7": {
+      "url": "/private/pjsk/assets/1ce81b294dae0ba1aa245894d70f7fad6a539ad2ca3a1b0bb2d9d0904c547a15.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_culturalfestival_2020/screen_image/banner_event_story.png",
+      "sha256": "1ce81b294dae0ba1aa245894d70f7fad6a539ad2ca3a1b0bb2d9d0904c547a15",
+      "bytes": 137546,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-70": {
+      "url": "/private/pjsk/assets/9b12293d81be51b310b5bd151f8870fcf3e367961c09c87a8796fae03a8f997e.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_rainbow_2022/screen_image/banner_event_story.png",
+      "sha256": "9b12293d81be51b310b5bd151f8870fcf3e367961c09c87a8796fae03a8f997e",
+      "bytes": 143657,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-71": {
+      "url": "/private/pjsk/assets/be40ad20c04e7578c71bb1de45a287a7d4ecd691ee93943e133514fab797cd1c.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_walk_2022/screen_image/banner_event_story.png",
+      "sha256": "be40ad20c04e7578c71bb1de45a287a7d4ecd691ee93943e133514fab797cd1c",
+      "bytes": 139233,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-72": {
+      "url": "/private/pjsk/assets/98018d8c9be65fc60a3e5e0d1065771d0c29f065baf6f5a2d7b178dcaabbb36e.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_festival_2022/screen_image/banner_event_story.png",
+      "sha256": "98018d8c9be65fc60a3e5e0d1065771d0c29f065baf6f5a2d7b178dcaabbb36e",
+      "bytes": 157241,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-73": {
+      "url": "/private/pjsk/assets/3b11cdf21b197b7389ce88e4d342e30a6e39abbafb09d9cca97df12a814c4417.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_then_2022/screen_image/banner_event_story.png",
+      "sha256": "3b11cdf21b197b7389ce88e4d342e30a6e39abbafb09d9cca97df12a814c4417",
+      "bytes": 151048,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-74": {
+      "url": "/private/pjsk/assets/7816102c3816f271988365cfca252ecc5e3cc5c1d6cccc6ccd31231e5dd9a504.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_curtaincall_2022/screen_image/banner_event_story.png",
+      "sha256": "7816102c3816f271988365cfca252ecc5e3cc5c1d6cccc6ccd31231e5dd9a504",
+      "bytes": 133424,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-75": {
+      "url": "/private/pjsk/assets/e4550b0e5249f47984b21a1cc8bc5e4d939a71c319c8ed8cc6c921db9295ff35.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_scream_2022/screen_image/banner_event_story.png",
+      "sha256": "e4550b0e5249f47984b21a1cc8bc5e4d939a71c319c8ed8cc6c921db9295ff35",
+      "bytes": 149828,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-76": {
+      "url": "/private/pjsk/assets/64fafc00c6570ce61cd23a40c96941e562f4390fcb57f2bdb8430559d7069e8c.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_echo_2022/screen_image/banner_event_story.png",
+      "sha256": "64fafc00c6570ce61cd23a40c96941e562f4390fcb57f2bdb8430559d7069e8c",
+      "bytes": 134312,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-77": {
+      "url": "/private/pjsk/assets/deefa04d0e9cf9214ead17fad9f5d201f6088f4a8d82392827b0e9c487006644.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_wish_2022/screen_image/banner_event_story.png",
+      "sha256": "deefa04d0e9cf9214ead17fad9f5d201f6088f4a8d82392827b0e9c487006644",
+      "bytes": 140962,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-78": {
+      "url": "/private/pjsk/assets/64df2d4a24dbff510d878573e56728ea0a15d065246017b83484956e0a37616c.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_beyond_2022/screen_image/banner_event_story.png",
+      "sha256": "64df2d4a24dbff510d878573e56728ea0a15d065246017b83484956e0a37616c",
+      "bytes": 130305,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-79": {
+      "url": "/private/pjsk/assets/92dfdb17cfbe3f6501100ccae9aceff1a26f38744eb8aa8ea121699ab384092d.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_way_2022/screen_image/banner_event_story.png",
+      "sha256": "92dfdb17cfbe3f6501100ccae9aceff1a26f38744eb8aa8ea121699ab384092d",
+      "bytes": 133665,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-8": {
+      "url": "/private/pjsk/assets/4dc304272a982a2b8b8b92d42f917f9b46b5976ffe0657c508864cd61759bba8.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_nijiiro_2020/screen_image/banner_event_story.png",
+      "sha256": "4dc304272a982a2b8b8b92d42f917f9b46b5976ffe0657c508864cd61759bba8",
+      "bytes": 143186,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-80": {
+      "url": "/private/pjsk/assets/fe0e41a6cdda7a967078a83ab1f08fbeac0406fedae1ceb154f85f044544799c.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_kyudo_2022/screen_image/banner_event_story.png",
+      "sha256": "fe0e41a6cdda7a967078a83ab1f08fbeac0406fedae1ceb154f85f044544799c",
+      "bytes": 120938,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-81": {
+      "url": "/private/pjsk/assets/864fc4f76b6aa382476ffd0626e2ad09bb0518e93a1de6d18042b8b9ca0ff0af.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_liondance_2023/screen_image/banner_event_story.png",
+      "sha256": "864fc4f76b6aa382476ffd0626e2ad09bb0518e93a1de6d18042b8b9ca0ff0af",
+      "bytes": 141337,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-82": {
+      "url": "/private/pjsk/assets/b3584aa4baa628137164db7d24c08e3d97b85cfbdc30f2e9e12ab5c8195ce3c6.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_shining_2023/screen_image/banner_event_story.png",
+      "sha256": "b3584aa4baa628137164db7d24c08e3d97b85cfbdc30f2e9e12ab5c8195ce3c6",
+      "bytes": 132447,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-83": {
+      "url": "/private/pjsk/assets/ffe8eb2c79f4e0695911b72f97b96fd1e8f0ac078e661b81b94b2286b27faf50.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_bravers_2023/screen_image/banner_event_story.png",
+      "sha256": "ffe8eb2c79f4e0695911b72f97b96fd1e8f0ac078e661b81b94b2286b27faf50",
+      "bytes": 139542,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-84": {
+      "url": "/private/pjsk/assets/7bfd8cd229d8f0ce45fed7533439bc79460b662013644a04e709b38824cf5c8b.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_candle_2023/screen_image/banner_event_story.png",
+      "sha256": "7bfd8cd229d8f0ce45fed7533439bc79460b662013644a04e709b38824cf5c8b",
+      "bytes": 136180,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-85": {
+      "url": "/private/pjsk/assets/b7ec1d52b8602be740a9e9aa6f4f6b7f8f52dd1207e1964d2dd3ce73eaa2bfc5.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_thread_2023/screen_image/banner_event_story.png",
+      "sha256": "b7ec1d52b8602be740a9e9aa6f4f6b7f8f52dd1207e1964d2dd3ce73eaa2bfc5",
+      "bytes": 143865,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-86": {
+      "url": "/private/pjsk/assets/10e6e8e32dbd047794a4db1d8ca6782a67593ec4b66e81b47649096189d36f20.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_kick_2023/screen_image/banner_event_story.png",
+      "sha256": "10e6e8e32dbd047794a4db1d8ca6782a67593ec4b66e81b47649096189d36f20",
+      "bytes": 151078,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-87": {
+      "url": "/private/pjsk/assets/beed9ce86b0822770f74442859f2b661008d2c964f18d99290b02554c13efd0e.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_cooking_2023/screen_image/banner_event_story.png",
+      "sha256": "beed9ce86b0822770f74442859f2b661008d2c964f18d99290b02554c13efd0e",
+      "bytes": 134967,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-88": {
+      "url": "/private/pjsk/assets/711a9fdd36b8c5e6bf94265930b48098c95e50e26573b167e21df53cba583793.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_sky_2023/screen_image/banner_event_story.png",
+      "sha256": "711a9fdd36b8c5e6bf94265930b48098c95e50e26573b167e21df53cba583793",
+      "bytes": 136191,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-89": {
+      "url": "/private/pjsk/assets/7824ed91d603fdf115f2d6731c3cec175be1774e4db2f0a6e773fa8a667a2ba6.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_immiscible_2023/screen_image/banner_event_story.png",
+      "sha256": "7824ed91d603fdf115f2d6731c3cec175be1774e4db2f0a6e773fa8a667a2ba6",
+      "bytes": 140061,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-90": {
+      "url": "/private/pjsk/assets/f5aca90af1e15e395d72f030e18e8bd55142dc0bd3b01467f6da3bb59aaeff91.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_citycorner_2023/screen_image/banner_event_story.png",
+      "sha256": "f5aca90af1e15e395d72f030e18e8bd55142dc0bd3b01467f6da3bb59aaeff91",
+      "bytes": 139262,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-91": {
+      "url": "/private/pjsk/assets/a12e61a78da9336e4e6ae0f1a48872f8e3d586341c5e3bb7a50f8b774b359fea.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_getover_2023/screen_image/banner_event_story.png",
+      "sha256": "a12e61a78da9336e4e6ae0f1a48872f8e3d586341c5e3bb7a50f8b774b359fea",
+      "bytes": 151050,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-92": {
+      "url": "/private/pjsk/assets/12e7ee6760cf6b697cc13aced49cf97be1aadcea223c3cd5490c81f6d188e23b.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_retie_2023/screen_image/banner_event_story.png",
+      "sha256": "12e7ee6760cf6b697cc13aced49cf97be1aadcea223c3cd5490c81f6d188e23b",
+      "bytes": 147936,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-93": {
+      "url": "/private/pjsk/assets/8a46d7824780e998b08cddc1442dac9112658989d8b8b3aca42d18abc3dda145.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_runaway_2023/screen_image/banner_event_story.png",
+      "sha256": "8a46d7824780e998b08cddc1442dac9112658989d8b8b3aca42d18abc3dda145",
+      "bytes": 154526,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-94": {
+      "url": "/private/pjsk/assets/abf333214bb1f03f83cbfc554225e7a0800b12306a6d10f4645c62b5ace6ed3d.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_trip_2023/screen_image/banner_event_story.png",
+      "sha256": "abf333214bb1f03f83cbfc554225e7a0800b12306a6d10f4645c62b5ace6ed3d",
+      "bytes": 143582,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-95": {
+      "url": "/private/pjsk/assets/f04e192347d300f13caf79e523ec8f2a5c0d5af2f8279e567a1b42ff7cb38365.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_quagmire_2023/screen_image/banner_event_story.png",
+      "sha256": "f04e192347d300f13caf79e523ec8f2a5c0d5af2f8279e567a1b42ff7cb38365",
+      "bytes": 159020,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-96": {
+      "url": "/private/pjsk/assets/3ede94c32c2a6c349874fe6c80fcabb3c20eea1a2b9822791435fe2b675bec70.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_neighbor_2023/screen_image/banner_event_story.png",
+      "sha256": "3ede94c32c2a6c349874fe6c80fcabb3c20eea1a2b9822791435fe2b675bec70",
+      "bytes": 154213,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-97": {
+      "url": "/private/pjsk/assets/75f78a27b48de4de040fc9dfc1e7ccd0b89268f83ed8afcdcd1655c54fa7e9da.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_fire_2023/screen_image/banner_event_story.png",
+      "sha256": "75f78a27b48de4de040fc9dfc1e7ccd0b89268f83ed8afcdcd1655c54fa7e9da",
+      "bytes": 128870,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-98": {
+      "url": "/private/pjsk/assets/4f6bd636b44e931ba6536e2a3aa5a8f33f6a1ea6a7f419d30f4b69bca7806a11.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_step_2023/screen_image/banner_event_story.png",
+      "sha256": "4f6bd636b44e931ba6536e2a3aa5a8f33f6a1ea6a7f419d30f4b69bca7806a11",
+      "bytes": 139003,
+      "description": "Original event story banner with title and character art"
+    },
+    "pjsk:pjsk-cn-event-99": {
+      "url": "/private/pjsk/assets/cd842890f9a5b22e7940c4ec9f569a354c8c5431c474b10cb99d68ceafb5d65f.png",
+      "width": 488,
+      "height": 208,
+      "position": "center",
+      "source": "https://storage.sekai.best/sekai-cn-assets/event_story/event_pandemonium_2023/screen_image/banner_event_story.png",
+      "sha256": "cd842890f9a5b22e7940c4ec9f569a354c8c5431c474b10cb99d68ceafb5d65f",
+      "bytes": 144359,
+      "description": "Original event story banner with title and character art"
     }
   }
 }

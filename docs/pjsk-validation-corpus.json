@@ -1,0 +1,542 @@
+{
+  "schemaVersion": 1,
+  "milestone": "pjsk-real-work-events-v1",
+  "status": "installed",
+  "milestoneStatus": "validation-in-progress",
+  "decidedOn": "2026-10-16",
+  "textRegion": "cn",
+  "mediaRegion": "jp",
+  "metadataEvidence": {
+    "url": "https://raw.githubusercontent.com/Sekai-World/sekai-master-db-cn-diff/main/eventStories.json",
+    "sha256": "8015d31b9efe62a46b5206e5548e913f9d3b388ec8e740fad85e6fc404d6e9dc",
+    "bytes": 655266,
+    "catalogCommand": "node scripts/import-pjsk.mjs --region cn --kind event --list --offline",
+    "selectedOn": "2026-10-16"
+  },
+  "expectedEventCount": 9,
+  "expectedEpisodeCount": 75,
+  "events": [
+    {
+      "eventId": "1",
+      "bundle": "event_stella_2020",
+      "role": "development",
+      "expectedEpisodeCount": 8,
+      "episodes": [
+        {
+          "id": "pjsk-cn-event-1000001",
+          "episodeNo": 1,
+          "scenarioId": "event_01_01",
+          "path": "event_story/event_stella_2020/scenario/event_01_01.asset"
+        },
+        {
+          "id": "pjsk-cn-event-1000002",
+          "episodeNo": 2,
+          "scenarioId": "event_01_02",
+          "path": "event_story/event_stella_2020/scenario/event_01_02.asset"
+        },
+        {
+          "id": "pjsk-cn-event-1000003",
+          "episodeNo": 3,
+          "scenarioId": "event_01_03",
+          "path": "event_story/event_stella_2020/scenario/event_01_03.asset"
+        },
+        {
+          "id": "pjsk-cn-event-1000004",
+          "episodeNo": 4,
+          "scenarioId": "event_01_04",
+          "path": "event_story/event_stella_2020/scenario/event_01_04.asset"
+        },
+        {
+          "id": "pjsk-cn-event-1000005",
+          "episodeNo": 5,
+          "scenarioId": "event_01_05",
+          "path": "event_story/event_stella_2020/scenario/event_01_05.asset"
+        },
+        {
+          "id": "pjsk-cn-event-1000006",
+          "episodeNo": 6,
+          "scenarioId": "event_01_06",
+          "path": "event_story/event_stella_2020/scenario/event_01_06.asset"
+        },
+        {
+          "id": "pjsk-cn-event-1000007",
+          "episodeNo": 7,
+          "scenarioId": "event_01_07",
+          "path": "event_story/event_stella_2020/scenario/event_01_07.asset"
+        },
+        {
+          "id": "pjsk-cn-event-1000008",
+          "episodeNo": 8,
+          "scenarioId": "event_01_08",
+          "path": "event_story/event_stella_2020/scenario/event_01_08.asset"
+        }
+      ]
+    },
+    {
+      "eventId": "2",
+      "bundle": "event_jackpod_2020",
+      "role": "development",
+      "expectedEpisodeCount": 8,
+      "episodes": [
+        {
+          "id": "pjsk-cn-event-1000009",
+          "episodeNo": 1,
+          "scenarioId": "event_02_01",
+          "path": "event_story/event_jackpod_2020/scenario/event_02_01.asset"
+        },
+        {
+          "id": "pjsk-cn-event-1000010",
+          "episodeNo": 2,
+          "scenarioId": "event_02_02",
+          "path": "event_story/event_jackpod_2020/scenario/event_02_02.asset"
+        },
+        {
+          "id": "pjsk-cn-event-1000011",
+          "episodeNo": 3,
+          "scenarioId": "event_02_03",
+          "path": "event_story/event_jackpod_2020/scenario/event_02_03.asset"
+        },
+        {
+          "id": "pjsk-cn-event-1000012",
+          "episodeNo": 4,
+          "scenarioId": "event_02_04",
+          "path": "event_story/event_jackpod_2020/scenario/event_02_04.asset"
+        },
+        {
+          "id": "pjsk-cn-event-1000013",
+          "episodeNo": 5,
+          "scenarioId": "event_02_05",
+          "path": "event_story/event_jackpod_2020/scenario/event_02_05.asset"
+        },
+        {
+          "id": "pjsk-cn-event-1000014",
+          "episodeNo": 6,
+          "scenarioId": "event_02_06",
+          "path": "event_story/event_jackpod_2020/scenario/event_02_06.asset"
+        },
+        {
+          "id": "pjsk-cn-event-1000015",
+          "episodeNo": 7,
+          "scenarioId": "event_02_07",
+          "path": "event_story/event_jackpod_2020/scenario/event_02_07.asset"
+        },
+        {
+          "id": "pjsk-cn-event-1000016",
+          "episodeNo": 8,
+          "scenarioId": "event_02_08",
+          "path": "event_story/event_jackpod_2020/scenario/event_02_08.asset"
+        }
+      ]
+    },
+    {
+      "eventId": "3",
+      "bundle": "event_potato_2020",
+      "role": "development",
+      "expectedEpisodeCount": 8,
+      "episodes": [
+        {
+          "id": "pjsk-cn-event-1000017",
+          "episodeNo": 1,
+          "scenarioId": "event_03_01",
+          "path": "event_story/event_potato_2020/scenario/event_03_01.asset"
+        },
+        {
+          "id": "pjsk-cn-event-1000018",
+          "episodeNo": 2,
+          "scenarioId": "event_03_02",
+          "path": "event_story/event_potato_2020/scenario/event_03_02.asset"
+        },
+        {
+          "id": "pjsk-cn-event-1000019",
+          "episodeNo": 3,
+          "scenarioId": "event_03_03",
+          "path": "event_story/event_potato_2020/scenario/event_03_03.asset"
+        },
+        {
+          "id": "pjsk-cn-event-1000020",
+          "episodeNo": 4,
+          "scenarioId": "event_03_04",
+          "path": "event_story/event_potato_2020/scenario/event_03_04.asset"
+        },
+        {
+          "id": "pjsk-cn-event-1000021",
+          "episodeNo": 5,
+          "scenarioId": "event_03_05",
+          "path": "event_story/event_potato_2020/scenario/event_03_05.asset"
+        },
+        {
+          "id": "pjsk-cn-event-1000022",
+          "episodeNo": 6,
+          "scenarioId": "event_03_06",
+          "path": "event_story/event_potato_2020/scenario/event_03_06.asset"
+        },
+        {
+          "id": "pjsk-cn-event-1000023",
+          "episodeNo": 7,
+          "scenarioId": "event_03_07",
+          "path": "event_story/event_potato_2020/scenario/event_03_07.asset"
+        },
+        {
+          "id": "pjsk-cn-event-1000024",
+          "episodeNo": 8,
+          "scenarioId": "event_03_08",
+          "path": "event_story/event_potato_2020/scenario/event_03_08.asset"
+        }
+      ]
+    },
+    {
+      "eventId": "4",
+      "bundle": "event_sportsfestival_2020",
+      "role": "development",
+      "expectedEpisodeCount": 8,
+      "episodes": [
+        {
+          "id": "pjsk-cn-event-1000025",
+          "episodeNo": 1,
+          "scenarioId": "event_04_01",
+          "path": "event_story/event_sportsfestival_2020/scenario/event_04_01.asset"
+        },
+        {
+          "id": "pjsk-cn-event-1000026",
+          "episodeNo": 2,
+          "scenarioId": "event_04_02",
+          "path": "event_story/event_sportsfestival_2020/scenario/event_04_02.asset"
+        },
+        {
+          "id": "pjsk-cn-event-1000027",
+          "episodeNo": 3,
+          "scenarioId": "event_04_03",
+          "path": "event_story/event_sportsfestival_2020/scenario/event_04_03.asset"
+        },
+        {
+          "id": "pjsk-cn-event-1000028",
+          "episodeNo": 4,
+          "scenarioId": "event_04_04",
+          "path": "event_story/event_sportsfestival_2020/scenario/event_04_04.asset"
+        },
+        {
+          "id": "pjsk-cn-event-1000029",
+          "episodeNo": 5,
+          "scenarioId": "event_04_05",
+          "path": "event_story/event_sportsfestival_2020/scenario/event_04_05.asset"
+        },
+        {
+          "id": "pjsk-cn-event-1000030",
+          "episodeNo": 6,
+          "scenarioId": "event_04_06",
+          "path": "event_story/event_sportsfestival_2020/scenario/event_04_06.asset"
+        },
+        {
+          "id": "pjsk-cn-event-1000031",
+          "episodeNo": 7,
+          "scenarioId": "event_04_07",
+          "path": "event_story/event_sportsfestival_2020/scenario/event_04_07.asset"
+        },
+        {
+          "id": "pjsk-cn-event-1000032",
+          "episodeNo": 8,
+          "scenarioId": "event_04_08",
+          "path": "event_story/event_sportsfestival_2020/scenario/event_04_08.asset"
+        }
+      ]
+    },
+    {
+      "eventId": "5",
+      "bundle": "event_restart_2020",
+      "role": "development",
+      "expectedEpisodeCount": 8,
+      "episodes": [
+        {
+          "id": "pjsk-cn-event-1000033",
+          "episodeNo": 1,
+          "scenarioId": "event_05_01",
+          "path": "event_story/event_restart_2020/scenario/event_05_01.asset"
+        },
+        {
+          "id": "pjsk-cn-event-1000034",
+          "episodeNo": 2,
+          "scenarioId": "event_05_02",
+          "path": "event_story/event_restart_2020/scenario/event_05_02.asset"
+        },
+        {
+          "id": "pjsk-cn-event-1000035",
+          "episodeNo": 3,
+          "scenarioId": "event_05_03",
+          "path": "event_story/event_restart_2020/scenario/event_05_03.asset"
+        },
+        {
+          "id": "pjsk-cn-event-1000036",
+          "episodeNo": 4,
+          "scenarioId": "event_05_04",
+          "path": "event_story/event_restart_2020/scenario/event_05_04.asset"
+        },
+        {
+          "id": "pjsk-cn-event-1000037",
+          "episodeNo": 5,
+          "scenarioId": "event_05_05",
+          "path": "event_story/event_restart_2020/scenario/event_05_05.asset"
+        },
+        {
+          "id": "pjsk-cn-event-1000038",
+          "episodeNo": 6,
+          "scenarioId": "event_05_06",
+          "path": "event_story/event_restart_2020/scenario/event_05_06.asset"
+        },
+        {
+          "id": "pjsk-cn-event-1000039",
+          "episodeNo": 7,
+          "scenarioId": "event_05_07",
+          "path": "event_story/event_restart_2020/scenario/event_05_07.asset"
+        },
+        {
+          "id": "pjsk-cn-event-1000040",
+          "episodeNo": 8,
+          "scenarioId": "event_05_08",
+          "path": "event_story/event_restart_2020/scenario/event_05_08.asset"
+        }
+      ]
+    },
+    {
+      "eventId": "6",
+      "bundle": "event_forward_2020",
+      "role": "development",
+      "expectedEpisodeCount": 8,
+      "episodes": [
+        {
+          "id": "pjsk-cn-event-1000041",
+          "episodeNo": 1,
+          "scenarioId": "event_06_01",
+          "path": "event_story/event_forward_2020/scenario/event_06_01.asset"
+        },
+        {
+          "id": "pjsk-cn-event-1000042",
+          "episodeNo": 2,
+          "scenarioId": "event_06_02",
+          "path": "event_story/event_forward_2020/scenario/event_06_02.asset"
+        },
+        {
+          "id": "pjsk-cn-event-1000043",
+          "episodeNo": 3,
+          "scenarioId": "event_06_03",
+          "path": "event_story/event_forward_2020/scenario/event_06_03.asset"
+        },
+        {
+          "id": "pjsk-cn-event-1000044",
+          "episodeNo": 4,
+          "scenarioId": "event_06_04",
+          "path": "event_story/event_forward_2020/scenario/event_06_04.asset"
+        },
+        {
+          "id": "pjsk-cn-event-1000045",
+          "episodeNo": 5,
+          "scenarioId": "event_06_05",
+          "path": "event_story/event_forward_2020/scenario/event_06_05.asset"
+        },
+        {
+          "id": "pjsk-cn-event-1000046",
+          "episodeNo": 6,
+          "scenarioId": "event_06_06",
+          "path": "event_story/event_forward_2020/scenario/event_06_06.asset"
+        },
+        {
+          "id": "pjsk-cn-event-1000047",
+          "episodeNo": 7,
+          "scenarioId": "event_06_07",
+          "path": "event_story/event_forward_2020/scenario/event_06_07.asset"
+        },
+        {
+          "id": "pjsk-cn-event-1000048",
+          "episodeNo": 8,
+          "scenarioId": "event_06_08",
+          "path": "event_story/event_forward_2020/scenario/event_06_08.asset"
+        }
+      ]
+    },
+    {
+      "eventId": "9",
+      "bundle": "event_newyear_2020",
+      "role": "development",
+      "expectedEpisodeCount": 11,
+      "episodes": [
+        {
+          "id": "pjsk-cn-event-1000065",
+          "episodeNo": 1,
+          "scenarioId": "event_09_01",
+          "path": "event_story/event_newyear_2020/scenario/event_09_01.asset"
+        },
+        {
+          "id": "pjsk-cn-event-1000066",
+          "episodeNo": 2,
+          "scenarioId": "event_09_02",
+          "path": "event_story/event_newyear_2020/scenario/event_09_02.asset"
+        },
+        {
+          "id": "pjsk-cn-event-1000067",
+          "episodeNo": 3,
+          "scenarioId": "event_09_03",
+          "path": "event_story/event_newyear_2020/scenario/event_09_03.asset"
+        },
+        {
+          "id": "pjsk-cn-event-1000068",
+          "episodeNo": 4,
+          "scenarioId": "event_09_04",
+          "path": "event_story/event_newyear_2020/scenario/event_09_04.asset"
+        },
+        {
+          "id": "pjsk-cn-event-1000069",
+          "episodeNo": 5,
+          "scenarioId": "event_09_05",
+          "path": "event_story/event_newyear_2020/scenario/event_09_05.asset"
+        },
+        {
+          "id": "pjsk-cn-event-1000070",
+          "episodeNo": 6,
+          "scenarioId": "event_09_06",
+          "path": "event_story/event_newyear_2020/scenario/event_09_06.asset"
+        },
+        {
+          "id": "pjsk-cn-event-1000071",
+          "episodeNo": 7,
+          "scenarioId": "event_09_07",
+          "path": "event_story/event_newyear_2020/scenario/event_09_07.asset"
+        },
+        {
+          "id": "pjsk-cn-event-1000072",
+          "episodeNo": 8,
+          "scenarioId": "event_09_08",
+          "path": "event_story/event_newyear_2020/scenario/event_09_08.asset"
+        },
+        {
+          "id": "pjsk-cn-event-1000073",
+          "episodeNo": 9,
+          "scenarioId": "event_09_09",
+          "path": "event_story/event_newyear_2020/scenario/event_09_09.asset"
+        },
+        {
+          "id": "pjsk-cn-event-1000074",
+          "episodeNo": 10,
+          "scenarioId": "event_09_10",
+          "path": "event_story/event_newyear_2020/scenario/event_09_10.asset"
+        },
+        {
+          "id": "pjsk-cn-event-1000075",
+          "episodeNo": 11,
+          "scenarioId": "event_09_11",
+          "path": "event_story/event_newyear_2020/scenario/event_09_11.asset"
+        }
+      ]
+    },
+    {
+      "eventId": "100",
+      "bundle": "event_persona_2023",
+      "role": "holdout",
+      "expectedEpisodeCount": 8,
+      "episodes": [
+        {
+          "id": "pjsk-cn-event-1000801",
+          "episodeNo": 1,
+          "scenarioId": "event_100_01",
+          "path": "event_story/event_persona_2023/scenario/event_100_01.asset"
+        },
+        {
+          "id": "pjsk-cn-event-1000802",
+          "episodeNo": 2,
+          "scenarioId": "event_100_02",
+          "path": "event_story/event_persona_2023/scenario/event_100_02.asset"
+        },
+        {
+          "id": "pjsk-cn-event-1000803",
+          "episodeNo": 3,
+          "scenarioId": "event_100_03",
+          "path": "event_story/event_persona_2023/scenario/event_100_03.asset"
+        },
+        {
+          "id": "pjsk-cn-event-1000804",
+          "episodeNo": 4,
+          "scenarioId": "event_100_04",
+          "path": "event_story/event_persona_2023/scenario/event_100_04.asset"
+        },
+        {
+          "id": "pjsk-cn-event-1000805",
+          "episodeNo": 5,
+          "scenarioId": "event_100_05",
+          "path": "event_story/event_persona_2023/scenario/event_100_05.asset"
+        },
+        {
+          "id": "pjsk-cn-event-1000806",
+          "episodeNo": 6,
+          "scenarioId": "event_100_06",
+          "path": "event_story/event_persona_2023/scenario/event_100_06.asset"
+        },
+        {
+          "id": "pjsk-cn-event-1000807",
+          "episodeNo": 7,
+          "scenarioId": "event_100_07",
+          "path": "event_story/event_persona_2023/scenario/event_100_07.asset"
+        },
+        {
+          "id": "pjsk-cn-event-1000808",
+          "episodeNo": 8,
+          "scenarioId": "event_100_08",
+          "path": "event_story/event_persona_2023/scenario/event_100_08.asset"
+        }
+      ]
+    },
+    {
+      "eventId": "150",
+      "bundle": "event_scratch_2024",
+      "role": "holdout",
+      "expectedEpisodeCount": 8,
+      "episodes": [
+        {
+          "id": "pjsk-cn-event-1001219",
+          "episodeNo": 1,
+          "scenarioId": "event_150_01",
+          "path": "event_story/event_scratch_2024/scenario/event_150_01.asset"
+        },
+        {
+          "id": "pjsk-cn-event-1001220",
+          "episodeNo": 2,
+          "scenarioId": "event_150_02",
+          "path": "event_story/event_scratch_2024/scenario/event_150_02.asset"
+        },
+        {
+          "id": "pjsk-cn-event-1001221",
+          "episodeNo": 3,
+          "scenarioId": "event_150_03",
+          "path": "event_story/event_scratch_2024/scenario/event_150_03.asset"
+        },
+        {
+          "id": "pjsk-cn-event-1001222",
+          "episodeNo": 4,
+          "scenarioId": "event_150_04",
+          "path": "event_story/event_scratch_2024/scenario/event_150_04.asset"
+        },
+        {
+          "id": "pjsk-cn-event-1001223",
+          "episodeNo": 5,
+          "scenarioId": "event_150_05",
+          "path": "event_story/event_scratch_2024/scenario/event_150_05.asset"
+        },
+        {
+          "id": "pjsk-cn-event-1001224",
+          "episodeNo": 6,
+          "scenarioId": "event_150_06",
+          "path": "event_story/event_scratch_2024/scenario/event_150_06.asset"
+        },
+        {
+          "id": "pjsk-cn-event-1001225",
+          "episodeNo": 7,
+          "scenarioId": "event_150_07",
+          "path": "event_story/event_scratch_2024/scenario/event_150_07.asset"
+        },
+        {
+          "id": "pjsk-cn-event-1001226",
+          "episodeNo": 8,
+          "scenarioId": "event_150_08",
+          "path": "event_story/event_scratch_2024/scenario/event_150_08.asset"
+        }
+      ]
+    }
+  ]
+}

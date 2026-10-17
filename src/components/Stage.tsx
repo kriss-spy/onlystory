@@ -37,6 +37,7 @@ export function Stage({
   onVideoEnd,
   onVideoTime,
   skipVideo,
+  embedded = false,
 }: {
   node: StoryNode;
   fixture: Fixture;
@@ -46,6 +47,7 @@ export function Stage({
   onVideoEnd: () => void;
   onVideoTime: (time: number) => void;
   skipVideo: () => void;
+  embedded?: boolean;
 }) {
   const {
     data: { preferences },
@@ -115,7 +117,7 @@ export function Stage({
   return (
     <div
       className={`stage effect-${node.scene.effect ?? 'none'}`}
-      data-testid="scene-stage"
+      data-testid={embedded ? undefined : 'scene-stage'}
     >
       {src ? (
         <img
@@ -228,6 +230,12 @@ export function Stage({
       ) : null}
       {node.kind === 'video' ? (
         <div className="movie-container">
+          {node.performance && !movieFailed ? (
+            <div className="song-performance" role="note">
+              <h2>{node.performance.title}</h2>
+              <p>{node.performance.notice}</p>
+            </div>
+          ) : null}
           {movieFailed ? (
             <div className="movie-error">
               <AlertTriangle />
@@ -251,7 +259,11 @@ export function Stage({
             playsInline
             preload="metadata"
             aria-label={
-              node.source ? 'Story movie' : 'Sample archive recording'
+              node.performance
+                ? 'Song performance'
+                : node.source
+                  ? 'Story movie'
+                  : 'Sample archive recording'
             }
             onLoadedMetadata={() => {
               const player = video.current;
@@ -296,9 +308,16 @@ export function Stage({
           </video>
           <div className="movie-actions">
             <span>
-              {node.source ? 'Story movie' : 'Sample recording · 6 seconds'}
+              {node.performance
+                ? 'Song performance · original audio'
+                : node.source
+                  ? 'Story movie'
+                  : 'Sample recording · 6 seconds'}
             </span>
-            <IconButton label="Skip this movie" onClick={skipVideo}>
+            <IconButton
+              label={node.performance ? 'Continue story' : 'Skip this movie'}
+              onClick={skipVideo}
+            >
               <SkipForward size={18} />
             </IconButton>
           </div>

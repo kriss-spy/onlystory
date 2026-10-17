@@ -13,6 +13,7 @@ import { EmptyState } from '../components/Primitives';
 import { PageTitle } from '../components/Shell';
 import { StorySections } from '../components/StorySections';
 import { eventArtwork } from '../covers';
+import { PjskGroupMark } from '../components/PjskGroupMark';
 
 const scrollPositions = new Map<string, number>();
 export function EventPage() {
@@ -67,7 +68,10 @@ export function EventPage() {
           title={event.title}
           back={from}
         >
-          <p>
+          <p className="event-summary">
+            {event.game === 'pjsk' ? (
+              <PjskGroupMark group={event.stories[0]?.group} />
+            ) : null}
             {event.stories.length} stories
             {event.branches.length
               ? ` · ${event.main.length} main · ${event.stories.length - event.main.length} side`
@@ -77,7 +81,7 @@ export function EventPage() {
         </PageTitle>
         {cover ? (
           <img
-            className="event-heading-cover"
+            className={`event-heading-cover${event.game === 'pjsk' ? ' pjsk-event-cover' : ''}`}
             src={cover.url}
             alt=""
             width={cover.width}

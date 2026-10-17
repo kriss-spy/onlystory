@@ -9,6 +9,7 @@ import {
 } from 'react';
 import type { Dispatch, ReactNode, SetStateAction } from 'react';
 import { emptyData, mergeData, parseData } from './model';
+import { loadEpisode } from './content';
 import type {
   AppData,
   Bookmark,
@@ -205,7 +206,8 @@ export function AppProvider({ children }: { children: ReactNode }) {
     [],
   );
   const download = useCallback(
-    (episode: Episode) => {
+    (catalogEpisode: Episode) => {
+      let episode = catalogEpisode;
       if (controllers.has(episode.id)) return;
       const controller = new AbortController();
       const voice = latestData.current.preferences.voice;
@@ -229,6 +231,12 @@ export function AppProvider({ children }: { children: ReactNode }) {
               'Downloads need a secure browser context. Use localhost or HTTPS.',
             );
           const cache = await caches.open(CACHE_NAME);
+          if (episode.content?.format === 'pjsk-text-v1')
+            episode = await loadEpisode(episode);
+          if (episode.renderer?.id === 'pjsk') {
+            const { preloadScene } = await import('./playback/pjsk/PjskScene');
+            await preloadScene();
+          }
           if (episode.content?.sceneUrl) {
             const { preloadScene } =
               await import('./playback/gfl2/Gfl2EventScene');

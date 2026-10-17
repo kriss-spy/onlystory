@@ -1,0 +1,108 @@
+{
+  "backgrounds": {
+    "bg_mv_01band_20_ep7": {
+      "sourceUrl": "https://storage.sekai.best/sekai-jp-assets/scenario/movie/bg_mv_01band_20_ep7/bg_mv_01band_20_ep7_t04.mp4",
+      "sha256": "72ac241278d9576da0a20dd2b7b8909c69d232421536378848d7f8f0c99f0d6f",
+      "bytes": 3047847,
+      "loop": true,
+      "muted": true,
+      "nativeMetadata": [
+        {
+          "url": "https://storage.sekai.best/sekai-jp-assets/?list-type=2&prefix=scenario%2Fbackground%2Fbg_mv_01band_20_ep7%2F",
+          "sha256": "1edfb68141d7c73d3b44bfbb6398aa3bb4ec62ae41d01df37c58a0e85bda23d7",
+          "bytes": 790
+        },
+        {
+          "url": "https://storage.sekai.best/sekai-jp-assets/scenario/background/bg_mv_01band_20_ep7/bg_mv_01band_20_ep7.prefab",
+          "sha256": "ea890dee84c529ac8304034b7331efbcc820345c250cae415988edf9b643ce6b",
+          "bytes": 323
+        },
+        {
+          "url": "https://storage.sekai.best/sekai-jp-assets/scenario/background/bg_mv_01band_20_ep7/scenariobgdata.asset",
+          "sha256": "d8cea630a5499a4dfb8215da2d2654b70a84eb75c305d12aff5e147747068588",
+          "bytes": 381
+        },
+        {
+          "url": "https://storage.sekai.best/sekai-jp-assets/?list-type=2&prefix=scenario%2Fmovie%2Fbg_mv_01band_20_ep7%2F",
+          "sha256": "d078bbd59e31cffbdc7235864a931834fb909532ffe49cd90cb2a40fec6a2160",
+          "bytes": 786
+        },
+        {
+          "url": "https://storage.sekai.best/sekai-jp-assets/scenario/movie/bg_mv_01band_20_ep7/moviebundlebuilddata.asset",
+          "sha256": "58cdf0d3470d32ea40bd590ee8c5e672a850354a224674649af676db30fe33f6",
+          "bytes": 615
+        }
+      ],
+      "nativeCommand": {
+        "scenario": "event_162_07",
+        "index": 370,
+        "effectType": 7
+      },
+      "policy": "Browser approximation: loop and mute are playback policy because native component flags are unavailable in the extracted prefab. Original video contains non-silent AAC audio; source BGM and SE commands remain authoritative in this reader. Browser presentation places the video above the unchanged native curtain and actors because these clips occur under persistent WhiteOut; native Unity sorting metadata is unavailable.",
+      "audioHandlers": [
+        {
+          "handler": "soun",
+          "codec": "aac",
+          "duration": 3.69,
+          "meanVolumeDb": -21,
+          "maxVolumeDb": -0.1
+        }
+      ],
+      "video": {
+        "codec": "h264",
+        "width": 2048,
+        "height": 1264,
+        "duration": 3.7
+      },
+      "presentation": "overlay"
+    },
+    "bg_link2_leoneed_ed5": {
+      "sourceUrl": "https://storage.sekai.best/sekai-jp-assets/scenario/movie/bg_link2_leoneed_ed5/link2_leoneed_ed5.mp4",
+      "sha256": "c5b024a02900a881521c01f153a62cc017f8192196b9ec3ecd8fbcf0a2be16d4",
+      "bytes": 3023475,
+      "loop": true,
+      "muted": true,
+      "nativeMetadata": [
+        {
+          "url": "https://storage.sekai.best/sekai-jp-assets/?list-type=2&prefix=scenario%2Fbackground%2Fbg_link2_leoneed_ed5%2F",
+          "sha256": "aa27be566e599695759cfec0eba347269d1a03a1b541a5650a9014a045196895",
+          "bytes": 794
+        },
+        {
+          "url": "https://storage.sekai.best/sekai-jp-assets/scenario/background/bg_link2_leoneed_ed5/bg_link2_leoneed_ed5.prefab",
+          "sha256": "1f90696718c4a49289e6f8cbb6b82b62d4a0d254d6b2a3c10c4e804a1b128b79",
+          "bytes": 323
+        },
+        {
+          "url": "https://storage.sekai.best/sekai-jp-assets/scenario/background/bg_link2_leoneed_ed5/scenariobgdata.asset",
+          "sha256": "370f342b0a15cf9971f90dd54a9620c73fe98d1c622ca631ff2e0be4b2027eea",
+          "bytes": 380
+        },
+        {
+          "url": "https://storage.sekai.best/sekai-jp-assets/?list-type=2&prefix=scenario%2Fmovie%2Fbg_link2_leoneed_ed5%2F",
+          "sha256": "fbbd2c1cffdb4146332e8145c671292f15aa5884f1d25cecfeed7b763e5153c2",
+          "bytes": 783
+        },
+        {
+          "url": "https://storage.sekai.best/sekai-jp-assets/scenario/movie/bg_link2_leoneed_ed5/moviebundlebuilddata.asset",
+          "sha256": "3f5f2b98d58f9bdfe4632187d0f46e85c5e9933c95a97240d7fb9a90731d4c31",
+          "bytes": 591
+        }
+      ],
+      "nativeCommand": {
+        "scenario": "wl_band_02_10",
+        "index": 876,
+        "effectType": 7
+      },
+      "policy": "Browser approximation: loop and mute are playback policy because native component flags are unavailable in the extracted prefab. Original extracted MP4 has no audio stream; source BGM and SE commands remain authoritative in this reader. Browser presentation places the video above the unchanged native curtain and actors because these clips occur under persistent WhiteOut; native Unity sorting metadata is unavailable.",
+      "audioHandlers": [],
+      "video": {
+        "codec": "h264",
+        "width": 2048,
+        "height": 1264,
+        "duration": 3.7
+      },
+      "presentation": "overlay"
+    }
+  }
+}

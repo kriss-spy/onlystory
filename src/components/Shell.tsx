@@ -101,7 +101,9 @@ export function Shell({ children }: { children: ReactNode }) {
           : undefined);
       if (command) {
         event.preventDefault();
-        readerCommand(command);
+        readerCommand(
+          command === 'next' && event.repeat ? 'next-repeat' : command,
+        );
       }
     };
     window.addEventListener('keydown', key);

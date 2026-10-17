@@ -91,6 +91,12 @@ The directory layout in this example is `E:\OnlystoryLibrary\private\shared\inde
 
 Use the supplied host rather than an arbitrary static server: it supplies SPA deep-link fallback, old-media URL aliases, media byte ranges, and real 404 responses for missing assets. It binds to `127.0.0.1`; it is suitable for reading locally on the destination machine. Remote browser access requires a separately configured reverse proxy or tunnel. Authentication and a public hosting configuration are not implemented here. Use HTTPS for browser storage features when accessed remotely.
 
+## Include the PJSK episode
+
+PJSK media use a supplementary library rather than `public/private`. Copy `.cache/pjsk/library`, or set `ONLYSTORY_PJSK_LIBRARY` to its relocated directory containing `private`. For a source rebuild, also retain `src/generated/pjsk-cn-unit-30001.json`. The production host and Vite hosts serve both media roots. PJSK media are excluded from `dist` just like the main GFL2 library.
+
+To regenerate the episode, keep `.cache/pjsk/http` and `.cache/pjsk/packages` as well, then run `npm run import:pjsk -- --scenario mmj_01_01 --install --offline`. With network access, the same command without `--offline` can acquire its sources and assets. See [PJSK pipeline notes](pjsk-pipeline.md) for the explicit CN-text/JP-media pairing and supported episode.
+
 ## Move reading progress separately
 
 Export reading data from the current app and import it on the destination. Browser localStorage and CacheStorage are outside the project archive. Progress is specific to browser profile and origin, including the port. A JSON progress backup contains saves and preferences, not downloaded media. The restored media library remains available through the local host. Reopening the entire app offline still requires an offline application shell that has not been implemented.

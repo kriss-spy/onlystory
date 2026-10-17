@@ -65,6 +65,17 @@ if (root !== source) {
 }
 
 const configPath = resolve(root, '.codex/worktree.local.json');
+const previousConfig = existsSync(configPath)
+  ? JSON.parse(readFileSync(configPath, 'utf8'))
+  : {};
+const localPjskLibrary = resolve(root, '.cache/pjsk/library');
+const pjskLibraryRoot = resolve(
+  process.env.ONLYSTORY_PJSK_LIBRARY ||
+    previousConfig.pjskLibraryRoot ||
+    (existsSync(localPjskLibrary)
+      ? localPjskLibrary
+      : resolve(source, '.cache/pjsk/library')),
+);
 let port = root === source ? 4173 : undefined;
 if (existsSync(configPath))
   port = JSON.parse(readFileSync(configPath, 'utf8')).port;
@@ -91,7 +102,8 @@ if (!port) {
 mkdirSync(dirname(configPath), { recursive: true });
 writeFileSync(
   configPath,
-  JSON.stringify({ source, libraryRoot, port }, null, 2) + '\n',
+  JSON.stringify({ source, libraryRoot, pjskLibraryRoot, port }, null, 2) +
+    '\n',
 );
 
 console.log(`Shared media: ${libraryRoot}`);

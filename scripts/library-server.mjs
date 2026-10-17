@@ -2,7 +2,12 @@ import { createReadStream, existsSync, readFileSync, statSync } from 'node:fs';
 import { createServer } from 'node:http';
 import { resolve, extname, relative, isAbsolute } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { libraryRoot, localPort } from './local-environment.mjs';
+import { createPjskDeferred } from './pjsk-deferred.mjs';
+import {
+  libraryRoot,
+  localPort,
+  pjskLibraryRoot,
+} from './local-environment.mjs';
 const types = {
   '.json': 'application/json',
   '.mp4': 'video/mp4',
@@ -17,18 +22,34 @@ const types = {
   '.html': 'text/html',
   '.svg': 'image/svg+xml',
   '.wav': 'audio/wav',
+  '.mp3': 'audio/mpeg',
 };
 
-export function libraryMiddleware(publicRoot, frontendRoot) {
+export function libraryMiddleware(
+  publicRoot,
+  frontendRoot,
+  additionalRoots = [],
+  { deferredFetcher } = {},
+) {
   let indexTime = -1,
     aliases = {};
-  return (
+  const deferredCaches = [...new Set([...additionalRoots, publicRoot])].map(
+    (libraryDir) => ({
+      libraryDir,
+      cache: createPjskDeferred({
+        libraryDir,
+        ...(deferredFetcher ? { fetcher: deferredFetcher } : {}),
+      }),
+    }),
+  );
+  const serve = (
     req,
     res,
     next = () => {
       res.statusCode = 404;
       res.end('Not found');
     },
+    privateRootOverride,
   ) => {
     if (!['GET', 'HEAD'].includes(req.method)) return next();
     let pathname;
@@ -52,7 +73,14 @@ export function libraryMiddleware(publicRoot, frontendRoot) {
       }
       pathname = aliases[pathname] ?? pathname;
     } else if (!frontendRoot) return next();
-    const base = pathname.startsWith('/private/') ? publicRoot : frontendRoot;
+    const privateRoot = pathname.startsWith('/private/')
+      ? (privateRootOverride ??
+        additionalRoots.find((root) =>
+          existsSync(resolve(root, '.' + pathname)),
+        ) ??
+        publicRoot)
+      : null;
+    const base = privateRoot ?? frontendRoot;
     let file = resolve(base, '.' + pathname);
     const rel = relative(base, file);
     if (isAbsolute(rel) || rel.startsWith('..')) {
@@ -116,6 +144,55 @@ export function libraryMiddleware(publicRoot, frontendRoot) {
     res.on('close', () => stream.destroy());
     stream.pipe(res);
   };
+  return (req, res, next) => {
+    let pathname;
+    try {
+      pathname = decodeURIComponent(
+        new URL(req.url, 'http://localhost').pathname,
+      );
+    } catch {
+      res.statusCode = 400;
+      res.end();
+      return;
+    }
+    if (
+      !pathname.startsWith('/private/pjsk/remote/') ||
+      !['GET', 'HEAD'].includes(req.method)
+    )
+      return serve(req, res, next);
+    const controller = new AbortController();
+    const cleanup = () => {
+      req.removeListener('aborted', abandoned);
+      res.removeListener('close', closed);
+      res.removeListener('finish', cleanup);
+    };
+    const abandoned = () => {
+      controller.abort(
+        new DOMException('Audio client disconnected', 'AbortError'),
+      );
+      cleanup();
+    };
+    const closed = () => {
+      if (!res.writableFinished) abandoned();
+      else cleanup();
+    };
+    req.once('aborted', abandoned);
+    res.once('close', closed);
+    res.once('finish', cleanup);
+    void (async () => {
+      for (const { cache, libraryDir } of deferredCaches) {
+        if (await cache.ensure(pathname, { signal: controller.signal }))
+          return serve(req, res, next, libraryDir);
+      }
+      res.statusCode = 404;
+      res.end('Not found');
+    })().catch((error) => {
+      if (res.destroyed || controller.signal.aborted) return;
+      res.statusCode = error.status ?? 503;
+      res.setHeader('Content-Type', 'text/plain');
+      res.end('Audio is unavailable');
+    });
+  };
 }
 if (
   process.argv[1] &&
@@ -124,9 +201,9 @@ if (
   const root = resolve(fileURLToPath(new URL('..', import.meta.url)));
   const publicRoot = libraryRoot;
   const port = localPort;
-  createServer(libraryMiddleware(publicRoot, resolve(root, 'dist'))).listen(
-    port,
-    '127.0.0.1',
-    () => console.log(`Onlystory: http://127.0.0.1:${port}`),
+  createServer(
+    libraryMiddleware(publicRoot, resolve(root, 'dist'), [pjskLibraryRoot]),
+  ).listen(port, '127.0.0.1', () =>
+    console.log(`Onlystory: http://127.0.0.1:${port}`),
   );
 }

@@ -233,6 +233,51 @@ function Reader({
   const [audioBlocked, setAudioBlocked] = useState(false);
   const [voiceError, setVoiceError] = useState(false);
   const audio = useRef<HTMLAudioElement>(null);
+  const voiceAnalysis = useRef<{
+    context: AudioContext;
+    analyser: AnalyserNode;
+    samples: Float32Array<ArrayBuffer>;
+  } | null>(null);
+  const [readySceneKey, setReadySceneKey] = useState<string | null>(null);
+  const [loadedSceneEpisode, setLoadedSceneEpisode] = useState<string | null>(
+    null,
+  );
+  const voiceLevel = useCallback(() => {
+    const analysis = voiceAnalysis.current;
+    if (!analysis || !audio.current || audio.current.paused) return 0;
+    analysis.analyser.getFloatTimeDomainData(analysis.samples);
+    return Math.sqrt(
+      analysis.samples.reduce((sum, value) => sum + value * value, 0) /
+        analysis.samples.length,
+    );
+  }, []);
+  useEffect(() => {
+    if (episode.renderer?.id !== 'pjsk' || !audio.current) return;
+    const context = new AudioContext();
+    const source = context.createMediaElementSource(audio.current);
+    const analyser = context.createAnalyser();
+    analyser.fftSize = 256;
+    source.connect(analyser);
+    analyser.connect(context.destination);
+    voiceAnalysis.current = {
+      context,
+      analyser,
+      samples: new Float32Array(analyser.fftSize),
+    };
+    const resume = () => {
+      void context.resume();
+    };
+    window.addEventListener('pointerdown', resume);
+    window.addEventListener('keydown', resume);
+    return () => {
+      window.removeEventListener('pointerdown', resume);
+      window.removeEventListener('keydown', resume);
+      source.disconnect();
+      analyser.disconnect();
+      voiceAnalysis.current = null;
+      void context.close();
+    };
+  }, [episode.id]);
   const music = useRef<HTMLAudioElement>(null);
   const choice = useRef<HTMLButtonElement>(null);
   const sceneRegion = useRef<HTMLElement>(null);
@@ -244,6 +289,16 @@ function Reader({
     selected: boolean;
   } | null>(null);
   const node = nodeOf(episode, save);
+  const sceneKey = `${node.id}:${sceneRevision}`;
+  const sceneReady =
+    episode.renderer?.id !== 'pjsk' || readySceneKey === sceneKey;
+  const setSceneReady = useCallback(
+    (ready: boolean) => {
+      setReadySceneKey(ready ? sceneKey : null);
+      if (ready) setLoadedSceneEpisode(episode.id);
+    },
+    [sceneKey, episode.id],
+  );
   const answers = save.frames.at(-1)!.answers;
   const seekFrames = useMemo(
     () => readingPath(episode, answers),
@@ -401,7 +456,15 @@ function Reader({
     const player = audio.current;
     setVoiceError(false);
     setVoiceDone(!activeVoice);
-    if (!player || !voiceUrl || blocked || panel || ui.active) return;
+    if (
+      !player ||
+      !voiceUrl ||
+      blocked ||
+      panel ||
+      ui.active ||
+      (!textOnly && !sceneReady)
+    )
+      return;
     setVoiceDone(false);
     player.volume = p.voiceVolume;
     void player.play().catch((error) => {
@@ -411,7 +474,7 @@ function Reader({
       }
     });
     return () => player.pause();
-  }, [voiceUrl, node.id, blocked]);
+  }, [voiceUrl, node.id, blocked, sceneReady, textOnly]);
   useEffect(() => {
     if (audio.current) audio.current.volume = p.voiceVolume;
     if (music.current) music.current.volume = p.musicVolume;
@@ -448,13 +511,27 @@ function Reader({
     [setSkipping],
   );
   const next = useCallback(
-    (answer?: string, skipMovie = false) => {
-      if (blocked || unsupported) return;
+    (answer?: string, skipMovie = false, repeated = false) => {
+      const rapid =
+        repeated && episode.renderer?.id === 'pjsk' && node.kind === 'text';
+      // Once assets are loaded, manual input can interrupt native scene waits.
+      // Restore the destination snapshot to cancel delayed commands safely.
+      const interrupt =
+        episode.renderer?.id === 'pjsk' &&
+        node.kind === 'text' &&
+        loadedSceneEpisode === episode.id &&
+        !sceneReady;
+      if (
+        blocked ||
+        unsupported ||
+        (!textOnly && !sceneReady && !rapid && !interrupt)
+      )
+        return;
       if (hidden) {
         setHidden(false);
         return;
       }
-      if (!complete) {
+      if (!complete && !rapid) {
         setRevealed(chars.length);
         return;
       }
@@ -471,10 +548,14 @@ function Reader({
       }
       if (node.kind === 'video' && !videoDone && !skipMovie) return;
       const result = advance(episode, latest.current, answer);
-      if (result !== latest.current) commit(result, 'advance');
+      if (result !== latest.current)
+        commit(result, rapid || interrupt ? 'seek' : 'advance');
     },
     [
       blocked,
+      sceneReady,
+      loadedSceneEpisode,
+      textOnly,
       unsupported,
       node,
       hidden,
@@ -492,6 +573,7 @@ function Reader({
   useEffect(() => {
     if (
       !auto ||
+      (!textOnly && !sceneReady) ||
       panel ||
       ui.active ||
       hidden ||
@@ -506,6 +588,8 @@ function Reader({
     return () => clearTimeout(timer);
   }, [
     auto,
+    sceneReady,
+    textOnly,
     panel,
     ui.active,
     hidden,
@@ -577,6 +661,7 @@ function Reader({
         return;
       }
       if (command === 'next') next();
+      else if (command === 'next-repeat') next(undefined, false, true);
       else if (command === 'previous') previous();
       else if (command === 'auto') {
         if (node.kind === 'text' && !blocked && !unsupported) {
@@ -906,6 +991,8 @@ function Reader({
         >
           <SceneHost
             episode={episode}
+            onReadyChange={setSceneReady}
+            voiceLevel={voiceLevel}
             fastForward={skipping}
             seekVersion={sceneRevision}
             path={save.frames.map((frame) => frame.node)}
@@ -1137,6 +1224,7 @@ function Reader({
               label="Enable audio"
               onClick={() => {
                 setAudioBlocked(false);
+                setVoiceDone(!activeVoice);
                 void music.current?.play();
                 void audio.current?.play();
               }}
@@ -1314,12 +1402,15 @@ function Reader({
         ) : panel === 'information' ? (
           <div className="story-information">
             <h3>
-              {episode.renderer?.id === 'gfl2-event' && !textOnly
+              {['gfl2-event', 'pjsk'].includes(episode.renderer?.id ?? '') &&
+              !textOnly
                 ? 'Original scene playback'
                 : 'Original text reading'}
             </h3>
             <p>
-              {episode.renderer?.id === 'gfl2-event' && !textOnly ? (
+              {episode.renderer?.id === 'pjsk' && !textOnly ? (
+                'This episode plays original Chinese text with Japanese voices, Live2D characters, motions, facial animation, backgrounds, music and sound effects. Browser transitions and timing approximate the original game.'
+              ) : episode.renderer?.id === 'gfl2-event' && !textOnly ? (
                 'This chapter plays recovered backgrounds, Live2D models, expressions, holograms and music in original script order. Movies support Chinese and Japanese audio. Regular dialogue has no voice track. Some Unity effects and browser rendering remain approximate.'
               ) : (
                 <>

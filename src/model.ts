@@ -36,6 +36,7 @@ export interface StoryNode {
   }[];
   voice?: string;
   video?: string;
+  performance?: { title: string; notice: string };
   femaleVideo?: {
     url: string;
     voices?: StoryNode['videoVoices'];
@@ -81,6 +82,7 @@ export interface Episode {
   readingMode?: 'text';
   preview?: boolean;
   collectionId?: string;
+  group?: string;
   collectionNotice?: string;
   chapter?: { id: string; title: string; order: number };
   placement?: {
@@ -95,7 +97,7 @@ export interface Episode {
   content?: {
     url: string;
     count: number;
-    format: 'gfl2-text-v1';
+    format: 'gfl2-text-v1' | 'pjsk-text-v1';
     sceneUrl?: string;
   };
 }

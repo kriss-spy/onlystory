@@ -17,6 +17,46 @@ export async function cachedResponse(url: string, signal?: AbortSignal) {
 }
 
 let core: Promise<void> | undefined;
+let preparedCore: Promise<void> | undefined;
+
+function prepareCubismCore() {
+  if (!preparedCore) {
+    preparedCore = (async () => {
+      const deadline = performance.now() + 5000;
+      for (;;) {
+        try {
+          const runtime = (
+            window as unknown as Window & {
+              Live2DCubismCore: {
+                Memory: { initializeAmountOfMemory: (bytes: number) => void };
+              };
+            }
+          ).Live2DCubismCore;
+          // Core's asm.js heap growth leaves existing model parameter/vertex
+          // views pointing at the old buffer, freezing models loaded earlier.
+          // Reserve before creating any model. This 64 MiB request produces a
+          // 128 MiB heap, enough for the complete 13-model validation episode.
+          runtime.Memory.initializeAmountOfMemory(64 * 1024 * 1024);
+          return;
+        } catch (error) {
+          // The script load event can precede Core's asynchronous initialization.
+          if (performance.now() >= deadline)
+            throw new Error(
+              'The Live2D runtime could not prepare its memory.',
+              {
+                cause: error,
+              },
+            );
+          await new Promise((resolve) => setTimeout(resolve, 10));
+        }
+      }
+    })();
+    void preparedCore.catch(() => {
+      preparedCore = undefined;
+    });
+  }
+  return preparedCore;
+}
 let framework:
   Promise<typeof import('pixi-live2d-display/cubism4')> | undefined;
 export function loadLive2D() {
@@ -31,7 +71,7 @@ export function loadLive2D() {
   return framework;
 }
 export function loadCubismCore() {
-  if ('Live2DCubismCore' in window) return Promise.resolve();
+  if ('Live2DCubismCore' in window) return prepareCubismCore();
   if (!core) {
     core = (async () => {
       const response = await cachedResponse('/vendor/live2dcubismcore.min.js');
@@ -50,6 +90,7 @@ export function loadCubismCore() {
           };
           document.head.append(script);
         });
+        await prepareCubismCore();
       } finally {
         URL.revokeObjectURL(url);
       }

@@ -10,6 +10,12 @@ export interface CoverArt {
 export const gameArtwork = (game: string): CoverArt | undefined =>
   (artwork.games as Record<string, CoverArt>)[game];
 
+export const groupArtwork = (
+  game: string,
+  group: string,
+): CoverArt | undefined =>
+  (artwork.groups as Record<string, CoverArt>)[`${game}:${group}`];
+
 export const eventArtwork = (event: {
   game: string;
   id: string;

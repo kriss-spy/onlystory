@@ -4,7 +4,7 @@ A shared visual novel reader interface for Girls' Frontline 2, Project SEKAI, Bl
 
 The GFL2 CN library contains **36 event/story collections**, 715 readable sections and 1,288 scripts as of 2026-10-16. It includes original text, backgrounds/CGs, Live2D characters and expressions, BGM/SFX, movies, available Chinese subtitles and selectable Chinese/Japanese movie audio. Male/female variants, real choice branches, bookmarks, checkpoints, seeking and chapter downloads use the common reader. Collections default to release order, newest first. Optional side stories remain inside their events; the category selector offers All collections, Main story and Event.
 
-PJSK, Blue Archive and GFL1 have no real imported stories yet. See the [Blue Archive readiness assessment](docs/blue-archive-readiness.md) before starting its first real import.
+PJSK contains all 125 main-story episodes across six groups and all 1,498 available CN event episodes across 182 events. It uses original Chinese text, Japanese voices, Live2D, backgrounds, music, sound effects and available movies. Another 128 future event episodes have metadata but no original CN scripts yet. Covers, group filters and release ordering use the original metadata. Voices cache on first playback; download a chapter before reading it offline. Browser effects approximate Unity, and main-story 3D performances use the original songs with an explicit playback limitation. See the [pipeline notes](docs/pjsk-pipeline.md) and [archive build procedure](docs/pjsk-archive-build.md). Blue Archive and GFL1 have no real stories in the reader catalog. See the [Blue Archive readiness assessment](docs/blue-archive-readiness.md) before starting its first real import.
 
 The earlier twelve-passage GFL2 opening remains a separate presentation preview with original CGs, music and sound effects. Its links and saves still work.
 
@@ -90,6 +90,8 @@ Browser tests use installed Google Chrome through Playwright in an isolated head
 Read the [milestone behavior and boundaries](docs/milestone-one.md), [design history](docs/reader-design.md), [feasibility research](docs/story-reader-feasibility.md) and [UI requirements](docs/UI-ANTI-PATTERNS.md).
 
 ## Next integration
+
+Follow the [PJSK archive build procedure](docs/pjsk-archive-build.md) to acquire and install all available events. `npm run install:pjsk-main` installs the pinned 125-episode main-story corpus. For a single chapter, run `npm run import:pjsk -- --scenario mmj_01_01 --install`. PJSK media default to `.cache/pjsk/library`, served separately alongside GFL2; set `ONLYSTORY_PJSK_LIBRARY` to relocate them. Source-only imports support five regions and unit/event metadata. The [PJSK pipeline notes](docs/pjsk-pipeline.md) cover offline rebuilding, source coverage and remaining commands.
 
 GFL2 is ready for this handoff with documented source gaps and browser fidelity limits. The [Blue Archive assessment](docs/blue-archive-readiness.md) identifies the manifest, decoder, renderer, localization and verification work for its first real story. The common reader can be reused; real BA support is not implemented yet. Exact Unity effect/timing fidelity, desktop packaging, an authenticated private server, cross-device sync and content-version migrations remain separate work.
 

@@ -1,0 +1,366 @@
+{
+  "schemaVersion": 1,
+  "reason": "Canonical catalog paths contain original internal scenario IDs shared by CN and JP shipped sources. Raw source remains unchanged.",
+  "bindings": [
+    {
+      "scenarioId": "event_168_01",
+      "sourceScenarioId": "event_167_01",
+      "sourceUrl": "https://storage.sekai.best/sekai-cn-assets/event_story/event_cheerheart_2025/scenario/event_168_01.asset",
+      "sourceSha256": "953c041f5ef25b4458763861862444f80fef11eb3ba9ee789d13c9955b166357",
+      "referenceUrl": "https://storage.sekai.best/sekai-jp-assets/event_story/event_cheerheart_2025/scenario/event_168_01.asset",
+      "referenceSha256": "88790e4b6e3ffb7eb5910e3239ca4b50f42cb0b5698b20caba095923f863ab2b",
+      "voiceIdsSha256": "e3469313c809e5fff3e0a9af56bcc4942477de139e423213befd87e7d45763be"
+    },
+    {
+      "scenarioId": "event_168_02",
+      "sourceScenarioId": "event_167_02",
+      "sourceUrl": "https://storage.sekai.best/sekai-cn-assets/event_story/event_cheerheart_2025/scenario/event_168_02.asset",
+      "sourceSha256": "8008d2de53f341b54d622a9840cb74a4f54bf0f30136e5dd88ab2a3eb3921011",
+      "referenceUrl": "https://storage.sekai.best/sekai-jp-assets/event_story/event_cheerheart_2025/scenario/event_168_02.asset",
+      "referenceSha256": "0d0b6e5b0fd2e59cc111c2e9d5bc95735e8038aae409800982c75048473ec941",
+      "voiceIdsSha256": "983e39cbdeabcb4cbca1de8afac1c708ca7cc8bc50c8a118984ada358f06a425"
+    },
+    {
+      "scenarioId": "event_168_03",
+      "sourceScenarioId": "event_167_03",
+      "sourceUrl": "https://storage.sekai.best/sekai-cn-assets/event_story/event_cheerheart_2025/scenario/event_168_03.asset",
+      "sourceSha256": "cc6b9d607bd9e823b45bad3986cd5c92671263b5500c85578cc0c83ce5993330",
+      "referenceUrl": "https://storage.sekai.best/sekai-jp-assets/event_story/event_cheerheart_2025/scenario/event_168_03.asset",
+      "referenceSha256": "a3227c96dc44419b2e07604028e6de308771d13aa08ba9ab42c0ebdab57b90cf",
+      "voiceIdsSha256": "02fb93e21c99db6850422b5f9996596d44006db28dd4a2d0a916cc601546f982"
+    },
+    {
+      "scenarioId": "event_168_04",
+      "sourceScenarioId": "event_167_04",
+      "sourceUrl": "https://storage.sekai.best/sekai-cn-assets/event_story/event_cheerheart_2025/scenario/event_168_04.asset",
+      "sourceSha256": "b874717d0eb68f31839f8b3459c636453348aaf2eaeca1f59834029015750edc",
+      "referenceUrl": "https://storage.sekai.best/sekai-jp-assets/event_story/event_cheerheart_2025/scenario/event_168_04.asset",
+      "referenceSha256": "80cce2f848377e803fe6ce090c19e9884245f1361ec58306912cf7b361b2cb5b",
+      "voiceIdsSha256": "6d6d11a6d2417fc723869ae6a5ba976a4c912a72e76cf0806679755a0026e443"
+    },
+    {
+      "scenarioId": "event_168_05",
+      "sourceScenarioId": "event_167_05",
+      "sourceUrl": "https://storage.sekai.best/sekai-cn-assets/event_story/event_cheerheart_2025/scenario/event_168_05.asset",
+      "sourceSha256": "c81112f411e7aa55f24199279fe8eb55170ac8b1704c560bd1e86bc0be55ce92",
+      "referenceUrl": "https://storage.sekai.best/sekai-jp-assets/event_story/event_cheerheart_2025/scenario/event_168_05.asset",
+      "referenceSha256": "a532e4113433dfaa7fe0a3758a99c03031bc10c861154a552cbe773ea301bcd6",
+      "voiceIdsSha256": "abe2f9c582f1ea0e63e1300bfb89413194a42db93047f5f6a4c23bbf0b58a26b"
+    },
+    {
+      "scenarioId": "event_168_06",
+      "sourceScenarioId": "event_167_06",
+      "sourceUrl": "https://storage.sekai.best/sekai-cn-assets/event_story/event_cheerheart_2025/scenario/event_168_06.asset",
+      "sourceSha256": "ac89f691c156a00ee07ccbae1ca56b1850db625d3c088c28aac9f09521519d51",
+      "referenceUrl": "https://storage.sekai.best/sekai-jp-assets/event_story/event_cheerheart_2025/scenario/event_168_06.asset",
+      "referenceSha256": "4174b984c191da1f24e1851a871dc75dcfae24cf98d81f5b091828f3d9c0d08f",
+      "voiceIdsSha256": "f64bd9e5472b3eea0316798d876ee6cf7dba98faf4e20bfe75452284d864861c"
+    },
+    {
+      "scenarioId": "event_168_07",
+      "sourceScenarioId": "event_167_07",
+      "sourceUrl": "https://storage.sekai.best/sekai-cn-assets/event_story/event_cheerheart_2025/scenario/event_168_07.asset",
+      "sourceSha256": "5dc524719d1816ddb0ead086915f62fe58b752928b733a8848ca00e42e6ccafa",
+      "referenceUrl": "https://storage.sekai.best/sekai-jp-assets/event_story/event_cheerheart_2025/scenario/event_168_07.asset",
+      "referenceSha256": "1384b430bf06352abe5a59ec534b18e05b4e01fab3f83ccd43f691427d17f420",
+      "voiceIdsSha256": "080b1dddd38d3a0373dce4c2d51c88a103ae139c4aeb72368f4e3f56be55f44e"
+    },
+    {
+      "scenarioId": "event_168_08",
+      "sourceScenarioId": "event_167_08",
+      "sourceUrl": "https://storage.sekai.best/sekai-cn-assets/event_story/event_cheerheart_2025/scenario/event_168_08.asset",
+      "sourceSha256": "430767993d993af404d7a31605a1279c9bba811dcf7066d821d1190ed24d296f",
+      "referenceUrl": "https://storage.sekai.best/sekai-jp-assets/event_story/event_cheerheart_2025/scenario/event_168_08.asset",
+      "referenceSha256": "bafa2ccd2b63bbe27c4bbd6bf3bdca6b67c507b6ff47c26ebb3bc9cfb9ffd117",
+      "voiceIdsSha256": "7a8e3b7fba5177a4265e4653e916356704ad3d61e4be59c1350be2778e17941d"
+    },
+    {
+      "scenarioId": "event_169_01",
+      "sourceScenarioId": "event_168_01",
+      "sourceUrl": "https://storage.sekai.best/sekai-cn-assets/event_story/event_higher_2025/scenario/event_169_01.asset",
+      "sourceSha256": "b804f9d4921ff2a522e46a4161bf58a31f008a8c3959bd2721689faf0e7610e9",
+      "referenceUrl": "https://storage.sekai.best/sekai-jp-assets/event_story/event_higher_2025/scenario/event_169_01.asset",
+      "referenceSha256": "a2d0154626d073c36a836865c8341e6c00fe4b0c264a26fe7e9d48f3d5625231",
+      "voiceIdsSha256": "f47b746a410e36b9ea05e82d787abf6ffc5d4bfa0dfe117db2a78ac3ec4688e2"
+    },
+    {
+      "scenarioId": "event_169_02",
+      "sourceScenarioId": "event_168_02",
+      "sourceUrl": "https://storage.sekai.best/sekai-cn-assets/event_story/event_higher_2025/scenario/event_169_02.asset",
+      "sourceSha256": "b572f5af1330e17bb66442cef1865f6bae41919fd0750786c1abeded76497bd7",
+      "referenceUrl": "https://storage.sekai.best/sekai-jp-assets/event_story/event_higher_2025/scenario/event_169_02.asset",
+      "referenceSha256": "7bf0bc93aad0b1097decf34b419954655cb5137191eb302de2878633a174a200",
+      "voiceIdsSha256": "f656dfe86473d6ec2cb48137e34d7425c084044705ec377a8c94dd994040f533"
+    },
+    {
+      "scenarioId": "event_169_03",
+      "sourceScenarioId": "event_168_03",
+      "sourceUrl": "https://storage.sekai.best/sekai-cn-assets/event_story/event_higher_2025/scenario/event_169_03.asset",
+      "sourceSha256": "9251223c184ec7cfaffbc40371c3650ce9c6c2837780fe04fd4d00e6d78dd1f7",
+      "referenceUrl": "https://storage.sekai.best/sekai-jp-assets/event_story/event_higher_2025/scenario/event_169_03.asset",
+      "referenceSha256": "5b14589c0f0d4f18f7bdfa398c2c7130dc0efab7ad3f3c15a65340f4613fae16",
+      "voiceIdsSha256": "88f7a48599922d51898362a2208cd99f56c0fc21d3cf4ff6e19424af70ad9677"
+    },
+    {
+      "scenarioId": "event_169_04",
+      "sourceScenarioId": "event_168_04",
+      "sourceUrl": "https://storage.sekai.best/sekai-cn-assets/event_story/event_higher_2025/scenario/event_169_04.asset",
+      "sourceSha256": "fa2a11c2c227596c049ede5248e66ce4ac1072a8c4abccf97baaffa487217e0d",
+      "referenceUrl": "https://storage.sekai.best/sekai-jp-assets/event_story/event_higher_2025/scenario/event_169_04.asset",
+      "referenceSha256": "e6ac86700fc743601ae1143fe61b63f4d16521fb22d8f704b002fca4425f7747",
+      "voiceIdsSha256": "59b1a683ecf199834145e5b20926b0e3ccff20b29266d03bc449eed0a4c3cc83"
+    },
+    {
+      "scenarioId": "event_169_05",
+      "sourceScenarioId": "event_168_05",
+      "sourceUrl": "https://storage.sekai.best/sekai-cn-assets/event_story/event_higher_2025/scenario/event_169_05.asset",
+      "sourceSha256": "84a36a97d30b0318061c9a03e0e93e19c8daa1c1029d0b9a4dcf451f80d603eb",
+      "referenceUrl": "https://storage.sekai.best/sekai-jp-assets/event_story/event_higher_2025/scenario/event_169_05.asset",
+      "referenceSha256": "5e83b060a73d95528d0d8824e7caf0c83d7d89f6e00109ea9eb55cb5fb2b7869",
+      "voiceIdsSha256": "4fff7b54d3241606639b78ff613770a37300d648d49b1c19455077b0d7851806"
+    },
+    {
+      "scenarioId": "event_169_06",
+      "sourceScenarioId": "event_168_06",
+      "sourceUrl": "https://storage.sekai.best/sekai-cn-assets/event_story/event_higher_2025/scenario/event_169_06.asset",
+      "sourceSha256": "b615664ce105c721e39e5edfe50bc444d6f1fe173b9b978305fa3f589e426d1e",
+      "referenceUrl": "https://storage.sekai.best/sekai-jp-assets/event_story/event_higher_2025/scenario/event_169_06.asset",
+      "referenceSha256": "5641e12d3eb7157a50b0a7bce382c697d8185f2a239ef0f5fc2e7005ceda9cc1",
+      "voiceIdsSha256": "4a8cdfe1d166f5bf2c175654b68e9ea3ac65bcd7f3144bccf671738133073a2f"
+    },
+    {
+      "scenarioId": "event_169_07",
+      "sourceScenarioId": "event_168_07",
+      "sourceUrl": "https://storage.sekai.best/sekai-cn-assets/event_story/event_higher_2025/scenario/event_169_07.asset",
+      "sourceSha256": "6e547c0b4ea18459551fed2dd1a9f22eb530382cf661e2da5792caa949fc43fc",
+      "referenceUrl": "https://storage.sekai.best/sekai-jp-assets/event_story/event_higher_2025/scenario/event_169_07.asset",
+      "referenceSha256": "04896affc525c32c1e27563802dcd188e144480fce22abb9b0706c5e2e2aae38",
+      "voiceIdsSha256": "e7d13e00b6cb96c5602160d7ff3a0d6a9023346db7c76e1bfafb3898792c8e75"
+    },
+    {
+      "scenarioId": "event_169_08",
+      "sourceScenarioId": "event_168_08",
+      "sourceUrl": "https://storage.sekai.best/sekai-cn-assets/event_story/event_higher_2025/scenario/event_169_08.asset",
+      "sourceSha256": "c53aa9adc5eb7e5d0831f00dec7616d7d280c0c1cf67f3d39057bb9789d0b4cf",
+      "referenceUrl": "https://storage.sekai.best/sekai-jp-assets/event_story/event_higher_2025/scenario/event_169_08.asset",
+      "referenceSha256": "3099fdf268680f9f9a9be42da4db9fcc8aef95b21649f24a6820d1c05fd63a55",
+      "voiceIdsSha256": "506b36e0de56a49432f48d852de874e5b883ca859420556f748e64d93c891ae6"
+    },
+    {
+      "scenarioId": "event_172_01",
+      "sourceScenarioId": "event_171_01",
+      "sourceUrl": "https://storage.sekai.best/sekai-cn-assets/event_story/event_deeper_2025/scenario/event_172_01.asset",
+      "sourceSha256": "c5d5e3a5f1335d1ad06960e9bdc8507fe2da5738272d4146cad4bf8008a6198e",
+      "referenceUrl": "https://storage.sekai.best/sekai-jp-assets/event_story/event_deeper_2025/scenario/event_172_01.asset",
+      "referenceSha256": "1a25c054a7dbb556431d098ad531ab14693508d8cee652e23147e9b42375dfce",
+      "voiceIdsSha256": "07fe033789d1bee23c00ab9f95aca77e744a80a8ec19c95b5449269e70f79d6a"
+    },
+    {
+      "scenarioId": "event_172_02",
+      "sourceScenarioId": "event_171_02",
+      "sourceUrl": "https://storage.sekai.best/sekai-cn-assets/event_story/event_deeper_2025/scenario/event_172_02.asset",
+      "sourceSha256": "df04b1c188b0de3532d6d70f8b29e3fdbd4d1f73db5a26d07593b8ddc7b8715a",
+      "referenceUrl": "https://storage.sekai.best/sekai-jp-assets/event_story/event_deeper_2025/scenario/event_172_02.asset",
+      "referenceSha256": "f7d62a41cf959564681b619d841f34ae28a1750f40199689b355f792e5508134",
+      "voiceIdsSha256": "9b1b9a64561b061ecdf844c0ed921272c7f39cd4f032ebfd02235a8ac489c511"
+    },
+    {
+      "scenarioId": "event_172_03",
+      "sourceScenarioId": "event_171_03",
+      "sourceUrl": "https://storage.sekai.best/sekai-cn-assets/event_story/event_deeper_2025/scenario/event_172_03.asset",
+      "sourceSha256": "0fdde5c0fc50f363595bd3277666d5cd6ecc82bf48d32201308b9f860ff43607",
+      "referenceUrl": "https://storage.sekai.best/sekai-jp-assets/event_story/event_deeper_2025/scenario/event_172_03.asset",
+      "referenceSha256": "6f5bb6e33e968f2d0f0b39b97339ad773e2798c09b7144af9ac1443c79c1e1e0",
+      "voiceIdsSha256": "0d6d66caa085ddf57bfa037e75df6613569f6e775978e1babc108431e6088aab"
+    },
+    {
+      "scenarioId": "event_172_04",
+      "sourceScenarioId": "event_171_04",
+      "sourceUrl": "https://storage.sekai.best/sekai-cn-assets/event_story/event_deeper_2025/scenario/event_172_04.asset",
+      "sourceSha256": "7365c480d122861d79b7245b88531e92446381f2da15c8378df4b8af94ef48c6",
+      "referenceUrl": "https://storage.sekai.best/sekai-jp-assets/event_story/event_deeper_2025/scenario/event_172_04.asset",
+      "referenceSha256": "5bb336ef36e105eb71b06bcc3bba053a53be05c2c12deecd96858d05aa85970f",
+      "voiceIdsSha256": "486b288815e53a2b8bfb54056b1cec43c4abbe9e7f1ac0d5d132da63bdbb0941"
+    },
+    {
+      "scenarioId": "event_172_05",
+      "sourceScenarioId": "event_171_05",
+      "sourceUrl": "https://storage.sekai.best/sekai-cn-assets/event_story/event_deeper_2025/scenario/event_172_05.asset",
+      "sourceSha256": "fbe0973d1cebc10c68b606068801a2a46053dc0b91c3618b74b00e172fc91113",
+      "referenceUrl": "https://storage.sekai.best/sekai-jp-assets/event_story/event_deeper_2025/scenario/event_172_05.asset",
+      "referenceSha256": "43c1546e893e0280aff229a02482bd5af85468480836c99b139a29c5c52a1ae3",
+      "voiceIdsSha256": "57d72396cd8aa736655c5c3dbf530e8e6539356b2bac553364c1918297a0119c"
+    },
+    {
+      "scenarioId": "event_172_06",
+      "sourceScenarioId": "event_171_06",
+      "sourceUrl": "https://storage.sekai.best/sekai-cn-assets/event_story/event_deeper_2025/scenario/event_172_06.asset",
+      "sourceSha256": "8208adccafc7914eebb2cb5e454e614c88058bfb3776d80145c59d3c27e2ece5",
+      "referenceUrl": "https://storage.sekai.best/sekai-jp-assets/event_story/event_deeper_2025/scenario/event_172_06.asset",
+      "referenceSha256": "9411e671dcfa94b05cd718050d27c883577461e8c8dd8c2c6a233fd8207fc333",
+      "voiceIdsSha256": "f4caef0f2a8a93e8869656feb68fd4ce9bd8ef9e0bc620273523d4af3cdedef5"
+    },
+    {
+      "scenarioId": "event_172_07",
+      "sourceScenarioId": "event_171_07",
+      "sourceUrl": "https://storage.sekai.best/sekai-cn-assets/event_story/event_deeper_2025/scenario/event_172_07.asset",
+      "sourceSha256": "8abb77d39e5f769c7ca5b8c047eb47e22ca7e3c86b4b0f49e4b5c191ad77827d",
+      "referenceUrl": "https://storage.sekai.best/sekai-jp-assets/event_story/event_deeper_2025/scenario/event_172_07.asset",
+      "referenceSha256": "b022af164efb437cc7555f3d081c6b008091d90207a0c3be0fdd48200ebd0ede",
+      "voiceIdsSha256": "30db5e23eccc192932a115a924cf4f15abe54ea89108b1159b09a93ad10f42d8"
+    },
+    {
+      "scenarioId": "event_172_08",
+      "sourceScenarioId": "event_171_08",
+      "sourceUrl": "https://storage.sekai.best/sekai-cn-assets/event_story/event_deeper_2025/scenario/event_172_08.asset",
+      "sourceSha256": "65e0b9851edf6340ca336c8df987757775521b687354a6443924a7603149693f",
+      "referenceUrl": "https://storage.sekai.best/sekai-jp-assets/event_story/event_deeper_2025/scenario/event_172_08.asset",
+      "referenceSha256": "1f76a4bdc337d4dd4def13ea49d8e46eaaf0d8dd789231cfb4fcc4cf5104af74",
+      "voiceIdsSha256": "81aa695a28bdb61ed322ca10625e5cbda972cadee0689e3a38d53f58bd89fabf"
+    },
+    {
+      "scenarioId": "event_173_01",
+      "sourceScenarioId": "event_172_01",
+      "sourceUrl": "https://storage.sekai.best/sekai-cn-assets/event_story/event_unsteady_2025/scenario/event_173_01.asset",
+      "sourceSha256": "8b3a6276a4eeab823f32695e2653e2efcf3b44c1e87ccc9f7c2afe45779149bc",
+      "referenceUrl": "https://storage.sekai.best/sekai-jp-assets/event_story/event_unsteady_2025/scenario/event_173_01.asset",
+      "referenceSha256": "97ec353d22925c0ef342b221887d985787c62055be78457d442c7ff87bb2cb0f",
+      "voiceIdsSha256": "74f995c5fa781abfcf2dfd406a5b1950dfb7babe3083a5a3a77584cd34f7df7d"
+    },
+    {
+      "scenarioId": "event_173_02",
+      "sourceScenarioId": "event_172_02",
+      "sourceUrl": "https://storage.sekai.best/sekai-cn-assets/event_story/event_unsteady_2025/scenario/event_173_02.asset",
+      "sourceSha256": "a87f2a2bfd0b0146ce547487960f9192b2586e2fff0e61c4cbea7a280e7d6374",
+      "referenceUrl": "https://storage.sekai.best/sekai-jp-assets/event_story/event_unsteady_2025/scenario/event_173_02.asset",
+      "referenceSha256": "06fd95bf301392e3b1be1896538e8c566c629a2c0f082db6314fbcab05d27c3a",
+      "voiceIdsSha256": "a79529bf4a8c3dcb7b6faac8765b24f7ff67dbbaf53f8fadc14c65fef1632d95"
+    },
+    {
+      "scenarioId": "event_173_03",
+      "sourceScenarioId": "event_172_03",
+      "sourceUrl": "https://storage.sekai.best/sekai-cn-assets/event_story/event_unsteady_2025/scenario/event_173_03.asset",
+      "sourceSha256": "2dc0639c52e3a5443fa56674eeee63ef7c8aa44d701ee4a47f5b3b3e71070086",
+      "referenceUrl": "https://storage.sekai.best/sekai-jp-assets/event_story/event_unsteady_2025/scenario/event_173_03.asset",
+      "referenceSha256": "f23ede92eec7a35985efcb2a6fd89b6c82c6a78624d466d8af2985747b8ef05d",
+      "voiceIdsSha256": "022af9cab91e602bab992042affae87c95b66527400213baf0d65c80e99269d6"
+    },
+    {
+      "scenarioId": "event_173_04",
+      "sourceScenarioId": "event_172_04",
+      "sourceUrl": "https://storage.sekai.best/sekai-cn-assets/event_story/event_unsteady_2025/scenario/event_173_04.asset",
+      "sourceSha256": "965fc42424ea7597dd5aa5a1bdb95495bb2c2922033f25ca74095118d68fdea3",
+      "referenceUrl": "https://storage.sekai.best/sekai-jp-assets/event_story/event_unsteady_2025/scenario/event_173_04.asset",
+      "referenceSha256": "df6b7c88ad371409c313966f26dff96be2380bbd4a98247f26e812f37030d922",
+      "voiceIdsSha256": "5a563ebcaee63dd8234b2f5d1655409cef074912262e6a36b224a6d74a68ec07"
+    },
+    {
+      "scenarioId": "event_173_05",
+      "sourceScenarioId": "event_172_05",
+      "sourceUrl": "https://storage.sekai.best/sekai-cn-assets/event_story/event_unsteady_2025/scenario/event_173_05.asset",
+      "sourceSha256": "e6b6f1695fd02adef756c13375e6fa121a3564c18985b3eb05f1dacdff68bad1",
+      "referenceUrl": "https://storage.sekai.best/sekai-jp-assets/event_story/event_unsteady_2025/scenario/event_173_05.asset",
+      "referenceSha256": "aea4c0f279b8c17c67eec3008290d83ff38c9e649955a2e0bdac3fceecdff04e",
+      "voiceIdsSha256": "4a0e3a289a51b45f31f2bab0869ea07150a2055a60e6807eef2f4e81dcb77e7a"
+    },
+    {
+      "scenarioId": "event_173_06",
+      "sourceScenarioId": "event_172_06",
+      "sourceUrl": "https://storage.sekai.best/sekai-cn-assets/event_story/event_unsteady_2025/scenario/event_173_06.asset",
+      "sourceSha256": "e960d3356e96021cf9b29bb6fa8b54c62cd94d69851b6920a72eee5f55d1c89e",
+      "referenceUrl": "https://storage.sekai.best/sekai-jp-assets/event_story/event_unsteady_2025/scenario/event_173_06.asset",
+      "referenceSha256": "a2bf817ee4b03d7d82ffd608998f8976741660073d8d3b47f338c909fbd99877",
+      "voiceIdsSha256": "fec4ed0553e0cab6214fbb84ee1b6b0bd4402e6452c89a4f3e77cef6d828501e"
+    },
+    {
+      "scenarioId": "event_173_07",
+      "sourceScenarioId": "event_172_07",
+      "sourceUrl": "https://storage.sekai.best/sekai-cn-assets/event_story/event_unsteady_2025/scenario/event_173_07.asset",
+      "sourceSha256": "a5356bbf16ebfc76c391c4f1b19e5523e91d4e1fb7f085a9bfddb64be6a7411d",
+      "referenceUrl": "https://storage.sekai.best/sekai-jp-assets/event_story/event_unsteady_2025/scenario/event_173_07.asset",
+      "referenceSha256": "04a532ab39b6087e59d9c64e3177fa363716ea970a75b6df3b9c420c0c11b375",
+      "voiceIdsSha256": "2ed0d1bfbd7f13f7d247010a7b16f45b30705d041859aaf1fc84b1448fd19458"
+    },
+    {
+      "scenarioId": "event_173_08",
+      "sourceScenarioId": "event_172_08",
+      "sourceUrl": "https://storage.sekai.best/sekai-cn-assets/event_story/event_unsteady_2025/scenario/event_173_08.asset",
+      "sourceSha256": "184ddf74011c6b1ead2a19bedf8aa493ee319c717c185dc469e6a629560ecced",
+      "referenceUrl": "https://storage.sekai.best/sekai-jp-assets/event_story/event_unsteady_2025/scenario/event_173_08.asset",
+      "referenceSha256": "663cb027a3a9574b6fe2a49dad1157fd3ce755b01fa7d0354fae6b6de73babc5",
+      "voiceIdsSha256": "6c1fc8878027fa36e745e8a525ad29a8cabea12eb86dccd172853157650d0cf4"
+    },
+    {
+      "scenarioId": "event_174_01",
+      "sourceScenarioId": "event_173_01",
+      "sourceUrl": "https://storage.sekai.best/sekai-cn-assets/event_story/event_crossing_2025/scenario/event_174_01.asset",
+      "sourceSha256": "abe87a3d5533180f6894835b5b629d88dd83853c66f15eb6020da70b97be793d",
+      "referenceUrl": "https://storage.sekai.best/sekai-jp-assets/event_story/event_crossing_2025/scenario/event_174_01.asset",
+      "referenceSha256": "c5a13ae291e18e005e58860ead42175a353b5983092fa5bfd6c57e3a960e5841",
+      "voiceIdsSha256": "82cf41211fa72439c9fde7337cf30b5cd6cd95dacfaa55d535c2523b9218e022"
+    },
+    {
+      "scenarioId": "event_174_02",
+      "sourceScenarioId": "event_173_02",
+      "sourceUrl": "https://storage.sekai.best/sekai-cn-assets/event_story/event_crossing_2025/scenario/event_174_02.asset",
+      "sourceSha256": "c373b0a93610c0b69e778831506df6763ceff2659275315d8409ca15f22ef149",
+      "referenceUrl": "https://storage.sekai.best/sekai-jp-assets/event_story/event_crossing_2025/scenario/event_174_02.asset",
+      "referenceSha256": "fe1c2c92ae5f9b8722aa3c73654b59fdd0afaafb68ede729b01e7a2228816a8f",
+      "voiceIdsSha256": "a8c5c088b333335ae5620a5fd3e834b2d09c57f816c5c3ecf3b6d9e7831a785e"
+    },
+    {
+      "scenarioId": "event_174_03",
+      "sourceScenarioId": "event_173_03",
+      "sourceUrl": "https://storage.sekai.best/sekai-cn-assets/event_story/event_crossing_2025/scenario/event_174_03.asset",
+      "sourceSha256": "e1e6d4df42db20a33c696bb19bc29ae13907cd2e2956f972f8965f7a5b19e2f3",
+      "referenceUrl": "https://storage.sekai.best/sekai-jp-assets/event_story/event_crossing_2025/scenario/event_174_03.asset",
+      "referenceSha256": "ce96bcc05fe184baabbc19c51e76e9829e2189932dc0100bfbb82dc3f0a82db9",
+      "voiceIdsSha256": "e168daf2974653985b39866bf25774096fc975c0dd9b468ebbdf1cc100d57fcc"
+    },
+    {
+      "scenarioId": "event_174_04",
+      "sourceScenarioId": "event_173_04",
+      "sourceUrl": "https://storage.sekai.best/sekai-cn-assets/event_story/event_crossing_2025/scenario/event_174_04.asset",
+      "sourceSha256": "b93988d62f2fcf65ce52b15c706ebaf51e4956abd4cf8e3721524ff79cdc6197",
+      "referenceUrl": "https://storage.sekai.best/sekai-jp-assets/event_story/event_crossing_2025/scenario/event_174_04.asset",
+      "referenceSha256": "248d685cfe83d0504340a95d429b57495afc82cd798d8adea7a410476d638b8c",
+      "voiceIdsSha256": "76c89d724fc7e5775af48447418a5a81bbadc850d2631ff1d7c9b322cc61373a"
+    },
+    {
+      "scenarioId": "event_174_05",
+      "sourceScenarioId": "event_173_05",
+      "sourceUrl": "https://storage.sekai.best/sekai-cn-assets/event_story/event_crossing_2025/scenario/event_174_05.asset",
+      "sourceSha256": "5ddad4a578019298bc54013a9dc303e4d8d8f8ca1b8c083c0a428fd6749055ec",
+      "referenceUrl": "https://storage.sekai.best/sekai-jp-assets/event_story/event_crossing_2025/scenario/event_174_05.asset",
+      "referenceSha256": "000adeddf0fa8e50435862e5474c60d5f584a0b2dc217f23d4eedc2513314592",
+      "voiceIdsSha256": "331a6cc8a32d296d916f3b98f91092269575f055878e65b5732fb64e3bb2c700"
+    },
+    {
+      "scenarioId": "event_174_06",
+      "sourceScenarioId": "event_173_06",
+      "sourceUrl": "https://storage.sekai.best/sekai-cn-assets/event_story/event_crossing_2025/scenario/event_174_06.asset",
+      "sourceSha256": "a23e03840b7eb17ff1568ab9d3702085e70024b72cb2b794de6322622bb0af9a",
+      "referenceUrl": "https://storage.sekai.best/sekai-jp-assets/event_story/event_crossing_2025/scenario/event_174_06.asset",
+      "referenceSha256": "fd0c4684840ea01cb022c4a5c857d6aa81e44c6877abfb6498ab34cf4ee87204",
+      "voiceIdsSha256": "243a07b896e0526c9971eb6bc47f3bd50b72329cbff44b3442b5c0922733dab8"
+    },
+    {
+      "scenarioId": "event_174_07",
+      "sourceScenarioId": "event_173_07",
+      "sourceUrl": "https://storage.sekai.best/sekai-cn-assets/event_story/event_crossing_2025/scenario/event_174_07.asset",
+      "sourceSha256": "d7e2ca16f29e4ed9f6037c7acfde9ae6e702a5f476abfde70db718eeabfc3290",
+      "referenceUrl": "https://storage.sekai.best/sekai-jp-assets/event_story/event_crossing_2025/scenario/event_174_07.asset",
+      "referenceSha256": "4a431e6b5024037fac632c0623c73b098a45d768ba96839842f48182beeb66dd",
+      "voiceIdsSha256": "1acaa223a3e99b65aee30fb0fa64a35d592a16c0708a15d58555f7d56e97054a"
+    },
+    {
+      "scenarioId": "event_174_08",
+      "sourceScenarioId": "event_173_08",
+      "sourceUrl": "https://storage.sekai.best/sekai-cn-assets/event_story/event_crossing_2025/scenario/event_174_08.asset",
+      "sourceSha256": "54d75cdb4aeab29c4271c5a251de4b4ab61eb75443a6e54eeb2cbd019183d299",
+      "referenceUrl": "https://storage.sekai.best/sekai-jp-assets/event_story/event_crossing_2025/scenario/event_174_08.asset",
+      "referenceSha256": "5f0f8bc394d753cc90b8fdc10b3fd69e7e84ddf08a6a069161ae976a81b42669",
+      "voiceIdsSha256": "7d3c824d5ee6563d0c7febcb60836b2a8a3307349bff4eb8f8fca0e2a744017d"
+    }
+  ]
+}

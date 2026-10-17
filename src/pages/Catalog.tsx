@@ -14,6 +14,9 @@ import { useStore } from '../store';
 import { EmptyState } from '../components/Primitives';
 import { PageTitle } from '../components/Shell';
 import { eventArtwork } from '../covers';
+import { pjskGroups } from '../pjsk-groups';
+import { PjskGroupMark } from '../components/PjskGroupMark';
+import { useNarrow } from '../hooks';
 
 const scrollPositions = new Map<string, number>();
 export function CatalogPage() {
@@ -24,6 +27,11 @@ export function CatalogPage() {
   const { data } = useStore();
   const scroll = useRef<HTMLDivElement>(null);
   const query = params.get('q') ?? '';
+  const requestedGroup = params.get('group');
+  const group =
+    game?.id === 'pjsk' && pjskGroups.some(({ id }) => id === requestedGroup)
+      ? requestedGroup
+      : 'all';
   const requestedCategory = params.get('category');
   const category =
     requestedCategory === 'Main story' || requestedCategory === 'Event'
@@ -49,7 +57,9 @@ export function CatalogPage() {
               event.stories.some((story) =>
                 story.title.toLowerCase().includes(query.toLowerCase()),
               )) &&
-            (category === 'all' || event.category === category),
+            (category === 'all' || event.category === category) &&
+            (group === 'all' ||
+              event.stories.some((story) => story.group === group)),
         )
         .sort((a, b) =>
           sort === 'release'
@@ -58,15 +68,20 @@ export function CatalogPage() {
               ? b.date.localeCompare(a.date)
               : 0,
         ),
-    [events, query, category, sort],
+    [events, query, category, group, sort],
   );
   const large = filtered.length > 80;
+  const narrow = useNarrow();
+  const rowHeight = game?.id === 'pjsk' && narrow ? 164 : 116;
   const virtual = useVirtualizer({
     count: large ? filtered.length : 0,
     getScrollElement: () => scroll.current,
-    estimateSize: () => 116,
+    estimateSize: () => rowHeight,
     overscan: 5,
   });
+  useLayoutEffect(() => {
+    virtual.measure();
+  }, [virtual, rowHeight]);
   const key = location.pathname + location.search;
   useLayoutEffect(() => {
     if (scroll.current)
@@ -96,7 +111,7 @@ export function CatalogPage() {
     ).length;
     return (
       <li
-        className={`event-row ${large ? 'virtual-event' : ''}`}
+        className={`event-row ${event.game === 'pjsk' ? 'pjsk-event-row' : ''} ${large ? 'virtual-event' : ''}`}
         key={event.id}
         style={
           start === undefined
@@ -107,7 +122,7 @@ export function CatalogPage() {
         <Link to={catalogEventUrl(event, params)} state={{ from: key }}>
           {cover ? (
             <img
-              className="event-cover"
+              className={`event-cover${event.game === 'pjsk' ? ' pjsk-event-cover' : ''}`}
               src={cover.url}
               alt=""
               width={cover.width}
@@ -120,15 +135,20 @@ export function CatalogPage() {
             </span>
           )}
           <span className="event-info">
-            <small>
-              {event.category}
-              {sort === 'release' || sort === 'release-newest' ? (
-                <>
-                  {' '}
-                  · <time dateTime={event.date}>{event.date}</time>
-                </>
+            <span className="event-meta">
+              {event.game === 'pjsk' ? (
+                <PjskGroupMark group={event.stories[0]?.group} />
               ) : null}
-            </small>
+              <small>
+                {event.category}
+                {sort === 'release' || sort === 'release-newest' ? (
+                  <>
+                    {' '}
+                    · <time dateTime={event.date}>{event.date}</time>
+                  </>
+                ) : null}
+              </small>
+            </span>
             <h2>{event.title}</h2>
             <span>
               {event.stories.length}{' '}
@@ -175,6 +195,20 @@ export function CatalogPage() {
           <option>Main story</option>
           <option>Event</option>
         </select>
+        {game.id === 'pjsk' ? (
+          <select
+            aria-label="Story group"
+            value={group ?? 'all'}
+            onChange={(e) => update('group', e.target.value)}
+          >
+            <option value="all">All groups</option>
+            {pjskGroups.map(({ id, label }) => (
+              <option key={id} value={id}>
+                {label}
+              </option>
+            ))}
+          </select>
+        ) : null}
         <select
           aria-label="Event order"
           value={sort}
@@ -204,7 +238,7 @@ export function CatalogPage() {
         >
           {!events.length && !examples
             ? 'This game has not been connected. Its design fixtures are available under Cross-game design checks.'
-            : 'Try another title or category.'}
+            : 'Try another title, category or group.'}
         </EmptyState>
       ) : (
         <div

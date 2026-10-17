@@ -49,3 +49,34 @@ test('serves aliases, media ranges, HEAD and missing-media errors', async () => 
     rmSync(root, { recursive: true, force: true });
   }
 });
+
+test('serves a separate PJSK library alongside the main media library', async () => {
+  const root = mkdtempSync(resolve(tmpdir(), 'onlystory-supplement-'));
+  const extra = resolve(root, 'separate');
+  mkdirSync(resolve(extra, 'private/pjsk/assets'), { recursive: true });
+  mkdirSync(resolve(root, 'private/gfl2'), { recursive: true });
+  writeFileSync(resolve(extra, 'private/pjsk/assets/voice.mp3'), 'voice-bytes');
+  writeFileSync(resolve(root, 'private/gfl2/bgm.ogg'), 'music-bytes');
+  writeFileSync(resolve(root, 'index.html'), '<main>reader</main>');
+  const server = createServer(libraryMiddleware(root, root, [extra]));
+  try {
+    await new Promise((done) => server.listen(0, '127.0.0.1', done));
+    const url = `http://127.0.0.1:${server.address().port}`;
+    const voice = await fetch(url + '/private/pjsk/assets/voice.mp3');
+    assert.equal(voice.headers.get('content-type'), 'audio/mpeg');
+    assert.equal(await voice.text(), 'voice-bytes');
+    assert.equal(
+      await (await fetch(url + '/private/gfl2/bgm.ogg')).text(),
+      'music-bytes',
+    );
+    assert.equal((await fetch(url + '/private/pjsk/missing.mp3')).status, 404);
+    const range = await fetch(url + '/private/pjsk/assets/voice.mp3', {
+      headers: { Range: 'bytes=0-4' },
+    });
+    assert.equal(range.status, 206);
+    assert.equal(await range.text(), 'voice');
+  } finally {
+    await new Promise((done) => server.close(done));
+    rmSync(root, { recursive: true, force: true });
+  }
+});

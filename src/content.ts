@@ -5,6 +5,7 @@ import ilionScenes from './generated/gfl2-ilion-scenes.json';
 import sceneImport from './generated/gfl2-scenes.json';
 import packageImport from './generated/gfl2-packages.json';
 import { decodeTextSection } from './playback/gfl2/text';
+import { decodePjskText } from './playback/pjsk/text';
 import type { FullEvent } from './playback/gfl2/text';
 import { episodes as examples } from './fixtures';
 import type { Episode } from './model';
@@ -170,6 +171,12 @@ export const realEpisodes: Episode[] = [
 // Keep existing excerpt links, saves and bookmarks working. It is a separate
 // presentation preview, not a duplicate chapter in the main event catalog.
 export const episodes = [
+  ...Object.values(
+    import.meta.glob<Episode>('./generated/pjsk-*.json', {
+      eager: true,
+      import: 'default',
+    }),
+  ),
   ...realEpisodes,
   ...(fullEvent ? openingEpisodes : []),
   ...examples,
@@ -200,7 +207,14 @@ export function loadEpisode(episode: Episode): Promise<Episode> {
       throw new Error(
         'This chapter text is unavailable. Download it while connected, or retry.',
       );
-    const decoded = decodeTextSection(await response.json(), episode);
+    const payload: unknown = await response.json();
+    const decoded =
+      episode.content?.format === 'pjsk-text-v1'
+        ? decodePjskText(payload, episode)
+        : decodeTextSection(
+            payload as Parameters<typeof decodeTextSection>[0],
+            episode,
+          );
     if (!episode.content?.sceneUrl) return decoded;
     const sceneResponse =
       (await cache?.match(episode.content.sceneUrl)) ??
