@@ -218,7 +218,7 @@ test('real Chinese lines fit the small reader and unavailable games do not show 
 }, testInfo) => {
   test.skip(!available, 'Import the local GFL2 prototype first.');
   await page.setViewportSize({ width: 320, height: 700 });
-  await page.goto('/games/ba');
+  await page.goto('/games/gfl1');
   await expect(
     page.getByRole('heading', { name: 'No events imported yet' }),
   ).toBeVisible();
