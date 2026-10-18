@@ -1,6 +1,6 @@
 import { lazy, Suspense, useEffect, useRef, useState } from 'react';
 import type { CSSProperties } from 'react';
-import type { StoryNode } from '../../model';
+import type { Locale, StoryNode } from '../../model';
 import { useMediaUrl } from '../../hooks';
 import type { Gfl1Interaction as Interaction } from './story';
 const ShootingModels = lazy(() =>
@@ -56,7 +56,7 @@ export function Gfl1Interaction({
   volume: number;
   disabled: boolean;
   textOnly: boolean;
-  locale: 'en' | 'zh-CN';
+  locale: Locale;
   reducedMotion: boolean;
 }) {
   const [code, setCode] = useState('');
