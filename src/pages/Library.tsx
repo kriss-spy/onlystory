@@ -11,7 +11,7 @@ import { passageUrl, startSave } from '../model';
 import { eventUrl, groupStoryEvents } from '../catalog';
 import { useStore } from '../store';
 import { PageTitle } from '../components/Shell';
-import { eventArtwork, gameArtwork } from '../covers';
+import { eventArtwork, gameArtwork, artworkStyle } from '../covers';
 
 export function LibraryPage() {
   const { data } = useStore();
@@ -82,16 +82,26 @@ export function LibraryPage() {
               alt=""
               width={featuredCover.width}
               height={featuredCover.height}
-              style={{ objectPosition: featuredCover.position }}
+              style={artworkStyle(featuredCover)}
             />
           ) : null}
           <span>
-            <small>GIRLS' FRONTLINE 2 · 简中原文</small>
-            <strong>金翅雀与橄榄枝</strong>
+            <small>
+              {games
+                .find((game) => game.id === realEpisodes[0].game)
+                ?.name.toUpperCase()}{' '}
+              ·{' '}
+              {realEpisodes[0].textLocales?.includes('en')
+                ? 'Original English text'
+                : '简中原文'}
+            </small>
+            <strong>{realEpisodes[0].story}</strong>
             <span>
-              {fullEvent
-                ? `${fullEvent.coverage.sections} 节 · ${fullEvent.coverage.textRows.toLocaleString()} 段原文 · 含原始说话人`
-                : '长梦初醒 · 原始 CG、音乐与音效 · 开场片段'}
+              {realEpisodes[0].game !== 'gfl2'
+                ? `${realEpisodes.filter((episode) => episode.collectionId === realEpisodes[0].collectionId).length} scenes · Original text and available media`
+                : fullEvent
+                  ? `${fullEvent.coverage.sections} 节 · ${fullEvent.coverage.textRows.toLocaleString()} 段原文 · 含原始说话人`
+                  : '长梦初醒 · 原始 CG、音乐与音效 · 开场片段'}
             </span>
           </span>
           <ArrowRight size={25} />

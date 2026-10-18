@@ -11,6 +11,7 @@ export interface StoryEvent {
   game: GameId;
   title: string;
   category: Episode['category'];
+  eventType?: Episode['eventType'];
   notice?: string;
   date: string;
   stories: Episode[];
@@ -66,6 +67,7 @@ export function groupStoryEvents(episodes: Episode[]): StoryEvent[] {
       game: first.game,
       title: first.story,
       category: first.category,
+      eventType: first.eventType,
       notice: first.collectionNotice,
       date: stories.reduce(
         (date, story) => (story.date > date ? story.date : date),

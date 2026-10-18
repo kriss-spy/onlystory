@@ -1,10 +1,10 @@
 # Onlystory
 
-A shared visual novel reader interface for Girls' Frontline 2, Project SEKAI, Blue Archive and, later, Girls' Frontline.
+A shared visual novel reader interface for Girls' Frontline 2, Project SEKAI, Blue Archive and Girls' Frontline.
 
 The GFL2 CN library contains **36 event/story collections**, 715 readable sections and 1,288 scripts as of 2026-10-16. It includes original text, backgrounds/CGs, Live2D characters and expressions, BGM/SFX, movies, available Chinese subtitles and selectable Chinese/Japanese movie audio. Male/female variants, real choice branches, bookmarks, checkpoints, seeking and chapter downloads use the common reader. Collections default to release order, newest first. Optional side stories remain inside their events; the category selector offers All collections, Main story and Event.
 
-PJSK, Blue Archive and GFL1 have no real imported stories yet. See the [Blue Archive readiness assessment](docs/blue-archive-readiness.md) before starting its first real import.
+GFL1 imports Chapters 0–13, including all available Normal, Emergency and Night sections, all 37 replay events, and all nine English collaboration events: 60 collections, 2,254 scenes and 117,788 retained source rows. All 373 main-story scenes and all 403 collaboration scenes are readable. Of the full catalog, 2,253 scenes compile fully; one native reference has no source file. Investigations, quizzes, password locks, branch-specific scene state and native Live2D shooting scenes work in the reader. Original images, 251 BGM cues and 306 sound effects are recovered; five BGM and six SFX cues remain unresolved. Four epilogue sounds use exact cue matches recovered from the installed GFL2 bank, with cross-title provenance. Three original backgrounds and four legacy visual effects are unavailable; dialogue remains readable with explicit notices. Native replay ordering, gameplay-triggered extras and unresolved placement stay explicit. See the [GFL1 pipeline and known gaps](docs/gfl1-pipeline.md) for extraction and verification. PJSK and Blue Archive have no real imported stories yet. See the [Blue Archive readiness assessment](docs/blue-archive-readiness.md) before starting its first real import.
 
 The earlier twelve-passage GFL2 opening remains a separate presentation preview with original CGs, music and sound effects. Its links and saves still work.
 

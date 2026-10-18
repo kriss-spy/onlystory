@@ -67,6 +67,7 @@ export interface Episode {
   title: string;
   description: string;
   category: 'Main story' | 'Event' | 'Side story';
+  eventType?: 'story' | 'collaboration' | 'special';
   order: number;
   date: string;
   minutes: number;
@@ -95,7 +96,7 @@ export interface Episode {
   content?: {
     url: string;
     count: number;
-    format: 'gfl2-text-v1';
+    format: 'gfl2-text-v1' | 'gfl1-story-v1';
     sceneUrl?: string;
   };
 }
@@ -301,6 +302,26 @@ export function passageUrl(
   else params.delete('choices');
   return `/read/${episode.game}/${episode.id}?${params}`;
 }
+
+// GFL1 variants retain their original source row. Canonical links may name that
+// row, while links naming a particular compiled variant must remain exact.
+function gfl1SourceId(episode: Episode, node: StoryNode): string | undefined {
+  if (episode.game !== 'gfl1' || episode.renderer?.id !== 'gfl1') return;
+  if (
+    typeof node.source?.script === 'string' &&
+    node.source.script &&
+    Number.isInteger(node.source.row) &&
+    node.source.row > 0
+  )
+    return `${node.source.script}:${node.source.row}`;
+  if (node.kind === 'end') {
+    const script = node.id.match(/^(.+):end(?::state-\d+)?$/)?.[1];
+    if (script) return `${script}:end`;
+  }
+}
+function matchesPassage(episode: Episode, node: StoryNode, requested: string) {
+  return node.id === requested || gfl1SourceId(episode, node) === requested;
+}
 export function restorePassage(
   episode: Episode,
   line: string,
@@ -329,7 +350,7 @@ export function restorePassage(
   for (let i = 0; i < 10000; i++) {
     const node = nodeOf(episode, save);
     if (
-      node.id === line &&
+      matchesPassage(episode, node, line) &&
       Object.entries(answers).every(
         ([id, answer]) =>
           !Array.isArray(answer) || (consumed[id] ?? 0) === answer.length,
@@ -339,20 +360,26 @@ export function restorePassage(
     const stateKey = `${node.id}|${JSON.stringify(consumed)}`;
     if (visited.has(stateKey)) break;
     visited.add(stateKey);
-    const answer = answers[node.id];
+    const canonical = gfl1SourceId(episode, node);
+    const answerKey = Object.hasOwn(answers, node.id)
+      ? node.id
+      : (canonical ?? node.id);
+    const answer = answers[answerKey];
     const selected = Array.isArray(answer)
-      ? answer[consumed[node.id] ?? 0]
+      ? answer[consumed[answerKey] ?? 0]
       : answer;
     const next = advance(episode, save, selected);
     if (next === save) break;
     if (Array.isArray(answer) && node.kind === 'choice')
-      consumed[node.id] = (consumed[node.id] ?? 0) + 1;
+      consumed[answerKey] = (consumed[answerKey] ?? 0) + 1;
     save = next;
   }
   throw new Error('This passage is unavailable on the selected story branch.');
 }
 
 export function resumeSave(episode: Episode, save: ReadingSave): ReadingSave {
+  if (episode.game === 'gfl1' && episode.renderer?.id === 'gfl1')
+    return resumeGfl1Save(episode, save);
   if (
     save.frames.some(
       (frame) => !episode.nodes.some((node) => node.id === frame.node),
@@ -383,6 +410,70 @@ export function resumeSave(episode: Episode, save: ReadingSave): ReadingSave {
     seen: save.seen.filter((id) =>
       episode.nodes.some((node) => node.id === id),
     ),
+    completed: nodeOf(episode, restored).kind === 'end',
+  };
+}
+
+function resumeGfl1Save(episode: Episode, save: ReadingSave): ReadingSave {
+  if (!save.frames.length)
+    throw new Error('This passage is unavailable in the current story.');
+  const nodes = new Map(episode.nodes.map((node) => [node.id, node]));
+  for (const frame of save.frames)
+    if (
+      !episode.nodes.some((node) => matchesPassage(episode, node, frame.node))
+    )
+      throw new Error('This passage is unavailable in the current story.');
+  let restored = startSave(episode);
+  const reached = new Map<string, string>();
+  const origins = new Map<string, string>();
+  const latestAnswers = new Map<string, string>();
+  function validFrame(original: Frame, actual: Frame) {
+    if (!matchesPassage(episode, nodes.get(actual.node)!, original.node))
+      return false;
+    reached.set(original.node, actual.node);
+    const projected: Frame['answers'] = {};
+    for (const [key, value] of Object.entries(actual.answers)) {
+      const origin = origins.get(key) ?? key;
+      if (!latestAnswers.has(origin) || latestAnswers.get(origin) === key)
+        projected[origin] = value;
+    }
+    return (
+      Object.keys(projected).length === Object.keys(original.answers).length &&
+      Object.entries(projected).every(
+        ([key, value]) => original.answers[key] === value,
+      )
+    );
+  }
+  let valid = validFrame(save.frames[0], restored.frames[0]);
+  for (let index = 1; valid && index < save.frames.length; index++) {
+    const previous = nodes.get(restored.frames.at(-1)!.node)!;
+    const original = save.frames[index];
+    const canonical = gfl1SourceId(episode, previous);
+    const answerKey = Object.hasOwn(original.answers, previous.id)
+      ? previous.id
+      : (canonical ?? previous.id);
+    const next = advance(episode, restored, original.answers[answerKey]);
+    if (previous.kind === 'choice' && next !== restored) {
+      origins.set(previous.id, answerKey);
+      latestAnswers.set(answerKey, previous.id);
+    }
+    valid = next !== restored && validFrame(original, next.frames.at(-1)!);
+    restored = next;
+  }
+  if (!valid)
+    throw new Error(
+      'This saved path no longer matches the available story. Your original save has been kept.',
+    );
+  return {
+    ...save,
+    frames: restored.frames,
+    seen: [
+      ...new Set(
+        save.seen
+          .map((id) => reached.get(id) ?? id)
+          .filter((id) => nodes.has(id)),
+      ),
+    ],
     completed: nodeOf(episode, restored).kind === 'end',
   };
 }

@@ -463,6 +463,1208 @@
       "officialVideoId": 93,
       "officialTitle": "【镜像突触】-活动PV",
       "sha256": "48a21af9f967a7016f5a929ecab8b8962302da51451d844672f53c3afade0591"
+    },
+    "gfl1:gfl1-chapter-0": {
+      "url": "/private/gfl1/covers/gfl1-chapter-0.326c2552d07fb742.webp",
+      "position": "50% 50%",
+      "fit": "contain",
+      "width": 512,
+      "height": 121,
+      "kind": "official-game-art",
+      "role": "chapter-map-banner",
+      "credit": "Sunborn / MICA Team",
+      "page": "https://store.steampowered.com/app/3887700/",
+      "source": "Ev9SbAX8D197JBM0zdna3EhBsyR7KYxHH47B9ANj1W6ziDEtVlefqqlACXG676Lresourcetitle.ab#chapter0_base",
+      "sha256": "326c2552d07fb742e9b021ea7565be5b7bed558db73625acd5ce0010a4b95462",
+      "nativeSource": {
+        "file": "Ev9SbAX8D197JBM0zdna3EhBsyR7KYxHH47B9ANj1W6ziDEtVlefqqlACXG676Lresourcetitle.ab",
+        "sha256": "ec0876cb726e9dce5721196d8a994ea6103505350e90c794fc2e5a75752b73cb",
+        "pathId": "6446146576641863178",
+        "texture": "chapter0_base",
+        "pixelSha256": "1df8c7004e4c6253f58e00dcacd162260eed566ec9ca20f331b4d6b7e78ec81c"
+      }
+    },
+    "gfl1:gfl1-chapter-1-normal": {
+      "url": "/private/gfl1/covers/gfl1-chapter-1-normal.f9bd5a327b3e12cf.webp",
+      "position": "50% 50%",
+      "fit": "contain",
+      "width": 512,
+      "height": 121,
+      "kind": "official-game-art",
+      "role": "chapter-map-banner",
+      "credit": "Sunborn / MICA Team",
+      "page": "https://store.steampowered.com/app/3887700/",
+      "source": "Ev9SbAX8D197JBM0zdna3EhBsyR7KYxHH47B9ANj1W6ziDEtVlefqqlACXG676Lresourcetitle.ab#chapter1_base",
+      "sha256": "f9bd5a327b3e12cf3acd42c71d7b0a666eb12e888527f821f50b9a6c57d87a7c",
+      "nativeSource": {
+        "file": "Ev9SbAX8D197JBM0zdna3EhBsyR7KYxHH47B9ANj1W6ziDEtVlefqqlACXG676Lresourcetitle.ab",
+        "sha256": "ec0876cb726e9dce5721196d8a994ea6103505350e90c794fc2e5a75752b73cb",
+        "pathId": "-1010815763001898724",
+        "texture": "chapter1_base",
+        "pixelSha256": "e324f9e361669624d71c36c8b29d985f7108baed4747584f40366dc5c3d04dff"
+      }
+    },
+    "gfl1:gfl1-chapter-2": {
+      "url": "/private/gfl1/covers/gfl1-chapter-2.5438fb9bc6f9b38a.webp",
+      "position": "50% 50%",
+      "fit": "contain",
+      "width": 512,
+      "height": 121,
+      "kind": "official-game-art",
+      "role": "chapter-map-banner",
+      "credit": "Sunborn / MICA Team",
+      "page": "https://store.steampowered.com/app/3887700/",
+      "source": "Ev9SbAX8D197JBM0zdna3EhBsyR7KYxHH47B9ANj1W6ziDEtVlefqqlACXG676Lresourcetitle.ab#chapter2_base",
+      "sha256": "5438fb9bc6f9b38ac09b582673cabe901406b01b5088fd620085a00a13b5ac59",
+      "nativeSource": {
+        "file": "Ev9SbAX8D197JBM0zdna3EhBsyR7KYxHH47B9ANj1W6ziDEtVlefqqlACXG676Lresourcetitle.ab",
+        "sha256": "ec0876cb726e9dce5721196d8a994ea6103505350e90c794fc2e5a75752b73cb",
+        "pathId": "-7625553125565635882",
+        "texture": "chapter2_base",
+        "pixelSha256": "03594ffa0101330822ede34c90b4fefa3af8488cac678e36b16d9ff6314a7aae"
+      }
+    },
+    "gfl1:gfl1-chapter-3": {
+      "url": "/private/gfl1/covers/gfl1-chapter-3.f5b3a2410789841d.webp",
+      "position": "50% 50%",
+      "fit": "contain",
+      "width": 512,
+      "height": 121,
+      "kind": "official-game-art",
+      "role": "chapter-map-banner",
+      "credit": "Sunborn / MICA Team",
+      "page": "https://store.steampowered.com/app/3887700/",
+      "source": "Ev9SbAX8D197JBM0zdna3EhBsyR7KYxHH47B9ANj1W6ziDEtVlefqqlACXG676Lresourcetitle.ab#chapter3_base",
+      "sha256": "f5b3a2410789841d44f12ef380191aa88c93a4b3f03d3071a76d6f6450d96226",
+      "nativeSource": {
+        "file": "Ev9SbAX8D197JBM0zdna3EhBsyR7KYxHH47B9ANj1W6ziDEtVlefqqlACXG676Lresourcetitle.ab",
+        "sha256": "ec0876cb726e9dce5721196d8a994ea6103505350e90c794fc2e5a75752b73cb",
+        "pathId": "-4359723735405222053",
+        "texture": "chapter3_base",
+        "pixelSha256": "a8bc0f13414d55e2e08cf2fd1f39bc3ac7667c38c987ab9501d41c8b48aac7a9"
+      }
+    },
+    "gfl1:gfl1-chapter-4": {
+      "url": "/private/gfl1/covers/gfl1-chapter-4.79576025441383cb.webp",
+      "position": "50% 50%",
+      "fit": "contain",
+      "width": 512,
+      "height": 121,
+      "kind": "official-game-art",
+      "role": "chapter-map-banner",
+      "credit": "Sunborn / MICA Team",
+      "page": "https://store.steampowered.com/app/3887700/",
+      "source": "Ev9SbAX8D197JBM0zdna3EhBsyR7KYxHH47B9ANj1W6ziDEtVlefqqlACXG676Lresourcetitle.ab#chapter4_base",
+      "sha256": "79576025441383cbf876a09e9ccb1f70d0b01c169f5dab0618e105a6201c1056",
+      "nativeSource": {
+        "file": "Ev9SbAX8D197JBM0zdna3EhBsyR7KYxHH47B9ANj1W6ziDEtVlefqqlACXG676Lresourcetitle.ab",
+        "sha256": "ec0876cb726e9dce5721196d8a994ea6103505350e90c794fc2e5a75752b73cb",
+        "pathId": "-3578850454304591140",
+        "texture": "chapter4_base",
+        "pixelSha256": "ade66847e85d52a5bfce9f7679cd921581a4ca04aa0c8318016cf369d7fb57ed"
+      }
+    },
+    "gfl1:gfl1-chapter-5": {
+      "url": "/private/gfl1/covers/gfl1-chapter-5.67389c05356a5116.webp",
+      "position": "50% 50%",
+      "fit": "contain",
+      "width": 512,
+      "height": 121,
+      "kind": "official-game-art",
+      "role": "chapter-map-banner",
+      "credit": "Sunborn / MICA Team",
+      "page": "https://store.steampowered.com/app/3887700/",
+      "source": "Ev9SbAX8D197JBM0zdna3EhBsyR7KYxHH47B9ANj1W6ziDEtVlefqqlACXG676Lresourcetitle.ab#chapter5_base",
+      "sha256": "67389c05356a511681df4fa8b567486f3916c8e01cb85d551cf6a981f002e3a2",
+      "nativeSource": {
+        "file": "Ev9SbAX8D197JBM0zdna3EhBsyR7KYxHH47B9ANj1W6ziDEtVlefqqlACXG676Lresourcetitle.ab",
+        "sha256": "ec0876cb726e9dce5721196d8a994ea6103505350e90c794fc2e5a75752b73cb",
+        "pathId": "-8245770867932500616",
+        "texture": "chapter5_base",
+        "pixelSha256": "ca26631cc9e227c21142d3759a474e5e76dd540d8975d4a1895c4b0da7177006"
+      }
+    },
+    "gfl1:gfl1-operation-cube": {
+      "url": "/private/gfl1/covers/gfl1-operation-cube.b3e9c7769c17b710.webp",
+      "position": "50% 50%",
+      "fit": "contain",
+      "width": 480,
+      "height": 155,
+      "kind": "official-game-art",
+      "role": "event-selection-banner",
+      "credit": "Sunborn / MICA Team",
+      "page": "https://store.steampowered.com/app/3887700/",
+      "source": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab#missionselect_Cube_base",
+      "sha256": "b3e9c7769c17b710471f17773d3567c0fdeae63d298ee0df8b84ed39d25d373e",
+      "nativeSource": {
+        "file": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab",
+        "sha256": "318322993bf9b74f89fa445ef66b2490b6c1035d83974d9026dfd9640eb38bb2",
+        "pathId": "-2993396592358543136",
+        "texture": "missionselect_Cube_base",
+        "pixelSha256": "f544168523877146d558375bbb32f27a317d07d26d6ec79cd57291dfb4482b96"
+      }
+    },
+    "gfl1:gfl1-chapter-6": {
+      "url": "/private/gfl1/covers/gfl1-chapter-6.f3fcf94e69cfd968.webp",
+      "position": "50% 50%",
+      "fit": "contain",
+      "width": 512,
+      "height": 121,
+      "kind": "official-game-art",
+      "role": "chapter-map-banner",
+      "credit": "Sunborn / MICA Team",
+      "page": "https://store.steampowered.com/app/3887700/",
+      "source": "Ev9SbAX8D197JBM0zdna3EhBsyR7KYxHH47B9ANj1W6ziDEtVlefqqlACXG676Lresourcetitle.ab#chapter6_base",
+      "sha256": "f3fcf94e69cfd968531f429cfd6a2eb2526be896a0570b2d44a733772105cdaa",
+      "nativeSource": {
+        "file": "Ev9SbAX8D197JBM0zdna3EhBsyR7KYxHH47B9ANj1W6ziDEtVlefqqlACXG676Lresourcetitle.ab",
+        "sha256": "ec0876cb726e9dce5721196d8a994ea6103505350e90c794fc2e5a75752b73cb",
+        "pathId": "-1149487151875360478",
+        "texture": "chapter6_base",
+        "pixelSha256": "25f1b7818b609df514865f0f049c135228fdaa58449e985b9975d32ed5c0eddd"
+      }
+    },
+    "gfl1:gfl1-chapter-7": {
+      "url": "/private/gfl1/covers/gfl1-chapter-7.dfd8da0e596b40e3.webp",
+      "position": "50% 50%",
+      "fit": "contain",
+      "width": 512,
+      "height": 121,
+      "kind": "official-game-art",
+      "role": "chapter-map-banner",
+      "credit": "Sunborn / MICA Team",
+      "page": "https://store.steampowered.com/app/3887700/",
+      "source": "Ev9SbAX8D197JBM0zdna3EhBsyR7KYxHH47B9ANj1W6ziDEtVlefqqlACXG676Lresourcetitle.ab#chapter7_base",
+      "sha256": "dfd8da0e596b40e3827f3660aff4bc01f7f3799ec3a2550f85436278efe8a7bf",
+      "nativeSource": {
+        "file": "Ev9SbAX8D197JBM0zdna3EhBsyR7KYxHH47B9ANj1W6ziDEtVlefqqlACXG676Lresourcetitle.ab",
+        "sha256": "ec0876cb726e9dce5721196d8a994ea6103505350e90c794fc2e5a75752b73cb",
+        "pathId": "2697897025234488537",
+        "texture": "chapter7_base",
+        "pixelSha256": "d6c1172d9e9728160e4341b4b1ed4028ec8810ca34b702d52a65839e9e5dedc8"
+      }
+    },
+    "gfl1:gfl1-arctic-warfare": {
+      "url": "/private/gfl1/covers/gfl1-arctic-warfare.b64851a1e8879032.webp",
+      "position": "50% 50%",
+      "fit": "contain",
+      "width": 480,
+      "height": 155,
+      "kind": "official-game-art",
+      "role": "event-selection-banner",
+      "credit": "Sunborn / MICA Team",
+      "page": "https://store.steampowered.com/app/3887700/",
+      "source": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab#missionselect_Arctic_base",
+      "sha256": "b64851a1e8879032ce00febc5ce77f7a82cc3b5132bd963513cd87cc47f9fcb4",
+      "nativeSource": {
+        "file": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab",
+        "sha256": "318322993bf9b74f89fa445ef66b2490b6c1035d83974d9026dfd9640eb38bb2",
+        "pathId": "4084983431551563919",
+        "texture": "missionselect_Arctic_base",
+        "pixelSha256": "e1e920b14088bbbb873bc1f390bf0006854292de6d4eccb212c6953742874ef3"
+      }
+    },
+    "gfl1:gfl1-blindfold-theorem": {
+      "url": "/private/gfl1/covers/gfl1-blindfold-theorem.b3e9c7769c17b710.webp",
+      "position": "50% 50%",
+      "fit": "contain",
+      "width": 480,
+      "height": 155,
+      "kind": "official-game-art",
+      "role": "event-selection-banner",
+      "credit": "Sunborn / MICA Team",
+      "page": "https://store.steampowered.com/app/3887700/",
+      "source": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab#missionselect_Cube_base",
+      "sha256": "b3e9c7769c17b710471f17773d3567c0fdeae63d298ee0df8b84ed39d25d373e",
+      "nativeSource": {
+        "file": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab",
+        "sha256": "318322993bf9b74f89fa445ef66b2490b6c1035d83974d9026dfd9640eb38bb2",
+        "pathId": "-2993396592358543136",
+        "texture": "missionselect_Cube_base",
+        "pixelSha256": "f544168523877146d558375bbb32f27a317d07d26d6ec79cd57291dfb4482b96"
+      },
+      "note": "Cube+ chapter uses the shared original Operation Cube campaign banner."
+    },
+    "gfl1:gfl1-chapter-8": {
+      "url": "/private/gfl1/covers/gfl1-chapter-8.58a135061153699c.webp",
+      "position": "50% 50%",
+      "fit": "contain",
+      "width": 512,
+      "height": 121,
+      "kind": "official-game-art",
+      "role": "chapter-map-banner",
+      "credit": "Sunborn / MICA Team",
+      "page": "https://store.steampowered.com/app/3887700/",
+      "source": "Ev9SbAX8D197JBM0zdna3EhBsyR7KYxHH47B9ANj1W6ziDEtVlefqqlACXG676Lresourcetitle.ab#chapter8_base",
+      "sha256": "58a135061153699c2bee82bad44cefa1058b183451070f9cdfc2fbd6a6225d2c",
+      "nativeSource": {
+        "file": "Ev9SbAX8D197JBM0zdna3EhBsyR7KYxHH47B9ANj1W6ziDEtVlefqqlACXG676Lresourcetitle.ab",
+        "sha256": "ec0876cb726e9dce5721196d8a994ea6103505350e90c794fc2e5a75752b73cb",
+        "pathId": "1484482601832897767",
+        "texture": "chapter8_base",
+        "pixelSha256": "780346875a07c6d67dcb98d66a8cb1d0bc3fa041d15b6034d10abbffd16575c9"
+      }
+    },
+    "gfl1:gfl1-deep-dive": {
+      "url": "/private/gfl1/covers/gfl1-deep-dive.e2ed8b38d1a0a459.webp",
+      "position": "50% 50%",
+      "fit": "contain",
+      "width": 480,
+      "height": 155,
+      "kind": "official-game-art",
+      "role": "event-selection-banner",
+      "credit": "Sunborn / MICA Team",
+      "page": "https://store.steampowered.com/app/3887700/",
+      "source": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab#missionselect_DeepDive_base",
+      "sha256": "e2ed8b38d1a0a459559494bc13238e9d06a32b96eceb5c252c2f586e2ff79774",
+      "nativeSource": {
+        "file": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab",
+        "sha256": "318322993bf9b74f89fa445ef66b2490b6c1035d83974d9026dfd9640eb38bb2",
+        "pathId": "-7405430353982103213",
+        "texture": "missionselect_DeepDive_base",
+        "pixelSha256": "4f04ced0bac2afce95912ef9178c95f1e7634375f356ac421dda9d6a3e4ce481"
+      }
+    },
+    "gfl1:gfl1-chapter-9": {
+      "url": "/private/gfl1/covers/gfl1-chapter-9.91840299b1730cbf.webp",
+      "position": "50% 50%",
+      "fit": "contain",
+      "width": 512,
+      "height": 121,
+      "kind": "official-game-art",
+      "role": "chapter-map-banner",
+      "credit": "Sunborn / MICA Team",
+      "page": "https://store.steampowered.com/app/3887700/",
+      "source": "Ev9SbAX8D197JBM0zdna3EhBsyR7KYxHH47B9ANj1W6ziDEtVlefqqlACXG676Lresourcetitle.ab#chapter9_base",
+      "sha256": "91840299b1730cbf1aeb1af2aed737677a852165cdf2811983e343eef4764825",
+      "nativeSource": {
+        "file": "Ev9SbAX8D197JBM0zdna3EhBsyR7KYxHH47B9ANj1W6ziDEtVlefqqlACXG676Lresourcetitle.ab",
+        "sha256": "ec0876cb726e9dce5721196d8a994ea6103505350e90c794fc2e5a75752b73cb",
+        "pathId": "-2210705003220786742",
+        "texture": "chapter9_base",
+        "pixelSha256": "c3cc8662d992b9adfe693568731d4ba7115f295849d0aff2750d31304f111d12"
+      }
+    },
+    "gfl1:gfl1-chapter-10": {
+      "url": "/private/gfl1/covers/gfl1-chapter-10.817467e7f0118192.webp",
+      "position": "50% 50%",
+      "fit": "contain",
+      "width": 512,
+      "height": 121,
+      "kind": "official-game-art",
+      "role": "chapter-map-banner",
+      "credit": "Sunborn / MICA Team",
+      "page": "https://store.steampowered.com/app/3887700/",
+      "source": "Ev9SbAX8D197JBM0zdna3EhBsyR7KYxHH47B9ANj1W6ziDEtVlefqqlACXG676Lresourcetitle.ab#chapter10_base",
+      "sha256": "817467e7f0118192c86983401bd904106ebb683ee08a985e191d581e90229f44",
+      "nativeSource": {
+        "file": "Ev9SbAX8D197JBM0zdna3EhBsyR7KYxHH47B9ANj1W6ziDEtVlefqqlACXG676Lresourcetitle.ab",
+        "sha256": "ec0876cb726e9dce5721196d8a994ea6103505350e90c794fc2e5a75752b73cb",
+        "pathId": "-1066063516308548502",
+        "texture": "chapter10_base",
+        "pixelSha256": "6d98b74d4619f036fabd73a9ef7434b5f582a9f7bbacd289d37ce97b85244f27"
+      }
+    },
+    "gfl1:gfl1-singularity": {
+      "url": "/private/gfl1/covers/gfl1-singularity.ed0847d11d38d23c.webp",
+      "position": "50% 50%",
+      "fit": "contain",
+      "width": 480,
+      "height": 155,
+      "kind": "official-game-art",
+      "role": "event-selection-banner",
+      "credit": "Sunborn / MICA Team",
+      "page": "https://store.steampowered.com/app/3887700/",
+      "source": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab#missionselect_Sing_base",
+      "sha256": "ed0847d11d38d23cb715df2f09d08771639b8210c883a0a428e42f655f675844",
+      "nativeSource": {
+        "file": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab",
+        "sha256": "318322993bf9b74f89fa445ef66b2490b6c1035d83974d9026dfd9640eb38bb2",
+        "pathId": "8133462962470011607",
+        "texture": "missionselect_Sing_base",
+        "pixelSha256": "d559cb2e6b6221b6a179b0b31763b3205e03170b47d4eeef04daf9af8f237f00"
+      }
+    },
+    "gfl1:gfl1-continuum-turbulence": {
+      "url": "/private/gfl1/covers/gfl1-continuum-turbulence.ea7b71b80c58044d.webp",
+      "position": "50% 50%",
+      "fit": "contain",
+      "width": 480,
+      "height": 155,
+      "kind": "official-game-art",
+      "role": "event-selection-banner",
+      "credit": "Sunborn / MICA Team",
+      "page": "https://store.steampowered.com/app/3887700/",
+      "source": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab#missionselect_ContinuumTurbulence_base",
+      "sha256": "ea7b71b80c58044d2d8287dafccc4919f0d296a20807416c2af0ae186371399d",
+      "nativeSource": {
+        "file": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab",
+        "sha256": "318322993bf9b74f89fa445ef66b2490b6c1035d83974d9026dfd9640eb38bb2",
+        "pathId": "-8988114409751712362",
+        "texture": "missionselect_ContinuumTurbulence_base",
+        "pixelSha256": "6fe32112a338386b3e6cbda0cded0fe818d9c52f591742fcac9fe53525fe5d02"
+      }
+    },
+    "gfl1:gfl1-chapter-11": {
+      "url": "/private/gfl1/covers/gfl1-chapter-11.1cc947bc3736efbc.webp",
+      "position": "50% 50%",
+      "fit": "contain",
+      "width": 512,
+      "height": 121,
+      "kind": "official-game-art",
+      "role": "chapter-map-banner",
+      "credit": "Sunborn / MICA Team",
+      "page": "https://store.steampowered.com/app/3887700/",
+      "source": "Ev9SbAX8D197JBM0zdna3EhBsyR7KYxHH47B9ANj1W6ziDEtVlefqqlACXG676Lresourcetitle.ab#chapter11_base",
+      "sha256": "1cc947bc3736efbc179792d8f34cabbf54902c1149d952fd2f4b25925e5e1538",
+      "nativeSource": {
+        "file": "Ev9SbAX8D197JBM0zdna3EhBsyR7KYxHH47B9ANj1W6ziDEtVlefqqlACXG676Lresourcetitle.ab",
+        "sha256": "ec0876cb726e9dce5721196d8a994ea6103505350e90c794fc2e5a75752b73cb",
+        "pathId": "6198288073152114086",
+        "texture": "chapter11_base",
+        "pixelSha256": "3e7e84b5021dbffcee0c5221e58c06648d6341f5eff56b83a2621a9f1bcfeb8f"
+      }
+    },
+    "gfl1:gfl1-isomer": {
+      "url": "/private/gfl1/covers/gfl1-isomer.62ce9d2fa11a27ec.webp",
+      "position": "50% 50%",
+      "fit": "contain",
+      "width": 480,
+      "height": 155,
+      "kind": "official-game-art",
+      "role": "event-selection-banner",
+      "credit": "Sunborn / MICA Team",
+      "page": "https://store.steampowered.com/app/3887700/",
+      "source": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab#missionselect_Isomer_base",
+      "sha256": "62ce9d2fa11a27ec05b0150a3cd9f94061d0102a33499e172b483f602a89ce7b",
+      "nativeSource": {
+        "file": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab",
+        "sha256": "318322993bf9b74f89fa445ef66b2490b6c1035d83974d9026dfd9640eb38bb2",
+        "pathId": "-8103694447021264128",
+        "texture": "missionselect_Isomer_base",
+        "pixelSha256": "74fc64e5005f351d88468d81dfd71127f152929e40e24ee0ec1a611c5135cfb6"
+      }
+    },
+    "gfl1:gfl1-shattered-connexion": {
+      "url": "/private/gfl1/covers/gfl1-shattered-connexion.196aa5d014bcf37f.webp",
+      "position": "50% 50%",
+      "fit": "contain",
+      "width": 480,
+      "height": 155,
+      "kind": "official-game-art",
+      "role": "event-selection-banner",
+      "credit": "Sunborn / MICA Team",
+      "page": "https://store.steampowered.com/app/3887700/",
+      "source": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab#missionselect_Reversible_base",
+      "sha256": "196aa5d014bcf37ff7040230e170a3f2d971b508b4d488a014d6037f5bd1d96f",
+      "nativeSource": {
+        "file": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab",
+        "sha256": "318322993bf9b74f89fa445ef66b2490b6c1035d83974d9026dfd9640eb38bb2",
+        "pathId": "-5343687940557977359",
+        "texture": "missionselect_Reversible_base",
+        "pixelSha256": "547be9362a0a0eb0ba0d1f1f7efea31b168150f8c1f3699df8a796c52f031dd2"
+      }
+    },
+    "gfl1:gfl1-chapter-12": {
+      "url": "/private/gfl1/covers/gfl1-chapter-12.0b49ea1975e49290.webp",
+      "position": "50% 50%",
+      "fit": "contain",
+      "width": 512,
+      "height": 121,
+      "kind": "official-game-art",
+      "role": "chapter-map-banner",
+      "credit": "Sunborn / MICA Team",
+      "page": "https://store.steampowered.com/app/3887700/",
+      "source": "Ev9SbAX8D197JBM0zdna3EhBsyR7KYxHH47B9ANj1W6ziDEtVlefqqlACXG676Lresourcetitle.ab#chapter12_base",
+      "sha256": "0b49ea1975e49290481b9cd90e27874ae49269c8e2c6796826dc0c3428537760",
+      "nativeSource": {
+        "file": "Ev9SbAX8D197JBM0zdna3EhBsyR7KYxHH47B9ANj1W6ziDEtVlefqqlACXG676Lresourcetitle.ab",
+        "sha256": "ec0876cb726e9dce5721196d8a994ea6103505350e90c794fc2e5a75752b73cb",
+        "pathId": "-1676604210194217876",
+        "texture": "chapter12_base",
+        "pixelSha256": "55e2bcbc893042adeabae91ca3263c137e3c9476208708331699e003fd95c279"
+      }
+    },
+    "gfl1:gfl1-polarized-light": {
+      "url": "/private/gfl1/covers/gfl1-polarized-light.f4c833f3d3cc36fc.webp",
+      "position": "50% 50%",
+      "fit": "contain",
+      "width": 480,
+      "height": 155,
+      "kind": "official-game-art",
+      "role": "event-selection-banner",
+      "credit": "Sunborn / MICA Team",
+      "page": "https://store.steampowered.com/app/3887700/",
+      "source": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab#missionselect_PolarizedLight_base",
+      "sha256": "f4c833f3d3cc36fcd5bea087a0691286f0abaaae575f0bf620c6fda37624b5f4",
+      "nativeSource": {
+        "file": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab",
+        "sha256": "318322993bf9b74f89fa445ef66b2490b6c1035d83974d9026dfd9640eb38bb2",
+        "pathId": "-831392712202503830",
+        "texture": "missionselect_PolarizedLight_base",
+        "pixelSha256": "a987551e036ae71f33e4716acd9f29c999df18a7d629d84a8449ca7c218cc1c8"
+      }
+    },
+    "gfl1:gfl1-chapter-13": {
+      "url": "/private/gfl1/covers/gfl1-chapter-13.42bf2978679adbd9.webp",
+      "position": "50% 50%",
+      "fit": "contain",
+      "width": 812,
+      "height": 192,
+      "kind": "official-game-art",
+      "role": "chapter-map-banner",
+      "credit": "Sunborn / MICA Team",
+      "page": "https://store.steampowered.com/app/3887700/",
+      "source": "Ev9SbAX8D197JBM0zdna3EhBsyR7KYxHH47B9ANj1W6ziDEtVlefqqlACXG676Lresourcetitle.ab#chapter13_base",
+      "sha256": "42bf2978679adbd922efff1632f7c5646d6297815f0bda79bbc7c74d8a35d118",
+      "nativeSource": {
+        "file": "Ev9SbAX8D197JBM0zdna3EhBsyR7KYxHH47B9ANj1W6ziDEtVlefqqlACXG676Lresourcetitle.ab",
+        "sha256": "ec0876cb726e9dce5721196d8a994ea6103505350e90c794fc2e5a75752b73cb",
+        "pathId": "-8067963507791945375",
+        "texture": "chapter13_base",
+        "pixelSha256": "5b2ffe4be68089c514163aaa6f42dd49e3feb360f75b5e77fd9a39084d04be92"
+      }
+    },
+    "gfl1:gfl1-dual-randomness": {
+      "url": "/private/gfl1/covers/gfl1-dual-randomness.c1ddee72763a68a3.webp",
+      "position": "50% 50%",
+      "fit": "contain",
+      "width": 480,
+      "height": 155,
+      "kind": "official-game-art",
+      "role": "event-selection-banner",
+      "credit": "Sunborn / MICA Team",
+      "page": "https://store.steampowered.com/app/3887700/",
+      "source": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab#missionselect_Dual Randomness_base",
+      "sha256": "c1ddee72763a68a3171eca4a8428bc990de038e2c21e941352074640f5c02349",
+      "nativeSource": {
+        "file": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab",
+        "sha256": "318322993bf9b74f89fa445ef66b2490b6c1035d83974d9026dfd9640eb38bb2",
+        "pathId": "6282286120650424602",
+        "texture": "missionselect_Dual Randomness_base",
+        "pixelSha256": "7653edaaefd734f5825f26d76a97d61ce84dc104dcabfcd6a2e5828c0c6cf069"
+      }
+    },
+    "gfl1:gfl1-mirror-stage": {
+      "url": "/private/gfl1/covers/gfl1-mirror-stage.0c6873a3b8ee87d0.webp",
+      "position": "50% 50%",
+      "fit": "contain",
+      "width": 480,
+      "height": 155,
+      "kind": "official-game-art",
+      "role": "event-selection-banner",
+      "credit": "Sunborn / MICA Team",
+      "page": "https://store.steampowered.com/app/3887700/",
+      "source": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab#missionselect_MirrorStage_base",
+      "sha256": "0c6873a3b8ee87d0552cfe9df14eb017157daad229317be30b0479c5bcf39a45",
+      "nativeSource": {
+        "file": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab",
+        "sha256": "318322993bf9b74f89fa445ef66b2490b6c1035d83974d9026dfd9640eb38bb2",
+        "pathId": "4617338626541846428",
+        "texture": "missionselect_MirrorStage_base",
+        "pixelSha256": "06fdc26788efda3227409b2e48e36d50c4fbe9b72147a2d11f040d4a0efd6d2a"
+      }
+    },
+    "gfl1:gfl1-poincare-recurrence": {
+      "url": "/private/gfl1/covers/gfl1-poincare-recurrence.d5d6677f1da439b9.webp",
+      "position": "50% 50%",
+      "fit": "contain",
+      "width": 480,
+      "height": 155,
+      "kind": "official-game-art",
+      "role": "event-selection-banner",
+      "credit": "Sunborn / MICA Team",
+      "page": "https://store.steampowered.com/app/3887700/",
+      "source": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab#missionselect_PoincareRecurrence_base",
+      "sha256": "d5d6677f1da439b9535e52085287135fcc092d405e2f11417aa213bccbc82fd3",
+      "nativeSource": {
+        "file": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab",
+        "sha256": "318322993bf9b74f89fa445ef66b2490b6c1035d83974d9026dfd9640eb38bb2",
+        "pathId": "5017877163280409704",
+        "texture": "missionselect_PoincareRecurrence_base",
+        "pixelSha256": "3941f6556695b6296aaa00cd9e5c971a81465ee977fbe26bc7b0726d8568191b"
+      }
+    },
+    "gfl1:gfl1-fixed-point": {
+      "url": "/private/gfl1/covers/gfl1-fixed-point.215cc0ed2ba371d5.webp",
+      "position": "50% 50%",
+      "fit": "contain",
+      "width": 480,
+      "height": 155,
+      "kind": "official-game-art",
+      "role": "event-selection-banner",
+      "credit": "Sunborn / MICA Team",
+      "page": "https://store.steampowered.com/app/3887700/",
+      "source": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab#missionselect_FixedPoint_base",
+      "sha256": "215cc0ed2ba371d57448857df94fef6ef4d7a4be8a736c4f37bdd3f197169205",
+      "nativeSource": {
+        "file": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab",
+        "sha256": "318322993bf9b74f89fa445ef66b2490b6c1035d83974d9026dfd9640eb38bb2",
+        "pathId": "433583241137647090",
+        "texture": "missionselect_FixedPoint_base",
+        "pixelSha256": "3750680b22906c29ee699233eebbc2f0637fbb065ecd9dad15dc6d8af15b6bc6"
+      }
+    },
+    "gfl1:gfl1-longitudinal-strain": {
+      "url": "/private/gfl1/covers/gfl1-longitudinal-strain.b31a2edd52c80577.webp",
+      "position": "50% 50%",
+      "fit": "contain",
+      "width": 480,
+      "height": 155,
+      "kind": "official-game-art",
+      "role": "event-selection-banner",
+      "credit": "Sunborn / MICA Team",
+      "page": "https://store.steampowered.com/app/3887700/",
+      "source": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab#missionselect_2022Summer_base",
+      "sha256": "b31a2edd52c805774d98740d95d2e6ed9cf8976087db7e42235975258ad8e20d",
+      "nativeSource": {
+        "file": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab",
+        "sha256": "318322993bf9b74f89fa445ef66b2490b6c1035d83974d9026dfd9640eb38bb2",
+        "pathId": "303878461117953319",
+        "texture": "missionselect_2022Summer_base",
+        "pixelSha256": "88373da0392fc5da5e516b0ccd06d8186a6ea969607daf8a56252346708efd91"
+      }
+    },
+    "gfl1:gfl1-eclipses-saros": {
+      "url": "/private/gfl1/covers/gfl1-eclipses-saros.4e1140b64f02b1d6.webp",
+      "position": "50% 50%",
+      "fit": "contain",
+      "width": 480,
+      "height": 155,
+      "kind": "official-game-art",
+      "role": "event-selection-banner",
+      "credit": "Sunborn / MICA Team",
+      "page": "https://store.steampowered.com/app/3887700/",
+      "source": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab#missionselect_2022Scar_base",
+      "sha256": "4e1140b64f02b1d6b959d5b75fa55755488789e71dd1ddd1ea60e537dfbf1d94",
+      "nativeSource": {
+        "file": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab",
+        "sha256": "318322993bf9b74f89fa445ef66b2490b6c1035d83974d9026dfd9640eb38bb2",
+        "pathId": "52955392546312379",
+        "texture": "missionselect_2022Scar_base",
+        "pixelSha256": "5531e6451b61f5567402cbb85de8c7e69fbf724853c0a157c1b834eaa0f4318a"
+      }
+    },
+    "gfl1:gfl1-slow-shock": {
+      "url": "/private/gfl1/covers/gfl1-slow-shock.077ffe35cdf693d3.webp",
+      "position": "50% 50%",
+      "fit": "contain",
+      "width": 480,
+      "height": 155,
+      "kind": "official-game-art",
+      "role": "event-selection-banner",
+      "credit": "Sunborn / MICA Team",
+      "page": "https://store.steampowered.com/app/3887700/",
+      "source": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab#missionselect_Slowshock_base",
+      "sha256": "077ffe35cdf693d39a7585d65320072d5b8755bd347e7431239ad31c64e4efd2",
+      "nativeSource": {
+        "file": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab",
+        "sha256": "318322993bf9b74f89fa445ef66b2490b6c1035d83974d9026dfd9640eb38bb2",
+        "pathId": "4337163978205691192",
+        "texture": "missionselect_Slowshock_base",
+        "pixelSha256": "e5435bbdbfa7fd3a58adb54b27bda82b1773b811f59aed240f60b8f857085dcd"
+      }
+    },
+    "gfl1:gfl1-the-summer-garden-of-forking-paths": {
+      "url": "/private/gfl1/covers/gfl1-the-summer-garden-of-forking-paths.44574d84476b43fd.webp",
+      "position": "50% 50%",
+      "fit": "contain",
+      "width": 480,
+      "height": 155,
+      "kind": "official-game-art",
+      "role": "event-selection-banner",
+      "credit": "Sunborn / MICA Team",
+      "page": "https://store.steampowered.com/app/3887700/",
+      "source": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab#missionselect_202404Activity_base",
+      "sha256": "44574d84476b43fd74ef855df4c3007ca6121915938e35652a5f1ea7de18eb34",
+      "nativeSource": {
+        "file": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab",
+        "sha256": "318322993bf9b74f89fa445ef66b2490b6c1035d83974d9026dfd9640eb38bb2",
+        "pathId": "-8570740291081497840",
+        "texture": "missionselect_202404Activity_base",
+        "pixelSha256": "fab9ffe2224e40eb9797a727fd8ae548a0b134a88c651ddb6e37b851dbf825b5"
+      }
+    },
+    "gfl1:gfl1-cartesian-theater": {
+      "url": "/private/gfl1/covers/gfl1-cartesian-theater.d6cc757599d72f28.webp",
+      "position": "50% 50%",
+      "fit": "contain",
+      "width": 480,
+      "height": 155,
+      "kind": "official-game-art",
+      "role": "event-selection-banner",
+      "credit": "Sunborn / MICA Team",
+      "page": "https://store.steampowered.com/app/3887700/",
+      "source": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab#missionselect_202406Activity_base",
+      "sha256": "d6cc757599d72f28735707bfee7f9ff69d08382b89fb567b69635e9e8c7a04f2",
+      "nativeSource": {
+        "file": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab",
+        "sha256": "318322993bf9b74f89fa445ef66b2490b6c1035d83974d9026dfd9640eb38bb2",
+        "pathId": "-8218263401813546586",
+        "texture": "missionselect_202406Activity_base",
+        "pixelSha256": "1af304a2ce7ef7c214432562e3e34cd9d2cc28d9bc8b9499f8175354a04ccee0"
+      }
+    },
+    "gfl1:gfl1-zero-charge": {
+      "url": "/private/gfl1/covers/gfl1-zero-charge.515f722db0219f0f.webp",
+      "position": "50% 50%",
+      "fit": "contain",
+      "width": 480,
+      "height": 155,
+      "kind": "official-game-art",
+      "role": "event-selection-banner",
+      "credit": "Sunborn / MICA Team",
+      "page": "https://store.steampowered.com/app/3887700/",
+      "source": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab#missionselect_202407Activity_base",
+      "sha256": "515f722db0219f0f7328c8606b199449e1241cb90b5ed7d9dd2e8021f71e791d",
+      "nativeSource": {
+        "file": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab",
+        "sha256": "318322993bf9b74f89fa445ef66b2490b6c1035d83974d9026dfd9640eb38bb2",
+        "pathId": "-9152956885717525746",
+        "texture": "missionselect_202407Activity_base",
+        "pixelSha256": "86c9e5a7f1bdbe31a66fa6a5c52a0ac83ce879e2c64a0e535af0f2a68ddb19fe"
+      }
+    },
+    "gfl1:gfl1-angular-gyrus": {
+      "url": "/private/gfl1/covers/gfl1-angular-gyrus.f94f20dbe656ad91.webp",
+      "position": "50% 50%",
+      "fit": "contain",
+      "width": 480,
+      "height": 155,
+      "kind": "official-game-art",
+      "role": "event-selection-banner",
+      "credit": "Sunborn / MICA Team",
+      "page": "https://store.steampowered.com/app/3887700/",
+      "source": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab#missionselect_202408Activity_base",
+      "sha256": "f94f20dbe656ad9127501828d9e80dac48e6dd83095da2daeb6c53e829fdb966",
+      "nativeSource": {
+        "file": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab",
+        "sha256": "318322993bf9b74f89fa445ef66b2490b6c1035d83974d9026dfd9640eb38bb2",
+        "pathId": "33272956688775717",
+        "texture": "missionselect_202408Activity_base",
+        "pixelSha256": "3dd6a82b42858a67c48255e85bc9376b6a87e3e81881b3df9e16fb8c27eb9372"
+      }
+    },
+    "gfl1:gfl1-isolation-forest": {
+      "url": "/private/gfl1/covers/gfl1-isolation-forest.6be41814d6c58aec.webp",
+      "position": "50% 50%",
+      "fit": "contain",
+      "width": 480,
+      "height": 155,
+      "kind": "official-game-art",
+      "role": "event-selection-banner",
+      "credit": "Sunborn / MICA Team",
+      "page": "https://store.steampowered.com/app/3887700/",
+      "source": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab#missionselect_202410Activity_base",
+      "sha256": "6be41814d6c58aec41c632fe731dc65af5e66b3d721595ba9b16b79f5caf2d0c",
+      "nativeSource": {
+        "file": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab",
+        "sha256": "318322993bf9b74f89fa445ef66b2490b6c1035d83974d9026dfd9640eb38bb2",
+        "pathId": "6323352116447837030",
+        "texture": "missionselect_202410Activity_base",
+        "pixelSha256": "5b65a29f5a36b8342df29ab06eacced6e109f485a05311eab703b805200a8627"
+      }
+    },
+    "gfl1:gfl1-convolutional-kernel": {
+      "url": "/private/gfl1/covers/gfl1-convolutional-kernel.df184046acbec858.webp",
+      "position": "50% 50%",
+      "fit": "contain",
+      "width": 480,
+      "height": 155,
+      "kind": "official-game-art",
+      "role": "event-selection-banner",
+      "credit": "Sunborn / MICA Team",
+      "page": "https://store.steampowered.com/app/3887700/",
+      "source": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab#missionselect_202412activity_base",
+      "sha256": "df184046acbec8586bc645c787cef12bea965c4f2aefe4a583c6346d59a0e493",
+      "nativeSource": {
+        "file": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab",
+        "sha256": "318322993bf9b74f89fa445ef66b2490b6c1035d83974d9026dfd9640eb38bb2",
+        "pathId": "-3506961835499789122",
+        "texture": "missionselect_202412activity_base",
+        "pixelSha256": "cf110e85026635bb13e63cc6dd4b0f3758753c98e0cce0472ee550927b8ad5a2"
+      }
+    },
+    "gfl1:gfl1-roche-limit": {
+      "url": "/private/gfl1/covers/gfl1-roche-limit.1da0fb6d3dc2e843.webp",
+      "position": "50% 50%",
+      "fit": "contain",
+      "width": 480,
+      "height": 155,
+      "kind": "official-game-art",
+      "role": "event-selection-banner",
+      "credit": "Sunborn / MICA Team",
+      "page": "https://store.steampowered.com/app/3887700/",
+      "source": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab#missionselect_202505activity_base",
+      "sha256": "1da0fb6d3dc2e843ec57ef9486a3d6b23e79dca4198a3e9a92388fdebb54a4a9",
+      "nativeSource": {
+        "file": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab",
+        "sha256": "318322993bf9b74f89fa445ef66b2490b6c1035d83974d9026dfd9640eb38bb2",
+        "pathId": "3805337790318417091",
+        "texture": "missionselect_202505activity_base",
+        "pixelSha256": "3f39c6dcd47ab8d045a07f91e9c2b1715b0d8c651a47b8cf57c030f1b9c14750"
+      }
+    },
+    "gfl1:gfl1-virtual-pair": {
+      "url": "/private/gfl1/covers/gfl1-virtual-pair.8c535880543f8ef1.webp",
+      "position": "50% 50%",
+      "fit": "contain",
+      "width": 480,
+      "height": 155,
+      "kind": "official-game-art",
+      "role": "event-selection-banner",
+      "credit": "Sunborn / MICA Team",
+      "page": "https://store.steampowered.com/app/3887700/",
+      "source": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab#missionselect_202507activity_base",
+      "sha256": "8c535880543f8ef1f41a10f6f920381d328bda00fe8ca6e149ac403ec9982f28",
+      "nativeSource": {
+        "file": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab",
+        "sha256": "318322993bf9b74f89fa445ef66b2490b6c1035d83974d9026dfd9640eb38bb2",
+        "pathId": "-687800196161573095",
+        "texture": "missionselect_202507activity_base",
+        "pixelSha256": "a30b4e0ca05734390fbb773f13212072f256baed5c6b78cf2779ef39d07d1207"
+      }
+    },
+    "gfl1:gfl1-quantum-fluctuations": {
+      "url": "/private/gfl1/covers/gfl1-quantum-fluctuations.50c98db53d9473f4.webp",
+      "position": "50% 50%",
+      "fit": "contain",
+      "width": 480,
+      "height": 155,
+      "kind": "official-game-art",
+      "role": "event-selection-banner",
+      "credit": "Sunborn / MICA Team",
+      "page": "https://store.steampowered.com/app/3887700/",
+      "source": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab#missionselect_202509activity_base",
+      "sha256": "50c98db53d9473f4df2460f4d9e641c3d2b2bd8991488e66c05b40c7b64b44a9",
+      "nativeSource": {
+        "file": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab",
+        "sha256": "318322993bf9b74f89fa445ef66b2490b6c1035d83974d9026dfd9640eb38bb2",
+        "pathId": "8913868217158712554",
+        "texture": "missionselect_202509activity_base",
+        "pixelSha256": "fa276578093b40d3a002a608f7650e9e0bddff90c2aacad4bb35f4309f58126a"
+      }
+    },
+    "gfl1:gfl1-freaky-pandemic": {
+      "url": "/private/gfl1/covers/gfl1-freaky-pandemic.27347608dd29ddb6.webp",
+      "position": "50% 50%",
+      "fit": "contain",
+      "width": 480,
+      "height": 155,
+      "kind": "official-game-art",
+      "role": "event-selection-banner",
+      "credit": "Sunborn / MICA Team",
+      "page": "https://store.steampowered.com/app/3887700/",
+      "source": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab#missionselect_Halloween_base",
+      "sha256": "27347608dd29ddb60c0ac736df3104d29b80659ca5ea1d12123486205f17c64f",
+      "nativeSource": {
+        "file": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab",
+        "sha256": "318322993bf9b74f89fa445ef66b2490b6c1035d83974d9026dfd9640eb38bb2",
+        "pathId": "1326580490074300933",
+        "texture": "missionselect_Halloween_base",
+        "pixelSha256": "9b3da53ed4b1979384e67a264adc6f3836ca8b8048ac095e452ddab6e2547bf6"
+      }
+    },
+    "gfl1:gfl1-a-snowy-night-capriccio": {
+      "url": "/private/gfl1/covers/gfl1-a-snowy-night-capriccio.460bddcc45f7d851.webp",
+      "position": "50% 50%",
+      "fit": "contain",
+      "width": 480,
+      "height": 155,
+      "kind": "official-game-art",
+      "role": "event-selection-banner",
+      "credit": "Sunborn / MICA Team",
+      "page": "https://store.steampowered.com/app/3887700/",
+      "source": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab#missionselect_Xmas_base",
+      "sha256": "460bddcc45f7d851426bff1751d01a14c336f45dfb204760a2d06036f0d220cd",
+      "nativeSource": {
+        "file": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab",
+        "sha256": "318322993bf9b74f89fa445ef66b2490b6c1035d83974d9026dfd9640eb38bb2",
+        "pathId": "5009546750500393366",
+        "texture": "missionselect_Xmas_base",
+        "pixelSha256": "9c2c4c4f0117bbf1bc59621b245eaac6b4f62a717d017e7434f288e3a1551070"
+      }
+    },
+    "gfl1:gfl1-the-photo-studio-mystery": {
+      "url": "/private/gfl1/covers/gfl1-the-photo-studio-mystery.1f729a6fd2ff5e10.webp",
+      "position": "50% 50%",
+      "fit": "contain",
+      "width": 480,
+      "height": 155,
+      "kind": "official-game-art",
+      "role": "event-selection-banner",
+      "credit": "Sunborn / MICA Team",
+      "page": "https://store.steampowered.com/app/3887700/",
+      "source": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab#missionselect_WhiteDay2020_base",
+      "sha256": "1f729a6fd2ff5e103c3172de5ee7d889adb25b5caddcf3740ef609d946a0baf4",
+      "nativeSource": {
+        "file": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab",
+        "sha256": "318322993bf9b74f89fa445ef66b2490b6c1035d83974d9026dfd9640eb38bb2",
+        "pathId": "-144284244268051802",
+        "texture": "missionselect_WhiteDay2020_base",
+        "pixelSha256": "a94530feb09625f7d7d6fb1758aed39eee8ad7cb84c2f57a7c7e9d2e07bad687"
+      }
+    },
+    "gfl1:gfl1-far-side-of-the-sea": {
+      "url": "/private/gfl1/covers/gfl1-far-side-of-the-sea.5d88229079228d86.webp",
+      "position": "50% 50%",
+      "fit": "contain",
+      "width": 480,
+      "height": 155,
+      "kind": "official-game-art",
+      "role": "event-selection-banner",
+      "credit": "Sunborn / MICA Team",
+      "page": "https://store.steampowered.com/app/3887700/",
+      "source": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab#missionSelect_Bikini_2020_base",
+      "sha256": "5d88229079228d8690a501bf1412dfee3f510788dc24aae10fa5f71dca3e43bc",
+      "nativeSource": {
+        "file": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab",
+        "sha256": "318322993bf9b74f89fa445ef66b2490b6c1035d83974d9026dfd9640eb38bb2",
+        "pathId": "340329510876305185",
+        "texture": "missionSelect_Bikini_2020_base",
+        "pixelSha256": "e2e06186950313bc6f2d5a565579e70870a00f2a38e5840fe391c1a55fbe0294"
+      }
+    },
+    "gfl1:gfl1-butterfly-in-a-cocoon": {
+      "url": "/private/gfl1/covers/gfl1-butterfly-in-a-cocoon.303af4344604cc6a.webp",
+      "position": "50% 50%",
+      "fit": "contain",
+      "width": 480,
+      "height": 155,
+      "kind": "official-game-art",
+      "role": "event-selection-banner",
+      "credit": "Sunborn / MICA Team",
+      "page": "https://store.steampowered.com/app/3887700/",
+      "source": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab#missionselect_Halloween2020_base",
+      "sha256": "303af4344604cc6af68e787bff717c5032f1d9e0415fdf9f055e50f0595d0c86",
+      "nativeSource": {
+        "file": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab",
+        "sha256": "318322993bf9b74f89fa445ef66b2490b6c1035d83974d9026dfd9640eb38bb2",
+        "pathId": "3446439083139681522",
+        "texture": "missionselect_Halloween2020_base",
+        "pixelSha256": "e30be2094a457f42813faf89f7a9ac293415fdd6febe34506ac76b5b7f7b4e97"
+      }
+    },
+    "gfl1:gfl1-waves-wrangler": {
+      "url": "/private/gfl1/covers/gfl1-waves-wrangler.e537779b6762bfa1.webp",
+      "position": "50% 50%",
+      "fit": "contain",
+      "width": 480,
+      "height": 155,
+      "kind": "official-game-art",
+      "role": "event-selection-banner",
+      "credit": "Sunborn / MICA Team",
+      "page": "https://store.steampowered.com/app/3887700/",
+      "source": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab#missionSelect_Bikini_2021_base",
+      "sha256": "e537779b6762bfa1f27c921657bdb05d13c06c916b160d6d694995a67882fad8",
+      "nativeSource": {
+        "file": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab",
+        "sha256": "318322993bf9b74f89fa445ef66b2490b6c1035d83974d9026dfd9640eb38bb2",
+        "pathId": "-6288655069613740655",
+        "texture": "missionSelect_Bikini_2021_base",
+        "pixelSha256": "88a48eec877759e6d3d4f676b4d27b0d3063cb334f33095881d7a2ca525b45ec"
+      }
+    },
+    "gfl1:gfl1-one-coin-short": {
+      "url": "/private/gfl1/covers/gfl1-one-coin-short.2dab598a22808ebb.webp",
+      "position": "50% 50%",
+      "fit": "contain",
+      "width": 480,
+      "height": 155,
+      "kind": "official-game-art",
+      "role": "event-selection-banner",
+      "credit": "Sunborn / MICA Team",
+      "page": "https://store.steampowered.com/app/3887700/",
+      "source": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab#missionselect_Xmas2021_base",
+      "sha256": "2dab598a22808ebbba5e593e877689ec89dd06f16a44584194e0a684f8d29023",
+      "nativeSource": {
+        "file": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab",
+        "sha256": "318322993bf9b74f89fa445ef66b2490b6c1035d83974d9026dfd9640eb38bb2",
+        "pathId": "5779215125211217617",
+        "texture": "missionselect_Xmas2021_base",
+        "pixelSha256": "6f330d37df3991909abd9e7d60066bf851be08e40e4747e984c85ee7e4c8acc6"
+      }
+    },
+    "gfl1:gfl1-love-bakery": {
+      "url": "/private/gfl1/covers/gfl1-love-bakery.e06e5470e50b9713.webp",
+      "position": "50% 50%",
+      "fit": "contain",
+      "width": 480,
+      "height": 155,
+      "kind": "official-game-art",
+      "role": "event-selection-banner",
+      "credit": "Sunborn / MICA Team",
+      "page": "https://store.steampowered.com/app/3887700/",
+      "source": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab#missionselect_2022WhiteValentine_base",
+      "sha256": "e06e5470e50b971343ff4d5ceef7c158df6b837ed6903d55ffc9208a4ad70dcd",
+      "nativeSource": {
+        "file": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab",
+        "sha256": "318322993bf9b74f89fa445ef66b2490b6c1035d83974d9026dfd9640eb38bb2",
+        "pathId": "871506927285128612",
+        "texture": "missionselect_2022WhiteValentine_base",
+        "pixelSha256": "2d99764c254374886915b0bcf0cb4c7ba4367ef7205e8b4ed77ebc10433ebc72"
+      }
+    },
+    "gfl1:gfl1-lycan-sanctuary": {
+      "url": "/private/gfl1/covers/gfl1-lycan-sanctuary.9f1cb023f9d3266c.webp",
+      "position": "50% 50%",
+      "fit": "contain",
+      "width": 480,
+      "height": 155,
+      "kind": "official-game-art",
+      "role": "event-selection-banner",
+      "credit": "Sunborn / MICA Team",
+      "page": "https://store.steampowered.com/app/3887700/",
+      "source": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab#missionselect_Bikini_2022_base",
+      "sha256": "9f1cb023f9d3266cc747afc736847efc6289ffd8130e15a4547f8b80913d1de8",
+      "nativeSource": {
+        "file": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab",
+        "sha256": "318322993bf9b74f89fa445ef66b2490b6c1035d83974d9026dfd9640eb38bb2",
+        "pathId": "997524980069977081",
+        "texture": "missionselect_Bikini_2022_base",
+        "pixelSha256": "408fc0e5591cd3190908a7a8c18f110e9cd16a59addecde1017d301b71282d9e"
+      }
+    },
+    "gfl1:gfl1-maze-guess": {
+      "url": "/private/gfl1/covers/gfl1-maze-guess.19230e8fe23d92a8.webp",
+      "position": "50% 50%",
+      "fit": "contain",
+      "width": 480,
+      "height": 155,
+      "kind": "official-game-art",
+      "role": "event-selection-banner",
+      "credit": "Sunborn / MICA Team",
+      "page": "https://store.steampowered.com/app/3887700/",
+      "source": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab#missionselect_2023Rouge_base",
+      "sha256": "19230e8fe23d92a84ad9dddd8feaeaa209283deb127f9e0a9890275b5906d7b0",
+      "nativeSource": {
+        "file": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab",
+        "sha256": "318322993bf9b74f89fa445ef66b2490b6c1035d83974d9026dfd9640eb38bb2",
+        "pathId": "-4314583149299211393",
+        "texture": "missionselect_2023Rouge_base",
+        "pixelSha256": "db7b2f924ea66c4c72d5358a71e3f0ffe37f5f15523995a44dd369aaf4480282"
+      }
+    },
+    "gfl1:gfl1-lost-in-thoughts": {
+      "url": "/private/gfl1/covers/gfl1-lost-in-thoughts.6610518ae95949f9.webp",
+      "position": "50% 50%",
+      "fit": "contain",
+      "width": 480,
+      "height": 155,
+      "kind": "official-game-art",
+      "role": "event-selection-banner",
+      "credit": "Sunborn / MICA Team",
+      "page": "https://store.steampowered.com/app/3887700/",
+      "source": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab#missionselect_2023RougeSummer_base",
+      "sha256": "6610518ae95949f91bbaa79841dfae6f19940e63b7084215e01693af7e112ad1",
+      "nativeSource": {
+        "file": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab",
+        "sha256": "318322993bf9b74f89fa445ef66b2490b6c1035d83974d9026dfd9640eb38bb2",
+        "pathId": "-2056827077099482271",
+        "texture": "missionselect_2023RougeSummer_base",
+        "pixelSha256": "270f789c9978085e655feb4a2a5678f49c4ac3cfe47438fc3159a9b58b5bf460"
+      }
+    },
+    "gfl1:gfl1-permitted-reloading": {
+      "url": "/private/gfl1/covers/gfl1-permitted-reloading.d0856193a4faaab6.webp",
+      "position": "50% 50%",
+      "fit": "contain",
+      "width": 480,
+      "height": 155,
+      "kind": "official-game-art",
+      "role": "event-selection-banner",
+      "credit": "Sunborn / MICA Team",
+      "page": "https://store.steampowered.com/app/3887700/",
+      "source": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab#missionselect_2023Se_base",
+      "sha256": "d0856193a4faaab6045e27912766fb14f2df85591948e8f76a46ee12d80cb8e3",
+      "nativeSource": {
+        "file": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab",
+        "sha256": "318322993bf9b74f89fa445ef66b2490b6c1035d83974d9026dfd9640eb38bb2",
+        "pathId": "7986142772013839339",
+        "texture": "missionselect_2023Se_base",
+        "pixelSha256": "ca31bf84635020d2f6ff9cb1b180f2f591bafd9f3facbaa01b74e07082dfa519"
+      }
+    },
+    "gfl1:gfl1-operation-rabbit-hunt": {
+      "url": "/private/gfl1/covers/gfl1-operation-rabbit-hunt.e166c1b743696d04.webp",
+      "position": "50% 50%",
+      "fit": "contain",
+      "width": 298,
+      "height": 149,
+      "kind": "official-game-art",
+      "role": "event-selection-banner",
+      "credit": "Sunborn / MICA Team",
+      "page": "https://store.steampowered.com/app/3887700/",
+      "source": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab#missionselect_RabbitHunt",
+      "sha256": "e166c1b743696d041b7cba0ce9304a4371a8e56acca69299f07404da0d3876f5",
+      "nativeSource": {
+        "file": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab",
+        "sha256": "318322993bf9b74f89fa445ef66b2490b6c1035d83974d9026dfd9640eb38bb2",
+        "pathId": "7353105469151737558",
+        "texture": "missionselect_RabbitHunt",
+        "pixelSha256": "81393cf9a21c32fd7c2d82b0649a24c003b536b8299900f70452b212592b6b4e"
+      },
+      "note": "The installed client ships no 480x155 _base variant for this collaboration; its original 298x149 selection texture is used at native size, not scaled."
+    },
+    "gfl1:gfl1-valhalla": {
+      "url": "/private/gfl1/covers/gfl1-valhalla.25407f962ae70638.webp",
+      "position": "50% 50%",
+      "fit": "contain",
+      "width": 480,
+      "height": 155,
+      "kind": "official-game-art",
+      "role": "event-selection-banner",
+      "credit": "Sunborn / MICA Team",
+      "page": "https://store.steampowered.com/app/3887700/",
+      "source": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab#missionselect_VA11_base",
+      "sha256": "25407f962ae706383689ab91cb8da2c955d3553157633a782ba8824b115e78bd",
+      "nativeSource": {
+        "file": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab",
+        "sha256": "318322993bf9b74f89fa445ef66b2490b6c1035d83974d9026dfd9640eb38bb2",
+        "pathId": "7880990299291791325",
+        "texture": "missionselect_VA11_base",
+        "pixelSha256": "ece1393363344fa1043a881388f9002836825f6de9056b0988488551cd1bddea"
+      }
+    },
+    "gfl1:gfl1-glory-day": {
+      "url": "/private/gfl1/covers/gfl1-glory-day.fd1f8ea3f61fb129.webp",
+      "position": "50% 50%",
+      "fit": "contain",
+      "width": 480,
+      "height": 155,
+      "kind": "official-game-art",
+      "role": "event-selection-banner",
+      "credit": "Sunborn / MICA Team",
+      "page": "https://store.steampowered.com/app/3887700/",
+      "source": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab#missionselect_GloryDay_base",
+      "sha256": "fd1f8ea3f61fb12911aa549297351990ccffbf5f51bda80c6b7abe0296d2c299",
+      "nativeSource": {
+        "file": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab",
+        "sha256": "318322993bf9b74f89fa445ef66b2490b6c1035d83974d9026dfd9640eb38bb2",
+        "pathId": "-2129308542173539819",
+        "texture": "missionselect_GloryDay_base",
+        "pixelSha256": "9ba9da53f99053220f58fce6073cb707b6743b7547e74bb705603a70f7b17406"
+      }
+    },
+    "gfl1:gfl1-dream-theatre": {
+      "url": "/private/gfl1/covers/gfl1-dream-theatre.628fb1ad595eb43b.webp",
+      "position": "50% 50%",
+      "fit": "contain",
+      "width": 480,
+      "height": 155,
+      "kind": "official-game-art",
+      "role": "event-selection-banner",
+      "credit": "Sunborn / MICA Team",
+      "page": "https://store.steampowered.com/app/3887700/",
+      "source": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab#missionselect_GunslingerGirl_base",
+      "sha256": "628fb1ad595eb43b1bf9020a70fa3a63cd74671b6e7c5748e7a8dea30c9285b5",
+      "nativeSource": {
+        "file": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab",
+        "sha256": "318322993bf9b74f89fa445ef66b2490b6c1035d83974d9026dfd9640eb38bb2",
+        "pathId": "1485599113156619715",
+        "texture": "missionselect_GunslingerGirl_base",
+        "pixelSha256": "7e4d76619b4edb5bdc1e7ee43c35733d5e281ce41326ec9cf55061f0c58fff16"
+      }
+    },
+    "gfl1:gfl1-bounty-feast": {
+      "url": "/private/gfl1/covers/gfl1-bounty-feast.9208bc70e91f98f6.webp",
+      "position": "50% 50%",
+      "fit": "contain",
+      "width": 480,
+      "height": 155,
+      "kind": "official-game-art",
+      "role": "event-selection-banner",
+      "credit": "Sunborn / MICA Team",
+      "page": "https://store.steampowered.com/app/3887700/",
+      "source": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab#missionselect_TheDivision_base",
+      "sha256": "9208bc70e91f98f69b607881a689d15b90c5c7a967c01f40652e4eaac64b651b",
+      "nativeSource": {
+        "file": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab",
+        "sha256": "318322993bf9b74f89fa445ef66b2490b6c1035d83974d9026dfd9640eb38bb2",
+        "pathId": "6766385709827778384",
+        "texture": "missionselect_TheDivision_base",
+        "pixelSha256": "3bc8bd8f3a847bf1ce7494072b18191aa3fca536df4c5953a6f49b433b1c7b44"
+      }
+    },
+    "gfl1:gfl1-my-devils-frontline": {
+      "url": "/private/gfl1/covers/gfl1-my-devils-frontline.eb18d1e31c804df6.webp",
+      "position": "50% 50%",
+      "fit": "contain",
+      "width": 480,
+      "height": 155,
+      "kind": "official-game-art",
+      "role": "event-selection-banner",
+      "credit": "Sunborn / MICA Team",
+      "page": "https://store.steampowered.com/app/3887700/",
+      "source": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab#DropkickonMyDevil_base",
+      "sha256": "eb18d1e31c804df61821a8ee2e40c5f344639956a786004fcbf33632bbad7499",
+      "nativeSource": {
+        "file": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab",
+        "sha256": "318322993bf9b74f89fa445ef66b2490b6c1035d83974d9026dfd9640eb38bb2",
+        "pathId": "-882951987314203594",
+        "texture": "DropkickonMyDevil_base",
+        "pixelSha256": "8f084bde8246bfaea904cad26d030078681511a3581c491b9fab6b5b40dbe685"
+      }
+    },
+    "gfl1:gfl1-the-glistening-bloom": {
+      "url": "/private/gfl1/covers/gfl1-the-glistening-bloom.018f81eda2c14a67.webp",
+      "position": "50% 50%",
+      "fit": "contain",
+      "width": 480,
+      "height": 155,
+      "kind": "official-game-art",
+      "role": "event-selection-banner",
+      "credit": "Sunborn / MICA Team",
+      "page": "https://store.steampowered.com/app/3887700/",
+      "source": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab#missionselect_ZLSR_base",
+      "sha256": "018f81eda2c14a67cc52c917fcba9fa2e6d44b5aa162fdc47231e077bb517c6f",
+      "nativeSource": {
+        "file": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab",
+        "sha256": "318322993bf9b74f89fa445ef66b2490b6c1035d83974d9026dfd9640eb38bb2",
+        "pathId": "-8948238534268139612",
+        "texture": "missionselect_ZLSR_base",
+        "pixelSha256": "a35a3ff832797c5282cf8c7dc521c250d312153f2b0f042e170741ada3e0a1c2"
+      }
+    },
+    "gfl1:gfl1-through-the-looking-glass": {
+      "url": "/private/gfl1/covers/gfl1-through-the-looking-glass.d59fd40a3b03220d.webp",
+      "position": "50% 50%",
+      "fit": "contain",
+      "width": 480,
+      "height": 155,
+      "kind": "official-game-art",
+      "role": "event-selection-banner",
+      "credit": "Sunborn / MICA Team",
+      "page": "https://store.steampowered.com/app/3887700/",
+      "source": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab#missionselect_2024Ghost_base",
+      "sha256": "d59fd40a3b03220d5f5fe107f28e84a70de518cf9694dd8b5058f01ed35c5d92",
+      "nativeSource": {
+        "file": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab",
+        "sha256": "318322993bf9b74f89fa445ef66b2490b6c1035d83974d9026dfd9640eb38bb2",
+        "pathId": "-5684121690347876658",
+        "texture": "missionselect_2024Ghost_base",
+        "pixelSha256": "fb8d682bc1703676f753a9fbebd0f840d51177a6981d99ba0eb094fef2d1944a"
+      }
+    },
+    "gfl1:gfl1-lorenz-butterfly": {
+      "url": "/private/gfl1/covers/gfl1-lorenz-butterfly.8675739152e15ff1.webp",
+      "position": "50% 50%",
+      "fit": "contain",
+      "width": 480,
+      "height": 155,
+      "kind": "official-game-art",
+      "role": "event-selection-banner",
+      "credit": "Sunborn / MICA Team",
+      "page": "https://store.steampowered.com/app/3887700/",
+      "source": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab#missionselect_breakout_base",
+      "sha256": "8675739152e15ff1b3fc3432800b529441bf06d2fb3ccd882ab7beeee56f4dbf",
+      "nativeSource": {
+        "file": "SJth5IjiFB6B3CjBKP4kBYYaEIvfzxdFo40xmz1i70AgoK5v9cZa6sZctSFidGDresourceiconops.ab",
+        "sha256": "318322993bf9b74f89fa445ef66b2490b6c1035d83974d9026dfd9640eb38bb2",
+        "pathId": "6402869846835359891",
+        "texture": "missionselect_breakout_base",
+        "pixelSha256": "f3080882cb968aee2fbf46be3716e21bf915eb3734fb326b7eb836a328078361"
+      }
     }
   }
 }

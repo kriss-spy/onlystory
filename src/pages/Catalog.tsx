@@ -13,9 +13,14 @@ import { catalogEventUrl, catalogMode, catalogSource } from '../catalog-source';
 import { useStore } from '../store';
 import { EmptyState } from '../components/Primitives';
 import { PageTitle } from '../components/Shell';
-import { eventArtwork } from '../covers';
+import { eventArtwork, artworkStyle } from '../covers';
 
 const scrollPositions = new Map<string, number>();
+const eventTypes = [
+  { value: 'story', label: 'Story Events' },
+  { value: 'collaboration', label: 'Collaborations' },
+  { value: 'special', label: 'Seasonal / Special' },
+] as const;
 export function CatalogPage() {
   const { game: id } = useParams();
   const game = gameById(id);
@@ -30,6 +35,11 @@ export function CatalogPage() {
       ? requestedCategory
       : 'all';
   const requestedSort = params.get('sort');
+  const requestedType = params.get('eventType');
+  const eventType = eventTypes.some((type) => type.value === requestedType)
+    ? (requestedType ?? 'all')
+    : 'all';
+  const showEventTypes = game?.id === 'gfl1' && category === 'Event';
   const sort =
     requestedSort === 'story' || requestedSort === 'release'
       ? requestedSort
@@ -49,16 +59,19 @@ export function CatalogPage() {
               event.stories.some((story) =>
                 story.title.toLowerCase().includes(query.toLowerCase()),
               )) &&
-            (category === 'all' || event.category === category),
+            (category === 'all' || event.category === category) &&
+            (!showEventTypes ||
+              eventType === 'all' ||
+              event.eventType === eventType),
         )
-        .sort((a, b) =>
-          sort === 'release'
-            ? a.date.localeCompare(b.date)
-            : sort === 'release-newest'
-              ? b.date.localeCompare(a.date)
-              : 0,
-        ),
-    [events, query, category, sort],
+        .sort((a, b) => {
+          if (sort === 'story') return 0;
+          const order =
+            a.date.localeCompare(b.date) ||
+            a.stories[0].order - b.stories[0].order;
+          return sort === 'release' ? order : -order;
+        }),
+    [events, query, category, sort, showEventTypes, eventType],
   );
   const large = filtered.length > 80;
   const virtual = useVirtualizer({
@@ -75,8 +88,16 @@ export function CatalogPage() {
   const update = (key: string, value: string) => {
     const next = new URLSearchParams(params);
     const defaultValue = key === 'sort' ? 'release-newest' : 'all';
-    if (value && value !== defaultValue) next.set(key, value);
+    if (key === 'storyType') {
+      next.delete('category');
+      next.delete('eventType');
+      if (value.startsWith('event:')) {
+        next.set('category', 'Event');
+        next.set('eventType', value.slice(6));
+      } else if (value !== 'all') next.set('category', value);
+    } else if (value && value !== defaultValue) next.set(key, value);
     else next.delete(key);
+    if (key === 'category') next.delete('eventType');
     setParams(next, { replace: true });
   };
   if (!game)
@@ -112,7 +133,7 @@ export function CatalogPage() {
               alt=""
               width={cover.width}
               height={cover.height}
-              style={{ objectPosition: cover.position }}
+              style={artworkStyle(cover)}
             />
           ) : (
             <span className="event-number">
@@ -122,7 +143,8 @@ export function CatalogPage() {
           <span className="event-info">
             <small>
               {event.category}
-              {sort === 'release' || sort === 'release-newest' ? (
+              {event.date &&
+              (sort === 'release' || sort === 'release-newest') ? (
                 <>
                   {' '}
                   · <time dateTime={event.date}>{event.date}</time>
@@ -167,13 +189,35 @@ export function CatalogPage() {
           />
         </label>
         <select
-          aria-label="Event category"
-          value={category}
-          onChange={(e) => update('category', e.target.value)}
+          aria-label={game.id === 'gfl1' ? 'Story type' : 'Event category'}
+          value={
+            showEventTypes && eventType !== 'all'
+              ? `event:${eventType}`
+              : category
+          }
+          onChange={(e) => update('storyType', e.target.value)}
         >
           <option value="all">All collections</option>
           <option>Main story</option>
-          <option>Event</option>
+          <option value="Event">
+            {game.id === 'gfl1' ? 'All Events' : 'Event'}
+          </option>
+          {game.id === 'gfl1' &&
+            eventTypes.map((type) => {
+              const count = events.filter(
+                (event) =>
+                  event.category === 'Event' && event.eventType === type.value,
+              ).length;
+              return (
+                <option
+                  key={type.value}
+                  value={`event:${type.value}`}
+                  disabled={!count}
+                >
+                  {type.label} ({count})
+                </option>
+              );
+            })}
         </select>
         <select
           aria-label="Event order"
