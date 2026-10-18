@@ -10,6 +10,7 @@ public/private/
 src/generated/
 private-review/
 .cache/
+.audit/
 .codex/worktree.local.json
 __pycache__/
 *.pyc

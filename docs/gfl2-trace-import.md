@@ -6,12 +6,12 @@ Imported the current installed CN story into `gfl2-trace`. This records the inst
 
 The authoritative join is ChapterData 4007 → StoryData → StageData → AvgPlotData → the installed AdvBookAssetPathMappingSO mapping. ChapterData 3004 points to 4007. ChapterData 3028 points to rerun route 4031. Both routes have the same story titles and ordered script labels A04001 through A04005. The spec imports only 4007 and records 4031 as a related run to avoid adding the same event twice. This comparison establishes identical script references in the installed tables, not historical byte identity across releases. The date 2024-03-26 is catalog metadata, not derived from the current ChapterData tables.
 
-| Source node | Section | Scripts | Passages |
-| --- | --- | --- | --- |
-| 30786 | JS-1-1 演出委托 | A04001, A04002 | 68 |
-| 30787 | JS-1-2 突然袭击 | A04003 | 43 |
-| 30788 | JS-1-3 可靠援助 | A04004 | 91 |
-| 30709 | JA-1-9 未来回音 | A04005 | 25 |
+| Source node | Section         | Scripts        | Passages |
+| ----------- | --------------- | -------------- | -------- |
+| 30786       | JS-1-1 演出委托 | A04001, A04002 | 68       |
+| 30787       | JS-1-2 突然袭击 | A04003         | 43       |
+| 30788       | JS-1-3 可靠援助 | A04004         | 91       |
+| 30709       | JA-1-9 未来回音 | A04005         | 25       |
 
 The final node's AvgPlotData type is 21. It carries the final story and is included. Eight combat-only route nodes 30701 through 30708 have no plot links and are excluded. All twelve route nodes retain their original graph metadata in `.cache/gfl2-trace/nodes.json`.
 

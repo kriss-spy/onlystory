@@ -117,11 +117,9 @@ test('download from management loads backgrounds, Live2D and original loops offl
   const errors: string[] = [];
   page.on('pageerror', (error) => errors.push(error.message));
   await page.goto('/manage');
-  const row = page
-    .locator('.download-item')
-    .filter({
-      has: page.getByRole('link', { name: 'CS-1-1 长梦初醒', exact: true }),
-    });
+  const row = page.locator('.download-item').filter({
+    has: page.getByRole('link', { name: 'CS-1-1 长梦初醒', exact: true }),
+  });
   await row
     .getByRole('button', { name: 'Download CS-1-1 长梦初醒', exact: true })
     .click();

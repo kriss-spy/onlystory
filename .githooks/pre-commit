@@ -1,0 +1,4 @@
+#!/bin/sh
+# Repository gate: format check, unit tests, import tests and the build.
+# Enable once with: git config core.hooksPath .githooks
+npm run check

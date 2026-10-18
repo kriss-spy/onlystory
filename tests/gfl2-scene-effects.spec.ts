@@ -301,19 +301,17 @@ test('the reported standard hologram uses the softer projection', async ({
   await page.goto('/read/gfl2/gfl2-cn-4028-32990?line=M15033%3A204');
   await expect
     .poll(() =>
-      page
-        .getByTestId('native-layers')
-        .evaluate(
-          (element) =>
-            (
-              element as HTMLElement & {
-                playbackDiagnostics?: {
-                  models: { id: string; hologram?: string }[];
-                };
-              }
-            ).playbackDiagnostics?.models.find((model) => model.id === '爵士')
-              ?.hologram,
-        ),
+      page.getByTestId('native-layers').evaluate(
+        (element) =>
+          (
+            element as HTMLElement & {
+              playbackDiagnostics?: {
+                models: { id: string; hologram?: string }[];
+              };
+            }
+          ).playbackDiagnostics?.models.find((model) => model.id === '爵士')
+            ?.hologram,
+      ),
     )
     .toBe('SenCharEff_CommunStart_holo_01');
   await page.screenshot({

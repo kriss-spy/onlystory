@@ -8,7 +8,12 @@ public/private
 src/generated
 private-review
 .cache
+.audit
 public/vendor
+# Pinned or generated data whose bytes feed provenance hashes.
+scripts/ba-jp-schema-1.73.json
+scripts/ba-jp-main-schema-1.73.json
+scripts/ba-library.json
 docs/UI-ANTI-PATTERNS.md
 docs/reader-design.md
 docs/story-reader-feasibility.md

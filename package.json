@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "prepare": "node scripts/setup-live2d.mjs",
+    "prepare": "node scripts/setup-live2d.mjs && node scripts/setup-hooks.mjs",
     "predev": "node scripts/setup-live2d.mjs",
     "prebuild": "node scripts/setup-live2d.mjs",
     "setup:live2d": "node scripts/setup-live2d.mjs",
@@ -30,7 +30,8 @@
     "test:import": "node --test scripts/gfl1-story.test.mjs scripts/gfl1-interactions.test.mjs scripts/gfl1-branch-joins.test.mjs scripts/gfl2-event.test.mjs scripts/gfl2-scenes.test.mjs scripts/gfl2-ilion.test.mjs scripts/gfl2-branches.test.mjs scripts/storage-library.test.mjs scripts/library-server.test.mjs scripts/pjsk-import.test.mjs scripts/pjsk-media.test.mjs scripts/pjsk-voice-listing.test.mjs scripts/pjsk-deferred.test.mjs scripts/pjsk-availability.test.mjs scripts/pjsk-voice-bindings.test.mjs scripts/ba-story.test.mjs scripts/ba-scenes.test.mjs scripts/ba-library.test.mjs scripts/ba-main-library.test.mjs scripts/ba-group-library.test.mjs",
     "test:browser": "playwright test",
     "audit:cg": "node scripts/audit-gfl2-cg.mjs",
-    "verify": "npm run test && npm run build && npm run test:import && npm run test:browser",
+    "verify": "npm run check && npm run test:browser",
+    "check": "npm run format:check && node scripts/check-spec-literals.mjs && npm run test && npm run test:import && npm run build",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "prefetch:pjsk-events": "node scripts/pjsk-prefetch.mjs --manifest .cache/pjsk/all-events-validation/available-corpus.json --skip-voices --workers 6 --max-rps 8",

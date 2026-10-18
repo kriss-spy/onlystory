@@ -8,18 +8,18 @@ The installed `ChapterData`, `StoryData`, `StageData`, `AvgPlotData`, `LangPacka
 
 Chapter 4008 has 17 source nodes. Eleven belong to the main route, including the story-free combat stage 30806. Six other nodes have no plot scripts. The package retains the ten story-bearing route nodes in source link order. The two MS stages, 30881 and 30882, are part of this route, with kind 2 and predecessor/successor links, rather than optional side branches.
 
-| Stage | Title | Books |
-| --- | --- | --- |
-| MA-1-1 | 错误交换 | A02001–A02002 |
-| MA-1-2 | 意外来访 | A02003–A02004 |
-| MS-1-1 | 危险通缉 | A02005–A02006 |
+| Stage  | Title      | Books         |
+| ------ | ---------- | ------------- |
+| MA-1-1 | 错误交换   | A02001–A02002 |
+| MA-1-2 | 意外来访   | A02003–A02004 |
+| MS-1-1 | 危险通缉   | A02005–A02006 |
 | MA-1-3 | 僵硬的玩偶 | A02007–A02008 |
 | MA-1-4 | 入侵大作战 | A02009–A02012 |
-| MA-1-5 | 可靠的伙伴 | A02013 |
-| MS-1-2 | 意外碰面 | A02014–A02018 |
-| MA-1-7 | 唐突的登场 | A02019 |
+| MA-1-5 | 可靠的伙伴 | A02013        |
+| MS-1-2 | 意外碰面   | A02014–A02018 |
+| MA-1-7 | 唐突的登场 | A02019        |
 | MA-1-8 | 舞台的中心 | A02020–A02021 |
-| MA-1-9 | 狂想落幕 | A02022–A02024 |
+| MA-1-9 | 狂想落幕   | A02022–A02024 |
 
 The release date field follows the supplied batch specification. It is not inferred from current table timestamps.
 

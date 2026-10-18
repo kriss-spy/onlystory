@@ -198,11 +198,9 @@ test('downloaded text loads offline and a failed chapter request can be retried'
   await page.getByRole('button', { name: 'Retry chapter' }).click();
   await expect(page.locator('.dialogue-window')).toContainText('2074年');
   await page.goto('/manage');
-  const row = page
-    .locator('.download-item')
-    .filter({
-      has: page.getByRole('link', { name: 'CS-1-6 祈盼明天', exact: true }),
-    });
+  const row = page.locator('.download-item').filter({
+    has: page.getByRole('link', { name: 'CS-1-6 祈盼明天', exact: true }),
+  });
   await row
     .getByRole('button', { name: 'Download CS-1-6 祈盼明天', exact: true })
     .click();

@@ -6,19 +6,19 @@ The import reads the current installed CN story under chapter 4006, titled 交�
 
 StoryData defines eleven story-bearing nodes. Their predecessor chain agrees with their map x positions:
 
-| Story ID | Code | Title | Books |
-| --- | --- | --- | --- |
-| 30586 | LS-1-1 | 暗流之下 | A23001 |
-| 30501 | LA-1-1 | 高昂的希望 | A23002, A23003 |
-| 30502 | LA-1-2 | 盘根错节 | A23004, A23005 |
-| 30503 | LA-1-3 | 鹬蚌相争 | A23006, A23007 |
-| 30504 | LA-1-4 | 虚妄幻觉 | A23008, A23009 |
-| 30505 | LA-1-5 | 沉睡的实验品 | A23010, A23011 |
-| 30506 | LA-1-6 | 交汇的瞬间 | A23012, A23013 |
-| 30507 | LA-1-7 | 地下交易 | A23014, A23015 |
-| 30508 | LA-1-8 | 通往梦想的道路 | A23016, A23017 |
-| 30509 | LA-1-9 | 开辟而出的选择 | A23018, A23019 |
-| 30587 | LS-1-2 | 留存的证据 | A23020 |
+| Story ID | Code   | Title          | Books          |
+| -------- | ------ | -------------- | -------------- |
+| 30586    | LS-1-1 | 暗流之下       | A23001         |
+| 30501    | LA-1-1 | 高昂的希望     | A23002, A23003 |
+| 30502    | LA-1-2 | 盘根错节       | A23004, A23005 |
+| 30503    | LA-1-3 | 鹬蚌相争       | A23006, A23007 |
+| 30504    | LA-1-4 | 虚妄幻觉       | A23008, A23009 |
+| 30505    | LA-1-5 | 沉睡的实验品   | A23010, A23011 |
+| 30506    | LA-1-6 | 交汇的瞬间     | A23012, A23013 |
+| 30507    | LA-1-7 | 地下交易       | A23014, A23015 |
+| 30508    | LA-1-8 | 通往梦想的道路 | A23016, A23017 |
+| 30509    | LA-1-9 | 开辟而出的选择 | A23018, A23019 |
+| 30587    | LS-1-2 | 留存的证据     | A23020         |
 
 AvgPlotData kind order places pre-combat kind 11 before post-combat kind 21. Book order follows each plot's script list, then original grid row order. Original commands remain in the source payloads.
 
