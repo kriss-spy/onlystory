@@ -361,7 +361,7 @@ test('themes persist, backups export, invalid import preserves progress and keyb
 test('large catalogs keep a bounded DOM, search deep results and restore scroll', async ({
   page,
 }) => {
-  await page.goto('/games/gfl2?stress=10000');
+  await page.goto('/games/gfl2?stress=10000&sort=story');
   await expect(page.getByText('10,000 events')).toBeVisible();
   expect(await page.locator('.event-row').count()).toBeLessThan(25);
   await page.locator('.catalog-scroll').evaluate((el) => {
@@ -448,9 +448,10 @@ test('loading and failed voice leave text usable, and language changes preserve 
   await page
     .getByRole('button', { name: 'Reader settings', exact: true })
     .click();
-  await expect(page.getByLabel('Text language', { exact: true })).toHaveCount(
-    0,
+  await expect(page.getByLabel('Text language', { exact: true })).toHaveValue(
+    'en',
   );
+  await page.getByLabel('Text language', { exact: true }).selectOption('ja');
   await page.getByLabel('Voice language', { exact: true }).selectOption('ja');
   await page.getByRole('button', { name: 'Close', exact: true }).click();
   await expect(page.locator('.dialogue-window')).toContainText(

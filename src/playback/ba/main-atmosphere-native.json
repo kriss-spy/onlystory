@@ -1,0 +1,800 @@
+{
+  "sourcePacks": ["FullPatch_125.zip", "FullPatch_051.zip"],
+  "gameVersion": "1.73.459696",
+  "effects": {
+    "BG_Love_L": {
+      "scopes": {
+        "AboveBg": 3,
+        "AboveCharacter": 0,
+        "AboveAll": 0
+      },
+      "audio": [
+        {
+          "m_audioClip": {
+            "m_FileID": 8,
+            "m_PathID": -4944057317576936327
+          },
+          "Loop": true,
+          "m_Volume": 1.0,
+          "resolved": null,
+          "externalFile": "archive:/CAB-6bfaa1aa3bde965297f00e7b394f76a8/CAB-6bfaa1aa3bde965297f00e7b394f76a8"
+        }
+      ]
+    },
+    "BG_ScrollL_1.0": {
+      "scopes": {
+        "AboveBg": 2,
+        "AboveCharacter": 0,
+        "AboveAll": 0
+      },
+      "audio": [
+        {
+          "m_audioClip": {
+            "m_FileID": 8,
+            "m_PathID": -5279711915427801445
+          },
+          "Loop": false,
+          "m_Volume": 1.0,
+          "resolved": null,
+          "externalFile": "archive:/CAB-6bfaa1aa3bde965297f00e7b394f76a8/CAB-6bfaa1aa3bde965297f00e7b394f76a8"
+        }
+      ]
+    },
+    "BG_Rain_L": {
+      "scopes": {
+        "AboveBg": 0,
+        "AboveCharacter": 1,
+        "AboveAll": 0
+      },
+      "audio": [
+        {
+          "m_audioClip": {
+            "m_FileID": 8,
+            "m_PathID": -1247818409715818881
+          },
+          "Loop": true,
+          "m_Volume": 0.30000001192092896,
+          "resolved": null,
+          "externalFile": "archive:/CAB-6bfaa1aa3bde965297f00e7b394f76a8/CAB-6bfaa1aa3bde965297f00e7b394f76a8"
+        }
+      ]
+    },
+    "BG_TvTurnOff": {
+      "scopes": {
+        "AboveBg": 0,
+        "AboveCharacter": 5,
+        "AboveAll": 0
+      },
+      "audio": []
+    },
+    "BG_Snow_L": {
+      "scopes": {
+        "AboveBg": 0,
+        "AboveCharacter": 1,
+        "AboveAll": 0
+      },
+      "audio": [
+        {
+          "m_audioClip": {
+            "m_FileID": 8,
+            "m_PathID": 6014815621895263979
+          },
+          "Loop": true,
+          "m_Volume": 1.0,
+          "resolved": null,
+          "externalFile": "archive:/CAB-6bfaa1aa3bde965297f00e7b394f76a8/CAB-6bfaa1aa3bde965297f00e7b394f76a8"
+        }
+      ]
+    },
+    "BG_Love_L_BGOff": {
+      "scopes": {
+        "AboveBg": 3,
+        "AboveCharacter": 0,
+        "AboveAll": 0
+      },
+      "audio": []
+    },
+    "BG_GrowupLight_Sound_L": {
+      "scopes": {
+        "AboveBg": 0,
+        "AboveCharacter": 2,
+        "AboveAll": 0
+      },
+      "audio": [
+        {
+          "m_audioClip": {
+            "m_FileID": 8,
+            "m_PathID": -5543578258330456582
+          },
+          "Loop": true,
+          "m_Volume": 1.0,
+          "resolved": null,
+          "externalFile": "archive:/CAB-6bfaa1aa3bde965297f00e7b394f76a8/CAB-6bfaa1aa3bde965297f00e7b394f76a8"
+        }
+      ]
+    },
+    "BG_Fireworks_L_BGOff_02": {
+      "scopes": {
+        "AboveBg": 1,
+        "AboveCharacter": 0,
+        "AboveAll": 0
+      },
+      "audio": []
+    },
+    "BG_ScrollL_1.5": {
+      "scopes": {
+        "AboveBg": 2,
+        "AboveCharacter": 0,
+        "AboveAll": 0
+      },
+      "audio": [
+        {
+          "m_audioClip": {
+            "m_FileID": 8,
+            "m_PathID": -7356522116328698382
+          },
+          "Loop": false,
+          "m_Volume": 1.0,
+          "resolved": null,
+          "externalFile": "archive:/CAB-6bfaa1aa3bde965297f00e7b394f76a8/CAB-6bfaa1aa3bde965297f00e7b394f76a8"
+        }
+      ]
+    },
+    "BG_Sweetrain_L_Sound": {
+      "scopes": {
+        "AboveBg": 0,
+        "AboveCharacter": 2,
+        "AboveAll": 0
+      },
+      "audio": [
+        {
+          "m_audioClip": {
+            "m_FileID": 8,
+            "m_PathID": 8060974259647859121
+          },
+          "Loop": true,
+          "m_Volume": 1.0,
+          "resolved": null,
+          "externalFile": "archive:/CAB-6bfaa1aa3bde965297f00e7b394f76a8/CAB-6bfaa1aa3bde965297f00e7b394f76a8"
+        }
+      ]
+    },
+    "BG_WaveShort_F": {
+      "scopes": {
+        "AboveBg": 0,
+        "AboveCharacter": 1,
+        "AboveAll": 0
+      },
+      "audio": []
+    },
+    "BG_Cherryblossom_Fly": {
+      "scopes": {
+        "AboveBg": 1,
+        "AboveCharacter": 0,
+        "AboveAll": 1
+      },
+      "audio": []
+    },
+    "BG_Filter_Flashback_BG": {
+      "scopes": {
+        "AboveBg": 1,
+        "AboveCharacter": 0,
+        "AboveAll": 0
+      },
+      "audio": []
+    },
+    "BG_SnowStorm_Sound": {
+      "scopes": {
+        "AboveBg": 1,
+        "AboveCharacter": 0,
+        "AboveAll": 2
+      },
+      "audio": [
+        {
+          "m_audioClip": {
+            "m_FileID": 8,
+            "m_PathID": -1515768094982031159
+          },
+          "Loop": true,
+          "m_Volume": 0.699999988079071,
+          "resolved": null,
+          "externalFile": "archive:/CAB-6bfaa1aa3bde965297f00e7b394f76a8/CAB-6bfaa1aa3bde965297f00e7b394f76a8"
+        }
+      ]
+    },
+    "BG_ScrollR_1.5": {
+      "scopes": {
+        "AboveBg": 2,
+        "AboveCharacter": 0,
+        "AboveAll": 0
+      },
+      "audio": [
+        {
+          "m_audioClip": {
+            "m_FileID": 8,
+            "m_PathID": 1481679043630190597
+          },
+          "Loop": false,
+          "m_Volume": 1.0,
+          "resolved": null,
+          "externalFile": "archive:/CAB-6bfaa1aa3bde965297f00e7b394f76a8/CAB-6bfaa1aa3bde965297f00e7b394f76a8"
+        }
+      ]
+    },
+    "BG_ScatterFire_2": {
+      "scopes": {
+        "AboveBg": 0,
+        "AboveCharacter": 25,
+        "AboveAll": 0
+      },
+      "audio": []
+    },
+    "BG_Shining_L": {
+      "scopes": {
+        "AboveBg": 2,
+        "AboveCharacter": 0,
+        "AboveAll": 0
+      },
+      "audio": [
+        {
+          "m_audioClip": {
+            "m_FileID": 51,
+            "m_PathID": -3600730964781315988
+          },
+          "Loop": true,
+          "m_Volume": 1.0,
+          "resolved": null,
+          "externalFile": "archive:/CAB-fd4a5495eb8c8a70d9dcaff3b8da0e89/CAB-fd4a5495eb8c8a70d9dcaff3b8da0e89"
+        }
+      ]
+    },
+    "BG_BigDust_L": {
+      "scopes": {
+        "AboveBg": 6,
+        "AboveCharacter": 4,
+        "AboveAll": 0
+      },
+      "audio": [
+        {
+          "m_audioClip": {
+            "m_FileID": 8,
+            "m_PathID": -5243580065002365990
+          },
+          "Loop": true,
+          "m_Volume": 1.0,
+          "resolved": null,
+          "externalFile": "archive:/CAB-6bfaa1aa3bde965297f00e7b394f76a8/CAB-6bfaa1aa3bde965297f00e7b394f76a8"
+        }
+      ]
+    },
+    "BG_Wave_F": {
+      "scopes": {
+        "AboveBg": 1,
+        "AboveCharacter": 1,
+        "AboveAll": 0
+      },
+      "audio": []
+    },
+    "BG_ScatterFire_1": {
+      "scopes": {
+        "AboveBg": 0,
+        "AboveCharacter": 13,
+        "AboveAll": 0
+      },
+      "audio": []
+    },
+    "BG_FocusLine": {
+      "scopes": {
+        "AboveBg": 0,
+        "AboveCharacter": 1,
+        "AboveAll": 0
+      },
+      "audio": [
+        {
+          "m_audioClip": {
+            "m_FileID": 8,
+            "m_PathID": 3044892715460701062
+          },
+          "Loop": false,
+          "m_Volume": 1.0,
+          "resolved": null,
+          "externalFile": "archive:/CAB-6bfaa1aa3bde965297f00e7b394f76a8/CAB-6bfaa1aa3bde965297f00e7b394f76a8"
+        }
+      ]
+    },
+    "BG_ScrollT_1.0": {
+      "scopes": {
+        "AboveBg": 2,
+        "AboveCharacter": 0,
+        "AboveAll": 0
+      },
+      "audio": [
+        {
+          "m_audioClip": {
+            "m_FileID": 8,
+            "m_PathID": 1615159507854818352
+          },
+          "Loop": false,
+          "m_Volume": 1.0,
+          "resolved": null,
+          "externalFile": "archive:/CAB-6bfaa1aa3bde965297f00e7b394f76a8/CAB-6bfaa1aa3bde965297f00e7b394f76a8"
+        }
+      ]
+    },
+    "BG_TvTurnOff_Sound": {
+      "scopes": {
+        "AboveBg": 0,
+        "AboveCharacter": 5,
+        "AboveAll": 0
+      },
+      "audio": [
+        {
+          "m_audioClip": {
+            "m_FileID": 8,
+            "m_PathID": 3620533153712374311
+          },
+          "Loop": false,
+          "m_Volume": 0.800000011920929,
+          "resolved": null,
+          "externalFile": "archive:/CAB-6bfaa1aa3bde965297f00e7b394f76a8/CAB-6bfaa1aa3bde965297f00e7b394f76a8"
+        }
+      ]
+    },
+    "BG_ScrollL_0.5": {
+      "scopes": {
+        "AboveBg": 2,
+        "AboveCharacter": 0,
+        "AboveAll": 0
+      },
+      "audio": [
+        {
+          "m_audioClip": {
+            "m_FileID": 8,
+            "m_PathID": 3004686722086501714
+          },
+          "Loop": false,
+          "m_Volume": 1.0,
+          "resolved": null,
+          "externalFile": "archive:/CAB-6bfaa1aa3bde965297f00e7b394f76a8/CAB-6bfaa1aa3bde965297f00e7b394f76a8"
+        }
+      ]
+    },
+    "BG_ScrollB_1.5": {
+      "scopes": {
+        "AboveBg": 2,
+        "AboveCharacter": 0,
+        "AboveAll": 0
+      },
+      "audio": [
+        {
+          "m_audioClip": {
+            "m_FileID": 8,
+            "m_PathID": -1404615406956603073
+          },
+          "Loop": false,
+          "m_Volume": 1.0,
+          "resolved": null,
+          "externalFile": "archive:/CAB-6bfaa1aa3bde965297f00e7b394f76a8/CAB-6bfaa1aa3bde965297f00e7b394f76a8"
+        }
+      ]
+    },
+    "BG_ScrollB_0.5": {
+      "scopes": {
+        "AboveBg": 2,
+        "AboveCharacter": 0,
+        "AboveAll": 0
+      },
+      "audio": [
+        {
+          "m_audioClip": {
+            "m_FileID": 8,
+            "m_PathID": -6017501003868463820
+          },
+          "Loop": false,
+          "m_Volume": 1.0,
+          "resolved": null,
+          "externalFile": "archive:/CAB-6bfaa1aa3bde965297f00e7b394f76a8/CAB-6bfaa1aa3bde965297f00e7b394f76a8"
+        }
+      ]
+    },
+    "BG_ScrollT_1.5": {
+      "scopes": {
+        "AboveBg": 2,
+        "AboveCharacter": 0,
+        "AboveAll": 0
+      },
+      "audio": [
+        {
+          "m_audioClip": {
+            "m_FileID": 8,
+            "m_PathID": 8432586677929507447
+          },
+          "Loop": false,
+          "m_Volume": 1.0,
+          "resolved": null,
+          "externalFile": "archive:/CAB-6bfaa1aa3bde965297f00e7b394f76a8/CAB-6bfaa1aa3bde965297f00e7b394f76a8"
+        }
+      ]
+    },
+    "BG_ScrollR_0.5": {
+      "scopes": {
+        "AboveBg": 2,
+        "AboveCharacter": 0,
+        "AboveAll": 0
+      },
+      "audio": [
+        {
+          "m_audioClip": {
+            "m_FileID": 8,
+            "m_PathID": -5681723562182373439
+          },
+          "Loop": false,
+          "m_Volume": 1.0,
+          "resolved": null,
+          "externalFile": "archive:/CAB-6bfaa1aa3bde965297f00e7b394f76a8/CAB-6bfaa1aa3bde965297f00e7b394f76a8"
+        }
+      ]
+    },
+    "BG_Fireworks_L_BGOff_01": {
+      "scopes": {
+        "AboveBg": 1,
+        "AboveCharacter": 0,
+        "AboveAll": 0
+      },
+      "audio": []
+    },
+    "BG_Flash_Sound": {
+      "scopes": {
+        "AboveBg": 1,
+        "AboveCharacter": 0,
+        "AboveAll": 0
+      },
+      "audio": [
+        {
+          "m_audioClip": {
+            "m_FileID": 8,
+            "m_PathID": -4495507097947381590
+          },
+          "Loop": false,
+          "m_Volume": 1.0,
+          "resolved": null,
+          "externalFile": "archive:/CAB-6bfaa1aa3bde965297f00e7b394f76a8/CAB-6bfaa1aa3bde965297f00e7b394f76a8"
+        }
+      ]
+    },
+    "BG_TvNoise_Sound": {
+      "scopes": {
+        "AboveBg": 0,
+        "AboveCharacter": 5,
+        "AboveAll": 0
+      },
+      "audio": [
+        {
+          "m_audioClip": {
+            "m_FileID": 8,
+            "m_PathID": -6909647260299818771
+          },
+          "Loop": false,
+          "m_Volume": 0.800000011920929,
+          "resolved": null,
+          "externalFile": "archive:/CAB-6bfaa1aa3bde965297f00e7b394f76a8/CAB-6bfaa1aa3bde965297f00e7b394f76a8"
+        }
+      ]
+    },
+    "BG_Flash": {
+      "scopes": {
+        "AboveBg": 1,
+        "AboveCharacter": 0,
+        "AboveAll": 0
+      },
+      "audio": []
+    },
+    "BG_SnowStorm2_Sound": {
+      "scopes": {
+        "AboveBg": 1,
+        "AboveCharacter": 0,
+        "AboveAll": 3
+      },
+      "audio": [
+        {
+          "m_audioClip": {
+            "m_FileID": 8,
+            "m_PathID": -6525409035436182400
+          },
+          "Loop": true,
+          "m_Volume": 0.5,
+          "resolved": null,
+          "externalFile": "archive:/CAB-6bfaa1aa3bde965297f00e7b394f76a8/CAB-6bfaa1aa3bde965297f00e7b394f76a8"
+        }
+      ]
+    },
+    "BG_Shining_L_BGOff": {
+      "scopes": {
+        "AboveBg": 2,
+        "AboveCharacter": 0,
+        "AboveAll": 0
+      },
+      "audio": []
+    },
+    "BG_ScrollB_1.0": {
+      "scopes": {
+        "AboveBg": 2,
+        "AboveCharacter": 0,
+        "AboveAll": 0
+      },
+      "audio": [
+        {
+          "m_audioClip": {
+            "m_FileID": 8,
+            "m_PathID": -445651450595679739
+          },
+          "Loop": false,
+          "m_Volume": 1.0,
+          "resolved": null,
+          "externalFile": "archive:/CAB-6bfaa1aa3bde965297f00e7b394f76a8/CAB-6bfaa1aa3bde965297f00e7b394f76a8"
+        }
+      ]
+    },
+    "BG_ScrollR_1.0": {
+      "scopes": {
+        "AboveBg": 2,
+        "AboveCharacter": 0,
+        "AboveAll": 0
+      },
+      "audio": [
+        {
+          "m_audioClip": {
+            "m_FileID": 8,
+            "m_PathID": -4288086760555696492
+          },
+          "Loop": false,
+          "m_Volume": 1.0,
+          "resolved": null,
+          "externalFile": "archive:/CAB-6bfaa1aa3bde965297f00e7b394f76a8/CAB-6bfaa1aa3bde965297f00e7b394f76a8"
+        }
+      ]
+    },
+    "BG_Filter_Gray": {
+      "scopes": {
+        "AboveBg": 0,
+        "AboveCharacter": 1,
+        "AboveAll": 0
+      },
+      "audio": []
+    },
+    "BG_TvNoise": {
+      "scopes": {
+        "AboveBg": 0,
+        "AboveCharacter": 5,
+        "AboveAll": 0
+      },
+      "audio": []
+    },
+    "BG_Teleport": {
+      "scopes": {
+        "AboveBg": 3,
+        "AboveCharacter": 7,
+        "AboveAll": 0
+      },
+      "audio": []
+    },
+    "BG_Ash_Red": {
+      "scopes": {
+        "AboveBg": 1,
+        "AboveCharacter": 1,
+        "AboveAll": 0
+      },
+      "audio": []
+    },
+    "BG_EyeClose": {
+      "scopes": {
+        "AboveBg": 0,
+        "AboveCharacter": 3,
+        "AboveAll": 0
+      },
+      "audio": []
+    },
+    "BG_Sweetrain_L": {
+      "scopes": {
+        "AboveBg": 0,
+        "AboveCharacter": 2,
+        "AboveAll": 0
+      },
+      "audio": []
+    },
+    "BG_Filter_Red": {
+      "scopes": {
+        "AboveBg": 0,
+        "AboveCharacter": 1,
+        "AboveAll": 0
+      },
+      "audio": []
+    },
+    "BG_Filter_Red_BG": {
+      "scopes": {
+        "AboveBg": 1,
+        "AboveCharacter": 0,
+        "AboveAll": 0
+      },
+      "audio": []
+    },
+    "BG_ScrollT_0.5": {
+      "scopes": {
+        "AboveBg": 2,
+        "AboveCharacter": 0,
+        "AboveAll": 0
+      },
+      "audio": [
+        {
+          "m_audioClip": {
+            "m_FileID": 8,
+            "m_PathID": -7107710113838103611
+          },
+          "Loop": false,
+          "m_Volume": 1.0,
+          "resolved": null,
+          "externalFile": "archive:/CAB-6bfaa1aa3bde965297f00e7b394f76a8/CAB-6bfaa1aa3bde965297f00e7b394f76a8"
+        }
+      ]
+    },
+    "BG_SandStorm_L": {
+      "scopes": {
+        "AboveBg": 1,
+        "AboveCharacter": 2,
+        "AboveAll": 0
+      },
+      "audio": [
+        {
+          "m_audioClip": {
+            "m_FileID": 8,
+            "m_PathID": -2204740392645112549
+          },
+          "Loop": true,
+          "m_Volume": 1.0,
+          "resolved": null,
+          "externalFile": "archive:/CAB-6bfaa1aa3bde965297f00e7b394f76a8/CAB-6bfaa1aa3bde965297f00e7b394f76a8"
+        }
+      ]
+    },
+    "BG_Cherryblossom_Fly_Sound": {
+      "scopes": {
+        "AboveBg": 1,
+        "AboveCharacter": 0,
+        "AboveAll": 1
+      },
+      "audio": [
+        {
+          "m_audioClip": {
+            "m_FileID": 8,
+            "m_PathID": 7859203501435883570
+          },
+          "Loop": true,
+          "m_Volume": 1.0,
+          "resolved": null,
+          "externalFile": "archive:/CAB-6bfaa1aa3bde965297f00e7b394f76a8/CAB-6bfaa1aa3bde965297f00e7b394f76a8"
+        }
+      ]
+    },
+    "BG_UnderFire_R": {
+      "scopes": {
+        "AboveBg": 0,
+        "AboveCharacter": 3,
+        "AboveAll": 0
+      },
+      "audio": [
+        {
+          "m_audioClip": {
+            "m_FileID": 51,
+            "m_PathID": -641224178952797635
+          },
+          "Loop": false,
+          "m_Volume": 1.0,
+          "resolved": null,
+          "externalFile": "archive:/CAB-fd4a5495eb8c8a70d9dcaff3b8da0e89/CAB-fd4a5495eb8c8a70d9dcaff3b8da0e89"
+        }
+      ]
+    },
+    "BG_EyeOpen": {
+      "scopes": {
+        "AboveBg": 0,
+        "AboveCharacter": 3,
+        "AboveAll": 0
+      },
+      "audio": []
+    },
+    "BG_GrowupLight": {
+      "scopes": {
+        "AboveBg": 0,
+        "AboveCharacter": 2,
+        "AboveAll": 0
+      },
+      "audio": []
+    },
+    "BG_Ash_Black": {
+      "scopes": {
+        "AboveBg": 1,
+        "AboveCharacter": 1,
+        "AboveAll": 0
+      },
+      "audio": []
+    },
+    "BG_Filter_Flashback": {
+      "scopes": {
+        "AboveBg": 0,
+        "AboveCharacter": 1,
+        "AboveAll": 0
+      },
+      "audio": []
+    },
+    "BG_Fire": {
+      "scopes": {
+        "AboveBg": 6,
+        "AboveCharacter": 0,
+        "AboveAll": 1
+      },
+      "audio": [
+        {
+          "m_audioClip": {
+            "m_FileID": 8,
+            "m_PathID": 8192529635104207053
+          },
+          "Loop": true,
+          "m_Volume": 0.699999988079071,
+          "resolved": null,
+          "externalFile": "archive:/CAB-6bfaa1aa3bde965297f00e7b394f76a8/CAB-6bfaa1aa3bde965297f00e7b394f76a8"
+        }
+      ]
+    },
+    "BG_Mist_L": {
+      "scopes": {
+        "AboveBg": 0,
+        "AboveCharacter": 4,
+        "AboveAll": 0
+      },
+      "audio": [
+        {
+          "m_audioClip": {
+            "m_FileID": 8,
+            "m_PathID": 7273378943758065596
+          },
+          "Loop": true,
+          "m_Volume": 1.0,
+          "resolved": null,
+          "externalFile": "archive:/CAB-6bfaa1aa3bde965297f00e7b394f76a8/CAB-6bfaa1aa3bde965297f00e7b394f76a8"
+        }
+      ]
+    },
+    "BG_Film_Grain": {
+      "scopes": {
+        "AboveBg": 0,
+        "AboveCharacter": 0,
+        "AboveAll": 5
+      },
+      "audio": []
+    },
+    "BG_Film_Grain_notone_BG": {
+      "scopes": {
+        "AboveBg": 0,
+        "AboveCharacter": 0,
+        "AboveAll": 3
+      },
+      "audio": []
+    },
+    "BG_Film_Grain_notone": {
+      "scopes": {
+        "AboveBg": 0,
+        "AboveCharacter": 0,
+        "AboveAll": 4
+      },
+      "audio": []
+    },
+    "BG_Film_Grain_BG": {
+      "scopes": {
+        "AboveBg": 1,
+        "AboveCharacter": 0,
+        "AboveAll": 4
+      },
+      "audio": []
+    }
+  }
+}

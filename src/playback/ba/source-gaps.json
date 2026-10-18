@@ -1,0 +1,548 @@
+[
+  {
+    "group": 11080,
+    "row": 229,
+    "field": "Sound",
+    "value": "fade1",
+    "reason": "The authored sound key has no matching resource in the pinned JP package. Play no replacement sound."
+  },
+  {
+    "group": 32130,
+    "row": 6,
+    "field": "BGName",
+    "value": 2584521940,
+    "reason": "The authored background ID is absent from the pinned JP background table. Keep the preceding background."
+  },
+  {
+    "group": 200003,
+    "row": 105,
+    "field": "BGName",
+    "value": 1296310937,
+    "reason": "The authored background ID is absent from the pinned JP background table. Keep the preceding background."
+  },
+  {
+    "group": 52010,
+    "row": 138,
+    "field": "BGEffect",
+    "value": 3158805047,
+    "reason": "The authored background-effect ID is absent from the pinned JP effect table. Continue without this effect."
+  },
+  {
+    "group": 62100,
+    "row": 0,
+    "field": "BGEffect",
+    "value": 819177196,
+    "reason": "The authored background-effect ID is absent from the pinned JP effect table. Continue without this effect."
+  },
+  {
+    "group": 62100,
+    "row": 1,
+    "field": "BGEffect",
+    "value": 4089754957,
+    "reason": "The authored background-effect ID is absent from the pinned JP effect table. Continue without this effect."
+  },
+  {
+    "group": 2901,
+    "row": 162,
+    "field": "TextJp",
+    "value": "",
+    "reason": "The authored Japanese line is absent from the pinned JP scenario table. Continue without inventing replacement text."
+  },
+  {
+    "group": 2404,
+    "row": 157,
+    "field": "Character",
+    "value": "불량 학생 3",
+    "reason": "The authored off-screen character alias is absent from the pinned JP character table. Preserve the row and omit only this exit cue."
+  },
+  {
+    "group": 10005055,
+    "row": 66,
+    "field": "Character",
+    "value": "바니걸 가드",
+    "reason": "The authored bunny-girl guard alias has no ScenarioCharacterName row in the pinned JP build. Preserve the row and omit only this actor cue."
+  },
+  {
+    "group": 10011030,
+    "row": 99,
+    "field": "Character",
+    "value": "마토코",
+    "reason": "The authored Matoko alias has no ScenarioCharacterName row in the pinned JP build. Preserve the row and omit only this actor cue."
+  },
+  {
+    "group": 10011030,
+    "row": 100,
+    "field": "Character",
+    "value": "마토코",
+    "reason": "The authored Matoko alias has no ScenarioCharacterName row in the pinned JP build. Preserve the row and omit only this actor cue."
+  },
+  {
+    "group": 10012045,
+    "row": 36,
+    "field": "Character",
+    "value": "퐁당퐁당헬멧단 A",
+    "reason": "The authored helmet-squad alias has no ScenarioCharacterName row in the pinned JP build. Preserve the row and omit only this actor cue."
+  },
+  {
+    "group": 10018020,
+    "row": 1,
+    "field": "Character",
+    "value": "참새정 주인",
+    "reason": "The authored sparrow-inn keeper alias has no ScenarioCharacterName row in the pinned JP build. Preserve the row and omit only this actor cue."
+  },
+  {
+    "group": 10027090,
+    "row": 35,
+    "field": "Character",
+    "value": "모메지",
+    "reason": "The authored Momiji alias has no ScenarioCharacterName row in the pinned JP build. Preserve the row and omit only this actor cue."
+  },
+  {
+    "group": 10029065,
+    "row": 16,
+    "field": "Character",
+    "value": "히미키",
+    "reason": "The authored Himiki alias has no ScenarioCharacterName row in the pinned JP build. Preserve the row and omit only this actor cue."
+  },
+  {
+    "group": 10056050,
+    "row": 81,
+    "field": "Character",
+    "value": "사유라",
+    "reason": "The authored Sayura alias has no ScenarioCharacterName row in the pinned JP build. Preserve the row and omit only this actor cue."
+  },
+  {
+    "group": 10012070,
+    "row": 71,
+    "field": "TextJp",
+    "value": "",
+    "reason": "The row only places the authored English <System Message> label; the pinned JP TextJp is empty. Continue without inventing replacement text."
+  },
+  {
+    "group": 10023080,
+    "row": 87,
+    "field": "TextJp",
+    "value": "",
+    "reason": "The row only emits the authored all-hands exclamation; the pinned JP TextJp is empty. Continue without inventing replacement text."
+  },
+  {
+    "group": 10028005,
+    "row": 1,
+    "field": "TextJp",
+    "value": "",
+    "reason": "The row only displays the authored clock overlay; the pinned JP TextJp is empty. Continue without inventing replacement text."
+  },
+  {
+    "group": 10028010,
+    "row": 1,
+    "field": "TextJp",
+    "value": "",
+    "reason": "The row only displays the authored clock overlay; the pinned JP TextJp is empty. Continue without inventing replacement text."
+  },
+  {
+    "group": 10049005,
+    "row": 5,
+    "field": "TextJp",
+    "value": "",
+    "reason": "The row only displays the authored clock overlay; the pinned JP TextJp is empty. Continue without inventing replacement text."
+  },
+  {
+    "group": 10013090,
+    "row": 136,
+    "field": "BGName",
+    "value": 152285491,
+    "reason": "The authored background ID is absent from the pinned JP background table. Keep the preceding background."
+  },
+  {
+    "group": 10015075,
+    "row": 25,
+    "field": "BGName",
+    "value": 1446737325,
+    "reason": "The authored background ID is absent from the pinned JP background table. Keep the preceding background."
+  },
+  {
+    "group": 80000098,
+    "row": 14,
+    "field": "BGName",
+    "value": 1446737325,
+    "reason": "The authored background ID is absent from the pinned JP background table. Keep the preceding background."
+  },
+  {
+    "group": 10012070,
+    "row": 74,
+    "field": "TextJp",
+    "value": "",
+    "reason": "The row only steps an authored system overlay (clock or label); the pinned JP TextJp is empty. Continue without inventing replacement text."
+  },
+  {
+    "group": 10012070,
+    "row": 77,
+    "field": "TextJp",
+    "value": "",
+    "reason": "The row only steps an authored system overlay (clock or label); the pinned JP TextJp is empty. Continue without inventing replacement text."
+  },
+  {
+    "group": 10028005,
+    "row": 4,
+    "field": "TextJp",
+    "value": "",
+    "reason": "The row only steps an authored system overlay (clock or label); the pinned JP TextJp is empty. Continue without inventing replacement text."
+  },
+  {
+    "group": 10028005,
+    "row": 7,
+    "field": "TextJp",
+    "value": "",
+    "reason": "The row only steps an authored system overlay (clock or label); the pinned JP TextJp is empty. Continue without inventing replacement text."
+  },
+  {
+    "group": 10028005,
+    "row": 10,
+    "field": "TextJp",
+    "value": "",
+    "reason": "The row only steps an authored system overlay (clock or label); the pinned JP TextJp is empty. Continue without inventing replacement text."
+  },
+  {
+    "group": 10028005,
+    "row": 14,
+    "field": "TextJp",
+    "value": "",
+    "reason": "The row only steps an authored system overlay (clock or label); the pinned JP TextJp is empty. Continue without inventing replacement text."
+  },
+  {
+    "group": 10028005,
+    "row": 17,
+    "field": "TextJp",
+    "value": "",
+    "reason": "The row only steps an authored system overlay (clock or label); the pinned JP TextJp is empty. Continue without inventing replacement text."
+  },
+  {
+    "group": 10028005,
+    "row": 20,
+    "field": "TextJp",
+    "value": "",
+    "reason": "The row only steps an authored system overlay (clock or label); the pinned JP TextJp is empty. Continue without inventing replacement text."
+  },
+  {
+    "group": 10028005,
+    "row": 23,
+    "field": "TextJp",
+    "value": "",
+    "reason": "The row only steps an authored system overlay (clock or label); the pinned JP TextJp is empty. Continue without inventing replacement text."
+  },
+  {
+    "group": 10028005,
+    "row": 26,
+    "field": "TextJp",
+    "value": "",
+    "reason": "The row only steps an authored system overlay (clock or label); the pinned JP TextJp is empty. Continue without inventing replacement text."
+  },
+  {
+    "group": 10028005,
+    "row": 30,
+    "field": "TextJp",
+    "value": "",
+    "reason": "The row only steps an authored system overlay (clock or label); the pinned JP TextJp is empty. Continue without inventing replacement text."
+  },
+  {
+    "group": 10028005,
+    "row": 33,
+    "field": "TextJp",
+    "value": "",
+    "reason": "The row only steps an authored system overlay (clock or label); the pinned JP TextJp is empty. Continue without inventing replacement text."
+  },
+  {
+    "group": 10028005,
+    "row": 36,
+    "field": "TextJp",
+    "value": "",
+    "reason": "The row only steps an authored system overlay (clock or label); the pinned JP TextJp is empty. Continue without inventing replacement text."
+  },
+  {
+    "group": 10028005,
+    "row": 39,
+    "field": "TextJp",
+    "value": "",
+    "reason": "The row only steps an authored system overlay (clock or label); the pinned JP TextJp is empty. Continue without inventing replacement text."
+  },
+  {
+    "group": 10028005,
+    "row": 42,
+    "field": "TextJp",
+    "value": "",
+    "reason": "The row only steps an authored system overlay (clock or label); the pinned JP TextJp is empty. Continue without inventing replacement text."
+  },
+  {
+    "group": 10028005,
+    "row": 45,
+    "field": "TextJp",
+    "value": "",
+    "reason": "The row only steps an authored system overlay (clock or label); the pinned JP TextJp is empty. Continue without inventing replacement text."
+  },
+  {
+    "group": 10028005,
+    "row": 48,
+    "field": "TextJp",
+    "value": "",
+    "reason": "The row only steps an authored system overlay (clock or label); the pinned JP TextJp is empty. Continue without inventing replacement text."
+  },
+  {
+    "group": 10028005,
+    "row": 51,
+    "field": "TextJp",
+    "value": "",
+    "reason": "The row only steps an authored system overlay (clock or label); the pinned JP TextJp is empty. Continue without inventing replacement text."
+  },
+  {
+    "group": 10028005,
+    "row": 54,
+    "field": "TextJp",
+    "value": "",
+    "reason": "The row only steps an authored system overlay (clock or label); the pinned JP TextJp is empty. Continue without inventing replacement text."
+  },
+  {
+    "group": 10028005,
+    "row": 57,
+    "field": "TextJp",
+    "value": "",
+    "reason": "The row only steps an authored system overlay (clock or label); the pinned JP TextJp is empty. Continue without inventing replacement text."
+  },
+  {
+    "group": 10028010,
+    "row": 4,
+    "field": "TextJp",
+    "value": "",
+    "reason": "The row only steps an authored system overlay (clock or label); the pinned JP TextJp is empty. Continue without inventing replacement text."
+  },
+  {
+    "group": 10028010,
+    "row": 7,
+    "field": "TextJp",
+    "value": "",
+    "reason": "The row only steps an authored system overlay (clock or label); the pinned JP TextJp is empty. Continue without inventing replacement text."
+  },
+  {
+    "group": 10028010,
+    "row": 10,
+    "field": "TextJp",
+    "value": "",
+    "reason": "The row only steps an authored system overlay (clock or label); the pinned JP TextJp is empty. Continue without inventing replacement text."
+  },
+  {
+    "group": 10028010,
+    "row": 14,
+    "field": "TextJp",
+    "value": "",
+    "reason": "The row only steps an authored system overlay (clock or label); the pinned JP TextJp is empty. Continue without inventing replacement text."
+  },
+  {
+    "group": 10028010,
+    "row": 17,
+    "field": "TextJp",
+    "value": "",
+    "reason": "The row only steps an authored system overlay (clock or label); the pinned JP TextJp is empty. Continue without inventing replacement text."
+  },
+  {
+    "group": 10028010,
+    "row": 20,
+    "field": "TextJp",
+    "value": "",
+    "reason": "The row only steps an authored system overlay (clock or label); the pinned JP TextJp is empty. Continue without inventing replacement text."
+  },
+  {
+    "group": 10028010,
+    "row": 23,
+    "field": "TextJp",
+    "value": "",
+    "reason": "The row only steps an authored system overlay (clock or label); the pinned JP TextJp is empty. Continue without inventing replacement text."
+  },
+  {
+    "group": 10028010,
+    "row": 26,
+    "field": "TextJp",
+    "value": "",
+    "reason": "The row only steps an authored system overlay (clock or label); the pinned JP TextJp is empty. Continue without inventing replacement text."
+  },
+  {
+    "group": 10028010,
+    "row": 29,
+    "field": "TextJp",
+    "value": "",
+    "reason": "The row only steps an authored system overlay (clock or label); the pinned JP TextJp is empty. Continue without inventing replacement text."
+  },
+  {
+    "group": 10028010,
+    "row": 32,
+    "field": "TextJp",
+    "value": "",
+    "reason": "The row only steps an authored system overlay (clock or label); the pinned JP TextJp is empty. Continue without inventing replacement text."
+  },
+  {
+    "group": 10028010,
+    "row": 35,
+    "field": "TextJp",
+    "value": "",
+    "reason": "The row only steps an authored system overlay (clock or label); the pinned JP TextJp is empty. Continue without inventing replacement text."
+  },
+  {
+    "group": 10028010,
+    "row": 38,
+    "field": "TextJp",
+    "value": "",
+    "reason": "The row only steps an authored system overlay (clock or label); the pinned JP TextJp is empty. Continue without inventing replacement text."
+  },
+  {
+    "group": 10028010,
+    "row": 41,
+    "field": "TextJp",
+    "value": "",
+    "reason": "The row only steps an authored system overlay (clock or label); the pinned JP TextJp is empty. Continue without inventing replacement text."
+  },
+  {
+    "group": 10028010,
+    "row": 44,
+    "field": "TextJp",
+    "value": "",
+    "reason": "The row only steps an authored system overlay (clock or label); the pinned JP TextJp is empty. Continue without inventing replacement text."
+  },
+  {
+    "group": 10028010,
+    "row": 131,
+    "field": "TextJp",
+    "value": "",
+    "reason": "The row only steps an authored system overlay (clock or label); the pinned JP TextJp is empty. Continue without inventing replacement text."
+  },
+  {
+    "group": 10028010,
+    "row": 134,
+    "field": "TextJp",
+    "value": "",
+    "reason": "The row only steps an authored system overlay (clock or label); the pinned JP TextJp is empty. Continue without inventing replacement text."
+  },
+  {
+    "group": 10028010,
+    "row": 137,
+    "field": "TextJp",
+    "value": "",
+    "reason": "The row only steps an authored system overlay (clock or label); the pinned JP TextJp is empty. Continue without inventing replacement text."
+  },
+  {
+    "group": 10028010,
+    "row": 140,
+    "field": "TextJp",
+    "value": "",
+    "reason": "The row only steps an authored system overlay (clock or label); the pinned JP TextJp is empty. Continue without inventing replacement text."
+  },
+  {
+    "group": 10028010,
+    "row": 144,
+    "field": "TextJp",
+    "value": "",
+    "reason": "The row only steps an authored system overlay (clock or label); the pinned JP TextJp is empty. Continue without inventing replacement text."
+  },
+  {
+    "group": 10028010,
+    "row": 147,
+    "field": "TextJp",
+    "value": "",
+    "reason": "The row only steps an authored system overlay (clock or label); the pinned JP TextJp is empty. Continue without inventing replacement text."
+  },
+  {
+    "group": 10028010,
+    "row": 151,
+    "field": "TextJp",
+    "value": "",
+    "reason": "The row only steps an authored system overlay (clock or label); the pinned JP TextJp is empty. Continue without inventing replacement text."
+  },
+  {
+    "group": 10028010,
+    "row": 154,
+    "field": "TextJp",
+    "value": "",
+    "reason": "The row only steps an authored system overlay (clock or label); the pinned JP TextJp is empty. Continue without inventing replacement text."
+  },
+  {
+    "group": 10028010,
+    "row": 157,
+    "field": "TextJp",
+    "value": "",
+    "reason": "The row only steps an authored system overlay (clock or label); the pinned JP TextJp is empty. Continue without inventing replacement text."
+  },
+  {
+    "group": 10028010,
+    "row": 160,
+    "field": "TextJp",
+    "value": "",
+    "reason": "The row only steps an authored system overlay (clock or label); the pinned JP TextJp is empty. Continue without inventing replacement text."
+  },
+  {
+    "group": 10028010,
+    "row": 163,
+    "field": "TextJp",
+    "value": "",
+    "reason": "The row only steps an authored system overlay (clock or label); the pinned JP TextJp is empty. Continue without inventing replacement text."
+  },
+  {
+    "group": 10028010,
+    "row": 166,
+    "field": "TextJp",
+    "value": "",
+    "reason": "The row only steps an authored system overlay (clock or label); the pinned JP TextJp is empty. Continue without inventing replacement text."
+  },
+  {
+    "group": 10028010,
+    "row": 169,
+    "field": "TextJp",
+    "value": "",
+    "reason": "The row only steps an authored system overlay (clock or label); the pinned JP TextJp is empty. Continue without inventing replacement text."
+  },
+  {
+    "group": 10028010,
+    "row": 172,
+    "field": "TextJp",
+    "value": "",
+    "reason": "The row only steps an authored system overlay (clock or label); the pinned JP TextJp is empty. Continue without inventing replacement text."
+  },
+  {
+    "group": 10028010,
+    "row": 175,
+    "field": "TextJp",
+    "value": "",
+    "reason": "The row only steps an authored system overlay (clock or label); the pinned JP TextJp is empty. Continue without inventing replacement text."
+  },
+  {
+    "group": 10028010,
+    "row": 178,
+    "field": "TextJp",
+    "value": "",
+    "reason": "The row only steps an authored system overlay (clock or label); the pinned JP TextJp is empty. Continue without inventing replacement text."
+  },
+  {
+    "group": 10049005,
+    "row": 11,
+    "field": "TextJp",
+    "value": "",
+    "reason": "The row only steps an authored system overlay (clock or label); the pinned JP TextJp is empty. Continue without inventing replacement text."
+  },
+  {
+    "group": 10049005,
+    "row": 18,
+    "field": "TextJp",
+    "value": "",
+    "reason": "The row only steps an authored system overlay (clock or label); the pinned JP TextJp is empty. Continue without inventing replacement text."
+  },
+  {
+    "group": 10039160,
+    "row": 95,
+    "field": "Sound",
+    "value": "Se_Gear_02",
+    "reason": "The authored key matches no unique pinned clip: the package holds two case-variant clips (SE_Gear_02 and SE_gear_02). Play no replacement sound."
+  },
+  {
+    "group": 10052180,
+    "row": 88,
+    "field": "ActorEffect",
+    "value": "{Kei}",
+    "reason": "The authored Ki cut-in effect has no reader implementation in the pinned package. Continue without this effect."
+  }
+]

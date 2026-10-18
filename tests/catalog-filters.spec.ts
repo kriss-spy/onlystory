@@ -61,3 +61,50 @@ test('category filter omits Side story and old side-story links show all collect
   );
   await expect(page.locator('.event-row')).toHaveCount(1);
 });
+
+test('BA filters support main, group, mini, relationship and event stories independently', async ({
+  page,
+}) => {
+  test.setTimeout(120000);
+  await page.goto('/games/ba');
+  const category = page.getByRole('combobox', { name: 'Story category' });
+  await expect(category.locator('option')).toHaveText([
+    'All collections',
+    'Main story (26)',
+    'Group story (27)',
+    'Mini story (0)',
+    'Relationship story (0)',
+    'Event (57)',
+  ]);
+  await category.selectOption('Main story');
+  await expect(page.locator('.event-row')).toHaveCount(26);
+  await expect(
+    page.locator('.event-row').filter({ hasText: 'プロローグ' }).first(),
+  ).toBeVisible();
+  await category.selectOption('Group story');
+  await expect(page.locator('.event-row')).toHaveCount(27);
+  await expect(
+    page.locator('.event-row').filter({ hasText: '美食研究会' }),
+  ).toHaveCount(1);
+  await page.reload();
+  await expect(category).toHaveValue('Group story');
+  for (const value of ['Mini story', 'Relationship story']) {
+    await category.selectOption(value);
+    await expect(page.locator('.event-row')).toHaveCount(0);
+    await expect(
+      page.getByText('No imported stories in this category', { exact: true }),
+    ).toBeVisible();
+    await page.reload();
+    await expect(category).toHaveValue(value);
+  }
+  await category.selectOption('Event');
+  await page.getByRole('searchbox', { name: 'Search events' }).fill('ヒナ');
+  await expect(page.locator('.event-row')).toHaveCount(1);
+  await page.getByRole('link', { name: /ヒナ委員長/ }).click();
+  await page.getByRole('link', { name: 'Back', exact: true }).click();
+  await expect(category).toHaveValue('Event');
+  await expect(
+    page.getByRole('searchbox', { name: 'Search events' }),
+  ).toHaveValue('ヒナ');
+  await expect(page.locator('.event-row')).toHaveCount(1);
+});

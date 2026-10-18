@@ -10,6 +10,7 @@ export interface CoverArt {
   kind?: 'official-game-art' | 'unofficial-art';
   credit?: string;
   page?: string;
+  logo?: { url: string; width: number; height: number };
 }
 
 export const artworkStyle = (cover: CoverArt): CSSProperties => ({

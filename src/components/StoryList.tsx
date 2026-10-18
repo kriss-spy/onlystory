@@ -80,7 +80,7 @@ export function StoryList({
             <small>
               {branch
                 ? `Side story${branch.title ? ` · ${branch.title}` : ''}`
-                : `Main story · ${String(episode.order).padStart(2, '0')}`}
+                : `${episode.game === 'ba' ? (episode.category === 'Event' ? 'Event story' : episode.category) : 'Main story'} · ${String(episode.order).padStart(2, '0')}`}
             </small>
             <h2>{episode.title}</h2>
             <p>{episode.description}</p>

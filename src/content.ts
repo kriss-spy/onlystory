@@ -4,6 +4,8 @@ import ilionImport from './generated/gfl2-ilion.json';
 import ilionScenes from './generated/gfl2-ilion-scenes.json';
 import sceneImport from './generated/gfl2-scenes.json';
 import packageImport from './generated/gfl2-packages.json';
+import baImport from './generated/ba-stories.json';
+import { decodeBaChapter } from './playback/ba/text';
 import { decodeTextSection } from './playback/gfl2/text';
 import { decodePjskText } from './playback/pjsk/text';
 import type { FullEvent } from './playback/gfl2/text';
@@ -144,6 +146,7 @@ function eventEpisodes(
   }));
 }
 export const realEpisodes: Episode[] = [
+  ...(baImport as Episode[]),
   ...(fullEvent
     ? eventEpisodes(
         fullEvent,
@@ -200,7 +203,8 @@ const loaded = new Map<string, Promise<Episode>>();
 export function loadEpisode(episode: Episode): Promise<Episode> {
   if (!episode.content) return Promise.resolve(episode);
   const url = episode.content.url;
-  const pending = loaded.get(url);
+  const key = `${episode.id}:${episode.content.format}:${episode.content.count}:${episode.entryNodeId}:${url}`;
+  const pending = loaded.get(key);
   if (pending) return pending;
   const result = (async () => {
     const cache =
@@ -215,16 +219,56 @@ export function loadEpisode(episode: Episode): Promise<Episode> {
       throw new Error(
         'This chapter text is unavailable. Download it while connected, or retry.',
       );
-    const payload: unknown = await response.json();
+    const input = await response.json();
     if (episode.content?.format === 'gfl1-story-v1')
-      return decodeGfl1Story(payload, episode);
+      return decodeGfl1Story(input, episode);
+    if (episode.content?.format === 'ba-text-v1') {
+      const chapter = decodeBaChapter(input, episode);
+      if (!episode.content.sceneUrl) return chapter;
+      const response =
+        (await cache?.match(episode.content.sceneUrl)) ??
+        (await fetch(episode.content.sceneUrl));
+      if (
+        !response.ok ||
+        response.headers.get('content-type')?.includes('text/html')
+      )
+        throw new Error(
+          'The BA scene is unavailable. Download it while connected, or retry.',
+        );
+      const program =
+        (await response.json()) as import('./playback/ba/types').BaProgram;
+      if (
+        program.version !== 1 ||
+        program.id !== episode.id ||
+        !Array.isArray(program.steps) ||
+        program.steps.length !== chapter.nodes.length ||
+        program.steps.some((s, i) => s.id !== chapter.nodes[i].id) ||
+        !program.assets?.files?.length ||
+        program.assets.files.some(
+          (f) =>
+            typeof f.url !== 'string' ||
+            !/^\/private\/ba-jp\/(?:\d+|shared)\/media\/[^?#%]+$/.test(f.url) ||
+            f.url.split('/').some((part) => part === '.' || part === '..') ||
+            !Number.isSafeInteger(f.bytes) ||
+            f.bytes < 0 ||
+            !/^[a-f0-9]{64}$/.test(f.sha256) ||
+            !episode.assets.includes(f.url),
+        )
+      )
+        throw new Error(
+          'The BA scene does not match this chapter. Reimport the source data.',
+        );
+      return { ...chapter, renderer: { id: 'ba-scene', payload: program } };
+    }
+    if (
+      episode.content?.format !== 'gfl2-text-v1' &&
+      episode.content?.format !== 'pjsk-text-v1'
+    )
+      throw new Error('This chapter format is unavailable.');
     const decoded =
-      episode.content?.format === 'pjsk-text-v1'
-        ? decodePjskText(payload, episode)
-        : decodeTextSection(
-            payload as Parameters<typeof decodeTextSection>[0],
-            episode,
-          );
+      episode.content.format === 'pjsk-text-v1'
+        ? decodePjskText(input, episode)
+        : decodeTextSection(input, episode);
     if (!episode.content?.sceneUrl) return decoded;
     const sceneResponse =
       (await cache?.match(episode.content.sceneUrl)) ??
@@ -269,8 +313,8 @@ export function loadEpisode(episode: Episode): Promise<Episode> {
       ],
     };
   })();
-  loaded.set(url, result);
-  void result.catch(() => loaded.delete(url));
+  loaded.set(key, result);
+  void result.catch(() => loaded.delete(key));
   return result;
 }
 

@@ -1,0 +1,155 @@
+{
+  "version": 1,
+  "gameVersion": "1.73.459696",
+  "toolRepository": "https://github.com/ZM-Kimu/Blue-Archive-Asset-Downloader",
+  "toolRevision": "ac4598977abb46cf11574446fe799aed59842b3a",
+  "schemaSnapshot": "a9230f07609e90c97e17eff3cce9002a522c7bc1a07d39a759f4f02aba0e49ea",
+  "runtimeFiles": [
+    {
+      "name": "global-metadata.dat",
+      "size": 34840592,
+      "sha256": "9d2f8e7f071920b17c08891f5a63fcf6292d9682acd439db77234ef8725f1146"
+    },
+    {
+      "name": "globalgamemanagers",
+      "size": 1156204,
+      "sha256": "c3e69966ade30f11e226f6ebcc8aaa6aef47d0d7d0b5bbc423889db96a81b8c8"
+    },
+    {
+      "name": "libil2cpp.so",
+      "size": 284116424,
+      "sha256": "bdddbf90c5137ed2e934a2eecb55e33aee81c43f8e9f995425ffc903e8da4047"
+    }
+  ],
+  "databaseSha256": "0ceb1d1a0f118febb172c1a6e45d4cc7711b1fc4bb8718df035cf99a7825f159",
+  "types": {
+    "VideoExcel": {
+      "metadata": {
+        "name": "VideoExcel",
+        "namespace": "MX.Data.Excel",
+        "kind": "struct",
+        "original_name": "VideoExcel",
+        "type_def_index": 20848,
+        "token": "0x02005171"
+      },
+      "fields": [
+        {
+          "name": "Id",
+          "field": {
+            "index": 0,
+            "cs_type": "System.Int64",
+            "type_name": "VideoExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17007A7C",
+            "original_name": "Id",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "Nation",
+          "field": {
+            "index": 1,
+            "cs_type": "FlatData.Nation",
+            "type_name": "VideoExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17007A7D",
+            "original_name": "Nation",
+            "is_vector": true
+          },
+          "annotation": "Nation"
+        },
+        {
+          "name": "VideoPath",
+          "field": {
+            "index": 2,
+            "cs_type": "System.String",
+            "type_name": "VideoExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17007A7E",
+            "original_name": "VideoPath",
+            "is_vector": true
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "SoundPath",
+          "field": {
+            "index": 3,
+            "cs_type": "System.String",
+            "type_name": "VideoExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17007A7F",
+            "original_name": "SoundPath",
+            "is_vector": true
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "SoundVolume",
+          "field": {
+            "index": 4,
+            "cs_type": "System.Single",
+            "type_name": "VideoExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17007A80",
+            "original_name": "SoundVolume",
+            "is_vector": true
+          },
+          "annotation": "float"
+        }
+      ]
+    }
+  },
+  "enums": {
+    "Nation": {
+      "metadata": {
+        "name": "Nation",
+        "namespace": "FlatData",
+        "original_name": "Nation",
+        "underlying_type": "System.Int32",
+        "type_def_index": 10115,
+        "token": "0x02002784",
+        "members": [
+          {
+            "name": "None",
+            "python_name": "None_",
+            "value": 0,
+            "token": "0x0400AE2C"
+          },
+          {
+            "name": "All",
+            "python_name": "All",
+            "value": 1,
+            "token": "0x0400AE2D"
+          },
+          {
+            "name": "JP",
+            "python_name": "JP",
+            "value": 2,
+            "token": "0x0400AE2E"
+          },
+          {
+            "name": "GL",
+            "python_name": "GL",
+            "value": 3,
+            "token": "0x0400AE2F"
+          },
+          {
+            "name": "KR",
+            "python_name": "KR",
+            "value": 4,
+            "token": "0x0400AE30"
+          }
+        ]
+      },
+      "members": {
+        "None_": 0,
+        "All": 1,
+        "JP": 2,
+        "GL": 3,
+        "KR": 4
+      }
+    }
+  }
+}

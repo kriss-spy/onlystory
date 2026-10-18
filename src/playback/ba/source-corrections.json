@@ -1,0 +1,107 @@
+[
+  {
+    "group": 22180,
+    "row": 94,
+    "from": "3;아카네;01전황 자체가 바뀌어 버렸으니까요.",
+    "to": "3;아카네;01;전황 자체가 바뀌어 버렸으니까요.",
+    "evidence": "Official ScriptKr omits the delimiter between expression 01 and Korean dialogue. Existing Japanese TextJp is 戦況そのものが変わってしまいましたから。; preserve it and restore only the missing semicolon."
+  },
+  {
+    "group": 101090,
+    "row": 14,
+    "from": "5;PMC 병사;01그래서 지금 난리도 아닌 거군.",
+    "to": "5;PMC 병사;01;그래서 지금 난리도 아닌 거군.",
+    "evidence": "Official ScriptKr omits the delimiter between expression 01 and Korean dialogue. Existing Japanese TextJp is どうりでこんな騒ぎになってるのか。; preserve it and restore only the missing semicolon."
+  },
+  {
+    "group": 13035,
+    "row": 55,
+    "from": "3;통신 아야네;09",
+    "to": "3;통신아야네;09",
+    "evidence": "Official ScriptKr adds a space only on this row. Rows 12-54 and 68 use 통신아야네, matching ScenarioCharacterName CharacterName 1788051899, JP アヤネ, Shape Signal."
+  },
+  {
+    "group": 31020,
+    "row": 79,
+    "from": "3;나기사:01",
+    "to": "3;나기사;01",
+    "evidence": "Official ScriptKr substitutes a colon for the name/expression delimiter. Adjacent Nagisa rows and ScenarioCharacterName CharacterName 1411364443 use 나기사. No Japanese dialogue or flow changes."
+  },
+  {
+    "group": 211140,
+    "row": 188,
+    "from": "2;마유키;04",
+    "to": "2;마유미;04",
+    "evidence": "The actor in slot 2 throughout the scene is Mayumi. Only this row spells her name 마유키; the alternate has no character metadata. Official CharacterName 991438568 is 마유미, JP マユミ. Karen in slot 4 speaks this row."
+  },
+  {
+    "group": 22250,
+    "row": 1,
+    "from": "4;토키;00",
+    "to": "4;토키 모드 1;00",
+    "evidence": "The author uses bare 토키 only for this black silhouette. Previous episode 22240 rows57-58 uses 토키 모드 1; official CharacterName2776394221 matches original CH0187 model and C&C affiliation. Both original metadata aliases3021351574/2776394221 share CH0187; laterbandagedportraitrows remain unchanged."
+  },
+  {
+    "group": 10031020,
+    "row": 36,
+    "from": "wait;500",
+    "to": "#wait;500",
+    "evidence": "Official ScriptKr omits the leading hash on this only wait row. Every other wait command in the pinned tables is #wait;<ms>; restore the hash and keep the authored 500 ms pause."
+  },
+  {
+    "group": 10011090,
+    "row": 34,
+    "from": "3;제멋대로 먕량즈 리더;00",
+    "to": "3;제멋대로 망량즈 리더;00",
+    "evidence": "Only this row spells the gang leader 먕량즈. Rows 21-25 and 32-33 use 망량즈, matching official CharacterName 4024119598 (NameKR 제멋대로 망량즈 리더, SpinePrefabName CharacterSpine_Yukata_StreetGhostes_MG)."
+  },
+  {
+    "group": 10011070,
+    "row": 218,
+    "from": "3;미치루01;알았어. 알았다고. 결국 뒷이야기를 계속하려고 해도 여길 나가는 게 우선이고…….",
+    "to": "3;미치루;01;알았어. 알았다고. 결국 뒷이야기를 계속하려고 해도 여길 나가는 게 우선이고…….",
+    "evidence": "Official ScriptKr glues the authored expression 01 onto the actor name and omits the delimiter (미치루01 instead of 미치루;01). Rows 215-217 and 219 use 미치루 with a numeric expression, matching official CharacterName 1852961561 (SpinePrefabName CharacterSpine_CH0113). Restore only the missing semicolon."
+  },
+  {
+    "group": 10023020,
+    "row": 237,
+    "from": "3;유즈 메이드08",
+    "to": "3;유즈 메이드;08",
+    "evidence": "Official ScriptKr glues the authored expression 08 onto the actor name. Row 236 uses 유즈 메이드 with expression 08, matching official CharacterName 2842084716 (NameKR 유즈, SpinePrefabName CharacterSpine_CH0203). Restore only the missing semicolon."
+  },
+  {
+    "group": 10013020,
+    "row": 22,
+    "from": "1;세리카 수영복ND;00",
+    "to": "1;세리카 수영복;00",
+    "evidence": "Only the Serika swimsuit actor carries an ND suffix while the same row keeps 이즈나 수영복ND. Official CharacterName 3293045683 is 세리카 수영복 (SpinePrefabName CharacterSpine_CH0189); the ND scenario prefab variant is resolved from the SpinePrefabName, not the actor alias."
+  },
+  {
+    "group": 10012050,
+    "row": 36,
+    "from": "3;아야네 수영복ND;04……음…….",
+    "to": "3;아야네 수영복ND;04;……음…….",
+    "evidence": "Official ScriptKr glues the authored expression 04 onto the Korean line and omits the delimiter. Row 35 uses the same actor with expression 05, and CH0176_spr exposes 04. Restore only the missing semicolon."
+  },
+  {
+    "group": 10024060,
+    "row": 21,
+    "from": "3;루미;99……",
+    "to": "3;루미;99;……",
+    "evidence": "Official ScriptKr glues the authored expression 99 onto the Korean line and omits the delimiter. Rows 19 and 22 use 루미 with a numeric expression. Restore only the missing semicolon."
+  },
+  {
+    "group": 10042010,
+    "row": 92,
+    "from": "3;게헨나 학생 A 응급 모브;06뭐, 뭐뭐뭐뭐, 뭐야, 이건?! 이 이상한 건!?",
+    "to": "3;게헨나 학생 A 응급 모브;06;뭐, 뭐뭐뭐뭐, 뭐야, 이건?! 이 이상한 건!?",
+    "evidence": "Row 91 repeats this exact line with the expression delimiter intact (…;06;뭐, …); row 92 is the same actor and line with the semicolon dropped. Restore only the missing semicolon."
+  },
+  {
+    "group": 10053100,
+    "row": 102,
+    "from": "3;코노카;14……?",
+    "to": "3;코노카;14;……?",
+    "evidence": "Rows 101 and 103 use 코노카 with a numeric expression and the delimiter intact; row 102 drops the semicolon between expression 14 and the Korean line. Restore only the missing semicolon."
+  }
+]

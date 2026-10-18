@@ -237,8 +237,12 @@ const DownloadItem = memo(function DownloadItem({
                 ? episode.game === 'gfl1'
                   ? 'English text, original images and available music'
                   : episode.readingMode === 'text'
-                    ? '简中原文与保留的剧本'
-                    : '简中原文、CG、音乐与音效'
+                    ? episode.textLocales?.includes('ja')
+                      ? 'Japanese text and preserved source scripts'
+                      : '简中原文与保留的剧本'
+                    : episode.game === 'ba'
+                      ? 'Japanese text, animated characters, CGs and audio'
+                      : '简中原文、CG、音乐与音效'
                 : 'EN text, 简中 text, EN sample voice'}
             </span>
           ) : (

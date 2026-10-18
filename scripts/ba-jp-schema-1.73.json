@@ -1,0 +1,4429 @@
+{
+  "version": 1,
+  "gameVersion": "1.73.459696",
+  "toolRepository": "https://github.com/ZM-Kimu/Blue-Archive-Asset-Downloader",
+  "toolRevision": "ac4598977abb46cf11574446fe799aed59842b3a",
+  "schemaSnapshot": "a9230f07609e90c97e17eff3cce9002a522c7bc1a07d39a759f4f02aba0e49ea",
+  "runtimeFiles": [
+    {
+      "name": "global-metadata.dat",
+      "size": 34840592,
+      "sha256": "9d2f8e7f071920b17c08891f5a63fcf6292d9682acd439db77234ef8725f1146"
+    },
+    {
+      "name": "globalgamemanagers",
+      "size": 1156204,
+      "sha256": "c3e69966ade30f11e226f6ebcc8aaa6aef47d0d7d0b5bbc423889db96a81b8c8"
+    },
+    {
+      "name": "libil2cpp.so",
+      "size": 284116424,
+      "sha256": "bdddbf90c5137ed2e934a2eecb55e33aee81c43f8e9f995425ffc903e8da4047"
+    }
+  ],
+  "databaseSha256": "0ceb1d1a0f118febb172c1a6e45d4cc7711b1fc4bb8718df035cf99a7825f159",
+  "types": {
+    "ScenarioScriptExcel": {
+      "metadata": {
+        "name": "ScenarioScriptExcel",
+        "namespace": "MX.Data.Excel",
+        "kind": "struct",
+        "original_name": "ScenarioScriptExcel",
+        "type_def_index": 20399,
+        "token": "0x02004FB0"
+      },
+      "fields": [
+        {
+          "name": "GroupId",
+          "field": {
+            "index": 0,
+            "cs_type": "System.Int64",
+            "type_name": "ScenarioScriptExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x1700778C",
+            "original_name": "GroupId",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "SelectionGroup",
+          "field": {
+            "index": 1,
+            "cs_type": "System.Int64",
+            "type_name": "ScenarioScriptExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x1700778D",
+            "original_name": "SelectionGroup",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "BGMId",
+          "field": {
+            "index": 2,
+            "cs_type": "System.Int64",
+            "type_name": "ScenarioScriptExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x1700778E",
+            "original_name": "BGMId",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "Sound",
+          "field": {
+            "index": 3,
+            "cs_type": "System.String",
+            "type_name": "ScenarioScriptExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x1700778F",
+            "original_name": "Sound",
+            "is_vector": false
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "Transition",
+          "field": {
+            "index": 4,
+            "cs_type": "System.UInt32",
+            "type_name": "ScenarioScriptExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17007790",
+            "original_name": "Transition",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "BGName",
+          "field": {
+            "index": 5,
+            "cs_type": "System.UInt32",
+            "type_name": "ScenarioScriptExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17007791",
+            "original_name": "BGName",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "BGEffect",
+          "field": {
+            "index": 6,
+            "cs_type": "System.UInt32",
+            "type_name": "ScenarioScriptExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17007792",
+            "original_name": "BGEffect",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "PopupFileName",
+          "field": {
+            "index": 7,
+            "cs_type": "System.String",
+            "type_name": "ScenarioScriptExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17007793",
+            "original_name": "PopupFileName",
+            "is_vector": false
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "ScriptKr",
+          "field": {
+            "index": 8,
+            "cs_type": "System.String",
+            "type_name": "ScenarioScriptExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17007794",
+            "original_name": "ScriptKr",
+            "is_vector": false
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "TextJp",
+          "field": {
+            "index": 9,
+            "cs_type": "System.String",
+            "type_name": "ScenarioScriptExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17007795",
+            "original_name": "TextJp",
+            "is_vector": false
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "VoiceId",
+          "field": {
+            "index": 10,
+            "cs_type": "System.UInt32",
+            "type_name": "ScenarioScriptExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17007796",
+            "original_name": "VoiceId",
+            "is_vector": false
+          },
+          "annotation": "int"
+        }
+      ]
+    },
+    "LocalizeExcel": {
+      "metadata": {
+        "name": "LocalizeExcel",
+        "namespace": "MX.Data.Excel",
+        "kind": "struct",
+        "original_name": "LocalizeExcel",
+        "type_def_index": 19333,
+        "token": "0x02004B86"
+      },
+      "fields": [
+        {
+          "name": "Key",
+          "field": {
+            "index": 0,
+            "cs_type": "System.UInt32",
+            "type_name": "LocalizeExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17007137",
+            "original_name": "Key",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "Kr",
+          "field": {
+            "index": 1,
+            "cs_type": "System.String",
+            "type_name": "LocalizeExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17007138",
+            "original_name": "Kr",
+            "is_vector": false
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "Jp",
+          "field": {
+            "index": 2,
+            "cs_type": "System.String",
+            "type_name": "LocalizeExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17007139",
+            "original_name": "Jp",
+            "is_vector": false
+          },
+          "annotation": "str"
+        }
+      ]
+    },
+    "EventContentSeasonExcel": {
+      "metadata": {
+        "name": "EventContentSeasonExcel",
+        "namespace": "MX.Data.Excel",
+        "kind": "struct",
+        "original_name": "EventContentSeasonExcel",
+        "type_def_index": 18789,
+        "token": "0x02004966"
+      },
+      "fields": [
+        {
+          "name": "EventContentId",
+          "field": {
+            "index": 0,
+            "cs_type": "System.Int64",
+            "type_name": "EventContentSeasonExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17006D0A",
+            "original_name": "EventContentId",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "OriginalEventContentId",
+          "field": {
+            "index": 1,
+            "cs_type": "System.Int64",
+            "type_name": "EventContentSeasonExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17006D0B",
+            "original_name": "OriginalEventContentId",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "IsReturn",
+          "field": {
+            "index": 2,
+            "cs_type": "System.Boolean",
+            "type_name": "EventContentSeasonExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17006D0C",
+            "original_name": "IsReturn",
+            "is_vector": false
+          },
+          "annotation": "bool"
+        },
+        {
+          "name": "Name",
+          "field": {
+            "index": 3,
+            "cs_type": "System.String",
+            "type_name": "EventContentSeasonExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17006D0D",
+            "original_name": "Name",
+            "is_vector": false
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "EventContentType",
+          "field": {
+            "index": 4,
+            "cs_type": "FlatData.EventContentType",
+            "type_name": "EventContentSeasonExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17006D0E",
+            "original_name": "EventContentType",
+            "is_vector": false
+          },
+          "annotation": "EventContentType"
+        },
+        {
+          "name": "OpenConditionContent",
+          "field": {
+            "index": 5,
+            "cs_type": "FlatData.OpenConditionContent",
+            "type_name": "EventContentSeasonExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17006D0F",
+            "original_name": "OpenConditionContent",
+            "is_vector": false
+          },
+          "annotation": "OpenConditionContent"
+        },
+        {
+          "name": "EventCampaignStageId",
+          "field": {
+            "index": 6,
+            "cs_type": "System.Int64",
+            "type_name": "EventContentSeasonExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17006D10",
+            "original_name": "EventCampaignStageId",
+            "is_vector": true
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "ScenarioModeId",
+          "field": {
+            "index": 7,
+            "cs_type": "System.Int64",
+            "type_name": "EventContentSeasonExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17006D11",
+            "original_name": "ScenarioModeId",
+            "is_vector": true
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "ScenarioGroupId",
+          "field": {
+            "index": 8,
+            "cs_type": "System.Int64",
+            "type_name": "EventContentSeasonExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17006D12",
+            "original_name": "ScenarioGroupId",
+            "is_vector": true
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "EventDisplay",
+          "field": {
+            "index": 9,
+            "cs_type": "System.Boolean",
+            "type_name": "EventContentSeasonExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17006D13",
+            "original_name": "EventDisplay",
+            "is_vector": false
+          },
+          "annotation": "bool"
+        },
+        {
+          "name": "IconOrder",
+          "field": {
+            "index": 10,
+            "cs_type": "System.Int32",
+            "type_name": "EventContentSeasonExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17006D14",
+            "original_name": "IconOrder",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "SubEventType",
+          "field": {
+            "index": 11,
+            "cs_type": "FlatData.SubEventType",
+            "type_name": "EventContentSeasonExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17006D15",
+            "original_name": "SubEventType",
+            "is_vector": false
+          },
+          "annotation": "SubEventType"
+        },
+        {
+          "name": "SubEvent",
+          "field": {
+            "index": 12,
+            "cs_type": "System.Boolean",
+            "type_name": "EventContentSeasonExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17006D16",
+            "original_name": "SubEvent",
+            "is_vector": false
+          },
+          "annotation": "bool"
+        },
+        {
+          "name": "EventItemId",
+          "field": {
+            "index": 13,
+            "cs_type": "System.Int64",
+            "type_name": "EventContentSeasonExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17006D17",
+            "original_name": "EventItemId",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "MainEventId",
+          "field": {
+            "index": 14,
+            "cs_type": "System.Int64",
+            "type_name": "EventContentSeasonExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17006D18",
+            "original_name": "MainEventId",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "EventChangeOpenCondition",
+          "field": {
+            "index": 15,
+            "cs_type": "System.Int64",
+            "type_name": "EventContentSeasonExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17006D19",
+            "original_name": "EventChangeOpenCondition",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "BeforehandExposedTime",
+          "field": {
+            "index": 16,
+            "cs_type": "System.String",
+            "type_name": "EventContentSeasonExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17006D1A",
+            "original_name": "BeforehandExposedTime",
+            "is_vector": false
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "EventContentOpenTime",
+          "field": {
+            "index": 17,
+            "cs_type": "System.String",
+            "type_name": "EventContentSeasonExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17006D1B",
+            "original_name": "EventContentOpenTime",
+            "is_vector": false
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "EventContentCloseNoteTime",
+          "field": {
+            "index": 18,
+            "cs_type": "System.String",
+            "type_name": "EventContentSeasonExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17006D1C",
+            "original_name": "EventContentCloseNoteTime",
+            "is_vector": false
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "EventContentCloseTime",
+          "field": {
+            "index": 19,
+            "cs_type": "System.String",
+            "type_name": "EventContentSeasonExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17006D1D",
+            "original_name": "EventContentCloseTime",
+            "is_vector": false
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "ExtensionTime",
+          "field": {
+            "index": 20,
+            "cs_type": "System.String",
+            "type_name": "EventContentSeasonExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17006D1E",
+            "original_name": "ExtensionTime",
+            "is_vector": false
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "MainIconParcelPath",
+          "field": {
+            "index": 21,
+            "cs_type": "System.String",
+            "type_name": "EventContentSeasonExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17006D1F",
+            "original_name": "MainIconParcelPath",
+            "is_vector": false
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "SubIconParcelPath",
+          "field": {
+            "index": 22,
+            "cs_type": "System.String",
+            "type_name": "EventContentSeasonExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17006D20",
+            "original_name": "SubIconParcelPath",
+            "is_vector": false
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "BeforehandBgImagePath",
+          "field": {
+            "index": 23,
+            "cs_type": "System.String",
+            "type_name": "EventContentSeasonExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17006D21",
+            "original_name": "BeforehandBgImagePath",
+            "is_vector": false
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "MinigamePrologScenarioGroupId",
+          "field": {
+            "index": 24,
+            "cs_type": "System.Int64",
+            "type_name": "EventContentSeasonExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17006D22",
+            "original_name": "MinigamePrologScenarioGroupId",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "BeforehandScenarioGroupId",
+          "field": {
+            "index": 25,
+            "cs_type": "System.Int64",
+            "type_name": "EventContentSeasonExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17006D23",
+            "original_name": "BeforehandScenarioGroupId",
+            "is_vector": true
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "MainBannerImagePath",
+          "field": {
+            "index": 26,
+            "cs_type": "System.String",
+            "type_name": "EventContentSeasonExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17006D24",
+            "original_name": "MainBannerImagePath",
+            "is_vector": false
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "MainBgImagePath",
+          "field": {
+            "index": 27,
+            "cs_type": "System.String",
+            "type_name": "EventContentSeasonExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17006D25",
+            "original_name": "MainBgImagePath",
+            "is_vector": false
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "ShiftTriggerStageId",
+          "field": {
+            "index": 28,
+            "cs_type": "System.Int64",
+            "type_name": "EventContentSeasonExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17006D26",
+            "original_name": "ShiftTriggerStageId",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "ShiftMainBgImagePath",
+          "field": {
+            "index": 29,
+            "cs_type": "System.String",
+            "type_name": "EventContentSeasonExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17006D27",
+            "original_name": "ShiftMainBgImagePath",
+            "is_vector": false
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "MinigameLobbyPrefabName",
+          "field": {
+            "index": 30,
+            "cs_type": "System.String",
+            "type_name": "EventContentSeasonExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17006D28",
+            "original_name": "MinigameLobbyPrefabName",
+            "is_vector": false
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "MinigameVictoryPrefabName",
+          "field": {
+            "index": 31,
+            "cs_type": "System.String",
+            "type_name": "EventContentSeasonExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17006D29",
+            "original_name": "MinigameVictoryPrefabName",
+            "is_vector": false
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "MinigameMissionBgPrefabName",
+          "field": {
+            "index": 32,
+            "cs_type": "System.String",
+            "type_name": "EventContentSeasonExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17006D2A",
+            "original_name": "MinigameMissionBgPrefabName",
+            "is_vector": false
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "MinigameMissionBgImagePath",
+          "field": {
+            "index": 33,
+            "cs_type": "System.String",
+            "type_name": "EventContentSeasonExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17006D2B",
+            "original_name": "MinigameMissionBgImagePath",
+            "is_vector": false
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "CardBgImagePath",
+          "field": {
+            "index": 34,
+            "cs_type": "System.String",
+            "type_name": "EventContentSeasonExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17006D2C",
+            "original_name": "CardBgImagePath",
+            "is_vector": false
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "EventAssist",
+          "field": {
+            "index": 35,
+            "cs_type": "System.Boolean",
+            "type_name": "EventContentSeasonExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17006D2D",
+            "original_name": "EventAssist",
+            "is_vector": false
+          },
+          "annotation": "bool"
+        },
+        {
+          "name": "EventContentReleaseType",
+          "field": {
+            "index": 36,
+            "cs_type": "FlatData.EventContentReleaseType",
+            "type_name": "EventContentSeasonExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17006D2E",
+            "original_name": "EventContentReleaseType",
+            "is_vector": false
+          },
+          "annotation": "EventContentReleaseType"
+        },
+        {
+          "name": "EventContentStageRewardIdPermanent",
+          "field": {
+            "index": 37,
+            "cs_type": "System.Int64",
+            "type_name": "EventContentSeasonExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17006D2F",
+            "original_name": "EventContentStageRewardIdPermanent",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "RewardTagPermanent",
+          "field": {
+            "index": 38,
+            "cs_type": "FlatData.RewardTag",
+            "type_name": "EventContentSeasonExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17006D30",
+            "original_name": "RewardTagPermanent",
+            "is_vector": false
+          },
+          "annotation": "RewardTag"
+        },
+        {
+          "name": "MiniEventShortCutScenarioModeId",
+          "field": {
+            "index": 39,
+            "cs_type": "System.Int64",
+            "type_name": "EventContentSeasonExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17006D31",
+            "original_name": "MiniEventShortCutScenarioModeId",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "ScenarioContentCollectionGroupId",
+          "field": {
+            "index": 40,
+            "cs_type": "System.Int64",
+            "type_name": "EventContentSeasonExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17006D32",
+            "original_name": "ScenarioContentCollectionGroupId",
+            "is_vector": false
+          },
+          "annotation": "int"
+        }
+      ]
+    },
+    "EventContentScenarioExcel": {
+      "metadata": {
+        "name": "EventContentScenarioExcel",
+        "namespace": "MX.Data.Excel",
+        "kind": "struct",
+        "original_name": "EventContentScenarioExcel",
+        "type_def_index": 18782,
+        "token": "0x0200495F"
+      },
+      "fields": [
+        {
+          "name": "Id",
+          "field": {
+            "index": 0,
+            "cs_type": "System.Int64",
+            "type_name": "EventContentScenarioExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17006CF4",
+            "original_name": "Id",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "EventContentId",
+          "field": {
+            "index": 1,
+            "cs_type": "System.Int64",
+            "type_name": "EventContentScenarioExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17006CF5",
+            "original_name": "EventContentId",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "ReturnScenarioPlay",
+          "field": {
+            "index": 2,
+            "cs_type": "System.Boolean",
+            "type_name": "EventContentScenarioExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17006CF6",
+            "original_name": "ReturnScenarioPlay",
+            "is_vector": false
+          },
+          "annotation": "bool"
+        },
+        {
+          "name": "ReplayDisplayGroup",
+          "field": {
+            "index": 3,
+            "cs_type": "System.Int32",
+            "type_name": "EventContentScenarioExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17006CF7",
+            "original_name": "ReplayDisplayGroup",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "Order",
+          "field": {
+            "index": 4,
+            "cs_type": "System.Int64",
+            "type_name": "EventContentScenarioExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17006CF8",
+            "original_name": "Order",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "RecollectionNumber",
+          "field": {
+            "index": 5,
+            "cs_type": "System.Int64",
+            "type_name": "EventContentScenarioExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17006CF9",
+            "original_name": "RecollectionNumber",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "IsRecollection",
+          "field": {
+            "index": 6,
+            "cs_type": "System.Boolean",
+            "type_name": "EventContentScenarioExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17006CFA",
+            "original_name": "IsRecollection",
+            "is_vector": false
+          },
+          "annotation": "bool"
+        },
+        {
+          "name": "IsMeetup",
+          "field": {
+            "index": 7,
+            "cs_type": "System.Boolean",
+            "type_name": "EventContentScenarioExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17006CFB",
+            "original_name": "IsMeetup",
+            "is_vector": false
+          },
+          "annotation": "bool"
+        },
+        {
+          "name": "IsOmnibus",
+          "field": {
+            "index": 8,
+            "cs_type": "System.Boolean",
+            "type_name": "EventContentScenarioExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17006CFC",
+            "original_name": "IsOmnibus",
+            "is_vector": false
+          },
+          "annotation": "bool"
+        },
+        {
+          "name": "ScenarioGroupId",
+          "field": {
+            "index": 9,
+            "cs_type": "System.Int64",
+            "type_name": "EventContentScenarioExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17006CFD",
+            "original_name": "ScenarioGroupId",
+            "is_vector": true
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "ScenarioConditionType",
+          "field": {
+            "index": 10,
+            "cs_type": "FlatData.EventContentScenarioConditionType",
+            "type_name": "EventContentScenarioExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17006CFE",
+            "original_name": "ScenarioConditionType",
+            "is_vector": false
+          },
+          "annotation": "EventContentScenarioConditionType"
+        },
+        {
+          "name": "ConditionAmount",
+          "field": {
+            "index": 11,
+            "cs_type": "System.Int64",
+            "type_name": "EventContentScenarioExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17006CFF",
+            "original_name": "ConditionAmount",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "ConditionEventContentId",
+          "field": {
+            "index": 12,
+            "cs_type": "System.Int64",
+            "type_name": "EventContentScenarioExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17006D00",
+            "original_name": "ConditionEventContentId",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "ClearedScenarioGroupId",
+          "field": {
+            "index": 13,
+            "cs_type": "System.Int64",
+            "type_name": "EventContentScenarioExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17006D01",
+            "original_name": "ClearedScenarioGroupId",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "RecollectionSummaryLocalizeScenarioId",
+          "field": {
+            "index": 14,
+            "cs_type": "System.UInt32",
+            "type_name": "EventContentScenarioExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17006D02",
+            "original_name": "RecollectionSummaryLocalizeScenarioId",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "RecollectionResource",
+          "field": {
+            "index": 15,
+            "cs_type": "System.String",
+            "type_name": "EventContentScenarioExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17006D03",
+            "original_name": "RecollectionResource",
+            "is_vector": false
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "IsRecollectionHorizon",
+          "field": {
+            "index": 16,
+            "cs_type": "System.Boolean",
+            "type_name": "EventContentScenarioExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17006D04",
+            "original_name": "IsRecollectionHorizon",
+            "is_vector": false
+          },
+          "annotation": "bool"
+        },
+        {
+          "name": "RewardParcelType",
+          "field": {
+            "index": 17,
+            "cs_type": "FlatData.ParcelType",
+            "type_name": "EventContentScenarioExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17006D05",
+            "original_name": "RewardParcelType",
+            "is_vector": true
+          },
+          "annotation": "ParcelType"
+        },
+        {
+          "name": "RewardId",
+          "field": {
+            "index": 18,
+            "cs_type": "System.Int64",
+            "type_name": "EventContentScenarioExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17006D06",
+            "original_name": "RewardId",
+            "is_vector": true
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "RewardAmount",
+          "field": {
+            "index": 19,
+            "cs_type": "System.Int32",
+            "type_name": "EventContentScenarioExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17006D07",
+            "original_name": "RewardAmount",
+            "is_vector": true
+          },
+          "annotation": "int"
+        }
+      ]
+    },
+    "ScenarioModeExcel": {
+      "metadata": {
+        "name": "ScenarioModeExcel",
+        "namespace": "MX.Data.Excel",
+        "kind": "struct",
+        "original_name": "ScenarioModeExcel",
+        "type_def_index": 20371,
+        "token": "0x02004F94"
+      },
+      "fields": [
+        {
+          "name": "ModeId",
+          "field": {
+            "index": 0,
+            "cs_type": "System.Int64",
+            "type_name": "ScenarioModeExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17007739",
+            "original_name": "ModeId",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "ModeType",
+          "field": {
+            "index": 1,
+            "cs_type": "FlatData.ScenarioModeTypes",
+            "type_name": "ScenarioModeExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x1700773A",
+            "original_name": "ModeType",
+            "is_vector": false
+          },
+          "annotation": "ScenarioModeTypes"
+        },
+        {
+          "name": "SubType",
+          "field": {
+            "index": 2,
+            "cs_type": "FlatData.ScenarioModeSubTypes",
+            "type_name": "ScenarioModeExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x1700773B",
+            "original_name": "SubType",
+            "is_vector": false
+          },
+          "annotation": "ScenarioModeSubTypes"
+        },
+        {
+          "name": "DisplayVolumeId",
+          "field": {
+            "index": 3,
+            "cs_type": "System.String",
+            "type_name": "ScenarioModeExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x1700773C",
+            "original_name": "DisplayVolumeId",
+            "is_vector": false
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "VolumeId",
+          "field": {
+            "index": 4,
+            "cs_type": "System.Int64",
+            "type_name": "ScenarioModeExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x1700773D",
+            "original_name": "VolumeId",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "ChapterId",
+          "field": {
+            "index": 5,
+            "cs_type": "System.Int64",
+            "type_name": "ScenarioModeExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x1700773E",
+            "original_name": "ChapterId",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "EpisodeId",
+          "field": {
+            "index": 6,
+            "cs_type": "System.Int64",
+            "type_name": "ScenarioModeExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x1700773F",
+            "original_name": "EpisodeId",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "ExposedTime",
+          "field": {
+            "index": 7,
+            "cs_type": "System.String",
+            "type_name": "ScenarioModeExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17007740",
+            "original_name": "ExposedTime",
+            "is_vector": false
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "Hide",
+          "field": {
+            "index": 8,
+            "cs_type": "System.Boolean",
+            "type_name": "ScenarioModeExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17007741",
+            "original_name": "Hide",
+            "is_vector": false
+          },
+          "annotation": "bool"
+        },
+        {
+          "name": "Open",
+          "field": {
+            "index": 9,
+            "cs_type": "System.Boolean",
+            "type_name": "ScenarioModeExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17007742",
+            "original_name": "Open",
+            "is_vector": false
+          },
+          "annotation": "bool"
+        },
+        {
+          "name": "IsContinue",
+          "field": {
+            "index": 10,
+            "cs_type": "System.Boolean",
+            "type_name": "ScenarioModeExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17007743",
+            "original_name": "IsContinue",
+            "is_vector": false
+          },
+          "annotation": "bool"
+        },
+        {
+          "name": "EpisodeContinueModeId",
+          "field": {
+            "index": 11,
+            "cs_type": "System.Int64",
+            "type_name": "ScenarioModeExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17007744",
+            "original_name": "EpisodeContinueModeId",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "FrontScenarioGroupId",
+          "field": {
+            "index": 12,
+            "cs_type": "System.Int64",
+            "type_name": "ScenarioModeExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17007745",
+            "original_name": "FrontScenarioGroupId",
+            "is_vector": true
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "StrategyId",
+          "field": {
+            "index": 13,
+            "cs_type": "System.Int64",
+            "type_name": "ScenarioModeExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17007746",
+            "original_name": "StrategyId",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "GroundId",
+          "field": {
+            "index": 14,
+            "cs_type": "System.Int64",
+            "type_name": "ScenarioModeExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17007747",
+            "original_name": "GroundId",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "IsDefeatBattle",
+          "field": {
+            "index": 15,
+            "cs_type": "System.Boolean",
+            "type_name": "ScenarioModeExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17007748",
+            "original_name": "IsDefeatBattle",
+            "is_vector": false
+          },
+          "annotation": "bool"
+        },
+        {
+          "name": "BattleDuration",
+          "field": {
+            "index": 16,
+            "cs_type": "System.Int64",
+            "type_name": "ScenarioModeExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17007749",
+            "original_name": "BattleDuration",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "FieldDateId",
+          "field": {
+            "index": 17,
+            "cs_type": "System.Int64",
+            "type_name": "ScenarioModeExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x1700774A",
+            "original_name": "FieldDateId",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "BackScenarioGroupId",
+          "field": {
+            "index": 18,
+            "cs_type": "System.Int64",
+            "type_name": "ScenarioModeExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x1700774B",
+            "original_name": "BackScenarioGroupId",
+            "is_vector": true
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "ClearedModeId",
+          "field": {
+            "index": 19,
+            "cs_type": "System.Int64",
+            "type_name": "ScenarioModeExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x1700774C",
+            "original_name": "ClearedModeId",
+            "is_vector": true
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "ScenarioModeRewardId",
+          "field": {
+            "index": 20,
+            "cs_type": "System.Int64",
+            "type_name": "ScenarioModeExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x1700774D",
+            "original_name": "ScenarioModeRewardId",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "IsScenarioSpecialReward",
+          "field": {
+            "index": 21,
+            "cs_type": "System.Boolean",
+            "type_name": "ScenarioModeExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x1700774E",
+            "original_name": "IsScenarioSpecialReward",
+            "is_vector": false
+          },
+          "annotation": "bool"
+        },
+        {
+          "name": "SpecialRewardPrefabName",
+          "field": {
+            "index": 22,
+            "cs_type": "System.String",
+            "type_name": "ScenarioModeExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x1700774F",
+            "original_name": "SpecialRewardPrefabName",
+            "is_vector": false
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "SpecialRewardLogOut",
+          "field": {
+            "index": 23,
+            "cs_type": "System.Boolean",
+            "type_name": "ScenarioModeExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17007750",
+            "original_name": "SpecialRewardLogOut",
+            "is_vector": false
+          },
+          "annotation": "bool"
+        },
+        {
+          "name": "AccountLevelLimit",
+          "field": {
+            "index": 24,
+            "cs_type": "System.Int64",
+            "type_name": "ScenarioModeExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17007751",
+            "original_name": "AccountLevelLimit",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "ClearedStageId",
+          "field": {
+            "index": 25,
+            "cs_type": "System.Int64",
+            "type_name": "ScenarioModeExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17007752",
+            "original_name": "ClearedStageId",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "NeedClub",
+          "field": {
+            "index": 26,
+            "cs_type": "FlatData.Club",
+            "type_name": "ScenarioModeExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17007753",
+            "original_name": "NeedClub",
+            "is_vector": false
+          },
+          "annotation": "Club"
+        },
+        {
+          "name": "NeedClubStudentCount",
+          "field": {
+            "index": 27,
+            "cs_type": "System.Int32",
+            "type_name": "ScenarioModeExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17007754",
+            "original_name": "NeedClubStudentCount",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "EventContentId",
+          "field": {
+            "index": 28,
+            "cs_type": "System.Int64",
+            "type_name": "ScenarioModeExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17007755",
+            "original_name": "EventContentId",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "EventContentType",
+          "field": {
+            "index": 29,
+            "cs_type": "FlatData.EventContentType",
+            "type_name": "ScenarioModeExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17007756",
+            "original_name": "EventContentType",
+            "is_vector": false
+          },
+          "annotation": "EventContentType"
+        },
+        {
+          "name": "EventContentCondition",
+          "field": {
+            "index": 30,
+            "cs_type": "System.Int64",
+            "type_name": "ScenarioModeExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17007757",
+            "original_name": "EventContentCondition",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "EventContentConditionGroup",
+          "field": {
+            "index": 31,
+            "cs_type": "System.Int64",
+            "type_name": "ScenarioModeExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17007758",
+            "original_name": "EventContentConditionGroup",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "MapDifficulty",
+          "field": {
+            "index": 32,
+            "cs_type": "FlatData.StageDifficulty",
+            "type_name": "ScenarioModeExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17007759",
+            "original_name": "MapDifficulty",
+            "is_vector": false
+          },
+          "annotation": "StageDifficulty"
+        },
+        {
+          "name": "StepIndex",
+          "field": {
+            "index": 33,
+            "cs_type": "System.Int32",
+            "type_name": "ScenarioModeExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x1700775A",
+            "original_name": "StepIndex",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "RecommendLevel",
+          "field": {
+            "index": 34,
+            "cs_type": "System.Int32",
+            "type_name": "ScenarioModeExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x1700775B",
+            "original_name": "RecommendLevel",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "EventIconParcelPath",
+          "field": {
+            "index": 35,
+            "cs_type": "System.String",
+            "type_name": "ScenarioModeExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x1700775C",
+            "original_name": "EventIconParcelPath",
+            "is_vector": false
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "EventBannerTitle",
+          "field": {
+            "index": 36,
+            "cs_type": "System.UInt32",
+            "type_name": "ScenarioModeExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x1700775D",
+            "original_name": "EventBannerTitle",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "Lof",
+          "field": {
+            "index": 37,
+            "cs_type": "System.Boolean",
+            "type_name": "ScenarioModeExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x1700775E",
+            "original_name": "Lof",
+            "is_vector": false
+          },
+          "annotation": "bool"
+        },
+        {
+          "name": "StageTopography",
+          "field": {
+            "index": 38,
+            "cs_type": "FlatData.StageTopography",
+            "type_name": "ScenarioModeExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x1700775F",
+            "original_name": "StageTopography",
+            "is_vector": false
+          },
+          "annotation": "StageTopography"
+        },
+        {
+          "name": "FixedEchelonId",
+          "field": {
+            "index": 39,
+            "cs_type": "System.Int64",
+            "type_name": "ScenarioModeExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17007760",
+            "original_name": "FixedEchelonId",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "CompleteReportEventName",
+          "field": {
+            "index": 40,
+            "cs_type": "System.String",
+            "type_name": "ScenarioModeExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17007761",
+            "original_name": "CompleteReportEventName",
+            "is_vector": false
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "EchelonExtensionType",
+          "field": {
+            "index": 41,
+            "cs_type": "FlatData.EchelonExtensionType",
+            "type_name": "ScenarioModeExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17007762",
+            "original_name": "EchelonExtensionType",
+            "is_vector": false
+          },
+          "annotation": "EchelonExtensionType"
+        },
+        {
+          "name": "CollectionGroupId",
+          "field": {
+            "index": 42,
+            "cs_type": "System.Int64",
+            "type_name": "ScenarioModeExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17007763",
+            "original_name": "CollectionGroupId",
+            "is_vector": false
+          },
+          "annotation": "int"
+        }
+      ]
+    },
+    "ScenarioCharacterNameExcel": {
+      "metadata": {
+        "name": "ScenarioCharacterNameExcel",
+        "namespace": "MX.Data.Excel",
+        "kind": "struct",
+        "original_name": "ScenarioCharacterNameExcel",
+        "type_def_index": 20336,
+        "token": "0x02004F71"
+      },
+      "fields": [
+        {
+          "name": "CharacterName",
+          "field": {
+            "index": 0,
+            "cs_type": "System.UInt32",
+            "type_name": "ScenarioCharacterNameExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17007707",
+            "original_name": "CharacterName",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "ProductionStep",
+          "field": {
+            "index": 1,
+            "cs_type": "FlatData.ProductionStep",
+            "type_name": "ScenarioCharacterNameExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17007708",
+            "original_name": "ProductionStep",
+            "is_vector": false
+          },
+          "annotation": "ProductionStep"
+        },
+        {
+          "name": "NameKR",
+          "field": {
+            "index": 2,
+            "cs_type": "System.String",
+            "type_name": "ScenarioCharacterNameExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17007709",
+            "original_name": "NameKR",
+            "is_vector": false
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "NicknameKR",
+          "field": {
+            "index": 3,
+            "cs_type": "System.String",
+            "type_name": "ScenarioCharacterNameExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x1700770A",
+            "original_name": "NicknameKR",
+            "is_vector": false
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "NameJP",
+          "field": {
+            "index": 4,
+            "cs_type": "System.String",
+            "type_name": "ScenarioCharacterNameExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x1700770B",
+            "original_name": "NameJP",
+            "is_vector": false
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "NicknameJP",
+          "field": {
+            "index": 5,
+            "cs_type": "System.String",
+            "type_name": "ScenarioCharacterNameExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x1700770C",
+            "original_name": "NicknameJP",
+            "is_vector": false
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "Shape",
+          "field": {
+            "index": 6,
+            "cs_type": "FlatData.ScenarioCharacterShapes",
+            "type_name": "ScenarioCharacterNameExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x1700770D",
+            "original_name": "Shape",
+            "is_vector": false
+          },
+          "annotation": "ScenarioCharacterShapes"
+        },
+        {
+          "name": "SpinePrefabName",
+          "field": {
+            "index": 7,
+            "cs_type": "System.String",
+            "type_name": "ScenarioCharacterNameExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x1700770E",
+            "original_name": "SpinePrefabName",
+            "is_vector": false
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "SmallPortrait",
+          "field": {
+            "index": 8,
+            "cs_type": "System.String",
+            "type_name": "ScenarioCharacterNameExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x1700770F",
+            "original_name": "SmallPortrait",
+            "is_vector": false
+          },
+          "annotation": "str"
+        }
+      ]
+    },
+    "ScenarioBGNameExcel": {
+      "metadata": {
+        "name": "ScenarioBGNameExcel",
+        "namespace": "MX.Data.Excel",
+        "kind": "struct",
+        "original_name": "ScenarioBGNameExcel",
+        "type_def_index": 20322,
+        "token": "0x02004F63"
+      },
+      "fields": [
+        {
+          "name": "Name",
+          "field": {
+            "index": 0,
+            "cs_type": "System.UInt32",
+            "type_name": "ScenarioBGNameExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x170076F8",
+            "original_name": "Name",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "ProductionStep",
+          "field": {
+            "index": 1,
+            "cs_type": "FlatData.ProductionStep",
+            "type_name": "ScenarioBGNameExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x170076F9",
+            "original_name": "ProductionStep",
+            "is_vector": false
+          },
+          "annotation": "ProductionStep"
+        },
+        {
+          "name": "BGFileName",
+          "field": {
+            "index": 2,
+            "cs_type": "System.String",
+            "type_name": "ScenarioBGNameExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x170076FA",
+            "original_name": "BGFileName",
+            "is_vector": false
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "BGType",
+          "field": {
+            "index": 3,
+            "cs_type": "FlatData.ScenarioBGType",
+            "type_name": "ScenarioBGNameExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x170076FB",
+            "original_name": "BGType",
+            "is_vector": false
+          },
+          "annotation": "ScenarioBGType"
+        },
+        {
+          "name": "AnimationRoot",
+          "field": {
+            "index": 4,
+            "cs_type": "System.String",
+            "type_name": "ScenarioBGNameExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x170076FC",
+            "original_name": "AnimationRoot",
+            "is_vector": false
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "AnimationName",
+          "field": {
+            "index": 5,
+            "cs_type": "System.String",
+            "type_name": "ScenarioBGNameExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x170076FD",
+            "original_name": "AnimationName",
+            "is_vector": false
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "SpineScale",
+          "field": {
+            "index": 6,
+            "cs_type": "System.Single",
+            "type_name": "ScenarioBGNameExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x170076FE",
+            "original_name": "SpineScale",
+            "is_vector": false
+          },
+          "annotation": "float"
+        },
+        {
+          "name": "SpineLocalPosX",
+          "field": {
+            "index": 7,
+            "cs_type": "System.Int32",
+            "type_name": "ScenarioBGNameExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x170076FF",
+            "original_name": "SpineLocalPosX",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "SpineLocalPosY",
+          "field": {
+            "index": 8,
+            "cs_type": "System.Int32",
+            "type_name": "ScenarioBGNameExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17007700",
+            "original_name": "SpineLocalPosY",
+            "is_vector": false
+          },
+          "annotation": "int"
+        }
+      ]
+    },
+    "ScenarioBGEffectExcel": {
+      "metadata": {
+        "name": "ScenarioBGEffectExcel",
+        "namespace": "MX.Data.Excel",
+        "kind": "struct",
+        "original_name": "ScenarioBGEffectExcel",
+        "type_def_index": 20315,
+        "token": "0x02004F5C"
+      },
+      "fields": [
+        {
+          "name": "Name",
+          "field": {
+            "index": 0,
+            "cs_type": "System.UInt32",
+            "type_name": "ScenarioBGEffectExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x170076EF",
+            "original_name": "Name",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "Effect",
+          "field": {
+            "index": 1,
+            "cs_type": "System.String",
+            "type_name": "ScenarioBGEffectExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x170076F0",
+            "original_name": "Effect",
+            "is_vector": false
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "Effect2",
+          "field": {
+            "index": 2,
+            "cs_type": "System.String",
+            "type_name": "ScenarioBGEffectExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x170076F1",
+            "original_name": "Effect2",
+            "is_vector": false
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "Scroll",
+          "field": {
+            "index": 3,
+            "cs_type": "FlatData.ScenarioBGScroll",
+            "type_name": "ScenarioBGEffectExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x170076F2",
+            "original_name": "Scroll",
+            "is_vector": false
+          },
+          "annotation": "ScenarioBGScroll"
+        },
+        {
+          "name": "ScrollTime",
+          "field": {
+            "index": 4,
+            "cs_type": "System.Int64",
+            "type_name": "ScenarioBGEffectExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x170076F3",
+            "original_name": "ScrollTime",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "ScrollFrom",
+          "field": {
+            "index": 5,
+            "cs_type": "System.Int64",
+            "type_name": "ScenarioBGEffectExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x170076F4",
+            "original_name": "ScrollFrom",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "ScrollTo",
+          "field": {
+            "index": 6,
+            "cs_type": "System.Int64",
+            "type_name": "ScenarioBGEffectExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x170076F5",
+            "original_name": "ScrollTo",
+            "is_vector": false
+          },
+          "annotation": "int"
+        }
+      ]
+    },
+    "ScenarioTransitionExcel": {
+      "metadata": {
+        "name": "ScenarioTransitionExcel",
+        "namespace": "MX.Data.Excel",
+        "kind": "struct",
+        "original_name": "ScenarioTransitionExcel",
+        "type_def_index": 20406,
+        "token": "0x02004FB7"
+      },
+      "fields": [
+        {
+          "name": "Name",
+          "field": {
+            "index": 0,
+            "cs_type": "System.UInt32",
+            "type_name": "ScenarioTransitionExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x17007799",
+            "original_name": "Name",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "TransitionOut",
+          "field": {
+            "index": 1,
+            "cs_type": "System.String",
+            "type_name": "ScenarioTransitionExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x1700779A",
+            "original_name": "TransitionOut",
+            "is_vector": false
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "TransitionOutDuration",
+          "field": {
+            "index": 2,
+            "cs_type": "System.Int64",
+            "type_name": "ScenarioTransitionExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x1700779B",
+            "original_name": "TransitionOutDuration",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "TransitionOutResource",
+          "field": {
+            "index": 3,
+            "cs_type": "System.String",
+            "type_name": "ScenarioTransitionExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x1700779C",
+            "original_name": "TransitionOutResource",
+            "is_vector": false
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "TransitionIn",
+          "field": {
+            "index": 4,
+            "cs_type": "System.String",
+            "type_name": "ScenarioTransitionExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x1700779D",
+            "original_name": "TransitionIn",
+            "is_vector": false
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "TransitionInDuration",
+          "field": {
+            "index": 5,
+            "cs_type": "System.Int64",
+            "type_name": "ScenarioTransitionExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x1700779E",
+            "original_name": "TransitionInDuration",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "TransitionInResource",
+          "field": {
+            "index": 6,
+            "cs_type": "System.String",
+            "type_name": "ScenarioTransitionExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x1700779F",
+            "original_name": "TransitionInResource",
+            "is_vector": false
+          },
+          "annotation": "str"
+        }
+      ]
+    },
+    "BGMExcel": {
+      "metadata": {
+        "name": "BGMExcel",
+        "namespace": "MX.Data.Excel",
+        "kind": "struct",
+        "original_name": "BGMExcel",
+        "type_def_index": 17686,
+        "token": "0x02004517"
+      },
+      "fields": [
+        {
+          "name": "Id",
+          "field": {
+            "index": 0,
+            "cs_type": "System.Int64",
+            "type_name": "BGMExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x170065B8",
+            "original_name": "Id",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "Nation",
+          "field": {
+            "index": 1,
+            "cs_type": "FlatData.Nation",
+            "type_name": "BGMExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x170065B9",
+            "original_name": "Nation",
+            "is_vector": true
+          },
+          "annotation": "Nation"
+        },
+        {
+          "name": "Path",
+          "field": {
+            "index": 2,
+            "cs_type": "System.String",
+            "type_name": "BGMExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x170065BA",
+            "original_name": "Path",
+            "is_vector": true
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "Volume",
+          "field": {
+            "index": 3,
+            "cs_type": "System.Single",
+            "type_name": "BGMExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x170065BB",
+            "original_name": "Volume",
+            "is_vector": true
+          },
+          "annotation": "float"
+        },
+        {
+          "name": "LoopStartTime",
+          "field": {
+            "index": 4,
+            "cs_type": "System.Single",
+            "type_name": "BGMExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x170065BC",
+            "original_name": "LoopStartTime",
+            "is_vector": true
+          },
+          "annotation": "float"
+        },
+        {
+          "name": "LoopEndTime",
+          "field": {
+            "index": 5,
+            "cs_type": "System.Single",
+            "type_name": "BGMExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x170065BD",
+            "original_name": "LoopEndTime",
+            "is_vector": true
+          },
+          "annotation": "float"
+        },
+        {
+          "name": "LoopTranstionTime",
+          "field": {
+            "index": 6,
+            "cs_type": "System.Single",
+            "type_name": "BGMExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x170065BE",
+            "original_name": "LoopTranstionTime",
+            "is_vector": true
+          },
+          "annotation": "float"
+        },
+        {
+          "name": "LoopOffsetTime",
+          "field": {
+            "index": 7,
+            "cs_type": "System.Single",
+            "type_name": "BGMExcel",
+            "namespace": "MX.Data.Excel",
+            "member_token": "0x170065BF",
+            "original_name": "LoopOffsetTime",
+            "is_vector": true
+          },
+          "annotation": "float"
+        }
+      ]
+    }
+  },
+  "enums": {
+    "EventContentType": {
+      "metadata": {
+        "name": "EventContentType",
+        "namespace": "FlatData",
+        "original_name": "EventContentType",
+        "underlying_type": "System.Int32",
+        "type_def_index": 10049,
+        "token": "0x02002742",
+        "members": [
+          {
+            "name": "Stage",
+            "python_name": "Stage",
+            "value": 0,
+            "token": "0x0400AB5E"
+          },
+          {
+            "name": "Gacha",
+            "python_name": "Gacha",
+            "value": 1,
+            "token": "0x0400AB5F"
+          },
+          {
+            "name": "Mission",
+            "python_name": "Mission",
+            "value": 2,
+            "token": "0x0400AB60"
+          },
+          {
+            "name": "Shop",
+            "python_name": "Shop",
+            "value": 3,
+            "token": "0x0400AB61"
+          },
+          {
+            "name": "Raid",
+            "python_name": "Raid",
+            "value": 4,
+            "token": "0x0400AB62"
+          },
+          {
+            "name": "Arena",
+            "python_name": "Arena",
+            "value": 5,
+            "token": "0x0400AB63"
+          },
+          {
+            "name": "BoxGacha",
+            "python_name": "BoxGacha",
+            "value": 6,
+            "token": "0x0400AB64"
+          },
+          {
+            "name": "Collection",
+            "python_name": "Collection",
+            "value": 7,
+            "token": "0x0400AB65"
+          },
+          {
+            "name": "Recollection",
+            "python_name": "Recollection",
+            "value": 8,
+            "token": "0x0400AB66"
+          },
+          {
+            "name": "MiniGameRhythm",
+            "python_name": "MiniGameRhythm",
+            "value": 9,
+            "token": "0x0400AB67"
+          },
+          {
+            "name": "CardShop",
+            "python_name": "CardShop",
+            "value": 10,
+            "token": "0x0400AB68"
+          },
+          {
+            "name": "EventLocation",
+            "python_name": "EventLocation",
+            "value": 11,
+            "token": "0x0400AB69"
+          },
+          {
+            "name": "MinigameRhythmEvent",
+            "python_name": "MinigameRhythmEvent",
+            "value": 12,
+            "token": "0x0400AB6A"
+          },
+          {
+            "name": "FortuneGachaShop",
+            "python_name": "FortuneGachaShop",
+            "value": 13,
+            "token": "0x0400AB6B"
+          },
+          {
+            "name": "SubEvent",
+            "python_name": "SubEvent",
+            "value": 14,
+            "token": "0x0400AB6C"
+          },
+          {
+            "name": "EventMeetup",
+            "python_name": "EventMeetup",
+            "value": 15,
+            "token": "0x0400AB6D"
+          },
+          {
+            "name": "BoxGachaResult",
+            "python_name": "BoxGachaResult",
+            "value": 16,
+            "token": "0x0400AB6E"
+          },
+          {
+            "name": "Conquest",
+            "python_name": "Conquest",
+            "value": 17,
+            "token": "0x0400AB6F"
+          },
+          {
+            "name": "WorldRaid",
+            "python_name": "WorldRaid",
+            "value": 18,
+            "token": "0x0400AB70"
+          },
+          {
+            "name": "DiceRace",
+            "python_name": "DiceRace",
+            "value": 19,
+            "token": "0x0400AB71"
+          },
+          {
+            "name": "MiniGameRhythmMission",
+            "python_name": "MiniGameRhythmMission",
+            "value": 20,
+            "token": "0x0400AB72"
+          },
+          {
+            "name": "WorldRaidEntrance",
+            "python_name": "WorldRaidEntrance",
+            "value": 21,
+            "token": "0x0400AB73"
+          },
+          {
+            "name": "MiniEvent",
+            "python_name": "MiniEvent",
+            "value": 22,
+            "token": "0x0400AB74"
+          },
+          {
+            "name": "MiniGameShooting",
+            "python_name": "MiniGameShooting",
+            "value": 23,
+            "token": "0x0400AB75"
+          },
+          {
+            "name": "MiniGameShootingMission",
+            "python_name": "MiniGameShootingMission",
+            "value": 24,
+            "token": "0x0400AB76"
+          },
+          {
+            "name": "MiniGameTBG",
+            "python_name": "MiniGameTBG",
+            "value": 25,
+            "token": "0x0400AB77"
+          },
+          {
+            "name": "TimeAttackDungeon",
+            "python_name": "TimeAttackDungeon",
+            "value": 26,
+            "token": "0x0400AB78"
+          },
+          {
+            "name": "EliminateRaid",
+            "python_name": "EliminateRaid",
+            "value": 27,
+            "token": "0x0400AB79"
+          },
+          {
+            "name": "Treasure",
+            "python_name": "Treasure",
+            "value": 28,
+            "token": "0x0400AB7A"
+          },
+          {
+            "name": "Field",
+            "python_name": "Field",
+            "value": 29,
+            "token": "0x0400AB7B"
+          },
+          {
+            "name": "MultiFloorRaid",
+            "python_name": "MultiFloorRaid",
+            "value": 30,
+            "token": "0x0400AB7C"
+          },
+          {
+            "name": "MinigameDreamMaker",
+            "python_name": "MinigameDreamMaker",
+            "value": 31,
+            "token": "0x0400AB7D"
+          },
+          {
+            "name": "MiniGameDefense",
+            "python_name": "MiniGameDefense",
+            "value": 32,
+            "token": "0x0400AB7E"
+          },
+          {
+            "name": "OpenWebView",
+            "python_name": "OpenWebView",
+            "value": 33,
+            "token": "0x0400AB7F"
+          },
+          {
+            "name": "SpecialMiniEvent",
+            "python_name": "SpecialMiniEvent",
+            "value": 34,
+            "token": "0x0400AB80"
+          },
+          {
+            "name": "ScenarioCollection",
+            "python_name": "ScenarioCollection",
+            "value": 35,
+            "token": "0x0400AB81"
+          },
+          {
+            "name": "ScenarioShortcut",
+            "python_name": "ScenarioShortcut",
+            "value": 36,
+            "token": "0x0400AB82"
+          },
+          {
+            "name": "SeasonalEvent",
+            "python_name": "SeasonalEvent",
+            "value": 37,
+            "token": "0x0400AB83"
+          },
+          {
+            "name": "MiniShop",
+            "python_name": "MiniShop",
+            "value": 38,
+            "token": "0x0400AB84"
+          },
+          {
+            "name": "MiniGameRoad",
+            "python_name": "MiniGameRoad",
+            "value": 39,
+            "token": "0x0400AB85"
+          },
+          {
+            "name": "MiniGameCCG",
+            "python_name": "MiniGameCCG",
+            "value": 40,
+            "token": "0x0400AB86"
+          },
+          {
+            "name": "Concentration",
+            "python_name": "Concentration",
+            "value": 41,
+            "token": "0x0400AB87"
+          },
+          {
+            "name": "InteractiveWorldRaid",
+            "python_name": "InteractiveWorldRaid",
+            "value": 42,
+            "token": "0x0400AB88"
+          },
+          {
+            "name": "ClueSearch",
+            "python_name": "ClueSearch",
+            "value": 43,
+            "token": "0x0400AB89"
+          },
+          {
+            "name": "MinigameJanken",
+            "python_name": "MinigameJanken",
+            "value": 44,
+            "token": "0x0400AB8A"
+          }
+        ]
+      },
+      "members": {
+        "Stage": 0,
+        "Gacha": 1,
+        "Mission": 2,
+        "Shop": 3,
+        "Raid": 4,
+        "Arena": 5,
+        "BoxGacha": 6,
+        "Collection": 7,
+        "Recollection": 8,
+        "MiniGameRhythm": 9,
+        "CardShop": 10,
+        "EventLocation": 11,
+        "MinigameRhythmEvent": 12,
+        "FortuneGachaShop": 13,
+        "SubEvent": 14,
+        "EventMeetup": 15,
+        "BoxGachaResult": 16,
+        "Conquest": 17,
+        "WorldRaid": 18,
+        "DiceRace": 19,
+        "MiniGameRhythmMission": 20,
+        "WorldRaidEntrance": 21,
+        "MiniEvent": 22,
+        "MiniGameShooting": 23,
+        "MiniGameShootingMission": 24,
+        "MiniGameTBG": 25,
+        "TimeAttackDungeon": 26,
+        "EliminateRaid": 27,
+        "Treasure": 28,
+        "Field": 29,
+        "MultiFloorRaid": 30,
+        "MinigameDreamMaker": 31,
+        "MiniGameDefense": 32,
+        "OpenWebView": 33,
+        "SpecialMiniEvent": 34,
+        "ScenarioCollection": 35,
+        "ScenarioShortcut": 36,
+        "SeasonalEvent": 37,
+        "MiniShop": 38,
+        "MiniGameRoad": 39,
+        "MiniGameCCG": 40,
+        "Concentration": 41,
+        "InteractiveWorldRaid": 42,
+        "ClueSearch": 43,
+        "MinigameJanken": 44
+      }
+    },
+    "OpenConditionContent": {
+      "metadata": {
+        "name": "OpenConditionContent",
+        "namespace": "FlatData",
+        "original_name": "OpenConditionContent",
+        "underlying_type": "System.Int32",
+        "type_def_index": 10054,
+        "token": "0x02002747",
+        "members": [
+          {
+            "name": "Shop",
+            "python_name": "Shop",
+            "value": 0,
+            "token": "0x0400ABAC"
+          },
+          {
+            "name": "Gacha",
+            "python_name": "Gacha",
+            "value": 1,
+            "token": "0x0400ABAD"
+          },
+          {
+            "name": "LobbyIllust",
+            "python_name": "LobbyIllust",
+            "value": 2,
+            "token": "0x0400ABAE"
+          },
+          {
+            "name": "Raid",
+            "python_name": "Raid",
+            "value": 3,
+            "token": "0x0400ABAF"
+          },
+          {
+            "name": "Cafe",
+            "python_name": "Cafe",
+            "value": 4,
+            "token": "0x0400ABB0"
+          },
+          {
+            "name": "Unit_Growth_Skill",
+            "python_name": "Unit_Growth_Skill",
+            "value": 5,
+            "token": "0x0400ABB1"
+          },
+          {
+            "name": "Unit_Growth_LevelUp",
+            "python_name": "Unit_Growth_LevelUp",
+            "value": 6,
+            "token": "0x0400ABB2"
+          },
+          {
+            "name": "Unit_Growth_Transcendence",
+            "python_name": "Unit_Growth_Transcendence",
+            "value": 7,
+            "token": "0x0400ABB3"
+          },
+          {
+            "name": "Arena",
+            "python_name": "Arena",
+            "value": 8,
+            "token": "0x0400ABB4"
+          },
+          {
+            "name": "Academy",
+            "python_name": "Academy",
+            "value": 9,
+            "token": "0x0400ABB5"
+          },
+          {
+            "name": "Equip",
+            "python_name": "Equip",
+            "value": 10,
+            "token": "0x0400ABB6"
+          },
+          {
+            "name": "Item",
+            "python_name": "Item",
+            "value": 11,
+            "token": "0x0400ABB7"
+          },
+          {
+            "name": "Favor",
+            "python_name": "Favor",
+            "value": 12,
+            "token": "0x0400ABB8"
+          },
+          {
+            "name": "Prologue",
+            "python_name": "Prologue",
+            "value": 13,
+            "token": "0x0400ABB9"
+          },
+          {
+            "name": "Mission",
+            "python_name": "Mission",
+            "value": 14,
+            "token": "0x0400ABBA"
+          },
+          {
+            "name": "WeekDungeon_Chase",
+            "python_name": "WeekDungeon_Chase",
+            "value": 15,
+            "token": "0x0400ABBB"
+          },
+          {
+            "name": "__Deprecated_WeekDungeon_FindGift",
+            "python_name": "Deprecated_WeekDungeon_FindGift",
+            "value": 16,
+            "token": "0x0400ABBC"
+          },
+          {
+            "name": "__Deprecated_WeekDungeon_Blood",
+            "python_name": "Deprecated_WeekDungeon_Blood",
+            "value": 17,
+            "token": "0x0400ABBD"
+          },
+          {
+            "name": "Story_Sub",
+            "python_name": "Story_Sub",
+            "value": 18,
+            "token": "0x0400ABBE"
+          },
+          {
+            "name": "Story_Replay",
+            "python_name": "Story_Replay",
+            "value": 19,
+            "token": "0x0400ABBF"
+          },
+          {
+            "name": "WeekDungeon",
+            "python_name": "WeekDungeon",
+            "value": 20,
+            "token": "0x0400ABC0"
+          },
+          {
+            "name": "None",
+            "python_name": "None_",
+            "value": 21,
+            "token": "0x0400ABC1"
+          },
+          {
+            "name": "Shop_Gem",
+            "python_name": "Shop_Gem",
+            "value": 22,
+            "token": "0x0400ABC2"
+          },
+          {
+            "name": "Craft",
+            "python_name": "Craft",
+            "value": 23,
+            "token": "0x0400ABC3"
+          },
+          {
+            "name": "Student",
+            "python_name": "Student",
+            "value": 24,
+            "token": "0x0400ABC4"
+          },
+          {
+            "name": "GuideMission",
+            "python_name": "GuideMission",
+            "value": 25,
+            "token": "0x0400ABC5"
+          },
+          {
+            "name": "Clan",
+            "python_name": "Clan",
+            "value": 26,
+            "token": "0x0400ABC6"
+          },
+          {
+            "name": "Echelon",
+            "python_name": "Echelon",
+            "value": 27,
+            "token": "0x0400ABC7"
+          },
+          {
+            "name": "Campaign",
+            "python_name": "Campaign",
+            "value": 28,
+            "token": "0x0400ABC8"
+          },
+          {
+            "name": "EventContent",
+            "python_name": "EventContent",
+            "value": 29,
+            "token": "0x0400ABC9"
+          },
+          {
+            "name": "Guild",
+            "python_name": "Guild",
+            "value": 30,
+            "token": "0x0400ABCA"
+          },
+          {
+            "name": "EventStage_1",
+            "python_name": "EventStage_1",
+            "value": 31,
+            "token": "0x0400ABCB"
+          },
+          {
+            "name": "EventStage_2",
+            "python_name": "EventStage_2",
+            "value": 32,
+            "token": "0x0400ABCC"
+          },
+          {
+            "name": "Talk",
+            "python_name": "Talk",
+            "value": 33,
+            "token": "0x0400ABCD"
+          },
+          {
+            "name": "Billing",
+            "python_name": "Billing",
+            "value": 34,
+            "token": "0x0400ABCE"
+          },
+          {
+            "name": "Schedule",
+            "python_name": "Schedule",
+            "value": 35,
+            "token": "0x0400ABCF"
+          },
+          {
+            "name": "Story",
+            "python_name": "Story",
+            "value": 36,
+            "token": "0x0400ABD0"
+          },
+          {
+            "name": "Tactic_Speed",
+            "python_name": "Tactic_Speed",
+            "value": 37,
+            "token": "0x0400ABD1"
+          },
+          {
+            "name": "Cafe_Invite",
+            "python_name": "Cafe_Invite",
+            "value": 38,
+            "token": "0x0400ABD2"
+          },
+          {
+            "name": "EventMiniGame_1",
+            "python_name": "EventMiniGame_1",
+            "value": 39,
+            "token": "0x0400ABD3"
+          },
+          {
+            "name": "SchoolDungeon",
+            "python_name": "SchoolDungeon",
+            "value": 40,
+            "token": "0x0400ABD4"
+          },
+          {
+            "name": "TimeAttackDungeon",
+            "python_name": "TimeAttackDungeon",
+            "value": 41,
+            "token": "0x0400ABD5"
+          },
+          {
+            "name": "ShiftingCraft",
+            "python_name": "ShiftingCraft",
+            "value": 42,
+            "token": "0x0400ABD6"
+          },
+          {
+            "name": "WorldRaid",
+            "python_name": "WorldRaid",
+            "value": 43,
+            "token": "0x0400ABD7"
+          },
+          {
+            "name": "Tactic_Skip",
+            "python_name": "Tactic_Skip",
+            "value": 44,
+            "token": "0x0400ABD8"
+          },
+          {
+            "name": "Mulligan",
+            "python_name": "Mulligan",
+            "value": 45,
+            "token": "0x0400ABD9"
+          },
+          {
+            "name": "EventPermanent",
+            "python_name": "EventPermanent",
+            "value": 46,
+            "token": "0x0400ABDA"
+          },
+          {
+            "name": "Main_L_1_2",
+            "python_name": "Main_L_1_2",
+            "value": 47,
+            "token": "0x0400ABDB"
+          },
+          {
+            "name": "Main_L_1_3",
+            "python_name": "Main_L_1_3",
+            "value": 48,
+            "token": "0x0400ABDC"
+          },
+          {
+            "name": "Main_L_1_4",
+            "python_name": "Main_L_1_4",
+            "value": 49,
+            "token": "0x0400ABDD"
+          },
+          {
+            "name": "EliminateRaid",
+            "python_name": "EliminateRaid",
+            "value": 50,
+            "token": "0x0400ABDE"
+          },
+          {
+            "name": "Cafe_2",
+            "python_name": "Cafe_2",
+            "value": 51,
+            "token": "0x0400ABDF"
+          },
+          {
+            "name": "Cafe_Invite_2",
+            "python_name": "Cafe_Invite_2",
+            "value": 52,
+            "token": "0x0400ABE0"
+          },
+          {
+            "name": "MultiFloorRaid",
+            "python_name": "MultiFloorRaid",
+            "value": 53,
+            "token": "0x0400ABE1"
+          },
+          {
+            "name": "StrategySkip",
+            "python_name": "StrategySkip",
+            "value": 54,
+            "token": "0x0400ABE2"
+          },
+          {
+            "name": "MinigameDreamMaker",
+            "python_name": "MinigameDreamMaker",
+            "value": 55,
+            "token": "0x0400ABE3"
+          },
+          {
+            "name": "MiniGameDefense",
+            "python_name": "MiniGameDefense",
+            "value": 56,
+            "token": "0x0400ABE4"
+          },
+          {
+            "name": "MiniGameCCG",
+            "python_name": "MiniGameCCG",
+            "value": 57,
+            "token": "0x0400ABE5"
+          },
+          {
+            "name": "Main_L_1_5",
+            "python_name": "Main_L_1_5",
+            "value": 58,
+            "token": "0x0400ABE6"
+          },
+          {
+            "name": "Main_SNS",
+            "python_name": "Main_SNS",
+            "value": 59,
+            "token": "0x0400ABE7"
+          },
+          {
+            "name": "PermanentRaid",
+            "python_name": "PermanentRaid",
+            "value": 60,
+            "token": "0x0400ABE8"
+          },
+          {
+            "name": "MinigameJanken",
+            "python_name": "MinigameJanken",
+            "value": 61,
+            "token": "0x0400ABE9"
+          },
+          {
+            "name": "TacticalRelay",
+            "python_name": "TacticalRelay",
+            "value": 62,
+            "token": "0x0400ABEA"
+          },
+          {
+            "name": "Engrave",
+            "python_name": "Engrave",
+            "value": 63,
+            "token": "0x0400ABEB"
+          }
+        ]
+      },
+      "members": {
+        "Shop": 0,
+        "Gacha": 1,
+        "LobbyIllust": 2,
+        "Raid": 3,
+        "Cafe": 4,
+        "Unit_Growth_Skill": 5,
+        "Unit_Growth_LevelUp": 6,
+        "Unit_Growth_Transcendence": 7,
+        "Arena": 8,
+        "Academy": 9,
+        "Equip": 10,
+        "Item": 11,
+        "Favor": 12,
+        "Prologue": 13,
+        "Mission": 14,
+        "WeekDungeon_Chase": 15,
+        "Deprecated_WeekDungeon_FindGift": 16,
+        "Deprecated_WeekDungeon_Blood": 17,
+        "Story_Sub": 18,
+        "Story_Replay": 19,
+        "WeekDungeon": 20,
+        "None_": 21,
+        "Shop_Gem": 22,
+        "Craft": 23,
+        "Student": 24,
+        "GuideMission": 25,
+        "Clan": 26,
+        "Echelon": 27,
+        "Campaign": 28,
+        "EventContent": 29,
+        "Guild": 30,
+        "EventStage_1": 31,
+        "EventStage_2": 32,
+        "Talk": 33,
+        "Billing": 34,
+        "Schedule": 35,
+        "Story": 36,
+        "Tactic_Speed": 37,
+        "Cafe_Invite": 38,
+        "EventMiniGame_1": 39,
+        "SchoolDungeon": 40,
+        "TimeAttackDungeon": 41,
+        "ShiftingCraft": 42,
+        "WorldRaid": 43,
+        "Tactic_Skip": 44,
+        "Mulligan": 45,
+        "EventPermanent": 46,
+        "Main_L_1_2": 47,
+        "Main_L_1_3": 48,
+        "Main_L_1_4": 49,
+        "EliminateRaid": 50,
+        "Cafe_2": 51,
+        "Cafe_Invite_2": 52,
+        "MultiFloorRaid": 53,
+        "StrategySkip": 54,
+        "MinigameDreamMaker": 55,
+        "MiniGameDefense": 56,
+        "MiniGameCCG": 57,
+        "Main_L_1_5": 58,
+        "Main_SNS": 59,
+        "PermanentRaid": 60,
+        "MinigameJanken": 61,
+        "TacticalRelay": 62,
+        "Engrave": 63
+      }
+    },
+    "SubEventType": {
+      "metadata": {
+        "name": "SubEventType",
+        "namespace": "FlatData",
+        "original_name": "SubEventType",
+        "underlying_type": "System.Int32",
+        "type_def_index": 10083,
+        "token": "0x02002764",
+        "members": [
+          {
+            "name": "None",
+            "python_name": "None_",
+            "value": 0,
+            "token": "0x0400ACC4"
+          },
+          {
+            "name": "SubEvent",
+            "python_name": "SubEvent",
+            "value": 1,
+            "token": "0x0400ACC5"
+          },
+          {
+            "name": "SubEventPermanent",
+            "python_name": "SubEventPermanent",
+            "value": 2,
+            "token": "0x0400ACC6"
+          }
+        ]
+      },
+      "members": {
+        "None_": 0,
+        "SubEvent": 1,
+        "SubEventPermanent": 2
+      }
+    },
+    "EventContentReleaseType": {
+      "metadata": {
+        "name": "EventContentReleaseType",
+        "namespace": "FlatData",
+        "original_name": "EventContentReleaseType",
+        "underlying_type": "System.Int32",
+        "type_def_index": 10080,
+        "token": "0x02002761",
+        "members": [
+          {
+            "name": "None",
+            "python_name": "None_",
+            "value": 0,
+            "token": "0x0400ACB3"
+          },
+          {
+            "name": "Permanent",
+            "python_name": "Permanent",
+            "value": 1,
+            "token": "0x0400ACB4"
+          },
+          {
+            "name": "MainStory",
+            "python_name": "MainStory",
+            "value": 2,
+            "token": "0x0400ACB5"
+          },
+          {
+            "name": "PermanentSpecialOperate",
+            "python_name": "PermanentSpecialOperate",
+            "value": 3,
+            "token": "0x0400ACB6"
+          },
+          {
+            "name": "PermanentConquest",
+            "python_name": "PermanentConquest",
+            "value": 4,
+            "token": "0x0400ACB7"
+          }
+        ]
+      },
+      "members": {
+        "None_": 0,
+        "Permanent": 1,
+        "MainStory": 2,
+        "PermanentSpecialOperate": 3,
+        "PermanentConquest": 4
+      }
+    },
+    "RewardTag": {
+      "metadata": {
+        "name": "RewardTag",
+        "namespace": "FlatData",
+        "original_name": "RewardTag",
+        "underlying_type": "System.Int32",
+        "type_def_index": 10101,
+        "token": "0x02002776",
+        "members": [
+          {
+            "name": "Default",
+            "python_name": "Default",
+            "value": 0,
+            "token": "0x0400ADB6"
+          },
+          {
+            "name": "FirstClear",
+            "python_name": "FirstClear",
+            "value": 1,
+            "token": "0x0400ADB7"
+          },
+          {
+            "name": "StrategyObject",
+            "python_name": "StrategyObject",
+            "value": 2,
+            "token": "0x0400ADB8"
+          },
+          {
+            "name": "Event",
+            "python_name": "Event",
+            "value": 3,
+            "token": "0x0400ADB9"
+          },
+          {
+            "name": "ThreeStar",
+            "python_name": "ThreeStar",
+            "value": 4,
+            "token": "0x0400ADBA"
+          },
+          {
+            "name": "ProductMonthly",
+            "python_name": "ProductMonthly",
+            "value": 5,
+            "token": "0x0400ADBB"
+          },
+          {
+            "name": "Rare",
+            "python_name": "Rare",
+            "value": 6,
+            "token": "0x0400ADBC"
+          },
+          {
+            "name": "EventBonus",
+            "python_name": "EventBonus",
+            "value": 7,
+            "token": "0x0400ADBD"
+          },
+          {
+            "name": "TimeWeight",
+            "python_name": "TimeWeight",
+            "value": 8,
+            "token": "0x0400ADBE"
+          },
+          {
+            "name": "ProductWeekly",
+            "python_name": "ProductWeekly",
+            "value": 9,
+            "token": "0x0400ADBF"
+          },
+          {
+            "name": "ProductBiweekly",
+            "python_name": "ProductBiweekly",
+            "value": 10,
+            "token": "0x0400ADC0"
+          },
+          {
+            "name": "EventPermanentReward",
+            "python_name": "EventPermanentReward",
+            "value": 11,
+            "token": "0x0400ADC1"
+          },
+          {
+            "name": "ConquestManageEvent",
+            "python_name": "ConquestManageEvent",
+            "value": 12,
+            "token": "0x0400ADC2"
+          },
+          {
+            "name": "ConquestManageDefault",
+            "python_name": "ConquestManageDefault",
+            "value": 13,
+            "token": "0x0400ADC3"
+          },
+          {
+            "name": "ConquestCalculateDefault",
+            "python_name": "ConquestCalculateDefault",
+            "value": 14,
+            "token": "0x0400ADC4"
+          },
+          {
+            "name": "ConquestCalculateLevel2",
+            "python_name": "ConquestCalculateLevel2",
+            "value": 15,
+            "token": "0x0400ADC5"
+          },
+          {
+            "name": "ConquestCalculateLevel3",
+            "python_name": "ConquestCalculateLevel3",
+            "value": 16,
+            "token": "0x0400ADC6"
+          },
+          {
+            "name": "ConquestFootholdUpgrade2",
+            "python_name": "ConquestFootholdUpgrade2",
+            "value": 17,
+            "token": "0x0400ADC7"
+          },
+          {
+            "name": "ConquestFootholdUpgrade3",
+            "python_name": "ConquestFootholdUpgrade3",
+            "value": 18,
+            "token": "0x0400ADC8"
+          },
+          {
+            "name": "ConquestErosionPenalty",
+            "python_name": "ConquestErosionPenalty",
+            "value": 19,
+            "token": "0x0400ADC9"
+          },
+          {
+            "name": "GemBonus",
+            "python_name": "GemBonus",
+            "value": 20,
+            "token": "0x0400ADCA"
+          },
+          {
+            "name": "GemPaid",
+            "python_name": "GemPaid",
+            "value": 21,
+            "token": "0x0400ADCB"
+          },
+          {
+            "name": "ConquestTileConquer",
+            "python_name": "ConquestTileConquer",
+            "value": 22,
+            "token": "0x0400ADCC"
+          },
+          {
+            "name": "Mileage",
+            "python_name": "Mileage",
+            "value": 23,
+            "token": "0x0400ADCD"
+          },
+          {
+            "name": "TacticalRelayWave",
+            "python_name": "TacticalRelayWave",
+            "value": 24,
+            "token": "0x0400ADCE"
+          }
+        ]
+      },
+      "members": {
+        "Default": 0,
+        "FirstClear": 1,
+        "StrategyObject": 2,
+        "Event": 3,
+        "ThreeStar": 4,
+        "ProductMonthly": 5,
+        "Rare": 6,
+        "EventBonus": 7,
+        "TimeWeight": 8,
+        "ProductWeekly": 9,
+        "ProductBiweekly": 10,
+        "EventPermanentReward": 11,
+        "ConquestManageEvent": 12,
+        "ConquestManageDefault": 13,
+        "ConquestCalculateDefault": 14,
+        "ConquestCalculateLevel2": 15,
+        "ConquestCalculateLevel3": 16,
+        "ConquestFootholdUpgrade2": 17,
+        "ConquestFootholdUpgrade3": 18,
+        "ConquestErosionPenalty": 19,
+        "GemBonus": 20,
+        "GemPaid": 21,
+        "ConquestTileConquer": 22,
+        "Mileage": 23,
+        "TacticalRelayWave": 24
+      }
+    },
+    "EventContentScenarioConditionType": {
+      "metadata": {
+        "name": "EventContentScenarioConditionType",
+        "namespace": "FlatData",
+        "original_name": "EventContentScenarioConditionType",
+        "underlying_type": "System.Int32",
+        "type_def_index": 10058,
+        "token": "0x0200274B",
+        "members": [
+          {
+            "name": "None",
+            "python_name": "None_",
+            "value": 0,
+            "token": "0x0400AC15"
+          },
+          {
+            "name": "DayAfter",
+            "python_name": "DayAfter",
+            "value": 1,
+            "token": "0x0400AC16"
+          },
+          {
+            "name": "EventPoint",
+            "python_name": "EventPoint",
+            "value": 2,
+            "token": "0x0400AC17"
+          }
+        ]
+      },
+      "members": {
+        "None_": 0,
+        "DayAfter": 1,
+        "EventPoint": 2
+      }
+    },
+    "ParcelType": {
+      "metadata": {
+        "name": "ParcelType",
+        "namespace": "FlatData",
+        "original_name": "ParcelType",
+        "underlying_type": "System.Int32",
+        "type_def_index": 10188,
+        "token": "0x020027CD",
+        "members": [
+          {
+            "name": "None",
+            "python_name": "None_",
+            "value": 0,
+            "token": "0x0400B175"
+          },
+          {
+            "name": "Character",
+            "python_name": "Character",
+            "value": 1,
+            "token": "0x0400B176"
+          },
+          {
+            "name": "Currency",
+            "python_name": "Currency",
+            "value": 2,
+            "token": "0x0400B177"
+          },
+          {
+            "name": "Equipment",
+            "python_name": "Equipment",
+            "value": 3,
+            "token": "0x0400B178"
+          },
+          {
+            "name": "Item",
+            "python_name": "Item",
+            "value": 4,
+            "token": "0x0400B179"
+          },
+          {
+            "name": "GachaGroup",
+            "python_name": "GachaGroup",
+            "value": 5,
+            "token": "0x0400B17A"
+          },
+          {
+            "name": "Product",
+            "python_name": "Product",
+            "value": 6,
+            "token": "0x0400B17B"
+          },
+          {
+            "name": "Shop",
+            "python_name": "Shop",
+            "value": 7,
+            "token": "0x0400B17C"
+          },
+          {
+            "name": "MemoryLobby",
+            "python_name": "MemoryLobby",
+            "value": 8,
+            "token": "0x0400B17D"
+          },
+          {
+            "name": "AccountExp",
+            "python_name": "AccountExp",
+            "value": 9,
+            "token": "0x0400B17E"
+          },
+          {
+            "name": "CharacterExp",
+            "python_name": "CharacterExp",
+            "value": 10,
+            "token": "0x0400B17F"
+          },
+          {
+            "name": "FavorExp",
+            "python_name": "FavorExp",
+            "value": 11,
+            "token": "0x0400B180"
+          },
+          {
+            "name": "TSS",
+            "python_name": "TSS",
+            "value": 12,
+            "token": "0x0400B181"
+          },
+          {
+            "name": "Furniture",
+            "python_name": "Furniture",
+            "value": 13,
+            "token": "0x0400B182"
+          },
+          {
+            "name": "ShopRefresh",
+            "python_name": "ShopRefresh",
+            "value": 14,
+            "token": "0x0400B183"
+          },
+          {
+            "name": "LocationExp",
+            "python_name": "LocationExp",
+            "value": 15,
+            "token": "0x0400B184"
+          },
+          {
+            "name": "Recipe",
+            "python_name": "Recipe",
+            "value": 16,
+            "token": "0x0400B185"
+          },
+          {
+            "name": "CharacterWeapon",
+            "python_name": "CharacterWeapon",
+            "value": 17,
+            "token": "0x0400B186"
+          },
+          {
+            "name": "CharacterGear",
+            "python_name": "CharacterGear",
+            "value": 18,
+            "token": "0x0400B187"
+          },
+          {
+            "name": "IdCardBackground",
+            "python_name": "IdCardBackground",
+            "value": 19,
+            "token": "0x0400B188"
+          },
+          {
+            "name": "Emblem",
+            "python_name": "Emblem",
+            "value": 20,
+            "token": "0x0400B189"
+          },
+          {
+            "name": "Sticker",
+            "python_name": "Sticker",
+            "value": 21,
+            "token": "0x0400B18A"
+          },
+          {
+            "name": "Costume",
+            "python_name": "Costume",
+            "value": 22,
+            "token": "0x0400B18B"
+          },
+          {
+            "name": "PossessionCheck",
+            "python_name": "PossessionCheck",
+            "value": 23,
+            "token": "0x0400B18C"
+          },
+          {
+            "name": "BattlePassExp",
+            "python_name": "BattlePassExp",
+            "value": 24,
+            "token": "0x0400B18D"
+          },
+          {
+            "name": "SelectedCharacter",
+            "python_name": "SelectedCharacter",
+            "value": 25,
+            "token": "0x0400B18E"
+          },
+          {
+            "name": "UnSelectedCharacter",
+            "python_name": "UnSelectedCharacter",
+            "value": 26,
+            "token": "0x0400B18F"
+          },
+          {
+            "name": "ProductBattlePass",
+            "python_name": "ProductBattlePass",
+            "value": 27,
+            "token": "0x0400B190"
+          },
+          {
+            "name": "ProductSelect",
+            "python_name": "ProductSelect",
+            "value": 28,
+            "token": "0x0400B191"
+          },
+          {
+            "name": "SNSPost",
+            "python_name": "SNSPost",
+            "value": 29,
+            "token": "0x0400B192"
+          },
+          {
+            "name": "ProductDailyRecord",
+            "python_name": "ProductDailyRecord",
+            "value": 30,
+            "token": "0x0400B193"
+          },
+          {
+            "name": "StudentFrame",
+            "python_name": "StudentFrame",
+            "value": 31,
+            "token": "0x0400B194"
+          }
+        ]
+      },
+      "members": {
+        "None_": 0,
+        "Character": 1,
+        "Currency": 2,
+        "Equipment": 3,
+        "Item": 4,
+        "GachaGroup": 5,
+        "Product": 6,
+        "Shop": 7,
+        "MemoryLobby": 8,
+        "AccountExp": 9,
+        "CharacterExp": 10,
+        "FavorExp": 11,
+        "TSS": 12,
+        "Furniture": 13,
+        "ShopRefresh": 14,
+        "LocationExp": 15,
+        "Recipe": 16,
+        "CharacterWeapon": 17,
+        "CharacterGear": 18,
+        "IdCardBackground": 19,
+        "Emblem": 20,
+        "Sticker": 21,
+        "Costume": 22,
+        "PossessionCheck": 23,
+        "BattlePassExp": 24,
+        "SelectedCharacter": 25,
+        "UnSelectedCharacter": 26,
+        "ProductBattlePass": 27,
+        "ProductSelect": 28,
+        "SNSPost": 29,
+        "ProductDailyRecord": 30,
+        "StudentFrame": 31
+      }
+    },
+    "ScenarioModeTypes": {
+      "metadata": {
+        "name": "ScenarioModeTypes",
+        "namespace": "FlatData",
+        "original_name": "ScenarioModeTypes",
+        "underlying_type": "System.Int32",
+        "type_def_index": 10216,
+        "token": "0x020027E9",
+        "members": [
+          {
+            "name": "None",
+            "python_name": "None_",
+            "value": 0,
+            "token": "0x0400B3C0"
+          },
+          {
+            "name": "Main",
+            "python_name": "Main",
+            "value": 1,
+            "token": "0x0400B3C1"
+          },
+          {
+            "name": "Sub",
+            "python_name": "Sub",
+            "value": 2,
+            "token": "0x0400B3C2"
+          },
+          {
+            "name": "Replay",
+            "python_name": "Replay",
+            "value": 3,
+            "token": "0x0400B3C3"
+          },
+          {
+            "name": "Mini",
+            "python_name": "Mini",
+            "value": 4,
+            "token": "0x0400B3C4"
+          },
+          {
+            "name": "SpecialOperation",
+            "python_name": "SpecialOperation",
+            "value": 5,
+            "token": "0x0400B3C5"
+          },
+          {
+            "name": "Prologue",
+            "python_name": "Prologue",
+            "value": 6,
+            "token": "0x0400B3C6"
+          }
+        ]
+      },
+      "members": {
+        "None_": 0,
+        "Main": 1,
+        "Sub": 2,
+        "Replay": 3,
+        "Mini": 4,
+        "SpecialOperation": 5,
+        "Prologue": 6
+      }
+    },
+    "ScenarioModeSubTypes": {
+      "metadata": {
+        "name": "ScenarioModeSubTypes",
+        "namespace": "FlatData",
+        "original_name": "ScenarioModeSubTypes",
+        "underlying_type": "System.Int32",
+        "type_def_index": 10217,
+        "token": "0x020027EA",
+        "members": [
+          {
+            "name": "None",
+            "python_name": "None_",
+            "value": 0,
+            "token": "0x0400B3C8"
+          },
+          {
+            "name": "Club",
+            "python_name": "Club",
+            "value": 1,
+            "token": "0x0400B3C9"
+          },
+          {
+            "name": "Series1",
+            "python_name": "Series1",
+            "value": 2,
+            "token": "0x0400B3CA"
+          },
+          {
+            "name": "Series2",
+            "python_name": "Series2",
+            "value": 3,
+            "token": "0x0400B3CB"
+          }
+        ]
+      },
+      "members": {
+        "None_": 0,
+        "Club": 1,
+        "Series1": 2,
+        "Series2": 3
+      }
+    },
+    "Club": {
+      "metadata": {
+        "name": "Club",
+        "namespace": "FlatData",
+        "original_name": "Club",
+        "underlying_type": "System.Int32",
+        "type_def_index": 10263,
+        "token": "0x02002818",
+        "members": [
+          {
+            "name": "None",
+            "python_name": "None_",
+            "value": 0,
+            "token": "0x0400C108"
+          },
+          {
+            "name": "Engineer",
+            "python_name": "Engineer",
+            "value": 1,
+            "token": "0x0400C109"
+          },
+          {
+            "name": "CleanNClearing",
+            "python_name": "CleanNClearing",
+            "value": 2,
+            "token": "0x0400C10A"
+          },
+          {
+            "name": "KnightsHospitaller",
+            "python_name": "KnightsHospitaller",
+            "value": 3,
+            "token": "0x0400C10B"
+          },
+          {
+            "name": "IndeGEHENNA",
+            "python_name": "IndeGEHENNA",
+            "value": 4,
+            "token": "0x0400C10C"
+          },
+          {
+            "name": "IndeMILLENNIUM",
+            "python_name": "IndeMILLENNIUM",
+            "value": 5,
+            "token": "0x0400C10D"
+          },
+          {
+            "name": "IndeHyakkiyako",
+            "python_name": "IndeHyakkiyako",
+            "value": 6,
+            "token": "0x0400C10E"
+          },
+          {
+            "name": "IndeShanhaijing",
+            "python_name": "IndeShanhaijing",
+            "value": 7,
+            "token": "0x0400C10F"
+          },
+          {
+            "name": "IndeTrinity",
+            "python_name": "IndeTrinity",
+            "value": 8,
+            "token": "0x0400C110"
+          },
+          {
+            "name": "FoodService",
+            "python_name": "FoodService",
+            "value": 9,
+            "token": "0x0400C111"
+          },
+          {
+            "name": "Countermeasure",
+            "python_name": "Countermeasure",
+            "value": 10,
+            "token": "0x0400C112"
+          },
+          {
+            "name": "BookClub",
+            "python_name": "BookClub",
+            "value": 11,
+            "token": "0x0400C113"
+          },
+          {
+            "name": "MatsuriOffice",
+            "python_name": "MatsuriOffice",
+            "value": 12,
+            "token": "0x0400C114"
+          },
+          {
+            "name": "GourmetClub",
+            "python_name": "GourmetClub",
+            "value": 13,
+            "token": "0x0400C115"
+          },
+          {
+            "name": "HoukagoDessert",
+            "python_name": "HoukagoDessert",
+            "value": 14,
+            "token": "0x0400C116"
+          },
+          {
+            "name": "RedwinterSecretary",
+            "python_name": "RedwinterSecretary",
+            "value": 15,
+            "token": "0x0400C117"
+          },
+          {
+            "name": "Schale",
+            "python_name": "Schale",
+            "value": 16,
+            "token": "0x0400C118"
+          },
+          {
+            "name": "TheSeminar",
+            "python_name": "TheSeminar",
+            "value": 17,
+            "token": "0x0400C119"
+          },
+          {
+            "name": "AriusSqud",
+            "python_name": "AriusSqud",
+            "value": 18,
+            "token": "0x0400C11A"
+          },
+          {
+            "name": "Justice",
+            "python_name": "Justice",
+            "value": 19,
+            "token": "0x0400C11B"
+          },
+          {
+            "name": "Fuuki",
+            "python_name": "Fuuki",
+            "value": 20,
+            "token": "0x0400C11C"
+          },
+          {
+            "name": "Kohshinjo68",
+            "python_name": "Kohshinjo68",
+            "value": 21,
+            "token": "0x0400C11D"
+          },
+          {
+            "name": "Meihuayuan",
+            "python_name": "Meihuayuan",
+            "value": 22,
+            "token": "0x0400C11E"
+          },
+          {
+            "name": "SisterHood",
+            "python_name": "SisterHood",
+            "value": 23,
+            "token": "0x0400C11F"
+          },
+          {
+            "name": "GameDev",
+            "python_name": "GameDev",
+            "value": 24,
+            "token": "0x0400C120"
+          },
+          {
+            "name": "anzenkyoku",
+            "python_name": "anzenkyoku",
+            "value": 25,
+            "token": "0x0400C121"
+          },
+          {
+            "name": "RemedialClass",
+            "python_name": "RemedialClass",
+            "value": 26,
+            "token": "0x0400C122"
+          },
+          {
+            "name": "SPTF",
+            "python_name": "SPTF",
+            "value": 27,
+            "token": "0x0400C123"
+          },
+          {
+            "name": "TrinityVigilance",
+            "python_name": "TrinityVigilance",
+            "value": 28,
+            "token": "0x0400C124"
+          },
+          {
+            "name": "Veritas",
+            "python_name": "Veritas",
+            "value": 29,
+            "token": "0x0400C125"
+          },
+          {
+            "name": "TrainingClub",
+            "python_name": "TrainingClub",
+            "value": 30,
+            "token": "0x0400C126"
+          },
+          {
+            "name": "Onmyobu",
+            "python_name": "Onmyobu",
+            "value": 31,
+            "token": "0x0400C127"
+          },
+          {
+            "name": "Shugyobu",
+            "python_name": "Shugyobu",
+            "value": 32,
+            "token": "0x0400C128"
+          },
+          {
+            "name": "Endanbou",
+            "python_name": "Endanbou",
+            "value": 33,
+            "token": "0x0400C129"
+          },
+          {
+            "name": "NinpoKenkyubu",
+            "python_name": "NinpoKenkyubu",
+            "value": 34,
+            "token": "0x0400C12A"
+          },
+          {
+            "name": "Class227",
+            "python_name": "Class227",
+            "value": 35,
+            "token": "0x0400C12B"
+          },
+          {
+            "name": "EmptyClub",
+            "python_name": "EmptyClub",
+            "value": 36,
+            "token": "0x0400C12C"
+          },
+          {
+            "name": "Emergentology",
+            "python_name": "Emergentology",
+            "value": 37,
+            "token": "0x0400C12D"
+          },
+          {
+            "name": "RabbitPlatoon",
+            "python_name": "RabbitPlatoon",
+            "value": 38,
+            "token": "0x0400C12E"
+          },
+          {
+            "name": "PandemoniumSociety",
+            "python_name": "PandemoniumSociety",
+            "value": 39,
+            "token": "0x0400C12F"
+          },
+          {
+            "name": "HotSpringsDepartment",
+            "python_name": "HotSpringsDepartment",
+            "value": 40,
+            "token": "0x0400C130"
+          },
+          {
+            "name": "TeaParty",
+            "python_name": "TeaParty",
+            "value": 41,
+            "token": "0x0400C131"
+          },
+          {
+            "name": "PublicPeaceBureau",
+            "python_name": "PublicPeaceBureau",
+            "value": 42,
+            "token": "0x0400C132"
+          },
+          {
+            "name": "Genryumon",
+            "python_name": "Genryumon",
+            "value": 43,
+            "token": "0x0400C133"
+          },
+          {
+            "name": "BlackTortoisePromenade",
+            "python_name": "BlackTortoisePromenade",
+            "value": 44,
+            "token": "0x0400C134"
+          },
+          {
+            "name": "LaborParty",
+            "python_name": "LaborParty",
+            "value": 45,
+            "token": "0x0400C135"
+          },
+          {
+            "name": "KnowledgeLiberationFront",
+            "python_name": "KnowledgeLiberationFront",
+            "value": 46,
+            "token": "0x0400C136"
+          },
+          {
+            "name": "Hyakkayouran",
+            "python_name": "Hyakkayouran",
+            "value": 47,
+            "token": "0x0400C137"
+          },
+          {
+            "name": "ShinySparkleSociety",
+            "python_name": "ShinySparkleSociety",
+            "value": 48,
+            "token": "0x0400C138"
+          },
+          {
+            "name": "AbydosStudentCouncil",
+            "python_name": "AbydosStudentCouncil",
+            "value": 49,
+            "token": "0x0400C139"
+          },
+          {
+            "name": "CentralControlCenter",
+            "python_name": "CentralControlCenter",
+            "value": 50,
+            "token": "0x0400C13A"
+          },
+          {
+            "name": "FreightLogisticsDepartment",
+            "python_name": "FreightLogisticsDepartment",
+            "value": 51,
+            "token": "0x0400C13B"
+          },
+          {
+            "name": "OccultClub",
+            "python_name": "OccultClub",
+            "value": 52,
+            "token": "0x0400C13C"
+          },
+          {
+            "name": "PrefectBrigade",
+            "python_name": "PrefectBrigade",
+            "value": 53,
+            "token": "0x0400C13D"
+          },
+          {
+            "name": "FreeTradeCartel",
+            "python_name": "FreeTradeCartel",
+            "value": 54,
+            "token": "0x0400C13E"
+          },
+          {
+            "name": "NicomediasTroop",
+            "python_name": "NicomediasTroop",
+            "value": 55,
+            "token": "0x0400C13F"
+          },
+          {
+            "name": "PublishingDepartment",
+            "python_name": "PublishingDepartment",
+            "value": 56,
+            "token": "0x0400C140"
+          },
+          {
+            "name": "FoxSquad",
+            "python_name": "FoxSquad",
+            "value": 57,
+            "token": "0x0400C141"
+          },
+          {
+            "name": "DivingClub",
+            "python_name": "DivingClub",
+            "value": 58,
+            "token": "0x0400C142"
+          },
+          {
+            "name": "Class183",
+            "python_name": "Class183",
+            "value": 59,
+            "token": "0x0400C143"
+          }
+        ]
+      },
+      "members": {
+        "None_": 0,
+        "Engineer": 1,
+        "CleanNClearing": 2,
+        "KnightsHospitaller": 3,
+        "IndeGEHENNA": 4,
+        "IndeMILLENNIUM": 5,
+        "IndeHyakkiyako": 6,
+        "IndeShanhaijing": 7,
+        "IndeTrinity": 8,
+        "FoodService": 9,
+        "Countermeasure": 10,
+        "BookClub": 11,
+        "MatsuriOffice": 12,
+        "GourmetClub": 13,
+        "HoukagoDessert": 14,
+        "RedwinterSecretary": 15,
+        "Schale": 16,
+        "TheSeminar": 17,
+        "AriusSqud": 18,
+        "Justice": 19,
+        "Fuuki": 20,
+        "Kohshinjo68": 21,
+        "Meihuayuan": 22,
+        "SisterHood": 23,
+        "GameDev": 24,
+        "anzenkyoku": 25,
+        "RemedialClass": 26,
+        "SPTF": 27,
+        "TrinityVigilance": 28,
+        "Veritas": 29,
+        "TrainingClub": 30,
+        "Onmyobu": 31,
+        "Shugyobu": 32,
+        "Endanbou": 33,
+        "NinpoKenkyubu": 34,
+        "Class227": 35,
+        "EmptyClub": 36,
+        "Emergentology": 37,
+        "RabbitPlatoon": 38,
+        "PandemoniumSociety": 39,
+        "HotSpringsDepartment": 40,
+        "TeaParty": 41,
+        "PublicPeaceBureau": 42,
+        "Genryumon": 43,
+        "BlackTortoisePromenade": 44,
+        "LaborParty": 45,
+        "KnowledgeLiberationFront": 46,
+        "Hyakkayouran": 47,
+        "ShinySparkleSociety": 48,
+        "AbydosStudentCouncil": 49,
+        "CentralControlCenter": 50,
+        "FreightLogisticsDepartment": 51,
+        "OccultClub": 52,
+        "PrefectBrigade": 53,
+        "FreeTradeCartel": 54,
+        "NicomediasTroop": 55,
+        "PublishingDepartment": 56,
+        "FoxSquad": 57,
+        "DivingClub": 58,
+        "Class183": 59
+      }
+    },
+    "StageDifficulty": {
+      "metadata": {
+        "name": "StageDifficulty",
+        "namespace": "FlatData",
+        "original_name": "StageDifficulty",
+        "underlying_type": "System.Int32",
+        "type_def_index": 10257,
+        "token": "0x02002812",
+        "members": [
+          {
+            "name": "None",
+            "python_name": "None_",
+            "value": 0,
+            "token": "0x0400B524"
+          },
+          {
+            "name": "Normal",
+            "python_name": "Normal",
+            "value": 1,
+            "token": "0x0400B525"
+          },
+          {
+            "name": "Hard",
+            "python_name": "Hard",
+            "value": 2,
+            "token": "0x0400B526"
+          },
+          {
+            "name": "VeryHard",
+            "python_name": "VeryHard",
+            "value": 3,
+            "token": "0x0400B527"
+          },
+          {
+            "name": "VeryHard_Ex",
+            "python_name": "VeryHard_Ex",
+            "value": 4,
+            "token": "0x0400B528"
+          }
+        ]
+      },
+      "members": {
+        "None_": 0,
+        "Normal": 1,
+        "Hard": 2,
+        "VeryHard": 3,
+        "VeryHard_Ex": 4
+      }
+    },
+    "StageTopography": {
+      "metadata": {
+        "name": "StageTopography",
+        "namespace": "FlatData",
+        "original_name": "StageTopography",
+        "underlying_type": "System.Int32",
+        "type_def_index": 9983,
+        "token": "0x02002700",
+        "members": [
+          {
+            "name": "Street",
+            "python_name": "Street",
+            "value": 0,
+            "token": "0x0400A956"
+          },
+          {
+            "name": "Outdoor",
+            "python_name": "Outdoor",
+            "value": 1,
+            "token": "0x0400A957"
+          },
+          {
+            "name": "Indoor",
+            "python_name": "Indoor",
+            "value": 2,
+            "token": "0x0400A958"
+          }
+        ]
+      },
+      "members": {
+        "Street": 0,
+        "Outdoor": 1,
+        "Indoor": 2
+      }
+    },
+    "EchelonExtensionType": {
+      "metadata": {
+        "name": "EchelonExtensionType",
+        "namespace": "FlatData",
+        "original_name": "EchelonExtensionType",
+        "underlying_type": "System.Int32",
+        "type_def_index": 10099,
+        "token": "0x02002774",
+        "members": [
+          {
+            "name": "Base",
+            "python_name": "Base",
+            "value": 0,
+            "token": "0x0400ADAF"
+          },
+          {
+            "name": "Extension",
+            "python_name": "Extension",
+            "value": 1,
+            "token": "0x0400ADB0"
+          }
+        ]
+      },
+      "members": {
+        "Base": 0,
+        "Extension": 1
+      }
+    },
+    "ProductionStep": {
+      "metadata": {
+        "name": "ProductionStep",
+        "namespace": "FlatData",
+        "original_name": "ProductionStep",
+        "underlying_type": "System.Int32",
+        "type_def_index": 10024,
+        "token": "0x02002729",
+        "members": [
+          {
+            "name": "ToDo",
+            "python_name": "ToDo",
+            "value": 0,
+            "token": "0x0400AAB9"
+          },
+          {
+            "name": "Doing",
+            "python_name": "Doing",
+            "value": 1,
+            "token": "0x0400AABA"
+          },
+          {
+            "name": "Complete",
+            "python_name": "Complete",
+            "value": 2,
+            "token": "0x0400AABB"
+          },
+          {
+            "name": "Release",
+            "python_name": "Release",
+            "value": 3,
+            "token": "0x0400AABC"
+          }
+        ]
+      },
+      "members": {
+        "ToDo": 0,
+        "Doing": 1,
+        "Complete": 2,
+        "Release": 3
+      }
+    },
+    "ScenarioCharacterShapes": {
+      "metadata": {
+        "name": "ScenarioCharacterShapes",
+        "namespace": "FlatData",
+        "original_name": "ScenarioCharacterShapes",
+        "underlying_type": "System.Int32",
+        "type_def_index": 10205,
+        "token": "0x020027DE",
+        "members": [
+          {
+            "name": "None",
+            "python_name": "None_",
+            "value": 0,
+            "token": "0x0400B2ED"
+          },
+          {
+            "name": "Signal",
+            "python_name": "Signal",
+            "value": 1,
+            "token": "0x0400B2EE"
+          },
+          {
+            "name": "BlackSilhouette",
+            "python_name": "BlackSilhouette",
+            "value": 2,
+            "token": "0x0400B2EF"
+          },
+          {
+            "name": "Closeup",
+            "python_name": "Closeup",
+            "value": 3,
+            "token": "0x0400B2F0"
+          },
+          {
+            "name": "Highlight",
+            "python_name": "Highlight",
+            "value": 4,
+            "token": "0x0400B2F1"
+          },
+          {
+            "name": "WhiteSilhouette",
+            "python_name": "WhiteSilhouette",
+            "value": 5,
+            "token": "0x0400B2F2"
+          },
+          {
+            "name": "Glitch",
+            "python_name": "Glitch",
+            "value": 6,
+            "token": "0x0400B2F3"
+          }
+        ]
+      },
+      "members": {
+        "None_": 0,
+        "Signal": 1,
+        "BlackSilhouette": 2,
+        "Closeup": 3,
+        "Highlight": 4,
+        "WhiteSilhouette": 5,
+        "Glitch": 6
+      }
+    },
+    "ScenarioBGType": {
+      "metadata": {
+        "name": "ScenarioBGType",
+        "namespace": "FlatData",
+        "original_name": "ScenarioBGType",
+        "underlying_type": "System.Int32",
+        "type_def_index": 10200,
+        "token": "0x020027D9",
+        "members": [
+          {
+            "name": "None",
+            "python_name": "None_",
+            "value": 0,
+            "token": "0x0400B2CB"
+          },
+          {
+            "name": "Image",
+            "python_name": "Image",
+            "value": 1,
+            "token": "0x0400B2CC"
+          },
+          {
+            "name": "BlurRT",
+            "python_name": "BlurRT",
+            "value": 2,
+            "token": "0x0400B2CD"
+          },
+          {
+            "name": "Spine",
+            "python_name": "Spine",
+            "value": 3,
+            "token": "0x0400B2CE"
+          },
+          {
+            "name": "Hide",
+            "python_name": "Hide",
+            "value": 4,
+            "token": "0x0400B2CF"
+          }
+        ]
+      },
+      "members": {
+        "None_": 0,
+        "Image": 1,
+        "BlurRT": 2,
+        "Spine": 3,
+        "Hide": 4
+      }
+    },
+    "ScenarioBGScroll": {
+      "metadata": {
+        "name": "ScenarioBGScroll",
+        "namespace": "FlatData",
+        "original_name": "ScenarioBGScroll",
+        "underlying_type": "System.Int32",
+        "type_def_index": 10206,
+        "token": "0x020027DF",
+        "members": [
+          {
+            "name": "None",
+            "python_name": "None_",
+            "value": 0,
+            "token": "0x0400B2F5"
+          },
+          {
+            "name": "Vertical",
+            "python_name": "Vertical",
+            "value": 1,
+            "token": "0x0400B2F6"
+          },
+          {
+            "name": "Horizontal",
+            "python_name": "Horizontal",
+            "value": 2,
+            "token": "0x0400B2F7"
+          }
+        ]
+      },
+      "members": {
+        "None_": 0,
+        "Vertical": 1,
+        "Horizontal": 2
+      }
+    },
+    "Nation": {
+      "metadata": {
+        "name": "Nation",
+        "namespace": "FlatData",
+        "original_name": "Nation",
+        "underlying_type": "System.Int32",
+        "type_def_index": 10115,
+        "token": "0x02002784",
+        "members": [
+          {
+            "name": "None",
+            "python_name": "None_",
+            "value": 0,
+            "token": "0x0400AE2C"
+          },
+          {
+            "name": "All",
+            "python_name": "All",
+            "value": 1,
+            "token": "0x0400AE2D"
+          },
+          {
+            "name": "JP",
+            "python_name": "JP",
+            "value": 2,
+            "token": "0x0400AE2E"
+          },
+          {
+            "name": "GL",
+            "python_name": "GL",
+            "value": 3,
+            "token": "0x0400AE2F"
+          },
+          {
+            "name": "KR",
+            "python_name": "KR",
+            "value": 4,
+            "token": "0x0400AE30"
+          }
+        ]
+      },
+      "members": {
+        "None_": 0,
+        "All": 1,
+        "JP": 2,
+        "GL": 3,
+        "KR": 4
+      }
+    }
+  }
+}

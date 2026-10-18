@@ -13,9 +13,13 @@ import { catalogEventUrl, catalogMode, catalogSource } from '../catalog-source';
 import { useStore } from '../store';
 import { EmptyState } from '../components/Primitives';
 import { PageTitle } from '../components/Shell';
-import { eventArtwork, artworkStyle } from '../covers';
+import { eventArtwork } from '../covers';
 import { pjskGroups } from '../pjsk-groups';
 import { PjskGroupMark } from '../components/PjskGroupMark';
+import { storyCategories } from '../story-categories';
+import { baSchools, featuredSchools } from '../ba-schools';
+import { SchoolMarks } from '../components/SchoolMarks';
+import { EventCover } from '../components/EventCover';
 import { useNarrow } from '../hooks';
 
 const scrollPositions = new Map<string, number>();
@@ -31,6 +35,7 @@ export function CatalogPage() {
   const location = useLocation();
   const { data } = useStore();
   const scroll = useRef<HTMLDivElement>(null);
+  const narrow = useNarrow();
   const query = params.get('q') ?? '';
   const requestedGroup = params.get('group');
   const group =
@@ -38,9 +43,12 @@ export function CatalogPage() {
       ? requestedGroup
       : 'all';
   const requestedCategory = params.get('category');
+  const categories = storyCategories(game?.id);
   const category =
-    requestedCategory === 'Main story' || requestedCategory === 'Event'
-      ? requestedCategory
+    categories.find((value) => value === requestedCategory) ?? 'all';
+  const school =
+    game?.id === 'ba' && baSchools.some((s) => s.id === params.get('school'))
+      ? params.get('school')!
       : 'all';
   const requestedSort = params.get('sort');
   const requestedType = params.get('eventType');
@@ -58,6 +66,15 @@ export function CatalogPage() {
       groupStoryEvents(catalogSource(game?.id, { examples, previews, stress })),
     [game?.id, examples, previews, stress],
   );
+  const missingCategory =
+    game?.id === 'ba' &&
+    category !== 'all' &&
+    !events.some((event) => event.category === category);
+  const missingSchool =
+    school !== 'all' &&
+    !events.some((event) =>
+      featuredSchools(event).some((s) => s.id === school),
+    );
   const filtered = useMemo(
     () =>
       events
@@ -70,6 +87,8 @@ export function CatalogPage() {
             (category === 'all' || event.category === category) &&
             (group === 'all' ||
               event.stories.some((story) => story.group === group)) &&
+            (school === 'all' ||
+              featuredSchools(event).some((s) => s.id === school)) &&
             (!showEventTypes ||
               eventType === 'all' ||
               event.eventType === eventType),
@@ -81,11 +100,18 @@ export function CatalogPage() {
             a.stories[0].order - b.stories[0].order;
           return sort === 'release' ? order : -order;
         }),
-    [events, query, category, group, sort, showEventTypes, eventType],
+    [events, query, category, group, school, sort, showEventTypes, eventType],
   );
   const large = filtered.length > 80;
-  const narrow = useNarrow();
-  const rowHeight = game?.id === 'pjsk' && narrow ? 164 : 116;
+  const rowHeight = narrow
+    ? game?.id === 'pjsk'
+      ? 164
+      : game?.id === 'ba'
+        ? 164
+        : 116
+    : game?.id === 'ba'
+      ? 136
+      : 116;
   const virtual = useVirtualizer({
     count: large ? filtered.length : 0,
     getScrollElement: () => scroll.current,
@@ -101,7 +127,7 @@ export function CatalogPage() {
       scroll.current.scrollTop = scrollPositions.get(key) ?? 0;
   }, [key]);
   const update = (key: string, value: string) => {
-    const next = new URLSearchParams(params);
+    const next = new URLSearchParams(window.location.search);
     const defaultValue = key === 'sort' ? 'release-newest' : 'all';
     if (key === 'storyType') {
       next.delete('category');
@@ -136,19 +162,15 @@ export function CatalogPage() {
         key={event.id}
         style={
           start === undefined
-            ? undefined
-            : { transform: `translateY(${start}px)` }
+            ? { height: rowHeight }
+            : { height: rowHeight, transform: `translateY(${start}px)` }
         }
       >
         <Link to={catalogEventUrl(event, params)} state={{ from: key }}>
           {cover ? (
-            <img
+            <EventCover
               className={`event-cover${event.game === 'pjsk' ? ' pjsk-event-cover' : ''}`}
-              src={cover.url}
-              alt=""
-              width={cover.width}
-              height={cover.height}
-              style={artworkStyle(cover)}
+              cover={cover}
             />
           ) : (
             <span className="event-number">
@@ -180,6 +202,7 @@ export function CatalogPage() {
                 ? ` · ${event.stories.length - event.main.length} side stories`
                 : ''}
             </span>
+            <SchoolMarks event={event} compact />
           </span>
         </Link>
       </li>
@@ -194,7 +217,9 @@ export function CatalogPage() {
         <p>
           {examples
             ? 'Fictional events for interface checks.'
-            : 'Events and story collections'}
+            : game.id === 'ba'
+              ? 'Story collections'
+              : 'Events and story collections'}
         </p>
       </PageTitle>
       <div className="catalog-toolbar">
@@ -209,35 +234,57 @@ export function CatalogPage() {
           />
         </label>
         <select
-          aria-label={game.id === 'gfl1' ? 'Story type' : 'Event category'}
+          aria-label={
+            game.id === 'gfl1'
+              ? 'Story type'
+              : game.id === 'ba'
+                ? 'Story category'
+                : 'Event category'
+          }
           value={
             showEventTypes && eventType !== 'all'
               ? `event:${eventType}`
               : category
           }
-          onChange={(e) => update('storyType', e.target.value)}
+          onChange={(e) =>
+            update(
+              game.id === 'gfl1' ? 'storyType' : 'category',
+              e.target.value,
+            )
+          }
         >
           <option value="all">All collections</option>
-          <option>Main story</option>
-          <option value="Event">
-            {game.id === 'gfl1' ? 'All Events' : 'Event'}
-          </option>
-          {game.id === 'gfl1' &&
-            eventTypes.map((type) => {
-              const count = events.filter(
-                (event) =>
-                  event.category === 'Event' && event.eventType === type.value,
-              ).length;
-              return (
-                <option
-                  key={type.value}
-                  value={`event:${type.value}`}
-                  disabled={!count}
-                >
-                  {type.label} ({count})
-                </option>
-              );
-            })}
+          {game.id === 'gfl1' ? (
+            <>
+              <option>Main story</option>
+              <option value="Event">All Events</option>
+              {eventTypes.map((type) => {
+                const count = events.filter(
+                  (event) =>
+                    event.category === 'Event' &&
+                    event.eventType === type.value,
+                ).length;
+                return (
+                  <option
+                    key={type.value}
+                    value={`event:${type.value}`}
+                    disabled={!count}
+                  >
+                    {type.label} ({count})
+                  </option>
+                );
+              })}
+            </>
+          ) : (
+            categories.map((value) => (
+              <option key={value} value={value}>
+                {value}
+                {game.id === 'ba'
+                  ? ` (${events.filter((event) => event.category === value).length})`
+                  : ''}
+              </option>
+            ))
+          )}
         </select>
         {game.id === 'pjsk' ? (
           <select
@@ -249,6 +296,26 @@ export function CatalogPage() {
             {pjskGroups.map(({ id, label }) => (
               <option key={id} value={id}>
                 {label}
+              </option>
+            ))}
+          </select>
+        ) : null}
+        {game.id === 'ba' ? (
+          <select
+            aria-label="School"
+            value={school}
+            onChange={(e) => update('school', e.target.value)}
+          >
+            <option value="all">All schools / affiliations</option>
+            {baSchools.map((s) => (
+              <option value={s.id} key={s.id}>
+                {s.name} (
+                {
+                  events.filter((event) =>
+                    featuredSchools(event).some((school) => school.id === s.id),
+                  ).length
+                }
+                )
               </option>
             ))}
           </select>
@@ -266,7 +333,13 @@ export function CatalogPage() {
       <div className="section-title">
         <span className="muted">
           {filtered.length.toLocaleString()}{' '}
-          {filtered.length === 1 ? 'event' : 'events'}
+          {game.id === 'ba'
+            ? filtered.length === 1
+              ? 'collection'
+              : 'collections'
+            : filtered.length === 1
+              ? 'event'
+              : 'events'}
         </span>
         <Link className="text-link" to="/manage">
           Manage availability
@@ -275,14 +348,24 @@ export function CatalogPage() {
       {!filtered.length ? (
         <EmptyState
           title={
-            !events.length && !examples
-              ? 'No events imported yet'
-              : 'No matching events'
+            missingCategory
+              ? 'No imported stories in this category'
+              : missingSchool
+                ? 'No imported stories for this school'
+                : !events.length && !examples
+                  ? 'No events imported yet'
+                  : 'No matching events'
           }
         >
-          {!events.length && !examples
-            ? 'This game has not been connected. Its design fixtures are available under Cross-game design checks.'
-            : 'Try another title, category or group.'}
+          {missingCategory
+            ? `${category} content has not been imported yet. Choose another category to read the available stories.`
+            : missingSchool
+              ? 'No stories featuring this school have been imported yet. Choose another school to browse the available collection.'
+              : !events.length && !examples
+                ? 'This game has not been connected. Its design fixtures are available under Cross-game design checks.'
+                : game.id === 'pjsk'
+                  ? 'Try another title, category or group.'
+                  : 'Try another title or category.'}
         </EmptyState>
       ) : (
         <div

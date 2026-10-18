@@ -96,6 +96,22 @@ export function Settings({ onNavigate }: { onNavigate?: () => void }) {
       <section>
         <h3>Original text variants</h3>
         <label className="setting">
+          Text language
+          <select
+            aria-label="Text language"
+            value={p.textLocale}
+            onChange={(e) =>
+              preferences({
+                textLocale: e.target.value as Preferences['textLocale'],
+              })
+            }
+          >
+            <option value="en">English</option>
+            <option value="zh-CN">中文</option>
+            <option value="ja">日本語</option>
+          </select>
+        </label>
+        <label className="setting">
           Protagonist version
           <select
             aria-label="Protagonist version"
@@ -123,7 +139,8 @@ export function Settings({ onNavigate }: { onNavigate?: () => void }) {
         </label>
         <p className="field-note">
           Used where the source provides alternate text or a player-name
-          placeholder. Chinese-only chapters keep their original language.
+          placeholder. Chapters without a selected translation keep their source
+          language. The current BA library has Japanese text only.
         </p>
       </section>
       <section>
@@ -142,7 +159,8 @@ export function Settings({ onNavigate }: { onNavigate?: () => void }) {
           </select>
         </label>
         <p className="field-note">
-          Applies to voiced movies. Regular dialogue has no voice track.
+          Selects movie audio where available. BA dialogue uses original
+          Japanese voices. Recovered GFL2 regular dialogue has no voice track.
         </p>
         {number('musicVolume', 'Music volume', 0, 1, 0.05)}
         {number('soundVolume', 'Sound effects volume', 0, 1, 0.05)}
@@ -220,9 +238,9 @@ export function Settings({ onNavigate }: { onNavigate?: () => void }) {
       <section>
         <h3>About this build</h3>
         <p className="field-note">
-          Private local build. GFL2 has the full recovered event text and a
-          separate opening scene preview. Fictional interface fixtures are under
-          design checks.
+          Private local build. GFL2 has recovered scenes and text. Blue Archive
+          has the JP prologue and five event collections with original visuals
+          and audio. Fictional interface fixtures are under design checks.
         </p>
         <Link className="text-link" to="/lab" onClick={onNavigate}>
           Cross-game design checks

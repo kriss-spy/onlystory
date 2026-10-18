@@ -1,0 +1,308 @@
+[
+  {
+    "group": 10000095,
+    "row": 44,
+    "model": "izuna_spr",
+    "face": "61"
+  },
+  {
+    "group": 2502,
+    "row": 53,
+    "model": "citizen_animal1_spr",
+    "face": "06"
+  },
+  {
+    "group": 11080,
+    "row": 224,
+    "model": "kayoko_spr",
+    "face": "08"
+  },
+  {
+    "group": 11095,
+    "row": 3,
+    "model": "yoheki_normal1_spr",
+    "face": "01"
+  },
+  {
+    "group": 11095,
+    "row": 7,
+    "model": "yoheki_normal1_spr",
+    "face": "01"
+  },
+  {
+    "group": 11130,
+    "row": 148,
+    "model": "nonomi_robber_spr",
+    "face": "18"
+  },
+  {
+    "group": 13160,
+    "row": 55,
+    "model": "yoheki_normal1_spr",
+    "face": "04"
+  },
+  {
+    "group": 13160,
+    "row": 56,
+    "model": "yoheki_normal1_spr",
+    "face": "04"
+  },
+  {
+    "group": 13170,
+    "row": 121,
+    "model": "yoheki_normal1_spr",
+    "face": "04"
+  },
+  {
+    "group": 33100,
+    "row": 44,
+    "model": "atsuko_spr",
+    "face": "99"
+  },
+  {
+    "group": 33100,
+    "row": 45,
+    "model": "atsuko_spr",
+    "face": "99"
+  },
+  {
+    "group": 33100,
+    "row": 48,
+    "model": "atsuko_spr",
+    "face": "99"
+  },
+  {
+    "group": 33190,
+    "row": 33,
+    "model": "hiyori_spr",
+    "face": "15"
+  },
+  {
+    "group": 33190,
+    "row": 37,
+    "model": "hiyori_spr",
+    "face": "15"
+  },
+  {
+    "group": 33190,
+    "row": 120,
+    "model": "hoshino_robber_spr",
+    "face": "16"
+  },
+  {
+    "group": 42090,
+    "row": 16,
+    "model": "CH0145_spr",
+    "face": "15"
+  },
+  {
+    "group": 52035,
+    "row": 46,
+    "model": "Yukata_StreetGhostes_MG_spr",
+    "face": "04"
+  },
+  {
+    "group": 52035,
+    "row": 47,
+    "model": "Yukata_StreetGhostes_MG_spr",
+    "face": "04"
+  },
+  {
+    "group": 62080,
+    "row": 249,
+    "model": "CH0324_spr",
+    "face": "70"
+  },
+  {
+    "group": 101070,
+    "row": 69,
+    "model": "yoheki_redwinter1_spr",
+    "face": "01"
+  },
+  {
+    "group": 101070,
+    "row": 70,
+    "model": "yoheki_redwinter1_spr",
+    "face": "01"
+  },
+  {
+    "group": 101070,
+    "row": 71,
+    "model": "yoheki_redwinter1_spr",
+    "face": "01"
+  },
+  {
+    "group": 101070,
+    "row": 72,
+    "model": "yoheki_redwinter1_spr",
+    "face": "01"
+  },
+  {
+    "group": 101070,
+    "row": 73,
+    "model": "yoheki_redwinter1_spr",
+    "face": "01"
+  },
+  {
+    "group": 101070,
+    "row": 76,
+    "model": "yoheki_redwinter1_spr",
+    "face": "01"
+  },
+  {
+    "group": 104080,
+    "row": 182,
+    "model": "NP0035_spr",
+    "face": "41"
+  },
+  {
+    "group": 104090,
+    "row": 159,
+    "model": "momoi_spr",
+    "face": "10"
+  },
+  {
+    "group": 221090,
+    "row": 17,
+    "model": "NP0296_spr",
+    "face": "99"
+  },
+  {
+    "group": 3401,
+    "row": 122,
+    "model": "NP0152_spr",
+    "face": "99"
+  },
+  {
+    "group": 10008100,
+    "row": 29,
+    "model": "Citizen_animal7_spr",
+    "face": "02"
+  },
+  {
+    "group": 10009005,
+    "row": 5,
+    "model": "helmetdan_red1_spr",
+    "face": "06"
+  },
+  {
+    "group": 10009005,
+    "row": 46,
+    "model": "citizen_borot2_spr",
+    "face": "04"
+  },
+  {
+    "group": 10012040,
+    "row": 42,
+    "model": "wakamo_spr",
+    "face": "02"
+  },
+  {
+    "group": 10012040,
+    "row": 60,
+    "model": "wakamo_spr",
+    "face": "99"
+  },
+  {
+    "group": 10012045,
+    "row": 66,
+    "model": "CH0175_spr",
+    "face": "99"
+  },
+  {
+    "group": 10012065,
+    "row": 107,
+    "model": "CH0176_spr",
+    "face": "20"
+  },
+  {
+    "group": 10012070,
+    "row": 157,
+    "model": "CH0092_spr",
+    "face": "011"
+  },
+  {
+    "group": 10022005,
+    "row": 3,
+    "model": "NP0013_spr",
+    "face": "18"
+  },
+  {
+    "group": 10024045,
+    "row": 12,
+    "model": "CH0138_spr",
+    "face": "8"
+  },
+  {
+    "group": 10028020,
+    "row": 64,
+    "model": "yoheki_normal1_spr",
+    "face": "06"
+  },
+  {
+    "group": 10029065,
+    "row": 126,
+    "model": "Yukata_StreetGhostes_MG_spr",
+    "face": "06"
+  },
+  {
+    "group": 10029065,
+    "row": 127,
+    "model": "Yukata_StreetGhostes_MG_spr",
+    "face": "06"
+  },
+  {
+    "group": 10035140,
+    "row": 170,
+    "model": "helmetdan_red1_spr",
+    "face": "99"
+  },
+  {
+    "group": 10043070,
+    "row": 131,
+    "model": "citizen_animal1_spr",
+    "face": "02"
+  },
+  {
+    "group": 10043070,
+    "row": 136,
+    "model": "citizen_animal1_spr",
+    "face": "02"
+  },
+  {
+    "group": 10043070,
+    "row": 145,
+    "model": "citizen_animal1_spr",
+    "face": "02"
+  },
+  {
+    "group": 10044060,
+    "row": 173,
+    "model": "CH0288_spr",
+    "face": "69"
+  },
+  {
+    "group": 10045040,
+    "row": 155,
+    "model": "NP0254_spr",
+    "face": "017"
+  },
+  {
+    "group": 10047070,
+    "row": 186,
+    "model": "CH0304_spr",
+    "face": "28"
+  },
+  {
+    "group": 10049140,
+    "row": 27,
+    "model": "CH0169_spr",
+    "face": "50"
+  },
+  {
+    "group": 10053100,
+    "row": 78,
+    "model": "CH0283_spr",
+    "face": "0"
+  }
+]

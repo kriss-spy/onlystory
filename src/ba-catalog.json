@@ -1,0 +1,3456 @@
+{
+  "gameVersion": "1.73.459696",
+  "associationBasis": "Featured institutions, not every speaker or mentioned school. Main-story collections are curated from their official volume/chapter setting; the earliest event collections are hand-curated. Later event collections are derived from the official character-bonus (pickup) roster, keeping schools that supply at least 20% of it. EventContentSeasonDBSchema has no direct event-school association field.",
+  "schools": [
+    {
+      "id": "abydos",
+      "name": "Abydos",
+      "mark": {
+        "url": "/private/ba-jp/catalog/school-abydos.461b61ae6874.png",
+        "position": "50% 50%",
+        "width": 688,
+        "height": 624,
+        "bytes": 83815,
+        "sha256": "461b61ae68740216341e00e77b6ae918327c9d7b50dfb3f73579254a3d1007cc",
+        "source": "https://prod-clientpatch.bluearchiveyostar.com/r96_nvji95owgkbcxlmkb8mi/Android_PatchPack/FullPatch_138.zip",
+        "sourcePath": "UIs/01_Common/11_SchoolIcon/School_Icon_ABYDOS",
+        "bundle": "Bundle/FullPatch_138.zip",
+        "bundleSha256": "e5342612c7521da61a90fa333837ef67df5992943d84de4fcba62c82bddda3ce",
+        "member": "uis-01_common-11_schoolicon-_mxload-textures-2025-07-02_assets_all_1676488367.bundle",
+        "texture": "School_Icon_ABYDOS",
+        "nativeAlpha": true
+      }
+    },
+    {
+      "id": "arius",
+      "name": "Arius",
+      "mark": {
+        "url": "/private/ba-jp/catalog/school-arius.0b88d7750fee.png",
+        "position": "50% 50%",
+        "width": 688,
+        "height": 624,
+        "bytes": 88563,
+        "sha256": "0b88d7750feefbfe31cc284ccdccaef808470df00f8d1900b851fff795046b68",
+        "source": "https://prod-clientpatch.bluearchiveyostar.com/r96_nvji95owgkbcxlmkb8mi/Android_PatchPack/FullPatch_138.zip",
+        "sourcePath": "UIs/01_Common/11_SchoolIcon/School_Icon_Arius",
+        "bundle": "Bundle/FullPatch_138.zip",
+        "bundleSha256": "e5342612c7521da61a90fa333837ef67df5992943d84de4fcba62c82bddda3ce",
+        "member": "uis-01_common-11_schoolicon-_mxload-textures-2025-07-02_assets_all_1676488367.bundle",
+        "texture": "School_Icon_Arius",
+        "nativeAlpha": true
+      }
+    },
+    {
+      "id": "gehenna",
+      "name": "Gehenna",
+      "mark": {
+        "url": "/private/ba-jp/catalog/school-gehenna.399a27366dc2.png",
+        "position": "50% 50%",
+        "width": 688,
+        "height": 624,
+        "bytes": 60815,
+        "sha256": "399a27366dc2f1d3f24813342b46d3ffd70740745e73d47e6374d4c4bc591781",
+        "source": "https://prod-clientpatch.bluearchiveyostar.com/r96_nvji95owgkbcxlmkb8mi/Android_PatchPack/FullPatch_138.zip",
+        "sourcePath": "UIs/01_Common/11_SchoolIcon/School_Icon_GEHENNA",
+        "bundle": "Bundle/FullPatch_138.zip",
+        "bundleSha256": "e5342612c7521da61a90fa333837ef67df5992943d84de4fcba62c82bddda3ce",
+        "member": "uis-01_common-11_schoolicon-_mxload-textures-2025-07-02_assets_all_1676488367.bundle",
+        "texture": "School_Icon_GEHENNA",
+        "nativeAlpha": true
+      }
+    },
+    {
+      "id": "highlander",
+      "name": "Highlander",
+      "mark": {
+        "url": "/private/ba-jp/catalog/school-highlander.9cf3d06e6446.png",
+        "position": "50% 50%",
+        "width": 688,
+        "height": 624,
+        "bytes": 99573,
+        "sha256": "9cf3d06e644679265e9a43fd7c76e47985dc7ddebd4633ff8c70bd0031326363",
+        "source": "https://prod-clientpatch.bluearchiveyostar.com/r96_nvji95owgkbcxlmkb8mi/Android_PatchPack/FullPatch_138.zip",
+        "sourcePath": "UIs/01_Common/11_SchoolIcon/School_Icon_HIGHLANDER",
+        "bundle": "Bundle/FullPatch_138.zip",
+        "bundleSha256": "e5342612c7521da61a90fa333837ef67df5992943d84de4fcba62c82bddda3ce",
+        "member": "uis-01_common-11_schoolicon-_mxload-textures-2025-07-02_assets_all_1676488367.bundle",
+        "texture": "School_Icon_HIGHLANDER",
+        "nativeAlpha": true
+      }
+    },
+    {
+      "id": "hyakkiyako",
+      "name": "Hyakkiyako",
+      "mark": {
+        "url": "/private/ba-jp/catalog/school-hyakkiyako.99e1460dfaf4.png",
+        "position": "50% 50%",
+        "width": 688,
+        "height": 624,
+        "bytes": 103414,
+        "sha256": "99e1460dfaf4c8a06b3f93ec0acbd089c71a936e9b6fd2602d6dc289e43b34b8",
+        "source": "https://prod-clientpatch.bluearchiveyostar.com/r96_nvji95owgkbcxlmkb8mi/Android_PatchPack/FullPatch_138.zip",
+        "sourcePath": "UIs/01_Common/11_SchoolIcon/School_Icon_HYAKKIYAKO",
+        "bundle": "Bundle/FullPatch_138.zip",
+        "bundleSha256": "e5342612c7521da61a90fa333837ef67df5992943d84de4fcba62c82bddda3ce",
+        "member": "uis-01_common-11_schoolicon-_mxload-textures-2025-07-02_assets_all_1676488367.bundle",
+        "texture": "School_Icon_HYAKKIYAKO",
+        "nativeAlpha": true
+      }
+    },
+    {
+      "id": "millennium",
+      "name": "Millennium",
+      "mark": {
+        "url": "/private/ba-jp/catalog/school-millennium.2ac85558436d.png",
+        "position": "50% 50%",
+        "width": 688,
+        "height": 624,
+        "bytes": 52769,
+        "sha256": "2ac85558436dab3b71f35bdc73bc3d25bad342f9da17a514d37b111c3133931a",
+        "source": "https://prod-clientpatch.bluearchiveyostar.com/r96_nvji95owgkbcxlmkb8mi/Android_PatchPack/FullPatch_138.zip",
+        "sourcePath": "UIs/01_Common/11_SchoolIcon/School_Icon_MILLENNIUM",
+        "bundle": "Bundle/FullPatch_138.zip",
+        "bundleSha256": "e5342612c7521da61a90fa333837ef67df5992943d84de4fcba62c82bddda3ce",
+        "member": "uis-01_common-11_schoolicon-_mxload-textures-2025-07-02_assets_all_1676488367.bundle",
+        "texture": "School_Icon_MILLENNIUM",
+        "nativeAlpha": true
+      }
+    },
+    {
+      "id": "odyssey",
+      "name": "Odyssey",
+      "mark": {
+        "url": "/private/ba-jp/catalog/school-odyssey.55334083bb23.png",
+        "position": "50% 50%",
+        "width": 688,
+        "height": 624,
+        "bytes": 58821,
+        "sha256": "55334083bb23d245b2c10e7373f9a055b66f600a90a090fadbb5065143675913",
+        "source": "https://prod-clientpatch.bluearchiveyostar.com/r96_nvji95owgkbcxlmkb8mi/Android_PatchPack/FullPatch_138.zip",
+        "sourcePath": "UIs/01_Common/11_SchoolIcon/School_Icon_ODYSSEY",
+        "bundle": "Bundle/FullPatch_138.zip",
+        "bundleSha256": "e5342612c7521da61a90fa333837ef67df5992943d84de4fcba62c82bddda3ce",
+        "member": "uis-01_common-11_schoolicon-_mxload-textures-2026-07-31_assets_all_74191146.bundle",
+        "texture": "School_Icon_ODYSSEY",
+        "nativeAlpha": true
+      }
+    },
+    {
+      "id": "redwinter",
+      "name": "Red Winter",
+      "mark": {
+        "url": "/private/ba-jp/catalog/school-redwinter.9d4b850afc02.png",
+        "position": "50% 50%",
+        "width": 688,
+        "height": 624,
+        "bytes": 86852,
+        "sha256": "9d4b850afc028796485c1d23505cb1aa31e94ce5ad58e8cef486870f529111cd",
+        "source": "https://prod-clientpatch.bluearchiveyostar.com/r96_nvji95owgkbcxlmkb8mi/Android_PatchPack/FullPatch_138.zip",
+        "sourcePath": "UIs/01_Common/11_SchoolIcon/School_Icon_REDWINTER",
+        "bundle": "Bundle/FullPatch_138.zip",
+        "bundleSha256": "e5342612c7521da61a90fa333837ef67df5992943d84de4fcba62c82bddda3ce",
+        "member": "uis-01_common-11_schoolicon-_mxload-textures-2025-07-02_assets_all_1676488367.bundle",
+        "texture": "School_Icon_REDWINTER",
+        "nativeAlpha": true
+      }
+    },
+    {
+      "id": "shanhaijing",
+      "name": "Shanhaijing",
+      "mark": {
+        "url": "/private/ba-jp/catalog/school-shanhaijing.2622d0229941.png",
+        "position": "50% 50%",
+        "width": 688,
+        "height": 624,
+        "bytes": 123336,
+        "sha256": "2622d0229941b1182e017c429ab11090d5bc8a56f512e8cbfb33088b7cc65d82",
+        "source": "https://prod-clientpatch.bluearchiveyostar.com/r96_nvji95owgkbcxlmkb8mi/Android_PatchPack/FullPatch_138.zip",
+        "sourcePath": "UIs/01_Common/11_SchoolIcon/School_Icon_SHANHAIJING",
+        "bundle": "Bundle/FullPatch_138.zip",
+        "bundleSha256": "e5342612c7521da61a90fa333837ef67df5992943d84de4fcba62c82bddda3ce",
+        "member": "uis-01_common-11_schoolicon-_mxload-textures-2025-07-02_assets_all_1676488367.bundle",
+        "texture": "School_Icon_SHANHAIJING",
+        "nativeAlpha": true
+      }
+    },
+    {
+      "id": "srt",
+      "name": "SRT",
+      "mark": {
+        "url": "/private/ba-jp/catalog/school-srt.ff1e54c21e08.png",
+        "position": "50% 50%",
+        "width": 688,
+        "height": 624,
+        "bytes": 42507,
+        "sha256": "ff1e54c21e08da565e7aefaeb6168434e08abb159d20e21aa619676e9329a1d5",
+        "source": "https://prod-clientpatch.bluearchiveyostar.com/r96_nvji95owgkbcxlmkb8mi/Android_PatchPack/FullPatch_138.zip",
+        "sourcePath": "UIs/01_Common/11_SchoolIcon/School_Icon_SRT",
+        "bundle": "Bundle/FullPatch_138.zip",
+        "bundleSha256": "e5342612c7521da61a90fa333837ef67df5992943d84de4fcba62c82bddda3ce",
+        "member": "uis-01_common-11_schoolicon-_mxload-textures-2025-07-02_assets_all_1676488367.bundle",
+        "texture": "School_Icon_SRT",
+        "nativeAlpha": true
+      }
+    },
+    {
+      "id": "trinity",
+      "name": "Trinity",
+      "mark": {
+        "url": "/private/ba-jp/catalog/school-trinity.804fa3a44285.png",
+        "position": "50% 50%",
+        "width": 688,
+        "height": 624,
+        "bytes": 120853,
+        "sha256": "804fa3a44285ade0bfc58a2a449c08cc077d01ce954c8b39c8f3d30411b24066",
+        "source": "https://prod-clientpatch.bluearchiveyostar.com/r96_nvji95owgkbcxlmkb8mi/Android_PatchPack/FullPatch_138.zip",
+        "sourcePath": "UIs/01_Common/11_SchoolIcon/School_Icon_TRINITY",
+        "bundle": "Bundle/FullPatch_138.zip",
+        "bundleSha256": "e5342612c7521da61a90fa333837ef67df5992943d84de4fcba62c82bddda3ce",
+        "member": "uis-01_common-11_schoolicon-_mxload-textures-2025-07-02_assets_all_1676488367.bundle",
+        "texture": "School_Icon_TRINITY",
+        "nativeAlpha": true
+      }
+    },
+    {
+      "id": "valkyrie",
+      "name": "Valkyrie",
+      "mark": {
+        "url": "/private/ba-jp/catalog/school-valkyrie.70372625c9a2.png",
+        "position": "50% 50%",
+        "width": 688,
+        "height": 624,
+        "bytes": 77421,
+        "sha256": "70372625c9a2dc8add47bb5af0767e63afc0bff989a3c0a12a89ed480332b806",
+        "source": "https://prod-clientpatch.bluearchiveyostar.com/r96_nvji95owgkbcxlmkb8mi/Android_PatchPack/FullPatch_138.zip",
+        "sourcePath": "UIs/01_Common/11_SchoolIcon/School_Icon_VALKYRIE",
+        "bundle": "Bundle/FullPatch_138.zip",
+        "bundleSha256": "e5342612c7521da61a90fa333837ef67df5992943d84de4fcba62c82bddda3ce",
+        "member": "uis-01_common-11_schoolicon-_mxload-textures-2025-07-02_assets_all_1676488367.bundle",
+        "texture": "School_Icon_VALKYRIE",
+        "nativeAlpha": true
+      }
+    },
+    {
+      "id": "wildhunt",
+      "name": "Wildhunt",
+      "mark": {
+        "url": "/private/ba-jp/catalog/school-wildhunt.8b33250bad95.png",
+        "position": "50% 50%",
+        "width": 688,
+        "height": 624,
+        "bytes": 86553,
+        "sha256": "8b33250bad95b1c0cdbdf768c642e3fe28115680975d9d5cf1d99949624085cc",
+        "source": "https://prod-clientpatch.bluearchiveyostar.com/r96_nvji95owgkbcxlmkb8mi/Android_PatchPack/FullPatch_138.zip",
+        "sourcePath": "UIs/01_Common/11_SchoolIcon/School_Icon_WILDHUNT",
+        "bundle": "Bundle/FullPatch_138.zip",
+        "bundleSha256": "e5342612c7521da61a90fa333837ef67df5992943d84de4fcba62c82bddda3ce",
+        "member": "uis-01_common-11_schoolicon-_mxload-textures-2025-07-30_assets_all_41984052.bundle",
+        "texture": "School_Icon_WILDHUNT",
+        "nativeAlpha": true
+      }
+    },
+    {
+      "id": "schale",
+      "name": "SCHALE"
+    }
+  ],
+  "collections": {
+    "ba-jp-prologue": {
+      "schools": ["schale", "millennium", "trinity", "gehenna"],
+      "evidence": [
+        {
+          "group": 11000,
+          "row": 95
+        },
+        {
+          "group": 11000,
+          "row": 165
+        },
+        {
+          "group": 11000,
+          "row": 172
+        }
+      ]
+    },
+    "ba-jp-main-series1-v1-c1": {
+      "schools": ["abydos"],
+      "evidence": [
+        {
+          "school": "abydos",
+          "group": 11010,
+          "row": 12
+        },
+        {
+          "school": "abydos",
+          "group": 11010,
+          "row": 39
+        }
+      ],
+      "mainStory": {
+        "series": "Series1",
+        "part": 1,
+        "volume": 1,
+        "chapter": 1,
+        "labels": {
+          "Volume": {
+            "key": "Main_Volume_Title_1",
+            "hash": 919870100,
+            "text": "Vol.1 対策委員会編"
+          },
+          "Chapter": {
+            "key": "Main_Chapter_Title_1_1",
+            "hash": 2215864598,
+            "text": "対策委員会の奇妙な一日"
+          },
+          "Episode": {
+            "key": "Main_Episode_Title_1_1_1",
+            "hash": 1770695315,
+            "text": "対策委員会へようこそ！"
+          }
+        }
+      },
+      "associationBasis": "Featured institutions in the official volume/chapter setting; Final and Part 2 prologue use SCHALE as their cross-school hub."
+    },
+    "ba-jp-main-series1-v1-c2": {
+      "schools": ["abydos"],
+      "evidence": [
+        {
+          "school": "abydos",
+          "group": 12010,
+          "row": 31
+        },
+        {
+          "school": "abydos",
+          "group": 12010,
+          "row": 32
+        }
+      ],
+      "mainStory": {
+        "series": "Series1",
+        "part": 1,
+        "volume": 1,
+        "chapter": 2,
+        "labels": {
+          "Volume": {
+            "key": "Main_Volume_Title_1",
+            "hash": 919870100,
+            "text": "Vol.1 対策委員会編"
+          },
+          "Chapter": {
+            "key": "Main_Chapter_Title_1_2",
+            "hash": 2206521406,
+            "text": "失ったもの、手放さなかったもの"
+          },
+          "Episode": {
+            "key": "Main_Episode_Title_1_2_1",
+            "hash": 2448344461,
+            "text": "予期せぬ同盟"
+          }
+        }
+      },
+      "associationBasis": "Featured institutions in the official volume/chapter setting; Final and Part 2 prologue use SCHALE as their cross-school hub."
+    },
+    "ba-jp-main-series1-v1-c3": {
+      "schools": ["abydos"],
+      "evidence": [
+        {
+          "school": "abydos",
+          "group": 13010,
+          "row": 121
+        },
+        {
+          "school": "abydos",
+          "group": 13010,
+          "row": 137
+        }
+      ],
+      "mainStory": {
+        "series": "Series1",
+        "part": 1,
+        "volume": 1,
+        "chapter": 3,
+        "labels": {
+          "Volume": {
+            "key": "Main_Volume_Title_1",
+            "hash": 919870100,
+            "text": "Vol.1 対策委員会編"
+          },
+          "Chapter": {
+            "key": "Main_Chapter_Title_1_3",
+            "hash": 2208175333,
+            "text": "夢が残した足跡"
+          },
+          "Episode": {
+            "key": "Main_Episode_Title_1_3_1",
+            "hash": 1791612964,
+            "text": "プロローグ"
+          }
+        }
+      },
+      "associationBasis": "Featured institutions in the official volume/chapter setting; Final and Part 2 prologue use SCHALE as their cross-school hub."
+    },
+    "ba-jp-main-series1-v2-c1": {
+      "schools": ["millennium"],
+      "evidence": [
+        {
+          "school": "millennium",
+          "group": 21010,
+          "row": 22
+        },
+        {
+          "school": "millennium",
+          "group": 21010,
+          "row": 23
+        }
+      ],
+      "mainStory": {
+        "series": "Series1",
+        "part": 1,
+        "volume": 2,
+        "chapter": 1,
+        "labels": {
+          "Volume": {
+            "key": "Main_Volume_Title_2",
+            "hash": 610967279,
+            "text": "Vol.2 時計じかけの花のパヴァーヌ編"
+          },
+          "Chapter": {
+            "key": "Main_Chapter_Title_2_1",
+            "hash": 1375547522,
+            "text": "レトロチック・ロマン"
+          },
+          "Episode": {
+            "key": "Main_Episode_Title_2_1_1",
+            "hash": 3052856858,
+            "text": "冒険の始まり"
+          }
+        }
+      },
+      "associationBasis": "Featured institutions in the official volume/chapter setting; Final and Part 2 prologue use SCHALE as their cross-school hub."
+    },
+    "ba-jp-main-series1-v2-c2": {
+      "schools": ["millennium"],
+      "evidence": [
+        {
+          "school": "millennium",
+          "group": 22010,
+          "row": 9
+        },
+        {
+          "school": "millennium",
+          "group": 22010,
+          "row": 53
+        }
+      ],
+      "mainStory": {
+        "series": "Series1",
+        "part": 1,
+        "volume": 2,
+        "chapter": 2,
+        "labels": {
+          "Volume": {
+            "key": "Main_Volume_Title_2",
+            "hash": 610967279,
+            "text": "Vol.2 時計じかけの花のパヴァーヌ編"
+          },
+          "Chapter": {
+            "key": "Main_Chapter_Title_2_2",
+            "hash": 4106206320,
+            "text": "友情と勇気と光のロマン"
+          },
+          "Episode": {
+            "key": "Main_Episode_Title_2_2_1",
+            "hash": 3061669448,
+            "text": "密やかなる会談"
+          }
+        }
+      },
+      "associationBasis": "Featured institutions in the official volume/chapter setting; Final and Part 2 prologue use SCHALE as their cross-school hub."
+    },
+    "ba-jp-main-series1-v3-c1": {
+      "schools": ["trinity", "gehenna"],
+      "evidence": [
+        {
+          "school": "trinity",
+          "group": 31010,
+          "row": 3
+        },
+        {
+          "school": "trinity",
+          "group": 31010,
+          "row": 5
+        },
+        {
+          "school": "gehenna",
+          "group": 31010,
+          "row": 3
+        },
+        {
+          "school": "gehenna",
+          "group": 31010,
+          "row": 5
+        }
+      ],
+      "mainStory": {
+        "series": "Series1",
+        "part": 1,
+        "volume": 3,
+        "chapter": 1,
+        "labels": {
+          "Volume": {
+            "key": "Main_Volume_Title_3",
+            "hash": 2810575850,
+            "text": "Vol.3 エデン条約編"
+          },
+          "Chapter": {
+            "key": "Main_Chapter_Title_3_1",
+            "hash": 3247737268,
+            "text": "補習授業、スタート！"
+          },
+          "Episode": {
+            "key": "Main_Episode_Title_3_1_1",
+            "hash": 2224245403,
+            "text": "プロローグ"
+          }
+        }
+      },
+      "associationBasis": "Featured institutions in the official volume/chapter setting; Final and Part 2 prologue use SCHALE as their cross-school hub."
+    },
+    "ba-jp-main-series1-v3-c2": {
+      "schools": ["trinity", "gehenna"],
+      "evidence": [
+        {
+          "school": "trinity",
+          "group": 32010,
+          "row": 9
+        },
+        {
+          "school": "trinity",
+          "group": 32010,
+          "row": 11
+        },
+        {
+          "school": "gehenna",
+          "group": 32010,
+          "row": 13
+        },
+        {
+          "school": "gehenna",
+          "group": 32010,
+          "row": 27
+        }
+      ],
+      "mainStory": {
+        "series": "Series1",
+        "part": 1,
+        "volume": 3,
+        "chapter": 2,
+        "labels": {
+          "Volume": {
+            "key": "Main_Volume_Title_3",
+            "hash": 2810575850,
+            "text": "Vol.3 エデン条約編"
+          },
+          "Chapter": {
+            "key": "Main_Chapter_Title_3_2",
+            "hash": 2318202637,
+            "text": "不可能な証明"
+          },
+          "Episode": {
+            "key": "Main_Episode_Title_3_2_1",
+            "hash": 3752668544,
+            "text": "巨大な怪物"
+          }
+        }
+      },
+      "associationBasis": "Featured institutions in the official volume/chapter setting; Final and Part 2 prologue use SCHALE as their cross-school hub."
+    },
+    "ba-jp-main-series1-v3-c3": {
+      "schools": ["trinity", "gehenna", "arius"],
+      "evidence": [
+        {
+          "school": "trinity",
+          "group": 33010,
+          "row": 154
+        },
+        {
+          "school": "trinity",
+          "group": 33020,
+          "row": 2
+        },
+        {
+          "school": "gehenna",
+          "group": 33020,
+          "row": 2
+        },
+        {
+          "school": "gehenna",
+          "group": 33020,
+          "row": 127
+        },
+        {
+          "school": "arius",
+          "group": 33010,
+          "row": 6
+        },
+        {
+          "school": "arius",
+          "group": 33010,
+          "row": 16
+        }
+      ],
+      "mainStory": {
+        "series": "Series1",
+        "part": 1,
+        "volume": 3,
+        "chapter": 3,
+        "labels": {
+          "Volume": {
+            "key": "Main_Volume_Title_3",
+            "hash": 2810575850,
+            "text": "Vol.3 エデン条約編"
+          },
+          "Chapter": {
+            "key": "Main_Chapter_Title_3_3",
+            "hash": 1001998812,
+            "text": "私たちの物語"
+          },
+          "Episode": {
+            "key": "Main_Episode_Title_3_3_1",
+            "hash": 3725818,
+            "text": "ポストモーテム（１）"
+          }
+        }
+      },
+      "associationBasis": "Featured institutions in the official volume/chapter setting; Final and Part 2 prologue use SCHALE as their cross-school hub."
+    },
+    "ba-jp-main-series1-v3-c4": {
+      "schools": ["trinity", "gehenna", "arius"],
+      "evidence": [
+        {
+          "school": "trinity",
+          "group": 34010,
+          "row": 61
+        },
+        {
+          "school": "trinity",
+          "group": 34020,
+          "row": 2
+        },
+        {
+          "school": "gehenna",
+          "group": 34010,
+          "row": 61
+        },
+        {
+          "school": "gehenna",
+          "group": 34020,
+          "row": 72
+        },
+        {
+          "school": "arius",
+          "group": 34010,
+          "row": 61
+        },
+        {
+          "school": "arius",
+          "group": 34020,
+          "row": 41
+        }
+      ],
+      "mainStory": {
+        "series": "Series1",
+        "part": 1,
+        "volume": 3,
+        "chapter": 4,
+        "labels": {
+          "Volume": {
+            "key": "Main_Volume_Title_3",
+            "hash": 2810575850,
+            "text": "Vol.3 エデン条約編"
+          },
+          "Chapter": {
+            "key": "Main_Chapter_Title_3_4",
+            "hash": 2525297440,
+            "text": "忘れられた神々のためのキリエ"
+          },
+          "Episode": {
+            "key": "Main_Episode_Title_3_4_1",
+            "hash": 3910967635,
+            "text": "プロローグ"
+          }
+        }
+      },
+      "associationBasis": "Featured institutions in the official volume/chapter setting; Final and Part 2 prologue use SCHALE as their cross-school hub."
+    },
+    "ba-jp-main-series1-v4-c1": {
+      "schools": ["srt", "valkyrie"],
+      "evidence": [
+        {
+          "school": "srt",
+          "group": 41010,
+          "row": 97
+        },
+        {
+          "school": "srt",
+          "group": 41010,
+          "row": 112
+        },
+        {
+          "school": "valkyrie",
+          "group": 41010,
+          "row": 103
+        },
+        {
+          "school": "valkyrie",
+          "group": 41010,
+          "row": 140
+        }
+      ],
+      "mainStory": {
+        "series": "Series1",
+        "part": 1,
+        "volume": 4,
+        "chapter": 1,
+        "labels": {
+          "Volume": {
+            "key": "Main_Volume_Title_4",
+            "hash": 4245034097,
+            "text": "Vol.4 カルバノグの兎編"
+          },
+          "Chapter": {
+            "key": "Main_Chapter_Title_4_1",
+            "hash": 1229845917,
+            "text": "RABBIT小隊始動！"
+          },
+          "Episode": {
+            "key": "Main_Episode_Title_4_1_1",
+            "hash": 2397503491,
+            "text": "統制不能な特殊部隊"
+          }
+        }
+      },
+      "associationBasis": "Featured institutions in the official volume/chapter setting; Final and Part 2 prologue use SCHALE as their cross-school hub."
+    },
+    "ba-jp-main-series1-v4-c2": {
+      "schools": ["srt", "valkyrie"],
+      "evidence": [
+        {
+          "school": "srt",
+          "group": 42010,
+          "row": 41
+        },
+        {
+          "school": "srt",
+          "group": 42010,
+          "row": 42
+        },
+        {
+          "school": "valkyrie",
+          "group": 42010,
+          "row": 22
+        },
+        {
+          "school": "valkyrie",
+          "group": 42010,
+          "row": 46
+        }
+      ],
+      "mainStory": {
+        "series": "Series1",
+        "part": 1,
+        "volume": 4,
+        "chapter": 2,
+        "labels": {
+          "Volume": {
+            "key": "Main_Volume_Title_4",
+            "hash": 4245034097,
+            "text": "Vol.4 カルバノグの兎編"
+          },
+          "Chapter": {
+            "key": "Main_Chapter_Title_4_2",
+            "hash": 2153655179,
+            "text": "We Were RABBITs!"
+          },
+          "Episode": {
+            "key": "Main_Episode_Title_4_2_1",
+            "hash": 2479115540,
+            "text": "キツネの見る夢"
+          }
+        }
+      },
+      "associationBasis": "Featured institutions in the official volume/chapter setting; Final and Part 2 prologue use SCHALE as their cross-school hub."
+    },
+    "ba-jp-main-series1-v5-c1": {
+      "schools": ["hyakkiyako"],
+      "evidence": [
+        {
+          "school": "hyakkiyako",
+          "group": 51010,
+          "row": 138
+        },
+        {
+          "school": "hyakkiyako",
+          "group": 51010,
+          "row": 149
+        }
+      ],
+      "mainStory": {
+        "series": "Series1",
+        "part": 1,
+        "volume": 5,
+        "chapter": 1,
+        "labels": {
+          "Volume": {
+            "key": "Main_Volume_Title_5",
+            "hash": 960680238,
+            "text": "Vol.5 百花繚乱編"
+          },
+          "Chapter": {
+            "key": "Main_Chapter_Title_5_1",
+            "hash": 3221425066,
+            "text": "いつかの芽吹きを待ち侘びて"
+          },
+          "Episode": {
+            "key": "Main_Episode_Title_5_1_1",
+            "hash": 19483641,
+            "text": "プロローグ"
+          }
+        }
+      },
+      "associationBasis": "Featured institutions in the official volume/chapter setting; Final and Part 2 prologue use SCHALE as their cross-school hub."
+    },
+    "ba-jp-main-series1-v5-c2": {
+      "schools": ["hyakkiyako"],
+      "evidence": [
+        {
+          "school": "hyakkiyako",
+          "group": 52020,
+          "row": 123
+        },
+        {
+          "school": "hyakkiyako",
+          "group": 52035,
+          "row": 131
+        }
+      ],
+      "mainStory": {
+        "series": "Series1",
+        "part": 1,
+        "volume": 5,
+        "chapter": 2,
+        "labels": {
+          "Volume": {
+            "key": "Main_Volume_Title_5",
+            "hash": 960680238,
+            "text": "Vol.5 百花繚乱編"
+          },
+          "Chapter": {
+            "key": "Main_Chapter_Title_5_2",
+            "hash": 1199738188,
+            "text": "孤独に花を咲かせんとする君へ"
+          },
+          "Episode": {
+            "key": "Main_Episode_Title_5_2_1",
+            "hash": 3040460587,
+            "text": "届かない指先"
+          }
+        }
+      },
+      "associationBasis": "Featured institutions in the official volume/chapter setting; Final and Part 2 prologue use SCHALE as their cross-school hub."
+    },
+    "ba-jp-main-series1-v6-c1": {
+      "schools": ["arius", "trinity"],
+      "evidence": [
+        {
+          "school": "arius",
+          "group": 61010,
+          "row": 55
+        },
+        {
+          "school": "arius",
+          "group": 61010,
+          "row": 87
+        },
+        {
+          "school": "trinity",
+          "group": 61020,
+          "row": 18
+        },
+        {
+          "school": "trinity",
+          "group": 61020,
+          "row": 20
+        }
+      ],
+      "mainStory": {
+        "series": "Series1",
+        "part": 1,
+        "volume": 6,
+        "chapter": 1,
+        "labels": {
+          "Volume": {
+            "key": "Main_Volume_Title_6",
+            "hash": 782244883,
+            "text": "Vol.6 過ぎ去りし刻のオラトリオ編"
+          },
+          "Chapter": {
+            "key": "Main_Chapter_Title_6_1",
+            "hash": 3558059242,
+            "text": "見えない私たちの境界線"
+          },
+          "Episode": {
+            "key": "Main_Episode_Title_6_1_1",
+            "hash": 660159457,
+            "text": "私たちの居場所"
+          }
+        }
+      },
+      "associationBasis": "Featured institutions in the official volume/chapter setting; Final and Part 2 prologue use SCHALE as their cross-school hub."
+    },
+    "ba-jp-main-series1-v6-c2": {
+      "schools": ["arius", "trinity"],
+      "evidence": [
+        {
+          "school": "arius",
+          "group": 62010,
+          "row": 151
+        },
+        {
+          "school": "arius",
+          "group": 62010,
+          "row": 154
+        },
+        {
+          "school": "trinity",
+          "group": 62010,
+          "row": 46
+        },
+        {
+          "school": "trinity",
+          "group": 62010,
+          "row": 77
+        }
+      ],
+      "mainStory": {
+        "series": "Series1",
+        "part": 1,
+        "volume": 6,
+        "chapter": 2,
+        "labels": {
+          "Volume": {
+            "key": "Main_Volume_Title_6",
+            "hash": 782244883,
+            "text": "Vol.6 過ぎ去りし刻のオラトリオ編"
+          },
+          "Chapter": {
+            "key": "Main_Chapter_Title_6_2",
+            "hash": 3320158175,
+            "text": "あの刻に告げし決別"
+          },
+          "Episode": {
+            "key": "Main_Episode_Title_6_2_1",
+            "hash": 872848962,
+            "text": "名もなき奉仕活動部"
+          }
+        }
+      },
+      "associationBasis": "Featured institutions in the official volume/chapter setting; Final and Part 2 prologue use SCHALE as their cross-school hub."
+    },
+    "ba-jp-main-series1-v6-c3": {
+      "schools": ["arius", "trinity"],
+      "evidence": [
+        {
+          "school": "arius",
+          "group": 63010,
+          "row": 15
+        },
+        {
+          "school": "arius",
+          "group": 63010,
+          "row": 23
+        },
+        {
+          "school": "trinity",
+          "group": 63010,
+          "row": 16
+        },
+        {
+          "school": "trinity",
+          "group": 63010,
+          "row": 38
+        }
+      ],
+      "mainStory": {
+        "series": "Series1",
+        "part": 1,
+        "volume": 6,
+        "chapter": 3,
+        "labels": {
+          "Volume": {
+            "key": "Main_Volume_Title_6",
+            "hash": 782244883,
+            "text": "Vol.6 過ぎ去りし刻のオラトリオ編"
+          },
+          "Chapter": {
+            "key": "Main_Chapter_Title_6_3",
+            "hash": 4281197193,
+            "text": "遺された未来のためのエクレシア"
+          },
+          "Episode": {
+            "key": "Main_Episode_Title_6_3_1",
+            "hash": 1311772992,
+            "text": "私たちの憎悪"
+          }
+        }
+      },
+      "associationBasis": "Featured institutions in the official volume/chapter setting; Final and Part 2 prologue use SCHALE as their cross-school hub."
+    },
+    "ba-jp-main-series1-v100-c1": {
+      "schools": ["schale"],
+      "evidence": [
+        {
+          "school": "schale",
+          "group": 101020,
+          "row": 132
+        },
+        {
+          "school": "schale",
+          "group": 101020,
+          "row": 157
+        }
+      ],
+      "mainStory": {
+        "series": "Series1",
+        "part": 1,
+        "volume": 100,
+        "chapter": 1,
+        "labels": {
+          "Volume": {
+            "key": "Main_Volume_Title_100",
+            "hash": 4028767973,
+            "text": "Final. あまねく奇跡の始発点編"
+          },
+          "Chapter": {
+            "key": "Main_Chapter_Title_100_1",
+            "hash": 2597871383,
+            "text": "シャーレ奪還作戦"
+          },
+          "Episode": {
+            "key": "Main_Episode_Title_100_1_1",
+            "hash": 1823565449,
+            "text": "プロローグ"
+          }
+        }
+      },
+      "associationBasis": "Featured institutions in the official volume/chapter setting; Final and Part 2 prologue use SCHALE as their cross-school hub."
+    },
+    "ba-jp-main-series1-v100-c2": {
+      "schools": ["schale"],
+      "evidence": [
+        {
+          "school": "schale",
+          "group": 102010,
+          "row": 54
+        },
+        {
+          "school": "schale",
+          "group": 102010,
+          "row": 117
+        }
+      ],
+      "mainStory": {
+        "series": "Series1",
+        "part": 1,
+        "volume": 100,
+        "chapter": 2,
+        "labels": {
+          "Volume": {
+            "key": "Main_Volume_Title_100",
+            "hash": 4028767973,
+            "text": "Final. あまねく奇跡の始発点編"
+          },
+          "Chapter": {
+            "key": "Main_Chapter_Title_100_2",
+            "hash": 38610745,
+            "text": "虚妄のサンクトゥム攻略戦"
+          },
+          "Episode": {
+            "key": "Main_Episode_Title_100_2_1",
+            "hash": 3803357745,
+            "text": "色彩の嚮導者"
+          }
+        }
+      },
+      "associationBasis": "Featured institutions in the official volume/chapter setting; Final and Part 2 prologue use SCHALE as their cross-school hub."
+    },
+    "ba-jp-main-series1-v100-c3": {
+      "schools": ["schale"],
+      "evidence": [
+        {
+          "school": "schale",
+          "group": 103010,
+          "row": 59
+        },
+        {
+          "school": "schale",
+          "group": 103010,
+          "row": 154
+        }
+      ],
+      "mainStory": {
+        "series": "Series1",
+        "part": 1,
+        "volume": 100,
+        "chapter": 3,
+        "labels": {
+          "Volume": {
+            "key": "Main_Volume_Title_100",
+            "hash": 4028767973,
+            "text": "Final. あまねく奇跡の始発点編"
+          },
+          "Chapter": {
+            "key": "Main_Chapter_Title_100_3",
+            "hash": 3767391336,
+            "text": "アトラ・ハシースの箱舟占領戦"
+          },
+          "Episode": {
+            "key": "Main_Episode_Title_100_3_1",
+            "hash": 3189127080,
+            "text": "役割"
+          }
+        }
+      },
+      "associationBasis": "Featured institutions in the official volume/chapter setting; Final and Part 2 prologue use SCHALE as their cross-school hub."
+    },
+    "ba-jp-main-series1-v100-c4": {
+      "schools": ["schale"],
+      "evidence": [
+        {
+          "school": "schale",
+          "group": 104010,
+          "row": 129
+        },
+        {
+          "school": "schale",
+          "group": 104050,
+          "row": 44
+        }
+      ],
+      "mainStory": {
+        "series": "Series1",
+        "part": 1,
+        "volume": 100,
+        "chapter": 4,
+        "labels": {
+          "Volume": {
+            "key": "Main_Volume_Title_100",
+            "hash": 4028767973,
+            "text": "Final. あまねく奇跡の始発点編"
+          },
+          "Chapter": {
+            "key": "Main_Chapter_Title_100_4",
+            "hash": 87079962,
+            "text": "プレナパテス決戦"
+          },
+          "Episode": {
+            "key": "Main_Episode_Title_100_4_1",
+            "hash": 2750448144,
+            "text": "定められた運命"
+          }
+        }
+      },
+      "associationBasis": "Featured institutions in the official volume/chapter setting; Final and Part 2 prologue use SCHALE as their cross-school hub."
+    },
+    "ba-jp-prologue-part2": {
+      "schools": ["schale"],
+      "evidence": [
+        {
+          "school": "schale",
+          "group": 200003,
+          "row": 3
+        }
+      ],
+      "mainStory": {
+        "series": "Series2",
+        "part": 2,
+        "volume": 1,
+        "chapter": 1,
+        "labels": {
+          "Volume": {
+            "key": "Prologue_Volume_Title_Series2_1",
+            "hash": 1261830304,
+            "text": "プロローグ"
+          },
+          "Chapter": {
+            "key": "Prologue_Chapter_Title_Series2_1_1",
+            "hash": 496060893,
+            "text": "プロローグ"
+          },
+          "Episode": {
+            "key": "Prologue_Episode_Title_Series2_1_1_1",
+            "hash": 3809714008,
+            "text": "誕生"
+          }
+        }
+      },
+      "associationBasis": "Featured institutions in the official volume/chapter setting; Final and Part 2 prologue use SCHALE as their cross-school hub."
+    },
+    "ba-jp-main-series2-v1-c1": {
+      "schools": ["schale"],
+      "evidence": [
+        {
+          "school": "schale",
+          "group": 201010,
+          "row": 5
+        },
+        {
+          "school": "schale",
+          "group": 201030,
+          "row": 14
+        }
+      ],
+      "mainStory": {
+        "series": "Series2",
+        "part": 2,
+        "volume": 1,
+        "chapter": 1,
+        "labels": {
+          "Volume": {
+            "key": "Main_Volume_Title_Series2_1",
+            "hash": 1685330631,
+            "text": "Vol.0 連邦生徒会編"
+          },
+          "Chapter": {
+            "key": "Main_Chapter_Title_Series2_1_1",
+            "hash": 3915905801,
+            "text": "アーモンドの花咲く春の日に"
+          },
+          "Episode": {
+            "key": "Main_Episode_Title_Series2_1_1_1",
+            "hash": 2074656184,
+            "text": "首席行政官の休日（１）"
+          }
+        }
+      },
+      "associationBasis": "Featured institutions in the official volume/chapter setting; Final and Part 2 prologue use SCHALE as their cross-school hub."
+    },
+    "ba-jp-main-series2-v2-c1": {
+      "schools": ["gehenna"],
+      "evidence": [
+        {
+          "school": "gehenna",
+          "group": 211010,
+          "row": 0
+        },
+        {
+          "school": "gehenna",
+          "group": 211010,
+          "row": 5
+        }
+      ],
+      "mainStory": {
+        "series": "Series2",
+        "part": 2,
+        "volume": 2,
+        "chapter": 1,
+        "labels": {
+          "Volume": {
+            "key": "Main_Volume_Title_Series2_2",
+            "hash": 2210067228,
+            "text": "Vol.1 炎と影編"
+          },
+          "Chapter": {
+            "key": "Main_Chapter_Title_Series2_2_1",
+            "hash": 2468589893,
+            "text": "ゲヘナを再び偉大に！"
+          },
+          "Episode": {
+            "key": "Main_Episode_Title_Series2_2_1_1",
+            "hash": 4248973689,
+            "text": "ゲヘナは今日も平和なり"
+          }
+        }
+      },
+      "associationBasis": "Featured institutions in the official volume/chapter setting; Final and Part 2 prologue use SCHALE as their cross-school hub."
+    },
+    "ba-jp-main-series2-v2-c2": {
+      "schools": ["gehenna"],
+      "evidence": [
+        {
+          "school": "gehenna",
+          "group": 212010,
+          "row": 19
+        },
+        {
+          "school": "gehenna",
+          "group": 212010,
+          "row": 42
+        }
+      ],
+      "mainStory": {
+        "series": "Series2",
+        "part": 2,
+        "volume": 2,
+        "chapter": 2,
+        "labels": {
+          "Volume": {
+            "key": "Main_Volume_Title_Series2_2",
+            "hash": 2210067228,
+            "text": "Vol.1 炎と影編"
+          },
+          "Chapter": {
+            "key": "Main_Chapter_Title_Series2_2_2",
+            "hash": 3320099911,
+            "text": "炎となる私たち"
+          },
+          "Episode": {
+            "key": "Main_Episode_Title_Series2_2_2_1",
+            "hash": 1945353774,
+            "text": "一歩遅れた対処"
+          }
+        }
+      },
+      "associationBasis": "Featured institutions in the official volume/chapter setting; Final and Part 2 prologue use SCHALE as their cross-school hub."
+    },
+    "ba-jp-main-series2-v3-c1": {
+      "schools": ["odyssey"],
+      "evidence": [
+        {
+          "school": "odyssey",
+          "group": 221010,
+          "row": 90
+        },
+        {
+          "school": "odyssey",
+          "group": 221010,
+          "row": 98
+        }
+      ],
+      "mainStory": {
+        "series": "Series2",
+        "part": 2,
+        "volume": 3,
+        "chapter": 1,
+        "labels": {
+          "Volume": {
+            "key": "Main_Volume_Title_Series2_3",
+            "hash": 1231709678,
+            "text": "Vol.2 オデュッセイア編"
+          },
+          "Chapter": {
+            "key": "Main_Chapter_Title_Series2_3_1",
+            "hash": 849701426,
+            "text": "瞳に映る水平線"
+          },
+          "Episode": {
+            "key": "Main_Episode_Title_Series2_3_1_1",
+            "hash": 4021215574,
+            "text": "S.O.S."
+          }
+        }
+      },
+      "associationBasis": "Featured institutions in the official volume/chapter setting; Final and Part 2 prologue use SCHALE as their cross-school hub."
+    },
+    "ba-jp-group-v1": {
+      "schools": ["gehenna"],
+      "evidence": [
+        {
+          "school": "gehenna",
+          "group": 1101,
+          "row": 0,
+          "kind": "group-story-emblem",
+          "emblemId": 1001101,
+          "emblemIconPath": "UIs/01_Common/43_Emblem/Emblem_Icon_Group_Gehenna"
+        }
+      ],
+      "groupStory": {
+        "volume": 1,
+        "club": "GourmetClub",
+        "emblemId": 1001101,
+        "emblemCategory": "GroupStory",
+        "emblemIconPath": "UIs/01_Common/43_Emblem/Emblem_Icon_Group_Gehenna",
+        "labels": {
+          "Volume": {
+            "key": "Sub_Volume_Title_1",
+            "hash": 3944364850,
+            "text": "美食研究会"
+          },
+          "Chapter": {
+            "key": "Sub_Chapter_Title_1_1",
+            "hash": 608013451,
+            "text": "美食研究会"
+          },
+          "Episode": {
+            "key": "Sub_Episode_Title_1_1_1",
+            "hash": 3725515018,
+            "text": "美食研究会の日常（１）"
+          }
+        }
+      },
+      "associationBasis": "Official GroupStory emblem category; the emblem icon identifies the featured school."
+    },
+    "ba-jp-group-v2": {
+      "schools": ["millennium"],
+      "evidence": [
+        {
+          "school": "millennium",
+          "group": 1201,
+          "row": 0,
+          "kind": "group-story-emblem",
+          "emblemId": 1001201,
+          "emblemIconPath": "UIs/01_Common/43_Emblem/Emblem_Icon_Group_Millennium"
+        }
+      ],
+      "groupStory": {
+        "volume": 2,
+        "club": "CleanNClearing",
+        "emblemId": 1001201,
+        "emblemCategory": "GroupStory",
+        "emblemIconPath": "UIs/01_Common/43_Emblem/Emblem_Icon_Group_Millennium",
+        "labels": {
+          "Volume": {
+            "key": "Sub_Volume_Title_2",
+            "hash": 1460635809,
+            "text": "Cleaning&Clearing"
+          },
+          "Chapter": {
+            "key": "Sub_Chapter_Title_2_1",
+            "hash": 3811046302,
+            "text": "Cleaning&Clearing"
+          },
+          "Episode": {
+            "key": "Sub_Episode_Title_2_1_1",
+            "hash": 4165094716,
+            "text": "Cleaning&Clearing"
+          }
+        }
+      },
+      "associationBasis": "Official GroupStory emblem category; the emblem icon identifies the featured school."
+    },
+    "ba-jp-group-v3": {
+      "schools": ["gehenna"],
+      "evidence": [
+        {
+          "school": "gehenna",
+          "group": 2201,
+          "row": 0,
+          "kind": "group-story-emblem",
+          "emblemId": 1002201,
+          "emblemIconPath": "UIs/01_Common/43_Emblem/Emblem_Icon_Group_Gehenna"
+        }
+      ],
+      "groupStory": {
+        "volume": 3,
+        "club": "Kohshinjo68",
+        "emblemId": 1002201,
+        "emblemCategory": "GroupStory",
+        "emblemIconPath": "UIs/01_Common/43_Emblem/Emblem_Icon_Group_Gehenna",
+        "labels": {
+          "Volume": {
+            "key": "Sub_Volume_Title_3",
+            "hash": 327614613,
+            "text": "便利屋68"
+          },
+          "Chapter": {
+            "key": "Sub_Chapter_Title_3_1",
+            "hash": 3935064801,
+            "text": "便利屋68"
+          },
+          "Episode": {
+            "key": "Sub_Episode_Title_3_1_1",
+            "hash": 2555318168,
+            "text": "不健全な事業計画"
+          }
+        }
+      },
+      "associationBasis": "Official GroupStory emblem category; the emblem icon identifies the featured school."
+    },
+    "ba-jp-group-v4": {
+      "schools": ["millennium"],
+      "evidence": [
+        {
+          "school": "millennium",
+          "group": 1401,
+          "row": 0,
+          "kind": "group-story-emblem",
+          "emblemId": 1001401,
+          "emblemIconPath": "UIs/01_Common/43_Emblem/Emblem_Icon_Group_Millennium"
+        }
+      ],
+      "groupStory": {
+        "volume": 4,
+        "club": "Engineer",
+        "emblemId": 1001401,
+        "emblemCategory": "GroupStory",
+        "emblemIconPath": "UIs/01_Common/43_Emblem/Emblem_Icon_Group_Millennium",
+        "labels": {
+          "Volume": {
+            "key": "Sub_Volume_Title_4",
+            "hash": 3036397003,
+            "text": "エンジニア部"
+          },
+          "Chapter": {
+            "key": "Sub_Chapter_Title_4_1",
+            "hash": 519137162,
+            "text": "エンジニア部"
+          },
+          "Episode": {
+            "key": "Sub_Episode_Title_4_1_1",
+            "hash": 4023053358,
+            "text": "GUNS N' PEPPERS（１）"
+          }
+        }
+      },
+      "associationBasis": "Official GroupStory emblem category; the emblem icon identifies the featured school."
+    },
+    "ba-jp-group-v5": {
+      "schools": ["millennium"],
+      "evidence": [
+        {
+          "school": "millennium",
+          "group": 1501,
+          "row": 0,
+          "kind": "group-story-emblem",
+          "emblemId": 1001501,
+          "emblemIconPath": "UIs/01_Common/43_Emblem/Emblem_Icon_Group_Millennium"
+        }
+      ],
+      "groupStory": {
+        "volume": 5,
+        "club": "Veritas",
+        "emblemId": 1001501,
+        "emblemCategory": "GroupStory",
+        "emblemIconPath": "UIs/01_Common/43_Emblem/Emblem_Icon_Group_Millennium",
+        "labels": {
+          "Volume": {
+            "key": "Sub_Volume_Title_5",
+            "hash": 1374946523,
+            "text": "ヴェリタス"
+          },
+          "Chapter": {
+            "key": "Sub_Chapter_Title_5_1",
+            "hash": 208934231,
+            "text": "ヴェリタス"
+          },
+          "Episode": {
+            "key": "Sub_Episode_Title_5_1_1",
+            "hash": 231575002,
+            "text": "Trouble & Trackers（１）"
+          }
+        }
+      },
+      "associationBasis": "Official GroupStory emblem category; the emblem icon identifies the featured school."
+    },
+    "ba-jp-group-v6": {
+      "schools": ["gehenna"],
+      "evidence": [
+        {
+          "school": "gehenna",
+          "group": 1601,
+          "row": 0,
+          "kind": "group-story-emblem",
+          "emblemId": 1001601,
+          "emblemIconPath": "UIs/01_Common/43_Emblem/Emblem_Icon_Group_Gehenna"
+        }
+      ],
+      "groupStory": {
+        "volume": 6,
+        "club": "FoodService",
+        "emblemId": 1001601,
+        "emblemCategory": "GroupStory",
+        "emblemIconPath": "UIs/01_Common/43_Emblem/Emblem_Icon_Group_Gehenna",
+        "labels": {
+          "Volume": {
+            "key": "Sub_Volume_Title_6",
+            "hash": 2603610770,
+            "text": "給食部"
+          },
+          "Chapter": {
+            "key": "Sub_Chapter_Title_6_1",
+            "hash": 2731878500,
+            "text": "給食部"
+          },
+          "Episode": {
+            "key": "Sub_Episode_Title_6_1_1",
+            "hash": 1547054363,
+            "text": "給食部のドタバタ衛生管理評価（１）"
+          }
+        }
+      },
+      "associationBasis": "Official GroupStory emblem category; the emblem icon identifies the featured school."
+    },
+    "ba-jp-group-v7": {
+      "schools": ["trinity"],
+      "evidence": [
+        {
+          "school": "trinity",
+          "group": 1701,
+          "row": 0,
+          "kind": "group-story-emblem",
+          "emblemId": 1001701,
+          "emblemIconPath": "UIs/01_Common/43_Emblem/Emblem_Icon_Group_Trinity"
+        }
+      ],
+      "groupStory": {
+        "volume": 7,
+        "club": "KnightsHospitaller",
+        "emblemId": 1001701,
+        "emblemCategory": "GroupStory",
+        "emblemIconPath": "UIs/01_Common/43_Emblem/Emblem_Icon_Group_Trinity",
+        "labels": {
+          "Volume": {
+            "key": "Sub_Volume_Title_7",
+            "hash": 3296660268,
+            "text": "救護騎士団"
+          },
+          "Chapter": {
+            "key": "Sub_Chapter_Title_7_1",
+            "hash": 4084541098,
+            "text": "救護騎士団"
+          },
+          "Episode": {
+            "key": "Sub_Episode_Title_7_1_1",
+            "hash": 932797,
+            "text": "無人フロアの幽霊さん（１）"
+          }
+        }
+      },
+      "associationBasis": "Official GroupStory emblem category; the emblem icon identifies the featured school."
+    },
+    "ba-jp-group-v8": {
+      "schools": ["trinity"],
+      "evidence": [
+        {
+          "school": "trinity",
+          "group": 1801,
+          "row": 0,
+          "kind": "group-story-emblem",
+          "emblemId": 1001801,
+          "emblemIconPath": "UIs/01_Common/43_Emblem/Emblem_Icon_Group_Trinity"
+        }
+      ],
+      "groupStory": {
+        "volume": 8,
+        "club": "Justice",
+        "emblemId": 1001801,
+        "emblemCategory": "GroupStory",
+        "emblemIconPath": "UIs/01_Common/43_Emblem/Emblem_Icon_Group_Trinity",
+        "labels": {
+          "Volume": {
+            "key": "Sub_Volume_Title_8",
+            "hash": 4249499562,
+            "text": "正義実現委員会"
+          },
+          "Chapter": {
+            "key": "Sub_Chapter_Title_8_1",
+            "hash": 1110084197,
+            "text": "正義実現委員会"
+          },
+          "Episode": {
+            "key": "Sub_Episode_Title_8_1_1",
+            "hash": 3102030977,
+            "text": "正義実現委員会はお休みです（１）"
+          }
+        }
+      },
+      "associationBasis": "Official GroupStory emblem category; the emblem icon identifies the featured school."
+    },
+    "ba-jp-group-v9": {
+      "schools": ["gehenna"],
+      "evidence": [
+        {
+          "school": "gehenna",
+          "group": 1901,
+          "row": 0,
+          "kind": "group-story-emblem",
+          "emblemId": 1001901,
+          "emblemIconPath": "UIs/01_Common/43_Emblem/Emblem_Icon_Group_Gehenna"
+        }
+      ],
+      "groupStory": {
+        "volume": 9,
+        "club": "Fuuki",
+        "emblemId": 1001901,
+        "emblemCategory": "GroupStory",
+        "emblemIconPath": "UIs/01_Common/43_Emblem/Emblem_Icon_Group_Gehenna",
+        "labels": {
+          "Volume": {
+            "key": "Sub_Volume_Title_9",
+            "hash": 2779728465,
+            "text": "風紀委員会"
+          },
+          "Chapter": {
+            "key": "Sub_Chapter_Title_9_1",
+            "hash": 921831019,
+            "text": "風紀委員会"
+          },
+          "Episode": {
+            "key": "Sub_Episode_Title_9_1_1",
+            "hash": 2281929414,
+            "text": "風紀委員会・週次定例"
+          }
+        }
+      },
+      "associationBasis": "Official GroupStory emblem category; the emblem icon identifies the featured school."
+    },
+    "ba-jp-group-v10": {
+      "schools": ["trinity"],
+      "evidence": [
+        {
+          "school": "trinity",
+          "group": 2001,
+          "row": 0,
+          "kind": "group-story-emblem",
+          "emblemId": 1002001,
+          "emblemIconPath": "UIs/01_Common/43_Emblem/Emblem_Icon_Group_Trinity"
+        }
+      ],
+      "groupStory": {
+        "volume": 10,
+        "club": "HoukagoDessert",
+        "emblemId": 1002001,
+        "emblemCategory": "GroupStory",
+        "emblemIconPath": "UIs/01_Common/43_Emblem/Emblem_Icon_Group_Trinity",
+        "labels": {
+          "Volume": {
+            "key": "Sub_Volume_Title_10",
+            "hash": 289753267,
+            "text": "放課後スイーツ部"
+          },
+          "Chapter": {
+            "key": "Sub_Chapter_Title_10_1",
+            "hash": 1345648138,
+            "text": "放課後スイーツ部"
+          },
+          "Episode": {
+            "key": "Sub_Episode_Title_10_1_1",
+            "hash": 1542010384,
+            "text": "女子高校生の日常"
+          }
+        }
+      },
+      "associationBasis": "Official GroupStory emblem category; the emblem icon identifies the featured school."
+    },
+    "ba-jp-group-v11": {
+      "schools": ["abydos"],
+      "evidence": [
+        {
+          "school": "abydos",
+          "group": 2101,
+          "row": 0,
+          "kind": "group-story-emblem",
+          "emblemId": 1002101,
+          "emblemIconPath": "UIs/01_Common/43_Emblem/Emblem_Icon_Group_Abydos"
+        }
+      ],
+      "groupStory": {
+        "volume": 11,
+        "club": "Countermeasure",
+        "emblemId": 1002101,
+        "emblemCategory": "GroupStory",
+        "emblemIconPath": "UIs/01_Common/43_Emblem/Emblem_Icon_Group_Abydos",
+        "labels": {
+          "Volume": {
+            "key": "Sub_Volume_Title_11",
+            "hash": 477865401,
+            "text": "対策委員会"
+          },
+          "Chapter": {
+            "key": "Sub_Chapter_Title_11_1",
+            "hash": 2769955908,
+            "text": "対策委員会"
+          },
+          "Episode": {
+            "key": "Sub_Episode_Title_11_1_1",
+            "hash": 338113198,
+            "text": "呼ばれた人は残ってください（１）"
+          }
+        }
+      },
+      "associationBasis": "Official GroupStory emblem category; the emblem icon identifies the featured school."
+    },
+    "ba-jp-group-v12": {
+      "schools": ["redwinter"],
+      "evidence": [
+        {
+          "school": "redwinter",
+          "group": 1301,
+          "row": 0,
+          "kind": "group-story-emblem",
+          "emblemId": 1001301,
+          "emblemIconPath": "UIs/01_Common/43_Emblem/Emblem_Icon_Group_RedWinter"
+        }
+      ],
+      "groupStory": {
+        "volume": 12,
+        "club": "RedwinterSecretary",
+        "emblemId": 1001301,
+        "emblemCategory": "GroupStory",
+        "emblemIconPath": "UIs/01_Common/43_Emblem/Emblem_Icon_Group_RedWinter",
+        "labels": {
+          "Volume": {
+            "key": "Sub_Volume_Title_12",
+            "hash": 2109174349,
+            "text": "レッドウィンター事務局"
+          },
+          "Chapter": {
+            "key": "Sub_Chapter_Title_12_1",
+            "hash": 1183934157,
+            "text": "レッドウィンター事務局"
+          },
+          "Episode": {
+            "key": "Sub_Episode_Title_12_1_1",
+            "hash": 3660245761,
+            "text": "会長はいつも正しい（１）"
+          }
+        }
+      },
+      "associationBasis": "Official GroupStory emblem category; the emblem icon identifies the featured school."
+    },
+    "ba-jp-group-v13": {
+      "schools": ["hyakkiyako"],
+      "evidence": [
+        {
+          "school": "hyakkiyako",
+          "group": 2301,
+          "row": 0,
+          "kind": "group-story-emblem",
+          "emblemId": 1002301,
+          "emblemIconPath": "UIs/01_Common/43_Emblem/Emblem_Icon_Group_Hyakkiyako"
+        }
+      ],
+      "groupStory": {
+        "volume": 13,
+        "club": "MatsuriOffice",
+        "emblemId": 1002301,
+        "emblemCategory": "GroupStory",
+        "emblemIconPath": "UIs/01_Common/43_Emblem/Emblem_Icon_Group_Hyakkiyako",
+        "labels": {
+          "Volume": {
+            "key": "Sub_Volume_Title_13",
+            "hash": 1598795478,
+            "text": "お祭り運営委員会"
+          },
+          "Chapter": {
+            "key": "Sub_Chapter_Title_13_1",
+            "hash": 3051827259,
+            "text": "お祭り運営委員会"
+          },
+          "Episode": {
+            "key": "Sub_Episode_Title_13_1_1",
+            "hash": 2447515140,
+            "text": "いざ、お祭り運営委員会定例会議！"
+          }
+        }
+      },
+      "associationBasis": "Official GroupStory emblem category; the emblem icon identifies the featured school."
+    },
+    "ba-jp-group-v14": {
+      "schools": ["hyakkiyako"],
+      "evidence": [
+        {
+          "school": "hyakkiyako",
+          "group": 2401,
+          "row": 0,
+          "kind": "group-story-emblem",
+          "emblemId": 1002401,
+          "emblemIconPath": "UIs/01_Common/43_Emblem/Emblem_Icon_Group_Hyakkiyako"
+        }
+      ],
+      "groupStory": {
+        "volume": 14,
+        "club": "Shugyobu",
+        "emblemId": 1002401,
+        "emblemCategory": "GroupStory",
+        "emblemIconPath": "UIs/01_Common/43_Emblem/Emblem_Icon_Group_Hyakkiyako",
+        "labels": {
+          "Volume": {
+            "key": "Sub_Volume_Title_14",
+            "hash": 3070463412,
+            "text": "修行部"
+          },
+          "Chapter": {
+            "key": "Sub_Chapter_Title_14_1",
+            "hash": 3565094285,
+            "text": "修行部"
+          },
+          "Episode": {
+            "key": "Sub_Episode_Title_14_1_1",
+            "hash": 1191818453,
+            "text": "修行部の紹介動画を撮ろう！（１）"
+          }
+        }
+      },
+      "associationBasis": "Official GroupStory emblem category; the emblem icon identifies the featured school."
+    },
+    "ba-jp-group-v15": {
+      "schools": ["millennium"],
+      "evidence": [
+        {
+          "school": "millennium",
+          "group": 2501,
+          "row": 0,
+          "kind": "group-story-emblem",
+          "emblemId": 1002501,
+          "emblemIconPath": "UIs/01_Common/43_Emblem/Emblem_Icon_Group_Millennium"
+        }
+      ],
+      "groupStory": {
+        "volume": 15,
+        "club": "GameDev",
+        "emblemId": 1002501,
+        "emblemCategory": "GroupStory",
+        "emblemIconPath": "UIs/01_Common/43_Emblem/Emblem_Icon_Group_Millennium",
+        "labels": {
+          "Volume": {
+            "key": "Sub_Volume_Title_15",
+            "hash": 1522977711,
+            "text": "ゲーム開発部"
+          },
+          "Chapter": {
+            "key": "Sub_Chapter_Title_15_1",
+            "hash": 1883453580,
+            "text": "ゲーム開発部"
+          },
+          "Episode": {
+            "key": "Sub_Episode_Title_15_1_1",
+            "hash": 2917801826,
+            "text": "ゲームの道はマナーから（１）"
+          }
+        }
+      },
+      "associationBasis": "Official GroupStory emblem category; the emblem icon identifies the featured school."
+    },
+    "ba-jp-group-v16": {
+      "schools": ["shanhaijing"],
+      "evidence": [
+        {
+          "school": "shanhaijing",
+          "group": 2601,
+          "row": 0,
+          "kind": "group-story-emblem",
+          "emblemId": 1002601,
+          "emblemIconPath": "UIs/01_Common/43_Emblem/Emblem_Icon_Group_Shanhaijing"
+        }
+      ],
+      "groupStory": {
+        "volume": 16,
+        "club": "Meihuayuan",
+        "emblemId": 1002601,
+        "emblemCategory": "GroupStory",
+        "emblemIconPath": "UIs/01_Common/43_Emblem/Emblem_Icon_Group_Shanhaijing",
+        "labels": {
+          "Volume": {
+            "key": "Sub_Volume_Title_16",
+            "hash": 1245880390,
+            "text": "梅花園"
+          },
+          "Chapter": {
+            "key": "Sub_Chapter_Title_16_1",
+            "hash": 331303232,
+            "text": "梅花園"
+          },
+          "Episode": {
+            "key": "Sub_Episode_Title_16_1_1",
+            "hash": 2130952859,
+            "text": "大人のオモチャ（１）"
+          }
+        }
+      },
+      "associationBasis": "Official GroupStory emblem category; the emblem icon identifies the featured school."
+    },
+    "ba-jp-group-v17": {
+      "schools": ["valkyrie"],
+      "evidence": [
+        {
+          "school": "valkyrie",
+          "group": 2701,
+          "row": 0,
+          "kind": "group-story-emblem",
+          "emblemId": 1002701,
+          "emblemIconPath": "UIs/01_Common/43_Emblem/Emblem_Icon_Group_Valkyrie"
+        }
+      ],
+      "groupStory": {
+        "volume": 17,
+        "club": "anzenkyoku",
+        "emblemId": 1002701,
+        "emblemCategory": "GroupStory",
+        "emblemIconPath": "UIs/01_Common/43_Emblem/Emblem_Icon_Group_Valkyrie",
+        "labels": {
+          "Volume": {
+            "key": "Sub_Volume_Title_17",
+            "hash": 1010280853,
+            "text": "生活安全局"
+          },
+          "Chapter": {
+            "key": "Sub_Chapter_Title_17_1",
+            "hash": 4205503753,
+            "text": "生活安全局"
+          },
+          "Episode": {
+            "key": "Sub_Episode_Title_17_1_1",
+            "hash": 940413548,
+            "text": "逮捕します！（１）"
+          }
+        }
+      },
+      "associationBasis": "Official GroupStory emblem category; the emblem icon identifies the featured school."
+    },
+    "ba-jp-group-v18": {
+      "schools": ["redwinter"],
+      "evidence": [
+        {
+          "school": "redwinter",
+          "group": 2801,
+          "row": 0,
+          "kind": "group-story-emblem",
+          "emblemId": 1002801,
+          "emblemIconPath": "UIs/01_Common/43_Emblem/Emblem_Icon_Group_RedWinter"
+        }
+      ],
+      "groupStory": {
+        "volume": 18,
+        "club": "Class227",
+        "emblemId": 1002801,
+        "emblemCategory": "GroupStory",
+        "emblemIconPath": "UIs/01_Common/43_Emblem/Emblem_Icon_Group_RedWinter",
+        "labels": {
+          "Volume": {
+            "key": "Sub_Volume_Title_18",
+            "hash": 189448332,
+            "text": "227号特別クラス"
+          },
+          "Chapter": {
+            "key": "Sub_Chapter_Title_18_1",
+            "hash": 2913370564,
+            "text": "227号特別クラス"
+          },
+          "Episode": {
+            "key": "Sub_Episode_Title_18_1_1",
+            "hash": 2833764486,
+            "text": "227号特別クラスの嘆願書（１）"
+          }
+        }
+      },
+      "associationBasis": "Official GroupStory emblem category; the emblem icon identifies the featured school."
+    },
+    "ba-jp-group-v19": {
+      "schools": ["hyakkiyako"],
+      "evidence": [
+        {
+          "school": "hyakkiyako",
+          "group": 2901,
+          "row": 0,
+          "kind": "group-story-emblem",
+          "emblemId": 1002901,
+          "emblemIconPath": "UIs/01_Common/43_Emblem/Emblem_Icon_Group_Hyakkiyako"
+        }
+      ],
+      "groupStory": {
+        "volume": 19,
+        "club": "NinpoKenkyubu",
+        "emblemId": 1002901,
+        "emblemCategory": "GroupStory",
+        "emblemIconPath": "UIs/01_Common/43_Emblem/Emblem_Icon_Group_Hyakkiyako",
+        "labels": {
+          "Volume": {
+            "key": "Sub_Volume_Title_19",
+            "hash": 1585260412,
+            "text": "忍術研究部"
+          },
+          "Chapter": {
+            "key": "Sub_Chapter_Title_19_1",
+            "hash": 2648533927,
+            "text": "忍術研究部"
+          },
+          "Episode": {
+            "key": "Sub_Episode_Title_19_1_1",
+            "hash": 1559598235,
+            "text": "そうして一堂に会して（１）"
+          }
+        }
+      },
+      "associationBasis": "Official GroupStory emblem category; the emblem icon identifies the featured school."
+    },
+    "ba-jp-group-v20": {
+      "schools": ["srt"],
+      "evidence": [
+        {
+          "school": "srt",
+          "group": 3001,
+          "row": 0,
+          "kind": "group-story-emblem",
+          "emblemId": 1003001,
+          "emblemIconPath": "UIs/01_Common/43_Emblem/Emblem_Icon_Group_SRT"
+        }
+      ],
+      "groupStory": {
+        "volume": 20,
+        "club": "RabbitPlatoon",
+        "emblemId": 1003001,
+        "emblemCategory": "GroupStory",
+        "emblemIconPath": "UIs/01_Common/43_Emblem/Emblem_Icon_Group_SRT",
+        "labels": {
+          "Volume": {
+            "key": "Sub_Volume_Title_20",
+            "hash": 472522727,
+            "text": "RABBIT小隊"
+          },
+          "Chapter": {
+            "key": "Sub_Chapter_Title_20_1",
+            "hash": 2424582264,
+            "text": "RABBIT小隊"
+          },
+          "Episode": {
+            "key": "Sub_Episode_Title_20_1_1",
+            "hash": 1238451065,
+            "text": "缶詰の残影（１）"
+          }
+        }
+      },
+      "associationBasis": "Official GroupStory emblem category; the emblem icon identifies the featured school."
+    },
+    "ba-jp-group-v21": {
+      "schools": ["millennium"],
+      "evidence": [
+        {
+          "school": "millennium",
+          "group": 3101,
+          "row": 0,
+          "kind": "group-story-emblem",
+          "emblemId": 1003101,
+          "emblemIconPath": "UIs/01_Common/43_Emblem/Emblem_Icon_Group_Millennium"
+        }
+      ],
+      "groupStory": {
+        "volume": 21,
+        "club": "TheSeminar",
+        "emblemId": 1003101,
+        "emblemCategory": "GroupStory",
+        "emblemIconPath": "UIs/01_Common/43_Emblem/Emblem_Icon_Group_Millennium",
+        "labels": {
+          "Volume": {
+            "key": "Sub_Volume_Title_21",
+            "hash": 4260527092,
+            "text": "セミナー"
+          },
+          "Chapter": {
+            "key": "Sub_Chapter_Title_21_1",
+            "hash": 293870993,
+            "text": "セミナー"
+          },
+          "Episode": {
+            "key": "Sub_Episode_Title_21_1_1",
+            "hash": 2060951874,
+            "text": "価値の証明（１）"
+          }
+        }
+      },
+      "associationBasis": "Official GroupStory emblem category; the emblem icon identifies the featured school."
+    },
+    "ba-jp-group-v22": {
+      "schools": ["hyakkiyako"],
+      "evidence": [
+        {
+          "school": "hyakkiyako",
+          "group": 3201,
+          "row": 0,
+          "kind": "group-story-emblem",
+          "emblemId": 1003201,
+          "emblemIconPath": "UIs/01_Common/43_Emblem/Emblem_Icon_Group_Hyakkiyako"
+        }
+      ],
+      "groupStory": {
+        "volume": 22,
+        "club": "Onmyobu",
+        "emblemId": 1003201,
+        "emblemCategory": "GroupStory",
+        "emblemIconPath": "UIs/01_Common/43_Emblem/Emblem_Icon_Group_Hyakkiyako",
+        "labels": {
+          "Volume": {
+            "key": "Sub_Volume_Title_22",
+            "hash": 1069718562,
+            "text": "陰陽部"
+          },
+          "Chapter": {
+            "key": "Sub_Chapter_Title_22_1",
+            "hash": 1286141975,
+            "text": "陰陽部"
+          },
+          "Episode": {
+            "key": "Sub_Episode_Title_22_1_1",
+            "hash": 1350049853,
+            "text": "和楽姫の特別な公演（１）"
+          }
+        }
+      },
+      "associationBasis": "Official GroupStory emblem category; the emblem icon identifies the featured school."
+    },
+    "ba-jp-group-v23": {
+      "schools": ["millennium"],
+      "evidence": [
+        {
+          "school": "millennium",
+          "group": 3301,
+          "row": 0,
+          "kind": "group-story-emblem",
+          "emblemId": 1003301,
+          "emblemIconPath": "UIs/01_Common/43_Emblem/Emblem_Icon_Group_Millennium"
+        }
+      ],
+      "groupStory": {
+        "volume": 23,
+        "club": "TrainingClub",
+        "emblemId": 1003301,
+        "emblemCategory": "GroupStory",
+        "emblemIconPath": "UIs/01_Common/43_Emblem/Emblem_Icon_Group_Millennium",
+        "labels": {
+          "Volume": {
+            "key": "Sub_Volume_Title_23",
+            "hash": 2663362637,
+            "text": "トレーニング部"
+          },
+          "Chapter": {
+            "key": "Sub_Chapter_Title_23_1",
+            "hash": 2971393044,
+            "text": "トレーニング部"
+          },
+          "Episode": {
+            "key": "Sub_Episode_Title_23_1_1",
+            "hash": 4289461054,
+            "text": "全力で振り抜いて（１）"
+          }
+        }
+      },
+      "associationBasis": "Official GroupStory emblem category; the emblem icon identifies the featured school."
+    },
+    "ba-jp-group-v24": {
+      "schools": ["shanhaijing"],
+      "evidence": [
+        {
+          "school": "shanhaijing",
+          "group": 3401,
+          "row": 0,
+          "kind": "group-story-emblem",
+          "emblemId": 1003401,
+          "emblemIconPath": "UIs/01_Common/43_Emblem/Emblem_Icon_Group_Shanhaijing"
+        }
+      ],
+      "groupStory": {
+        "volume": 24,
+        "club": "Genryumon",
+        "emblemId": 1003401,
+        "emblemCategory": "GroupStory",
+        "emblemIconPath": "UIs/01_Common/43_Emblem/Emblem_Icon_Group_Shanhaijing",
+        "labels": {
+          "Volume": {
+            "key": "Sub_Volume_Title_24",
+            "hash": 1597652373,
+            "text": "玄龍門"
+          },
+          "Chapter": {
+            "key": "Sub_Chapter_Title_24_1",
+            "hash": 3953798249,
+            "text": "玄龍門"
+          },
+          "Episode": {
+            "key": "Sub_Episode_Title_24_1_1",
+            "hash": 3225183693,
+            "text": "山海経のちょっと特別な朝（１）"
+          }
+        }
+      },
+      "associationBasis": "Official GroupStory emblem category; the emblem icon identifies the featured school."
+    },
+    "ba-jp-group-v25": {
+      "schools": ["gehenna"],
+      "evidence": [
+        {
+          "school": "gehenna",
+          "group": 3501,
+          "row": 0,
+          "kind": "group-story-emblem",
+          "emblemId": 1003501,
+          "emblemIconPath": "UIs/01_Common/43_Emblem/Emblem_Icon_Group_Gehenna"
+        }
+      ],
+      "groupStory": {
+        "volume": 25,
+        "club": "HotSpringsDepartment",
+        "emblemId": 1003501,
+        "emblemCategory": "GroupStory",
+        "emblemIconPath": "UIs/01_Common/43_Emblem/Emblem_Icon_Group_Gehenna",
+        "labels": {
+          "Volume": {
+            "key": "Sub_Volume_Title_25",
+            "hash": 3833548953,
+            "text": "温泉開発部"
+          },
+          "Chapter": {
+            "key": "Sub_Chapter_Title_25_1",
+            "hash": 588819858,
+            "text": "温泉開発部"
+          },
+          "Episode": {
+            "key": "Sub_Episode_Title_25_1_1",
+            "hash": 258295077,
+            "text": "雪見風呂"
+          }
+        }
+      },
+      "associationBasis": "Official GroupStory emblem category; the emblem icon identifies the featured school."
+    },
+    "ba-jp-group-v26": {
+      "schools": ["trinity"],
+      "evidence": [
+        {
+          "school": "trinity",
+          "group": 3601,
+          "row": 0,
+          "kind": "group-story-emblem",
+          "emblemId": 1003601,
+          "emblemIconPath": "UIs/01_Common/43_Emblem/Emblem_Icon_Group_Trinity"
+        }
+      ],
+      "groupStory": {
+        "volume": 26,
+        "club": "TeaParty",
+        "emblemId": 1003601,
+        "emblemCategory": "GroupStory",
+        "emblemIconPath": "UIs/01_Common/43_Emblem/Emblem_Icon_Group_Trinity",
+        "labels": {
+          "Volume": {
+            "key": "Sub_Volume_Title_26",
+            "hash": 3572392299,
+            "text": "ティーパーティー"
+          },
+          "Chapter": {
+            "key": "Sub_Chapter_Title_26_1",
+            "hash": 4290268968,
+            "text": "ティーパーティー"
+          },
+          "Episode": {
+            "key": "Sub_Episode_Title_26_1_1",
+            "hash": 2913786085,
+            "text": "おかしなノスタルジー（１）"
+          }
+        }
+      },
+      "associationBasis": "Official GroupStory emblem category; the emblem icon identifies the featured school."
+    },
+    "ba-jp-group-v27": {
+      "schools": ["wildhunt"],
+      "evidence": [
+        {
+          "school": "wildhunt",
+          "group": 3701,
+          "row": 0,
+          "kind": "group-story-emblem",
+          "emblemId": 1003701,
+          "emblemIconPath": "UIs/01_Common/43_Emblem/Emblem_Icon_Group_Wildhunt"
+        }
+      ],
+      "groupStory": {
+        "volume": 27,
+        "club": "OccultClub",
+        "emblemId": 1003701,
+        "emblemCategory": "GroupStory",
+        "emblemIconPath": "UIs/01_Common/43_Emblem/Emblem_Icon_Group_Wildhunt",
+        "labels": {
+          "Volume": {
+            "key": "Sub_Volume_Title_27",
+            "hash": 155334161,
+            "text": "オカルト研究会"
+          },
+          "Chapter": {
+            "key": "Sub_Chapter_Title_27_1",
+            "hash": 2341156566,
+            "text": "オカルト研究会"
+          },
+          "Episode": {
+            "key": "Sub_Episode_Title_27_1_1",
+            "hash": 2316215755,
+            "text": "怪しい占い"
+          }
+        }
+      },
+      "associationBasis": "Official GroupStory emblem category; the emblem icon identifies the featured school."
+    },
+    "ba-jp-event-801": {
+      "schools": ["hyakkiyako"],
+      "evidence": [
+        {
+          "group": 10000005,
+          "row": 29
+        },
+        {
+          "group": 10000005,
+          "row": 32
+        },
+        {
+          "group": 10000005,
+          "row": 58
+        }
+      ]
+    },
+    "ba-jp-event-802": {
+      "schools": ["redwinter"],
+      "evidence": [
+        {
+          "group": 10001005,
+          "row": 1
+        },
+        {
+          "group": 10001005,
+          "row": 5
+        },
+        {
+          "group": 10001005,
+          "row": 19
+        }
+      ]
+    },
+    "ba-jp-event-803": {
+      "schools": ["trinity", "gehenna"],
+      "evidence": [
+        {
+          "group": 10002005,
+          "row": 232
+        },
+        {
+          "group": 10002070,
+          "row": 34
+        },
+        {
+          "group": 10002170,
+          "row": 28
+        }
+      ]
+    },
+    "ba-jp-event-804": {
+      "schools": ["gehenna"],
+      "evidence": [
+        {
+          "group": 10003005,
+          "row": 84
+        },
+        {
+          "group": 10003005,
+          "row": 91
+        },
+        {
+          "group": 10003005,
+          "row": 149
+        }
+      ]
+    },
+    "ba-jp-event-805": {
+      "schools": ["shanhaijing"],
+      "evidence": [
+        {
+          "group": 10004005,
+          "row": 1
+        },
+        {
+          "group": 10004005,
+          "row": 2
+        },
+        {
+          "group": 10004040,
+          "row": 18
+        },
+        {
+          "group": 10004040,
+          "row": 34
+        }
+      ]
+    },
+    "ba-jp-event-806": {
+      "schools": ["millennium"],
+      "evidence": [
+        {
+          "school": "millennium",
+          "kind": "event-character-bonus",
+          "eventContentId": 806,
+          "roster": 10,
+          "characters": [
+            10007, 10008, 10026, 10027, 13000, 13010, 16001, 20001, 23003, 26001
+          ]
+        }
+      ],
+      "associationBasis": "Derived from the official event character-bonus (pickup) roster: a school is featured when it supplies at least 20% of it. Boss-raid style events with no roster carry no derived school."
+    },
+    "ba-jp-event-808": {
+      "schools": ["gehenna", "redwinter"],
+      "evidence": [
+        {
+          "school": "gehenna",
+          "kind": "event-character-bonus",
+          "eventContentId": 808,
+          "roster": 9,
+          "characters": [10004, 10006, 10030, 20008, 26000]
+        },
+        {
+          "school": "redwinter",
+          "kind": "event-character-bonus",
+          "eventContentId": 808,
+          "roster": 9,
+          "characters": [10017, 16007, 20009, 26006]
+        }
+      ],
+      "associationBasis": "Derived from the official event character-bonus (pickup) roster: a school is featured when it supplies at least 20% of it. Boss-raid style events with no roster carry no derived school."
+    },
+    "ba-jp-event-809": {
+      "schools": ["gehenna", "abydos"],
+      "evidence": [
+        {
+          "school": "gehenna",
+          "kind": "event-character-bonus",
+          "eventContentId": 809,
+          "roster": 11,
+          "characters": [10000, 10031, 10032, 13005, 13006, 16000]
+        },
+        {
+          "school": "abydos",
+          "kind": "event-character-bonus",
+          "eventContentId": 809,
+          "roster": 11,
+          "characters": [10005, 10010, 13004, 13008, 23005]
+        }
+      ],
+      "associationBasis": "Derived from the official event character-bonus (pickup) roster: a school is featured when it supplies at least 20% of it. Boss-raid style events with no roster carry no derived school."
+    },
+    "ba-jp-event-810": {
+      "schools": ["gehenna", "millennium", "trinity"],
+      "evidence": [
+        {
+          "school": "gehenna",
+          "kind": "event-character-bonus",
+          "eventContentId": 810,
+          "roster": 86,
+          "characters": [
+            10000, 10002, 10004, 10006, 10009, 10022, 10023, 10030, 10031,
+            10032, 13002, 13005, 13006, 13007, 16000, 16006, 20008, 20012,
+            23001, 26000, 26002
+          ]
+        },
+        {
+          "school": "millennium",
+          "kind": "event-character-bonus",
+          "eventContentId": 810,
+          "roster": 86,
+          "characters": [
+            10001, 10007, 10008, 10012, 10015, 10016, 10018, 10026, 10027,
+            10028, 13000, 13010, 13011, 16001, 16002, 20000, 20001, 20013,
+            23003, 23004, 26001
+          ]
+        },
+        {
+          "school": "trinity",
+          "kind": "event-character-bonus",
+          "eventContentId": 810,
+          "roster": 86,
+          "characters": [
+            10003, 10013, 10019, 10020, 10021, 10029, 13003, 16003, 16005,
+            20003, 20004, 20005, 23000, 23002, 23007, 23008, 26003, 26004, 26005
+          ]
+        }
+      ],
+      "associationBasis": "Derived from the official event character-bonus (pickup) roster: a school is featured when it supplies at least 20% of it. Boss-raid style events with no roster carry no derived school."
+    },
+    "ba-jp-event-812": {
+      "schools": ["trinity"],
+      "evidence": [
+        {
+          "school": "trinity",
+          "kind": "event-character-bonus",
+          "eventContentId": 812,
+          "roster": 13,
+          "characters": [
+            10013, 10029, 10035, 10036, 13003, 16003, 20003, 23000, 23002,
+            23008, 26003, 26004, 26005
+          ]
+        }
+      ],
+      "associationBasis": "Derived from the official event character-bonus (pickup) roster: a school is featured when it supplies at least 20% of it. Boss-raid style events with no roster carry no derived school."
+    },
+    "ba-jp-event-813": {
+      "schools": ["gehenna", "hyakkiyako"],
+      "evidence": [
+        {
+          "school": "gehenna",
+          "kind": "event-character-bonus",
+          "eventContentId": 813,
+          "roster": 16,
+          "characters": [10002, 10009, 13002, 13007, 20012, 20016, 23001, 26002]
+        },
+        {
+          "school": "hyakkiyako",
+          "kind": "event-character-bonus",
+          "eventContentId": 813,
+          "roster": 16,
+          "characters": [10014, 10034, 13001, 13009, 16004, 16009, 20015, 23006]
+        }
+      ],
+      "associationBasis": "Derived from the official event character-bonus (pickup) roster: a school is featured when it supplies at least 20% of it. Boss-raid style events with no roster carry no derived school."
+    },
+    "ba-jp-event-814": {
+      "schools": ["abydos"],
+      "evidence": [
+        {
+          "school": "abydos",
+          "kind": "event-character-bonus",
+          "eventContentId": 814,
+          "roster": 11,
+          "characters": [
+            10005, 10010, 10024, 10044, 13004, 13008, 20011, 23005, 26007
+          ]
+        }
+      ],
+      "associationBasis": "Derived from the official event character-bonus (pickup) roster: a school is featured when it supplies at least 20% of it. Boss-raid style events with no roster carry no derived school."
+    },
+    "ba-jp-event-816": {
+      "schools": ["trinity"],
+      "evidence": [
+        {
+          "school": "trinity",
+          "kind": "event-character-bonus",
+          "eventContentId": 816,
+          "roster": 11,
+          "characters": [
+            10013, 10029, 10049, 13003, 16003, 16005, 20003, 20004, 23000, 26005
+          ]
+        }
+      ],
+      "associationBasis": "Derived from the official event character-bonus (pickup) roster: a school is featured when it supplies at least 20% of it. Boss-raid style events with no roster carry no derived school."
+    },
+    "ba-jp-event-817": {
+      "schools": ["millennium"],
+      "evidence": [
+        {
+          "school": "millennium",
+          "kind": "event-character-bonus",
+          "eventContentId": 817,
+          "roster": 12,
+          "characters": [
+            10007, 10012, 10051, 10052, 13010, 16002, 16010, 20000, 20013,
+            23003, 23004, 26001
+          ]
+        }
+      ],
+      "associationBasis": "Derived from the official event character-bonus (pickup) roster: a school is featured when it supplies at least 20% of it. Boss-raid style events with no roster carry no derived school."
+    },
+    "ba-jp-event-818": {
+      "schools": ["millennium", "trinity", "gehenna"],
+      "evidence": [
+        {
+          "school": "millennium",
+          "kind": "event-character-bonus",
+          "eventContentId": 818,
+          "roster": 23,
+          "characters": [10051, 10052, 10053, 13010, 16010, 20013, 23003, 26001]
+        },
+        {
+          "school": "trinity",
+          "kind": "event-character-bonus",
+          "eventContentId": 818,
+          "roster": 23,
+          "characters": [10054, 13003, 16011, 23002, 23008, 26003]
+        },
+        {
+          "school": "gehenna",
+          "kind": "event-character-bonus",
+          "eventContentId": 818,
+          "roster": 23,
+          "characters": [10002, 10009, 13002, 13007, 20008]
+        }
+      ],
+      "associationBasis": "Derived from the official event character-bonus (pickup) roster: a school is featured when it supplies at least 20% of it. Boss-raid style events with no roster carry no derived school."
+    },
+    "ba-jp-event-819": {
+      "schools": ["trinity"],
+      "evidence": [
+        {
+          "school": "trinity",
+          "kind": "event-character-bonus",
+          "eventContentId": 819,
+          "roster": 11,
+          "characters": [
+            10013, 10056, 13003, 16003, 16005, 16011, 20003, 20004, 20021,
+            23002, 26003
+          ]
+        }
+      ],
+      "associationBasis": "Derived from the official event character-bonus (pickup) roster: a school is featured when it supplies at least 20% of it. Boss-raid style events with no roster carry no derived school."
+    },
+    "ba-jp-event-820": {
+      "schools": ["gehenna"],
+      "evidence": [
+        {
+          "school": "gehenna",
+          "kind": "event-character-bonus",
+          "eventContentId": 820,
+          "roster": 17,
+          "characters": [
+            10000, 10002, 10009, 10031, 10032, 10057, 13002, 13005, 13006,
+            13007, 16000, 16012, 20022, 23001, 26002
+          ]
+        }
+      ],
+      "associationBasis": "Derived from the official event character-bonus (pickup) roster: a school is featured when it supplies at least 20% of it. Boss-raid style events with no roster carry no derived school."
+    },
+    "ba-jp-event-824": {
+      "schools": ["trinity", "millennium"],
+      "evidence": [
+        {
+          "school": "trinity",
+          "kind": "event-character-bonus",
+          "eventContentId": 824,
+          "roster": 132,
+          "characters": [
+            10003, 10013, 10019, 10020, 10021, 10029, 10035, 10036, 10049,
+            10054, 10056, 10058, 10059, 10061, 13003, 16003, 16005, 16011,
+            20003, 20004, 20005, 20021, 20024, 23000, 23002, 23007, 23008,
+            26003, 26004, 26005
+          ]
+        },
+        {
+          "school": "millennium",
+          "kind": "event-character-bonus",
+          "eventContentId": 824,
+          "roster": 132,
+          "characters": [
+            10001, 10007, 10008, 10012, 10015, 10016, 10018, 10026, 10027,
+            10028, 10051, 10052, 10053, 10062, 10063, 13000, 13010, 13011,
+            16001, 16002, 16010, 20000, 20001, 20013, 20019, 20020, 23003,
+            23004, 26001
+          ]
+        }
+      ],
+      "associationBasis": "Derived from the official event character-bonus (pickup) roster: a school is featured when it supplies at least 20% of it. Boss-raid style events with no roster carry no derived school."
+    },
+    "ba-jp-event-825": {
+      "schools": ["millennium"],
+      "evidence": [
+        {
+          "school": "millennium",
+          "kind": "event-character-bonus",
+          "eventContentId": 825,
+          "roster": 20,
+          "characters": [
+            10008, 10015, 10016, 10018, 10026, 10027, 10028, 10052, 10053,
+            10062, 10063, 10066, 10067, 13000, 13010, 13011, 16001, 20001,
+            20019, 26009
+          ]
+        }
+      ],
+      "associationBasis": "Derived from the official event character-bonus (pickup) roster: a school is featured when it supplies at least 20% of it. Boss-raid style events with no roster carry no derived school."
+    },
+    "ba-jp-event-826": {
+      "schools": ["gehenna", "shanhaijing", "trinity"],
+      "evidence": [
+        {
+          "school": "gehenna",
+          "kind": "event-character-bonus",
+          "eventContentId": 826,
+          "roster": 19,
+          "characters": [10000, 10064, 13005, 13006, 16000, 20025, 23001, 26002]
+        },
+        {
+          "school": "shanhaijing",
+          "kind": "event-character-bonus",
+          "eventContentId": 826,
+          "roster": 19,
+          "characters": [10011, 10025, 10050, 10069, 10070, 20002, 20006]
+        },
+        {
+          "school": "trinity",
+          "kind": "event-character-bonus",
+          "eventContentId": 826,
+          "roster": 19,
+          "characters": [10029, 10049, 23000, 26005]
+        }
+      ],
+      "associationBasis": "Derived from the official event character-bonus (pickup) roster: a school is featured when it supplies at least 20% of it. Boss-raid style events with no roster carry no derived school."
+    },
+    "ba-jp-event-827": {
+      "schools": ["srt", "gehenna", "valkyrie"],
+      "evidence": [
+        {
+          "school": "srt",
+          "kind": "event-character-bonus",
+          "eventContentId": 827,
+          "roster": 15,
+          "characters": [10038, 10039, 10071, 10072, 20014, 20018, 26010]
+        },
+        {
+          "school": "gehenna",
+          "kind": "event-character-bonus",
+          "eventContentId": 827,
+          "roster": 15,
+          "characters": [10009, 16006, 26002]
+        },
+        {
+          "school": "valkyrie",
+          "kind": "event-character-bonus",
+          "eventContentId": 827,
+          "roster": 15,
+          "characters": [13012, 16008, 20023]
+        }
+      ],
+      "associationBasis": "Derived from the official event character-bonus (pickup) roster: a school is featured when it supplies at least 20% of it. Boss-raid style events with no roster carry no derived school."
+    },
+    "ba-jp-event-828": {
+      "schools": ["trinity"],
+      "evidence": [
+        {
+          "school": "trinity",
+          "kind": "event-character-bonus",
+          "eventContentId": 828,
+          "roster": 35,
+          "characters": [
+            10003, 10013, 10019, 10020, 10021, 10029, 10035, 10036, 10049,
+            10054, 10056, 10058, 10059, 10061, 10068, 10073, 10074, 13003,
+            16003, 16005, 16011, 16013, 20003, 20004, 20005, 20021, 20024,
+            20028, 23000, 23002, 23007, 23008, 26003, 26004, 26005
+          ]
+        }
+      ],
+      "associationBasis": "Derived from the official event character-bonus (pickup) roster: a school is featured when it supplies at least 20% of it. Boss-raid style events with no roster carry no derived school."
+    },
+    "ba-jp-event-829": {
+      "schools": ["redwinter", "gehenna"],
+      "evidence": [
+        {
+          "school": "redwinter",
+          "kind": "event-character-bonus",
+          "eventContentId": 829,
+          "roster": 15,
+          "characters": [10017, 10037, 10055, 10075, 13013, 20009, 20010, 20026]
+        },
+        {
+          "school": "gehenna",
+          "kind": "event-character-bonus",
+          "eventContentId": 829,
+          "roster": 15,
+          "characters": [10004, 10006, 10030, 20008, 26000]
+        }
+      ],
+      "associationBasis": "Derived from the official event character-bonus (pickup) roster: a school is featured when it supplies at least 20% of it. Boss-raid style events with no roster carry no derived school."
+    },
+    "ba-jp-event-830": {
+      "schools": ["gehenna", "trinity"],
+      "evidence": [
+        {
+          "school": "gehenna",
+          "kind": "event-character-bonus",
+          "eventContentId": 830,
+          "roster": 18,
+          "characters": [
+            10004, 10006, 10022, 10023, 10030, 10060, 10078, 20008, 26000
+          ]
+        },
+        {
+          "school": "trinity",
+          "kind": "event-character-bonus",
+          "eventContentId": 830,
+          "roster": 18,
+          "characters": [
+            10013, 10059, 10077, 13003, 16005, 16011, 20003, 20004, 20024
+          ]
+        }
+      ],
+      "associationBasis": "Derived from the official event character-bonus (pickup) roster: a school is featured when it supplies at least 20% of it. Boss-raid style events with no roster carry no derived school."
+    },
+    "ba-jp-event-831": {
+      "schools": ["millennium"],
+      "evidence": [
+        {
+          "school": "millennium",
+          "kind": "event-character-bonus",
+          "eventContentId": 831,
+          "roster": 19,
+          "characters": [
+            10001, 10007, 10051, 10052, 10053, 10063, 10076, 13010, 16002,
+            16010, 20000, 20013, 20020, 23003, 23004, 26001
+          ]
+        }
+      ],
+      "associationBasis": "Derived from the official event character-bonus (pickup) roster: a school is featured when it supplies at least 20% of it. Boss-raid style events with no roster carry no derived school."
+    },
+    "ba-jp-event-832": {
+      "schools": ["millennium"],
+      "evidence": [
+        {
+          "school": "millennium",
+          "kind": "event-character-bonus",
+          "eventContentId": 832,
+          "roster": 14,
+          "characters": [
+            10007, 10012, 10053, 10076, 10084, 10085, 13010, 16002, 20013,
+            20020, 23003, 26001
+          ]
+        }
+      ],
+      "associationBasis": "Derived from the official event character-bonus (pickup) roster: a school is featured when it supplies at least 20% of it. Boss-raid style events with no roster carry no derived school."
+    },
+    "ba-jp-event-833": {
+      "schools": ["gehenna"],
+      "evidence": [
+        {
+          "school": "gehenna",
+          "kind": "event-character-bonus",
+          "eventContentId": 833,
+          "roster": 20,
+          "characters": [
+            10002, 10004, 10006, 10009, 10030, 10060, 10078, 10086, 10087,
+            13002, 13007, 16006, 16014, 20008, 20012, 20016, 20033, 23001,
+            26000, 26002
+          ]
+        }
+      ],
+      "associationBasis": "Derived from the official event character-bonus (pickup) roster: a school is featured when it supplies at least 20% of it. Boss-raid style events with no roster carry no derived school."
+    },
+    "ba-jp-event-834": {
+      "schools": ["gehenna", "millennium", "trinity"],
+      "evidence": [
+        {
+          "school": "gehenna",
+          "kind": "event-character-bonus",
+          "eventContentId": 834,
+          "roster": 170,
+          "characters": [
+            10000, 10002, 10004, 10006, 10009, 10022, 10023, 10030, 10031,
+            10032, 10057, 10060, 10064, 10078, 10086, 10087, 10088, 10089,
+            13002, 13005, 13006, 13007, 16000, 16006, 16012, 16014, 20008,
+            20012, 20016, 20022, 20025, 20030, 20033, 23001, 26000, 26002
+          ]
+        },
+        {
+          "school": "millennium",
+          "kind": "event-character-bonus",
+          "eventContentId": 834,
+          "roster": 170,
+          "characters": [
+            10001, 10007, 10008, 10012, 10015, 10016, 10018, 10026, 10027,
+            10028, 10051, 10052, 10053, 10062, 10063, 10066, 10067, 10076,
+            10084, 10085, 13000, 13010, 13011, 16001, 16002, 16010, 20000,
+            20001, 20013, 20019, 20020, 20032, 23003, 23004, 26001, 26009
+          ]
+        },
+        {
+          "school": "trinity",
+          "kind": "event-character-bonus",
+          "eventContentId": 834,
+          "roster": 170,
+          "characters": [
+            10003, 10013, 10019, 10020, 10021, 10029, 10035, 10036, 10049,
+            10054, 10056, 10058, 10059, 10061, 10068, 10073, 10074, 10077,
+            13003, 16003, 16005, 16011, 16013, 20003, 20004, 20005, 20021,
+            20024, 20028, 23000, 23002, 23007, 23008, 26003, 26004, 26005
+          ]
+        }
+      ],
+      "associationBasis": "Derived from the official event character-bonus (pickup) roster: a school is featured when it supplies at least 20% of it. Boss-raid style events with no roster carry no derived school."
+    },
+    "ba-jp-event-835": {
+      "schools": ["hyakkiyako", "gehenna"],
+      "evidence": [
+        {
+          "school": "hyakkiyako",
+          "kind": "event-character-bonus",
+          "eventContentId": 835,
+          "roster": 16,
+          "characters": [
+            10065, 10081, 10082, 10083, 10090, 13001, 16004, 20015, 20035
+          ]
+        },
+        {
+          "school": "gehenna",
+          "kind": "event-character-bonus",
+          "eventContentId": 835,
+          "roster": 16,
+          "characters": [10004, 10006, 16014, 20008, 20016, 20033, 26000]
+        }
+      ],
+      "associationBasis": "Derived from the official event character-bonus (pickup) roster: a school is featured when it supplies at least 20% of it. Boss-raid style events with no roster carry no derived school."
+    },
+    "ba-jp-event-836": {
+      "schools": ["trinity"],
+      "evidence": [
+        {
+          "school": "trinity",
+          "kind": "event-character-bonus",
+          "eventContentId": 836,
+          "roster": 39,
+          "characters": [
+            10003, 10013, 10019, 10020, 10021, 10029, 10035, 10036, 10049,
+            10054, 10056, 10058, 10059, 10061, 10068, 10073, 10074, 10077,
+            10091, 10092, 13003, 16003, 16005, 16011, 16013, 16015, 20003,
+            20004, 20005, 20021, 20024, 20028, 23000, 23002, 23007, 23008,
+            26003, 26004, 26005
+          ]
+        }
+      ],
+      "associationBasis": "Derived from the official event character-bonus (pickup) roster: a school is featured when it supplies at least 20% of it. Boss-raid style events with no roster carry no derived school."
+    },
+    "ba-jp-event-837": {
+      "schools": ["millennium", "valkyrie"],
+      "evidence": [
+        {
+          "school": "millennium",
+          "kind": "event-character-bonus",
+          "eventContentId": 837,
+          "roster": 13,
+          "characters": [10051, 10076, 16002, 16010, 20000, 20013, 23004]
+        },
+        {
+          "school": "valkyrie",
+          "kind": "event-character-bonus",
+          "eventContentId": 837,
+          "roster": 13,
+          "characters": [10096, 13012, 16008, 20023, 20037, 26012]
+        }
+      ],
+      "associationBasis": "Derived from the official event character-bonus (pickup) roster: a school is featured when it supplies at least 20% of it. Boss-raid style events with no roster carry no derived school."
+    },
+    "ba-jp-event-838": {
+      "schools": ["trinity", "arius"],
+      "evidence": [
+        {
+          "school": "trinity",
+          "kind": "event-character-bonus",
+          "eventContentId": 838,
+          "roster": 19,
+          "characters": [
+            10003, 10019, 10020, 10021, 10059, 10074, 16013, 20005, 20024, 23007
+          ]
+        },
+        {
+          "school": "arius",
+          "kind": "event-character-bonus",
+          "eventContentId": 838,
+          "roster": 19,
+          "characters": [10041, 10042, 10048, 10101, 10102, 20017, 26013]
+        }
+      ],
+      "associationBasis": "Derived from the official event character-bonus (pickup) roster: a school is featured when it supplies at least 20% of it. Boss-raid style events with no roster carry no derived school."
+    },
+    "ba-jp-event-839": {
+      "schools": ["shanhaijing", "redwinter"],
+      "evidence": [
+        {
+          "school": "shanhaijing",
+          "kind": "event-character-bonus",
+          "eventContentId": 839,
+          "roster": 16,
+          "characters": [10011, 10025, 10050, 10069, 10070, 20002, 20006]
+        },
+        {
+          "school": "redwinter",
+          "kind": "event-character-bonus",
+          "eventContentId": 839,
+          "roster": 16,
+          "characters": [10017, 10037, 10103, 16007, 20009, 20038]
+        }
+      ],
+      "associationBasis": "Derived from the official event character-bonus (pickup) roster: a school is featured when it supplies at least 20% of it. Boss-raid style events with no roster carry no derived school."
+    },
+    "ba-jp-event-840": {
+      "schools": ["shanhaijing"],
+      "evidence": [
+        {
+          "school": "shanhaijing",
+          "kind": "event-character-bonus",
+          "eventContentId": 840,
+          "roster": 17,
+          "characters": [
+            10011, 10025, 10050, 10069, 10070, 10104, 20002, 20006, 20039
+          ]
+        }
+      ],
+      "associationBasis": "Derived from the official event character-bonus (pickup) roster: a school is featured when it supplies at least 20% of it. Boss-raid style events with no roster carry no derived school."
+    },
+    "ba-jp-event-841": {
+      "schools": ["trinity", "abydos"],
+      "evidence": [
+        {
+          "school": "trinity",
+          "kind": "event-character-bonus",
+          "eventContentId": 841,
+          "roster": 39,
+          "characters": [
+            10036, 10056, 10058, 10059, 10061, 10105, 10106, 16016, 20021,
+            20024, 20028, 23002, 23008, 26003
+          ]
+        },
+        {
+          "school": "abydos",
+          "kind": "event-character-bonus",
+          "eventContentId": 841,
+          "roster": 39,
+          "characters": [
+            10005, 10010, 10024, 10044, 10045, 10098, 13004, 13008, 20011,
+            20027, 20036, 23005, 26007
+          ]
+        }
+      ],
+      "associationBasis": "Derived from the official event character-bonus (pickup) roster: a school is featured when it supplies at least 20% of it. Boss-raid style events with no roster carry no derived school."
+    },
+    "ba-jp-event-842": {
+      "schools": ["millennium"],
+      "evidence": [
+        {
+          "school": "millennium",
+          "kind": "event-character-bonus",
+          "eventContentId": 842,
+          "roster": 39,
+          "characters": [
+            10001, 10007, 10008, 10012, 10015, 10016, 10018, 10026, 10027,
+            10028, 10051, 10052, 10053, 10062, 10063, 10066, 10067, 10076,
+            10084, 10085, 10094, 10095, 10108, 10109, 13000, 13010, 13011,
+            16001, 16002, 16010, 20000, 20001, 20013, 20019, 20020, 20032,
+            23004, 26001, 26009
+          ]
+        }
+      ],
+      "associationBasis": "Derived from the official event character-bonus (pickup) roster: a school is featured when it supplies at least 20% of it. Boss-raid style events with no roster carry no derived school."
+    },
+    "ba-jp-event-843": {
+      "schools": ["millennium", "trinity"],
+      "evidence": [
+        {
+          "school": "millennium",
+          "kind": "event-character-bonus",
+          "eventContentId": 843,
+          "roster": 52,
+          "characters": [
+            10001, 10007, 10008, 10012, 10015, 10016, 10018, 10026, 10027,
+            10028, 10051, 10052, 10062, 10063, 10066, 10067, 10076, 10084,
+            10085, 10094, 10095, 10111, 10112, 13000, 13010, 13011, 16001,
+            16002, 16010, 20000, 20001, 20013, 20019, 20020, 20041, 23003,
+            23004, 26001, 26009, 26014
+          ]
+        },
+        {
+          "school": "trinity",
+          "kind": "event-character-bonus",
+          "eventContentId": 843,
+          "roster": 52,
+          "characters": [
+            10020, 10029, 10049, 10091, 10092, 10110, 13003, 16011, 16013,
+            16015, 23000, 26005
+          ]
+        }
+      ],
+      "associationBasis": "Derived from the official event character-bonus (pickup) roster: a school is featured when it supplies at least 20% of it. Boss-raid style events with no roster carry no derived school."
+    },
+    "ba-jp-event-844": {
+      "schools": ["gehenna"],
+      "evidence": [
+        {
+          "school": "gehenna",
+          "kind": "event-character-bonus",
+          "eventContentId": 844,
+          "roster": 19,
+          "characters": [
+            10002, 10004, 10006, 10009, 10022, 10023, 10030, 10057, 10087,
+            10113, 10114, 13002, 13007, 20008, 20012, 20022, 23001, 26000, 26002
+          ]
+        }
+      ],
+      "associationBasis": "Derived from the official event character-bonus (pickup) roster: a school is featured when it supplies at least 20% of it. Boss-raid style events with no roster carry no derived school."
+    },
+    "ba-jp-event-845": {
+      "schools": ["srt", "gehenna"],
+      "evidence": [
+        {
+          "school": "srt",
+          "kind": "event-character-bonus",
+          "eventContentId": 845,
+          "roster": 20,
+          "characters": [10038, 10039, 10071, 10072, 10097, 20014, 20018, 26010]
+        },
+        {
+          "school": "gehenna",
+          "kind": "event-character-bonus",
+          "eventContentId": 845,
+          "roster": 20,
+          "characters": [10006, 10030, 10113, 20008, 20012, 26000]
+        }
+      ],
+      "associationBasis": "Derived from the official event character-bonus (pickup) roster: a school is featured when it supplies at least 20% of it. Boss-raid style events with no roster carry no derived school."
+    },
+    "ba-jp-event-846": {
+      "schools": ["gehenna", "abydos"],
+      "evidence": [
+        {
+          "school": "gehenna",
+          "kind": "event-character-bonus",
+          "eventContentId": 846,
+          "roster": 21,
+          "characters": [
+            10004, 10006, 10023, 10078, 10107, 16014, 20008, 20012, 20016,
+            20033, 20040, 26000
+          ]
+        },
+        {
+          "school": "abydos",
+          "kind": "event-character-bonus",
+          "eventContentId": 846,
+          "roster": 21,
+          "characters": [10005, 10010, 13004, 13008, 23005]
+        }
+      ],
+      "associationBasis": "Derived from the official event character-bonus (pickup) roster: a school is featured when it supplies at least 20% of it. Boss-raid style events with no roster carry no derived school."
+    },
+    "ba-jp-event-847": {
+      "schools": ["hyakkiyako"],
+      "evidence": [
+        {
+          "school": "hyakkiyako",
+          "kind": "event-character-bonus",
+          "eventContentId": 847,
+          "roster": 24,
+          "characters": [
+            10014, 10033, 10034, 10040, 10043, 10046, 10047, 10065, 10081,
+            10082, 10083, 10090, 10119, 10121, 13001, 13009, 13014, 16004,
+            16009, 20015, 20029, 20047, 23006, 26008
+          ]
+        }
+      ],
+      "associationBasis": "Derived from the official event character-bonus (pickup) roster: a school is featured when it supplies at least 20% of it. Boss-raid style events with no roster carry no derived school."
+    },
+    "ba-jp-event-848": {
+      "schools": ["trinity", "gehenna"],
+      "evidence": [
+        {
+          "school": "trinity",
+          "kind": "event-character-bonus",
+          "eventContentId": 848,
+          "roster": 27,
+          "characters": [
+            10021, 10059, 10074, 10077, 10110, 10122, 10123, 10124, 13003,
+            16005, 16011, 16013, 20004, 20005, 20024, 20048, 26015
+          ]
+        },
+        {
+          "school": "gehenna",
+          "kind": "event-character-bonus",
+          "eventContentId": 848,
+          "roster": 27,
+          "characters": [10002, 10009, 10022, 10023, 10060, 10078, 13002, 13007]
+        }
+      ],
+      "associationBasis": "Derived from the official event character-bonus (pickup) roster: a school is featured when it supplies at least 20% of it. Boss-raid style events with no roster carry no derived school."
+    },
+    "ba-jp-event-849": {
+      "schools": ["trinity", "millennium"],
+      "evidence": [
+        {
+          "school": "trinity",
+          "kind": "event-character-bonus",
+          "eventContentId": 849,
+          "roster": 21,
+          "characters": [
+            10013, 10029, 10049, 10077, 10091, 10092, 10120, 16005, 16015,
+            23000, 26005, 26015
+          ]
+        },
+        {
+          "school": "millennium",
+          "kind": "event-character-bonus",
+          "eventContentId": 849,
+          "roster": 21,
+          "characters": [10007, 10051, 10053, 10108, 13010, 20042, 23004]
+        }
+      ],
+      "associationBasis": "Derived from the official event character-bonus (pickup) roster: a school is featured when it supplies at least 20% of it. Boss-raid style events with no roster carry no derived school."
+    },
+    "ba-jp-event-850": {
+      "schools": ["millennium", "wildhunt"],
+      "evidence": [
+        {
+          "school": "millennium",
+          "kind": "event-character-bonus",
+          "eventContentId": 850,
+          "roster": 17,
+          "characters": [10007, 10016, 10052, 10109, 20041, 20042]
+        },
+        {
+          "school": "wildhunt",
+          "kind": "event-character-bonus",
+          "eventContentId": 850,
+          "roster": 17,
+          "characters": [10125, 10126, 10127, 10128, 20050]
+        }
+      ],
+      "associationBasis": "Derived from the official event character-bonus (pickup) roster: a school is featured when it supplies at least 20% of it. Boss-raid style events with no roster carry no derived school."
+    },
+    "ba-jp-event-851": {
+      "schools": ["trinity"],
+      "evidence": [
+        {
+          "school": "trinity",
+          "kind": "event-character-bonus",
+          "eventContentId": 851,
+          "roster": 19,
+          "characters": [
+            10013, 10020, 10035, 10068, 10073, 10077, 10124, 10129, 13003,
+            16003, 16005, 16011, 16013, 16018, 20003, 20004, 20051, 26004, 26015
+          ]
+        }
+      ],
+      "associationBasis": "Derived from the official event character-bonus (pickup) roster: a school is featured when it supplies at least 20% of it. Boss-raid style events with no roster carry no derived school."
+    },
+    "ba-jp-event-852": {
+      "schools": ["trinity"],
+      "evidence": [
+        {
+          "school": "trinity",
+          "kind": "event-character-bonus",
+          "eventContentId": 852,
+          "roster": 21,
+          "characters": [
+            10003, 10019, 10020, 10035, 10036, 10059, 10061, 10073, 10122,
+            20003, 20004, 20005, 20024, 20048, 23007, 23008, 26004
+          ]
+        }
+      ],
+      "associationBasis": "Derived from the official event character-bonus (pickup) roster: a school is featured when it supplies at least 20% of it. Boss-raid style events with no roster carry no derived school."
+    },
+    "ba-jp-event-853": {
+      "schools": ["hyakkiyako", "arius", "gehenna"],
+      "evidence": [
+        {
+          "school": "hyakkiyako",
+          "kind": "event-character-bonus",
+          "eventContentId": 853,
+          "roster": 21,
+          "characters": [
+            10014, 10040, 10046, 10047, 10065, 10132, 13001, 16009, 20046, 20053
+          ]
+        },
+        {
+          "school": "arius",
+          "kind": "event-character-bonus",
+          "eventContentId": 853,
+          "roster": 21,
+          "characters": [10041, 10042, 10102, 20017, 20049, 26013]
+        },
+        {
+          "school": "gehenna",
+          "kind": "event-character-bonus",
+          "eventContentId": 853,
+          "roster": 21,
+          "characters": [10107, 16014, 20016, 20033, 20040]
+        }
+      ],
+      "associationBasis": "Derived from the official event character-bonus (pickup) roster: a school is featured when it supplies at least 20% of it. Boss-raid style events with no roster carry no derived school."
+    },
+    "ba-jp-event-856": {
+      "schools": ["srt", "millennium", "valkyrie", "wildhunt"],
+      "evidence": [
+        {
+          "school": "srt",
+          "kind": "event-character-bonus",
+          "eventContentId": 856,
+          "roster": 28,
+          "characters": [10038, 10039, 10071, 10072, 10097, 20014, 20018, 26010]
+        },
+        {
+          "school": "millennium",
+          "kind": "event-character-bonus",
+          "eventContentId": 856,
+          "roster": 28,
+          "characters": [10001, 10133, 10136, 20020, 20032, 20041, 20054]
+        },
+        {
+          "school": "valkyrie",
+          "kind": "event-character-bonus",
+          "eventContentId": 856,
+          "roster": 28,
+          "characters": [10096, 10137, 13012, 16008, 20023, 20037, 26012]
+        },
+        {
+          "school": "wildhunt",
+          "kind": "event-character-bonus",
+          "eventContentId": 856,
+          "roster": 28,
+          "characters": [10125, 10126, 10127, 10128, 10138, 20050]
+        }
+      ],
+      "associationBasis": "Derived from the official event character-bonus (pickup) roster: a school is featured when it supplies at least 20% of it. Boss-raid style events with no roster carry no derived school."
+    },
+    "ba-jp-event-859": {
+      "schools": ["shanhaijing", "redwinter"],
+      "evidence": [
+        {
+          "school": "shanhaijing",
+          "kind": "event-character-bonus",
+          "eventContentId": 859,
+          "roster": 25,
+          "characters": [
+            10011, 10025, 10050, 10069, 10070, 10104, 10143, 10145, 20002,
+            20006, 20039
+          ]
+        },
+        {
+          "school": "redwinter",
+          "kind": "event-character-bonus",
+          "eventContentId": 859,
+          "roster": 25,
+          "characters": [10017, 10037, 10103, 16007, 20009, 20038]
+        }
+      ],
+      "associationBasis": "Derived from the official event character-bonus (pickup) roster: a school is featured when it supplies at least 20% of it. Boss-raid style events with no roster carry no derived school."
+    },
+    "ba-jp-event-860": {
+      "schools": ["gehenna"],
+      "evidence": [
+        {
+          "school": "gehenna",
+          "kind": "event-character-bonus",
+          "eventContentId": 860,
+          "roster": 36,
+          "characters": [
+            10004, 10006, 10022, 10023, 10030, 10086, 10087, 10107, 10146,
+            10147, 10148, 16014, 20008, 20016, 20033, 20040, 20060, 26000, 26016
+          ]
+        }
+      ],
+      "associationBasis": "Derived from the official event character-bonus (pickup) roster: a school is featured when it supplies at least 20% of it. Boss-raid style events with no roster carry no derived school."
+    },
+    "ba-jp-event-861": {
+      "schools": ["trinity"],
+      "evidence": [
+        {
+          "school": "trinity",
+          "kind": "event-character-bonus",
+          "eventContentId": 861,
+          "roster": 30,
+          "characters": [10021, 10035, 10073, 10124, 16005, 20004, 26004, 26015]
+        }
+      ],
+      "associationBasis": "Derived from the official event character-bonus (pickup) roster: a school is featured when it supplies at least 20% of it. Boss-raid style events with no roster carry no derived school."
+    },
+    "ba-jp-event-862": {
+      "schools": ["redwinter"],
+      "evidence": [
+        {
+          "school": "redwinter",
+          "kind": "event-character-bonus",
+          "eventContentId": 862,
+          "roster": 28,
+          "characters": [
+            10017, 10037, 10055, 10075, 10103, 10131, 10151, 13013, 16007,
+            20009, 20010, 20026, 20031, 20038, 20052, 20062, 26006
+          ]
+        }
+      ],
+      "associationBasis": "Derived from the official event character-bonus (pickup) roster: a school is featured when it supplies at least 20% of it. Boss-raid style events with no roster carry no derived school."
+    }
+  }
+}

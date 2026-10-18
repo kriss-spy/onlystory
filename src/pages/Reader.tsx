@@ -53,6 +53,7 @@ import {
   rewind,
   startSave,
   passageText,
+  localizedText,
   readingPath,
 } from '../model';
 import type {
@@ -282,6 +283,20 @@ function Reader({
     };
   }, [episode.id]);
   const music = useRef<HTMLAudioElement>(null);
+  useEffect(() => {
+    const enable = () => {
+      if (audio.current?.src)
+        void audio.current
+          .play()
+          .then(() => {
+            setAudioBlocked(false);
+            setVoiceDone(false);
+          })
+          .catch(() => setAudioBlocked(true));
+    };
+    window.addEventListener('onlystory-enable-audio', enable);
+    return () => window.removeEventListener('onlystory-enable-audio', enable);
+  }, []);
   const choice = useRef<HTMLButtonElement>(null);
   const sceneRegion = useRef<HTMLElement>(null);
   const dialogueRegion = useRef<HTMLDivElement>(null);
@@ -293,8 +308,6 @@ function Reader({
   } | null>(null);
   const node = nodeOf(episode, save);
   const sceneKey = `${node.id}:${sceneRevision}`;
-  const sceneReady =
-    episode.renderer?.id !== 'pjsk' || readySceneKey === sceneKey;
   const setSceneReady = useCallback(
     (ready: boolean) => {
       setReadySceneKey(ready ? sceneKey : null);
@@ -306,6 +319,21 @@ function Reader({
     episode.renderer?.id === 'gfl1'
       ? (episode.renderer.payload as Gfl1Program).frames[node.id]
       : undefined;
+  const [sceneStatus, setSceneStatus] = useState({ node: '', ready: false });
+  const [finishSceneVersion, setFinishSceneVersion] = useState(0);
+  const onSceneReady = useCallback(
+    (node: string, ready: boolean) => setSceneStatus({ node, ready }),
+    [],
+  );
+  const sceneReady =
+    textOnly ||
+    (episode.renderer?.id === 'pjsk'
+      ? readySceneKey === sceneKey
+      : episode.renderer?.id === 'ba-scene'
+        ? node.kind === 'video' ||
+          (sceneStatus.node === node.id && sceneStatus.ready)
+        : true);
+  const textReady = episode.renderer?.id !== 'ba-scene' || sceneReady;
   const answers = save.frames.at(-1)!.answers;
   const seekFrames = useMemo(
     () => readingPath(episode, answers),
@@ -333,10 +361,11 @@ function Reader({
     [revealKey],
   );
   const complete =
-    skipping ||
-    revealed >= chars.length ||
-    p.textSpeed === 0 ||
-    node.kind !== 'text';
+    textReady &&
+    (skipping ||
+      revealed >= chars.length ||
+      p.textSpeed === 0 ||
+      node.kind !== 'text');
   const unsupported = fixture === 'unsupported' || node.kind === 'unsupported';
   const installed = isInstalled(store.data, episode);
   const offline = fixture === 'offline' || !online;
@@ -345,7 +374,9 @@ function Reader({
   const needsDownload =
     !installed && episode.availability === 'remote' && !offline;
   const activeVoice =
-    p.voiceVolume > 0 && node.voice
+    (episode.renderer?.id !== 'ba-scene' || (sceneReady && !skipping)) &&
+    p.voiceVolume > 0 &&
+    node.voice
       ? fixture === 'missing-voice'
         ? '/demo/voice-unavailable.wav'
         : node.voice
@@ -439,15 +470,30 @@ function Reader({
       setRevealed(chars.length);
       return;
     }
-    if (complete || p.textSpeed === 0 || panel || ui.active) return;
-    const timer = setInterval(
-      () => setRevealed((old) => Math.min(chars.length, old + 1)),
-      1000 / p.textSpeed,
-    );
-    return () => clearInterval(timer);
+    if (!textReady || complete || p.textSpeed === 0 || panel || ui.active)
+      return;
+    let cursor = revealed;
+    let timer: ReturnType<typeof setTimeout>;
+    const schedule = () => {
+      const pause = (node.scene.textPauses ?? []).reduce(
+        (total, point) => total + (point.offset === cursor ? point.delay : 0),
+        0,
+      );
+      timer = setTimeout(
+        () => {
+          cursor = Math.min(chars.length, cursor + 1);
+          setRevealed(cursor);
+          if (cursor < chars.length) schedule();
+        },
+        1000 / p.textSpeed + pause,
+      );
+    };
+    schedule();
+    return () => clearTimeout(timer);
   }, [
     node.id,
     skipping,
+    textReady,
     complete,
     p.textSpeed,
     chars.length,
@@ -525,6 +571,11 @@ function Reader({
     (answer?: string, skipMovie = false, repeated = false) => {
       const rapid =
         repeated && episode.renderer?.id === 'pjsk' && node.kind === 'text';
+      if (blocked || unsupported) return;
+      if (episode.renderer?.id === 'ba-scene' && !sceneReady) {
+        setFinishSceneVersion((value) => value + 1);
+        return;
+      }
       // Once assets are loaded, manual input can interrupt native scene waits.
       // Restore the destination snapshot to cancel delayed commands safely.
       const interrupt =
@@ -532,12 +583,7 @@ function Reader({
         node.kind === 'text' &&
         loadedSceneEpisode === episode.id &&
         !sceneReady;
-      if (
-        blocked ||
-        unsupported ||
-        (!textOnly && !sceneReady && !rapid && !interrupt)
-      )
-        return;
+      if (!textOnly && !sceneReady && !rapid && !interrupt) return;
       if (hidden) {
         setHidden(false);
         // A completed interaction must still submit its answer when controls
@@ -583,6 +629,30 @@ function Reader({
       location.state,
     ],
   );
+  useEffect(() => {
+    if (
+      !node.scene.autoAdvance ||
+      !sceneReady ||
+      blocked ||
+      panel ||
+      ui.active ||
+      hidden ||
+      skipping
+    )
+      return;
+    const timer = setTimeout(() => next(), 0);
+    return () => clearTimeout(timer);
+  }, [
+    node.id,
+    node.scene.autoAdvance,
+    sceneReady,
+    blocked,
+    panel,
+    ui.active,
+    hidden,
+    skipping,
+    next,
+  ]);
   useEffect(() => {
     if (
       !auto ||
@@ -929,11 +999,13 @@ function Reader({
               ? 'English · Text mode'
               : 'English · Original scenes'
             : textOnly
-              ? '简中 · 文字模式'
+              ? `${episode.textLocales?.includes('ja') ? '日本語' : '简中'} · 文字模式`
               : episode.origin === 'game'
-                ? episode.preview
-                  ? '简中 · 原文开场'
-                  : '简中 · 原始演出'
+                ? episode.game === 'ba'
+                  ? '日本語 · 原始演出'
+                  : episode.preview
+                    ? '简中 · 原文开场'
+                    : '简中 · 原始演出'
                 : 'Design fixture'}
         </span>
         {episode.origin === 'game' ? (
@@ -1021,6 +1093,9 @@ function Reader({
             seekVersion={sceneRevision}
             path={save.frames.map((frame) => frame.node)}
             textOnly={textOnly}
+            finishVersion={finishSceneVersion}
+            onSceneReady={onSceneReady}
+            textComplete={complete}
             key={
               episode.renderer
                 ? episode.id
@@ -1059,6 +1134,7 @@ function Reader({
             />
           ) : null}
           {node.kind === 'choice' &&
+          textReady &&
           (!gfl1Frame?.interaction ||
             gfl1Frame.interaction.kind === 'quiz' ||
             (gfl1Frame.interaction.kind === 'exploration' &&
@@ -1072,7 +1148,7 @@ function Reader({
                 >
                   {(p.textVariant === 'female'
                     ? answer.femaleLabel?.[p.textLocale]
-                    : undefined) ?? answer.label[p.textLocale]}
+                    : undefined) ?? localizedText(answer.label, p.textLocale)}
                 </button>
               ))}
             </div>
@@ -1092,6 +1168,13 @@ function Reader({
           <div
             className={`dialogue-window window-${node.scene.window ?? 'dialogue'}`}
             ref={dialogueRegion}
+            style={
+              node.scene.fontScale
+                ? ({
+                    '--reader-font-size': `${p.fontSize * node.scene.fontScale}px`,
+                  } as CSSProperties)
+                : undefined
+            }
             hidden={
               node.kind === 'video' ||
               (!!gfl1Frame?.hideDialogue && !textOnly) ||
@@ -1099,7 +1182,13 @@ function Reader({
                 node.kind === 'text' &&
                 !text.trim() &&
                 !speaker.trim() &&
-                !textOnly)
+                !textOnly) ||
+              node.scene.autoAdvance ||
+              !textReady ||
+              node.kind === 'choice' ||
+              (!textOnly &&
+                episode.renderer?.id === 'ba-scene' &&
+                node.scene.window === 'system')
             }
           >
             <div className="speaker-row" hidden={gfl1Frame?.narrator}>
@@ -1222,11 +1311,13 @@ function Reader({
           </IconButton>
           <IconButton
             label={
-              !complete
-                ? 'Reveal text'
-                : node.kind === 'end' && following?.id
-                  ? 'Next section'
-                  : 'Next passage'
+              !sceneReady
+                ? 'Finish scene'
+                : !complete
+                  ? 'Reveal text'
+                  : node.kind === 'end' && following?.id
+                    ? 'Next section'
+                    : 'Next passage'
             }
             shortcut="Space / →"
             className="advance-button"
@@ -1467,10 +1558,9 @@ function Reader({
         ) : panel === 'information' ? (
           <div className="story-information">
             <h3>
-              {['gfl2-event', 'pjsk', 'gfl1'].includes(
+              {['gfl2-event', 'pjsk', 'gfl1', 'ba-scene'].includes(
                 episode.renderer?.id ?? '',
-              ) &&
-              !textOnly
+              ) && !textOnly
                 ? 'Original scene playback'
                 : 'Original text reading'}
             </h3>
@@ -1479,6 +1569,8 @@ function Reader({
                 'This episode plays original Chinese text with Japanese voices, Live2D characters, motions, facial animation, backgrounds, music and sound effects. Browser transitions and timing approximate the original game.'
               ) : episode.renderer?.id === 'gfl1' && !textOnly ? (
                 'This chapter uses original Steam global English text, backgrounds, portrait expressions, communication frames, music and sound effects. Portrait placement, transmission scanning and scene transitions approximate the game. A gameplay map is not imported; transmissions retain the previous illustrated background where available. Dialogue voices are not imported. Open the source script to inspect the original commands.'
+              ) : episode.renderer?.id === 'ba-scene' && !textOnly ? (
+                'This chapter plays original JP backgrounds, Spine character animations and expressions, Japanese dialogue voices, music and sound effects. Scene commands and waits follow the archived source script. Assets are stored locally and included in episode downloads.'
               ) : episode.renderer?.id === 'gfl2-event' && !textOnly ? (
                 'This chapter plays recovered backgrounds, Live2D models, expressions, holograms and music in original script order. Movies support Chinese and Japanese audio. Regular dialogue has no voice track. Some Unity effects and browser rendering remain approximate.'
               ) : (

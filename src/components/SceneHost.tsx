@@ -7,6 +7,7 @@ import { Gfl1Scene } from '../playback/gfl1/Gfl1Scene';
 import { useStore } from '../store';
 const Gfl2EventScene = lazy(() => import('../playback/gfl2/Gfl2EventScene'));
 const PjskScene = lazy(() => import('../playback/pjsk/PjskScene'));
+const BaScene = lazy(() => import('../playback/ba/BaScene'));
 
 export function SceneHost({
   episode,
@@ -16,6 +17,9 @@ export function SceneHost({
   path = [],
   onReadyChange,
   voiceLevel,
+  finishVersion = 0,
+  onSceneReady,
+  textComplete = false,
   ...props
 }: ComponentProps<typeof Stage> & {
   episode: Episode;
@@ -25,6 +29,9 @@ export function SceneHost({
   path?: string[];
   onReadyChange?: (value: boolean) => void;
   voiceLevel?: () => number;
+  finishVersion?: number;
+  onSceneReady?: (node: string, ready: boolean) => void;
+  textComplete?: boolean;
 }) {
   const {
     data: { preferences },
@@ -67,6 +74,27 @@ export function SceneHost({
         reducedMotion={preferences.reducedMotion || fastForward}
         seekVersion={seekVersion}
       />
+    );
+  if (episode.renderer?.id === 'ba-scene' && onSceneReady)
+    return (
+      <Suspense
+        fallback={
+          <div className="stage native-stage" role="status">
+            Loading scene…
+          </div>
+        }
+      >
+        <BaScene
+          payload={episode.renderer.payload}
+          nodeId={props.node.id}
+          fastForward={fastForward}
+          seekVersion={seekVersion}
+          finishVersion={finishVersion}
+          path={path}
+          onReady={onSceneReady}
+          textComplete={textComplete}
+        />
+      </Suspense>
     );
   if (episode.renderer?.id === 'gfl2-event')
     return (

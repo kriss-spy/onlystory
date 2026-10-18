@@ -1,4 +1,11 @@
-import type { Episode, Game, GameId, Locale, Scene, StoryNode } from './model';
+import type {
+  Episode,
+  Game,
+  GameId,
+  LocalizedText,
+  Scene,
+  StoryNode,
+} from './model';
 
 export const games: Game[] = [
   {
@@ -34,7 +41,7 @@ export const games: Game[] = [
     cover: 'platform',
   },
 ];
-const t = (en: string, zh: string): Record<Locale, string> => ({
+const t = (en: string, zh: string): LocalizedText => ({
   en,
   'zh-CN': zh,
 });

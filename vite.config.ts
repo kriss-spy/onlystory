@@ -9,11 +9,11 @@ export default defineConfig({
     port: localPort,
     strictPort: true,
     watch: {
-      // Browser trace HTML and downloaded sources must not reload a reader.
       ignored: [
+        '**/.cache/**',
+        '**/.audit/**',
         '**/test-results*/**',
         '**/playwright-report/**',
-        '**/.cache/**',
       ],
     },
   },

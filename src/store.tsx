@@ -237,11 +237,19 @@ export function AppProvider({ children }: { children: ReactNode }) {
             const { preloadScene } = await import('./playback/pjsk/PjskScene');
             await preloadScene();
           }
-          if (episode.content?.sceneUrl) {
+          if (
+            episode.content?.sceneUrl &&
+            episode.content.format === 'gfl2-text-v1'
+          ) {
             const { preloadScene } =
               await import('./playback/gfl2/Gfl2EventScene');
             await preloadScene();
           }
+          if (
+            episode.content?.sceneUrl &&
+            episode.content.format === 'ba-text-v1'
+          )
+            await import('./playback/ba/BaScene');
           void navigator.storage?.persist?.().catch(() => false);
           const initialProgram =
             episode.renderer?.id === 'gfl2-event'
@@ -292,6 +300,22 @@ export function AppProvider({ children }: { children: ReactNode }) {
             if (path === episode.content?.sceneUrl) {
               const response = await cache.match(path);
               const program = await response?.json();
+              if (episode.content?.format === 'ba-text-v1') {
+                if (
+                  program?.version !== 1 ||
+                  program.id !== episode.id ||
+                  !Array.isArray(program.assets?.files) ||
+                  program.assets.files.some(
+                    (f: { url?: unknown }) =>
+                      typeof f.url !== 'string' ||
+                      !episode.assets.includes(f.url),
+                  )
+                )
+                  throw new Error(
+                    'This BA scene has an invalid asset inventory. Reimport it before downloading.',
+                  );
+                continue;
+              }
               if (
                 program?.version !== 1 ||
                 program.id !== episode.id ||

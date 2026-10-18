@@ -14,6 +14,8 @@ import { PageTitle } from '../components/Shell';
 import { StorySections } from '../components/StorySections';
 import { eventArtwork, artworkStyle } from '../covers';
 import { PjskGroupMark } from '../components/PjskGroupMark';
+import { SchoolMarks } from '../components/SchoolMarks';
+import { EventCover } from '../components/EventCover';
 
 const scrollPositions = new Map<string, number>();
 export function EventPage() {
@@ -78,28 +80,36 @@ export function EventPage() {
               : ''}
           </p>
           {event.notice ? <p role="note">{event.notice}</p> : null}
+          <SchoolMarks event={event} />
         </PageTitle>
         {cover ? (
-          <figure className="event-artwork">
-            <img
+          cover.logo ? (
+            <EventCover
               className={`event-heading-cover${event.game === 'pjsk' ? ' pjsk-event-cover' : ''}`}
-              src={cover.url}
-              alt=""
-              width={cover.width}
-              height={cover.height}
-              style={artworkStyle(cover)}
+              cover={cover}
             />
-            {cover.credit && cover.page ? (
-              <figcaption>
-                <a href={cover.page} target="_blank" rel="noreferrer">
-                  {cover.kind === 'unofficial-art'
-                    ? 'Unofficial artwork'
-                    : 'Official artwork'}{' '}
-                  · {cover.credit}
-                </a>
-              </figcaption>
-            ) : null}
-          </figure>
+          ) : (
+            <figure className="event-artwork">
+              <img
+                className={`event-heading-cover${event.game === 'pjsk' ? ' pjsk-event-cover' : ''}`}
+                src={cover.url}
+                alt=""
+                width={cover.width}
+                height={cover.height}
+                style={artworkStyle(cover)}
+              />
+              {cover.credit && cover.page ? (
+                <figcaption>
+                  <a href={cover.page} target="_blank" rel="noreferrer">
+                    {cover.kind === 'unofficial-art'
+                      ? 'Unofficial artwork'
+                      : 'Official artwork'}{' '}
+                    · {cover.credit}
+                  </a>
+                </figcaption>
+              ) : null}
+            </figure>
+          )
         ) : null}
       </div>
       <div className="catalog-toolbar">

@@ -1,5 +1,6 @@
 export type GameId = 'gfl2' | 'pjsk' | 'ba' | 'gfl1';
-export type Locale = 'en' | 'zh-CN';
+export type Locale = 'en' | 'zh-CN' | 'ja';
+export type LocalizedText = Record<'en' | 'zh-CN', string> & { ja?: string };
 export type VoiceLanguage = 'zh-CN' | 'ja';
 export type Availability = 'available' | 'remote' | 'incomplete';
 export type Fixture =
@@ -16,6 +17,9 @@ export interface Actor {
   expression: 'neutral' | 'surprised' | 'smile';
 }
 export interface Scene {
+  fontScale?: number;
+  autoAdvance?: boolean;
+  textPauses?: { offset: number; delay: number }[];
   background: 'platform' | 'observatory' | 'corridor';
   actors: Actor[];
   effect?: 'rain' | 'signal';
@@ -25,13 +29,15 @@ export interface StoryNode {
   id: string;
   kind: 'text' | 'choice' | 'video' | 'unsupported' | 'end';
   speaker: string;
-  text: Record<Locale, string>;
+  text: LocalizedText;
+  speakerLocales?: LocalizedText;
+  playerName?: { token: string; fallback: string };
   scene: Scene;
   next?: string;
   choices?: {
     id: string;
-    label: Record<Locale, string>;
-    femaleLabel?: Record<Locale, string>;
+    label: LocalizedText;
+    femaleLabel?: LocalizedText;
     next: string;
   }[];
   voice?: string;
@@ -50,7 +56,7 @@ export interface StoryNode {
     default?: boolean;
   }[];
   bgm?: string;
-  female?: { speaker: string; text: Record<Locale, string> };
+  female?: { speaker: string; text: LocalizedText };
   source?: { script: string; row: number; contentId: number; index: number };
 }
 export interface Game {
@@ -67,7 +73,13 @@ export interface Episode {
   story: string;
   title: string;
   description: string;
-  category: 'Main story' | 'Event' | 'Side story';
+  category:
+    | 'Main story'
+    | 'Event'
+    | 'Side story'
+    | 'Group story'
+    | 'Mini story'
+    | 'Relationship story';
   eventType?: 'story' | 'collaboration' | 'special';
   order: number;
   date: string;
@@ -98,7 +110,7 @@ export interface Episode {
   content?: {
     url: string;
     count: number;
-    format: 'gfl2-text-v1' | 'pjsk-text-v1' | 'gfl1-story-v1';
+    format: 'gfl2-text-v1' | 'pjsk-text-v1' | 'gfl1-story-v1' | 'ba-text-v1';
     sceneUrl?: string;
   };
 }
@@ -186,15 +198,28 @@ export const nodeOf = (episode: Episode, save: ReadingSave) =>
 export function passageText(node: StoryNode, preferences: Preferences) {
   const variant =
     preferences.textVariant === 'female' ? node.female : undefined;
-  const name = preferences.playerName.trim() || '指挥官';
+  const customName = preferences.playerName.trim();
+  const name = node.playerName
+    ? customName && customName !== defaultPreferences.playerName
+      ? customName
+      : node.playerName.fallback
+    : customName || '指挥官';
+  const token = node.playerName?.token ?? '{}';
   return {
-    speaker: (variant?.speaker ?? node.speaker).replaceAll('{}', () => name),
-    text: (variant?.text ?? node.text)[preferences.textLocale].replaceAll(
-      '{}',
-      () => name,
-    ),
+    speaker: (
+      variant?.speaker ??
+      (node.speakerLocales
+        ? localizedText(node.speakerLocales, preferences.textLocale)
+        : node.speaker)
+    ).replaceAll(token, () => name),
+    text: localizedText(
+      variant?.text ?? node.text,
+      preferences.textLocale,
+    ).replaceAll(token, () => name),
   };
 }
+export const localizedText = (text: LocalizedText, locale: Locale) =>
+  text[locale] || text.ja || text.en || text['zh-CN'];
 export function startSave(episode: Episode): ReadingSave {
   return {
     episodeId: episode.id,
@@ -528,7 +553,7 @@ export function parseData(input: unknown): AppData {
     for (const [key, allowed] of Object.entries({
       theme: ['system', 'light', 'dark'],
       layout: ['scene', 'desk', 'text'],
-      textLocale: ['en', 'zh-CN'],
+      textLocale: ['en', 'zh-CN', 'ja'],
       voice: ['zh-CN', 'ja'],
       source: ['device', 'server-preview'],
       textVariant: ['male', 'female'],

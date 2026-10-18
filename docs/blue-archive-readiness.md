@@ -1,34 +1,11 @@
 # Blue Archive integration readiness
 
-Checked against the project code on 2026-10-16. The project is ready to start a real Blue Archive integration. It is not yet a verified Blue Archive story player, and no real Blue Archive story is currently imported.
+Updated 2026-10-18. The library includes 613 JP main-story/prologue segments across 26 collections, 68 Club group stories across 27 collections, and 978 event chapters across all 57 standard event collections. Main-story coverage follows all 480 visible, open, released Main/Prologue modes in pinned JP build 1.73.459696; its latest exposure date is 2026-08-19, and the event set runs from 2021-02-25 to 2026-09-23. See [pipeline reproduction, provenance and limits](blue-archive-pipeline.md).
 
-## What can be reused
+The BA adapter has its own compiler, scene format and renderer under `src/playback/ba`. It shares navigation, saves, bookmarks, voice controls and download storage with GFL2. It preserves every source row and actual branch rather than translating instructions into GFL2 commands. Japanese text and the BA player-name default are supported throughout the reader.
 
-- `src/model.ts` already includes game ID `ba`. Episodes, events, chapters, optional branches, choices, saves, bookmarks, text/video steps and localized text share one model.
-- `src/catalog.ts` and `src/catalog-source.ts` group episodes by game and collection; they do not require GFL2 event IDs. Catalog search, release order and common navigation can be reused.
-- `src/pages/Reader.tsx` provides progress seeking, next/previous navigation, history, choices, checkpoints and settings. `src/components/Stage.tsx` handles common text/video presentation.
-- `src/media-storage.ts` downloads URL-based asset sets with shared transfers and browser caching. `scripts/library-server.mjs` serves canonical assets, aliases and ranges independently of game identity.
-- GFL2 scene commands, Live2D assets and shaders stay under `src/playback/gfl2/`. The Blue Archive adapter should not emit fake GFL2 commands merely to get through the current loader.
+The local package contains original CGs, animated characters and faces, music, sound effects, voice, emoji art and effect textures. Acquisition verifies official catalog CRCs and stores hashes/provenance. Downloads include scene data and all media; blocked-network tests reopen cached scenes and voice. Missing media offers retry and a text fallback.
 
-Existing BA entries in `src/fixtures.ts` are fictional interface checks available through `/lab`. They do not demonstrate source extraction, real story order or visual fidelity.
+The browsing catalog renders the original JP event title logo over its lobby background for all 57 event collections and derives each event's featured school badges from the official pickup roster (boss-raid events without a roster carry none); the five earliest events and all main-story collections keep their hand-curated schools.
 
-## Integration work still needed
-
-| Area | Current evidence | Required next change |
-| --- | --- | --- |
-| Source input | No real BA script/assets supplied or imported | Select a specific server, language and source version, then inspect one real story and its referenced assets. Retain source provenance. |
-| Catalog registration | `src/content.ts` imports GFL2-generated manifests and creates GFL2 episodes | Add a BA manifest adapter with stable `ba-` IDs, original titles, chapter order, release dates and verified covers. Keep it independent of GFL2 recovery. |
-| Chapter loading | `Episode.content.format` only permits `gfl2-text-v1`; `loadEpisode` always calls `decodeTextSection` | Add format-based decoding for BA or a validated common node format. Validate IDs, branch targets and source/scene alignment at that boundary. |
-| Scene playback | `SceneHost.tsx` explicitly dispatches GFL2 renderers; unknown renderers show an unavailable message | Implement a BA renderer from observed source commands, or start with an explicitly labeled original-text-only import. Preserve commands that cannot yet be rendered and report unsupported behavior. |
-| Assets and audio | Current source recovery and `shareGameAssets` workflow are GFL2-oriented; movie language selection has only been validated with GFL2 | Add BA asset discovery/import and integrity checks, then exercise actual stills, character presentation, BGM/SFX, voice and movies present in the selected story. Do not assume BA uses Cubism or GFL2 material behavior. |
-| Locale and player name | Text types are `en`/`zh-CN`; voices are `zh-CN`/`ja`; the default player name and placeholder substitution were built for GFL2 | Match the chosen BA source languages and name syntax. Extend language types/settings only for actual imported material. Prevent GFL2's default name from leaking into BA dialogue. |
-| Downloads | Common file transfers work, but real scene manifests and selection currently follow the GFL2 payload shape | Ensure all BA chapter and asset URLs enter the download manifest and that reopening/seeking works with media requests blocked. |
-| Reader information | Reader/settings copy describes GFL2 fidelity, source rows and movie-only voice support | Show capabilities and limitations from the selected adapter rather than applying GFL2 claims to BA. |
-
-## First real story acceptance
-
-Use one short real story with its original title, identity, order, source text and all referenced media. Include at least one real choice when the chosen source has choices. Confirm that every source step is accounted for; do not flatten branches or silently discard unknown commands.
-
-Verify it through the ordinary `/games/ba` catalog and reader, not only `/lab`: open, advance, seek forward and backward, reload a deep link, make/revisit a choice, save/resume, bookmark, reach the end, download, and seek with media requests blocked. Check the rendered character/CG against game evidence. Add failures for missing assets and mismatched chapter data.
-
-The first adapter and decoder should be proven by that story before bulk importing BA events. No broad reader rewrite is justified by the current evidence. GFL2 remains usable while BA registration, decoding and presentation are added through the specific boundaries above.
+Both main-story parts, Part 1 volumes 1–6 and Final, Part 2 volumes 0–2, both prologues, all 68 visible, open Club group-story modes and all 57 standard JP event collections are selected from the official database. Mini and relationship stories, the rhythm minigame, the shortcut collection, the seasonal meetups and the hidden non-displayed season remain outside this package, as does the main-story re-release alias of an existing event. This pinned build does not establish current JP-server completeness. Seven native Unity 3D cutscene cues show explicit unavailable notices and require Continue story; their surrounding text remains readable. Scoped missing source references are marked in the reader. Weather, particles, hologram shaders and movement remain browser approximations; some native effect audio is unresolved. Fictional `/lab` fixtures remain separate from the real library.
