@@ -29,7 +29,7 @@ export const games: Game[] = [
     id: 'gfl1',
     name: "Girls' Frontline",
     shortName: 'GFL1',
-    description: 'Illustrated stories and incomplete archive states.',
+    description: 'Original English dialogue, portraits and backgrounds.',
     accent: '#d7b797',
     cover: 'platform',
   },

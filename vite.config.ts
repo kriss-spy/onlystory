@@ -17,6 +17,7 @@ export default defineConfig({
       ],
     },
   },
+  optimizeDeps: { entries: ['index.html'] },
   preview: { host: '127.0.0.1', port: localPort, strictPort: true },
   build: { copyPublicDir: false },
   plugins: [react(), libraryPlugin()],

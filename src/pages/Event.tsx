@@ -12,7 +12,7 @@ import { catalogMode, catalogSource, modeSearch } from '../catalog-source';
 import { EmptyState } from '../components/Primitives';
 import { PageTitle } from '../components/Shell';
 import { StorySections } from '../components/StorySections';
-import { eventArtwork } from '../covers';
+import { eventArtwork, artworkStyle } from '../covers';
 import { PjskGroupMark } from '../components/PjskGroupMark';
 
 const scrollPositions = new Map<string, number>();
@@ -80,14 +80,26 @@ export function EventPage() {
           {event.notice ? <p role="note">{event.notice}</p> : null}
         </PageTitle>
         {cover ? (
-          <img
-            className={`event-heading-cover${event.game === 'pjsk' ? ' pjsk-event-cover' : ''}`}
-            src={cover.url}
-            alt=""
-            width={cover.width}
-            height={cover.height}
-            style={{ objectPosition: cover.position }}
-          />
+          <figure className="event-artwork">
+            <img
+              className={`event-heading-cover${event.game === 'pjsk' ? ' pjsk-event-cover' : ''}`}
+              src={cover.url}
+              alt=""
+              width={cover.width}
+              height={cover.height}
+              style={artworkStyle(cover)}
+            />
+            {cover.credit && cover.page ? (
+              <figcaption>
+                <a href={cover.page} target="_blank" rel="noreferrer">
+                  {cover.kind === 'unofficial-art'
+                    ? 'Unofficial artwork'
+                    : 'Official artwork'}{' '}
+                  · {cover.credit}
+                </a>
+              </figcaption>
+            ) : null}
+          </figure>
         ) : null}
       </div>
       <div className="catalog-toolbar">

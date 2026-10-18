@@ -1,0 +1,275 @@
+{
+  "version": 1,
+  "region": "Steam EN",
+  "aliases": [
+    {
+      "kind": "sfx",
+      "cue": "AVG_Gray_Hand_Mech",
+      "bank": "AVG",
+      "stream": "AVG_Grey_Hand_Mech",
+      "evidence": [
+        {
+          "script": "-48-4-11",
+          "line": 88,
+          "enCommands": "<BGM>BGM_Empty</BGM><SE1>AVG_Gray_Hand_Mech</SE1>",
+          "cnCommands": "<BGM>BGM_Empty</BGM><SE1>AVG_Grey_Hand_Mech</SE1>",
+          "enSourceSha256Utf8": "97f154aeec50a5cadbe22299015cdb996ce19363ea11b9183887ad21e9d22c02",
+          "cnSourceSha256": "080995e117a4638abaeba4c339b68bb33cb39a0f71b6dc42af2957c3f367c69d",
+          "cnSourceUrl": "https://raw.githubusercontent.com/gf-data-tools/gf-data-ch/4577bc66f5736aa8c9b39b72bef45f05d8b075be/asset/avgtxt/-48-4-11.txt",
+          "sameLineCount": true,
+          "onlyControlDifference": "Gray vs Grey"
+        },
+        {
+          "script": "-48-6-9",
+          "line": 87,
+          "enCommands": "<SE1>AVG_Gray_Hand_Mech</SE1>",
+          "cnCommands": "<SE1>AVG_Grey_Hand_Mech</SE1>",
+          "enSourceSha256Utf8": "bebd7de6f7745a7dd7a59ba66bc0ec2344aa8459d82816fe212e8b7f88721023",
+          "cnSourceSha256": "089ffc531d68af5c8f8c3794ae41862bd49ec4c7e35c77261ee5623961a073ac",
+          "cnSourceUrl": "https://raw.githubusercontent.com/gf-data-tools/gf-data-ch/4577bc66f5736aa8c9b39b72bef45f05d8b075be/asset/avgtxt/-48-6-9.txt",
+          "sameLineCount": true,
+          "onlyControlDifference": "Gray vs Grey"
+        },
+        {
+          "script": "-72-A-22",
+          "line": 152,
+          "enCommands": "<SE1>AVG_Gray_Hand_Mech</SE1><震屏3><CGDelay>0.5</CGDelay>",
+          "cnCommands": "<SE1>AVG_Grey_Hand_Mech</SE1><震屏3><CGDelay>0.5</CGDelay>",
+          "enSourceSha256Utf8": "aad8f0c912c135cad93a990d66edcd1443c571b90ddf886ab606bc6699921544",
+          "cnSourceSha256": "7533a74e9aef0f54cc2731b55d9d11b16a7de3f8dfa869386933db6517067941",
+          "cnSourceUrl": "https://raw.githubusercontent.com/gf-data-tools/gf-data-ch/4577bc66f5736aa8c9b39b72bef45f05d8b075be/asset/avgtxt/-72-a-22.txt",
+          "sameLineCount": true,
+          "onlyControlDifference": "Gray vs Grey"
+        }
+      ],
+      "bankSha256": "290fa884637e5e46b9618fe1f9843935f98fce1ab9e87ad969fc9b6131a25869"
+    },
+    {
+      "kind": "sfx",
+      "cue": "BGE_Carriage_Hit_01",
+      "bank": "BGE_AVG_Chapter01",
+      "stream": "BGE_Carriage_Hit_01",
+      "bankSource": "recovered-banks/BGE_AVG_Chapter01.acb",
+      "bankSha256": "3804c96dd50d359a55b3a7d7ef6a166cd84e9e12c1e4bb4ed8e20060e350d37b",
+      "sidecars": [
+        {
+          "path": "recovered-banks/BGE_AVG_Chapter01.hcakey",
+          "sha256": "9c9fda25315ecce217d055d01b52140bf3023041e02b98393e146a49388de9e6"
+        }
+      ],
+      "evidence": [
+        {
+          "type": "exact-native-cross-title-cue",
+          "sourceGame": "Girls Frontline 2: Exilium CN",
+          "originalBankPath": "D:\\Program Files\\GF2Exilium\\GF2 Game\\GF2_Exilium_Data\\LocalCache\\Data\\AssetBundles_Windows\\Assets\\ArtsResource\\Audio\\CriWare\\BGE_AVG_Chapter01.acb",
+          "cueNameTable": {
+            "CueName": "BGE_Carriage_Hit_01",
+            "CueIndex": 49
+          },
+          "waveformIndex": 59,
+          "hcaSha256": "f2a80c006115b6d17c7c8746b9cf5bc98be454e973831dd219d5485d628b9a5d",
+          "pcmSha256": "ae1a7eb32cfa5819af154ecda2fd137d9380048efb8507065e7d2ea08bed35db",
+          "bankPcmMatchesIsolatedHca": true,
+          "detail": "Exact GFL1 source-script identifier matches native GFL2 CueNameTable string; GFL1 installed banks have no such streams. Cross-title reuse is explicit; not a claim this bank ships with GFL1."
+        }
+      ]
+    },
+    {
+      "kind": "sfx",
+      "cue": "BGE_Drop_01",
+      "bank": "BGE_AVG_Chapter01",
+      "stream": "BGE_Drop_01",
+      "bankSource": "recovered-banks/BGE_AVG_Chapter01.acb",
+      "bankSha256": "3804c96dd50d359a55b3a7d7ef6a166cd84e9e12c1e4bb4ed8e20060e350d37b",
+      "sidecars": [
+        {
+          "path": "recovered-banks/BGE_AVG_Chapter01.hcakey",
+          "sha256": "9c9fda25315ecce217d055d01b52140bf3023041e02b98393e146a49388de9e6"
+        }
+      ],
+      "evidence": [
+        {
+          "type": "exact-native-cross-title-cue",
+          "sourceGame": "Girls Frontline 2: Exilium CN",
+          "originalBankPath": "D:\\Program Files\\GF2Exilium\\GF2 Game\\GF2_Exilium_Data\\LocalCache\\Data\\AssetBundles_Windows\\Assets\\ArtsResource\\Audio\\CriWare\\BGE_AVG_Chapter01.acb",
+          "cueNameTable": {
+            "CueName": "BGE_Drop_01",
+            "CueIndex": 61
+          },
+          "waveformIndex": 72,
+          "hcaSha256": "79cc9cc4ac2ac78e4e8c85215a9b29a69cf4648cb0bb4ca4d315a9e66bfe19cc",
+          "pcmSha256": "e5213aaaf88c65b24d8ae37877d01c75a4c84435bb0cf7534005c41caed20856",
+          "bankPcmMatchesIsolatedHca": true,
+          "detail": "Exact GFL1 source-script identifier matches native GFL2 CueNameTable string; GFL1 installed banks have no such streams. Cross-title reuse is explicit; not a claim this bank ships with GFL1."
+        }
+      ]
+    },
+    {
+      "kind": "sfx",
+      "cue": "BGE_Phone_Hangup_01",
+      "bank": "BGE_AVG_Chapter01",
+      "stream": "BGE_Phone_Hangup_01",
+      "bankSource": "recovered-banks/BGE_AVG_Chapter01.acb",
+      "bankSha256": "3804c96dd50d359a55b3a7d7ef6a166cd84e9e12c1e4bb4ed8e20060e350d37b",
+      "sidecars": [
+        {
+          "path": "recovered-banks/BGE_AVG_Chapter01.hcakey",
+          "sha256": "9c9fda25315ecce217d055d01b52140bf3023041e02b98393e146a49388de9e6"
+        }
+      ],
+      "evidence": [
+        {
+          "type": "exact-native-cross-title-cue",
+          "sourceGame": "Girls Frontline 2: Exilium CN",
+          "originalBankPath": "D:\\Program Files\\GF2Exilium\\GF2 Game\\GF2_Exilium_Data\\LocalCache\\Data\\AssetBundles_Windows\\Assets\\ArtsResource\\Audio\\CriWare\\BGE_AVG_Chapter01.acb",
+          "cueNameTable": {
+            "CueName": "BGE_Phone_Hangup_01",
+            "CueIndex": 80
+          },
+          "waveformIndex": 92,
+          "hcaSha256": "a2e553e56e817e55f6076704b4d80e268d9991751c882c616b2ab3db84a2bd30",
+          "pcmSha256": "a41ccf0ba7ca308115ad6c180c3390d5449df7528277ee78aecaf9868bfc57cf",
+          "bankPcmMatchesIsolatedHca": true,
+          "detail": "Exact GFL1 source-script identifier matches native GFL2 CueNameTable string; GFL1 installed banks have no such streams. Cross-title reuse is explicit; not a claim this bank ships with GFL1."
+        }
+      ]
+    },
+    {
+      "kind": "sfx",
+      "cue": "BGE_Phone_Ring_01",
+      "bank": "BGE_AVG_Chapter01",
+      "stream": "BGE_Phone_Ring_01",
+      "bankSource": "recovered-banks/BGE_AVG_Chapter01.acb",
+      "bankSha256": "3804c96dd50d359a55b3a7d7ef6a166cd84e9e12c1e4bb4ed8e20060e350d37b",
+      "sidecars": [
+        {
+          "path": "recovered-banks/BGE_AVG_Chapter01.hcakey",
+          "sha256": "9c9fda25315ecce217d055d01b52140bf3023041e02b98393e146a49388de9e6"
+        }
+      ],
+      "evidence": [
+        {
+          "type": "exact-native-cross-title-cue",
+          "sourceGame": "Girls Frontline 2: Exilium CN",
+          "originalBankPath": "D:\\Program Files\\GF2Exilium\\GF2 Game\\GF2_Exilium_Data\\LocalCache\\Data\\AssetBundles_Windows\\Assets\\ArtsResource\\Audio\\CriWare\\BGE_AVG_Chapter01.acb",
+          "cueNameTable": {
+            "CueName": "BGE_Phone_Ring_01",
+            "CueIndex": 81
+          },
+          "waveformIndex": 93,
+          "hcaSha256": "bc89adbcfaa5a2a2c67ee5b03382eb9e2955d0013499e566485df665ddd71ef4",
+          "pcmSha256": "132151e00289376081e30f83bad97c34af1eeee038568c281332576b1c1f06c1",
+          "bankPcmMatchesIsolatedHca": true,
+          "detail": "Exact GFL1 source-script identifier matches native GFL2 CueNameTable string; GFL1 installed banks have no such streams. Cross-title reuse is explicit; not a claim this bank ships with GFL1."
+        }
+      ]
+    },
+    {
+      "kind": "bgm",
+      "cue": "Room",
+      "stream": "BGM_Room",
+      "bank": "BGM_Room",
+      "bankSha256": "39dd558c6a6e3efb4c66dd6dec8774f98d747f790135dfee96284a3d278bd3d0",
+      "evidence": [
+        {
+          "kind": "same-scene-cross-region-source-correction",
+          "region": "CN",
+          "url": "https://raw.githubusercontent.com/gf-data-tools/gf-data-ch/42b067b833a5e10a8f9cedf198fe182f1df122f1/asset/avgtxt/-41-3-7.txt",
+          "commit": "42b067b833a5e10a8f9cedf198fe182f1df122f1",
+          "sha256": "349842b40ae24521095b6e47d0798a580501c01e5f5694034f75ca8a74f13774",
+          "script": "-41-3-7",
+          "row": 90,
+          "speakerPortrait": "NPC-Morridow(0)",
+          "cue": "BGM_Room",
+          "note": "Both scripts share 129 source rows and identical surrounding BGM control positions at rows1,2,7,8,87,102; only the row90 cue differs. CN has corrected BGM_Room at the same scream."
+        },
+        {
+          "kind": "installed-source",
+          "region": "Steam EN",
+          "script": "-41-3-7",
+          "row": 90,
+          "cue": "Room",
+          "sha256": "95dc04549d7baa2e1f953bd8d638bedcb45b2502babc8b97228786b1d69a2186"
+        },
+        {
+          "kind": "installed-audio-template",
+          "source": "AudioTemplate.txt",
+          "line": 523,
+          "row": "AudioBGM|BGM_Room|BGM_Room|BGM"
+        },
+        {
+          "kind": "exact-native-stream",
+          "bank": "BGM_Room.acb.bytes",
+          "sha256": "39dd558c6a6e3efb4c66dd6dec8774f98d747f790135dfee96284a3d278bd3d0",
+          "streamName": "BGM_Room",
+          "streamIndex": 1
+        }
+      ],
+      "sourceScopes": [
+        {
+          "script": "-41-3-7",
+          "row": 90
+        }
+      ]
+    },
+    {
+      "kind": "bgm",
+      "cue": "BGM_SpecialOPS",
+      "bank": "GUN_CineTense_loop",
+      "stream": "GUN_CineTense_loop",
+      "bankSha256": "ca54c38b602e0c177092616e6bd775d2d69801dbc4f88a3a232240dedd66b795",
+      "sourceScopes": [
+        {
+          "script": "5-1-1N",
+          "row": 13
+        },
+        {
+          "script": "7-3-2E",
+          "row": 7
+        },
+        {
+          "script": "7-4-1E",
+          "row": 1
+        }
+      ],
+      "evidence": [
+        {
+          "kind": "same-scene-cross-region-source-correction",
+          "script": "5-1-1N",
+          "row": 13,
+          "url": "https://raw.githubusercontent.com/gf-data-tools/gf-data-ch/4577bc66f5736aa8c9b39b72bef45f05d8b075be/asset/avgtxt/5-1-1n.txt",
+          "sha256": "54258189b9cd1a9128cbbfa472511fb53bf3652b9263c4dd605ae6e5bdf7a32d",
+          "enSourceSha256Utf8": "15ed6e395f425bdd9a4d6ecc3c9613e9585a678096561f9fe819f51349580833",
+          "enCue": "BGM_SpecialOPS",
+          "cnCue": "BGM_NightOPS",
+          "sameLineCount": true,
+          "sameControlTags": true
+        },
+        {
+          "kind": "same-scene-cross-region-source-correction",
+          "script": "7-3-2E",
+          "row": 7,
+          "url": "https://raw.githubusercontent.com/gf-data-tools/gf-data-ch/4577bc66f5736aa8c9b39b72bef45f05d8b075be/asset/avgtxt/7-3-2e.txt",
+          "sha256": "7a5d1b72766de4880332d789acdcc23221bbc86616adff56a3cf4e829f76df68",
+          "enSourceSha256Utf8": "fb95c5124067b1d1e6a69d10f82ada2c4d8f3d20bd54f062f091a4b0a078882d",
+          "enCue": "BGM_SpecialOPS",
+          "cnCue": "BGM_NightOPS",
+          "sameLineCount": true,
+          "sameControlTags": true
+        },
+        {
+          "kind": "same-scene-cross-region-source-correction",
+          "script": "7-4-1E",
+          "row": 1,
+          "url": "https://raw.githubusercontent.com/gf-data-tools/gf-data-ch/4577bc66f5736aa8c9b39b72bef45f05d8b075be/asset/avgtxt/7-4-1e.txt",
+          "sha256": "010dbe94c00f5ceff7a606ed2c899d7ca1ea839a781b7166a5e7476dd7204f6a",
+          "enSourceSha256Utf8": "93bc7aeb1c99d610d9ddb0448e0fcd245614f9553be81363c4235b151047b8a6",
+          "enCue": "BGM_SpecialOPS",
+          "cnCue": "BGM_NightOPS",
+          "sameLineCount": true,
+          "sameControlTags": true
+        }
+      ]
+    }
+  ]
+}

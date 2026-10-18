@@ -1,0 +1,101 @@
+{
+  "version": 1,
+  "region": "EN",
+  "notes": "These collaborations are absent from Steam EN 5186.stc. Campaign identities are corroborated by installed mission/story rows and original TextAssets. Hitoribocchi (-14/-15) contains Chinese source only and never released on EN; it is not presented as an English collection.",
+  "collections": {
+    "operation-rabbit-hunt": {
+      "title": "Operation Rabbit Hunt",
+      "campaigns": [-8],
+      "order": 1001,
+      "date": "2018-11-20",
+      "source": "https://www.iopwiki.com/wiki/Operation_Rabbit_Hunt",
+      "cover": "missionselect_RabbitHunt",
+      "missionTitles": [
+        "St. Elmo",
+        "Automaton Annihilation",
+        "Hunting Game",
+        "Operation Rabbit Hunt"
+      ]
+    },
+    "valhalla": {
+      "title": "Valhalla",
+      "campaigns": [-32],
+      "order": 1002,
+      "date": "2019-08-06",
+      "source": "https://www.iopwiki.com/wiki/Valhalla",
+      "cover": "missionselect_VA11_base",
+      "extras": {
+        "VA11_1": "Bar · Day 1",
+        "VA11_2": "Bar · Day 2",
+        "VA11_3": "Bar · Day 3",
+        "VA11_4": "Bar · Day 4",
+        "VA11_5": "Bar · Day 5",
+        "VA11_6": "Bar · Day 6",
+        "VA11_7": "Bar · Day 7",
+        "VA11_8": "Bar · Day 8"
+      }
+    },
+    "glory-day": {
+      "title": "Glory Day",
+      "campaigns": [-19, -20, -22],
+      "order": 1003,
+      "date": "2020-04-28",
+      "source": "https://www.iopwiki.com/wiki/Glory_Day",
+      "cover": "missionselect_GloryDay_base"
+    },
+    "dream-theatre": {
+      "title": "Dream Theatre",
+      "campaigns": [-38],
+      "order": 1004,
+      "date": "2020-10-13",
+      "source": "https://www.iopwiki.com/wiki/Dream_Theatre",
+      "cover": "missionselect_GunslingerGirl_base"
+    },
+    "bounty-feast": {
+      "title": "Bounty Feast",
+      "campaigns": [-43],
+      "order": 1005,
+      "date": "2021-02-02",
+      "source": "https://www.iopwiki.com/wiki/Bounty_Feast",
+      "cover": "missionselect_TheDivision_base"
+    },
+    "my-devils-frontline": {
+      "title": "My Devil's Frontline",
+      "campaigns": [-46],
+      "order": 1006,
+      "date": "2021-11-15",
+      "source": "https://www.iopwiki.com/wiki/My_Devil%27s_Frontline",
+      "cover": "DropkickonMyDevil_base",
+      "extras": { "-yurine-boss": "Yurine · boss encounter" }
+    },
+    "the-glistening-bloom": {
+      "title": "The Glistening Bloom",
+      "campaigns": [-57],
+      "order": 1007,
+      "date": "2023-05-09",
+      "source": "https://www.iopwiki.com/wiki/The_Glistening_Bloom",
+      "cover": "missionselect_ZLSR_base",
+      "extras": {
+        "ZLSR_leveltip1": "Minigame tutorial 1",
+        "ZLSR_leveltip2": "Minigame tutorial 2",
+        "ZLSR_leveltip3": "Minigame tutorial 3"
+      }
+    },
+    "through-the-looking-glass": {
+      "title": "Through the Looking-Glass",
+      "campaigns": [-64],
+      "order": 1008,
+      "date": "2024-05-14",
+      "source": "https://www.iopwiki.com/wiki/Through_the_Looking-Glass",
+      "cover": "missionselect_2024Ghost_base"
+    },
+    "lorenz-butterfly": {
+      "title": "Lorenz Butterfly",
+      "campaigns": [-73],
+      "order": 1009,
+      "date": "2025-05-27",
+      "source": "https://www.iopwiki.com/wiki/Lorenz_Butterfly",
+      "cover": "missionselect_breakout_base"
+    }
+  }
+}

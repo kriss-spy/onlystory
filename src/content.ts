@@ -12,6 +12,13 @@ import type { Episode } from './model';
 import type { Opening } from './playback/gfl2/types';
 import { eventIdFor, groupStoryEvents } from './catalog';
 import { gameArtwork } from './covers';
+import { decodeGfl1Story } from './playback/gfl1/story';
+// New integrations remain optional in a clean checkout or restored GFL2 library.
+const gfl1Imports = import.meta.glob('./generated/gfl1-catalog.json', {
+  eager: true,
+  import: 'default',
+});
+const gfl1Episodes = (Object.values(gfl1Imports)[0] ?? []) as Episode[];
 export { games, gameById, backgroundUrl, stressEpisodes } from './fixtures';
 
 const opening = imported as Opening | null;
@@ -166,6 +173,7 @@ export const realEpisodes: Episode[] = [
       event.releaseDate ?? event.date,
     ),
   ),
+  ...gfl1Episodes,
 ];
 
 // Keep existing excerpt links, saves and bookmarks working. It is a separate
@@ -208,6 +216,8 @@ export function loadEpisode(episode: Episode): Promise<Episode> {
         'This chapter text is unavailable. Download it while connected, or retry.',
       );
     const payload: unknown = await response.json();
+    if (episode.content?.format === 'gfl1-story-v1')
+      return decodeGfl1Story(payload, episode);
     const decoded =
       episode.content?.format === 'pjsk-text-v1'
         ? decodePjskText(payload, episode)

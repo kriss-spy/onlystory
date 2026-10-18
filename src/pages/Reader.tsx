@@ -1,4 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { Gfl1Effects } from '../playback/gfl1/Gfl1Effects';
+import { Gfl1Interaction } from '../playback/gfl1/Gfl1Interaction';
+import type { Gfl1Program } from '../playback/gfl1/story';
 import type { CSSProperties, Dispatch, SetStateAction } from 'react';
 import {
   Link,
@@ -299,6 +302,10 @@ function Reader({
     },
     [sceneKey, episode.id],
   );
+  const gfl1Frame =
+    episode.renderer?.id === 'gfl1'
+      ? (episode.renderer.payload as Gfl1Program).frames[node.id]
+      : undefined;
   const answers = save.frames.at(-1)!.answers;
   const seekFrames = useMemo(
     () => readingPath(episode, answers),
@@ -345,7 +352,11 @@ function Reader({
       : undefined;
   const voiceUrl = useMediaUrl(activeVoice);
   const musicUrl = useMediaUrl(
-    episode.renderer ? undefined : '/demo/music.wav',
+    episode.renderer?.id === 'gfl1'
+      ? node.bgm
+      : episode.renderer
+        ? undefined
+        : '/demo/music.wav',
   );
   const bookmarkKey = `${episode.id}:${node.id}:${JSON.stringify(save.frames.at(-1)!.answers)}`;
   const bookmarked = store.data.bookmarks.some((b) => b.id === bookmarkKey);
@@ -529,7 +540,9 @@ function Reader({
         return;
       if (hidden) {
         setHidden(false);
-        return;
+        // A completed interaction must still submit its answer when controls
+        // were hidden during its animation. Plain advance only reveals UI.
+        if (answer === undefined) return;
       }
       if (!complete && !rapid) {
         setRevealed(chars.length);
@@ -911,13 +924,17 @@ function Reader({
           </small>
         </div>
         <span className="sample-label">
-          {textOnly
-            ? '简中 · 文字模式'
-            : episode.origin === 'game'
-              ? episode.preview
-                ? '简中 · 原文开场'
-                : '简中 · 原始演出'
-              : 'Design fixture'}
+          {episode.game === 'gfl1' && episode.origin === 'game'
+            ? textOnly
+              ? 'English · Text mode'
+              : 'English · Original scenes'
+            : textOnly
+              ? '简中 · 文字模式'
+              : episode.origin === 'game'
+                ? episode.preview
+                  ? '简中 · 原文开场'
+                  : '简中 · 原始演出'
+                : 'Design fixture'}
         </span>
         {episode.origin === 'game' ? (
           <IconButton
@@ -949,7 +966,7 @@ function Reader({
                     x: event.clientX,
                     y: event.clientY,
                     dragged: false,
-                    selected: !!window.getSelection()?.toString(),
+                    selected: !!window.getSelection()?.toString().trim(),
                   }
                 : null;
           }}
@@ -975,11 +992,18 @@ function Reader({
               event.altKey ||
               event.shiftKey ||
               !gesture ||
-              gesture.dragged ||
-              gesture.selected ||
-              window.getSelection()?.toString()
+              gesture.dragged
             )
               return;
+            // Artwork is nonselectable, so explicitly clear a prior dialogue
+            // selection on a background click. This click only deselects.
+            // Whitespace-only image selections must never trap advancement.
+            const selection = window.getSelection();
+            if (gesture.selected || selection?.toString().trim()) {
+              if ((event.target as HTMLElement).closest('.gfl1-stage'))
+                selection?.removeAllRanges();
+              return;
+            }
             if (
               (event.target as HTMLElement).closest(
                 'button,a,input,select,textarea,video,audio,summary,[role="button"],[contenteditable="true"]',
@@ -1018,7 +1042,27 @@ function Reader({
             }}
             skipVideo={() => next(undefined, true)}
           />
-          {node.kind === 'choice' ? (
+          {gfl1Frame?.interaction && node.kind === 'choice' ? (
+            <Gfl1Interaction
+              key={`${node.id}:${sceneRevision}`}
+              interaction={gfl1Frame.interaction}
+              choices={node.choices}
+              onAnswer={next}
+              volume={p.soundVolume}
+              disabled={blocked || !!panel || !!ui.active}
+              textOnly={textOnly}
+              locale={p.textLocale}
+              reducedMotion={
+                p.reducedMotion ||
+                window.matchMedia('(prefers-reduced-motion: reduce)').matches
+              }
+            />
+          ) : null}
+          {node.kind === 'choice' &&
+          (!gfl1Frame?.interaction ||
+            gfl1Frame.interaction.kind === 'quiz' ||
+            (gfl1Frame.interaction.kind === 'exploration' &&
+              (textOnly || !gfl1Frame.interaction.spots.length))) ? (
             <div className="story-choices" aria-label="Choose a response">
               {node.choices?.map((answer, i) => (
                 <button
@@ -1048,9 +1092,17 @@ function Reader({
           <div
             className={`dialogue-window window-${node.scene.window ?? 'dialogue'}`}
             ref={dialogueRegion}
-            hidden={node.kind === 'video'}
+            hidden={
+              node.kind === 'video' ||
+              (!!gfl1Frame?.hideDialogue && !textOnly) ||
+              (episode.renderer?.id === 'gfl1' &&
+                node.kind === 'text' &&
+                !text.trim() &&
+                !speaker.trim() &&
+                !textOnly)
+            }
           >
-            <div className="speaker-row">
+            <div className="speaker-row" hidden={gfl1Frame?.narrator}>
               <span>{speaker}</span>
               {bookmarked ? (
                 <Bookmark
@@ -1225,6 +1277,7 @@ function Reader({
               onClick={() => {
                 setAudioBlocked(false);
                 setVoiceDone(!activeVoice);
+                window.dispatchEvent(new Event('onlystory:enable-audio'));
                 void music.current?.play();
                 void audio.current?.play();
               }}
@@ -1253,6 +1306,18 @@ function Reader({
         }}
       />
       <audio ref={music} src={musicUrl} loop />
+      {episode.renderer?.id === 'gfl1' ? (
+        <Gfl1Effects
+          payload={episode.renderer.payload}
+          nodeId={node.id}
+          seekVersion={sceneRevision}
+          enabled={
+            !blocked && !skipping && ['text', 'choice'].includes(node.kind)
+          }
+          volume={p.soundVolume}
+          onBlocked={setAudioBlocked}
+        />
+      ) : null}
       <Panel
         open={panel !== null}
         onClose={() => setPanel(null)}
@@ -1402,7 +1467,9 @@ function Reader({
         ) : panel === 'information' ? (
           <div className="story-information">
             <h3>
-              {['gfl2-event', 'pjsk'].includes(episode.renderer?.id ?? '') &&
+              {['gfl2-event', 'pjsk', 'gfl1'].includes(
+                episode.renderer?.id ?? '',
+              ) &&
               !textOnly
                 ? 'Original scene playback'
                 : 'Original text reading'}
@@ -1410,6 +1477,8 @@ function Reader({
             <p>
               {episode.renderer?.id === 'pjsk' && !textOnly ? (
                 'This episode plays original Chinese text with Japanese voices, Live2D characters, motions, facial animation, backgrounds, music and sound effects. Browser transitions and timing approximate the original game.'
+              ) : episode.renderer?.id === 'gfl1' && !textOnly ? (
+                'This chapter uses original Steam global English text, backgrounds, portrait expressions, communication frames, music and sound effects. Portrait placement, transmission scanning and scene transitions approximate the game. A gameplay map is not imported; transmissions retain the previous illustrated background where available. Dialogue voices are not imported. Open the source script to inspect the original commands.'
               ) : episode.renderer?.id === 'gfl2-event' && !textOnly ? (
                 'This chapter plays recovered backgrounds, Live2D models, expressions, holograms and music in original script order. Movies support Chinese and Japanese audio. Regular dialogue has no voice track. Some Unity effects and browser rendering remain approximate.'
               ) : (
