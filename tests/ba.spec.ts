@@ -20,7 +20,7 @@ test('BA catalog, choices, deep links, bookmarks, seeking and end use the ordina
 }) => {
   const errors: string[] = [];
   page.on('pageerror', (e) => errors.push(e.message));
-  await page.goto('/games/ba');
+  await page.goto('/games/ba?q=プロローグ');
   await expect(
     page.getByText('プロローグ', { exact: true }).first(),
   ).toBeVisible({ timeout: 20000 });

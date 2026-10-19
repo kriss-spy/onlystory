@@ -218,4 +218,14 @@ if (events.length)
     'src/ba-catalog.json',
     'src/cover-art.json',
   ]);
+run('uv', [
+  'run',
+  '--project',
+  tool,
+  'python',
+  '-X',
+  'utf8',
+  'scripts/ba_character_textures.py',
+  '--apply',
+]);
 run(process.execPath, ['scripts/import-ba.mjs', groupArg]);

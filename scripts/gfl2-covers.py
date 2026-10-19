@@ -46,6 +46,7 @@ EVENTS = {
     'gfl2-cn-4045': (81, '忒弥斯棋局'),
     'gfl2-cn-4046': (83, '梦中的永无岛'),
     'gfl2-cn-4050': (89, '寂静的匹丝缇'),
+    'gfl2-activity33-text': (91, '金翅雀与橄榄枝'),
     # The publisher's API calls the initial 静默突触 PV 镜像突触.
     'gfl2-cn-4052': (93, '镜像突触'),
 }

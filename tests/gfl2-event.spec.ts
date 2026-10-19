@@ -1,6 +1,7 @@
 import { test, expect, type Page } from '@playwright/test';
 import { existsSync, readFileSync } from 'node:fs';
 import { plainText } from '../src/playback/gfl2/text';
+import { emptyData } from '../src/model';
 
 const manifest = existsSync('src/generated/gfl2-event.json')
   ? JSON.parse(readFileSync('src/generated/gfl2-event.json', 'utf8'))
@@ -46,9 +47,10 @@ test('normal library opens the complete first section and lazily fetches only th
       requests.push(request.url());
   });
   await page.goto('/library');
-  await expect(page.getByText(/4,443 段原文/)).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Your games' })).toBeVisible();
   expect(requests).toHaveLength(0);
-  await page.getByRole('link', { name: /GIRLS.*金翅雀与橄榄枝/ }).click();
+  await page.locator('.game-card[href="/games/gfl2"]').click();
+  await page.getByRole('link', { name: /金翅雀与橄榄枝/ }).click();
   await expect(page.locator('.story-card')).toHaveCount(24);
   expect(requests).toHaveLength(0);
   await page
@@ -58,7 +60,9 @@ test('normal library opens the complete first section and lazily fetches only th
   await expect(page.locator('.dialogue-window')).toContainText('2074年X月X日');
   expect(requests).toHaveLength(1);
   await instant(page);
-  await page.goto(route(sections[0], 'A33001:43'));
+  await page.goto(route(sections[0], 'A33001:43'), {
+    waitUntil: 'domcontentloaded',
+  });
   await expect(
     page.getByRole('button', { name: 'Next passage', exact: true }),
   ).toBeEnabled();
@@ -75,22 +79,31 @@ test('normal library opens the complete first section and lazily fetches only th
   ).toHaveAttribute('href', sections[0].sourceUrl);
 });
 
-test('all 24 sections open at their original first and last passages', async ({
-  page,
-}) => {
-  test.setTimeout(60000);
-  const errors: string[] = [];
-  page.on('pageerror', (error) => errors.push(error.message));
-  for (const section of sections) {
+for (const section of sections) {
+  test(`${section.id} opens at its original first and last passages`, async ({
+    page,
+  }) => {
+    const errors: string[] = [];
+    page.on('pageerror', (error) => errors.push(error.message));
     const data = chapter(section);
-    await page.goto(route(section));
+    // Source-text checkpoints run independently of the cast and CG scene suites.
+    const initial = emptyData();
+    initial.preferences.layout = 'text';
+    initial.preferences.textSpeed = 0;
+    await page.addInitScript(
+      (data) => localStorage.setItem('onlystory.v1', JSON.stringify(data)),
+      initial,
+    );
+    await page.goto(route(section), { waitUntil: 'domcontentloaded' });
     await expect(page.locator('.reader-header strong')).toHaveText(
       section.title,
     );
     await expect(page.locator('.dialogue-window p')).toHaveText(
       plainText(data.passages[0].text).replaceAll('{}', '指挥官'),
     );
-    await page.goto(route(section, section.lastNode));
+    await page.goto(route(section, section.lastNode), {
+      waitUntil: 'domcontentloaded',
+    });
     await expect(page.locator('.dialogue-window p')).toHaveText(
       plainText(data.passages.at(-1).text).replaceAll('{}', '指挥官'),
     );
@@ -101,16 +114,19 @@ test('all 24 sections open at their original first and last passages', async ({
       `Passage ${section.textRows} of ${section.textRows}`,
     );
     await expect(page.locator('.episode-end')).toBeVisible();
-  }
-  await expect(page.locator('.episode-end')).toContainText('全文阅读完毕');
-  expect(errors).toEqual([]);
-});
+    if (section === sections.at(-1))
+      await expect(page.locator('.episode-end')).toContainText('全文阅读完毕');
+    expect(errors).toEqual([]);
+  });
+}
 
 test('cross-section navigation, back, bookmark, checkpoint and reload preserve full text progress', async ({
   page,
   context,
 }) => {
-  await page.goto(route(sections[0], sections[0].lastNode));
+  await page.goto(route(sections[0], sections[0].lastNode), {
+    waitUntil: 'domcontentloaded',
+  });
   await page.getByRole('button', { name: 'Next section', exact: true }).click();
   await expect(page).toHaveURL(new RegExp(sections[1].id));
   await instant(page);
@@ -131,10 +147,10 @@ test('cross-section navigation, back, bookmark, checkpoint and reload preserve f
     .getByRole('button', { name: 'Restore checkpoint', exact: true })
     .click();
   await expect(page).toHaveURL(url);
-  await page.reload();
+  await page.reload({ waitUntil: 'domcontentloaded' });
   await expect(page.locator('.dialogue-window p')).toHaveText(text!);
   const other = await context.newPage();
-  await other.goto(url);
+  await other.goto(url, { waitUntil: 'domcontentloaded' });
   await expect(other.locator('.dialogue-window p')).toHaveText(text!);
   await other.close();
   await page.goto('/bookmarks');
@@ -151,11 +167,14 @@ test('original gender variants and player-name placeholders are selectable and p
   const variant = first.passages.find(
     (p: { text: string; textFemale: string }) => p.text !== p.textFemale,
   );
-  await page.goto(route(sections[0], variant.id));
+  await page.goto(route(sections[0], variant.id), {
+    waitUntil: 'domcontentloaded',
+  });
   await instant(page);
   await page
     .getByRole('button', { name: 'Reader settings', exact: true })
     .click();
+  await page.getByRole('tab', { name: 'Language', exact: true }).click();
   await page
     .getByLabel('Protagonist version', { exact: true })
     .selectOption('female');
@@ -170,19 +189,22 @@ test('original gender variants and player-name placeholders are selectable and p
   const passage = chapter(section).passages.find(
     (p: { speaker: string }) => p.speaker === '{}',
   );
-  await page.goto(route(section, passage.id));
+  await page.goto(route(section, passage.id), {
+    waitUntil: 'domcontentloaded',
+  });
   await expect(page.locator('.speaker-row')).toContainText('测试指挥官');
-  await page.reload();
+  await page.reload({ waitUntil: 'domcontentloaded' });
   await expect(page.locator('.speaker-row')).toContainText('测试指挥官');
   await page
     .getByRole('button', { name: 'Reader settings', exact: true })
     .click();
+  await page.getByRole('tab', { name: 'Language', exact: true }).click();
   await expect(
     page.getByLabel('Protagonist version', { exact: true }),
   ).toHaveValue('female');
 });
 
-test('downloaded text loads offline and a failed chapter request can be retried', async ({
+test('downloaded scene loads offline and a failed chapter request can be retried', async ({
   page,
   context,
 }) => {
@@ -190,14 +212,17 @@ test('downloaded text loads offline and a failed chapter request can be retried'
   await page.route('**/gfl2-event/readers/**', (route) =>
     route.fulfill({ status: 503, body: 'unavailable' }),
   );
-  await page.goto(route(sections[0]));
+  await page.goto(route(sections[0]), { waitUntil: 'domcontentloaded' });
   await expect(
     page.getByRole('heading', { name: 'Chapter unavailable' }),
   ).toBeVisible();
   await page.unroute('**/gfl2-event/readers/**');
   await page.getByRole('button', { name: 'Retry chapter' }).click();
   await expect(page.locator('.dialogue-window')).toContainText('2074年');
-  await page.goto('/manage');
+  await page.goto('/manage?game=gfl2');
+  await page
+    .getByRole('searchbox', { name: 'Search downloads' })
+    .fill('CS-1-6 祈盼明天');
   const row = page.locator('.download-item').filter({
     has: page.getByRole('link', { name: 'CS-1-6 祈盼明天', exact: true }),
   });
@@ -228,7 +253,9 @@ test('long original text remains scrollable with controls visible at 320x700', a
     for (const passage of chapter(section).passages)
       if (passage.text.length > longest.passage.text.length)
         longest = { section, passage };
-  await page.goto(route(longest.section, longest.passage.id));
+  await page.goto(route(longest.section, longest.passage.id), {
+    waitUntil: 'domcontentloaded',
+  });
   await instant(page);
   await page
     .getByRole('button', { name: 'Reader settings', exact: true })

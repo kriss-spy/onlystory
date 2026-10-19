@@ -397,8 +397,8 @@ export class BaStage {
     const signal = this.assets.characters[actor.name].signal || actor.signal;
     const light = actor.silhouette ? 0 : actor.highlight ? 1 : 0.72;
     model.skeleton.color.set(
-      signal ? 0.35 : light,
-      signal ? 0.9 : light,
+      signal ? 0.88 : light,
+      signal ? 0.96 : light,
       signal ? 1 : light,
       signal ? 0.82 : 1,
     );
@@ -541,10 +541,17 @@ export class BaStage {
         this.signalContext.globalCompositeOperation = 'source-over';
         this.signalContext.drawImage(this.canvas, 0, 0);
         this.signalContext.globalCompositeOperation = 'source-atop';
-        this.signalContext.fillStyle = 'rgba(0,30,60,.3)';
-        const offset = this.reduced ? 0 : (this.clock * 12) % 6;
-        for (let y = offset; y < this.signalCanvas.height; y += 6 * ratio)
-          this.signalContext.fillRect(0, y, this.signalCanvas.width, 2 * ratio);
+        this.signalContext.fillStyle = 'rgba(30,70,110,.12)';
+        // Keep fine projection lines in scene space, independent of display DPI.
+        const scenePixel = this.signalCanvas.height / 1080;
+        const offset = this.reduced ? 0 : ((this.clock * 12) % 6) * scenePixel;
+        for (let y = offset; y < this.signalCanvas.height; y += 6 * scenePixel)
+          this.signalContext.fillRect(
+            0,
+            y,
+            this.signalCanvas.width,
+            scenePixel,
+          );
         this.signalContext.globalCompositeOperation = 'source-over';
         this.context.gl.clear(this.context.gl.COLOR_BUFFER_BIT);
       }

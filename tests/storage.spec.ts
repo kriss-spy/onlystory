@@ -25,7 +25,7 @@ test('existing audio downloads migrate by digest and remain readable offline thr
   const [old, target] = Object.entries(index().aliases).find(([old]) =>
     old.endsWith('.ogg'),
   ) as [string, string];
-  await page.goto('/manage');
+  await page.goto('/library');
   await page.evaluate(
     async ({ old, target }) => {
       const cache = await caches.open('onlystory.media.v1');
@@ -78,12 +78,15 @@ test('movie downloads install only the selected voice, add the other without ref
   page.on('request', (request) =>
     requests.push(new URL(request.url()).pathname),
   );
-  await page.goto('/manage');
+  await page.goto('/manage?game=gfl2');
   const voice = page.getByLabel('Download voice language');
   await voice.selectOption('ja');
   const row = page
     .locator('.download-item')
     .filter({ has: page.locator('a[href="/read/gfl2/gfl2-ilion-34401"]') });
+  await page
+    .getByRole('searchbox', { name: 'Search downloads' })
+    .fill(await row.locator('a').innerText());
   await row.getByRole('button', { name: /^Download / }).click();
   await expect(row).toContainText('On this device', { timeout: 70000 });
   const keys = () =>

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Volume2 } from 'lucide-react';
 import { IconButton } from '../../components/Primitives';
-import { useStore } from '../../store';
+import { usePlaybackPreferences } from '../../store';
 import { Gfl2OpeningPlayer } from './runtime';
 import type { Opening } from './types';
 
@@ -17,9 +17,7 @@ export function Gfl2Scene({
   const player = useRef<Gfl2OpeningPlayer | null>(null);
   const [blocked, setBlocked] = useState(false);
   const [problem, setProblem] = useState('');
-  const {
-    data: { preferences: p },
-  } = useStore();
+  const p = usePlaybackPreferences();
   useEffect(() => {
     if (!root.current) return;
     try {

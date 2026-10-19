@@ -78,7 +78,17 @@ Progress and preferences use `onlystory.v1` in localStorage. Media use `onlystor
 
 Unreadable stored JSON is copied to `onlystory.recovery` before a fresh session starts. If that copy fails, the app preserves the original and stops persistent writes. Export a session backup in that case.
 
-Only a completed download is marked **On this device** for its installed voice language. Downloads share asset transfers and stream into CacheStorage. Managed installations are checked for missing cached files at startup. Removing an episode clears its availability flag with Undo; shared cached media remain in this milestone. Jobs stop when the tab closes. Cached media work in an already loaded app without the media server; reopening the whole app offline needs a future desktop host or offline application shell.
+Only a completed download is marked **On this device** for its installed voice language. Downloads share asset transfers and stream into CacheStorage. Managed installations are checked for missing cached files at startup. Removing an episode clears its availability flag with Undo; shared cached media remain in this milestone. Jobs stop when the tab closes. The production app can reopen offline once its application shell is ready, using downloaded stories and media.
+
+## Install and read offline
+
+Run `npm run build` and `npm start`, then open the app at its usual address. In **Settings → App installation**, wait for **Ready to open offline**. Use **Install Onlystory** when offered, or your browser's Install app / Add to Home Screen command. On iPhone or iPad, use Safari's Share menu. The installed app requests its own standalone window. Installation support and browser menu wording vary by platform.
+
+Download the stories you want before disconnecting. Once the shell and selected stories are saved, you can close every app window and reopen the same address or installed app without the media server. Undownloaded stories and catalog artwork are not automatically made available offline. Initial setup and updates need the production server; development mode does not register a service worker. Remote hosting requires HTTPS; the local loopback address works for local use.
+
+The offline shell includes all built reader modules and local playback runtimes, stored separately in versioned `onlystory.shell.*` caches. It never precaches the private game library. App updates prepare a complete replacement before offering **Restart to update** in settings. Restart is disabled while this window has active downloads. Other open windows keep running, and the previous build's chunks remain cached for them. Progress and downloaded media are preserved. Closing all app windows also allows a prepared update to activate on the next launch.
+
+Installation uses the same origin's browser storage. Keep the hostname and port consistent to retain access to existing progress and downloads. Browser storage can be cleared or evicted; the app requests persistent storage when downloading, and JSON backups remain useful for reading progress.
 
 `public/private` contains locally imported game material. `public/demo` contains authored SVG scenes, stand-ins, speech synthesis, a generated tone and a six-second video for design checks. Real GFL2 characters use PixiJS and Cubism, loaded when needed. Cubism Core is local under `public/vendor`; setup fetches it from the official Live2D host only if missing and preserves its license header and provenance. Runtime fonts and media need no external service. The GFL2 text is Chinese-only; the English preference does not translate it.
 
@@ -87,9 +97,12 @@ Only a completed download is marked **On this device** for its installed voice l
 ```powershell
 npm run verify
 npm run format:check
+npm run test:pwa
 ```
 
-Browser tests use installed Google Chrome through Playwright in an isolated headless profile. They do not use your signed-in browser. Install Chrome or adjust the Playwright browser configuration. Failure traces and viewport screenshots go to ignored `test-results/`.
+Browser tests use installed Google Chrome through Playwright in an isolated headless profile. They do not use your signed-in browser. Install Chrome or adjust the Playwright browser configuration. The browser suite builds and serves an immutable optimized snapshot in `browser-test` mode, which also enables the synthetic stress catalog. Normal production builds omit that catalog. Isolated Vite transforms are available for direct renderer/audio probes without watching the media library. Service workers are tested separately. Failure traces and viewport screenshots go to ignored `test-results/`; build snapshots are kept under `.cache/browser-build-*`. Use an unused `PORT` if a development server is already running. The content suites require their generated imports and local media libraries.
+
+`test:pwa` builds production output and serves each installation/offline/update test on an isolated local origin. `verify` also runs these production checks after the browser suite. Browser installation eligibility is checked apart from the isolated profile's installation restriction; actual OS installation is a manual browser action.
 
 Read the [milestone behavior and boundaries](docs/milestone-one.md), [design history](docs/reader-design.md), [feasibility research](docs/story-reader-feasibility.md) and [UI requirements](docs/UI-ANTI-PATTERNS.md).
 

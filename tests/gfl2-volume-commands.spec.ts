@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 test('source volume fades retain the old level during delay, adjust an existing player, and seek to the resulting level', async ({
   page,
 }) => {
-  await page.goto('/manage');
+  await page.goto('/library');
   const result = await page.evaluate(async () => {
     const audioModule = '/src/playback/gfl2/event-audio.ts';
     const stateModule = '/src/playback/gfl2/event-state.ts';

@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import type { ReactNode } from 'react';
 import { Volume2 } from 'lucide-react';
 import { IconButton } from '../../components/Primitives';
-import { useStore } from '../../store';
+import { usePlaybackPreferences } from '../../store';
 import { cachedResponse, loadLive2D } from '../gfl2/resources';
 import { PjskPlayer } from './runtime';
 import type { Program } from './types';
@@ -35,9 +35,7 @@ export default function PjskScene({
     [loading, setLoading] = useState(true);
   const [busy, setBusy] = useState(true);
   const [preparedIndex, setPreparedIndex] = useState<number | null>(null);
-  const {
-    data: { preferences: p },
-  } = useStore();
+  const p = usePlaybackPreferences();
   const lastSeek = useRef(seekVersion);
   const url = (payload as { url: string }).url;
   useEffect(() => {

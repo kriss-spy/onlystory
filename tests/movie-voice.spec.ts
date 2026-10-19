@@ -29,6 +29,7 @@ test('original movie voice switches preserve time, playback and saved language',
   await expect(page.getByLabel('Text language', { exact: true })).toHaveCount(
     0,
   );
+  await page.getByRole('tab', { name: 'Audio', exact: true }).click();
   const voice = page.getByLabel('Voice language', { exact: true });
   await expect(voice.locator('option')).toHaveText(['中文', '日本語']);
   await voice.selectOption('ja');
@@ -56,6 +57,7 @@ test('original movie voice switches preserve time, playback and saved language',
   await page
     .getByRole('button', { name: 'Reader settings', exact: true })
     .click();
+  await page.getByRole('tab', { name: 'Audio', exact: true }).click();
   await voice.selectOption('zh-CN');
   await expect(movie).toHaveAttribute('src', chinese!);
   await ready();

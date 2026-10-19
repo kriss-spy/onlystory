@@ -1,4 +1,9 @@
 import type { Episode, GameId } from './model';
+import { matchesSearch } from './search';
+import baMainReleases from './ba-main-releases.json';
+
+const baReleaseDates: Record<string, { date: string; source: string }> =
+  baMainReleases;
 
 export interface StoryBranch {
   id: string;
@@ -29,6 +34,17 @@ export const eventIdFor = (episode: Episode) =>
   episode.collectionId ?? episode.story;
 export const eventUrl = (event: Pick<StoryEvent, 'game' | 'id'>) =>
   `/games/${event.game}/events/${encodeURIComponent(event.id)}`;
+
+// Missing dates are unknown, rather than older than every dated release.
+// Keep them after dated collections in either direction, in source order.
+export function compareReleaseDates(
+  a: Pick<StoryEvent, 'date'>,
+  b: Pick<StoryEvent, 'date'>,
+  newest: boolean,
+) {
+  if (!a.date || !b.date) return Number(!a.date) - Number(!b.date);
+  return a.date.localeCompare(b.date) * (newest ? -1 : 1);
+}
 
 export function groupStoryEvents(episodes: Episode[]): StoryEvent[] {
   const groups = new Map<string, Episode[]>();
@@ -69,10 +85,14 @@ export function groupStoryEvents(episodes: Episode[]): StoryEvent[] {
       category: first.category,
       eventType: first.eventType,
       notice: first.collectionNotice,
-      date: stories.reduce(
-        (date, story) => (story.date > date ? story.date : date),
-        '',
-      ),
+      // ExposedTime is a scheduling gate, not historical release metadata.
+      // Use the chapter's first JP release even when later episodes arrived later.
+      date:
+        (first.game === 'ba' && baReleaseDates[eventIdFor(first)]?.date) ||
+        stories.reduce(
+          (date, story) => (story.date > date ? story.date : date),
+          '',
+        ),
       stories,
       main,
       branches: [...branches.values()],
@@ -82,9 +102,12 @@ export function groupStoryEvents(episodes: Episode[]): StoryEvent[] {
 
 export function storyRows(event: StoryEvent, query = '') {
   const matches = (story: Episode) =>
-    `${story.title} ${story.description}`
-      .toLowerCase()
-      .includes(query.toLowerCase());
+    matchesSearch(query, [
+      story.title,
+      story.description,
+      ...(story.titleAliases ?? []),
+      ...(story.collectionAliases ?? []),
+    ]);
   const branchRows = (branch: StoryBranch, all: boolean): StoryRow[] => {
     const stories = branch.stories.filter((story) => all || matches(story));
     return stories.map((episode, index) => ({

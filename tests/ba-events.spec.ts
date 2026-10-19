@@ -27,24 +27,31 @@ const ready = (page: Page) =>
   expect(page.getByTestId('ba-scene')).toHaveAttribute('aria-busy', 'false', {
     timeout: 45000,
   });
-function passage(group: number, accepts: (node: any, row: any) => boolean) {
-  const chapter = read(group, 'chapter');
+function findPassage(group: number, accepts: (node: any, row: any) => boolean) {
+  const chapter = read(group, 'chapter') as Episode;
   const source = read(group, 'source');
-  const episode = { ...chapter, nodes: chapter.nodes } as Episode;
-  let save = startSave(episode);
-  for (let i = 0; i < chapter.nodes.length * 2; i++) {
-    const node = chapter.nodes.find(
-      (n: any) => n.id === save.frames.at(-1)!.node,
-    );
-    if (accepts(node, source.content[node.source?.row])) return { node, save };
-    if (node.kind === 'end') break;
-    save = advance(
-      episode,
-      save,
-      node.kind === 'choice' ? node.choices[0].id : undefined,
-    );
+  const nodes = new Map(chapter.nodes.map((node) => [node.id, node]));
+  const visited = new Set<string>();
+  const pending = [startSave(chapter)];
+  while (pending.length) {
+    const save = pending.pop()!;
+    const node = nodes.get(save.frames.at(-1)!.node)!;
+    if (visited.has(node.id)) continue;
+    visited.add(node.id);
+    if (accepts(node, source.content[node.source?.row!])) return { node, save };
+    if (node.kind === 'end' || node.kind === 'unsupported') continue;
+    for (const choice of node.kind === 'choice'
+      ? [...node.choices!].reverse().map((choice) => choice.id)
+      : [undefined]) {
+      const next = advance(chapter, save, choice);
+      if (next !== save) pending.push(next);
+    }
   }
-  throw new Error(`No representative passage in ${group}`);
+}
+function passage(group: number, accepts: (node: any, row: any) => boolean) {
+  const result = findPassage(group, accepts);
+  if (!result) throw new Error(`No representative passage in ${group}`);
+  return result;
 }
 const link = (group: number, target: ReturnType<typeof passage>) =>
   `/read/ba/ba-jp-${group}?line=${encodeURIComponent(target.node.id)}&choices=${encodeURIComponent(JSON.stringify(target.save.frames.at(-1)!.answers))}`;
@@ -74,17 +81,27 @@ test('the normal BA catalog contains every complete selected event collection', 
 });
 
 for (const collection of collections) {
-  const first = definitions.find((d: any) => d.collectionId === collection);
-  test(`${collection} renders an original scene and decodes its opening movie`, async ({
+  const candidates = definitions.filter(
+    (d: any) => d.collectionId === collection,
+  );
+  test(`${collection} renders an original scene and decodes its available source movie`, async ({
     page,
   }, info) => {
     const errors: string[] = [];
     page.on('pageerror', (e) => errors.push(e.message));
-    const target = passage(
-      first.group,
-      (n, row) => n.kind === 'text' && /^[1-5];/m.test(row?.ScriptKr ?? ''),
-    );
-    await page.goto(link(first.group, target));
+    // Later events may open with a title-only chapter, and some have no movie.
+    // Select from actual source passages throughout the collection.
+    const scene = candidates
+      .map((candidate: any) => ({
+        group: candidate.group,
+        target: findPassage(
+          candidate.group,
+          (n, row) => n.kind === 'text' && /^[1-5];/m.test(row?.ScriptKr ?? ''),
+        ),
+      }))
+      .find((entry: any) => entry.target);
+    expect(scene, `Original character dialogue in ${collection}`).toBeTruthy();
+    await page.goto(link(scene.group, scene.target));
     await ready(page);
     await expect(page.locator('.ba-canvas')).toHaveAttribute(
       'data-characters',
@@ -92,8 +109,22 @@ for (const collection of collections) {
     );
     await expect(page.locator('.dialogue-window p')).toBeVisible();
     await page.screenshot({ path: info.outputPath(`${collection}.png`) });
-    const movie = passage(first.group, (n) => n.kind === 'video');
-    await page.goto(link(first.group, movie));
+    const movie = candidates
+      .map((candidate: any) => ({
+        group: candidate.group,
+        target: findPassage(candidate.group, (n) => n.kind === 'video'),
+      }))
+      .find((entry: any) => entry.target);
+    if (!movie) {
+      expect(
+        candidates
+          .flatMap((candidate: any) => read(candidate.group, 'chapter').nodes)
+          .filter((node: any) => node.kind === 'video'),
+      ).toEqual([]);
+      expect(errors).toEqual([]);
+      return;
+    }
+    await page.goto(link(movie.group, movie.target));
     const player = page.locator('video');
     await expect(player).toBeVisible();
     await player.click();

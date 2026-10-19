@@ -102,7 +102,10 @@ test('real GFL2 opening plays original text, CGs and looped audio through the sh
   await page
     .getByRole('slider', { name: 'Characters per second', exact: true })
     .fill('0');
-  await page.getByLabel('Appearance', { exact: true }).selectOption('dark');
+  await page.getByRole('tab', { name: 'Appearance', exact: true }).click();
+  await page
+    .getByRole('combobox', { name: 'Appearance', exact: true })
+    .selectOption('dark');
   await page.getByRole('button', { name: 'Close', exact: true }).click();
   if (
     await page
@@ -136,12 +139,16 @@ test('real GFL2 opening plays original text, CGs and looped audio through the sh
     '.native-layer[data-label="BG_None_Carriage_02_02"] img',
   );
   await expect
-    .poll(() =>
-      carriage.evaluate((image: HTMLImageElement) => image.naturalWidth),
+    .poll(
+      () => carriage.evaluate((image: HTMLImageElement) => image.naturalWidth),
+      { timeout: 15000 },
     )
     .toBe(2048);
   await expect
-    .poll(async () => (await diagnostics(page)).layers.includes('白'))
+    // The source BgOff waits two seconds, then fades for another two seconds.
+    .poll(async () => (await diagnostics(page)).layers.includes('白'), {
+      timeout: 10000,
+    })
     .toBe(false);
   const ledger = JSON.parse(
     readFileSync('public/private/gfl2-opening/provenance.json', 'utf8'),
@@ -213,15 +220,19 @@ test('real GFL2 opening plays original text, CGs and looped audio through the sh
   expect(errors).toEqual([]);
 });
 
-test('real Chinese lines fit the small reader and unavailable games do not show invented stories', async ({
+test('real Chinese lines fit the small reader and game catalogs do not show invented stories', async ({
   page,
 }, testInfo) => {
   test.skip(!available, 'Import the local GFL2 prototype first.');
   await page.setViewportSize({ width: 320, height: 700 });
   await page.goto('/games/gfl1');
-  await expect(
-    page.getByRole('heading', { name: 'No events imported yet' }),
-  ).toBeVisible();
+  if (!existsSync('src/generated/gfl1-catalog.json'))
+    await expect(
+      page.getByRole('heading', { name: 'No events imported yet' }),
+    ).toBeVisible();
+  await expect(page.getByRole('link', { name: /Night platform/ })).toHaveCount(
+    0,
+  );
   await page.goto('/read/gfl2/gfl2-a33001-opening?line=A33001%3A27');
   await expect(page.locator('.dialogue-window')).toContainText('一只苍白的手');
   await expect

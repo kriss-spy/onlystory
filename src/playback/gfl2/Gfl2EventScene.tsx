@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { AlertTriangle, Volume2 } from 'lucide-react';
-import { useStore } from '../../store';
+import { usePlaybackPreferences } from '../../store';
 import { IconButton } from '../../components/Primitives';
 import { buildPathTimeline, buildTimeline } from './event-state';
 import { EventStage } from './event-stage';
@@ -62,9 +62,7 @@ export default function Gfl2EventScene({
       ),
     ]),
   ];
-  const {
-    data: { preferences: p },
-  } = useStore();
+  const p = usePlaybackPreferences();
   const reduced =
     p.reducedMotion || matchMedia('(prefers-reduced-motion: reduce)').matches;
   const current = useRef({ index, fastForward, p, reduced });

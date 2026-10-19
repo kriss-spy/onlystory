@@ -19,8 +19,8 @@ The application makes no external requests to load covers.
   table, so events that reuse another event's lobby art keep that art. Every
   exported image's source texture and pack are recorded in
   `public/private/ba-jp/catalog/art.json`.
-- 金翅雀与橄榄枝 uses the event announcement published by the official GFL2 account
-  on TapTap. The portrait announcement is displayed from its top artwork area.
+- 金翅雀与橄榄枝 uses the landscape event PV cover from the official GFL2 CN
+  website, acquired by `scripts/gfl2-covers.py` using official video ID 91.
 - 伊利昂之围 uses its version feedback announcement artwork from TapTap.
 
 The source pages are linked in the JSON manifest. Matching uses game IDs and event

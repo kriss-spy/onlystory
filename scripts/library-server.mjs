@@ -10,6 +10,7 @@ import {
 } from './local-environment.mjs';
 const types = {
   '.json': 'application/json',
+  '.webmanifest': 'application/manifest+json',
   '.mp4': 'video/mp4',
   '.m4a': 'audio/mp4',
   '.webp': 'image/webp',
@@ -105,6 +106,12 @@ export function libraryMiddleware(
       types[extname(file)] ?? 'application/octet-stream',
     );
     res.setHeader('Accept-Ranges', 'bytes');
+    if (
+      pathname === '/sw.js' ||
+      pathname === '/manifest.webmanifest' ||
+      extname(file) === '.html'
+    )
+      res.setHeader('Cache-Control', 'no-cache');
     if (/\/shared\/[a-f0-9]{64}\./.test(pathname))
       res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
     let start = 0,

@@ -8,7 +8,7 @@ import {
 import { useVirtualizer } from '@tanstack/react-virtual';
 import { Search } from 'lucide-react';
 import { gameById } from '../content';
-import { groupStoryEvents } from '../catalog';
+import { compareReleaseDates, groupStoryEvents } from '../catalog';
 import { catalogEventUrl, catalogMode, catalogSource } from '../catalog-source';
 import { useStore } from '../store';
 import { EmptyState } from '../components/Primitives';
@@ -21,6 +21,8 @@ import { baSchools, featuredSchools } from '../ba-schools';
 import { SchoolMarks } from '../components/SchoolMarks';
 import { EventCover } from '../components/EventCover';
 import { useNarrow } from '../hooks';
+import { matchesSearch } from '../search';
+import { CatalogLayout } from '../components/CatalogLayout';
 
 const scrollPositions = new Map<string, number>();
 const eventTypes = [
@@ -36,6 +38,8 @@ export function CatalogPage() {
   const { data } = useStore();
   const scroll = useRef<HTMLDivElement>(null);
   const narrow = useNarrow();
+  const layout = data.preferences.catalogLayout ?? 'list';
+  const columns = layout === 'grid' && !narrow ? 2 : 1;
   const query = params.get('q') ?? '';
   const requestedGroup = params.get('group');
   const group =
@@ -56,10 +60,18 @@ export function CatalogPage() {
     ? (requestedType ?? 'all')
     : 'all';
   const showEventTypes = game?.id === 'gfl1' && category === 'Event';
-  const sort =
-    requestedSort === 'story' || requestedSort === 'release'
-      ? requestedSort
-      : 'release-newest';
+  const defaultSort =
+    game?.id === 'ba' && category === 'Main story' ? 'story' : 'release-newest';
+  const sort = [
+    'story',
+    'release',
+    'release-newest',
+    'title',
+    'title-desc',
+    'progress',
+  ].includes(requestedSort ?? '')
+    ? requestedSort!
+    : defaultSort;
   const { examples, previews, stress } = catalogMode(params);
   const events = useMemo(
     () =>
@@ -80,10 +92,14 @@ export function CatalogPage() {
       events
         .filter(
           (event) =>
-            (event.title.toLowerCase().includes(query.toLowerCase()) ||
-              event.stories.some((story) =>
-                story.title.toLowerCase().includes(query.toLowerCase()),
-              )) &&
+            matchesSearch(query, [
+              event.title,
+              ...event.stories.flatMap((story) => [
+                story.title,
+                ...(story.titleAliases ?? []),
+                ...(story.collectionAliases ?? []),
+              ]),
+            ]) &&
             (category === 'all' || event.category === category) &&
             (group === 'all' ||
               event.stories.some((story) => story.group === group)) &&
@@ -95,40 +111,49 @@ export function CatalogPage() {
         )
         .sort((a, b) => {
           if (sort === 'story') return 0;
-          const order =
-            a.date.localeCompare(b.date) ||
-            a.stories[0].order - b.stories[0].order;
-          return sort === 'release' ? order : -order;
+          if (sort === 'title' || sort === 'title-desc')
+            return a.title.localeCompare(b.title) * (sort === 'title' ? 1 : -1);
+          if (sort === 'progress') {
+            const fraction = (event: typeof a) =>
+              event.stories.filter((story) => data.saves[story.id]?.completed)
+                .length / event.stories.length;
+            return fraction(b) - fraction(a) || a.title.localeCompare(b.title);
+          }
+          return compareReleaseDates(a, b, sort === 'release-newest');
         }),
-    [events, query, category, group, school, sort, showEventTypes, eventType],
+    [
+      events,
+      query,
+      category,
+      group,
+      school,
+      sort,
+      showEventTypes,
+      eventType,
+      data.saves,
+    ],
   );
+  const undated = filtered.filter((event) => !event.date).length;
+  const releaseOrder = sort === 'release' || sort === 'release-newest';
   const large = filtered.length > 80;
-  const rowHeight = narrow
-    ? game?.id === 'pjsk'
-      ? 164
-      : game?.id === 'ba'
-        ? 164
-        : 116
-    : game?.id === 'ba'
-      ? 136
-      : 116;
+  const rowHeight = layout === 'table' ? 68 : layout === 'grid' ? 240 : 100;
   const virtual = useVirtualizer({
-    count: large ? filtered.length : 0,
+    count: large ? Math.ceil(filtered.length / columns) : 0,
     getScrollElement: () => scroll.current,
     estimateSize: () => rowHeight,
     overscan: 5,
   });
   useLayoutEffect(() => {
     virtual.measure();
-  }, [virtual, rowHeight]);
-  const key = location.pathname + location.search;
+  }, [virtual, rowHeight, columns]);
+  const key = location.pathname + location.search + ':' + layout;
   useLayoutEffect(() => {
     if (scroll.current)
       scroll.current.scrollTop = scrollPositions.get(key) ?? 0;
   }, [key]);
   const update = (key: string, value: string) => {
     const next = new URLSearchParams(window.location.search);
-    const defaultValue = key === 'sort' ? 'release-newest' : 'all';
+    const defaultValue = key === 'sort' ? defaultSort : 'all';
     if (key === 'storyType') {
       next.delete('category');
       next.delete('eventType');
@@ -156,17 +181,49 @@ export function CatalogPage() {
     const read = event.stories.filter(
       (story) => data.saves[story.id]?.completed,
     ).length;
+    if (layout === 'table')
+      return (
+        <tr
+          key={event.id}
+          className={`event-row ${large ? 'virtual-event' : ''}`}
+          style={{
+            height: rowHeight,
+            ...(start === undefined
+              ? {}
+              : { transform: `translateY(${start}px)` }),
+          }}
+        >
+          <td>
+            <Link
+              to={catalogEventUrl(event, params)}
+              state={{ from: location.pathname + location.search }}
+            >
+              {event.title}
+            </Link>
+            <small>{event.category}</small>
+          </td>
+          <td>
+            {event.date ? (
+              <time dateTime={event.date}>{event.date}</time>
+            ) : (
+              'Release date unavailable'
+            )}
+          </td>
+          <td>{event.stories.length}</td>
+          <td>
+            {read} / {event.stories.length}
+          </td>
+        </tr>
+      );
     return (
       <li
-        className={`event-row ${event.game === 'pjsk' ? 'pjsk-event-row' : ''} ${large ? 'virtual-event' : ''}`}
+        className={`event-row ${event.game === 'pjsk' ? 'pjsk-event-row' : ''}`}
         key={event.id}
-        style={
-          start === undefined
-            ? { height: rowHeight }
-            : { height: rowHeight, transform: `translateY(${start}px)` }
-        }
       >
-        <Link to={catalogEventUrl(event, params)} state={{ from: key }}>
+        <Link
+          to={catalogEventUrl(event, params)}
+          state={{ from: location.pathname + location.search }}
+        >
           {cover ? (
             <EventCover
               className={`event-cover${event.game === 'pjsk' ? ' pjsk-event-cover' : ''}`}
@@ -184,11 +241,15 @@ export function CatalogPage() {
               ) : null}
               <small>
                 {event.category}
-                {event.date &&
-                (sort === 'release' || sort === 'release-newest') ? (
+                {releaseOrder ? (
                   <>
                     {' '}
-                    · <time dateTime={event.date}>{event.date}</time>
+                    ·{' '}
+                    {event.date ? (
+                      <time dateTime={event.date}>{event.date}</time>
+                    ) : (
+                      'Release date unavailable'
+                    )}
                   </>
                 ) : null}
               </small>
@@ -210,17 +271,25 @@ export function CatalogPage() {
   };
   return (
     <main
-      className="page catalog-page"
+      className={`page catalog-page catalog-layout-${layout}`}
       style={{ '--game-accent': game.accent } as React.CSSProperties}
     >
-      <PageTitle eyebrow={game.shortName} title={game.name} back="/library">
-        <p>
-          {examples
-            ? 'Fictional events for interface checks.'
-            : game.id === 'ba'
-              ? 'Story collections'
-              : 'Events and story collections'}
-        </p>
+      <PageTitle title={game.name} back="/library">
+        <div className="catalog-heading-meta">
+          <span className="muted">
+            {filtered.length.toLocaleString()}{' '}
+            {game.id === 'ba'
+              ? filtered.length === 1
+                ? 'collection'
+                : 'collections'
+              : filtered.length === 1
+                ? 'event'
+                : 'events'}
+          </span>
+          <Link className="text-link" to="/manage">
+            Manage availability
+          </Link>
+        </div>
       </PageTitle>
       <div className="catalog-toolbar">
         <label className="search-field">
@@ -328,23 +397,19 @@ export function CatalogPage() {
           <option value="story">Source order</option>
           <option value="release">Release order · oldest first</option>
           <option value="release-newest">Release order · newest first</option>
+          <option value="title">Title · A–Z</option>
+          <option value="title-desc">Title · Z–A</option>
+          <option value="progress">Reading progress</option>
         </select>
+        <CatalogLayout />
       </div>
-      <div className="section-title">
-        <span className="muted">
-          {filtered.length.toLocaleString()}{' '}
-          {game.id === 'ba'
-            ? filtered.length === 1
-              ? 'collection'
-              : 'collections'
-            : filtered.length === 1
-              ? 'event'
-              : 'events'}
-        </span>
-        <Link className="text-link" to="/manage">
-          Manage availability
-        </Link>
-      </div>
+      {releaseOrder && undated > 0 ? (
+        <p className="muted release-order-note" role="note">
+          {undated} {undated === 1 ? 'collection has' : 'collections have'} no
+          release date in the imported source. Undated collections appear after
+          dated releases, in source order.
+        </p>
+      ) : null}
       {!filtered.length ? (
         <EmptyState
           title={
@@ -374,20 +439,111 @@ export function CatalogPage() {
           onScroll={(e) => scrollPositions.set(key, e.currentTarget.scrollTop)}
           aria-label="Events"
         >
-          <ol
-            className="event-list"
-            style={
-              large
-                ? { height: virtual.getTotalSize(), position: 'relative' }
-                : undefined
-            }
-          >
-            {large
-              ? virtual
-                  .getVirtualItems()
-                  .map((item) => render(item.index, item.start))
-              : filtered.map((_, index) => render(index))}
-          </ol>
+          {layout === 'table' ? (
+            <table className="event-table">
+              <thead>
+                <tr>
+                  <th
+                    scope="col"
+                    aria-sort={
+                      sort === 'title'
+                        ? 'ascending'
+                        : sort === 'title-desc'
+                          ? 'descending'
+                          : 'none'
+                    }
+                  >
+                    <button
+                      onClick={() =>
+                        update(
+                          'sort',
+                          sort === 'title' ? 'title-desc' : 'title',
+                        )
+                      }
+                    >
+                      Title
+                    </button>
+                  </th>
+                  <th
+                    scope="col"
+                    aria-sort={
+                      sort === 'release'
+                        ? 'ascending'
+                        : sort === 'release-newest'
+                          ? 'descending'
+                          : 'none'
+                    }
+                  >
+                    <button
+                      onClick={() =>
+                        update(
+                          'sort',
+                          sort === 'release' ? 'release-newest' : 'release',
+                        )
+                      }
+                    >
+                      Release
+                    </button>
+                  </th>
+                  <th scope="col">Stories</th>
+                  <th
+                    scope="col"
+                    aria-sort={sort === 'progress' ? 'descending' : 'none'}
+                  >
+                    <button onClick={() => update('sort', 'progress')}>
+                      Read
+                    </button>
+                  </th>
+                </tr>
+              </thead>
+              <tbody
+                style={
+                  large
+                    ? { height: virtual.getTotalSize(), position: 'relative' }
+                    : undefined
+                }
+              >
+                {large
+                  ? virtual
+                      .getVirtualItems()
+                      .map((item) => render(item.index, item.start))
+                  : filtered.map((_, index) => render(index))}
+              </tbody>
+            </table>
+          ) : (
+            <ol
+              className={`event-list collection-${layout}${large ? ' collection-virtual' : ''}`}
+              style={
+                large
+                  ? { height: virtual.getTotalSize(), position: 'relative' }
+                  : undefined
+              }
+            >
+              {large
+                ? virtual.getVirtualItems().map((item) => (
+                    <li
+                      key={item.key}
+                      className="virtual-collection-row"
+                      data-index={item.index}
+                      ref={virtual.measureElement}
+                      style={{ transform: `translateY(${item.start}px)` }}
+                    >
+                      <ol
+                        className={`event-list collection-${layout}`}
+                        start={item.index * columns + 1}
+                      >
+                        {Array.from(
+                          { length: columns },
+                          (_, column) => item.index * columns + column,
+                        )
+                          .filter((index) => index < filtered.length)
+                          .map((index) => render(index))}
+                      </ol>
+                    </li>
+                  ))
+                : filtered.map((_, index) => render(index))}
+            </ol>
+          )}
         </div>
       )}
     </main>

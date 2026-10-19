@@ -5,7 +5,7 @@ const reader = '/read/gfl2/gfl2-cn-4028-32990?line=M15033%3A64';
 test('reconfiguring the real Harwell scene keeps one model update per animation frame', async ({
   page,
 }) => {
-  await page.goto('/manage');
+  await page.goto('/library');
   const result = await page.evaluate(async () => {
     const stageModule = '/src/playback/gfl2/event-stage.ts';
     const stateModule = '/src/playback/gfl2/event-state.ts';

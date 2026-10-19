@@ -4,6 +4,7 @@ async function instant(page: Page) {
   await page.goto('/library');
   await page.getByRole('button', { name: 'Settings', exact: true }).click();
   await page.getByRole('slider', { name: /Characters per second/ }).fill('0');
+  await page.getByRole('tab', { name: 'Audio', exact: true }).click();
   await page.getByRole('slider', { name: /Voice volume/ }).fill('0');
   await page.getByRole('slider', { name: /Music volume/ }).fill('0');
   await page.getByRole('button', { name: 'Close', exact: true }).click();
@@ -308,8 +309,12 @@ test('themes persist, backups export, invalid import preserves progress and keyb
   await page.goto('/read/ba/ba-1');
   await next(page);
   await page.keyboard.press(',');
-  await page.getByLabel('Appearance', { exact: true }).selectOption('dark');
   await page.getByLabel('Layout', { exact: true }).selectOption('desk');
+  await page.getByRole('tab', { name: 'Appearance', exact: true }).click();
+  await page
+    .getByRole('combobox', { name: 'Appearance', exact: true })
+    .selectOption('dark');
+  await page.getByRole('tab', { name: 'Library', exact: true }).click();
   const download = page.waitForEvent('download');
   await page.getByRole('button', { name: 'Export backup' }).click();
   expect((await download).suggestedFilename()).toBe('onlystory-backup.json');
@@ -436,6 +441,7 @@ test('loading and failed voice leave text usable, and language changes preserve 
   await page
     .getByRole('button', { name: 'Reader settings', exact: true })
     .click();
+  await page.getByRole('tab', { name: 'Audio', exact: true }).click();
   await page.getByRole('slider', { name: /Voice volume/ }).fill('0.8');
   await page.getByRole('button', { name: 'Close', exact: true }).click();
   await expect(
@@ -448,15 +454,11 @@ test('loading and failed voice leave text usable, and language changes preserve 
   await page
     .getByRole('button', { name: 'Reader settings', exact: true })
     .click();
-  await expect(page.getByLabel('Text language', { exact: true })).toHaveValue(
-    'en',
-  );
-  await page.getByLabel('Text language', { exact: true }).selectOption('ja');
-  await page.getByLabel('Voice language', { exact: true }).selectOption('ja');
   await page.getByRole('button', { name: 'Close', exact: true }).click();
-  await expect(page.locator('.dialogue-window')).toContainText(
-    'Take the light',
-  );
+  await page
+    .getByRole('combobox', { name: 'Reading language' })
+    .selectOption('zh-CN');
+  await expect(page.locator('.dialogue-window')).toContainText('拿好灯');
   await expect(page).toHaveURL(/choices=.*follow/);
   await page.goto('/read/ba/ba-1?fixture=loading&line=arrival');
   await expect(page.getByText('Loading scene…')).toBeVisible();

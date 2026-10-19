@@ -44,6 +44,7 @@ from ba_package_cache import (
     stage_native_actor_effects,
     stage_spine_background,
 )
+from ba_character_textures import install_character_textures
 
 _BATCH_SOUND_NAMES = set()
 _VERIFIED_SOURCES = {}
@@ -815,6 +816,7 @@ def package(group, check_only=False):
         ROOT / "node_modules/@esotericsoftware/spine-webgl/LICENSE", license_file
     )
     record(license_file)
+    install_character_textures(OUT, URL, manifest)
     if staging:
         # Validate the complete staged chapter before touching any shared output.
         # This also resolves authored patch components before comparing final models.

@@ -25,7 +25,10 @@ test('a deferred-voice chapter downloads before first reading and plays offline'
       },
     },
   );
-  await page.goto('/manage');
+  await page.goto('/manage?game=pjsk');
+  await page
+    .getByRole('searchbox', { name: 'Search downloads' })
+    .fill(episode.title);
   const row = page
     .locator('.download-item')
     .filter({ has: page.locator(`a[href="${route}"]`) });

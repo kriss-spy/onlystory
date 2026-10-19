@@ -30,7 +30,7 @@ test('fast-forward keeps advancing unread text until toggled off', async ({
       preferences: { ...emptyData().preferences, skipMode: 'read' },
     },
   );
-  await page.goto(opening);
+  await page.goto(opening, { waitUntil: 'domcontentloaded' });
   await page
     .getByRole('button', { name: 'Reader settings', exact: true })
     .click();
@@ -60,7 +60,7 @@ test('fast-forward keeps advancing unread text until toggled off', async ({
 });
 
 test('clicking the progress bar seeks to another passage', async ({ page }) => {
-  await page.goto(opening);
+  await page.goto(opening, { waitUntil: 'domcontentloaded' });
   const progress = page.locator('.reader-progress');
   const box = (await progress.boundingBox())!;
   await page.mouse.click(box.x + box.width * 0.75, box.y + box.height / 2);
@@ -73,7 +73,7 @@ test('clicking the progress bar seeks to another passage', async ({ page }) => {
 test('dragging seeks in both directions, updates text and URLs, and survives reload', async ({
   page,
 }, testInfo) => {
-  await page.goto(opening);
+  await page.goto(opening, { waitUntil: 'domcontentloaded' });
   const bar = position(page);
   const box = (await bar.boundingBox())!;
   const y = box.y + box.height / 2;
@@ -97,7 +97,7 @@ test('dragging seeks in both directions, updates text and URLs, and survives rel
       .replaceAll('{}', '指挥官'),
   );
   const url = page.url();
-  await page.reload();
+  await page.reload({ waitUntil: 'domcontentloaded' });
   await expect(bar).toHaveValue(String(index));
   expect(page.url()).toBe(url);
   await bar.focus();
@@ -134,7 +134,9 @@ test('fast-forward carries into the next section and seeking stops playback', as
 test('seeking respects unanswered choices and retains an answered branch during a drag', async ({
   page,
 }) => {
-  await page.goto('/read/ba/ba-1?line=arrival');
+  await page.goto('/read/ba/ba-1?line=arrival', {
+    waitUntil: 'domcontentloaded',
+  });
   await position(page).focus();
   await page.keyboard.press('End');
   await expect(page).toHaveURL(/line=decision$/);
@@ -151,12 +153,13 @@ test('seeking respects unanswered choices and retains an answered branch during 
   await page.mouse.move(box.x + box.width * 0.5, y, { steps: 5 });
   await page.mouse.up();
   await expect(page).toHaveURL(/line=follow&choices=.*follow/);
-  await page.reload();
+  await page.reload({ waitUntil: 'domcontentloaded' });
   await expect(page.locator('.dialogue-window')).toContainText(
     'Take the light',
   );
   await page.goto(
     '/read/gfl1/gfl1-3?line=arrival&choices=%7B%22decision%22%3A%22listen%22%7D',
+    { waitUntil: 'domcontentloaded' },
   );
   // Before the choice, URL restoration discards future answers. Answer it explicitly.
   await position(page).focus();
@@ -175,7 +178,9 @@ test('seeking respects unanswered choices and retains an answered branch during 
 test('fast-forward stops at an unanswered choice and at the end of the story', async ({
   page,
 }) => {
-  await page.goto('/read/ba/ba-1?line=arrival');
+  await page.goto('/read/ba/ba-1?line=arrival', {
+    waitUntil: 'domcontentloaded',
+  });
   await page.getByRole('button', { name: 'Fast-forward', exact: true }).click();
   await expect(page).toHaveURL(/line=decision$/);
   await expect(
@@ -190,6 +195,7 @@ test('fast-forward stops at an unanswered choice and at the end of the story', a
   );
   await page.goto(
     `/read/gfl2/${last.id}?line=${encodeURIComponent(data.passages.at(-2).id)}`,
+    { waitUntil: 'domcontentloaded' },
   );
   await page.getByRole('button', { name: 'Fast-forward', exact: true }).click();
   await expect(page.locator('.episode-end')).toContainText('全文阅读完毕');
@@ -204,7 +210,7 @@ test.describe('touch progress seeking', () => {
     page,
     context,
   }, testInfo) => {
-    await page.goto(opening);
+    await page.goto(opening, { waitUntil: 'domcontentloaded' });
     const bar = position(page);
     const box = (await bar.boundingBox())!;
     const cdp = await context.newCDPSession(page);

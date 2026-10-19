@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Volume2 } from 'lucide-react';
-import { useStore } from '../../store';
+import { useStore, usePlaybackPreferences } from '../../store';
 import { BaStage } from './stage';
 import { BaAudio } from './audio';
 import { applyBaRow, initialBaState, rowDelay } from './state';
@@ -49,7 +49,7 @@ export default function BaScene({
   const touch = baTouchRegion(touchScript, viewport, touchImage);
   const resolveTouch = useRef<(() => void) | null>(null);
   const store = useStore();
-  const p = store.data.preferences;
+  const p = usePlaybackPreferences();
   const reduced =
     p.reducedMotion || matchMedia('(prefers-reduced-motion: reduce)').matches;
   const previous = useRef({

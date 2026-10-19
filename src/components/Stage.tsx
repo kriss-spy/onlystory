@@ -9,7 +9,7 @@ import { backgroundUrl } from '../fixtures';
 import { useMediaUrl } from '../hooks';
 import type { Fixture, StoryNode } from '../model';
 import { IconButton } from './Primitives';
-import { useStore } from '../store';
+import { usePlaybackPreferences } from '../store';
 
 function MovieSubtitle({
   track,
@@ -49,9 +49,7 @@ export function Stage({
   skipVideo: () => void;
   embedded?: boolean;
 }) {
-  const {
-    data: { preferences },
-  } = useStore();
+  const preferences = usePlaybackPreferences();
   const src = useMediaUrl(
     node.kind === 'video'
       ? undefined

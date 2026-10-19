@@ -99,7 +99,7 @@ To regenerate the episode, keep `.cache/pjsk/http` and `.cache/pjsk/packages` as
 
 ## Move reading progress separately
 
-Export reading data from the current app and import it on the destination. Browser localStorage and CacheStorage are outside the project archive. Progress is specific to browser profile and origin, including the port. A JSON progress backup contains saves and preferences, not downloaded media. The restored media library remains available through the local host. Reopening the entire app offline still requires an offline application shell that has not been implemented.
+Export reading data from the current app and import it on the destination. Browser localStorage and CacheStorage are outside the project archive. Progress is specific to browser profile and origin, including the port. A JSON progress backup contains saves and preferences, not downloaded media. The restored media library remains available through the local host. The production app saves an offline application shell separately from downloaded game media. On the destination, open the app online, wait for **Settings → App installation → Ready to open offline**, and download the desired stories before disconnecting. See [installation and offline reading](../README.md#install-and-read-offline).
 
 ## Rebuild imports only when changing source content
 

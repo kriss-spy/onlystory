@@ -46,6 +46,19 @@ test('normal playback retains every separately shaded piece of the mirror CG', a
   await expect(
     page.getByTestId('native-layers').locator('canvas'),
   ).toBeVisible();
+  // Canvas creation precedes loading the starting scene's assets.
+  await expect
+    .poll(() =>
+      page.getByTestId('native-layers').evaluate((element) => {
+        const state = (
+          element as HTMLElement & {
+            playbackDiagnostics?: { loaded: string[]; pending: string[] };
+          }
+        ).playbackDiagnostics;
+        return !!state?.loaded.length && state.pending.length === 0;
+      }),
+    )
+    .toBe(true);
   await page.getByRole('button', { name: 'Next passage', exact: true }).click();
   await expect(page).toHaveURL(/line=M22022%3A372/);
   const expected = Array.from(

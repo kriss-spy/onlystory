@@ -12,7 +12,7 @@ for (const deviceScaleFactor of [1.25, 2]) {
     const context = await browser.newContext({ deviceScaleFactor });
     const page = await context.newPage();
     try {
-      await page.goto('/manage');
+      await page.goto('/library');
       const result = await page.evaluate(async (url) => {
         // Load the real adapter through Vite, including its original Cubism model.
         const stageModule = '/src/playback/gfl2/event-stage.ts';

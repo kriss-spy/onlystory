@@ -19,7 +19,11 @@ export function EventCover({
       />
     );
   return (
-    <span className={`${className} event-artwork`} aria-hidden="true">
+    <span
+      className={`${className} event-artwork`}
+      aria-hidden="true"
+      style={{ aspectRatio: `${cover.width} / ${cover.height}` }}
+    >
       <img
         src={cover.url}
         alt=""

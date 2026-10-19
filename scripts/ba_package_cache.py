@@ -206,7 +206,10 @@ class ExportCache:
             if not character["skeleton"].startswith("/private/ba-jp/shared/media/"):
                 continue
             directory = character["skeleton"].rsplit("/", 1)[0] + "/"
-            entries = [f for u, f in files.items() if u.startswith(directory)]
+            pages = set(character.get("pages", []))
+            entries = [
+                f for u, f in files.items() if u.startswith(directory) or u in pages
+            ]
             self.models.setdefault(
                 character["model"].lower(),
                 {

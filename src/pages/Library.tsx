@@ -10,7 +10,6 @@ import {
 import { passageUrl, startSave } from '../model';
 import { eventUrl, groupStoryEvents } from '../catalog';
 import { useStore } from '../store';
-import { PageTitle } from '../components/Shell';
 import { eventArtwork, gameArtwork, artworkStyle } from '../covers';
 
 export function LibraryPage() {
@@ -28,9 +27,6 @@ export function LibraryPage() {
     .slice(0, 3);
   return (
     <main className="page library-page">
-      <PageTitle eyebrow="YOUR READING ROOM" title="A story, at your pace.">
-        <p>Pick up where you left off, or find somewhere new to begin.</p>
-      </PageTitle>
       {recent.length ? (
         <section className="continue-section">
           <div className="section-title">

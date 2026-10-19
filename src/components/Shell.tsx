@@ -25,15 +25,29 @@ import { readerCommand, UiContext } from '../ui';
 import type { GlobalPanel, ReaderCommand } from '../ui';
 import { IconButton, Panel } from './Primitives';
 import { Settings } from './Settings';
+import type { GameId } from '../model';
+import { gamePreferences } from '../model';
 
 export function Shell({ children }: { children: ReactNode }) {
   const location = useLocation();
   const navigate = useNavigate();
-  const { notice, dismiss, transfers } = useStore();
+  const { notice, dismiss, transfers, data } = useStore();
   const [panel, setPanel] = useState<GlobalPanel | null>(null);
   const [query, setQuery] = useState('');
   const focus = useRef<HTMLElement | null>(null);
   const inReader = location.pathname.startsWith('/read/');
+  const game = location.pathname.split('/')[2] as GameId;
+  const palette = data.preferences.gameThemes?.[game] ?? 'default';
+  const theme = gamePreferences(data.preferences, game).theme;
+  useEffect(() => {
+    document.documentElement.dataset.palette = palette;
+    document.documentElement.dataset.theme = theme;
+    document.documentElement.style.colorScheme =
+      theme === 'system' ? 'light dark' : theme;
+    return () => {
+      delete document.documentElement.dataset.palette;
+    };
+  }, [palette, theme]);
   const open = useCallback((name: GlobalPanel) => {
     focus.current =
       document.activeElement instanceof HTMLElement
@@ -130,7 +144,7 @@ export function Shell({ children }: { children: ReactNode }) {
         shortcut: '',
       },
       {
-        label: 'Reader settings',
+        label: inReader ? 'Reader settings' : 'General settings',
         icon: Settings2,
         run: () => open('settings'),
         shortcut: ',',
@@ -237,7 +251,7 @@ export function Shell({ children }: { children: ReactNode }) {
           description="Preferences are saved on this device."
           returnFocus={focus.current}
         >
-          <Settings onNavigate={close} />
+          <Settings key={location.pathname} onNavigate={close} />
         </Panel>
         <Panel
           open={panel === 'commands'}

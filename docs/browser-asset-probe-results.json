@@ -1,0 +1,273 @@
+{
+  "checkedAt": "2026-10-18T14:33:25.314Z",
+  "browserVersion": "155.0.8059.82",
+  "origin": "http://127.0.0.1:62748",
+  "results": [
+    {
+      "id": "pjsk-master",
+      "url": "https://raw.githubusercontent.com/Sekai-World/sekai-master-db-cn-diff/main/unitStories.json",
+      "browser": {
+        "status": 200,
+        "type": "cors",
+        "contentType": "text/plain; charset=utf-8",
+        "sampledBytes": 55176
+      },
+      "http": {
+        "status": 206,
+        "allowOrigin": "*",
+        "allowHeaders": null,
+        "contentRange": "bytes 0-1023/55176",
+        "contentType": "text/plain; charset=utf-8"
+      }
+    },
+    {
+      "id": "pjsk-scenario",
+      "url": "https://storage.sekai.best/sekai-cn-assets/scenario/unitstory/idol-story-chapter/mmj_01_01.asset",
+      "browser": {
+        "status": 200,
+        "type": "cors",
+        "contentType": "application/octet-stream",
+        "sampledBytes": 10934
+      },
+      "http": {
+        "status": 206,
+        "allowOrigin": "https://onlystory.example",
+        "allowHeaders": "ETag, Content-Length, Content-Type, Last-Modified, x-amz-request-id, x-amz-version-id",
+        "contentRange": "bytes 0-1023/95515",
+        "contentType": "application/octet-stream"
+      }
+    },
+    {
+      "id": "pjsk-model-index",
+      "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/model_list.json",
+      "browser": {
+        "status": 200,
+        "type": "cors",
+        "contentType": "application/json",
+        "sampledBytes": 81374
+      },
+      "http": {
+        "status": 206,
+        "allowOrigin": "https://onlystory.example",
+        "allowHeaders": "ETag, Content-Length, Content-Type, Last-Modified, x-amz-request-id, x-amz-version-id",
+        "contentRange": "bytes 0-1023/161478",
+        "contentType": "application/json"
+      }
+    },
+    {
+      "id": "pjsk-model",
+      "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/model/v1/main/05_minori/05minori_normal/05minori_normal_3.0_f_t05.model3.json",
+      "browser": {
+        "status": 200,
+        "type": "cors",
+        "contentType": "application/json",
+        "sampledBytes": 369
+      },
+      "http": {
+        "status": 206,
+        "allowOrigin": "https://onlystory.example",
+        "allowHeaders": "ETag, Content-Length, Content-Type, Last-Modified, x-amz-request-id, x-amz-version-id",
+        "contentRange": "bytes 0-368/369",
+        "contentType": "application/json"
+      }
+    },
+    {
+      "id": "pjsk-moc",
+      "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/model/v1/main/05_minori/05minori_normal/05minori_normal_3.0_f_t05.moc3",
+      "browser": {
+        "status": 200,
+        "type": "cors",
+        "contentType": "application/octet-stream",
+        "sampledBytes": 569
+      },
+      "http": {
+        "status": 206,
+        "allowOrigin": "https://onlystory.example",
+        "allowHeaders": "ETag, Content-Length, Content-Type, Last-Modified, x-amz-request-id, x-amz-version-id",
+        "contentRange": "bytes 0-1023/878592",
+        "contentType": "application/octet-stream"
+      }
+    },
+    {
+      "id": "pjsk-texture",
+      "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/model/v1/main/05_minori/05minori_normal/05minori_normal_3.0_f_t05.2048/texture_00.png",
+      "browser": {
+        "status": 200,
+        "type": "cors",
+        "contentType": "image/png",
+        "sampledBytes": 580
+      },
+      "http": {
+        "status": 206,
+        "allowOrigin": "https://onlystory.example",
+        "allowHeaders": "ETag, Content-Length, Content-Type, Last-Modified, x-amz-request-id, x-amz-version-id",
+        "contentRange": "bytes 0-1023/1898907",
+        "contentType": "image/png"
+      }
+    },
+    {
+      "id": "pjsk-motion",
+      "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/main/05_minori/05minori_motion_base/motion/w-cute-fidget01.motion3.json",
+      "browser": {
+        "status": 200,
+        "type": "cors",
+        "contentType": "application/json",
+        "sampledBytes": 12574
+      },
+      "http": {
+        "status": 206,
+        "allowOrigin": "https://onlystory.example",
+        "allowHeaders": "ETag, Content-Length, Content-Type, Last-Modified, x-amz-request-id, x-amz-version-id",
+        "contentRange": "bytes 0-1023/12574",
+        "contentType": "application/json"
+      }
+    },
+    {
+      "id": "pjsk-audio",
+      "url": "https://storage.sekai.best/sekai-jp-assets/sound/scenario/voice/mmj_01_01/voice_ms_idol1_01_05.mp3",
+      "browser": {
+        "status": 200,
+        "type": "cors",
+        "contentType": "audio/mpeg",
+        "sampledBytes": 1173
+      },
+      "http": {
+        "status": 206,
+        "allowOrigin": "https://onlystory.example",
+        "allowHeaders": "ETag, Content-Length, Content-Type, Last-Modified, x-amz-request-id, x-amz-version-id",
+        "contentRange": "bytes 0-1023/7331",
+        "contentType": "audio/mpeg"
+      }
+    },
+    {
+      "id": "pjsk-background",
+      "url": "https://storage.sekai.best/sekai-jp-assets/scenario/background/bg_b000601/bg_b000601.webp",
+      "browser": {
+        "status": 200,
+        "type": "cors",
+        "contentType": "image/webp",
+        "sampledBytes": 570
+      },
+      "http": {
+        "status": 206,
+        "allowOrigin": "https://onlystory.example",
+        "allowHeaders": "ETag, Content-Length, Content-Type, Last-Modified, x-amz-request-id, x-amz-version-id",
+        "contentRange": "bytes 0-1023/90148",
+        "contentType": "image/webp"
+      }
+    },
+    {
+      "id": "pjsk-movie",
+      "url": "https://storage.sekai.best/sekai-jp-assets/scenario/movie/05_night_ed2/05_night_ed2.mp4",
+      "browser": {
+        "status": 200,
+        "type": "cors",
+        "contentType": "video/mp4",
+        "sampledBytes": 572
+      },
+      "http": {
+        "error": "TypeError: fetch failed"
+      }
+    },
+    {
+      "id": "ba-text",
+      "url": "https://raw.githubusercontent.com/ba-archive/blue-archive/4ddc9ee241f6028d724346acda190155dc98aaf6/apps/blue-archive-story-editor/src/assets/excel/ScenarioBGNameExcelTable.json",
+      "browser": {
+        "status": 200,
+        "type": "cors",
+        "contentType": "text/plain; charset=utf-8",
+        "sampledBytes": 174526
+      },
+      "http": {
+        "status": 206,
+        "allowOrigin": "*",
+        "allowHeaders": null,
+        "contentRange": "bytes 0-1023/781503",
+        "contentType": "text/plain; charset=utf-8"
+      }
+    },
+    {
+      "id": "ba-voice-pack",
+      "url": "https://prod-clientpatch.bluearchiveyostar.com/r96_nvji95owgkbcxlmkb8mi/MediaResources/GameData/Audio/VOC_JP/JP_Airi.zip",
+      "browser": {
+        "error": "TypeError: Failed to fetch"
+      },
+      "http": {
+        "status": 206,
+        "allowOrigin": null,
+        "allowHeaders": null,
+        "contentRange": "bytes 0-1023/2143288",
+        "contentType": "application/x-zip-compressed"
+      }
+    },
+    {
+      "id": "ba-unity-pack",
+      "url": "https://prod-clientpatch.bluearchiveyostar.com/r96_nvji95owgkbcxlmkb8mi/Android_PatchPack/FullPatch_Prologue_000.zip",
+      "browser": {
+        "error": "TypeError: Failed to fetch"
+      },
+      "http": {
+        "status": 206,
+        "allowOrigin": null,
+        "allowHeaders": null,
+        "contentRange": "bytes 0-1023/52068964",
+        "contentType": "application/zip"
+      }
+    },
+    {
+      "id": "ba-background",
+      "url": "https://prod-clientpatch.bluearchiveyostar.com/r96_nvji95owgkbcxlmkb8mi/MediaResources/Prologue/UIs/03_Scenario/01_Background/BG_SchoolRooftop.jpg",
+      "browser": {
+        "error": "TypeError: Failed to fetch"
+      },
+      "http": {
+        "status": 206,
+        "allowOrigin": null,
+        "allowHeaders": null,
+        "contentRange": "bytes 0-1023/229577",
+        "contentType": "image/jpeg"
+      }
+    },
+    {
+      "id": "ba-tables",
+      "url": "https://prod-clientpatch.bluearchiveyostar.com/r96_nvji95owgkbcxlmkb8mi/TableBundles/Excel.zip",
+      "browser": {
+        "error": "TypeError: Failed to fetch"
+      },
+      "http": {
+        "status": 206,
+        "allowOrigin": null,
+        "allowHeaders": null,
+        "contentRange": "bytes 0-1023/19201306",
+        "contentType": "application/zip"
+      }
+    },
+    {
+      "id": "ba-database",
+      "url": "https://prod-clientpatch.bluearchiveyostar.com/r96_nvji95owgkbcxlmkb8mi/TableBundles/ExcelDB.db",
+      "browser": {
+        "error": "TypeError: Failed to fetch"
+      },
+      "http": {
+        "status": 206,
+        "allowOrigin": null,
+        "allowHeaders": null,
+        "contentRange": "bytes 0-1023/219500544",
+        "contentType": "binary/octet-stream"
+      }
+    }
+  ],
+  "consoleErrors": [
+    "Access to fetch at 'https://prod-clientpatch.bluearchiveyostar.com/r96_nvji95owgkbcxlmkb8mi/MediaResources/GameData/Audio/VOC_JP/JP_Airi.zip' from origin 'http://127.0.0.1:62748' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+    "Failed to load resource: net::ERR_FAILED",
+    "Access to fetch at 'https://prod-clientpatch.bluearchiveyostar.com/r96_nvji95owgkbcxlmkb8mi/Android_PatchPack/FullPatch_Prologue_000.zip' from origin 'http://127.0.0.1:62748' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+    "Failed to load resource: net::ERR_FAILED",
+    "Access to fetch at 'https://prod-clientpatch.bluearchiveyostar.com/r96_nvji95owgkbcxlmkb8mi/MediaResources/Prologue/UIs/03_Scenario/01_Background/BG_SchoolRooftop.jpg' from origin 'http://127.0.0.1:62748' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+    "Failed to load resource: net::ERR_FAILED",
+    "Access to fetch at 'https://prod-clientpatch.bluearchiveyostar.com/r96_nvji95owgkbcxlmkb8mi/TableBundles/Excel.zip' from origin 'http://127.0.0.1:62748' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+    "Failed to load resource: net::ERR_FAILED",
+    "Access to fetch at 'https://prod-clientpatch.bluearchiveyostar.com/r96_nvji95owgkbcxlmkb8mi/TableBundles/ExcelDB.db' from origin 'http://127.0.0.1:63550' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+    "Failed to load resource: net::ERR_FAILED"
+  ],
+  "checkedThrough": "2026-10-18T14:34:22.092Z"
+}

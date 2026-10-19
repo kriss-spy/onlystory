@@ -7,7 +7,10 @@ test('GFL1 event types combine with search and survive reload and return navigat
   const category = page.getByRole('combobox', { name: 'Story type' });
   const type = category;
   const titles = page.locator('.event-row h2');
-  await expect(page.locator('.catalog-toolbar select')).toHaveCount(2);
+  await expect(category).toBeVisible();
+  await expect(
+    page.getByRole('combobox', { name: 'Collection layout' }),
+  ).toBeVisible();
   await category.selectOption('Event');
   await expect(titles).toHaveCount(46);
   await expect(
@@ -38,12 +41,20 @@ test('GFL1 event types combine with search and survive reload and return navigat
   await expect(titles).toHaveCount(0);
   await search.fill('');
   await category.selectOption('Main story');
-  await expect(page.locator('.catalog-toolbar select')).toHaveCount(2);
+  await expect(category).toBeVisible();
+  await expect(
+    page.getByRole('combobox', { name: 'Collection layout' }),
+  ).toBeVisible();
   await expect(titles).toHaveCount(14);
   await expect(page).not.toHaveURL(/eventType=/);
   await category.selectOption('Event');
   await expect(type).toHaveValue('Event');
   await expect(titles).toHaveCount(46);
   await page.goto('/games/gfl2?category=Event&eventType=special&examples=1');
-  await expect(page.locator('.catalog-toolbar select')).toHaveCount(2);
+  await expect(
+    page.getByRole('combobox', { name: 'Event category' }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole('combobox', { name: 'Collection layout' }),
+  ).toBeVisible();
 });

@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import {
+  compareReleaseDates,
   eventUrl,
   groupStoryEvents,
   nextStory,
@@ -8,6 +9,76 @@ import {
 } from './catalog';
 import { episodes } from './fixtures';
 import type { Episode } from './model';
+import baLibrary from '../scripts/ba-library.json';
+
+it('sorts every BA main-story collection by its original JP release, across volumes', () => {
+  const main = baLibrary.filter(
+    (definition) => definition.category === 'Main story',
+  );
+  const events = groupStoryEvents(
+    main.map((definition) => ({
+      ...episodes[0],
+      game: 'ba',
+      id: `ba-jp-${definition.group}`,
+      collectionId: definition.collectionId,
+      date: definition.date,
+      order: definition.order,
+    })),
+  );
+  expect(events.every((event) => /^\d{4}-\d{2}-\d{2}$/.test(event.date))).toBe(
+    true,
+  );
+  const oldest = [...events].sort((a, b) => compareReleaseDates(a, b, false));
+  expect(oldest[0].id).toBe('ba-jp-prologue');
+  const ids = oldest.map((event) => event.id);
+  expect(ids.indexOf('ba-jp-main-series1-v3-c3')).toBeLessThan(
+    ids.indexOf('ba-jp-main-series1-v4-c1'),
+  );
+  expect(ids.indexOf('ba-jp-main-series1-v4-c1')).toBeLessThan(
+    ids.indexOf('ba-jp-main-series1-v3-c4'),
+  );
+  expect(ids.indexOf('ba-jp-main-series1-v100-c4')).toBeLessThan(
+    ids.indexOf('ba-jp-main-series1-v1-c3'),
+  );
+  expect(
+    events.find((event) => event.id === 'ba-jp-main-series1-v5-c2')?.date,
+  ).toBe('2025-05-21');
+  expect(
+    [...events].sort((a, b) => compareReleaseDates(a, b, true))[0].id,
+  ).toBe('ba-jp-main-series2-v3-c1');
+});
+
+it('sorts dated releases in either direction and keeps unknown dates in source order at the end', () => {
+  const events = [
+    { id: 'undated-first', date: '' },
+    { id: 'recent', date: '2026-08-19' },
+    { id: 'prologue', date: '2021-02-04' },
+    { id: 'undated-second', date: '' },
+    { id: 'middle', date: '2025-05-28' },
+  ];
+  expect(
+    [...events]
+      .sort((a, b) => compareReleaseDates(a, b, true))
+      .map((e) => e.id),
+  ).toEqual([
+    'recent',
+    'middle',
+    'prologue',
+    'undated-first',
+    'undated-second',
+  ]);
+  expect(
+    [...events]
+      .sort((a, b) => compareReleaseDates(a, b, false))
+      .map((e) => e.id),
+  ).toEqual([
+    'prologue',
+    'middle',
+    'recent',
+    'undated-first',
+    'undated-second',
+  ]);
+});
 
 const story = (
   id: string,

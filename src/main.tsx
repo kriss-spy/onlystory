@@ -3,7 +3,10 @@ import { BrowserRouter } from 'react-router-dom';
 import * as Tooltip from '@radix-ui/react-tooltip';
 import App from './App';
 import { AppProvider } from './store';
+import { startAppInstallation } from './pwa';
 import './styles.css';
+
+startAppInstallation();
 
 createRoot(document.getElementById('root')!).render(
   <BrowserRouter>

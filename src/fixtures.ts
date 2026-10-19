@@ -246,6 +246,7 @@ export const episodes: Episode[] = games.flatMap((game) =>
             : ['Archive gap', 'Illustrated text', 'Video'],
     nodes: scenario(game.id, i),
     assets: media,
+    textLocales: ['en', 'zh-CN'],
   })),
 );
 

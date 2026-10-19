@@ -27,6 +27,20 @@ The independently written renderer uses `@esotericsoftware/spine-webgl` 4.2.120.
 
 ## Script provenance and coverage
 
+### Main-story release order
+
+`src/ba-main-releases.json` records the first Japanese release of each main-story
+collection, with an official announcement URL for each date. `groupStoryEvents`
+uses these dates for BA main-story sorting and display. Chapter releases can
+interleave across volumes, so volume order is only used by the separate story-order
+option. A chapter keeps its first release date when later episodes are added.
+
+The current game database's `ScenarioMode.ExposedTime` is a scheduling gate and is
+blank for most historical releases. It must not replace this release history.
+Announcements can also schedule content after maintenance, so use the stated story
+unlock date rather than the notice date or maintenance date. The catalog unit test
+requires release coverage for every main-story collection in `scripts/ba-library.json`.
+
 The Japanese script and character-name table come from BA Archive revision `4ddc9ee241f6028d724346acda190155dc98aaf6`. Background, BGM and transition tables use the same pinned source. This community script snapshot does not establish latest JP-server coverage. Asset provenance identifies the acquired JP build separately.
 
 `import:ba` alone imports the script and uses visual assets when present. Without an asset manifest it prepares a labeled text-only episode. It caches source JSON under `.cache/ba-source/<revision>`, writes chapter/source/provenance under `public/private/ba-jp/11000`, and updates `src/generated/ba-stories.json`. Generated stories and game media are ignored by Git. Prepare them before building a fresh workspace.
@@ -42,6 +56,14 @@ The BA player handles scene fades/crossfades, source waits, camera movement, cha
 Browser checks exercise animated characters, real voice decoding/progression, active music, source captions, branches, transient shot effects, original textures, missing-texture recovery and downloaded visual/audio playback with BA requests blocked. Text-reader checks cover choices, completion, bookmarks, progress, reload, fast-forward and 320 by 700 layout. A scene failure offers retry or a working text fallback.
 
 Unity particle simulation, hologram shaders and movement easing are approximated in browser code using original art. They have not been matched frame by frame against game footage. The entire small prologue model/background set loads before the scene begins, about 2.5 seconds in the measured warm local run; slower devices can take longer. Offline verification covers cached story/media in the loaded application, not installation of the application shell for a cold offline launch.
+
+## Full-resolution character textures
+
+`scripts/ba_character_textures.py --apply`, run with the downloader's Python environment, checks the pinned Windows catalog for larger versions of installed story-character textures. `acquire:ba` runs this after media packaging. The catalog SHA-256 is pinned in `scripts/ba-character-textures.json`; downloaded packs must match the official byte sizes and CRCs. An upgrade requires a byte-identical atlas, all required pages, matching aspect ratios, and no smaller pages. Skeletons, expressions, animations, and authored close-ups keep their existing data.
+
+The Android package can contain a 1024 × 1024 image with a 2048 × 2048 atlas declaration. Inspect decoded image dimensions when auditing resolution. Shiroko's matching Windows image is actually 2048 × 2048. Older community exports checked during this audit had a 1024 × 1024 atlas and smaller face regions.
+
+Accepted textures are published under `characters-hd/`, with distinct URLs so cached Android images cannot shadow them. Publication reimports all installed chapters to refresh scene revision URLs as well as asset inventories and download lists. This prevents an older cached scene from selecting the Android texture. `--apply-only` resumes publication from the verified export index. `textureSource` records the Windows catalog, pack, and members; the decoded export cache records each PNG's dimensions and SHA-256. Media packaging reuses these verified exports on subsequent imports. Models without a compatible larger texture keep their current art.
 
 ## Event stories
 

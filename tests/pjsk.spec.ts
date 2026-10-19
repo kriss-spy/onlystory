@@ -192,10 +192,13 @@ test('episode downloads through the common manager and plays from browser cache 
   context,
 }, testInfo) => {
   test.setTimeout(120000);
-  await page.goto('/manage');
+  await page.goto('/manage?game=pjsk');
   const row = page
     .locator('.download-item')
     .filter({ has: page.locator(`a[href="${route}"]`) });
+  await page
+    .getByRole('searchbox')
+    .fill(await row.getByRole('link').innerText());
   await row.getByRole('link').click();
   await ready(page, 0);
   await page.goBack();

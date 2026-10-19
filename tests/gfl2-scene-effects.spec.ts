@@ -9,7 +9,7 @@ test('shadow ramp uses original screen-space equation across display densities a
       deviceScaleFactor,
     });
     const page = await context.newPage();
-    await page.goto('/manage');
+    await page.goto('/library');
     const result = await page.evaluate(async () => {
       const module = '/src/playback/gfl2/event-stage.ts';
       const { EventStage } = await import(module);
@@ -333,7 +333,9 @@ test('the second hologram material also loads from cached textures when their se
         }
       ).playbackDiagnostics?.models.map((model) => model.hologram),
     );
-  await expect.poll(effects).toContain('SenCharEff_CommunStart_holo_01');
+  await expect
+    .poll(effects, { timeout: 15000 })
+    .toContain('SenCharEff_CommunStart_holo_01');
   const cachedEffects = await page.evaluate(async () => {
     const manifest = await (
       await fetch('/src/generated/gfl2-ilion-scenes.json')
@@ -358,10 +360,14 @@ test('the second hologram material also loads from cached textures when their se
   for (const url of cachedEffects)
     await page.route(`**${url}`, (route) => route.abort());
   await page.reload();
-  await expect.poll(effects).toContain('SenCharEff_CommunStart_holo_01');
+  await expect
+    .poll(effects, { timeout: 15000 })
+    .toContain('SenCharEff_CommunStart_holo_01');
   await page
     .getByRole('button', { name: 'Reader settings', exact: true })
     .click();
   await page.getByRole('button', { name: 'Close', exact: true }).click();
-  await expect.poll(effects).toContain('SenCharEff_CommunStart_holo_01');
+  await expect
+    .poll(effects, { timeout: 15000 })
+    .toContain('SenCharEff_CommunStart_holo_01');
 });

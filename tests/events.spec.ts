@@ -137,7 +137,10 @@ for (const theme of ['light', 'dark']) {
     await page.setViewportSize({ width: 320, height: 700 });
     await page.goto('/games/gfl2/events/gfl2-night-platform?examples=1');
     await page.getByRole('button', { name: 'Settings', exact: true }).click();
-    await page.getByLabel('Appearance', { exact: true }).selectOption(theme);
+    await page.getByRole('tab', { name: 'Appearance', exact: true }).click();
+    await page
+      .getByRole('combobox', { name: 'Appearance', exact: true })
+      .selectOption(theme);
     await page.getByRole('button', { name: 'Close', exact: true }).click();
     await expect(page.locator('.story-card')).toHaveCount(3);
     expect(

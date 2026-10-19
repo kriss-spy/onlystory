@@ -68,6 +68,8 @@ export interface Game {
   cover: Scene['background'];
 }
 export interface Episode {
+  titleAliases?: string[];
+  collectionAliases?: string[];
   id: string;
   game: GameId;
   story: string;
@@ -134,7 +136,28 @@ export interface Bookmark {
   createdAt: string;
 }
 export interface Preferences {
+  catalogLayout?: 'list' | 'table' | 'grid';
+  gameThemes?: Partial<Record<GameId, 'default' | GameId>>;
+  games?: Partial<
+    Record<
+      GameId,
+      Partial<
+        Pick<
+          Preferences,
+          | 'textLocale'
+          | 'voice'
+          | 'playerName'
+          | 'textVariant'
+          | 'waitVoice'
+          | 'voiceVolume'
+          | 'theme'
+          | 'dialogueOpacity'
+        >
+      >
+    >
+  >;
   theme: 'system' | 'light' | 'dark';
+  dialogueOpacity?: number;
   layout: 'scene' | 'desk' | 'text';
   chaptersOpen: boolean;
   fontSize: number;
@@ -195,6 +218,19 @@ export const emptyData = (): AppData => ({
 export const nodeOf = (episode: Episode, save: ReadingSave) =>
   episode.nodes.find((n) => n.id === save.frames.at(-1)?.node) ??
   episode.nodes[0];
+export function gamePreferences(
+  preferences: Preferences,
+  game: GameId,
+): Preferences {
+  return {
+    ...preferences,
+    ...preferences.games?.[game],
+    dialogueOpacity:
+      preferences.games?.[game]?.dialogueOpacity ??
+      preferences.dialogueOpacity ??
+      (preferences.gameThemes?.[game] === 'ba' ? 0 : 1),
+  };
+}
 export function passageText(node: StoryNode, preferences: Preferences) {
   const variant =
     preferences.textVariant === 'female' ? node.female : undefined;
@@ -299,6 +335,118 @@ export function readingPath(
     } else node = node.next ? nodes.get(node.next) : undefined;
   }
   return frames;
+}
+
+// Preserve actual visits, including quiz retries. Only the chosen continuation
+// is seekable; the remaining graph supplies a locked scale beyond the next gate.
+export function readingTimeline(
+  episode: Episode,
+  save: ReadingSave,
+  remembered: Frame[] = [],
+) {
+  const nodes = new Map(episode.nodes.map((node) => [node.id, node]));
+  const frames = [...save.frames];
+  let followsRemembered = frames.every(
+    (frame, index) =>
+      frame.node === remembered[index]?.node &&
+      JSON.stringify(frame.answers) ===
+        JSON.stringify(remembered[index]?.answers),
+  );
+  const visited = new Set<string>();
+  let frame = frames.at(-1)!;
+  while (!visited.has(frame.node)) {
+    visited.add(frame.node);
+    const node = nodes.get(frame.node);
+    if (!node || node.kind === 'end' || node.kind === 'unsupported') break;
+    const answer =
+      node.kind === 'choice' && followsRemembered
+        ? node.choices?.find(
+            (choice) =>
+              choice.id === remembered[frames.length]?.answers[node.id],
+          )
+        : undefined;
+    const next = node.kind === 'choice' ? answer?.next : node.next;
+    if (!next || !nodes.has(next) || visited.has(next)) break;
+    frame = {
+      node: next,
+      answers: {
+        ...frame.answers,
+        ...(answer ? { [node.id]: answer.id } : {}),
+      },
+    };
+    frames.push(frame);
+    followsRemembered =
+      followsRemembered &&
+      frame.node === remembered[frames.length - 1]?.node &&
+      JSON.stringify(frame.answers) ===
+        JSON.stringify(remembered[frames.length - 1]?.answers);
+  }
+  const boundary = nodes.get(frames.at(-1)!.node);
+  // Iterative postorder avoids recursion limits on long imported chapters.
+  // Back edges are omitted from the estimate; actual repeated visits remain above.
+  const depth = new Map<string, number>();
+  const continuation = new Map<string, string>();
+  const active = new Set<string>();
+  const children = (id: string) => {
+    const node = nodes.get(id);
+    if (!node || node.kind === 'end' || node.kind === 'unsupported') return [];
+    return node.kind === 'choice'
+      ? (node.choices ?? []).map((choice) => choice.next)
+      : node.next
+        ? [node.next]
+        : [];
+  };
+  if (boundary?.kind === 'choice') {
+    const stack: { id: string; exit: boolean }[] = [
+      { id: boundary.id, exit: false },
+    ];
+    while (stack.length) {
+      const item = stack.pop()!;
+      if (item.exit) {
+        const next = children(item.id)
+          .filter((id) => !active.has(id) && depth.has(id))
+          .sort((a, b) => depth.get(b)! - depth.get(a)!)[0];
+        if (next) continuation.set(item.id, next);
+        depth.set(
+          item.id,
+          1 +
+            Math.max(
+              0,
+              ...children(item.id)
+                .filter((id) => !active.has(id))
+                .map((id) => depth.get(id) ?? 0),
+            ),
+        );
+        active.delete(item.id);
+      } else if (!depth.has(item.id) && !active.has(item.id)) {
+        active.add(item.id);
+        stack.push({ id: item.id, exit: true });
+        for (const id of children(item.id))
+          if (!active.has(id) && nodes.has(id)) stack.push({ id, exit: false });
+      }
+    }
+  }
+  const choices = frames.flatMap((frame, index) =>
+    nodes.get(frame.node)?.kind === 'choice' ? [index] : [],
+  );
+  // Preview the same longest continuation used by the locked progress scale.
+  // These markers never make unanswered branches seekable.
+  const previewed = new Set<string>(boundary ? [boundary.id] : []);
+  let next = boundary ? continuation.get(boundary.id) : undefined;
+  let position = frames.length;
+  while (next && !previewed.has(next)) {
+    previewed.add(next);
+    if (nodes.get(next)?.kind === 'choice') choices.push(position);
+    position++;
+    next = continuation.get(next);
+  }
+  return {
+    frames,
+    total:
+      frames.length + Math.max(0, (depth.get(boundary?.id ?? '') ?? 1) - 1),
+    choices,
+    locked: boundary?.kind === 'choice',
+  };
 }
 
 export function passageUrl(
@@ -557,6 +705,7 @@ export function parseData(input: unknown): AppData {
       voice: ['zh-CN', 'ja'],
       source: ['device', 'server-preview'],
       textVariant: ['male', 'female'],
+      catalogLayout: ['list', 'table', 'grid'],
     }))
       if (allowed.includes(p[key] as string))
         Object.assign(data.preferences, { [key]: p[key] });
@@ -568,6 +717,7 @@ export function parseData(input: unknown): AppData {
       ['musicVolume', 0, 1],
       ['soundVolume', 0, 1],
       ['voiceVolume', 0, 1],
+      ['dialogueOpacity', 0, 1],
     ] as const)
       if (typeof p[key] === 'number' && Number.isFinite(p[key]))
         Object.assign(data.preferences, {
@@ -579,6 +729,52 @@ export function parseData(input: unknown): AppData {
     if (p.voice === 'off') data.preferences.voiceVolume = 0;
     if (typeof p.playerName === 'string')
       data.preferences.playerName = p.playerName.slice(0, 40);
+    if (record(p.games)) {
+      data.preferences.games = {};
+      for (const game of ['gfl2', 'pjsk', 'ba', 'gfl1'] as const) {
+        const raw = p.games[game];
+        if (!record(raw)) continue;
+        const parsed = parseData({
+          version: 1,
+          preferences: Object.fromEntries(
+            Object.entries(raw).filter(([key]) =>
+              [
+                'textLocale',
+                'voice',
+                'playerName',
+                'textVariant',
+                'waitVoice',
+                'voiceVolume',
+                'theme',
+                'dialogueOpacity',
+              ].includes(key),
+            ),
+          ),
+        }).preferences;
+        const scoped: NonNullable<Preferences['games']>[GameId] = {};
+        for (const key of [
+          'textLocale',
+          'voice',
+          'playerName',
+          'textVariant',
+          'waitVoice',
+          'voiceVolume',
+          'theme',
+          'dialogueOpacity',
+        ] as const)
+          if (Object.hasOwn(raw, key))
+            Object.assign(scoped, { [key]: parsed[key] });
+        data.preferences.games[game] = scoped;
+      }
+    }
+    if (record(p.gameThemes)) {
+      data.preferences.gameThemes = {};
+      for (const game of ['gfl2', 'pjsk', 'ba', 'gfl1'] as const) {
+        const theme = p.gameThemes[game];
+        if (['default', 'gfl2', 'pjsk', 'ba', 'gfl1'].includes(theme as string))
+          data.preferences.gameThemes[game] = theme as GameId | 'default';
+      }
+    }
   }
   if (record(input.saves))
     for (const [id, raw] of Object.entries(input.saves)) {
@@ -680,7 +876,15 @@ export function mergeData(current: AppData, imported: AppData): AppData {
   ];
   return {
     ...current,
-    preferences: imported.preferences,
+    preferences: {
+      ...current.preferences,
+      ...imported.preferences,
+      games: { ...current.preferences.games, ...imported.preferences.games },
+      gameThemes: {
+        ...current.preferences.gameThemes,
+        ...imported.preferences.gameThemes,
+      },
+    },
     saves,
     bookmarks: mergePoints(current.bookmarks, imported.bookmarks),
     checkpoints: mergePoints(current.checkpoints, imported.checkpoints),

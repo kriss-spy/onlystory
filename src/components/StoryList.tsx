@@ -23,19 +23,26 @@ export function StoryList({
 }) {
   const { data, download, transfers } = useStore();
   const scroll = useRef<HTMLDivElement>(null);
-  const height = useNarrow() ? 148 : 116;
+  const narrow = useNarrow();
+  const layout = data.preferences.catalogLayout ?? 'list';
+  const columns = layout === 'grid' && !narrow ? 2 : 1;
+  const height =
+    layout === 'table' ? 84 : layout === 'grid' ? 168 : narrow ? 148 : 116;
   const large = rows.length > 80;
-  const scrollKey = `${from}:${independent}`;
+  const scrollKey = `${from}:${independent}:${layout}`;
   useLayoutEffect(() => {
     if (large && scroll.current)
       scroll.current.scrollTop = scrollPositions.get(scrollKey) ?? 0;
   }, [large, scrollKey]);
   const virtual = useVirtualizer({
-    count: large ? rows.length : 0,
+    count: large ? Math.ceil(rows.length / columns) : 0,
     getScrollElement: () => scroll.current,
     estimateSize: () => height,
     overscan: 5,
   });
+  useLayoutEffect(() => {
+    virtual.measure();
+  }, [virtual, height, columns]);
   const lastFork = rows.reduce(
     (last, row, index) => (!row.branch || row.branchStart ? index : last),
     -1,
@@ -60,7 +67,11 @@ export function StoryList({
         style={
           start === undefined
             ? undefined
-            : { transform: `translateY(${start}px)` }
+            : {
+                width: `${100 / columns}%`,
+                left: `${((index % columns) * 100) / columns}%`,
+                transform: `translateY(${start}px)`,
+              }
         }
       >
         {!independent && index <= lastFork ? (
@@ -118,7 +129,7 @@ export function StoryList({
       onScroll={(e) =>
         scrollPositions.set(scrollKey, e.currentTarget.scrollTop)
       }
-      className={`story-list-scroll ${large ? 'large-story-list' : ''}`}
+      className={`story-list-scroll story-layout-${layout} ${large ? 'large-story-list' : ''}`}
       style={{ '--story-row-height': `${height}px` } as React.CSSProperties}
     >
       <ol
@@ -135,9 +146,14 @@ export function StoryList({
         }
       >
         {large
-          ? virtual
-              .getVirtualItems()
-              .map((item) => render(rows[item.index], item.index, item.start))
+          ? virtual.getVirtualItems().flatMap((item) =>
+              Array.from(
+                { length: columns },
+                (_, column) => item.index * columns + column,
+              )
+                .filter((index) => index < rows.length)
+                .map((index) => render(rows[index], index, item.start)),
+            )
           : rows.map((row, index) => render(row, index))}
       </ol>
     </div>

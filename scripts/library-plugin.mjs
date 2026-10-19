@@ -17,7 +17,13 @@ export function libraryPlugin() {
     },
     closeBundle() {
       mkdirSync('dist', { recursive: true });
-      for (const name of ['demo', 'vendor', 'favicon.svg'])
+      for (const name of [
+        'demo',
+        'vendor',
+        'favicon.svg',
+        'icons',
+        'manifest.webmanifest',
+      ])
         cpSync(resolve('public', name), resolve('dist', name), {
           recursive: true,
         });

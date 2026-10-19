@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 test('the real Friday closed-eye expression stays closed through the blink cycle while open expressions can still blink', async ({
   page,
 }) => {
-  await page.goto('/manage');
+  await page.goto('/library');
   const result = await page.evaluate(async () => {
     const stageModule = '/src/playback/gfl2/event-stage.ts';
     const stateModule = '/src/playback/gfl2/event-state.ts';

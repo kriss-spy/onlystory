@@ -116,7 +116,10 @@ test('download from management loads backgrounds, Live2D and original loops offl
   test.setTimeout(90000);
   const errors: string[] = [];
   page.on('pageerror', (error) => errors.push(error.message));
-  await page.goto('/manage');
+  await page.goto('/manage?game=gfl2');
+  await page
+    .getByRole('searchbox', { name: 'Search downloads' })
+    .fill('CS-1-1 长梦初醒');
   const row = page.locator('.download-item').filter({
     has: page.getByRole('link', { name: 'CS-1-1 长梦初醒', exact: true }),
   });

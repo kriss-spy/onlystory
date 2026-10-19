@@ -408,7 +408,7 @@ test('a downloaded event montage works after original media requests are blocked
   test.setTimeout(60000);
   await page.emulateMedia({ reducedMotion: 'reduce' });
   const episode = episodeOf('gfl1--25-10-1');
-  await page.goto('/manage');
+  await page.goto('/manage?game=gfl1');
   await page
     .getByRole('searchbox', { name: 'Search downloads' })
     .fill(episode.title);

@@ -54,7 +54,7 @@ import {
   startSave,
   passageText,
   localizedText,
-  readingPath,
+  readingTimeline,
 } from '../model';
 import type {
   Bookmark as SavedPoint,
@@ -64,6 +64,7 @@ import type {
 } from '../model';
 import { useMediaUrl, useNarrow, useOnline } from '../hooks';
 import { isInstalled, useStore } from '../store';
+import { usePlaybackPreferences } from '../store';
 import { useUi } from '../ui';
 import type { ReaderCommand } from '../ui';
 import { EmptyState, IconButton, Panel } from '../components/Primitives';
@@ -175,7 +176,7 @@ function Reader({
   const store = useStore();
   const event = eventForEpisode(episode);
   const following = nextStory(event, episode);
-  const p = store.data.preferences;
+  const p = usePlaybackPreferences();
   const textOnly = episode.readingMode === 'text' || p.layout === 'text';
   const ui = useUi();
   const narrow = useNarrow();
@@ -334,10 +335,19 @@ function Reader({
           (sceneStatus.node === node.id && sceneStatus.ready)
         : true);
   const textReady = episode.renderer?.id !== 'ba-scene' || sceneReady;
-  const answers = save.frames.at(-1)!.answers;
-  const seekFrames = useMemo(
-    () => readingPath(episode, answers),
-    [episode, answers],
+  const rememberedPath = useRef(save.frames);
+  if (
+    !save.frames.every(
+      (frame, index) =>
+        frame.node === rememberedPath.current[index]?.node &&
+        JSON.stringify(frame.answers) ===
+          JSON.stringify(rememberedPath.current[index]?.answers),
+    )
+  )
+    rememberedPath.current = save.frames;
+  const timeline = useMemo(
+    () => readingTimeline(episode, save, rememberedPath.current),
+    [episode, save],
   );
   const canSkip =
     canFastForward(node) || (node.kind === 'end' && !!following?.id);
@@ -416,14 +426,16 @@ function Reader({
     setAuto(false);
     setSkipping(false);
   }, [setSkipping]);
-  const seek = (frame: Frame) => {
+  const seek = (_frame: Frame, index: number, frames: Frame[]) => {
     pausePlayback();
-    const restored = restorePassage(
-      episode,
-      frame.node,
-      JSON.stringify(frame.answers),
-    );
-    commit({ ...restored, seen: latest.current.seen });
+    commit({
+      ...latest.current,
+      frames: frames.slice(0, index + 1),
+      completed:
+        episode.nodes.find((node) => node.id === _frame.node)?.kind === 'end',
+      videoTime: 0,
+      updatedAt: new Date().toISOString(),
+    });
   };
   useEffect(() => {
     const line = params.get('line');
@@ -966,11 +978,12 @@ function Reader({
     );
   return (
     <main
-      className={`reader-page layout-${textOnly ? 'text' : p.layout} ${hidden ? 'hide-ui' : ''}`}
+      className={`reader-page layout-${textOnly ? 'text' : p.layout} ${(p.dialogueOpacity ?? 1) < 0.5 ? 'dialogue-clear' : ''} ${hidden ? 'hide-ui' : ''}`}
       style={
         {
           '--game-accent': game.accent,
           '--reader-font-size': `${p.fontSize}px`,
+          '--dialogue-opacity': p.dialogueOpacity ?? 1,
           '--chapter-width': `${p.panelWidth}px`,
         } as CSSProperties
       }
@@ -1244,8 +1257,11 @@ function Reader({
         </section>
       </div>
       <StoryProgress
-        frames={seekFrames}
-        current={node.id}
+        frames={timeline.frames}
+        total={timeline.total}
+        choices={timeline.choices}
+        locked={timeline.locked}
+        current={save.frames.length - 1}
         onPause={pausePlayback}
         onSeek={seek}
       />
@@ -1334,6 +1350,30 @@ function Reader({
           </span>
         </div>
         <div className="toolbar-group utility-controls">
+          {(episode.textLocales ?? []).length > 1 ? (
+            <select
+              aria-label="Reading language"
+              value={p.textLocale}
+              onChange={(event) => {
+                pausePlayback();
+                store.preferences({
+                  games: {
+                    ...store.data.preferences.games,
+                    [episode.game]: {
+                      ...store.data.preferences.games?.[episode.game],
+                      textLocale: event.target.value as typeof p.textLocale,
+                    },
+                  },
+                });
+              }}
+            >
+              {episode.textLocales!.map((locale) => (
+                <option key={locale} value={locale}>
+                  {{ en: 'English', ja: '日本語', 'zh-CN': '中文' }[locale]}
+                </option>
+              ))}
+            </select>
+          ) : null}
           <IconButton
             label="Commands & shortcuts"
             shortcut="Ctrl+K"

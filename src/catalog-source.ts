@@ -7,9 +7,10 @@ export function catalogMode(params: URLSearchParams) {
   return {
     examples: params.get('examples') === '1',
     previews: params.get('previews') === '1',
-    stress: import.meta.env.DEV
-      ? Math.min(10000, Math.max(0, Number(params.get('stress')) || 0))
-      : 0,
+    stress:
+      import.meta.env.DEV || import.meta.env.MODE === 'browser-test'
+        ? Math.min(10000, Math.max(0, Number(params.get('stress')) || 0))
+        : 0,
   };
 }
 export function catalogSource(

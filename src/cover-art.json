@@ -101,13 +101,16 @@
   },
   "events": {
     "gfl2:gfl2-activity33-text": {
-      "url": "/private/covers/gfl2-gfl2-activity33-text.a528173c8587.jpg",
-      "position": "50% 0%",
-      "width": 1000,
-      "height": 3494,
-      "source": "https://img2-tc.tapimg.com/moment/etag/FkmC43HrJW2tHP3VlB_FryaiFCGM_20260831170202.jpg",
-      "page": "https://www.taptap.cn/moment/843533787504575663",
-      "sha256": "a528173c8587b6bf92c0984889464ed7a60b6f5e5ff6b726f22cae3f1d066835"
+      "url": "/private/covers/gfl2-activity33-text.b085057ec696.png",
+      "position": "50% 50%",
+      "width": 1920,
+      "height": 791,
+      "source": "https://gf2-cn.cdn.sunborngame.com/website/platform/C69CDB6D3CF3B53251B2BE98FD9A0F14.png",
+      "page": "https://gf2-mobile.sunborngame.com/Service",
+      "api": "https://gf2-web-preregister-api.sunborngame.com/website/video_list?page=1&limit=200",
+      "officialVideoId": 91,
+      "officialTitle": "【金翅雀与橄榄枝】活动PV",
+      "sha256": "b085057ec6963841f92c019a3dd52d1a8322b705c271716527eb96eb60895f38"
     },
     "gfl2:gfl2-ilion": {
       "url": "/private/covers/gfl2-gfl2-ilion.dfd9eac8b7b2.png",

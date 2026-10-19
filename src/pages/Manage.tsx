@@ -1,10 +1,10 @@
 import { memo, useCallback, useEffect, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { Check, Download, RotateCw, Search, Trash2, X } from 'lucide-react';
-import { episodes, gameById } from '../content';
+import { episodes, gameById, games } from '../content';
 import { isInstalled, useStore } from '../store';
 import type { Transfer } from '../store';
-import type { Episode } from '../model';
+import { gamePreferences, type Episode, type GameId } from '../model';
 import { EmptyState, formatBytes, IconButton } from '../components/Primitives';
 import { PageTitle } from '../components/Shell';
 
@@ -40,17 +40,25 @@ export function ManagePage() {
   }, [data.installed, downloading]);
   const [query, setQuery] = useState('');
   const [selected, setSelected] = useState<string[]>([]);
-  const [params] = useSearchParams();
+  const [params, setParams] = useSearchParams();
+  const game = games.some((game) => game.id === params.get('game'))
+    ? (params.get('game') as GameId)
+    : undefined;
+  const selectedPreferences = game
+    ? gamePreferences(data.preferences, game)
+    : data.preferences;
   const collection = episodes.filter((e) =>
     params.get('examples') === '1'
       ? !e.origin
       : e.origin === 'game' &&
         (params.get('previews') === '1' ? e.preview : !e.preview),
   );
-  const visible = collection.filter((e) =>
-    `${e.title} ${gameById(e.game)?.name}`
-      .toLowerCase()
-      .includes(query.toLowerCase()),
+  const visible = collection.filter(
+    (e) =>
+      (!game || e.game === game) &&
+      `${e.title} ${gameById(e.game)?.name}`
+        .toLowerCase()
+        .includes(query.toLowerCase()),
   );
   const toggle = useCallback(
     (id: string) =>
@@ -78,19 +86,48 @@ export function ManagePage() {
             onChange={(e) => setQuery(e.target.value)}
           />
         </label>
-        <label className="check">
-          Voice language
-          <select
-            aria-label="Download voice language"
-            value={data.preferences.voice}
-            onChange={(event) =>
-              preferences({ voice: event.target.value as 'zh-CN' | 'ja' })
-            }
-          >
-            <option value="zh-CN">中文</option>
-            <option value="ja">日本語</option>
-          </select>
-        </label>
+        <select
+          aria-label="Download game"
+          value={game ?? 'all'}
+          onChange={(event) => {
+            const next = new URLSearchParams(params);
+            if (event.target.value === 'all') next.delete('game');
+            else next.set('game', event.target.value);
+            setParams(next, { replace: true });
+          }}
+        >
+          <option value="all">All games</option>
+          {games.map((game) => (
+            <option key={game.id} value={game.id}>
+              {game.shortName}
+            </option>
+          ))}
+        </select>
+        {!game || game === 'gfl2' ? (
+          <label className="check">
+            {game ? 'Movie voice' : 'Default movie voice'}
+            <select
+              aria-label="Download voice language"
+              value={selectedPreferences.voice}
+              onChange={(event) => {
+                const voice = event.target.value as 'zh-CN' | 'ja';
+                preferences(
+                  game
+                    ? {
+                        games: {
+                          ...data.preferences.games,
+                          [game]: { ...data.preferences.games?.[game], voice },
+                        },
+                      }
+                    : { voice },
+                );
+              }}
+            >
+              <option value="zh-CN">中文</option>
+              <option value="ja">日本語</option>
+            </select>
+          </label>
+        ) : null}
         {selected.length ? (
           <div className="button-row">
             <span>{selected.length} selected</span>
@@ -220,8 +257,24 @@ const DownloadItem = memo(function DownloadItem({
         <div className="download-status">
           {busy ? (
             <>
-              <span>Downloading · {formatBytes(job.bytes)}</span>
-              <progress aria-label={`Downloading ${episode.title}`} max={1} />
+              <span>
+                Downloading · {formatBytes(job.bytes)}
+                {job.filesTotal
+                  ? ` · ${job.filesDone ?? 0} / ${job.filesTotal} files`
+                  : ' · Preparing files'}
+              </span>
+              <progress
+                aria-label={`Downloading ${episode.title}`}
+                max={job.filesTotal || 1}
+                value={
+                  job.filesTotal
+                    ? Math.min(
+                        (job.filesDone ?? 0) + (job.fileProgress ?? 0),
+                        job.filesTotal,
+                      )
+                    : undefined
+                }
+              />
             </>
           ) : job?.status === 'failed' ? (
             <span className="error-text" role="alert">

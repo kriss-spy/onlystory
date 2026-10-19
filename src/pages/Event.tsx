@@ -16,6 +16,7 @@ import { eventArtwork, artworkStyle } from '../covers';
 import { PjskGroupMark } from '../components/PjskGroupMark';
 import { SchoolMarks } from '../components/SchoolMarks';
 import { EventCover } from '../components/EventCover';
+import { CatalogLayout } from '../components/CatalogLayout';
 
 const scrollPositions = new Map<string, number>();
 export function EventPage() {
@@ -128,6 +129,7 @@ export function EventPage() {
             }}
           />
         </label>
+        <CatalogLayout />
       </div>
       {!rows.main.length && !rows.independent.length ? (
         <EmptyState title="No matching stories">Try another title.</EmptyState>

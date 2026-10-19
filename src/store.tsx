@@ -8,12 +8,14 @@ import {
   useRef,
 } from 'react';
 import type { Dispatch, ReactNode, SetStateAction } from 'react';
-import { emptyData, mergeData, parseData } from './model';
+import { emptyData, mergeData, parseData, gamePreferences } from './model';
+import { useLocation } from 'react-router-dom';
 import { loadEpisode } from './content';
 import type {
   AppData,
   Bookmark,
   Episode,
+  GameId,
   Preferences,
   ReadingSave,
 } from './model';
@@ -28,14 +30,13 @@ export const STORAGE_KEY = 'onlystory.v1';
 const CACHE_NAME = 'onlystory.media.v1';
 export const isInstalled = (data: AppData, episode: Episode) => {
   const installation = data.installations?.[episode.id];
+  const p = gamePreferences(data.preferences, episode.game);
   return (
     data.installed[episode.id] === true &&
     (!installation ||
-      (installation.voices.includes(data.preferences.voice) &&
+      (installation.voices.includes(p.voice) &&
         (!installation.variants ||
-          installation.variants.includes(
-            `${data.preferences.textVariant}:${data.preferences.voice}`,
-          ))))
+          installation.variants.includes(`${p.textVariant}:${p.voice}`))))
   );
 };
 interface Notice {
@@ -47,6 +48,9 @@ export interface Transfer {
   status: 'downloading' | 'complete' | 'failed' | 'canceled';
   bytes: number;
   total: number;
+  filesDone?: number;
+  filesTotal?: number;
+  fileProgress?: number;
   error?: string;
 }
 interface Store {
@@ -158,13 +162,8 @@ export function AppProvider({ children }: { children: ReactNode }) {
   }, [notify]);
   useEffect(() => {
     const root = document.documentElement;
-    root.dataset.theme = data.preferences.theme;
-    root.style.colorScheme =
-      data.preferences.theme === 'system'
-        ? 'light dark'
-        : data.preferences.theme;
     root.dataset.motion = data.preferences.reducedMotion ? 'reduced' : 'normal';
-  }, [data.preferences.theme, data.preferences.reducedMotion]);
+  }, [data.preferences.reducedMotion]);
   const preferences = useCallback(
     (patch: Partial<Preferences>) =>
       setData((old) => ({
@@ -210,8 +209,9 @@ export function AppProvider({ children }: { children: ReactNode }) {
       let episode = catalogEpisode;
       if (controllers.has(episode.id)) return;
       const controller = new AbortController();
-      const voice = latestData.current.preferences.voice;
-      const gender = latestData.current.preferences.textVariant;
+      const p = gamePreferences(latestData.current.preferences, episode.game);
+      const voice = p.voice;
+      const gender = p.textVariant;
       controllers.set(episode.id, controller);
       setTransfers((old) => ({
         ...old,
@@ -266,6 +266,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
             (url) => !inventory.has(url) || allowed?.has(url),
           );
           const queued = new Set(paths);
+          let filesDone = 0;
           let hasMovie = Object.keys(initialProgram?.videos ?? {}).length > 0;
           let hasGenderMovie = Object.values(initialProgram?.videos ?? {}).some(
             (movie) => movie.female,
@@ -291,12 +292,17 @@ export function AppProvider({ children }: { children: ReactNode }) {
                     status: 'downloading',
                     bytes: completed + received,
                     total: total + length,
+                    filesDone,
+                    filesTotal: paths.length,
+                    fileProgress:
+                      length > 0 ? Math.min(received / length, 1) : 0,
                   },
                 }));
               },
             );
             bytes += size;
             total += size;
+            filesDone++;
             if (path === episode.content?.sceneUrl) {
               const response = await cache.match(path);
               const program = await response?.json();
@@ -353,6 +359,9 @@ export function AppProvider({ children }: { children: ReactNode }) {
                 status: 'downloading',
                 bytes,
                 total,
+                filesDone,
+                filesTotal: paths.length,
+                fileProgress: 0,
               },
             }));
           }
@@ -513,4 +522,16 @@ export function useStore() {
   const value = useContext(Context);
   if (!value) throw new Error('Onlystory needs its AppProvider.');
   return value;
+}
+export function usePlaybackPreferences() {
+  const { data } = useStore();
+  const location = useLocation();
+  const game = location.pathname.split('/')[2] as GameId;
+  return useMemo(
+    () =>
+      ['gfl2', 'gfl1', 'ba', 'pjsk'].includes(game)
+        ? gamePreferences(data.preferences, game)
+        : data.preferences,
+    [data.preferences, game],
+  );
 }

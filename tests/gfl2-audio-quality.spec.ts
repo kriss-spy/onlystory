@@ -8,7 +8,7 @@ const manifest = JSON.parse(
 test('output peak protection preserves quiet audio volume', async ({
   page,
 }) => {
-  await page.goto('/manage');
+  await page.goto('/library');
   const rms = await page.evaluate(async () => {
     const module = '/src/playback/audio-output.ts';
     const { createAudioOutput } = await import(module);
@@ -39,7 +39,7 @@ for (const settings of [
   test(`${settings.label} volumes keep the original BGM and storm below clipping through the real player`, async ({
     page,
   }) => {
-    await page.goto('/manage');
+    await page.goto('/library');
     const result = await page.evaluate(
       async ({ url, music, sfx }) => {
         const audioModule = '/src/playback/gfl2/event-audio.ts';
