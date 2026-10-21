@@ -11,8 +11,14 @@ import type { Locale } from './model';
 import messages from './ui-messages.json';
 import extraMessages from './ui-messages-extra.json';
 import playbackMessages from './ui-messages-playback.json';
+import libraryMessages from './ui-messages-library.json';
 
-const translations = { ...messages, ...playbackMessages, ...extraMessages };
+const translations = {
+  ...messages,
+  ...playbackMessages,
+  ...extraMessages,
+  ...libraryMessages,
+};
 
 export type TranslationParams = Record<string, string | number>;
 export function translate(

@@ -1,3 +1,4 @@
+import { useI18n } from '../i18n';
 import { ArrowUpRight, ArrowRight, Play } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import {
@@ -23,6 +24,7 @@ const libraryEpisodes = [
 ];
 
 export function LibraryPage() {
+  const { t } = useI18n();
   const { data } = useStore();
   const localLibrary = useLocalLibrary();
   const realEpisodes = libraryEpisodes.filter(
@@ -49,8 +51,8 @@ export function LibraryPage() {
       {recent.length ? (
         <section className="continue-section">
           <div className="section-title">
-            <h2>Continue reading</h2>
-            <span className="muted">Saved on this device</span>
+            <h2>{t('Continue reading')}</h2>
+            <span className="muted">{t('Saved on this device')}</span>
           </div>
           <div className="continue-list">
             {recent.map((save) => {
@@ -80,8 +82,10 @@ export function LibraryPage() {
                     <strong>{episodeTitle(episode, locale)}</strong>
                     <small>
                       {save.completed
-                        ? 'Finished · revisit'
-                        : `${save.frames.length} passages into this episode`}
+                        ? t('Finished · revisit')
+                        : t('{value0} passages into this episode', {
+                            value0: save.frames.length,
+                          })}
                     </small>
                   </span>
                   <ArrowUpRight size={18} />
@@ -112,10 +116,10 @@ export function LibraryPage() {
                 ?.name.toUpperCase()}{' '}
               ·{' '}
               {realEpisodes[0].textLocales?.includes('en')
-                ? 'Original English text'
+                ? t('Original English text')
                 : realEpisodes[0].textLocales?.includes('ja')
-                  ? '日本語原文'
-                  : '简中原文'}
+                  ? t('日本語原文')
+                  : t('简中原文')}
             </small>
             <strong>
               {collectionTitle(
@@ -126,24 +130,39 @@ export function LibraryPage() {
             </strong>
             <span>
               {realEpisodes[0].game !== 'gfl2'
-                ? `${realEpisodes.filter((episode) => episode.collectionId === realEpisodes[0].collectionId).length} stories · ${localLibrary ? 'Original text and available media' : 'Available to download'}`
+                ? t('{value0} stories · {value1}', {
+                    value0: realEpisodes.filter(
+                      (episode) =>
+                        episode.collectionId === realEpisodes[0].collectionId,
+                    ).length,
+                    value1: localLibrary
+                      ? t('Original text and available media')
+                      : t('Available to download'),
+                  })
                 : fullEvent
-                  ? `${fullEvent.coverage.sections} 节 · ${fullEvent.coverage.textRows.toLocaleString()} 段原文 · 含原始说话人`
-                  : '长梦初醒 · 原始 CG、音乐与音效 · 开场片段'}
+                  ? t('{value0} 节 · {value1} 段原文 · 含原始说话人', {
+                      value0: fullEvent.coverage.sections,
+                      value1: fullEvent.coverage.textRows.toLocaleString(),
+                    })
+                  : t('长梦初醒 · 原始 CG、音乐与音效 · 开场片段')}
             </span>
           </span>
           <ArrowRight size={25} />
         </Link>
       ) : (
         <p className="field-note">
-          No game content imported. Run npm run import:gfl2 with your local
-          prototype available.
+          {t(
+            'No game content imported. Run npm run import:gfl2 with your local prototype available.',
+          )}
         </p>
       )}
       <section>
         <div className="section-title">
-          <h2>Your games</h2>
-          <span className="muted">{realEpisodes.length} stories</span>
+          <h2>{t('Your games')}</h2>
+          <span className="muted">
+            {realEpisodes.length}
+            {t(' stories')}
+          </span>
         </div>
         <div className="game-grid">
           {games.map((game) => {
@@ -177,8 +196,11 @@ export function LibraryPage() {
                 <div className="game-copy">
                   <small>
                     {imported.length
-                      ? `${eventCount} ${eventCount === 1 ? 'EVENT' : 'EVENTS'}`
-                      : 'DOWNLOADER PENDING'}
+                      ? t('{value0} {value1}', {
+                          value0: eventCount,
+                          value1: eventCount === 1 ? t('EVENT') : t('EVENTS'),
+                        })
+                      : t('DOWNLOADER PENDING')}
                   </small>
                   <h2>{game.name}</h2>
                   <p>
@@ -188,10 +210,10 @@ export function LibraryPage() {
                           gamePreferences(data.preferences, game.id)
                             .catalogLocale,
                         )
-                      : 'Downloader not available yet.'}
+                      : t('Downloader not available yet.')}
                   </p>
                   <span className="game-open">
-                    {imported.length ? 'Browse events' : 'View library'}
+                    {imported.length ? t('Browse events') : t('View library')}
                     <ArrowUpRight size={16} />
                   </span>
                 </div>
@@ -202,7 +224,7 @@ export function LibraryPage() {
       </section>
       <footer className="page-note">
         <span className="status-dot" />
-        Stories and progress stay on this device
+        {t('Stories and progress stay on this device')}
       </footer>
     </main>
   );

@@ -4,6 +4,7 @@ import { emptyData, parseData, mergeData } from './model';
 import messages from './ui-messages.json';
 import extraMessages from './ui-messages-extra.json';
 import playbackMessages from './ui-messages-playback.json';
+import libraryMessages from './ui-messages-library.json';
 
 describe('application language', () => {
   it('preserves interpolation parameters in Chinese and Japanese messages', () => {
@@ -15,6 +16,7 @@ describe('application language', () => {
       ...messages,
       ...playbackMessages,
       ...extraMessages,
+      ...libraryMessages,
     })) {
       for (const locale of ['zh-CN', 'ja'] as const) {
         expect(entry[locale].trim(), `${locale}: ${source}`).toBeTruthy();

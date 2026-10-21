@@ -1,0 +1,818 @@
+{
+  " ({value0})": {
+    "zh-CN": "（{value0}）",
+    "ja": "（{value0}）"
+  },
+  " min": {
+    "zh-CN": " 分钟",
+    "ja": " 分"
+  },
+  " stories": {
+    "zh-CN": " 篇故事",
+    "ja": " ストーリー"
+  },
+  " · Selected": {
+    "zh-CN": " · 已选择",
+    "ja": " · 選択済み"
+  },
+  " · {value0} main · {value1} side": {
+    "zh-CN": " · {value0} 篇主线 · {value1} 篇支线",
+    "ja": " · 本編 {value0} · サイド {value1}"
+  },
+  " · {value0} read": {
+    "zh-CN": " · 已读 {value0} 篇",
+    "ja": " · {value0} 話読了"
+  },
+  " · {value0} side stories": {
+    "zh-CN": " · {value0} 篇支线",
+    "ja": " · サイドストーリー {value0} 話"
+  },
+  " · {value0}%": {
+    "zh-CN": " · {value0}%",
+    "ja": " · {value0}%"
+  },
+  ". File contents will be verified during import.": {
+    "zh-CN": "。导入时会校验文件内容。",
+    "ja": "。インポート時にファイル内容を検証します。"
+  },
+  "About": {
+    "zh-CN": "约",
+    "ja": "約"
+  },
+  "Add stories to download": {
+    "zh-CN": "添加要下载的故事",
+    "ja": "ダウンロードするストーリーを追加"
+  },
+  "All Events": {
+    "zh-CN": "全部活动",
+    "ja": "すべてのイベント"
+  },
+  "All collections": {
+    "zh-CN": "全部合集",
+    "ja": "すべてのコレクション"
+  },
+  "All groups": {
+    "zh-CN": "全部组合",
+    "ja": "すべてのユニット"
+  },
+  "All schools / affiliations": {
+    "zh-CN": "全部学校／所属",
+    "ja": "すべての学園・所属"
+  },
+  "Available offline on this device": {
+    "zh-CN": "可在此设备上离线阅读",
+    "ja": "この端末でオフライン閲覧可能"
+  },
+  "Back to downloads": {
+    "zh-CN": "返回下载",
+    "ja": "ダウンロードに戻る"
+  },
+  "Blue Archive getting started": {
+    "zh-CN": "蔚蓝档案入门指南",
+    "ja": "ブルーアーカイブの使い方"
+  },
+  "Browse events": {
+    "zh-CN": "浏览活动",
+    "ja": "イベントを見る"
+  },
+  "Cancel": {
+    "zh-CN": "取消",
+    "ja": "キャンセル"
+  },
+  "Cancel download": {
+    "zh-CN": "取消下载",
+    "ja": "ダウンロードをキャンセル"
+  },
+  "Cancel download selection": {
+    "zh-CN": "取消下载选择",
+    "ja": "ダウンロードの選択を解除"
+  },
+  "Cancel downloads": {
+    "zh-CN": "取消下载",
+    "ja": "ダウンロードをキャンセル"
+  },
+  "Canceled": {
+    "zh-CN": "已取消",
+    "ja": "キャンセル済み"
+  },
+  "Canceled. Verified source downloads are kept for retry.": {
+    "zh-CN": "已取消。已校验的源文件会保留，供重试使用。",
+    "ja": "キャンセルしました。検証済みの元ファイルは再試行用に保持されます。"
+  },
+  "Checking size…": {
+    "zh-CN": "正在计算大小…",
+    "ja": "容量を確認中…"
+  },
+  "Chinese text, Live2D scenes and Japanese voices.": {
+    "zh-CN": "中文文本、Live2D 场景和日语配音。",
+    "ja": "中国語テキスト、Live2D シーン、日本語音声。"
+  },
+  "Choose files": {
+    "zh-CN": "选择文件",
+    "ja": "ファイルを選択"
+  },
+  "Choose files you have already downloaded. Onlystory processes them on this device.": {
+    "zh-CN": "选择已下载的文件。Onlystory 会在此设备上处理这些文件。",
+    "ja": "ダウンロード済みのファイルを選択してください。Onlystory はこの端末上で処理します。"
+  },
+  "Choose folder": {
+    "zh-CN": "选择文件夹",
+    "ja": "フォルダーを選択"
+  },
+  "Choose original files": {
+    "zh-CN": "选择原始文件",
+    "ja": "元ファイルを選択"
+  },
+  "Choose original folder": {
+    "zh-CN": "选择原始文件夹",
+    "ja": "元ファイルのフォルダーを選択"
+  },
+  "Choose original folder for selected BA stories": {
+    "zh-CN": "为所选蔚蓝档案故事选择原始文件夹",
+    "ja": "選択した BA ストーリーの元フォルダーを選択"
+  },
+  "Continue reading": {
+    "zh-CN": "继续阅读",
+    "ja": "続きを読む"
+  },
+  "DOWNLOADER PENDING": {
+    "zh-CN": "下载器待开发",
+    "ja": "ダウンローダー準備中"
+  },
+  "Download and import": {
+    "zh-CN": "下载并导入",
+    "ja": "ダウンロードしてインポート"
+  },
+  "Download failed · select to retry": {
+    "zh-CN": "下载失败 · 选择以重试",
+    "ja": "ダウンロード失敗 · 選択して再試行"
+  },
+  "Download history": {
+    "zh-CN": "下载历史",
+    "ja": "ダウンロード履歴"
+  },
+  "Download or prepare a local library": {
+    "zh-CN": "下载或准备本地故事库",
+    "ja": "ダウンロードまたはローカルライブラリの準備"
+  },
+  "Download progress": {
+    "zh-CN": "下载进度",
+    "ja": "ダウンロードの進捗"
+  },
+  "Download progress for {title}": {
+    "zh-CN": "{title}的下载进度",
+    "ja": "{title} のダウンロード進捗"
+  },
+  "Download the source files below, then choose the files or their folder to import them.": {
+    "zh-CN": "下载下方源文件，然后选择文件或所在文件夹进行导入。",
+    "ja": "以下の元ファイルをダウンロードし、ファイルまたはフォルダーを選択してインポートしてください。"
+  },
+  "Downloaded": {
+    "zh-CN": "已下载",
+    "ja": "ダウンロード済み"
+  },
+  "Downloaded and read counts": {
+    "zh-CN": "下载与阅读数量",
+    "ja": "ダウンロード数と読了数"
+  },
+  "Downloader not available yet.": {
+    "zh-CN": "下载器尚不可用。",
+    "ja": "ダウンローダーはまだ利用できません。"
+  },
+  "Downloader pending": {
+    "zh-CN": "下载器待开发",
+    "ja": "ダウンローダー準備中"
+  },
+  "Downloading": {
+    "zh-CN": "正在下载",
+    "ja": "ダウンロード中"
+  },
+  "Downloading story": {
+    "zh-CN": "正在下载故事",
+    "ja": "ストーリーをダウンロード中"
+  },
+  "Downloading these stories needs further reverse engineering of the original sources.": {
+    "zh-CN": "下载这些故事还需要进一步解析原始资源。",
+    "ja": "これらのストーリーのダウンロードには、元データの追加解析が必要です。"
+  },
+  "Downloads": {
+    "zh-CN": "下载",
+    "ja": "ダウンロード"
+  },
+  "Downloads run while the app is open. History records the latest attempt for each story on this device.": {
+    "zh-CN": "下载会在应用打开时运行。历史记录会保留此设备上每篇故事的最近一次下载尝试。",
+    "ja": "アプリを開いている間、ダウンロードが進みます。履歴には、この端末での各ストーリーの最後の試行が記録されます。"
+  },
+  "Episode downloads": {
+    "zh-CN": "故事下载",
+    "ja": "ストーリーのダウンロード"
+  },
+  "Event category": {
+    "zh-CN": "活动分类",
+    "ja": "イベントの分類"
+  },
+  "Event not found": {
+    "zh-CN": "未找到活动",
+    "ja": "イベントが見つかりません"
+  },
+  "Event order": {
+    "zh-CN": "活动顺序",
+    "ja": "イベントの並び順"
+  },
+  "Event stories": {
+    "zh-CN": "活动故事",
+    "ja": "イベントストーリー"
+  },
+  "Events": {
+    "zh-CN": "活动",
+    "ja": "イベント"
+  },
+  "Failed": {
+    "zh-CN": "失败",
+    "ja": "失敗"
+  },
+  "Files come directly from the original sources. Downloads are verified before the story is installed.": {
+    "zh-CN": "文件直接来自原始来源。安装故事之前会校验下载内容。",
+    "ja": "ファイルは元の配信元から直接取得します。ストーリーをインストールする前に検証します。"
+  },
+  "Files removed or unavailable for the current voice settings.": {
+    "zh-CN": "文件已移除，或不适用于当前语音设置。",
+    "ja": "ファイルが削除されたか、現在の音声設定では利用できません。"
+  },
+  "Find a story…": {
+    "zh-CN": "查找故事…",
+    "ja": "ストーリーを検索…"
+  },
+  "Find an event or story…": {
+    "zh-CN": "查找活动或故事…",
+    "ja": "イベントやストーリーを検索…"
+  },
+  "Finished · revisit": {
+    "zh-CN": "已读完 · 重读",
+    "ja": "読了 · 読み返す"
+  },
+  "For a coding agent": {
+    "zh-CN": "给编程代理的说明",
+    "ja": "コーディングエージェント向け"
+  },
+  "Game not found": {
+    "zh-CN": "未找到游戏",
+    "ja": "ゲームが見つかりません"
+  },
+  "Get story": {
+    "zh-CN": "获取故事",
+    "ja": "ストーリーを取得"
+  },
+  "Get your first story": {
+    "zh-CN": "获取第一篇故事",
+    "ja": "最初のストーリーを取得する"
+  },
+  "Import original files": {
+    "zh-CN": "导入原始文件",
+    "ja": "元ファイルをインポート"
+  },
+  "Import story": {
+    "zh-CN": "导入故事",
+    "ja": "ストーリーをインポート"
+  },
+  "In progress": {
+    "zh-CN": "阅读中",
+    "ja": "読書中"
+  },
+  "JP and global players": {
+    "zh-CN": "日服与国际服玩家",
+    "ja": "日本版・グローバル版のプレイヤーへ"
+  },
+  "Japanese text, animated characters, backgrounds and audio.": {
+    "zh-CN": "日语文本、角色动画、背景和音频。",
+    "ja": "日本語テキスト、キャラクターアニメーション、背景、音声。"
+  },
+  "Main story": {
+    "zh-CN": "主线故事",
+    "ja": "メインストーリー"
+  },
+  "No downloads yet. Select stories with the download button to begin.": {
+    "zh-CN": "暂无下载。使用下载按钮选择故事以开始。",
+    "ja": "ダウンロード履歴はありません。ダウンロードボタンからストーリーを選んでください。"
+  },
+  "No events imported yet": {
+    "zh-CN": "尚未导入活动",
+    "ja": "イベントはまだインポートされていません"
+  },
+  "No game content imported. Run npm run import:gfl2 with your local prototype available.": {
+    "zh-CN": "尚未导入游戏内容。准备本地原型后运行 npm run import:gfl2。",
+    "ja": "ゲーム内容は未インポートです。ローカルのプロトタイプを用意して npm run import:gfl2 を実行してください。"
+  },
+  "No imported stories for this school": {
+    "zh-CN": "此学校暂无已导入故事",
+    "ja": "この学園のストーリーは未インポートです"
+  },
+  "No imported stories in this category": {
+    "zh-CN": "此分类暂无已导入故事",
+    "ja": "この分類のストーリーは未インポートです"
+  },
+  "No matching events": {
+    "zh-CN": "没有匹配的活动",
+    "ja": "一致するイベントがありません"
+  },
+  "No matching stories": {
+    "zh-CN": "没有匹配的故事",
+    "ja": "一致するストーリーがありません"
+  },
+  "No stories featuring this school have been imported yet. Choose another school to browse the available collection.": {
+    "zh-CN": "尚未导入以此学校为主的故事。请选择其他学校。",
+    "ja": "この学園が中心のストーリーは未インポートです。別の学園を選んでください。"
+  },
+  "Official artwork": {
+    "zh-CN": "官方插图",
+    "ja": "公式アート"
+  },
+  "Open asset preparation guide": {
+    "zh-CN": "打开资源准备指南",
+    "ja": "素材準備ガイドを開く"
+  },
+  "Original English text": {
+    "zh-CN": "英语原文",
+    "ja": "英語原文"
+  },
+  "Original input bytes needed after shared output reuse. Native source-file caches may reduce these further. Converted storage size can differ.": {
+    "zh-CN": "复用共享输出后仍需的原始输入大小。原始文件缓存可进一步减少所需大小。转换后的存储大小可能不同。",
+    "ja": "共有出力の再利用後に必要な元データの容量です。元ファイルのキャッシュでさらに減る場合があります。変換後の保存容量とは異なります。"
+  },
+  "Original sources still need verification or a downloader implementation.": {
+    "zh-CN": "原始来源仍需校验或实现下载器。",
+    "ja": "元の配信元の検証、またはダウンローダーの実装が必要です。"
+  },
+  "Other stories": {
+    "zh-CN": "其他故事",
+    "ja": "その他のストーリー"
+  },
+  "Partial archive": {
+    "zh-CN": "部分存档",
+    "ja": "一部のみのアーカイブ"
+  },
+  "Preparing download instructions…": {
+    "zh-CN": "正在准备下载说明…",
+    "ja": "ダウンロード手順を準備中…"
+  },
+  "Read": {
+    "zh-CN": "已读",
+    "ja": "読了"
+  },
+  "Read story": {
+    "zh-CN": "阅读故事",
+    "ja": "ストーリーを読む"
+  },
+  "Reading progress": {
+    "zh-CN": "阅读进度",
+    "ja": "読書の進捗"
+  },
+  "Release": {
+    "zh-CN": "发布日期",
+    "ja": "公開日"
+  },
+  "Release date unavailable": {
+    "zh-CN": "发布日期未知",
+    "ja": "公開日不明"
+  },
+  "Release order · newest first": {
+    "zh-CN": "发布顺序 · 最新优先",
+    "ja": "公開順 · 新しい順"
+  },
+  "Release order · oldest first": {
+    "zh-CN": "发布顺序 · 最早优先",
+    "ja": "公開順 · 古い順"
+  },
+  "Retry": {
+    "zh-CN": "重试",
+    "ja": "再試行"
+  },
+  "Retry download and import": {
+    "zh-CN": "重新下载并导入",
+    "ja": "ダウンロードとインポートを再試行"
+  },
+  "Return to events": {
+    "zh-CN": "返回活动",
+    "ja": "イベントに戻る"
+  },
+  "Return to library": {
+    "zh-CN": "返回故事库",
+    "ja": "ライブラリに戻る"
+  },
+  "Saved on this device": {
+    "zh-CN": "保存在此设备",
+    "ja": "この端末に保存済み"
+  },
+  "School": {
+    "zh-CN": "学校",
+    "ja": "学園"
+  },
+  "Search events": {
+    "zh-CN": "搜索活动",
+    "ja": "イベントを検索"
+  },
+  "Search stories": {
+    "zh-CN": "搜索故事",
+    "ja": "ストーリーを検索"
+  },
+  "Select {value0}": {
+    "zh-CN": "选择{value0}",
+    "ja": "{value0} を選択"
+  },
+  "Show missing files only": {
+    "zh-CN": "仅显示缺失文件",
+    "ja": "不足するファイルのみ表示"
+  },
+  "Side stories outside the main timeline": {
+    "zh-CN": "主线时间线之外的支线故事",
+    "ja": "本編の時系列外のサイドストーリー"
+  },
+  "Side story{value0}": {
+    "zh-CN": "支线故事{value0}",
+    "ja": "サイドストーリー{value0}"
+  },
+  "Size unavailable": {
+    "zh-CN": "大小未知",
+    "ja": "容量不明"
+  },
+  "Source files ·": {
+    "zh-CN": "源文件 ·",
+    "ja": "元ファイル ·"
+  },
+  "Source not available": {
+    "zh-CN": "来源不可用",
+    "ja": "配信元を利用できません"
+  },
+  "Source order": {
+    "zh-CN": "原始顺序",
+    "ja": "元の順序"
+  },
+  "Stories": {
+    "zh-CN": "故事",
+    "ja": "ストーリー"
+  },
+  "Stories and progress stay on this device": {
+    "zh-CN": "故事与进度保存在此设备",
+    "ja": "ストーリーと進捗はこの端末に保存されます"
+  },
+  "Story category": {
+    "zh-CN": "故事分类",
+    "ja": "ストーリーの分類"
+  },
+  "Story download progress": {
+    "zh-CN": "故事下载进度",
+    "ja": "ストーリーのダウンロード進捗"
+  },
+  "Story group": {
+    "zh-CN": "故事组合",
+    "ja": "ストーリーのユニット"
+  },
+  "Story setup help": {
+    "zh-CN": "故事设置帮助",
+    "ja": "ストーリーの準備ガイド"
+  },
+  "Story type": {
+    "zh-CN": "故事类型",
+    "ja": "ストーリーの種類"
+  },
+  "This event is not in the current library.": {
+    "zh-CN": "当前故事库中没有此活动。",
+    "ja": "現在のライブラリにこのイベントはありません。"
+  },
+  "This game has not been connected. Its design fixtures are available under Cross-game design checks.": {
+    "zh-CN": "此游戏尚未接入。可在跨游戏设计检查中查看设计示例。",
+    "ja": "このゲームはまだ接続されていません。ゲーム横断のデザイン確認でサンプルを参照できます。"
+  },
+  "Title": {
+    "zh-CN": "标题",
+    "ja": "タイトル"
+  },
+  "Title · A–Z": {
+    "zh-CN": "标题 · A–Z",
+    "ja": "タイトル · A–Z"
+  },
+  "Title · Z–A": {
+    "zh-CN": "标题 · Z–A",
+    "ja": "タイトル · Z–A"
+  },
+  "Try another title or category.": {
+    "zh-CN": "尝试其他标题或分类。",
+    "ja": "別のタイトルや分類を試してください。"
+  },
+  "Try another title, category or group.": {
+    "zh-CN": "尝试其他标题、分类或组合。",
+    "ja": "別のタイトル、分類、ユニットを試してください。"
+  },
+  "Try another title.": {
+    "zh-CN": "尝试其他标题。",
+    "ja": "別のタイトルを試してください。"
+  },
+  "Unique source bytes missing from this device. Shared files count once. Download integrity is checked during installation.": {
+    "zh-CN": "此设备缺失的去重源文件大小。共享文件仅计算一次。安装时会校验下载完整性。",
+    "ja": "この端末に不足している元ファイルの合計容量です。共有ファイルは一度だけ数え、インストール時に整合性を検証します。"
+  },
+  "Unofficial artwork": {
+    "zh-CN": "非官方插图",
+    "ja": "非公式アート"
+  },
+  "Unsupported": {
+    "zh-CN": "不支持",
+    "ja": "未対応"
+  },
+  "Updating size estimate": {
+    "zh-CN": "正在更新预估大小",
+    "ja": "推定容量を更新中"
+  },
+  "View library": {
+    "zh-CN": "查看故事库",
+    "ja": "ライブラリを見る"
+  },
+  "You can leave this page. Keep the app open until the import finishes.": {
+    "zh-CN": "可以离开此页面。导入完成前请保持应用打开。",
+    "ja": "このページを離れても構いません。インポートが終わるまでアプリを開いておいてください。"
+  },
+  "Your games": {
+    "zh-CN": "游戏",
+    "ja": "ゲーム"
+  },
+  "collection": {
+    "zh-CN": "个合集",
+    "ja": "コレクション"
+  },
+  "collection has": {
+    "zh-CN": "个合集",
+    "ja": "コレクションに"
+  },
+  "collections": {
+    "zh-CN": "个合集",
+    "ja": "コレクション"
+  },
+  "collections have": {
+    "zh-CN": "个合集",
+    "ja": "コレクションに"
+  },
+  " event": {
+    "zh-CN": " 个活动",
+    "ja": " イベント"
+  },
+  "event": {
+    "zh-CN": "个活动",
+    "ja": "イベント"
+  },
+  "events": {
+    "zh-CN": "个活动",
+    "ja": "イベント"
+  },
+  "files": {
+    "zh-CN": "个文件",
+    "ja": "ファイル"
+  },
+  "no release date in the imported source. Undated collections appear after dated releases, in source order.": {
+    "zh-CN": "在导入来源中没有发布日期。无日期合集将按原始顺序排在有日期合集之后。",
+    "ja": "インポート元の公開日がありません。日付不明のコレクションは日付のあるものの後に、元の順序で表示されます。"
+  },
+  "of original files.": {
+    "zh-CN": "原始文件。",
+    "ja": "の元ファイル。"
+  },
+  "original files selected": {
+    "zh-CN": "个原始文件已选择",
+    "ja": "個の元ファイルを選択済み"
+  },
+  "remaining": {
+    "zh-CN": "剩余",
+    "ja": "残り"
+  },
+  "stories": {
+    "zh-CN": "篇故事",
+    "ja": "ストーリー"
+  },
+  "story": {
+    "zh-CN": "篇故事",
+    "ja": "ストーリー"
+  },
+  "{count} downloaded": {
+    "zh-CN": "已下载 {count} 篇",
+    "ja": "{count} 話ダウンロード済み"
+  },
+  "{count} stories": {
+    "zh-CN": "{count} 篇故事",
+    "ja": "{count} 話"
+  },
+  "{downloaded} of {total} downloaded · {read} read": {
+    "zh-CN": "已下载 {downloaded}/{total} 篇 · 已读 {read} 篇",
+    "ja": "{total} 話中 {downloaded} 話ダウンロード済み · {read} 話読了"
+  },
+  "{read} of {total} read": {
+    "zh-CN": "已读 {read}/{total} 篇",
+    "ja": "{total} 話中 {read} 話読了"
+  },
+  "{value0} content has not been imported yet. Choose another category to read the available stories.": {
+    "zh-CN": "尚未导入{value0}内容。请选择其他分类。",
+    "ja": "{value0} の内容は未インポートです。別の分類を選んでください。"
+  },
+  "{value0} passages into this episode": {
+    "zh-CN": "已阅读此故事 {value0} 段",
+    "ja": "このストーリーを {value0} 段落まで閲覧"
+  },
+  "{value0} stories selected. Press the download button to start.": {
+    "zh-CN": "已选择 {value0} 篇故事。按下载按钮开始。",
+    "ja": "{value0} 話を選択済み。ダウンロードボタンで開始します。"
+  },
+  "{value0} stories · {value1}": {
+    "zh-CN": "{value0} 篇故事 · {value1}",
+    "ja": "{value0} 話 · {value1}"
+  },
+  "{value0} unsupported": {
+    "zh-CN": "{value0} 篇不支持",
+    "ja": "{value0} 話未対応"
+  },
+  "{value0} {value1}": {
+    "zh-CN": "{value0} {value1}",
+    "ja": "{value0} {value1}"
+  },
+  "{value0} · {value1}": {
+    "zh-CN": "{value0} · {value1}",
+    "ja": "{value0} · {value1}"
+  },
+  "{value0} 节 · {value1} 段原文 · 含原始说话人": {
+    "zh-CN": "{value0} 节 · {value1} 段原文 · 含原始说话人",
+    "ja": "{value0} 節 · 原文 {value1} 段落 · 元の話者名を収録"
+  },
+  "{value0}{value1} new{value2}{value3}": {
+    "zh-CN": "{value0}新增 {value1}{value2}{value3}",
+    "ja": "{value0}新規 {value1}{value2}{value3}"
+  },
+  "日本語原文": {
+    "zh-CN": "日语原文",
+    "ja": "日本語原文"
+  },
+  "简中原文": {
+    "zh-CN": "简中原文",
+    "ja": "簡体字中国語原文"
+  },
+  "长梦初醒 · 原始 CG、音乐与音效 · 开场片段": {
+    "zh-CN": "长梦初醒 · 原始 CG、音乐与音效 · 开场片段",
+    "ja": "长梦初醒 · 元の CG・音楽・効果音 · 冒頭部分"
+  },
+  "Downloading {count} stories · {percent}%": {
+    "zh-CN": "正在下载 {count} 篇故事 · {percent}%",
+    "ja": "{count} 話をダウンロード中 · {percent}%"
+  },
+  "Download selected stories ({count})": {
+    "zh-CN": "下载所选故事（{count}）",
+    "ja": "選択したストーリーをダウンロード（{count}）"
+  },
+  "Select stories to download": {
+    "zh-CN": "选择要下载的故事",
+    "ja": "ダウンロードするストーリーを選択"
+  },
+  "Up to ": {
+    "zh-CN": "最多 ",
+    "ja": "最大 "
+  },
+  " · {bytes} reused": {
+    "zh-CN": " · 复用 {bytes}",
+    "ja": " · {bytes} 再利用"
+  },
+  " + unmeasured files": {
+    "zh-CN": " + 未计量文件",
+    "ja": " + 容量不明のファイル"
+  },
+  "After Downloaded appears, open the story. Use Settings to choose story text and audio levels. Tap or press Space to advance, choose responses when prompted, and use history or bookmarks to return to a passage. Progress saves automatically.": {
+    "zh-CN": "显示“已下载”后打开故事。在设置中选择文本语言和音量。点击或按空格推进故事，遇到选项时作出选择，可用历史或书签返回段落。阅读进度会自动保存。",
+    "ja": "「ダウンロード済み」と表示されたらストーリーを開きます。設定でテキスト言語と音量を選べます。タップまたはスペースキーで進み、選択肢が出たら回答してください。履歴やブックマークで段落に戻れます。進捗は自動保存されます。"
+  },
+  "Choose Download and import. The desktop app fetches the pinned original files directly, checks them and prepares the story on your device.": {
+    "zh-CN": "选择“下载并导入”。桌面应用会直接获取固定版本的原始文件，校验后在此设备上准备故事。",
+    "ja": "「ダウンロードしてインポート」を選びます。デスクトップアプリが指定バージョンの元ファイルを直接取得・検証し、この端末でストーリーを準備します。"
+  },
+  "Choose Main story and Source order in the catalog. Open the prologue collection and choose its first story. Event collections may contain spoilers for later main stories.": {
+    "zh-CN": "在目录中选择“主线故事”和“原始顺序”。打开序章合集并选择第一篇故事。活动合集可能包含后续主线的剧透。",
+    "ja": "カタログで「メインストーリー」と「元の順序」を選び、プロローグのコレクションから最初のストーリーを開きます。イベントには、その後のメインストーリーのネタバレが含まれる場合があります。"
+  },
+  "Downloaded counts stories installed for the current voice and text variant on this device. Read counts stories you have finished. A story can be downloaded without being read, or read from a local library without being downloaded for offline use. Removing a download keeps reading progress.": {
+    "zh-CN": "“已下载”统计此设备上已安装、适用于当前语音和文本版本的故事。“已读”统计已读完的故事。下载的故事不一定已读，从本地故事库阅读的故事也不一定下载了离线副本。移除下载不会删除阅读进度。",
+    "ja": "ダウンロード数は、この端末にインストールされ、現在の音声とテキストバージョンに対応するストーリー数です。読了数は最後まで読んだ数です。ダウンロード済みでも未読の場合や、ローカルライブラリから読んでもオフライン用に未ダウンロードの場合があります。ダウンロードを削除しても進捗は残ります。"
+  },
+  "For games without a downloader, use the repository setup guide to acquire and prepare a local library from your original game files. It lists the required tools, input paths, import commands and verification steps for each game.": {
+    "zh-CN": "没有下载器的游戏可参考仓库设置指南，从原始游戏文件获取并准备本地故事库。指南列出了各游戏所需工具、输入路径、导入命令和验证步骤。",
+    "ja": "ダウンローダーがないゲームは、リポジトリのセットアップガイドに従って元のゲームファイルからローカルライブラリを準備してください。ゲームごとに必要なツール、入力パス、インポートコマンド、検証手順を記載しています。"
+  },
+  "Global players should choose stories they have unlocked in their own game to avoid spoilers. English availability here does not prove that a story is currently released on your server. Some native 3D cutscenes are unavailable and have an explicit Continue story step.": {
+    "zh-CN": "国际服玩家应只选择自己在游戏中已解锁的故事，以免剧透。此处提供英语不代表故事已在你的服务器上开放。部分原生 3D 过场无法播放，会明确显示“继续故事”步骤。",
+    "ja": "グローバル版の方はネタバレを避けるため、自分のゲームで解放済みのストーリーを選んでください。英語があることは、現在のサーバーでの公開を保証しません。一部のネイティブ 3D ムービーは再生できず、明示的な「ストーリーを続ける」操作が表示されます。"
+  },
+  "Japanese is the original story text and audio. Official global English is offered only where the pinned global script matches the Japanese story and its branches. English coverage is shown on each collection and story. Missing English keeps Japanese text and titles; it does not mean a download failed. Audio stays Japanese when English text is selected.": {
+    "zh-CN": "故事的原始文本和音频为日语。只有固定版本的国际服脚本与日语故事及分支一致时，才提供官方英语。每个合集和故事都会显示英语覆盖情况。缺少英语时会保留日语文本和标题，这不代表下载失败。选择英语文本后，音频仍为日语。",
+    "ja": "元のテキストと音声は日本語です。指定バージョンのグローバル版脚本が日本語版の内容と分岐に一致する場合のみ、公式英語を提供します。コレクションとストーリーに英語の対応状況を表示します。英語がない箇所は日本語の本文・タイトルを維持し、ダウンロード失敗を意味しません。英語を選択しても音声は日本語です。"
+  },
+  "Open the story download page. Download every listed original file, then choose those files or their folder to import. Your browser cannot fetch all game sources directly. Keep the app open while it imports.": {
+    "zh-CN": "打开故事下载页面。下载列出的全部原始文件，再选择文件或所在文件夹导入。浏览器无法直接获取所有游戏来源。导入期间请保持应用打开。",
+    "ja": "ストーリーのダウンロードページを開き、一覧の元ファイルをすべてダウンロードしてから、ファイルまたはフォルダーを選んでインポートします。ブラウザーから直接取得できないゲームの配信元もあります。インポート中はアプリを開いておいてください。"
+  },
+  "The catalog follows a pinned Japanese release snapshot. It is not connected to your game account or the live JP/global release schedule. Collections, titles and story order can differ from the global client. Source order follows the imported collection order; release order uses first JP releases.": {
+    "zh-CN": "目录基于固定版本的日服快照，与游戏账号或实时日服／国际服更新时间无关。合集、标题和故事顺序可能与国际服客户端不同。“原始顺序”遵循导入的合集顺序，“发布顺序”使用日服首次发布日期。",
+    "ja": "カタログは指定バージョンの日本版スナップショットに基づき、ゲームアカウントや最新の日本版・グローバル版公開予定とは連動しません。コレクション、タイトル、順序はグローバル版と異なる場合があります。「元の順序」はインポート元の順序、「公開順」は日本版の初公開日を使います。"
+  },
+  "The download button selects stories with a supported downloader. Downloader pending and Unsupported identify stories whose original sources still need preparation. Catalog entries and saved progress alone do not include story files.": {
+    "zh-CN": "使用下载按钮选择支持下载器的故事。“下载器待开发”和“不支持”表示原始来源仍需准备。只有目录条目和阅读进度并不包含故事文件。",
+    "ja": "ダウンロードボタンで、対応するダウンローダーがあるストーリーを選べます。「ダウンローダー準備中」「未対応」は元ファイルの準備が必要なことを示します。カタログの項目や保存した進捗だけでは、ストーリーファイルは含まれません。"
+  },
+  "Use the download button to select several stories or a whole collection. While downloading, click it to open the queue. Download history is also available with the clock button, a long hover, or Arrow Down on the download button.": {
+    "zh-CN": "使用下载按钮选择多篇故事或整个合集。下载时点击该按钮可打开队列。也可通过时钟按钮、长时间悬停，或在下载按钮上按向下键查看下载历史。",
+    "ja": "ダウンロードボタンで複数のストーリーやコレクション全体を選べます。ダウンロード中に押すとキューが開きます。時計ボタン、長めのホバー、またはダウンロードボタンで下矢印キーを押す操作でも履歴を開けます。"
+  },
+  "Supported text languages": {
+    "zh-CN": "支持的文本语言",
+    "ja": "対応するテキスト言語"
+  },
+  "Text:": {
+    "zh-CN": "文本：",
+    "ja": "テキスト："
+  },
+  "{language} dialogue in {count} of {total} stories": {
+    "zh-CN": "{total} 篇故事中 {count} 篇有{language}对话",
+    "ja": "{total} 話中 {count} 話に{language}の会話"
+  },
+  " · {count}/{total} stories": {
+    "zh-CN": " · {count}/{total} 篇故事",
+    "ja": " · {count}/{total} 話"
+  },
+  "Unavailable": {
+    "zh-CN": "不可用",
+    "ja": "利用不可"
+  },
+  "Outside the main timeline": {
+    "zh-CN": "主线时间线之外",
+    "ja": "本編の時系列外"
+  },
+  "English": {
+    "zh-CN": "英语",
+    "ja": "英語"
+  },
+  "Japanese": {
+    "zh-CN": "日语",
+    "ja": "日本語"
+  },
+  "Chinese": {
+    "zh-CN": "中文",
+    "ja": "中国語"
+  },
+  "Simplified Chinese": {
+    "zh-CN": "简体中文",
+    "ja": "簡体字中国語"
+  },
+  "Event story": {
+    "zh-CN": "活动故事",
+    "ja": "イベントストーリー"
+  },
+  "Event": {
+    "zh-CN": "活动",
+    "ja": "イベント"
+  },
+  "Group story": {
+    "zh-CN": "社团故事",
+    "ja": "グループストーリー"
+  },
+  "Mini story": {
+    "zh-CN": "迷你故事",
+    "ja": "ミニストーリー"
+  },
+  "Relationship story": {
+    "zh-CN": "羁绊故事",
+    "ja": "絆ストーリー"
+  },
+  "Story Events": {
+    "zh-CN": "剧情活动",
+    "ja": "ストーリーイベント"
+  },
+  "Collaborations": {
+    "zh-CN": "联动活动",
+    "ja": "コラボ"
+  },
+  "Seasonal / Special": {
+    "zh-CN": "季节／特殊活动",
+    "ja": "季節・特別イベント"
+  },
+  "Original text and available media": {
+    "zh-CN": "原始文本及可用媒体",
+    "ja": "原文と利用可能なメディア"
+  },
+  "Available to download": {
+    "zh-CN": "可下载",
+    "ja": "ダウンロード可能"
+  },
+  "EVENT": {
+    "zh-CN": "个活动",
+    "ja": "イベント"
+  },
+  "EVENTS": {
+    "zh-CN": "个活动",
+    "ja": "イベント"
+  },
+  "Save guide for a coding agent": {
+    "zh-CN": "保存编程代理设置指南",
+    "ja": "エージェント向けガイドを保存"
+  }
+}

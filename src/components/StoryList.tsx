@@ -1,12 +1,13 @@
 import { useLayoutEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useVirtualizer } from '@tanstack/react-virtual';
-import { Check } from 'lucide-react';
+import { Check, Download } from 'lucide-react';
 import { episodeById } from '../content';
 import { passageUrl, startSave, gamePreferences } from '../model';
 import { episodeTitle } from '../localized-titles';
 import type { StoryRow } from '../catalog';
 import { isInstalled, useStore } from '../store';
+import { useI18n } from '../i18n';
 import { useNarrow } from '../hooks';
 import {
   DownloadCheckbox,
@@ -26,6 +27,7 @@ export function StoryList({
   catalogFrom?: string;
   independent?: boolean;
 }) {
+  const { t } = useI18n();
   const { data, transfers } = useStore();
   const selection = useDownloadSelection();
   const scroll = useRef<HTMLDivElement>(null);
@@ -95,7 +97,10 @@ export function StoryList({
         <article
           className={`story-card ${selection.selected.has(actual.id) ? 'download-selected' : ''}`}
         >
-          <DownloadCheckbox episodes={[actual]} label={`Select ${title}`} />
+          <DownloadCheckbox
+            episodes={[actual]}
+            label={t('Select {value0}', { value0: title })}
+          />
           <Link
             className="story-card-link"
             aria-disabled={
@@ -114,8 +119,18 @@ export function StoryList({
           >
             <small>
               {branch
-                ? `Side story${branch.title ? ` · ${branch.title}` : ''}`
-                : `${episode.game === 'ba' ? (episode.category === 'Event' ? 'Event story' : episode.category) : 'Main story'} · ${String(episode.order).padStart(2, '0')}`}
+                ? t('Side story{value0}', {
+                    value0: branch.title ? ` · ${branch.title}` : '',
+                  })
+                : t('{value0} · {value1}', {
+                    value0:
+                      episode.game === 'ba'
+                        ? episode.category === 'Event'
+                          ? t('Event story')
+                          : t(episode.category)
+                        : t('Main story'),
+                    value1: String(episode.order).padStart(2, '0'),
+                  })}
             </small>
             <h2>{title}</h2>
             <p>{episode.description}</p>
@@ -126,21 +141,29 @@ export function StoryList({
                   className="download-error"
                   title={transfers[actual.id].error}
                 >
-                  Download failed · select to retry
+                  {t('Download failed · select to retry')}
                 </span>
               ) : null}
               {save?.completed ? (
                 <>
-                  <Check size={12} /> Read
+                  <Check size={12} />
+                  {t('Read')}
                 </>
               ) : save ? (
-                'In progress'
-              ) : installed ? (
-                'On this device'
+                t('In progress')
               ) : episode.availability === 'incomplete' ? (
-                'Partial archive'
+                t('Partial archive')
               ) : null}
-              <span>{episode.minutes} min</span>
+              {installed ? (
+                <span className="downloaded-mark">
+                  <Download size={12} aria-hidden="true" />
+                  {t('Downloaded')}
+                </span>
+              ) : null}
+              <span>
+                {episode.minutes}
+                {t(' min')}
+              </span>
             </span>
           </Link>
         </article>
@@ -160,8 +183,8 @@ export function StoryList({
         className={`story-list ${independent ? 'independent-stories' : ''}`}
         aria-label={
           independent
-            ? 'Side stories outside the main timeline'
-            : 'Event stories'
+            ? t('Side stories outside the main timeline')
+            : t('Event stories')
         }
         style={
           large
