@@ -75,9 +75,9 @@ import { EmptyState, IconButton, Panel } from '../components/Primitives';
 import { SceneHost } from '../components/SceneHost';
 import { StoryProgress } from '../components/StoryProgress';
 import { episodeTitle, localizedTitle } from '../localized-titles';
+import { battleNotice } from '../battle-notices';
 
-type ReaderPanel =
-  'history' | 'chapters' | 'saves' | 'transcript' | 'information';
+type ReaderPanel = 'history' | 'chapters' | 'saves' | 'information';
 type FastForwardControl = {
   skipping: boolean;
   setSkipping: Dispatch<SetStateAction<boolean>>;
@@ -305,6 +305,7 @@ function Reader({
   const [includeUnread, setIncludeUnread] = useState(false);
   const [auto, setAuto] = useState(false);
   const [hidden, setHidden] = useState(false);
+  const [maximized, setMaximized] = useState(false);
   const [videoDone, setVideoDone] = useState(false);
   const [reveal, setReveal] = useState({ key: '', count: 0 });
   const [voiceDone, setVoiceDone] = useState(true);
@@ -382,6 +383,12 @@ function Reader({
   } | null>(null);
   const node = nodeOf(episode, save);
   const sceneKey = `${node.id}:${sceneRevision}`;
+  const skippedBattle = battleNotice(episode, node);
+  useEffect(() => {
+    if (!skippedBattle) return;
+    setAuto(false);
+    setSkipping(false);
+  }, [skippedBattle, setSkipping]);
   const setSceneReady = useCallback(
     (ready: boolean) => {
       setReadySceneKey(ready ? sceneKey : null);
@@ -845,9 +852,45 @@ function Reader({
       state: location.state,
     });
   };
+  const setReadingLanguage = useCallback(
+    (locale: typeof p.textLocale) => {
+      if (!episode.textLocales?.includes(locale)) return;
+      pausePlayback();
+      store.preferences({
+        games: {
+          ...store.data.preferences.games,
+          [episode.game]: {
+            ...store.data.preferences.games?.[episode.game],
+            textLocale: locale,
+          },
+        },
+      });
+    },
+    [
+      episode.game,
+      episode.textLocales,
+      pausePlayback,
+      store.preferences,
+      store.data.preferences.games,
+    ],
+  );
+  const saveCheckpoint = useCallback(() => {
+    const checkpoint: SavedPoint = {
+      id: crypto.randomUUID(),
+      episodeId: episode.id,
+      label: `${speaker} · ${text.slice(0, 60)}`,
+      snapshot: structuredClone(save),
+      createdAt: new Date().toISOString(),
+    };
+    store.setData((old) => ({
+      ...old,
+      checkpoints: [...old.checkpoints, checkpoint],
+    }));
+    store.notify('Checkpoint saved.');
+  }, [episode.id, speaker, text, save, store.setData, store.notify]);
   const execute = useCallback(
     (command: ReaderCommand) => {
-      if (hidden && command !== 'hide') {
+      if (hidden && (command === 'next' || command === 'next-repeat')) {
         setHidden(false);
         return;
       }
@@ -868,7 +911,6 @@ function Reader({
           );
       } else if (
         command === 'history' ||
-        command === 'transcript' ||
         command === 'saves' ||
         command === 'information'
       )
@@ -882,17 +924,19 @@ function Reader({
         setSkipping(false);
         setHidden((value) => !value);
       } else if (command === 'fullscreen') {
-        if (document.fullscreenElement) void document.exitFullscreen();
-        else
-          void document.documentElement
-            .requestFullscreen()
-            .catch(() =>
-              store.notify('Fullscreen is unavailable in this browser.'),
-            );
+        setMaximized((value) => !value);
+      } else if (command === 'checkpoint') {
+        saveCheckpoint();
+      } else if (command.startsWith('language-')) {
+        setReadingLanguage(
+          command.slice('language-'.length) as typeof p.textLocale,
+        );
       }
     },
     [
       hidden,
+      saveCheckpoint,
+      setReadingLanguage,
       next,
       previous,
       node,
@@ -996,6 +1040,22 @@ function Reader({
               b.snapshot.frames.at(-1)?.node === item.node.id,
           )),
     );
+  const historyPath = new Set(save.frames.map((frame) => frame.node));
+  const extraHistory = includeUnread
+    ? episode.nodes.filter(
+        (line) =>
+          !historyPath.has(line.id) &&
+          `${passageText(line, p).speaker} ${passageText(line, p).text}`
+            .toLowerCase()
+            .includes(query.toLowerCase()) &&
+          (!onlyBookmarks ||
+            store.data.bookmarks.some(
+              (point) =>
+                point.episodeId === episode.id &&
+                point.snapshot.frames.at(-1)?.node === line.id,
+            )),
+      )
+    : [];
   const checkpoints = store.data.checkpoints.filter(
     (point) => point.episodeId === episode.id,
   );
@@ -1074,7 +1134,7 @@ function Reader({
     );
   return (
     <main
-      className={`reader-page layout-${textOnly ? 'text' : p.layout} ${(p.dialogueOpacity ?? 1) < 0.5 ? 'dialogue-clear' : ''} ${hidden ? 'hide-ui' : ''}`}
+      className={`reader-page layout-${textOnly ? 'text' : p.layout} ${(p.dialogueOpacity ?? 1) < 0.5 ? 'dialogue-clear' : ''} ${hidden ? 'hide-ui' : ''} ${maximized ? 'reader-maximized' : ''}`}
       style={
         {
           '--game-accent': game.accent,
@@ -1130,7 +1190,12 @@ function Reader({
             <Info size={17} />
           </IconButton>
         ) : null}
-        <IconButton label="Fullscreen" onClick={() => execute('fullscreen')}>
+        <IconButton
+          label={maximized ? 'Restore reader' : 'Maximize reader'}
+          shortcut="F11"
+          aria-pressed={maximized}
+          onClick={() => execute('fullscreen')}
+        >
           <Maximize size={17} />
         </IconButton>
       </header>
@@ -1231,6 +1296,11 @@ function Reader({
             }}
             skipVideo={() => next(undefined, true)}
           />
+          {skippedBattle ? (
+            <p className="battle-notice" role="note">
+              {skippedBattle}
+            </p>
+          ) : null}
           {gfl1Frame?.interaction && node.kind === 'choice' ? (
             <Gfl1Interaction
               key={`${node.id}:${sceneRevision}`}
@@ -1274,7 +1344,7 @@ function Reader({
                 This archive contains an unsupported or missing scene. It will
                 not be skipped.
               </span>
-              <button onClick={() => open('transcript')}>
+              <button onClick={() => open('history')}>
                 Read available text
               </button>
             </div>
@@ -1370,7 +1440,7 @@ function Reader({
         <div className="toolbar-group">
           <IconButton
             label={p.chaptersOpen && !narrow ? 'Collapse chapters' : 'Chapters'}
-            shortcut="C"
+            shortcut="Ctrl+C"
             aria-pressed={p.chaptersOpen && !narrow}
             onClick={() => execute('chapters')}
           >
@@ -1378,7 +1448,7 @@ function Reader({
           </IconButton>
           <IconButton
             label="History"
-            shortcut="H"
+            shortcut="Ctrl+H"
             onClick={() => open('history')}
           >
             <History size={18} />
@@ -1455,18 +1525,10 @@ function Reader({
             <select
               aria-label="Reading language"
               value={p.textLocale}
-              onChange={(event) => {
-                pausePlayback();
-                store.preferences({
-                  games: {
-                    ...store.data.preferences.games,
-                    [episode.game]: {
-                      ...store.data.preferences.games?.[episode.game],
-                      textLocale: event.target.value as typeof p.textLocale,
-                    },
-                  },
-                });
-              }}
+              title="Chinese: C · Japanese: J · English: E"
+              onChange={(event) =>
+                setReadingLanguage(event.target.value as typeof p.textLocale)
+              }
             >
               {episode.textLocales!.map((locale) => (
                 <option key={locale} value={locale}>
@@ -1484,7 +1546,7 @@ function Reader({
           </IconButton>
           <IconButton
             label="Reader settings"
-            shortcut=","
+            shortcut="Ctrl+,"
             onClick={() => ui.open('settings')}
           >
             <Settings2 size={18} />
@@ -1528,6 +1590,16 @@ function Reader({
           <Eye size={19} />
         </IconButton>
       ) : null}
+      {maximized ? (
+        <IconButton
+          label="Restore reader"
+          shortcut="F11"
+          className="restore-reader"
+          onClick={() => setMaximized(false)}
+        >
+          <Maximize size={19} />
+        </IconButton>
+      ) : null}
       <audio
         ref={audio}
         src={voiceUrl}
@@ -1562,7 +1634,7 @@ function Reader({
                 ? 'Save points'
                 : panel === 'information'
                   ? 'Story information'
-                  : 'Available transcript'
+                  : 'History'
         }
         description={
           panel === 'history'
@@ -1594,6 +1666,14 @@ function Reader({
               />
               Bookmarks only
             </label>
+            <label className="check">
+              <input
+                type="checkbox"
+                checked={includeUnread}
+                onChange={(event) => setIncludeUnread(event.target.checked)}
+              />
+              Include unread passages and alternate branches
+            </label>
             <div className="history-list">
               {activeHistory.map(({ index, node: line }) => (
                 <button
@@ -1610,7 +1690,18 @@ function Reader({
                   <p>{passageText(line, p).text}</p>
                 </button>
               ))}
-              {!activeHistory.length ? (
+              {extraHistory.map((line) => (
+                <section className="history-unread" key={line.id}>
+                  <small>
+                    {passageText(line, p).speaker} ·{' '}
+                    {save.seen.includes(line.id)
+                      ? 'Alternate branch'
+                      : 'Unread'}
+                  </small>
+                  <p>{passageText(line, p).text}</p>
+                </section>
+              ))}
+              {!activeHistory.length && !extraHistory.length ? (
                 <p className="field-note">No matching passages.</p>
               ) : null}
             </div>
@@ -1621,22 +1712,7 @@ function Reader({
               Progress saves automatically. Named checkpoints keep a separate
               restorable reading state.
             </p>
-            <button
-              onClick={() => {
-                const checkpoint: SavedPoint = {
-                  id: crypto.randomUUID(),
-                  episodeId: episode.id,
-                  label: `${speaker} · ${text.slice(0, 60)}`,
-                  snapshot: structuredClone(save),
-                  createdAt: new Date().toISOString(),
-                };
-                store.setData((old) => ({
-                  ...old,
-                  checkpoints: [...old.checkpoints, checkpoint],
-                }));
-                store.notify('Checkpoint saved.');
-              }}
-            >
+            <button onClick={saveCheckpoint}>
               <Save size={16} />
               Save current point
             </button>
@@ -1744,32 +1820,6 @@ function Reader({
               </a>
             ) : null}
           </div>
-        ) : panel === 'transcript' ? (
-          <>
-            <label className="check">
-              <input
-                type="checkbox"
-                checked={includeUnread}
-                onChange={(e) => setIncludeUnread(e.target.checked)}
-              />
-              Include unread passages and alternate branches
-            </label>
-            <div className="transcript">
-              {episode.nodes
-                .filter((n) => includeUnread || save.seen.includes(n.id))
-                .map((n) => (
-                  <section key={n.id}>
-                    <h3>{passageText(n, p).speaker}</h3>
-                    <p>{passageText(n, p).text}</p>
-                    {n.kind === 'unsupported' ? (
-                      <p className="error-text">
-                        Scene missing from the archive.
-                      </p>
-                    ) : null}
-                  </section>
-                ))}
-            </div>
-          </>
         ) : null}
       </Panel>
     </main>

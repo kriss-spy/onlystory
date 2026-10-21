@@ -1311,20 +1311,6 @@ kbd {
   color: var(--muted);
   margin-top: 5px;
 }
-.transcript section {
-  padding: 17px 0;
-  border-bottom: 1px solid var(--line);
-}
-.transcript h3 {
-  font-size: 12px;
-  color: var(--accent);
-}
-.transcript p {
-  font-family: Literata, Georgia, serif;
-  font-size: 17px;
-  line-height: 1.85;
-  white-space: pre-wrap;
-}
 .reader-page {
   height: 100%;
   display: flex;
@@ -1638,7 +1624,8 @@ kbd {
   box-shadow: 0 8px 24px #0003;
   background: var(--raised);
   border-color: var(--line);
-  font-size: 14px;
+  font-size: var(--reader-font-size, 20px);
+  line-height: 1.5;
   font-weight: 500;
 }
 .story-choices > button:hover {
@@ -1938,12 +1925,34 @@ input.reader-progress {
   border: 1px solid var(--line);
   border-radius: 5px;
 }
-.hide-ui .reader-header,
 .hide-ui .dialogue-window,
-.hide-ui .reader-toolbar,
-.hide-ui .reader-progress,
-.hide-ui .chapter-sidebar {
+.hide-ui .story-choices,
+.hide-ui .gfl1-password,
+.hide-ui .gfl1-shoot-controls,
+.hide-ui .gfl1-investigation,
+.hide-ui .gfl1-source-note {
   visibility: hidden;
+}
+.reader-maximized > .reader-header,
+.reader-maximized > .reader-toolbar,
+.reader-maximized > .story-progress,
+.reader-maximized .chapter-sidebar {
+  display: none;
+}
+.restore-reader {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 10;
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+.history-unread {
+  padding: 12px;
+  border-bottom: 1px solid var(--line);
+}
+.history-unread small {
+  color: var(--muted);
 }
 .show-controls {
   position: absolute;
@@ -2197,7 +2206,7 @@ input.reader-progress {
     top: 15%;
   }
   .story-choices > button {
-    font-size: 13px;
+    font-size: var(--reader-font-size, 20px);
     min-height: 44px;
   }
   .unsupported-notice {
@@ -3359,9 +3368,6 @@ input.reader-progress {
   background: var(--accent);
   transform: translate(-50%, -50%);
 }
-.hide-ui .story-progress {
-  visibility: hidden;
-}
 
 .collection-grid {
   display: grid;
@@ -3793,4 +3799,24 @@ input[type='file'].sr-only,
 .download-selected {
   outline: 1px solid var(--accent);
   outline-offset: -1px;
+}
+
+.battle-notice {
+  position: absolute;
+  z-index: 7;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: calc(100% - 100px);
+  padding: 10px 16px;
+  margin: 0;
+  background: var(--surface);
+  color: var(--fg);
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  font-size: 14px;
+  text-align: center;
+}
+.hide-ui .battle-notice {
+  visibility: hidden;
 }
