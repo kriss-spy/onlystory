@@ -78,6 +78,17 @@ function ShellContent({ children }: { children: ReactNode }) {
     const key = (event: KeyboardEvent) => {
       if (event.isComposing || event.defaultPrevented) return;
       const dialog = document.querySelector('[role="dialog"]');
+      if (
+        inReader &&
+        event.key === 'F11' &&
+        !event.ctrlKey &&
+        !event.metaKey &&
+        !event.altKey
+      ) {
+        event.preventDefault();
+        if (!dialog && !event.repeat) readerCommand('fullscreen');
+        return;
+      }
       if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k') {
         if (!dialog) {
           event.preventDefault();
@@ -85,20 +96,30 @@ function ShellContent({ children }: { children: ReactNode }) {
         }
         return;
       }
+      const editing = (event.target as HTMLElement).closest(
+        'input,select,textarea,[contenteditable="true"],video',
+      );
       if (
-        event.ctrlKey ||
-        event.metaKey ||
         event.altKey ||
         dialog ||
-        (event.target as HTMLElement).closest(
-          'input,select,textarea,[contenteditable="true"],video',
-        ) ||
+        editing ||
         window.getSelection()?.toString()
       )
         return;
-      if (event.key === ',') {
-        event.preventDefault();
-        open('settings');
+      if (event.ctrlKey || event.metaKey) {
+        if (event.shiftKey || event.repeat) return;
+        if (event.key === ',') {
+          event.preventDefault();
+          open('settings');
+        } else if (inReader) {
+          const command = (
+            { c: 'chapters', h: 'history', s: 'checkpoint' } as const
+          )[event.key.toLowerCase() as 'c' | 'h' | 's'];
+          if (command) {
+            event.preventDefault();
+            readerCommand(command);
+          }
+        }
         return;
       }
       if (event.key === '?') {
@@ -112,9 +133,10 @@ function ShellContent({ children }: { children: ReactNode }) {
         ArrowRight: 'next',
         a: 'auto',
         f: 'skip',
-        h: 'history',
         b: 'bookmark',
-        c: 'chapters',
+        c: 'language-zh-CN',
+        j: 'language-ja',
+        e: 'language-en',
         u: 'hide',
       };
       const command =
@@ -158,20 +180,20 @@ function ShellContent({ children }: { children: ReactNode }) {
         label: inReader ? 'Reader settings' : 'General settings',
         icon: Settings2,
         run: () => open('settings'),
-        shortcut: ',',
+        shortcut: 'Ctrl+,',
       },
       ...(inReader
         ? (
             [
-              ['Chapters', PanelLeft, 'chapters', 'C'],
-              ['History', History, 'history', 'H'],
+              ['Chapters', PanelLeft, 'chapters', 'Ctrl+C'],
+              ['History', History, 'history', 'Ctrl+H'],
+              ['Save checkpoint', Save, 'checkpoint', 'Ctrl+S'],
               ['Save points', Save, 'saves', ''],
               ['Bookmark passage', Bookmark, 'bookmark', 'B'],
               ['Auto reading', Play, 'auto', 'A'],
               ['Fast-forward', SkipForward, 'skip', 'F'],
               ['Hide controls', EyeOff, 'hide', 'U'],
-              ['Fullscreen', Maximize, 'fullscreen', ''],
-              ['Available transcript', BookOpen, 'transcript', ''],
+              ['Maximize reader', Maximize, 'fullscreen', 'F11'],
             ] as const
           ).map(([label, icon, command, shortcut]) => ({
             label,
@@ -221,7 +243,7 @@ function ShellContent({ children }: { children: ReactNode }) {
               </IconButton>
               <IconButton
                 label="Settings"
-                shortcut=","
+                shortcut="Ctrl+,"
                 onClick={() => open('settings')}
               >
                 <Settings2 size={18} />

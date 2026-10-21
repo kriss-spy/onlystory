@@ -11,7 +11,10 @@ export type ReaderCommand =
   | 'chapters'
   | 'hide'
   | 'fullscreen'
-  | 'transcript'
+  | 'language-zh-CN'
+  | 'language-ja'
+  | 'language-en'
+  | 'checkpoint'
   | 'saves'
   | 'information';
 export type GlobalPanel = 'settings' | 'commands';

@@ -309,7 +309,7 @@ test('themes persist, backups export, invalid import preserves progress and keyb
   await instant(page);
   await page.goto('/read/ba/ba-1');
   await next(page);
-  await page.keyboard.press(',');
+  await page.keyboard.press('Control+,');
   await page.getByLabel('Layout', { exact: true }).selectOption('desk');
   await page.getByRole('tab', { name: 'Appearance', exact: true }).click();
   await page
@@ -365,9 +365,14 @@ test('themes persist, backups export, invalid import preserves progress and keyb
     page.getByRole('button', { name: 'History', exact: true }),
   ).toBeFocused();
   await page.keyboard.press('Control+k');
-  await page.getByRole('textbox', { name: 'Find a command' }).fill('trnsc');
-  await page.getByRole('button', { name: 'Available transcript' }).click();
-  await expect(page.getByRole('dialog')).toContainText('Available transcript');
+  await page.getByRole('textbox', { name: 'Find a command' }).fill('hstry');
+  await page
+    .getByRole('dialog')
+    .getByRole('button', { name: /^History/ })
+    .click();
+  await expect(page.getByRole('dialog')).toContainText(
+    'Include unread passages and alternate branches',
+  );
 });
 
 test('large catalogs keep a bounded DOM, search deep results and restore scroll', async ({
