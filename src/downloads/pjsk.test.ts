@@ -6,6 +6,8 @@ import {
   verifyPjskFile,
 } from './pjsk';
 import type { Episode } from '../model';
+import type { PjskRecipe } from './pjsk-recipe';
+import { createHash } from 'node:crypto';
 
 function emptyCache() {
   return {
@@ -16,6 +18,106 @@ function emptyCache() {
 const episode = recipe.episode as Episode;
 afterEach(() => vi.unstubAllGlobals());
 describe('direct PJSK acquisition', () => {
+  it('does not acquire discovery indexes or require them in the installed cache', async () => {
+    const chapter = recipe as unknown as PjskRecipe;
+    const original = { ...chapter };
+    const digest = (bytes: Uint8Array) =>
+      createHash('sha256').update(bytes).digest('hex');
+    const source = {
+      ScenarioId: chapter.entry.scenarioId,
+      FirstBackground: '',
+      FirstBgm: '',
+      FirstLayout: [],
+      AppearCharacters: [],
+      Snippets: [
+        { Action: 1, ReferenceIndex: 0, Delay: 0, ProgressBehavior: 1 },
+      ],
+      TalkData: [
+        {
+          Body: 'Fixture dialogue',
+          WindowDisplayName: 'Speaker',
+          Voices: [],
+          Motions: [],
+        },
+      ],
+      LayoutData: [],
+      SpecialEffectData: [],
+      SoundData: [],
+    };
+    const bytes = new TextEncoder().encode(JSON.stringify(source));
+    const discovery = chapter.media.files.find((file) =>
+      file.sourceUrl?.endsWith('/live2d/model_list.json'),
+    )!;
+    const contents = new Map<string, Response>();
+    const cache = {
+      match: async (url: string) => contents.get(url)?.clone(),
+      put: async (url: string, response: Response) => {
+        contents.set(url, response);
+      },
+    } as unknown as Cache;
+    const fetcher = vi.fn(
+      async (url: string) =>
+        new Response(
+          url === discovery.sourceUrl
+            ? new Uint8Array(discovery.bytes + 1)
+            : bytes,
+        ),
+    );
+    vi.stubGlobal('fetch', fetcher);
+    vi.stubGlobal('navigator', {});
+    try {
+      Object.assign(chapter, {
+        scenario: {
+          ...chapter.scenario,
+          bytes: bytes.length,
+          sha256: digest(bytes),
+          url: `/private/pjsk/assets/${digest(bytes)}.asset`,
+        },
+        media: {
+          region: 'cn',
+          backgrounds: {},
+          music: {},
+          voices: {},
+          sounds: {},
+          models: {},
+          files: [discovery],
+        },
+        models: [],
+      });
+      const generated = compileChapter(source, chapter);
+      chapter.program = {
+        url: `/private/pjsk/assets/${digest(new TextEncoder().encode(JSON.stringify(generated.program)))}.json`,
+      };
+      chapter.text = {
+        url: `/private/pjsk/assets/${digest(new TextEncoder().encode(JSON.stringify(generated.text)))}.json`,
+      };
+      const progress = vi.fn();
+      const installed = await downloadPjskChapter(
+        episode,
+        cache,
+        new AbortController().signal,
+        progress,
+      );
+      expect(fetcher.mock.calls.map(([url]) => url)).toEqual([
+        chapter.scenario.sourceUrl,
+      ]);
+      expect(installed).not.toContain(discovery.url);
+      expect(installed).toContain(chapter.scenario.url);
+      expect(installed).toContain(chapter.program.url);
+      expect(installed).toContain(chapter.text.url);
+      expect(chapter.media.files).toContain(discovery);
+      expect(progress).toHaveBeenLastCalledWith(
+        expect.objectContaining({
+          filesDone: 1,
+          filesTotal: 1,
+          bytes: bytes.length,
+          total: bytes.length,
+        }),
+      );
+    } finally {
+      Object.assign(chapter, original);
+    }
+  });
   it('verifies deferred voice bytes against the pinned upstream checksum', async () => {
     const file = {
       url: '/private/pjsk/remote/voice.mp3',

@@ -252,9 +252,17 @@ export async function downloadPjskChapter(
   await slot(signal);
   try {
     const recipe = await loadPjskRecipe(episode, signal);
+    // The importer uses this moving index to discover models. Playback uses the
+    // pinned model references already in the recipe, not the discovery index.
+    // Retain recipe.media unchanged so prepared program hashes stay identical.
+    const mediaFiles = recipe.media.files.filter(
+      (file) =>
+        file.sourceUrl !==
+        'https://storage.sekai.best/sekai-live2d-assets/live2d/model_list.json',
+    );
     const files: File[] = [
       recipe.scenario,
-      ...recipe.media.files.filter((file) => file.sourceUrl),
+      ...mediaFiles.filter((file) => file.sourceUrl),
       ...(recipe.extraFiles ?? []),
     ];
     const state = {
@@ -429,7 +437,7 @@ export async function downloadPjskChapter(
     return [
       ...new Set([
         recipe.scenario.url,
-        ...recipe.media.files.map((f) => f.url),
+        ...mediaFiles.map((f) => f.url),
         ...(recipe.extraFiles ?? []).map((f) => f.url),
         recipe.text.url,
         recipe.program.url,
