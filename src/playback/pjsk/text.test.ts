@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import type { Episode } from '../../model';
 import { decodePjskText } from './text';
+import reviewedRecipe from '../../downloads/pjsk-mmj-01-01.json';
 
 const episode = {
   id: 'sample',
@@ -28,6 +29,18 @@ const payload = () => ({
 });
 
 describe('lazy PJSK chapters', () => {
+  it('normalizes discovery metadata from both catalog and prepared text without mutating either', () => {
+    const discovery = reviewedRecipe.media.files.find((file) =>
+      file.sourceUrl?.endsWith('/live2d/model_list.json'),
+    )!.url;
+    const catalog = { ...episode, assets: [...episode.assets, discovery] };
+    const prepared = payload();
+    prepared.assets.push(discovery);
+    const loaded = decodePjskText(prepared, catalog);
+    expect(loaded.assets).toEqual([...episode.assets, ...payload().assets]);
+    expect(catalog.assets).toContain(discovery);
+    expect(prepared.assets).toContain(discovery);
+  });
   it('hydrates text, saved passage IDs, movies and offline assets', () => {
     const loaded = decodePjskText(payload(), episode);
     expect(loaded.nodes[0].id).toBe(episode.entryNodeId);

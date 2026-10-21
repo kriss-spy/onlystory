@@ -1,3 +1,5 @@
+import { isPjskPlaybackAsset } from './pjsk-playback-files';
+
 const inventoryPath = (id: string) => `/private/pjsk/installations/${id}.json`;
 
 /** Keep large file inventories in quota-managed app storage, outside localStorage. */
@@ -7,7 +9,11 @@ export async function savePjskInventory(
   files: string[],
 ) {
   const url = inventoryPath(id);
-  const body = JSON.stringify({ version: 1, id, files: [...new Set(files)] });
+  const body = JSON.stringify({
+    version: 1,
+    id,
+    files: [...new Set(files)].filter(isPjskPlaybackAsset),
+  });
   await cache.put(
     url,
     new Response(body, {
@@ -26,7 +32,7 @@ export async function installationFiles(
   files: string[],
 ): Promise<string[]> {
   const url = inventoryPath(id);
-  if (!files.includes(url)) return files; // Existing installations retain their format.
+  if (!files.includes(url)) return files.filter(isPjskPlaybackAsset); // Existing installations retain their format.
   const response = await cache.match(url);
   if (!response) return files;
   const manifest = await response.json();
@@ -43,5 +49,7 @@ export async function installationFiles(
     )
   )
     throw Error('Invalid chapter installation inventory.');
-  return [...new Set([...files, ...manifest.files])] as string[];
+  return [...new Set([...files, ...manifest.files])].filter(
+    isPjskPlaybackAsset,
+  ) as string[];
 }

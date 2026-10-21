@@ -1,4 +1,5 @@
 import type { Episode, StoryNode } from '../../model';
+import { isPjskPlaybackAsset } from '../../downloads/pjsk-playback-files';
 
 export function decodePjskText(payload: unknown, episode: Episode): Episode {
   const data = payload as {
@@ -50,6 +51,8 @@ export function decodePjskText(payload: unknown, episode: Episode): Episode {
   return {
     ...episode,
     nodes: data.nodes,
-    assets: [...new Set([...episode.assets, ...data.assets])],
+    assets: [...new Set([...episode.assets, ...data.assets])].filter(
+      isPjskPlaybackAsset,
+    ),
   };
 }

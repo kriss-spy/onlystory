@@ -1,6 +1,41 @@
 import { it, expect } from 'vitest';
 import { savePjskInventory, installationFiles } from './pjsk-inventory';
 import { pjskDownloads } from './pjsk-catalog';
+import reviewedRecipe from './pjsk-mmj-01-01.json';
+
+it('excludes import-only discovery metadata from catalog and old installation inventories', async () => {
+  const discovery = reviewedRecipe.media.files.find((file) =>
+    file.sourceUrl?.endsWith('/live2d/model_list.json'),
+  )!;
+  for (const { episode } of pjskDownloads)
+    expect(episode.assets).not.toContain(discovery.url);
+  const { cache, records } = storage();
+  const actual = '/private/pjsk/assets/actual.json';
+  const pointers = await savePjskInventory(cache, 'story', [
+    discovery.url,
+    actual,
+  ]);
+  expect((await (await cache.match(pointers[0]))!.json()).files).toEqual([
+    actual,
+  ]);
+  records.set(
+    pointers[0],
+    new Response(
+      JSON.stringify({
+        version: 1,
+        id: 'story',
+        files: [discovery.url, actual],
+      }),
+    ),
+  );
+  expect(await installationFiles(cache, 'story', pointers)).toEqual([
+    ...pointers,
+    actual,
+  ]);
+  expect(
+    await installationFiles(cache, 'legacy', [discovery.url, actual]),
+  ).toEqual([actual]);
+});
 
 function storage() {
   const records = new Map<string, Response>();

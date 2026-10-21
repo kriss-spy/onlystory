@@ -11,6 +11,7 @@ import { gunzipSync } from 'fflate';
 import { pjskDownloadById } from './pjsk-catalog';
 import type { PjskRecipe, PjskFile } from './pjsk-recipe';
 import { withMediaLock } from '../media-lock';
+import { isPjskPlaybackFile } from './pjsk-playback-files';
 
 export const recipe = recipeData;
 type File = PjskFile;
@@ -255,11 +256,7 @@ export async function downloadPjskChapter(
     // The importer uses this moving index to discover models. Playback uses the
     // pinned model references already in the recipe, not the discovery index.
     // Retain recipe.media unchanged so prepared program hashes stay identical.
-    const mediaFiles = recipe.media.files.filter(
-      (file) =>
-        file.sourceUrl !==
-        'https://storage.sekai.best/sekai-live2d-assets/live2d/model_list.json',
-    );
+    const mediaFiles = recipe.media.files.filter(isPjskPlaybackFile);
     const files: File[] = [
       recipe.scenario,
       ...mediaFiles.filter((file) => file.sourceUrl),

@@ -7,6 +7,7 @@ import { pjskLibraryRoot } from '../scripts/local-environment.mjs';
 import { readPublishedPjskEpisode } from './pjsk-installed';
 import catalog from '../src/downloads/pjsk-catalog.json' with { type: 'json' };
 import type { PjskRecipe } from '../src/downloads/pjsk-recipe';
+import { isPjskPlaybackFile } from '../src/downloads/pjsk-playback-files';
 
 const descriptor = catalog.find(
   (item) => item.episode.id === 'pjsk-cn-unit-30001',
@@ -249,7 +250,9 @@ test('episode downloads through the common manager and plays from browser cache 
     directRecipe.text.url,
     directRecipe.program.url,
     '/vendor/live2dcubismcore.min.js',
-    ...directRecipe.media.files.map((file) => file.url),
+    ...directRecipe.media.files
+      .filter(isPjskPlaybackFile)
+      .map((file) => file.url),
   ])
     expect(keys).toContain(asset);
   const downloadedProgram = (await page.evaluate(
