@@ -3,10 +3,7 @@ import { BookOpen } from 'lucide-react';
 import type { GameId } from '../model';
 import { useI18n } from '../i18n';
 import { Panel } from './Primitives';
-import agentSetupGuide from '../../docs/asset-setup-for-agents.md?raw';
-
-const setupUrl =
-  'https://github.com/kriss-spy/onlystory/blob/main/docs/asset-setup-for-agents.md';
+import agentSetupGuideUrl from '../../docs/asset-setup-for-agents.md?url';
 
 export function GettingStarted({ game }: { game: GameId }) {
   const { t } = useI18n();
@@ -90,7 +87,7 @@ export function GettingStarted({ game }: { game: GameId }) {
             'For games without a downloader, use the repository setup guide to acquire and prepare a local library from your original game files. It lists the required tools, input paths, import commands and verification steps for each game.',
           )}
         </p>
-        <a href={setupUrl} target="_blank" rel="noreferrer">
+        <a href={agentSetupGuideUrl} download="asset-setup-for-agents.md">
           {t('Open asset preparation guide')}
         </a>
       </Panel>

@@ -63,9 +63,16 @@ test('BA help explains region, languages, counts and agent preparation', async (
   await expect(panel).toContainText('JP and global players');
   await expect(panel).toContainText('Audio stays Japanese');
   await expect(panel).toContainText('Read counts stories you have finished');
-  await expect(
-    panel.getByRole('link', { name: 'Open asset preparation guide' }),
-  ).toHaveAttribute('href', /asset-setup-for-agents/);
+  const guide = panel.getByRole('link', {
+    name: 'Open asset preparation guide',
+  });
+  await expect(guide).toHaveAttribute('download', 'asset-setup-for-agents.md');
+  const href = await guide.getAttribute('href');
+  const response = await page.request.get(new URL(href!, page.url()).href);
+  expect(response.ok()).toBe(true);
+  expect(await response.text()).toContain(
+    'Prepare story files with a coding agent',
+  );
 });
 
 test('active download button opens queue and selection estimates do not restart', async ({
