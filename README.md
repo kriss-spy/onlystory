@@ -14,7 +14,9 @@ Read stories from **Blue Archive, Project SEKAI, and Girls' Frontline 1 & 2** in
 
 Windows apps are unsigned. Linux needs a graphical desktop and Electron's system libraries. See the release notes for verification details and checksums.
 
-## Start reading
+## Get started
+
+[Watch the Blue Archive demo on YouTube](https://youtu.be/5lmKZqsqZWI).
 
 1. Open a game and find a story.
 2. Download it, then choose **Read story**.
@@ -24,7 +26,33 @@ Windows apps are unsigned. Linux needs a graphical desktop and Electron's system
 
 Event badges **JP / CN / EN** show supported dialogue languages. Availability varies by story.
 
+For Blue Archive, follow the [getting-started guide](docs/blue-archive-get-started.md) to download a whole collection, choose a dialogue language and set up the reader.
+
 Using a browser instead? See [web setup and BA file imports](docs/standalone-app.md).
+
+## Screenshots
+
+Game library and reading progress.
+
+![Game library and reading progress](docs/screenshots/game-library.png)
+
+Blue Archive catalog and collection downloads.
+
+![Blue Archive catalog and collection downloads](docs/screenshots/blue-archive-downloads.png)
+
+Blue Archive reader with chapter navigation and English dialogue.
+
+![Blue Archive reader with chapter navigation and English dialogue](docs/screenshots/blue-archive-reader.jpg)
+
+## Main features
+
+- Original story scenes with character animation, backgrounds, music, voices and choices where supported.
+- A story progress bar with choice markers. Seek along your selected route; unanswered choices pause further navigation.
+- A dialogue language switch in the reader. App menus and catalog titles have separate language settings.
+- Automatic progress saving, passage bookmarks, searchable history and named save points.
+- Auto reading, fast-forward, keyboard shortcuts and a chapter panel for moving between stories.
+- Light, dark and game themes, adjustable dialogue opacity, text size, reading speed and audio levels.
+- Whole-collection downloads, download history and offline reading after installation.
 
 ## Development
 
