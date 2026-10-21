@@ -7,14 +7,28 @@ import type { Transfer } from '../store';
 import { gamePreferences, type Episode, type GameId } from '../model';
 import { EmptyState, formatBytes, IconButton } from '../components/Primitives';
 import { PageTitle } from '../components/Shell';
+import { hasOnlineSource, isBaImport } from '../downloads/providers';
+import { useLocalLibrary } from '../hooks';
 
 export function ManagePage() {
   const { data, transfers, download, cancel, remove, preferences } = useStore();
+  const localLibrary = useLocalLibrary();
+  const canDownload = (episode: Episode) =>
+    episode.origin !== 'game' ||
+    hasOnlineSource(episode) ||
+    localLibrary === true;
   const [storage, setStorage] = useState<{
     bytes: number;
     quota?: number;
     usage?: number;
   }>();
+  const [storageRevision, setStorageRevision] = useState(0);
+  useEffect(() => {
+    const refresh = () => setStorageRevision((revision) => revision + 1);
+    window.addEventListener('onlystory:storage-changed', refresh);
+    return () =>
+      window.removeEventListener('onlystory:storage-changed', refresh);
+  }, []);
   const downloading = Object.values(transfers).some(
     (job) => job.status === 'downloading',
   );
@@ -37,9 +51,10 @@ export function ManagePage() {
     return () => {
       active = false;
     };
-  }, [data.installed, downloading]);
+  }, [data.installed, downloading, storageRevision]);
   const [query, setQuery] = useState('');
   const [selected, setSelected] = useState<string[]>([]);
+  const [page, setPage] = useState(1);
   const [params, setParams] = useSearchParams();
   const game = games.some((game) => game.id === params.get('game'))
     ? (params.get('game') as GameId)
@@ -55,10 +70,20 @@ export function ManagePage() {
   );
   const visible = collection.filter(
     (e) =>
+      (params.get('source') !== 'online' || hasOnlineSource(e)) &&
+      (!window.onlystoryDesktop ||
+        params.get('all') === '1' ||
+        hasOnlineSource(e)) &&
       (!game || e.game === game) &&
-      `${e.title} ${gameById(e.game)?.name}`
+      `${e.title} ${e.story} ${gameById(e.game)?.name}`
         .toLowerCase()
         .includes(query.toLowerCase()),
+  );
+  const pageCount = Math.max(1, Math.ceil(visible.length / 60));
+  const currentPage = Math.min(page, pageCount);
+  const pageEpisodes = visible.slice((currentPage - 1) * 60, currentPage * 60);
+  const selectable = pageEpisodes.filter(
+    (episode) => canDownload(episode) || isInstalled(data, episode),
   );
   const toggle = useCallback(
     (id: string) =>
@@ -75,6 +100,22 @@ export function ManagePage() {
           way.
         </p>
       </PageTitle>
+      <section className="online-stories" aria-label="Verified story sources">
+        <Link className="acquisition-link" to="/games/ba">
+          <Download size={19} />
+          <span>
+            <strong>Blue Archive</strong>
+            <small>Browse stories to download or import</small>
+          </span>
+        </Link>
+        <Link className="acquisition-link" to="/games/pjsk">
+          <Download size={19} />
+          <span>
+            <strong>Project SEKAI</strong>
+            <small>Browse main stories and events to download</small>
+          </span>
+        </Link>
+      </section>
       <div className="catalog-toolbar">
         <label className="search-field">
           <Search size={17} />
@@ -83,13 +124,17 @@ export function ManagePage() {
             aria-label="Search downloads"
             placeholder="Find an episode or game…"
             value={query}
-            onChange={(e) => setQuery(e.target.value)}
+            onChange={(e) => {
+              setQuery(e.target.value);
+              setPage(1);
+            }}
           />
         </label>
         <select
           aria-label="Download game"
           value={game ?? 'all'}
           onChange={(event) => {
+            setPage(1);
             const next = new URLSearchParams(params);
             if (event.target.value === 'all') next.delete('game');
             else next.set('game', event.target.value);
@@ -103,6 +148,21 @@ export function ManagePage() {
             </option>
           ))}
         </select>
+        {window.onlystoryDesktop ? (
+          <label className="check">
+            <input
+              type="checkbox"
+              checked={params.get('all') === '1'}
+              onChange={(event) => {
+                const next = new URLSearchParams(params);
+                if (event.target.checked) next.set('all', '1');
+                else next.delete('all');
+                setParams(next, { replace: true });
+              }}
+            />{' '}
+            Show stories awaiting a downloader
+          </label>
+        ) : null}
         {!game || game === 'gfl2' ? (
           <label className="check">
             {game ? 'Movie voice' : 'Default movie voice'}
@@ -133,10 +193,13 @@ export function ManagePage() {
             <span>{selected.length} selected</span>
             <IconButton
               label="Download selected episodes"
+              disabled={
+                !episodes.some((e) => selected.includes(e.id) && canDownload(e))
+              }
               onClick={() =>
                 episodes
-                  .filter((e) => selected.includes(e.id))
-                  .forEach(download)
+                  .filter((e) => selected.includes(e.id) && canDownload(e))
+                  .forEach((episode) => download(episode))
               }
             >
               <Download size={18} />
@@ -176,16 +239,22 @@ export function ManagePage() {
               <input
                 type="checkbox"
                 aria-label="Select all visible episodes"
+                disabled={!selectable.length}
                 checked={
-                  visible.length > 0 &&
-                  visible.every((e) => selected.includes(e.id))
+                  selectable.length > 0 &&
+                  selectable.every((e) => selected.includes(e.id))
                 }
                 onChange={(e) =>
                   setSelected(
                     e.target.checked
-                      ? [...new Set([...selected, ...visible.map((e) => e.id)])]
+                      ? [
+                          ...new Set([
+                            ...selected,
+                            ...selectable.map((e) => e.id),
+                          ]),
+                        ]
                       : selected.filter(
-                          (id) => !visible.some((e) => e.id === id),
+                          (id) => !pageEpisodes.some((e) => e.id === id),
                         ),
                   )
                 }
@@ -196,12 +265,13 @@ export function ManagePage() {
               Downloads continue while you read.
             </span>
           </div>
-          {visible.map((episode) => (
+          {pageEpisodes.map((episode) => (
             <DownloadItem
               key={episode.id}
               episode={episode}
               job={transfers[episode.id]}
               installed={isInstalled(data, episode)}
+              canDownload={canDownload(episode)}
               selected={selected.includes(episode.id)}
               toggle={toggle}
               download={download}
@@ -211,10 +281,29 @@ export function ManagePage() {
           ))}
         </div>
       )}
+      {pageCount > 1 ? (
+        <nav className="button-row" aria-label="Download pages">
+          <button
+            disabled={currentPage === 1}
+            onClick={() => setPage(currentPage - 1)}
+          >
+            Previous
+          </button>
+          <span>
+            {currentPage} / {pageCount} · {visible.length} episodes
+          </span>
+          <button
+            disabled={currentPage === pageCount}
+            onClick={() => setPage(currentPage + 1)}
+          >
+            Next
+          </button>
+        </nav>
+      ) : null}
       <p className="page-note">
-        Episodes can share media. Removing an episode keeps its progress,
-        bookmarks and shared media cache. Desktop disk storage is a later
-        integration.
+        Removing a story keeps its progress and bookmarks. Undo is available for
+        30 seconds; unused playback media are then reclaimed. Media needed by
+        other stories and native original-file caches are kept.
       </p>
     </main>
   );
@@ -227,6 +316,7 @@ type DownloadItemProps = Pick<
   episode: Episode;
   job?: Transfer;
   installed: boolean;
+  canDownload: boolean;
   selected: boolean;
   toggle: (id: string) => void;
 };
@@ -234,6 +324,7 @@ const DownloadItem = memo(function DownloadItem({
   episode,
   job,
   installed,
+  canDownload,
   selected,
   toggle,
   download,
@@ -247,6 +338,7 @@ const DownloadItem = memo(function DownloadItem({
         aria-label={`Select ${gameById(episode.game)?.shortName} ${episode.title}`}
         type="checkbox"
         checked={selected}
+        disabled={!installed && !canDownload}
         onChange={() => toggle(episode.id)}
       />
       <div className="download-details">
@@ -258,7 +350,7 @@ const DownloadItem = memo(function DownloadItem({
           {busy ? (
             <>
               <span>
-                Downloading · {formatBytes(job.bytes)}
+                {job.message || 'Downloading'} · {formatBytes(job.bytes)}
                 {job.filesTotal
                   ? ` · ${job.filesDone ?? 0} / ${job.filesTotal} files`
                   : ' · Preparing files'}
@@ -300,9 +392,13 @@ const DownloadItem = memo(function DownloadItem({
             </span>
           ) : (
             <span>
-              {episode.availability === 'incomplete'
-                ? 'Partial archive · missing scene is disclosed in the reader'
-                : 'Available to download'}
+              {!canDownload
+                ? 'Downloader not available yet'
+                : isBaImport(episode) && !window.onlystoryDesktop
+                  ? 'Import original files for offline reading'
+                  : episode.availability === 'incomplete'
+                    ? 'Partial archive · missing scene is disclosed in the reader'
+                    : 'Available to download'}
             </span>
           )}
         </div>
@@ -323,6 +419,7 @@ const DownloadItem = memo(function DownloadItem({
         </IconButton>
       ) : (
         <IconButton
+          disabled={!canDownload}
           label={`${job?.status === 'failed' ? 'Retry download' : 'Download'} ${episode.title}`}
           onClick={() => download(episode)}
         >

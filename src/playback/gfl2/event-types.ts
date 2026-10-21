@@ -48,6 +48,7 @@ export interface EventProgram {
     string,
     {
       url: string;
+      streams?: import('../../model').MovieStreams;
       subtitles?: import('../../model').StoryNode['videoSubtitles'];
       voices?: import('../../model').StoryNode['videoVoices'];
       female?: import('../../model').StoryNode['femaleVideo'];

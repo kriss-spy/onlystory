@@ -62,6 +62,17 @@ export function applyBaRow(
   for (const raw of row.ScriptKr.split('\n')) {
     const [command, a, b, ...rest] = canonicalBaScriptLine(raw).split(';');
     if (/^[1-5]$/.test(command)) {
+      if (
+        !assets?.characters[a] &&
+        matchingBaSourceGap(
+          assets?.sourceGaps,
+          row.GroupId,
+          row.row,
+          'Character',
+          a,
+        )
+      )
+        continue;
       for (const actor of Object.values(state.actors))
         if (actor.position === Number(command) && actor.name !== a)
           actor.visible = false;
@@ -143,7 +154,8 @@ export function applyBaRow(
         y,
         size: Number(rest[0]) || 64,
         color: /\[FF6666\]/i.test(row.TextJp) ? '#ff6666' : '#fff',
-        alignment: command === '#str' ? 'right' : 'center',
+        alignment:
+          command === '#str' ? 'right' : command === '#stm' ? 'center' : 'left',
       });
     }
   }

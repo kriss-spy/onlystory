@@ -1,0 +1,365 @@
+{
+  "generatedOn": "2026-10-19",
+  "results": [
+    {
+      "library": "gfl2-cn-4013",
+      "label": "10901",
+      "variant": "male",
+      "combinedBytes": 199491144,
+      "streamBytes": 102130087,
+      "tracks": 3,
+      "segments": 60
+    },
+    {
+      "library": "gfl2-cn-4013",
+      "label": "10902",
+      "variant": "male",
+      "combinedBytes": 508189605,
+      "streamBytes": 260857628,
+      "tracks": 3,
+      "segments": 156
+    },
+    {
+      "library": "gfl2-cn-4013",
+      "label": "11001",
+      "variant": "male",
+      "combinedBytes": 322767775,
+      "streamBytes": 165369170,
+      "tracks": 3,
+      "segments": 90
+    },
+    {
+      "library": "gfl2-cn-4013",
+      "label": "11002",
+      "variant": "male",
+      "combinedBytes": 590642699,
+      "streamBytes": 302914384,
+      "tracks": 3,
+      "segments": 174
+    },
+    {
+      "library": "gfl2-cn-4013",
+      "label": "11003",
+      "variant": "male",
+      "combinedBytes": 387084007,
+      "streamBytes": 198403943,
+      "tracks": 3,
+      "segments": 111
+    },
+    {
+      "library": "gfl2-cn-4028",
+      "label": "11301",
+      "variant": "male",
+      "combinedBytes": 132684730,
+      "streamBytes": 68089892,
+      "tracks": 3,
+      "segments": 42
+    },
+    {
+      "library": "gfl2-cn-4028",
+      "label": "11302",
+      "variant": "male",
+      "combinedBytes": 188551896,
+      "streamBytes": 96814626,
+      "tracks": 3,
+      "segments": 60
+    },
+    {
+      "library": "gfl2-cn-4028",
+      "label": "11502",
+      "variant": "male",
+      "combinedBytes": 60358974,
+      "streamBytes": 30960854,
+      "tracks": 3,
+      "segments": 18
+    },
+    {
+      "library": "gfl2-cn-4028",
+      "label": "11503",
+      "variant": "male",
+      "combinedBytes": 119504651,
+      "streamBytes": 61386134,
+      "tracks": 3,
+      "segments": 39
+    },
+    {
+      "library": "gfl2-cn-4028",
+      "label": "11504",
+      "variant": "male",
+      "combinedBytes": 298200242,
+      "streamBytes": 149133794,
+      "tracks": 3,
+      "segments": 94
+    },
+    {
+      "library": "gfl2-cn-4037",
+      "label": "11801",
+      "variant": "male",
+      "combinedBytes": 269175524,
+      "streamBytes": 137989317,
+      "tracks": 3,
+      "segments": 78
+    },
+    {
+      "library": "gfl2-cn-4037",
+      "label": "11801",
+      "variant": "female",
+      "combinedBytes": 268764811,
+      "streamBytes": 137783099,
+      "tracks": 3,
+      "segments": 78
+    },
+    {
+      "library": "gfl2-cn-4037",
+      "label": "11901",
+      "variant": "male",
+      "combinedBytes": 210777441,
+      "streamBytes": 108018417,
+      "tracks": 3,
+      "segments": 60
+    },
+    {
+      "library": "gfl2-cn-4037",
+      "label": "11901",
+      "variant": "female",
+      "combinedBytes": 210949641,
+      "streamBytes": 108102184,
+      "tracks": 3,
+      "segments": 60
+    },
+    {
+      "library": "gfl2-cn-4042",
+      "label": "12001",
+      "variant": "male",
+      "combinedBytes": 162363825,
+      "streamBytes": 83302915,
+      "tracks": 3,
+      "segments": 51
+    },
+    {
+      "library": "gfl2-cn-4042",
+      "label": "12001",
+      "variant": "female",
+      "combinedBytes": 162934538,
+      "streamBytes": 83589880,
+      "tracks": 3,
+      "segments": 51
+    },
+    {
+      "library": "gfl2-cn-4042",
+      "label": "12002",
+      "variant": "male",
+      "combinedBytes": 261176114,
+      "streamBytes": 133961856,
+      "tracks": 3,
+      "segments": 78
+    },
+    {
+      "library": "gfl2-glass-island",
+      "label": "30301",
+      "variant": "male",
+      "combinedBytes": 369851642,
+      "streamBytes": 190878498,
+      "tracks": 3,
+      "segments": 135
+    },
+    {
+      "library": "gfl2-glass-island",
+      "label": "30302",
+      "variant": "male",
+      "combinedBytes": 418221575,
+      "streamBytes": 215680513,
+      "tracks": 3,
+      "segments": 150
+    },
+    {
+      "library": "gfl2-ilion",
+      "label": "12201",
+      "variant": "male",
+      "combinedBytes": 317226960,
+      "streamBytes": 161780672,
+      "tracks": 3,
+      "segments": 75
+    },
+    {
+      "library": "gfl2-ilion",
+      "label": "12202",
+      "variant": "male",
+      "combinedBytes": 20937098,
+      "streamBytes": 10466032,
+      "tracks": 3,
+      "segments": 9
+    },
+    {
+      "library": "gfl2-ilion",
+      "label": "12301",
+      "variant": "male",
+      "combinedBytes": 175469848,
+      "streamBytes": 89359210,
+      "tracks": 3,
+      "segments": 39
+    },
+    {
+      "library": "gfl2-ilion",
+      "label": "12401",
+      "variant": "male",
+      "combinedBytes": 111262488,
+      "streamBytes": 56756082,
+      "tracks": 3,
+      "segments": 27
+    },
+    {
+      "library": "gfl2-remaining-assets",
+      "label": "10901",
+      "variant": "male",
+      "combinedBytes": 199491144,
+      "streamBytes": 102130087,
+      "tracks": 3,
+      "segments": 60
+    },
+    {
+      "library": "gfl2-remaining-assets",
+      "label": "10902",
+      "variant": "male",
+      "combinedBytes": 508189605,
+      "streamBytes": 260857628,
+      "tracks": 3,
+      "segments": 156
+    },
+    {
+      "library": "gfl2-remaining-assets",
+      "label": "11001",
+      "variant": "male",
+      "combinedBytes": 322767775,
+      "streamBytes": 165369170,
+      "tracks": 3,
+      "segments": 90
+    },
+    {
+      "library": "gfl2-remaining-assets",
+      "label": "11002",
+      "variant": "male",
+      "combinedBytes": 590642699,
+      "streamBytes": 302914384,
+      "tracks": 3,
+      "segments": 174
+    },
+    {
+      "library": "gfl2-remaining-assets",
+      "label": "11003",
+      "variant": "male",
+      "combinedBytes": 387084007,
+      "streamBytes": 198403943,
+      "tracks": 3,
+      "segments": 111
+    },
+    {
+      "library": "gfl2-remaining-assets",
+      "label": "11301",
+      "variant": "male",
+      "combinedBytes": 132684730,
+      "streamBytes": 68089892,
+      "tracks": 3,
+      "segments": 42
+    },
+    {
+      "library": "gfl2-remaining-assets",
+      "label": "11302",
+      "variant": "male",
+      "combinedBytes": 188551896,
+      "streamBytes": 96814626,
+      "tracks": 3,
+      "segments": 60
+    },
+    {
+      "library": "gfl2-remaining-assets",
+      "label": "11502",
+      "variant": "male",
+      "combinedBytes": 60358974,
+      "streamBytes": 30960854,
+      "tracks": 3,
+      "segments": 18
+    },
+    {
+      "library": "gfl2-remaining-assets",
+      "label": "11503",
+      "variant": "male",
+      "combinedBytes": 119504651,
+      "streamBytes": 61386134,
+      "tracks": 3,
+      "segments": 39
+    },
+    {
+      "library": "gfl2-remaining-assets",
+      "label": "11504",
+      "variant": "male",
+      "combinedBytes": 298200242,
+      "streamBytes": 149133794,
+      "tracks": 3,
+      "segments": 94
+    },
+    {
+      "library": "gfl2-remaining-assets",
+      "label": "11801",
+      "variant": "male",
+      "combinedBytes": 269175524,
+      "streamBytes": 137989317,
+      "tracks": 3,
+      "segments": 78
+    },
+    {
+      "library": "gfl2-remaining-assets",
+      "label": "11801",
+      "variant": "female",
+      "combinedBytes": 268764811,
+      "streamBytes": 137783099,
+      "tracks": 3,
+      "segments": 78
+    },
+    {
+      "library": "gfl2-remaining-assets",
+      "label": "11901",
+      "variant": "male",
+      "combinedBytes": 210777441,
+      "streamBytes": 108018417,
+      "tracks": 3,
+      "segments": 60
+    },
+    {
+      "library": "gfl2-remaining-assets",
+      "label": "11901",
+      "variant": "female",
+      "combinedBytes": 210949641,
+      "streamBytes": 108102184,
+      "tracks": 3,
+      "segments": 60
+    },
+    {
+      "library": "gfl2-remaining-assets",
+      "label": "12001",
+      "variant": "male",
+      "combinedBytes": 162363825,
+      "streamBytes": 83302915,
+      "tracks": 3,
+      "segments": 51
+    },
+    {
+      "library": "gfl2-remaining-assets",
+      "label": "12001",
+      "variant": "female",
+      "combinedBytes": 162934538,
+      "streamBytes": 83589880,
+      "tracks": 3,
+      "segments": 51
+    },
+    {
+      "library": "gfl2-remaining-assets",
+      "label": "12002",
+      "variant": "male",
+      "combinedBytes": 261176114,
+      "streamBytes": 133961856,
+      "tracks": 3,
+      "segments": 78
+    }
+  ]
+}

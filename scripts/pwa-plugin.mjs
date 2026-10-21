@@ -22,7 +22,12 @@ export function pwaPlugin() {
             if (entry.name === 'sw.js' || entry.name === 'private') continue;
             if (entry.isDirectory())
               visit(resolve(directory, entry.name), path);
-            else files.push(path);
+            // Chapter recipes are verified and cached when selected. Installing
+            // the shell must not request every chapter's download instructions.
+            else if (!(
+              /^(?:pjsk|ba)-/.test(entry.name) && entry.name.endsWith('.gz')
+            ))
+              files.push(path);
           }
         }
         visit(output);

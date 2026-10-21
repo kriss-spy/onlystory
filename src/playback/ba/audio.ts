@@ -47,8 +47,15 @@ export class BaAudio {
     return result;
   }
   async prepare() {
-    const effect = this.assets.sounds.UI_FX_BG_UnderFire;
-    if (effect) await this.buffer(effect);
+    await Promise.all(
+      Object.entries(this.assets.sounds)
+        .filter(
+          ([name]) =>
+            name === 'UI_FX_BG_UnderFire' ||
+            name.startsWith('SFX_Emoticon_Motion_'),
+        )
+        .map(([, url]) => this.buffer(url)),
+    );
   }
   setMusic(id: number) {
     if (this.disposed || id === this.current) return;

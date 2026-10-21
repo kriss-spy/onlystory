@@ -10,6 +10,7 @@ import type { FaceBounds } from './emotion-layout';
 import { underFire } from './under-fire';
 import { emotionComposition } from './emotion-composition';
 import { combatEffects, positionCombatEffect } from './combat-effects';
+import { layoutBaCaptions } from './caption-layout';
 
 const positions = [-0.5, -7 / 24, -1 / 6, 0, 1 / 6, 7 / 24];
 
@@ -97,6 +98,11 @@ export class BaOverlays {
   private lastReduced = false;
   private animations: Animation[] = [];
   private disposed = false;
+  private captionEntries: Parameters<typeof layoutBaCaptions>[1] = [];
+  private captionResize = new ResizeObserver(() => this.layoutCaptions());
+  private layoutCaptions() {
+    layoutBaCaptions(this.host, this.captionEntries);
+  }
   constructor(
     private host: HTMLDivElement,
     private assets: BaAssets,
@@ -114,6 +120,11 @@ export class BaOverlays {
       this.popup,
       this.caption,
     );
+    this.captionResize.observe(host);
+    const dialogue = host
+      .closest('.scene-reader')
+      ?.querySelector('.dialogue-window');
+    if (dialogue) this.captionResize.observe(dialogue);
   }
   async prepare() {
     await Promise.all(
@@ -291,15 +302,17 @@ export class BaOverlays {
     if (instant) this.finishParticles();
     this.reveal();
     this.caption.replaceChildren();
+    this.captionEntries = [];
     for (const line of state.captions) {
       const element = document.createElement('p');
-      element.style.left = `${50 + line.x / 30}%`;
-      element.style.top = `${50 - line.y / 16.875}%`;
-      element.style.fontSize = `${Math.max(14, (this.host.clientHeight / 1687.5) * line.size)}px`;
+      element.className = 'ba-screen-text';
       element.style.color = line.color;
       if (line.alignment === 'right') {
         element.style.transform = 'translate(-100%, -50%)';
         element.style.textAlign = 'right';
+      } else if (line.alignment === 'left') {
+        element.style.transform = 'translate(0, -50%)';
+        element.style.textAlign = 'left';
       }
       const animate =
         !instant &&
@@ -326,7 +339,9 @@ export class BaOverlays {
       }
       this.captionRows.add(line.row);
       this.caption.append(element);
+      this.captionEntries.push({ element, line });
     }
+    this.layoutCaptions();
     if (state.place) {
       const element = document.createElement('p');
       element.className = 'ba-place';
@@ -397,6 +412,7 @@ export class BaOverlays {
   }
   dispose() {
     this.disposed = true;
+    this.captionResize.disconnect();
     this.finish();
     for (const animation of this.particles.getAnimations({ subtree: true }))
       animation.cancel();

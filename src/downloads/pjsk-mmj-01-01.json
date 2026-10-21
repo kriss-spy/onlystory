@@ -1,0 +1,1964 @@
+{
+  "version": 1,
+  "id": "pjsk-mmj-01-01-v1",
+  "episode": {
+    "id": "pjsk-cn-unit-30001",
+    "game": "pjsk",
+    "story": "MORE MORE JUMP! · 主线故事",
+    "category": "Main story",
+    "collectionId": "pjsk-cn-idol-main",
+    "group": "idol",
+    "date": "2020-09-30",
+    "order": 2,
+    "title": "崇拜的偶像！",
+    "description": "原始简体中文剧情、日语配音、Live2D、背景、音乐与音效。",
+    "minutes": 11,
+    "availability": "available",
+    "capabilities": [
+      "Original Chinese text",
+      "Japanese voice",
+      "Live2D",
+      "BGM & sound effects"
+    ],
+    "origin": "game",
+    "textLocales": ["zh-CN"],
+    "completionLabel": "本话结束",
+    "assets": [
+      "/private/pjsk/assets/9b0620f84705d6dad89198dbe9919b6272d79465606a162928efaeb421795c48.json",
+      "/vendor/live2dcubismcore.min.js"
+    ],
+    "nodes": [],
+    "renderer": {
+      "id": "pjsk",
+      "payload": {
+        "url": "/private/pjsk/assets/a068a329b4cb50341d9cc01350d43ec30c04667db8a841de43341e06d017be85.json"
+      }
+    },
+    "content": {
+      "format": "pjsk-text-v1",
+      "url": "/private/pjsk/assets/9b0620f84705d6dad89198dbe9919b6272d79465606a162928efaeb421795c48.json",
+      "count": 62
+    },
+    "entryNodeId": "mmj_01_01:2",
+    "acquisition": "pjsk-mmj-01-01-v1"
+  },
+  "entry": {
+    "id": "pjsk-cn-unit-30001",
+    "title": "崇拜的偶像！",
+    "region": "cn",
+    "scenarioId": "mmj_01_01"
+  },
+  "program": {
+    "url": "/private/pjsk/assets/c40f4e61cec20120449550fcb359fe9ee94f2f0b63dcf5ccc3f276d5ee9108df.json",
+    "sha256": "c40f4e61cec20120449550fcb359fe9ee94f2f0b63dcf5ccc3f276d5ee9108df"
+  },
+  "text": {
+    "url": "/private/pjsk/assets/8494500a4c610819970e0aa832b188b4b865a8dbd8496d958770a910710291c9.json",
+    "sha256": "8494500a4c610819970e0aa832b188b4b865a8dbd8496d958770a910710291c9"
+  },
+  "scenario": {
+    "url": "/private/pjsk/assets/81757c74feec9c5222a8c21f5e3a161a2eb1f5f7879987cc236e89d57dbebb97.asset",
+    "sourceUrl": "https://storage.sekai.best/sekai-cn-assets/scenario/unitstory/idol-story-chapter/mmj_01_01.asset",
+    "sha256": "81757c74feec9c5222a8c21f5e3a161a2eb1f5f7879987cc236e89d57dbebb97",
+    "bytes": 95515
+  },
+  "media": {
+    "region": "jp",
+    "backgrounds": {
+      "bg_a000401": "/private/pjsk/assets/e8aaa2dd0de2b30dabbefb2d08a2ea107613f1596aec3772f2eafc5d8f9512f5.webp",
+      "bg_a000601": "/private/pjsk/assets/739ad3b793c787beee4172b82559d644dc1b0581a4e3b33353cf07a6bfd50877.webp",
+      "bg_a000801": "/private/pjsk/assets/2ed1e916de624a846e7b7e0d35875228d5afc23bb7c97bbb38d9650f16e6569f.webp",
+      "bg_a002201": "/private/pjsk/assets/b303c51f0ccd5b7ab19edd594b059dbfd4188baf5998665cbc89d88ea2fcc289.webp",
+      "bg_b000601": "/private/pjsk/assets/9da161afabcd6169ea0369e1cce8797ecb36250b29e0e1cfb4ead49bfaa2a322.webp",
+      "bg_g000202": "/private/pjsk/assets/3cb6b0dd952fe6e2364ebf6a1a13a0adc128b5ba59302d9c672033790df148ea.webp"
+    },
+    "music": {
+      "bgm00016": "/private/pjsk/assets/3d0236afe31a03b54ec42667c27d741997f0f7f64a4ab088dcc6741e8efc79b2.mp3",
+      "bgm00018": "/private/pjsk/assets/81fddef53ea08207492863d83ce9832c18fd4ff71697e720e2bbf2056c107b4a.mp3",
+      "bgm00020": "/private/pjsk/assets/93cd4e54c90c3efe1013662e1aacda9d79a41de95b01059ab5c8a811dd2fbe52.mp3",
+      "bgm00034": "/private/pjsk/assets/2e7e832ad9c4774a980f11fe3a6d79d5b86ff0148ce2b92dfe86b2dc00f93ab5.mp3",
+      "bgm90037": "/private/pjsk/assets/317be92dbdabbf7ee9c4687b3b3d079e4428a80914c3d9e8e46bd20d6ecabb96.mp3"
+    },
+    "sounds": {
+      "se00004": "/private/pjsk/assets/985f6c689a4e73486b57a2c69887d864a29710e1c38ba1f6111ef7563f2a387a.mp3",
+      "se00005": "/private/pjsk/assets/1ff5e05ac33a710ec80fba2e4bad36c6fc6573507c60646f0e730782fc58e1b1.mp3",
+      "se00018": "/private/pjsk/assets/21139ed04d5f8095eea9d5fc24bc168fcd6b445e1d865d9cff031d3d6c9e2934.mp3",
+      "se00021": "/private/pjsk/assets/e19feee148280b6691a1274c88e1655a1af268638c3423c8a5eb6b91ebaadf58.mp3",
+      "se00053": "/private/pjsk/assets/f4b86d5aea830d0d999bc1ca63d62d6539ddd28cd578f1c7f90c2f1b6cece45d.mp3"
+    },
+    "voices": {
+      "voice_ms_idol1_01_05": "/private/pjsk/assets/d78161aa6ba424b378594ae8b3ad795a4ed6b19b8bc2e19c9776c22c429d8277.mp3",
+      "voice_ms_idol1_02_05": "/private/pjsk/assets/145307149b876a0b3ef98df2e9f67556a8e32c8f40038a37af52f969b5001ede.mp3",
+      "voice_ms_idol1_03_05": "/private/pjsk/assets/ffa0b61ff19f036616625bc3f1421f597bca5f5b220c7250248ad4c97c075666.mp3",
+      "voice_ms_idol1_04_05": "/private/pjsk/assets/53bfb3a3b92e8470a49d674d0c91c185c00f51dd42d90ebd4911a6188d620430.mp3",
+      "voice_ms_idol1_05_05": "/private/pjsk/assets/5ebde6eb745625e2e18f9265335d3a69496f6b24dbb78078030c1c6091a3fb5c.mp3",
+      "voice_ms_idol1_06_05": "/private/pjsk/assets/a2f464d86a5b28ad939337d8bf35fca0f256fdca3f6556b85cc38cd52533b123.mp3",
+      "voice_ms_idol1_07_05": "/private/pjsk/assets/5b70c22d9d9f107d84f38a7a275a553d3aa9f0a0e718a2508c43cb5711b6b234.mp3",
+      "voice_ms_idol1_08_05": "/private/pjsk/assets/a3a81fdc69ed4e429338e95ba81bbe86f2ddd69a18120fa36934b0233b9b573e.mp3",
+      "voice_ms_idol1_09_05": "/private/pjsk/assets/71e93d3ec6970acaa4186a76529c302235877d9c7d52a45b3f151e54385c9667.mp3",
+      "voice_ms_idol1_10_05": "/private/pjsk/assets/9d3776d433e4baabbc2b0e6f619ad5fdf962b5ca7a46d727b98fe27e2715ae8e.mp3",
+      "voice_ms_idol1_11_05": "/private/pjsk/assets/8fbc465b1a1014e8cf8ca1ea9ff9539fc1a2ff1211a9199910d3fbeb6fa4c909.mp3",
+      "voice_ms_idol1_12_05": "/private/pjsk/assets/b73a3867c4df970614231f96cc92c95ff958e0170c679a779bf5ba08aae8f9f1.mp3",
+      "voice_ms_idol1_13_05": "/private/pjsk/assets/4eea6db2297e0d05c73a2b125896830e0f52f797ad4e912d198a58054e89d836.mp3",
+      "voice_ms_idol1_14_06": "/private/pjsk/assets/958653a5bb1c8bfb56446d29f509406d8607df3da516a4461a598c2de7c27d84.mp3",
+      "voice_ms_idol1_15_06": "/private/pjsk/assets/e4b87e29bf35854be2edf1a23d648f302400f07650cbd253a07733ffd3e8d944.mp3",
+      "voice_ms_idol1_16_06": "/private/pjsk/assets/e06bea2973631f44d3e0eb29cf5c4b3b77add017d5c6ddb6b2666ea51a303c40.mp3",
+      "voice_ms_idol1_17_05": "/private/pjsk/assets/c58be2e0aa1b57ea1b09e175073099a1164daed7bcb20b1241a92289d9b5e256.mp3",
+      "voice_ms_idol1_18_05": "/private/pjsk/assets/f8fa1a9d9dca07d7f50b2167226ee2dfa2ba72acfabd25f311e12c5bd7ad3bb5.mp3",
+      "voice_ms_idol1_19_05": "/private/pjsk/assets/2bb18d7ea029b2606515a53c1903c976008ba99457d4bdab864cc96cf5681e6a.mp3",
+      "voice_ms_idol1_20_05": "/private/pjsk/assets/86f2e82bab0b03b400d2493c76e1379c26319730ef7f3dfaa4ef733054a80422.mp3",
+      "voice_ms_idol1_21_05": "/private/pjsk/assets/6022002da960802c3c4308c3d58087a197abf910e648adb229f9f084de70f492.mp3",
+      "voice_ms_idol1_22_05": "/private/pjsk/assets/13860a21c9ce3108ed8c40bf7dc6e52135afa6cdd94ca1c716875017fdfb91b3.mp3",
+      "voice_ms_idol1_23_05": "/private/pjsk/assets/05874122777290b05520e1c9d044ea69ab7a04727e52aaa5a4372a35869a68d9.mp3",
+      "voice_ms_idol1_24_05": "/private/pjsk/assets/9d305d474788994c23aea98d9f974c3bf1c1529bb3a823daeebd59635e67f6a8.mp3",
+      "voice_ms_idol1_25_06": "/private/pjsk/assets/3ff815e1df705e1eaa2b5ffb743b44400576e31a25c6e064e646336f93a43464.mp3",
+      "voice_ms_idol1_26_06": "/private/pjsk/assets/eeb0e5d5692bb7d5ff09cafc06ba308700c04c45b1f3ed60ae984f04bc7384ae.mp3",
+      "voice_ms_idol1_27_06": "/private/pjsk/assets/b01dd8dc6dc2bce3ae5147d7cd0dec1a3fb048ce1ed990664015840874291e0a.mp3",
+      "voice_ms_idol1_28_05": "/private/pjsk/assets/98d0abe08d3da15d09ee4f5ae3e32216b219317dfd1410b805294760fda4db68.mp3",
+      "voice_ms_idol1_29_05": "/private/pjsk/assets/904374e3084cc5c43e312be9d552f9da315fc67a722d3471e300b8ce7ba6992e.mp3",
+      "voice_ms_idol1_30_05": "/private/pjsk/assets/7d606921a1ce5b35e90c591c7eff79ef01fce9caf1bbb54d60f65c8627922582.mp3",
+      "voice_ms_idol1_31_05": "/private/pjsk/assets/615b1c6f8d7d821749d9d5438c2d5d9c149b85bf8bcb0f1f75d8f3261c9970c5.mp3",
+      "voice_ms_idol1_32_05": "/private/pjsk/assets/ab56d6295986442f475064caeded1e7c858b3296959d5865a07e3833b263672d.mp3",
+      "voice_ms_idol1_33_05": "/private/pjsk/assets/cfe61c5361cd592498f11b14393317512cee721008f46bfaae03568dc4f0f967.mp3",
+      "voice_ms_idol1_34_05": "/private/pjsk/assets/56016a6be7a8727d6eae577f4ba5af3fd28af4b4a34a30212af69014dfe351ed.mp3",
+      "voice_ms_idol1_35_05": "/private/pjsk/assets/52b42d955a845856763171f2f095b282686af592422b32f421fb1f706249be72.mp3",
+      "voice_ms_idol1_36_05": "/private/pjsk/assets/a979820a62e92cd27d0a0e0bf5c4627d5fb083b83ec21dbe87ccddfccc1b85a9.mp3",
+      "voice_ms_idol1_37_05": "/private/pjsk/assets/298a069b25a1e0dd9c6cb3db8383f86f645204c78642ec3366228635b917d658.mp3",
+      "voice_ms_idol1_38_05": "/private/pjsk/assets/a67d14d20d0e3c2e6cb856595302f9daaf1d61cb81be12115772b10903b431e3.mp3",
+      "voice_ms_idol1_39_05": "/private/pjsk/assets/7ef212f14d78b3ff0b96a57ac68f460e349253bbcbd6fe28d60604a0085271ec.mp3",
+      "voice_ms_idol1_40_05": "/private/pjsk/assets/d0f0c5393efcb7496dffada6566aaea4d438b4eb27ae88e74f98d26d391f90ba.mp3",
+      "voice_ms_idol1_41_06": "/private/pjsk/assets/56f9c10840ee3738b463864df4e46d5c6f5d9cf76b610f4a40ef7f89ce07c21b.mp3",
+      "voice_ms_idol1_42_06": "/private/pjsk/assets/b545c051e935f0bc47332f26f6abf66ee272744213e155194634f61bd8db8984.mp3",
+      "voice_ms_idol1_43_05": "/private/pjsk/assets/c2a3d9b6cd8beb6333bff2100ac3925a7d3c1088aac1d3d47382c5dea68e9e01.mp3",
+      "voice_ms_idol1_44_05": "/private/pjsk/assets/16f28b69fcc23df4d86bb157cd6f774ef89af697b7d2128ad38a6072a5d86c0a.mp3",
+      "voice_ms_idol1_45_05": "/private/pjsk/assets/87f677bb096be05fd70ce7b339abfb556ce66dd51761accc0204577be190c3d5.mp3",
+      "voice_ms_idol1_46_06": "/private/pjsk/assets/487229e39c87bc3422698d4d364a50d8a1647b5a347014f83215111116ba2d11.mp3",
+      "voice_ms_idol1_47_05": "/private/pjsk/assets/04a98d464e4a22c68b448a123ee1f8e6029d8519fdf526da57fc341239a37ff5.mp3"
+    },
+    "models": {
+      "05minori_cloth002": {
+        "id": 5,
+        "url": "/private/pjsk/assets/31a92461758db8be5eac05369bccb80fa046c6b19243f16de1592a75c49ec541.model3.json",
+        "motions": [
+          "w-cute-fidget01",
+          "w-cute-nod02",
+          "w-cute-tilthead06",
+          "w-normal-relief01",
+          "w-normal-tilthead01",
+          "w-normal-nod06",
+          "w-cute-forward02",
+          "w-cute-tilthead07",
+          "w-cute-glad02",
+          "w-normal-sad01",
+          "w-normal-trouble01",
+          "w-normal-tilthead03",
+          "w-cute-posetilthead07",
+          "w-normal-nod01",
+          "w-normal-nod02",
+          "w-cute-glad04",
+          "w-cute-glad06",
+          "w-cute-glad03",
+          "w-cute-glad05",
+          "w-cute-tilthead03",
+          "w-normal-sigh01",
+          "w-normal-shakehead01",
+          "w-animal-fidget02",
+          "w-normal-shakehead03",
+          "w-cute-shakehead02",
+          "w-cute-shy02",
+          "w-cute-shy01",
+          "w-normal-tilthead02",
+          "w-cute-tilthead08"
+        ],
+        "expressions": [
+          "face_sad_02",
+          "face_serious_01",
+          "face_closeeye_02",
+          "face_smallmouth_01",
+          "face_hawawa_01",
+          "face_sad_01",
+          "face_smile_01",
+          "face_smile_02",
+          "face_surprise_01",
+          "face_surprise_02",
+          "face_shy_02",
+          "face_sad_03",
+          "face_cry_01",
+          "face_trouble_02"
+        ]
+      },
+      "05minori_normal": {
+        "id": 5,
+        "url": "/private/pjsk/assets/865b6da5168e29dfcec7df8012f502c108614b83470c422a97fcd5ff1f6fdf77.model3.json",
+        "motions": [
+          "w-cute-fidget01",
+          "w-cute-nod02",
+          "w-cute-tilthead06",
+          "w-normal-relief01",
+          "w-normal-tilthead01",
+          "w-normal-nod06",
+          "w-cute-forward02",
+          "w-cute-tilthead07",
+          "w-cute-glad02",
+          "w-normal-sad01",
+          "w-normal-trouble01",
+          "w-normal-tilthead03",
+          "w-cute-posetilthead07",
+          "w-normal-nod01",
+          "w-normal-nod02",
+          "w-cute-glad04",
+          "w-cute-glad06",
+          "w-cute-glad03",
+          "w-cute-glad05",
+          "w-cute-tilthead03",
+          "w-normal-sigh01",
+          "w-normal-shakehead01",
+          "w-animal-fidget02",
+          "w-normal-shakehead03",
+          "w-cute-shakehead02",
+          "w-cute-shy02",
+          "w-cute-shy01",
+          "w-normal-tilthead02",
+          "w-cute-tilthead08"
+        ],
+        "expressions": [
+          "face_sad_02",
+          "face_serious_01",
+          "face_closeeye_02",
+          "face_smallmouth_01",
+          "face_hawawa_01",
+          "face_sad_01",
+          "face_smile_01",
+          "face_smile_02",
+          "face_surprise_01",
+          "face_surprise_02",
+          "face_shy_02",
+          "face_sad_03",
+          "face_cry_01",
+          "face_trouble_02"
+        ]
+      },
+      "06haruka_black": {
+        "id": 6,
+        "url": "/private/pjsk/assets/6a93b335816f5caf818eb9dd4a3bffae24d035d4d5a66a92939db426cb81d1bc.model3.json",
+        "motions": [
+          "w-normal-pose06",
+          "w-normal-nod01",
+          "w-animal-nod01",
+          "w-cute-tilthead08",
+          "w-normal-shakehead02",
+          "w-normal-nod03",
+          "w-normal-greeting01",
+          "w-normal-tilthead05",
+          "w-cool-sigh02",
+          "w-cool-tilthead04",
+          "w-normal-blushed01",
+          "w-normal-tilthead01",
+          "w-cool-glad01",
+          "w-normal-nod05",
+          "w-cool-tilthead03"
+        ],
+        "expressions": [
+          "face_smile_06",
+          "face_normal_01",
+          "face_trouble_01",
+          "face_surprise_01"
+        ]
+      },
+      "06haruka_normal": {
+        "id": 6,
+        "url": "/private/pjsk/assets/044b385a6726e6c18982460914883d69033563757606a796d78be53c2e047b70.model3.json",
+        "motions": [
+          "w-normal-pose06",
+          "w-normal-nod01",
+          "w-animal-nod01",
+          "w-cute-tilthead08",
+          "w-normal-shakehead02",
+          "w-normal-nod03",
+          "w-normal-greeting01",
+          "w-normal-tilthead05",
+          "w-cool-sigh02",
+          "w-cool-tilthead04",
+          "w-normal-blushed01",
+          "w-normal-tilthead01",
+          "w-cool-glad01",
+          "w-normal-nod05",
+          "w-cool-tilthead03"
+        ],
+        "expressions": [
+          "face_smile_06",
+          "face_normal_01",
+          "face_trouble_01",
+          "face_surprise_01"
+        ]
+      }
+    },
+    "movies": {},
+    "performances": {},
+    "effects": {},
+    "files": [
+      {
+        "url": "/private/pjsk/assets/0207cb3a4580da972f9d083ac5be48ee25b505db99b44a9399097fd3ca857842.json",
+        "sha256": "0207cb3a4580da972f9d083ac5be48ee25b505db99b44a9399097fd3ca857842",
+        "bytes": 13487,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/main/05_minori/05minori_motion_base/motion/w-cute-shy02.motion3.json"
+      },
+      {
+        "url": "/private/pjsk/assets/0432bd7ac8aa86bee380ed7ec328899aaf0652fa7b491803c22ec02f047fd763.json",
+        "sha256": "0432bd7ac8aa86bee380ed7ec328899aaf0652fa7b491803c22ec02f047fd763",
+        "bytes": 7687,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/main/05_minori/05minori_motion_base/BuildMotionData.json"
+      },
+      {
+        "url": "/private/pjsk/assets/044b385a6726e6c18982460914883d69033563757606a796d78be53c2e047b70.model3.json",
+        "sha256": "044b385a6726e6c18982460914883d69033563757606a796d78be53c2e047b70",
+        "bytes": 3577,
+        "sourceUrl": null
+      },
+      {
+        "url": "/private/pjsk/assets/04a98d464e4a22c68b448a123ee1f8e6029d8519fdf526da57fc341239a37ff5.mp3",
+        "sha256": "04a98d464e4a22c68b448a123ee1f8e6029d8519fdf526da57fc341239a37ff5",
+        "bytes": 15272,
+        "sourceUrl": "https://storage.sekai.best/sekai-jp-assets/sound/scenario/voice/mmj_01_01/voice_ms_idol1_47_05.mp3"
+      },
+      {
+        "url": "/private/pjsk/assets/05874122777290b05520e1c9d044ea69ab7a04727e52aaa5a4372a35869a68d9.mp3",
+        "sha256": "05874122777290b05520e1c9d044ea69ab7a04727e52aaa5a4372a35869a68d9",
+        "bytes": 22168,
+        "sourceUrl": "https://storage.sekai.best/sekai-jp-assets/sound/scenario/voice/mmj_01_01/voice_ms_idol1_23_05.mp3"
+      },
+      {
+        "url": "/private/pjsk/assets/089a100c51d65bd26b5d979c362984f3c4c44e589b98d086336b0a580d12554a.json",
+        "sha256": "089a100c51d65bd26b5d979c362984f3c4c44e589b98d086336b0a580d12554a",
+        "bytes": 161478,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/model_list.json"
+      },
+      {
+        "url": "/private/pjsk/assets/0aa70a8ab841b7f3d93e8ec0f89d22cab08350f99886dcaad8855fd80bcbd2b0.json",
+        "sha256": "0aa70a8ab841b7f3d93e8ec0f89d22cab08350f99886dcaad8855fd80bcbd2b0",
+        "bytes": 5255,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/main/05_minori/05minori_motion_base/facial/face_hawawa_01.motion3.json"
+      },
+      {
+        "url": "/private/pjsk/assets/0d7dbbef2d3183e07cdeed68a2272d167df3aecaa1a569083b5d961369e8f7fc.json",
+        "sha256": "0d7dbbef2d3183e07cdeed68a2272d167df3aecaa1a569083b5d961369e8f7fc",
+        "bytes": 11738,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/main/05_minori/05minori_motion_base/motion/w-normal-tilthead02.motion3.json"
+      },
+      {
+        "url": "/private/pjsk/assets/115ee8073db9f7b76c15524e6209c3870c892cfd9badc32ce1378a08c45c1d82.json",
+        "sha256": "115ee8073db9f7b76c15524e6209c3870c892cfd9badc32ce1378a08c45c1d82",
+        "bytes": 5239,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/main/05_minori/05minori_motion_base/facial/face_sad_02.motion3.json"
+      },
+      {
+        "url": "/private/pjsk/assets/13860a21c9ce3108ed8c40bf7dc6e52135afa6cdd94ca1c716875017fdfb91b3.mp3",
+        "sha256": "13860a21c9ce3108ed8c40bf7dc6e52135afa6cdd94ca1c716875017fdfb91b3",
+        "bytes": 59994,
+        "sourceUrl": "https://storage.sekai.best/sekai-jp-assets/sound/scenario/voice/mmj_01_01/voice_ms_idol1_22_05.mp3"
+      },
+      {
+        "url": "/private/pjsk/assets/145307149b876a0b3ef98df2e9f67556a8e32c8f40038a37af52f969b5001ede.mp3",
+        "sha256": "145307149b876a0b3ef98df2e9f67556a8e32c8f40038a37af52f969b5001ede",
+        "bytes": 17780,
+        "sourceUrl": "https://storage.sekai.best/sekai-jp-assets/sound/scenario/voice/mmj_01_01/voice_ms_idol1_02_05.mp3"
+      },
+      {
+        "url": "/private/pjsk/assets/16f28b69fcc23df4d86bb157cd6f774ef89af697b7d2128ad38a6072a5d86c0a.mp3",
+        "sha256": "16f28b69fcc23df4d86bb157cd6f774ef89af697b7d2128ad38a6072a5d86c0a",
+        "bytes": 18198,
+        "sourceUrl": "https://storage.sekai.best/sekai-jp-assets/sound/scenario/voice/mmj_01_01/voice_ms_idol1_44_05.mp3"
+      },
+      {
+        "url": "/private/pjsk/assets/18a0380d07f2d15b5925bdef9f00eedfc96fa1faf23b07cec3946c26aabb1c98.json",
+        "sha256": "18a0380d07f2d15b5925bdef9f00eedfc96fa1faf23b07cec3946c26aabb1c98",
+        "bytes": 375,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/model/v1/main/05_minori/05minori_cloth002/05minori_cloth002_3.0_f_t04.model3.json"
+      },
+      {
+        "url": "/private/pjsk/assets/1ff5e05ac33a710ec80fba2e4bad36c6fc6573507c60646f0e730782fc58e1b1.mp3",
+        "sha256": "1ff5e05ac33a710ec80fba2e4bad36c6fc6573507c60646f0e730782fc58e1b1",
+        "bytes": 80918,
+        "sourceUrl": "https://storage.sekai.best/sekai-jp-assets/sound/scenario/se/se_pack00001/se00005.mp3"
+      },
+      {
+        "url": "/private/pjsk/assets/21139ed04d5f8095eea9d5fc24bc168fcd6b445e1d865d9cff031d3d6c9e2934.mp3",
+        "sha256": "21139ed04d5f8095eea9d5fc24bc168fcd6b445e1d865d9cff031d3d6c9e2934",
+        "bytes": 35778,
+        "sourceUrl": "https://storage.sekai.best/sekai-jp-assets/sound/scenario/se/se_pack00001/se00018.mp3"
+      },
+      {
+        "url": "/private/pjsk/assets/2319f702c7bf8d848a3784c861a597d85b7e94ee278c7ba5430a7c9725abd39f.json",
+        "sha256": "2319f702c7bf8d848a3784c861a597d85b7e94ee278c7ba5430a7c9725abd39f",
+        "bytes": 12542,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/main/05_minori/05minori_motion_base/motion/w-cute-tilthead07.motion3.json"
+      },
+      {
+        "url": "/private/pjsk/assets/2666f2b575589c6998178258544dc1ab3e3b7e11abd3252a74d414e5ebfedd0d.json",
+        "sha256": "2666f2b575589c6998178258544dc1ab3e3b7e11abd3252a74d414e5ebfedd0d",
+        "bytes": 5245,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/main/05_minori/05minori_motion_base/facial/face_shy_02.motion3.json"
+      },
+      {
+        "url": "/private/pjsk/assets/298a069b25a1e0dd9c6cb3db8383f86f645204c78642ec3366228635b917d658.mp3",
+        "sha256": "298a069b25a1e0dd9c6cb3db8383f86f645204c78642ec3366228635b917d658",
+        "bytes": 5241,
+        "sourceUrl": "https://storage.sekai.best/sekai-jp-assets/sound/scenario/voice/mmj_01_01/voice_ms_idol1_37_05.mp3"
+      },
+      {
+        "url": "/private/pjsk/assets/2bb18d7ea029b2606515a53c1903c976008ba99457d4bdab864cc96cf5681e6a.mp3",
+        "sha256": "2bb18d7ea029b2606515a53c1903c976008ba99457d4bdab864cc96cf5681e6a",
+        "bytes": 55814,
+        "sourceUrl": "https://storage.sekai.best/sekai-jp-assets/sound/scenario/voice/mmj_01_01/voice_ms_idol1_19_05.mp3"
+      },
+      {
+        "url": "/private/pjsk/assets/2bc1f8e237ca84e23735ac97238f485e6d3ac6671b9ab1e7ce3e45f2c398f43c.json",
+        "sha256": "2bc1f8e237ca84e23735ac97238f485e6d3ac6671b9ab1e7ce3e45f2c398f43c",
+        "bytes": 5245,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/main/05_minori/05minori_motion_base/facial/face_closeeye_02.motion3.json"
+      },
+      {
+        "url": "/private/pjsk/assets/2c290c7801ef38fd4f017509ad4f03a0aea9fa4417e866b6f17d4f318cb91258.png",
+        "sha256": "2c290c7801ef38fd4f017509ad4f03a0aea9fa4417e866b6f17d4f318cb91258",
+        "bytes": 1898907,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/model/v1/main/05_minori/05minori_normal/05minori_normal_3.0_f_t05.2048/texture_00.png"
+      },
+      {
+        "url": "/private/pjsk/assets/2e7e832ad9c4774a980f11fe3a6d79d5b86ff0148ce2b92dfe86b2dc00f93ab5.mp3",
+        "sha256": "2e7e832ad9c4774a980f11fe3a6d79d5b86ff0148ce2b92dfe86b2dc00f93ab5",
+        "bytes": 872114,
+        "sourceUrl": "https://storage.sekai.best/sekai-jp-assets/sound/scenario/bgm/bgm00034/bgm00034.mp3"
+      },
+      {
+        "url": "/private/pjsk/assets/2ed1e916de624a846e7b7e0d35875228d5afc23bb7c97bbb38d9650f16e6569f.webp",
+        "sha256": "2ed1e916de624a846e7b7e0d35875228d5afc23bb7c97bbb38d9650f16e6569f",
+        "bytes": 220996,
+        "sourceUrl": "https://storage.sekai.best/sekai-jp-assets/scenario/background/bg_a000801/bg_a000801.webp"
+      },
+      {
+        "url": "/private/pjsk/assets/317be92dbdabbf7ee9c4687b3b3d079e4428a80914c3d9e8e46bd20d6ecabb96.mp3",
+        "sha256": "317be92dbdabbf7ee9c4687b3b3d079e4428a80914c3d9e8e46bd20d6ecabb96",
+        "bytes": 484666,
+        "sourceUrl": "https://storage.sekai.best/sekai-jp-assets/sound/scenario/bgm/bgm90037/bgm90037.mp3"
+      },
+      {
+        "url": "/private/pjsk/assets/31a92461758db8be5eac05369bccb80fa046c6b19243f16de1592a75c49ec541.model3.json",
+        "sha256": "31a92461758db8be5eac05369bccb80fa046c6b19243f16de1592a75c49ec541",
+        "bytes": 7454,
+        "sourceUrl": null
+      },
+      {
+        "url": "/private/pjsk/assets/359cfb57c6c34f65380803bf509b7d169bc152efe6d5c18a4ab7c6d6de7d04b5.json",
+        "sha256": "359cfb57c6c34f65380803bf509b7d169bc152efe6d5c18a4ab7c6d6de7d04b5",
+        "bytes": 11716,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/main/05_minori/05minori_motion_base/motion/w-normal-nod01.motion3.json"
+      },
+      {
+        "url": "/private/pjsk/assets/3cb6b0dd952fe6e2364ebf6a1a13a0adc128b5ba59302d9c672033790df148ea.webp",
+        "sha256": "3cb6b0dd952fe6e2364ebf6a1a13a0adc128b5ba59302d9c672033790df148ea",
+        "bytes": 326432,
+        "sourceUrl": "https://storage.sekai.best/sekai-jp-assets/scenario/background/bg_g000202/bg_g000202.webp"
+      },
+      {
+        "url": "/private/pjsk/assets/3d0236afe31a03b54ec42667c27d741997f0f7f64a4ab088dcc6741e8efc79b2.mp3",
+        "sha256": "3d0236afe31a03b54ec42667c27d741997f0f7f64a4ab088dcc6741e8efc79b2",
+        "bytes": 887161,
+        "sourceUrl": "https://storage.sekai.best/sekai-jp-assets/sound/scenario/bgm/bgm00016/bgm00016.mp3"
+      },
+      {
+        "url": "/private/pjsk/assets/3f35843aa0bb4f56f80ecf72347dc0a105f2af2deb6cd869ed6de445118c997f.json",
+        "sha256": "3f35843aa0bb4f56f80ecf72347dc0a105f2af2deb6cd869ed6de445118c997f",
+        "bytes": 5265,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/main/05_minori/05minori_motion_base/facial/face_trouble_02.motion3.json"
+      },
+      {
+        "url": "/private/pjsk/assets/3ff815e1df705e1eaa2b5ffb743b44400576e31a25c6e064e646336f93a43464.mp3",
+        "sha256": "3ff815e1df705e1eaa2b5ffb743b44400576e31a25c6e064e646336f93a43464",
+        "bytes": 43484,
+        "sourceUrl": "https://storage.sekai.best/sekai-jp-assets/sound/scenario/voice/mmj_01_01/voice_ms_idol1_25_06.mp3"
+      },
+      {
+        "url": "/private/pjsk/assets/40fca3d67c49415dc2621b1eda53c0e7a66eb141b3cc2e70b262c2a0338c7c19.json",
+        "sha256": "40fca3d67c49415dc2621b1eda53c0e7a66eb141b3cc2e70b262c2a0338c7c19",
+        "bytes": 12281,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/main/05_minori/05minori_motion_base/motion/w-normal-sad01.motion3.json"
+      },
+      {
+        "url": "/private/pjsk/assets/41ac5c992acd0769577dc97ba4867e5b1f2d01da49413468112aba7df2a942a6.json",
+        "sha256": "41ac5c992acd0769577dc97ba4867e5b1f2d01da49413468112aba7df2a942a6",
+        "bytes": 5245,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/main/05_minori/05minori_motion_base/facial/face_serious_01.motion3.json"
+      },
+      {
+        "url": "/private/pjsk/assets/487229e39c87bc3422698d4d364a50d8a1647b5a347014f83215111116ba2d11.mp3",
+        "sha256": "487229e39c87bc3422698d4d364a50d8a1647b5a347014f83215111116ba2d11",
+        "bytes": 5032,
+        "sourceUrl": "https://storage.sekai.best/sekai-jp-assets/sound/scenario/voice/mmj_01_01/voice_ms_idol1_46_06.mp3"
+      },
+      {
+        "url": "/private/pjsk/assets/4eea6db2297e0d05c73a2b125896830e0f52f797ad4e912d198a58054e89d836.mp3",
+        "sha256": "4eea6db2297e0d05c73a2b125896830e0f52f797ad4e912d198a58054e89d836",
+        "bytes": 23213,
+        "sourceUrl": "https://storage.sekai.best/sekai-jp-assets/sound/scenario/voice/mmj_01_01/voice_ms_idol1_13_05.mp3"
+      },
+      {
+        "url": "/private/pjsk/assets/528429e637bc7dd0b7832f462d1c0cbc72e51c8ab0800120c4770a4f602c636e.png",
+        "sha256": "528429e637bc7dd0b7832f462d1c0cbc72e51c8ab0800120c4770a4f602c636e",
+        "bytes": 1779155,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/model/v1/main/06_haruka/06haruka_normal/06haruka_normal_3.0_f_t02.2048/texture_00.png"
+      },
+      {
+        "url": "/private/pjsk/assets/52b42d955a845856763171f2f095b282686af592422b32f421fb1f706249be72.mp3",
+        "sha256": "52b42d955a845856763171f2f095b282686af592422b32f421fb1f706249be72",
+        "bytes": 49127,
+        "sourceUrl": "https://storage.sekai.best/sekai-jp-assets/sound/scenario/voice/mmj_01_01/voice_ms_idol1_35_05.mp3"
+      },
+      {
+        "url": "/private/pjsk/assets/52bd2653c63c68d082bdd0dbaf3d15dd4a8f2d807b809d4f264c34ce30f59af7.json",
+        "sha256": "52bd2653c63c68d082bdd0dbaf3d15dd4a8f2d807b809d4f264c34ce30f59af7",
+        "bytes": 11708,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/main/05_minori/05minori_motion_base/motion/w-normal-shakehead03.motion3.json"
+      },
+      {
+        "url": "/private/pjsk/assets/53bfb3a3b92e8470a49d674d0c91c185c00f51dd42d90ebd4911a6188d620430.mp3",
+        "sha256": "53bfb3a3b92e8470a49d674d0c91c185c00f51dd42d90ebd4911a6188d620430",
+        "bytes": 57068,
+        "sourceUrl": "https://storage.sekai.best/sekai-jp-assets/sound/scenario/voice/mmj_01_01/voice_ms_idol1_04_05.mp3"
+      },
+      {
+        "url": "/private/pjsk/assets/56016a6be7a8727d6eae577f4ba5af3fd28af4b4a34a30212af69014dfe351ed.mp3",
+        "sha256": "56016a6be7a8727d6eae577f4ba5af3fd28af4b4a34a30212af69014dfe351ed",
+        "bytes": 51008,
+        "sourceUrl": "https://storage.sekai.best/sekai-jp-assets/sound/scenario/voice/mmj_01_01/voice_ms_idol1_34_05.mp3"
+      },
+      {
+        "url": "/private/pjsk/assets/56f9c10840ee3738b463864df4e46d5c6f5d9cf76b610f4a40ef7f89ce07c21b.mp3",
+        "sha256": "56f9c10840ee3738b463864df4e46d5c6f5d9cf76b610f4a40ef7f89ce07c21b",
+        "bytes": 19870,
+        "sourceUrl": "https://storage.sekai.best/sekai-jp-assets/sound/scenario/voice/mmj_01_01/voice_ms_idol1_41_06.mp3"
+      },
+      {
+        "url": "/private/pjsk/assets/57ae0d52d9136a806942f676d09e461627917898d106805a0653893fd5611e7a.json",
+        "sha256": "57ae0d52d9136a806942f676d09e461627917898d106805a0653893fd5611e7a",
+        "bytes": 11805,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/main/06_haruka/06haruka_motion_base/motion/w-normal-nod05.motion3.json"
+      },
+      {
+        "url": "/private/pjsk/assets/5b70c22d9d9f107d84f38a7a275a553d3aa9f0a0e718a2508c43cb5711b6b234.mp3",
+        "sha256": "5b70c22d9d9f107d84f38a7a275a553d3aa9f0a0e718a2508c43cb5711b6b234",
+        "bytes": 11092,
+        "sourceUrl": "https://storage.sekai.best/sekai-jp-assets/sound/scenario/voice/mmj_01_01/voice_ms_idol1_07_05.mp3"
+      },
+      {
+        "url": "/private/pjsk/assets/5c8ea91bd15298791c7e484c3aeb3519123c2a02cad5ae9b29162f7f6f2990fe.json",
+        "sha256": "5c8ea91bd15298791c7e484c3aeb3519123c2a02cad5ae9b29162f7f6f2990fe",
+        "bytes": 12952,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/main/05_minori/05minori_motion_base/motion/w-cute-shakehead02.motion3.json"
+      },
+      {
+        "url": "/private/pjsk/assets/5e903e3c44c14eaaf502a0971efe0cdb8e5b85e2d4acc16665ce45cadea57b50.json",
+        "sha256": "5e903e3c44c14eaaf502a0971efe0cdb8e5b85e2d4acc16665ce45cadea57b50",
+        "bytes": 7252,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/main/06_haruka/06haruka_motion_base/BuildMotionData.json"
+      },
+      {
+        "url": "/private/pjsk/assets/5ebde6eb745625e2e18f9265335d3a69496f6b24dbb78078030c1c6091a3fb5c.mp3",
+        "sha256": "5ebde6eb745625e2e18f9265335d3a69496f6b24dbb78078030c1c6091a3fb5c",
+        "bytes": 11301,
+        "sourceUrl": "https://storage.sekai.best/sekai-jp-assets/sound/scenario/voice/mmj_01_01/voice_ms_idol1_05_05.mp3"
+      },
+      {
+        "url": "/private/pjsk/assets/5eca3e5ed2f76417a1e74804915e64a5216ed67c72c285c8339d8b732f9807c3.json",
+        "sha256": "5eca3e5ed2f76417a1e74804915e64a5216ed67c72c285c8339d8b732f9807c3",
+        "bytes": 11783,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/main/06_haruka/06haruka_motion_base/motion/w-normal-greeting01.motion3.json"
+      },
+      {
+        "url": "/private/pjsk/assets/6022002da960802c3c4308c3d58087a197abf910e648adb229f9f084de70f492.mp3",
+        "sha256": "6022002da960802c3c4308c3d58087a197abf910e648adb229f9f084de70f492",
+        "bytes": 35961,
+        "sourceUrl": "https://storage.sekai.best/sekai-jp-assets/sound/scenario/voice/mmj_01_01/voice_ms_idol1_21_05.mp3"
+      },
+      {
+        "url": "/private/pjsk/assets/615b1c6f8d7d821749d9d5438c2d5d9c149b85bf8bcb0f1f75d8f3261c9970c5.mp3",
+        "sha256": "615b1c6f8d7d821749d9d5438c2d5d9c149b85bf8bcb0f1f75d8f3261c9970c5",
+        "bytes": 41394,
+        "sourceUrl": "https://storage.sekai.best/sekai-jp-assets/sound/scenario/voice/mmj_01_01/voice_ms_idol1_31_05.mp3"
+      },
+      {
+        "url": "/private/pjsk/assets/65f6c4920a210c61fad72c22e157b368e301501cdd3affdd7f78264a0cab55e2.json",
+        "sha256": "65f6c4920a210c61fad72c22e157b368e301501cdd3affdd7f78264a0cab55e2",
+        "bytes": 12443,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/main/05_minori/05minori_motion_base/motion/w-cute-tilthead08.motion3.json"
+      },
+      {
+        "url": "/private/pjsk/assets/67d15a5461506a42287039dec6b5adb8890a7b93e3be0cfd081ef110a9a3a994.json",
+        "sha256": "67d15a5461506a42287039dec6b5adb8890a7b93e3be0cfd081ef110a9a3a994",
+        "bytes": 12666,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/main/06_haruka/06haruka_motion_base/motion/w-normal-tilthead05.motion3.json"
+      },
+      {
+        "url": "/private/pjsk/assets/68de3330c98870405e63e313f4a5e6a1a6ee4a25c51e2cdaa6c23039d6bd61f9.json",
+        "sha256": "68de3330c98870405e63e313f4a5e6a1a6ee4a25c51e2cdaa6c23039d6bd61f9",
+        "bytes": 369,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/model/v1/main/05_minori/05minori_normal/05minori_normal_3.0_f_t05.model3.json"
+      },
+      {
+        "url": "/private/pjsk/assets/6a93b335816f5caf818eb9dd4a3bffae24d035d4d5a66a92939db426cb81d1bc.model3.json",
+        "sha256": "6a93b335816f5caf818eb9dd4a3bffae24d035d4d5a66a92939db426cb81d1bc",
+        "bytes": 3577,
+        "sourceUrl": null
+      },
+      {
+        "url": "/private/pjsk/assets/6ca78b5f6265f3d9dc8f24b54c300596151e5da4e064e9431d9e7e013655d5bd.json",
+        "sha256": "6ca78b5f6265f3d9dc8f24b54c300596151e5da4e064e9431d9e7e013655d5bd",
+        "bytes": 369,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/model/v1/main/06_haruka/06haruka_normal/06haruka_normal_3.0_f_t02.model3.json"
+      },
+      {
+        "url": "/private/pjsk/assets/6cae50019908ffa03f9451007bbea7f9c68f95cb99633a291b0211b1abeb44c6.json",
+        "sha256": "6cae50019908ffa03f9451007bbea7f9c68f95cb99633a291b0211b1abeb44c6",
+        "bytes": 12524,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/main/06_haruka/06haruka_motion_base/motion/w-normal-nod03.motion3.json"
+      },
+      {
+        "url": "/private/pjsk/assets/71e93d3ec6970acaa4186a76529c302235877d9c7d52a45b3f151e54385c9667.mp3",
+        "sha256": "71e93d3ec6970acaa4186a76529c302235877d9c7d52a45b3f151e54385c9667",
+        "bytes": 48500,
+        "sourceUrl": "https://storage.sekai.best/sekai-jp-assets/sound/scenario/voice/mmj_01_01/voice_ms_idol1_09_05.mp3"
+      },
+      {
+        "url": "/private/pjsk/assets/739ad3b793c787beee4172b82559d644dc1b0581a4e3b33353cf07a6bfd50877.webp",
+        "sha256": "739ad3b793c787beee4172b82559d644dc1b0581a4e3b33353cf07a6bfd50877",
+        "bytes": 65466,
+        "sourceUrl": "https://storage.sekai.best/sekai-jp-assets/scenario/background/bg_a000601/bg_a000601.webp"
+      },
+      {
+        "url": "/private/pjsk/assets/7421ffe9c49729f305e15364695865737c360ae16d9c3d2fc6c5c26cc079d7c9.json",
+        "sha256": "7421ffe9c49729f305e15364695865737c360ae16d9c3d2fc6c5c26cc079d7c9",
+        "bytes": 12247,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/main/05_minori/05minori_motion_base/motion/w-animal-fidget02.motion3.json"
+      },
+      {
+        "url": "/private/pjsk/assets/7856e80c37d90069135393d92035298f9a0ed9fdbeea4a378837c755d314d0cf.moc3",
+        "sha256": "7856e80c37d90069135393d92035298f9a0ed9fdbeea4a378837c755d314d0cf",
+        "bytes": 878592,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/model/v1/main/05_minori/05minori_normal/05minori_normal_3.0_f_t05.moc3"
+      },
+      {
+        "url": "/private/pjsk/assets/7b26cbf6643c7c30f4a4c4035b9ace695bc891757cb6d48c9adbb2148c0a018f.json",
+        "sha256": "7b26cbf6643c7c30f4a4c4035b9ace695bc891757cb6d48c9adbb2148c0a018f",
+        "bytes": 14960,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/model/v1/main/05_minori/05minori_normal/05minori_normal_3.0_f_t05.physics3.json"
+      },
+      {
+        "url": "/private/pjsk/assets/7b603a6f97408cb02875dc9497ecefada62a50a8f21f323f48cd7ad9c7600c4e.json",
+        "sha256": "7b603a6f97408cb02875dc9497ecefada62a50a8f21f323f48cd7ad9c7600c4e",
+        "bytes": 11770,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/main/05_minori/05minori_motion_base/motion/w-normal-tilthead03.motion3.json"
+      },
+      {
+        "url": "/private/pjsk/assets/7d606921a1ce5b35e90c591c7eff79ef01fce9caf1bbb54d60f65c8627922582.mp3",
+        "sha256": "7d606921a1ce5b35e90c591c7eff79ef01fce9caf1bbb54d60f65c8627922582",
+        "bytes": 28438,
+        "sourceUrl": "https://storage.sekai.best/sekai-jp-assets/sound/scenario/voice/mmj_01_01/voice_ms_idol1_30_05.mp3"
+      },
+      {
+        "url": "/private/pjsk/assets/7ef212f14d78b3ff0b96a57ac68f460e349253bbcbd6fe28d60604a0085271ec.mp3",
+        "sha256": "7ef212f14d78b3ff0b96a57ac68f460e349253bbcbd6fe28d60604a0085271ec",
+        "bytes": 56859,
+        "sourceUrl": "https://storage.sekai.best/sekai-jp-assets/sound/scenario/voice/mmj_01_01/voice_ms_idol1_39_05.mp3"
+      },
+      {
+        "url": "/private/pjsk/assets/7f82aace8196bb9b48321df9fe8358b11db73ff8610f95f22ce26abc976941c8.json",
+        "sha256": "7f82aace8196bb9b48321df9fe8358b11db73ff8610f95f22ce26abc976941c8",
+        "bytes": 13148,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/main/05_minori/05minori_motion_base/motion/w-cute-glad06.motion3.json"
+      },
+      {
+        "url": "/private/pjsk/assets/81fddef53ea08207492863d83ce9832c18fd4ff71697e720e2bbf2056c107b4a.mp3",
+        "sha256": "81fddef53ea08207492863d83ce9832c18fd4ff71697e720e2bbf2056c107b4a",
+        "bytes": 1011295,
+        "sourceUrl": "https://storage.sekai.best/sekai-jp-assets/sound/scenario/bgm/bgm00018/bgm00018.mp3"
+      },
+      {
+        "url": "/private/pjsk/assets/83831d6caf8a3dc7f8893f3ce47c6281d1990ce0ce7eef091eb37e2ca56e389e.json",
+        "sha256": "83831d6caf8a3dc7f8893f3ce47c6281d1990ce0ce7eef091eb37e2ca56e389e",
+        "bytes": 12574,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/main/05_minori/05minori_motion_base/motion/w-cute-fidget01.motion3.json"
+      },
+      {
+        "url": "/private/pjsk/assets/848262520e06b67e1f91a0897beac7c27a2caa73ca81979554a43565bf88003b.json",
+        "sha256": "848262520e06b67e1f91a0897beac7c27a2caa73ca81979554a43565bf88003b",
+        "bytes": 348,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/model/v1/main/06_haruka/06haruka_black/06haruka_black_t02.model3.json"
+      },
+      {
+        "url": "/private/pjsk/assets/865b6da5168e29dfcec7df8012f502c108614b83470c422a97fcd5ff1f6fdf77.model3.json",
+        "sha256": "865b6da5168e29dfcec7df8012f502c108614b83470c422a97fcd5ff1f6fdf77",
+        "bytes": 7454,
+        "sourceUrl": null
+      },
+      {
+        "url": "/private/pjsk/assets/86f2e82bab0b03b400d2493c76e1379c26319730ef7f3dfaa4ef733054a80422.mp3",
+        "sha256": "86f2e82bab0b03b400d2493c76e1379c26319730ef7f3dfaa4ef733054a80422",
+        "bytes": 23213,
+        "sourceUrl": "https://storage.sekai.best/sekai-jp-assets/sound/scenario/voice/mmj_01_01/voice_ms_idol1_20_05.mp3"
+      },
+      {
+        "url": "/private/pjsk/assets/87f3b028c056ddd7172bfcd66b1c18d5197a0ab0c51bd6e571a406b457e8a765.json",
+        "sha256": "87f3b028c056ddd7172bfcd66b1c18d5197a0ab0c51bd6e571a406b457e8a765",
+        "bytes": 5251,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/main/05_minori/05minori_motion_base/facial/face_sad_03.motion3.json"
+      },
+      {
+        "url": "/private/pjsk/assets/87f677bb096be05fd70ce7b339abfb556ce66dd51761accc0204577be190c3d5.mp3",
+        "sha256": "87f677bb096be05fd70ce7b339abfb556ce66dd51761accc0204577be190c3d5",
+        "bytes": 42439,
+        "sourceUrl": "https://storage.sekai.best/sekai-jp-assets/sound/scenario/voice/mmj_01_01/voice_ms_idol1_45_05.mp3"
+      },
+      {
+        "url": "/private/pjsk/assets/895404ad32bc164ebc5d09933e6c472e777c37518a4a3b126c184a79387215df.json",
+        "sha256": "895404ad32bc164ebc5d09933e6c472e777c37518a4a3b126c184a79387215df",
+        "bytes": 11533,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/main/05_minori/05minori_motion_base/motion/w-normal-trouble01.motion3.json"
+      },
+      {
+        "url": "/private/pjsk/assets/8c17f80d7868a15e5ff033b7be2d8e8a93f41c0df254a6d33797fb82e773c604.json",
+        "sha256": "8c17f80d7868a15e5ff033b7be2d8e8a93f41c0df254a6d33797fb82e773c604",
+        "bytes": 14458,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/model/v1/main/06_haruka/06haruka_normal/06haruka_normal_3.0_f_t02.physics3.json"
+      },
+      {
+        "url": "/private/pjsk/assets/8fbc465b1a1014e8cf8ca1ea9ff9539fc1a2ff1211a9199910d3fbeb6fa4c909.mp3",
+        "sha256": "8fbc465b1a1014e8cf8ca1ea9ff9539fc1a2ff1211a9199910d3fbeb6fa4c909",
+        "bytes": 64382,
+        "sourceUrl": "https://storage.sekai.best/sekai-jp-assets/sound/scenario/voice/mmj_01_01/voice_ms_idol1_11_05.mp3"
+      },
+      {
+        "url": "/private/pjsk/assets/8fbd26d5da092d5423367665b0dc6404d831b3c2481dba1fc1bdd77161120d01.json",
+        "sha256": "8fbd26d5da092d5423367665b0dc6404d831b3c2481dba1fc1bdd77161120d01",
+        "bytes": 5811,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/main/06_haruka/06haruka_motion_base/facial/face_normal_01.motion3.json"
+      },
+      {
+        "url": "/private/pjsk/assets/8ffe2a1cddc373031d8393626563b6f83de2db1ed5bce9dc6a8af23ffa6d5993.json",
+        "sha256": "8ffe2a1cddc373031d8393626563b6f83de2db1ed5bce9dc6a8af23ffa6d5993",
+        "bytes": 13190,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/main/05_minori/05minori_motion_base/motion/w-cute-glad04.motion3.json"
+      },
+      {
+        "url": "/private/pjsk/assets/904374e3084cc5c43e312be9d552f9da315fc67a722d3471e300b8ce7ba6992e.mp3",
+        "sha256": "904374e3084cc5c43e312be9d552f9da315fc67a722d3471e300b8ce7ba6992e",
+        "bytes": 33244,
+        "sourceUrl": "https://storage.sekai.best/sekai-jp-assets/sound/scenario/voice/mmj_01_01/voice_ms_idol1_29_05.mp3"
+      },
+      {
+        "url": "/private/pjsk/assets/90d33e18dc88f8d48cbac9d2c0fa8b543586f3f36ff3740e077220ee44c0ea86.json",
+        "sha256": "90d33e18dc88f8d48cbac9d2c0fa8b543586f3f36ff3740e077220ee44c0ea86",
+        "bytes": 11890,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/main/06_haruka/06haruka_motion_base/motion/w-normal-blushed01.motion3.json"
+      },
+      {
+        "url": "/private/pjsk/assets/93cd4e54c90c3efe1013662e1aacda9d79a41de95b01059ab5c8a811dd2fbe52.mp3",
+        "sha256": "93cd4e54c90c3efe1013662e1aacda9d79a41de95b01059ab5c8a811dd2fbe52",
+        "bytes": 904297,
+        "sourceUrl": "https://storage.sekai.best/sekai-jp-assets/sound/scenario/bgm/bgm00020/bgm00020.mp3"
+      },
+      {
+        "url": "/private/pjsk/assets/9423dd189cfbd70fc27c120c5fc236d1d4c9c20af7b7a7f8e8d22d55db888fd6.json",
+        "sha256": "9423dd189cfbd70fc27c120c5fc236d1d4c9c20af7b7a7f8e8d22d55db888fd6",
+        "bytes": 12914,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/main/06_haruka/06haruka_motion_base/motion/w-cool-tilthead04.motion3.json"
+      },
+      {
+        "url": "/private/pjsk/assets/958653a5bb1c8bfb56446d29f509406d8607df3da516a4461a598c2de7c27d84.mp3",
+        "sha256": "958653a5bb1c8bfb56446d29f509406d8607df3da516a4461a598c2de7c27d84",
+        "bytes": 32199,
+        "sourceUrl": "https://storage.sekai.best/sekai-jp-assets/sound/scenario/voice/mmj_01_01/voice_ms_idol1_14_06.mp3"
+      },
+      {
+        "url": "/private/pjsk/assets/985f6c689a4e73486b57a2c69887d864a29710e1c38ba1f6111ef7563f2a387a.mp3",
+        "sha256": "985f6c689a4e73486b57a2c69887d864a29710e1c38ba1f6111ef7563f2a387a",
+        "bytes": 7331,
+        "sourceUrl": "https://storage.sekai.best/sekai-jp-assets/sound/scenario/se/se_pack00001/se00004.mp3"
+      },
+      {
+        "url": "/private/pjsk/assets/98d0abe08d3da15d09ee4f5ae3e32216b219317dfd1410b805294760fda4db68.mp3",
+        "sha256": "98d0abe08d3da15d09ee4f5ae3e32216b219317dfd1410b805294760fda4db68",
+        "bytes": 25512,
+        "sourceUrl": "https://storage.sekai.best/sekai-jp-assets/sound/scenario/voice/mmj_01_01/voice_ms_idol1_28_05.mp3"
+      },
+      {
+        "url": "/private/pjsk/assets/99cf408ffabd1d1db3256ccb7ec595a50dbb4aefd67b5b81f0b116a944cf6684.png",
+        "sha256": "99cf408ffabd1d1db3256ccb7ec595a50dbb4aefd67b5b81f0b116a944cf6684",
+        "bytes": 1793597,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/model/v1/main/05_minori/05minori_cloth002/05minori_cloth002_3.0_f_t04.2048/texture_00.png"
+      },
+      {
+        "url": "/private/pjsk/assets/9a1a83499a9bc8f9ce47dcdfa57f4dec6f5f1d113c6970a703459f0fd02af95c.json",
+        "sha256": "9a1a83499a9bc8f9ce47dcdfa57f4dec6f5f1d113c6970a703459f0fd02af95c",
+        "bytes": 12038,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/main/05_minori/05minori_motion_base/motion/w-normal-relief01.motion3.json"
+      },
+      {
+        "url": "/private/pjsk/assets/9a8e02af054ba9e3464050d4617acf2a35bc6e6400dd4095d650b32090b7327d.json",
+        "sha256": "9a8e02af054ba9e3464050d4617acf2a35bc6e6400dd4095d650b32090b7327d",
+        "bytes": 11637,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/main/06_haruka/06haruka_motion_base/motion/w-normal-shakehead02.motion3.json"
+      },
+      {
+        "url": "/private/pjsk/assets/9aaeb7de95c6e569221fc22e236d958bde53447317808aace58e30e4d2b60a08.json",
+        "sha256": "9aaeb7de95c6e569221fc22e236d958bde53447317808aace58e30e4d2b60a08",
+        "bytes": 12153,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/main/05_minori/05minori_motion_base/motion/w-normal-nod02.motion3.json"
+      },
+      {
+        "url": "/private/pjsk/assets/9d305d474788994c23aea98d9f974c3bf1c1529bb3a823daeebd59635e67f6a8.mp3",
+        "sha256": "9d305d474788994c23aea98d9f974c3bf1c1529bb3a823daeebd59635e67f6a8",
+        "bytes": 4823,
+        "sourceUrl": "https://storage.sekai.best/sekai-jp-assets/sound/scenario/voice/mmj_01_01/voice_ms_idol1_24_05.mp3"
+      },
+      {
+        "url": "/private/pjsk/assets/9d3776d433e4baabbc2b0e6f619ad5fdf962b5ca7a46d727b98fe27e2715ae8e.mp3",
+        "sha256": "9d3776d433e4baabbc2b0e6f619ad5fdf962b5ca7a46d727b98fe27e2715ae8e",
+        "bytes": 53306,
+        "sourceUrl": "https://storage.sekai.best/sekai-jp-assets/sound/scenario/voice/mmj_01_01/voice_ms_idol1_10_05.mp3"
+      },
+      {
+        "url": "/private/pjsk/assets/9da161afabcd6169ea0369e1cce8797ecb36250b29e0e1cfb4ead49bfaa2a322.webp",
+        "sha256": "9da161afabcd6169ea0369e1cce8797ecb36250b29e0e1cfb4ead49bfaa2a322",
+        "bytes": 90148,
+        "sourceUrl": "https://storage.sekai.best/sekai-jp-assets/scenario/background/bg_b000601/bg_b000601.webp"
+      },
+      {
+        "url": "/private/pjsk/assets/9dbdc41502ad9ac301722f809d185964f529e1e362916be1e248293733a2d9e4.json",
+        "sha256": "9dbdc41502ad9ac301722f809d185964f529e1e362916be1e248293733a2d9e4",
+        "bytes": 9691,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/main/06_haruka/06haruka_motion_base/motion/w-normal-pose06.motion3.json"
+      },
+      {
+        "url": "/private/pjsk/assets/9e89efb99e0c944b63bd2dfa70b425747ca2368f3450be4e2d60aecba6f93a0b.json",
+        "sha256": "9e89efb99e0c944b63bd2dfa70b425747ca2368f3450be4e2d60aecba6f93a0b",
+        "bytes": 5203,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/main/05_minori/05minori_motion_base/facial/face_smile_02.motion3.json"
+      },
+      {
+        "url": "/private/pjsk/assets/a2007d4db526e5fedb624ca77919f928b0f69bb84880717ee76f232ae189c439.json",
+        "sha256": "a2007d4db526e5fedb624ca77919f928b0f69bb84880717ee76f232ae189c439",
+        "bytes": 110999,
+        "sourceUrl": "https://raw.githubusercontent.com/Sekai-World/sekai-master-db-cn-diff/main/character2ds.json"
+      },
+      {
+        "url": "/private/pjsk/assets/a266a1dffef024319e670d34accf479b50dd9851d2ccf4401c0a383cbd81c4c5.moc3",
+        "sha256": "a266a1dffef024319e670d34accf479b50dd9851d2ccf4401c0a383cbd81c4c5",
+        "bytes": 874816,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/model/v1/main/06_haruka/06haruka_normal/06haruka_normal_3.0_f_t02.moc3"
+      },
+      {
+        "url": "/private/pjsk/assets/a2f464d86a5b28ad939337d8bf35fca0f256fdca3f6556b85cc38cd52533b123.mp3",
+        "sha256": "a2f464d86a5b28ad939337d8bf35fca0f256fdca3f6556b85cc38cd52533b123",
+        "bytes": 30946,
+        "sourceUrl": "https://storage.sekai.best/sekai-jp-assets/sound/scenario/voice/mmj_01_01/voice_ms_idol1_06_05.mp3"
+      },
+      {
+        "url": "/private/pjsk/assets/a3a81fdc69ed4e429338e95ba81bbe86f2ddd69a18120fa36934b0233b9b573e.mp3",
+        "sha256": "a3a81fdc69ed4e429338e95ba81bbe86f2ddd69a18120fa36934b0233b9b573e",
+        "bytes": 22168,
+        "sourceUrl": "https://storage.sekai.best/sekai-jp-assets/sound/scenario/voice/mmj_01_01/voice_ms_idol1_08_05.mp3"
+      },
+      {
+        "url": "/private/pjsk/assets/a67d14d20d0e3c2e6cb856595302f9daaf1d61cb81be12115772b10903b431e3.mp3",
+        "sha256": "a67d14d20d0e3c2e6cb856595302f9daaf1d61cb81be12115772b10903b431e3",
+        "bytes": 39932,
+        "sourceUrl": "https://storage.sekai.best/sekai-jp-assets/sound/scenario/voice/mmj_01_01/voice_ms_idol1_38_05.mp3"
+      },
+      {
+        "url": "/private/pjsk/assets/a7bdab393889657de4a25ff2b8d2be00db11e14821af6e0c77a3fca9e5d1a91f.json",
+        "sha256": "a7bdab393889657de4a25ff2b8d2be00db11e14821af6e0c77a3fca9e5d1a91f",
+        "bytes": 12016,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/main/05_minori/05minori_motion_base/motion/w-normal-nod06.motion3.json"
+      },
+      {
+        "url": "/private/pjsk/assets/a979820a62e92cd27d0a0e0bf5c4627d5fb083b83ec21dbe87ccddfccc1b85a9.mp3",
+        "sha256": "a979820a62e92cd27d0a0e0bf5c4627d5fb083b83ec21dbe87ccddfccc1b85a9",
+        "bytes": 76921,
+        "sourceUrl": "https://storage.sekai.best/sekai-jp-assets/sound/scenario/voice/mmj_01_01/voice_ms_idol1_36_05.mp3"
+      },
+      {
+        "url": "/private/pjsk/assets/a979d7cd2a54c5e57c9764c33b35fb11fd85ecfebccfe144d1b0e226c2352098.json",
+        "sha256": "a979d7cd2a54c5e57c9764c33b35fb11fd85ecfebccfe144d1b0e226c2352098",
+        "bytes": 12465,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/main/06_haruka/06haruka_motion_base/motion/w-cool-glad01.motion3.json"
+      },
+      {
+        "url": "/private/pjsk/assets/aa0380ace10735ab69415bf2a3a9e39af7afefcbd59ffe22e02288d81d8784c0.json",
+        "sha256": "aa0380ace10735ab69415bf2a3a9e39af7afefcbd59ffe22e02288d81d8784c0",
+        "bytes": 5837,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/main/06_haruka/06haruka_motion_base/facial/face_smile_06.motion3.json"
+      },
+      {
+        "url": "/private/pjsk/assets/ab56d6295986442f475064caeded1e7c858b3296959d5865a07e3833b263672d.mp3",
+        "sha256": "ab56d6295986442f475064caeded1e7c858b3296959d5865a07e3833b263672d",
+        "bytes": 54978,
+        "sourceUrl": "https://storage.sekai.best/sekai-jp-assets/sound/scenario/voice/mmj_01_01/voice_ms_idol1_32_05.mp3"
+      },
+      {
+        "url": "/private/pjsk/assets/ad681990c13e65fe7c764b93d8da8a58e173edd96f429a6eca4801a9d6aeb15b.json",
+        "sha256": "ad681990c13e65fe7c764b93d8da8a58e173edd96f429a6eca4801a9d6aeb15b",
+        "bytes": 12320,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/main/05_minori/05minori_motion_base/motion/w-cute-glad03.motion3.json"
+      },
+      {
+        "url": "/private/pjsk/assets/b01dd8dc6dc2bce3ae5147d7cd0dec1a3fb048ce1ed990664015840874291e0a.mp3",
+        "sha256": "b01dd8dc6dc2bce3ae5147d7cd0dec1a3fb048ce1ed990664015840874291e0a",
+        "bytes": 70025,
+        "sourceUrl": "https://storage.sekai.best/sekai-jp-assets/sound/scenario/voice/mmj_01_01/voice_ms_idol1_27_06.mp3"
+      },
+      {
+        "url": "/private/pjsk/assets/b22511db01817e66f1ec2735e6d0f10e5979d0fa7c313906411ae3665e68ec4f.json",
+        "sha256": "b22511db01817e66f1ec2735e6d0f10e5979d0fa7c313906411ae3665e68ec4f",
+        "bytes": 5237,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/main/05_minori/05minori_motion_base/facial/face_cry_01.motion3.json"
+      },
+      {
+        "url": "/private/pjsk/assets/b303c51f0ccd5b7ab19edd594b059dbfd4188baf5998665cbc89d88ea2fcc289.webp",
+        "sha256": "b303c51f0ccd5b7ab19edd594b059dbfd4188baf5998665cbc89d88ea2fcc289",
+        "bytes": 317540,
+        "sourceUrl": "https://storage.sekai.best/sekai-jp-assets/scenario/background/bg_a002201/bg_a002201.webp"
+      },
+      {
+        "url": "/private/pjsk/assets/b545c051e935f0bc47332f26f6abf66ee272744213e155194634f61bd8db8984.mp3",
+        "sha256": "b545c051e935f0bc47332f26f6abf66ee272744213e155194634f61bd8db8984",
+        "bytes": 19243,
+        "sourceUrl": "https://storage.sekai.best/sekai-jp-assets/sound/scenario/voice/mmj_01_01/voice_ms_idol1_42_06.mp3"
+      },
+      {
+        "url": "/private/pjsk/assets/b73a3867c4df970614231f96cc92c95ff958e0170c679a779bf5ba08aae8f9f1.mp3",
+        "sha256": "b73a3867c4df970614231f96cc92c95ff958e0170c679a779bf5ba08aae8f9f1",
+        "bytes": 38051,
+        "sourceUrl": "https://storage.sekai.best/sekai-jp-assets/sound/scenario/voice/mmj_01_01/voice_ms_idol1_12_05.mp3"
+      },
+      {
+        "url": "/private/pjsk/assets/b8033580df7ee21210911325f1e0e268bd332fa2329c092025c32ff84a825374.json",
+        "sha256": "b8033580df7ee21210911325f1e0e268bd332fa2329c092025c32ff84a825374",
+        "bytes": 5233,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/main/05_minori/05minori_motion_base/facial/face_sad_01.motion3.json"
+      },
+      {
+        "url": "/private/pjsk/assets/b9b11430f64a258d8d7c11d63adda6731a8a2b4f184882ed4afb48930a48d803.json",
+        "sha256": "b9b11430f64a258d8d7c11d63adda6731a8a2b4f184882ed4afb48930a48d803",
+        "bytes": 5213,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/main/05_minori/05minori_motion_base/facial/face_smallmouth_01.motion3.json"
+      },
+      {
+        "url": "/private/pjsk/assets/ba737996515950941b8ecc14dbf0258a9801ab33a0ca7961d3b693edf883f026.json",
+        "sha256": "ba737996515950941b8ecc14dbf0258a9801ab33a0ca7961d3b693edf883f026",
+        "bytes": 12049,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/main/05_minori/05minori_motion_base/motion/w-cute-tilthead06.motion3.json"
+      },
+      {
+        "url": "/private/pjsk/assets/bb7a620735b99bad5ed865bd64986377f6f17571b27c8aa7627812525bed1e37.json",
+        "sha256": "bb7a620735b99bad5ed865bd64986377f6f17571b27c8aa7627812525bed1e37",
+        "bytes": 5831,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/main/06_haruka/06haruka_motion_base/facial/face_surprise_01.motion3.json"
+      },
+      {
+        "url": "/private/pjsk/assets/bb9d0485ecad759adb0dec732a54d3b7b2f8ce371262fd21700b24f3af2008de.png",
+        "sha256": "bb9d0485ecad759adb0dec732a54d3b7b2f8ce371262fd21700b24f3af2008de",
+        "bytes": 672827,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/model/v1/main/06_haruka/06haruka_black/06haruka_black_t02.2048/texture_00.png"
+      },
+      {
+        "url": "/private/pjsk/assets/bf48e658263b8577bbf7d135d800b2eb82bcabc27f5a3e95867192a38eedb596.json",
+        "sha256": "bf48e658263b8577bbf7d135d800b2eb82bcabc27f5a3e95867192a38eedb596",
+        "bytes": 13044,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/main/05_minori/05minori_motion_base/motion/w-cute-glad05.motion3.json"
+      },
+      {
+        "url": "/private/pjsk/assets/c0dad823b3234e56bbaa1608ee1266087931b3abe9ef9ff75ede52690bfac1d2.json",
+        "sha256": "c0dad823b3234e56bbaa1608ee1266087931b3abe9ef9ff75ede52690bfac1d2",
+        "bytes": 5235,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/main/05_minori/05minori_motion_base/facial/face_surprise_02.motion3.json"
+      },
+      {
+        "url": "/private/pjsk/assets/c2a3d9b6cd8beb6333bff2100ac3925a7d3c1088aac1d3d47382c5dea68e9e01.mp3",
+        "sha256": "c2a3d9b6cd8beb6333bff2100ac3925a7d3c1088aac1d3d47382c5dea68e9e01",
+        "bytes": 38678,
+        "sourceUrl": "https://storage.sekai.best/sekai-jp-assets/sound/scenario/voice/mmj_01_01/voice_ms_idol1_43_05.mp3"
+      },
+      {
+        "url": "/private/pjsk/assets/c4b896e68a6686775bfe79476e3c85de0da481994736da3763913226ae77d3fb.json",
+        "sha256": "c4b896e68a6686775bfe79476e3c85de0da481994736da3763913226ae77d3fb",
+        "bytes": 5209,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/main/05_minori/05minori_motion_base/facial/face_surprise_01.motion3.json"
+      },
+      {
+        "url": "/private/pjsk/assets/c58be2e0aa1b57ea1b09e175073099a1164daed7bcb20b1241a92289d9b5e256.mp3",
+        "sha256": "c58be2e0aa1b57ea1b09e175073099a1164daed7bcb20b1241a92289d9b5e256",
+        "bytes": 51426,
+        "sourceUrl": "https://storage.sekai.best/sekai-jp-assets/sound/scenario/voice/mmj_01_01/voice_ms_idol1_17_05.mp3"
+      },
+      {
+        "url": "/private/pjsk/assets/c7b0f8f7eec639b794590669d4d084cb3ffe73c15eb04d24c2fbf34c16f0574e.json",
+        "sha256": "c7b0f8f7eec639b794590669d4d084cb3ffe73c15eb04d24c2fbf34c16f0574e",
+        "bytes": 11512,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/main/05_minori/05minori_motion_base/motion/w-cute-nod02.motion3.json"
+      },
+      {
+        "url": "/private/pjsk/assets/cfe61c5361cd592498f11b14393317512cee721008f46bfaae03568dc4f0f967.mp3",
+        "sha256": "cfe61c5361cd592498f11b14393317512cee721008f46bfaae03568dc4f0f967",
+        "bytes": 5868,
+        "sourceUrl": "https://storage.sekai.best/sekai-jp-assets/sound/scenario/voice/mmj_01_01/voice_ms_idol1_33_05.mp3"
+      },
+      {
+        "url": "/private/pjsk/assets/d0f0c5393efcb7496dffada6566aaea4d438b4eb27ae88e74f98d26d391f90ba.mp3",
+        "sha256": "d0f0c5393efcb7496dffada6566aaea4d438b4eb27ae88e74f98d26d391f90ba",
+        "bytes": 35752,
+        "sourceUrl": "https://storage.sekai.best/sekai-jp-assets/sound/scenario/voice/mmj_01_01/voice_ms_idol1_40_05.mp3"
+      },
+      {
+        "url": "/private/pjsk/assets/d382c0967bd0de2d660a5e68011fa620c783509e49a07a513519fcc9a25bb1b4.json",
+        "sha256": "d382c0967bd0de2d660a5e68011fa620c783509e49a07a513519fcc9a25bb1b4",
+        "bytes": 20949,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/model/v1/main/05_minori/05minori_cloth002/05minori_cloth002_3.0_f_t04.physics3.json"
+      },
+      {
+        "url": "/private/pjsk/assets/d78161aa6ba424b378594ae8b3ad795a4ed6b19b8bc2e19c9776c22c429d8277.mp3",
+        "sha256": "d78161aa6ba424b378594ae8b3ad795a4ed6b19b8bc2e19c9776c22c429d8277",
+        "bytes": 7331,
+        "sourceUrl": "https://storage.sekai.best/sekai-jp-assets/sound/scenario/voice/mmj_01_01/voice_ms_idol1_01_05.mp3"
+      },
+      {
+        "url": "/private/pjsk/assets/dbac644c3cf1f6c5181eb2ed0678fb5713ba164197469b0241fe3df6a0768bed.json",
+        "sha256": "dbac644c3cf1f6c5181eb2ed0678fb5713ba164197469b0241fe3df6a0768bed",
+        "bytes": 11994,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/main/05_minori/05minori_motion_base/motion/w-cute-shy01.motion3.json"
+      },
+      {
+        "url": "/private/pjsk/assets/dc93d19a8be9d29c4cb1b32a5f69879500b150815b89a32ae9f495cad21cb603.json",
+        "sha256": "dc93d19a8be9d29c4cb1b32a5f69879500b150815b89a32ae9f495cad21cb603",
+        "bytes": 11783,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/main/05_minori/05minori_motion_base/motion/w-normal-sigh01.motion3.json"
+      },
+      {
+        "url": "/private/pjsk/assets/dcc6d73110acec6a0c54d2e5742790ae825adf15dae6c9b8ce3c6c2ec3ff7116.moc3",
+        "sha256": "dcc6d73110acec6a0c54d2e5742790ae825adf15dae6c9b8ce3c6c2ec3ff7116",
+        "bytes": 922560,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/model/v1/main/05_minori/05minori_cloth002/05minori_cloth002_3.0_f_t04.moc3"
+      },
+      {
+        "url": "/private/pjsk/assets/de1290ca27d3f43ab94e2d7cfc5a865620756c7d497164f224287ecbc0ae8b5f.json",
+        "sha256": "de1290ca27d3f43ab94e2d7cfc5a865620756c7d497164f224287ecbc0ae8b5f",
+        "bytes": 38405,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/model/v1/main/06_haruka/06haruka_black/06haruka_black_t02.physics3.json"
+      },
+      {
+        "url": "/private/pjsk/assets/e06bea2973631f44d3e0eb29cf5c4b3b77add017d5c6ddb6b2666ea51a303c40.mp3",
+        "sha256": "e06bea2973631f44d3e0eb29cf5c4b3b77add017d5c6ddb6b2666ea51a303c40",
+        "bytes": 34289,
+        "sourceUrl": "https://storage.sekai.best/sekai-jp-assets/sound/scenario/voice/mmj_01_01/voice_ms_idol1_16_06.mp3"
+      },
+      {
+        "url": "/private/pjsk/assets/e19feee148280b6691a1274c88e1655a1af268638c3423c8a5eb6b91ebaadf58.mp3",
+        "sha256": "e19feee148280b6691a1274c88e1655a1af268638c3423c8a5eb6b91ebaadf58",
+        "bytes": 65035,
+        "sourceUrl": "https://storage.sekai.best/sekai-jp-assets/sound/scenario/se/se_pack00001/se00021.mp3"
+      },
+      {
+        "url": "/private/pjsk/assets/e4b87e29bf35854be2edf1a23d648f302400f07650cbd253a07733ffd3e8d944.mp3",
+        "sha256": "e4b87e29bf35854be2edf1a23d648f302400f07650cbd253a07733ffd3e8d944",
+        "bytes": 39305,
+        "sourceUrl": "https://storage.sekai.best/sekai-jp-assets/sound/scenario/voice/mmj_01_01/voice_ms_idol1_15_06.mp3"
+      },
+      {
+        "url": "/private/pjsk/assets/e4e88c12276043005ce24d3a9ae7e85547d5100d8eba6b579b55ef76ae451083.json",
+        "sha256": "e4e88c12276043005ce24d3a9ae7e85547d5100d8eba6b579b55ef76ae451083",
+        "bytes": 11761,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/main/05_minori/05minori_motion_base/motion/w-normal-shakehead01.motion3.json"
+      },
+      {
+        "url": "/private/pjsk/assets/e6311fe7269a43f8ac544ce8139226f9734aed7d0f325f0d4ac6f7b0ccbcaef6.json",
+        "sha256": "e6311fe7269a43f8ac544ce8139226f9734aed7d0f325f0d4ac6f7b0ccbcaef6",
+        "bytes": 5871,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/main/06_haruka/06haruka_motion_base/facial/face_trouble_01.motion3.json"
+      },
+      {
+        "url": "/private/pjsk/assets/e796ec264586f8f57c486fec69a5dc8729f29a31b439a6aba2d50ef5a11fc767.json",
+        "sha256": "e796ec264586f8f57c486fec69a5dc8729f29a31b439a6aba2d50ef5a11fc767",
+        "bytes": 12658,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/main/05_minori/05minori_motion_base/motion/w-cute-tilthead03.motion3.json"
+      },
+      {
+        "url": "/private/pjsk/assets/e8aaa2dd0de2b30dabbefb2d08a2ea107613f1596aec3772f2eafc5d8f9512f5.webp",
+        "sha256": "e8aaa2dd0de2b30dabbefb2d08a2ea107613f1596aec3772f2eafc5d8f9512f5",
+        "bytes": 138188,
+        "sourceUrl": "https://storage.sekai.best/sekai-jp-assets/scenario/background/bg_a000401/bg_a000401.webp"
+      },
+      {
+        "url": "/private/pjsk/assets/ee5f3f4eedf5ad2979152c45ee1a0ad5468a70162624dcdccfb5a48b7ba77fa3.json",
+        "sha256": "ee5f3f4eedf5ad2979152c45ee1a0ad5468a70162624dcdccfb5a48b7ba77fa3",
+        "bytes": 14402,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/main/05_minori/05minori_motion_base/motion/w-cute-glad02.motion3.json"
+      },
+      {
+        "url": "/private/pjsk/assets/eeb0e5d5692bb7d5ff09cafc06ba308700c04c45b1f3ed60ae984f04bc7384ae.mp3",
+        "sha256": "eeb0e5d5692bb7d5ff09cafc06ba308700c04c45b1f3ed60ae984f04bc7384ae",
+        "bytes": 85071,
+        "sourceUrl": "https://storage.sekai.best/sekai-jp-assets/sound/scenario/voice/mmj_01_01/voice_ms_idol1_26_06.mp3"
+      },
+      {
+        "url": "/private/pjsk/assets/f064a6dad8749322f58b9dccb7028f95c96e472e474296f25e4fdad37e37b75c.json",
+        "sha256": "f064a6dad8749322f58b9dccb7028f95c96e472e474296f25e4fdad37e37b75c",
+        "bytes": 12589,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/main/05_minori/05minori_motion_base/motion/w-cute-forward02.motion3.json"
+      },
+      {
+        "url": "/private/pjsk/assets/f1b092ed1d1508f5b59ce972d1fcc6957001533c229dcb01633e8d4a752841ab.json",
+        "sha256": "f1b092ed1d1508f5b59ce972d1fcc6957001533c229dcb01633e8d4a752841ab",
+        "bytes": 5207,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/main/05_minori/05minori_motion_base/facial/face_smile_01.motion3.json"
+      },
+      {
+        "url": "/private/pjsk/assets/f1df519ff8193940118752084ffcea499d339f7b1f99e62fef3d6afccab2e7da.json",
+        "sha256": "f1df519ff8193940118752084ffcea499d339f7b1f99e62fef3d6afccab2e7da",
+        "bytes": 11639,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/main/06_haruka/06haruka_motion_base/motion/w-cool-sigh02.motion3.json"
+      },
+      {
+        "url": "/private/pjsk/assets/f4b86d5aea830d0d999bc1ca63d62d6539ddd28cd578f1c7f90c2f1b6cece45d.mp3",
+        "sha256": "f4b86d5aea830d0d999bc1ca63d62d6539ddd28cd578f1c7f90c2f1b6cece45d",
+        "bytes": 32434,
+        "sourceUrl": "https://storage.sekai.best/sekai-jp-assets/sound/scenario/se/se_pack00001/se00053.mp3"
+      },
+      {
+        "url": "/private/pjsk/assets/f50dff137d3f5d25f880f6e4543e65020bc9c4062d2c2d981ce816a859033e7e.json",
+        "sha256": "f50dff137d3f5d25f880f6e4543e65020bc9c4062d2c2d981ce816a859033e7e",
+        "bytes": 11912,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/main/06_haruka/06haruka_motion_base/motion/w-animal-nod01.motion3.json"
+      },
+      {
+        "url": "/private/pjsk/assets/f8fa1a9d9dca07d7f50b2167226ee2dfa2ba72acfabd25f311e12c5bd7ad3bb5.mp3",
+        "sha256": "f8fa1a9d9dca07d7f50b2167226ee2dfa2ba72acfabd25f311e12c5bd7ad3bb5",
+        "bytes": 33871,
+        "sourceUrl": "https://storage.sekai.best/sekai-jp-assets/sound/scenario/voice/mmj_01_01/voice_ms_idol1_18_05.mp3"
+      },
+      {
+        "url": "/private/pjsk/assets/f98fc358daa5e621f685dd2f4ddb60274ec057e67197e795b35cc009f17db558.json",
+        "sha256": "f98fc358daa5e621f685dd2f4ddb60274ec057e67197e795b35cc009f17db558",
+        "bytes": 11868,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/main/06_haruka/06haruka_motion_base/motion/w-cool-tilthead03.motion3.json"
+      },
+      {
+        "url": "/private/pjsk/assets/fb8d8a6bdf6ed957973238d73f8fe238ccc0ec5f3efc2a971754a63b8b50f705.moc3",
+        "sha256": "fb8d8a6bdf6ed957973238d73f8fe238ccc0ec5f3efc2a971754a63b8b50f705",
+        "bytes": 976128,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/model/v1/main/06_haruka/06haruka_black/06haruka_black_t02.moc3"
+      },
+      {
+        "url": "/private/pjsk/assets/fd8849f504b01f2e1f8a6fe6092b220e7bd15612fd2fa6943b3a8c9fcc3afa65.json",
+        "sha256": "fd8849f504b01f2e1f8a6fe6092b220e7bd15612fd2fa6943b3a8c9fcc3afa65",
+        "bytes": 11950,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/main/05_minori/05minori_motion_base/motion/w-normal-tilthead01.motion3.json"
+      },
+      {
+        "url": "/private/pjsk/assets/ff32b2ea603be3a09bc70cee56a7e44ef46da2516ef6371ddda8e339adf22f22.json",
+        "sha256": "ff32b2ea603be3a09bc70cee56a7e44ef46da2516ef6371ddda8e339adf22f22",
+        "bytes": 9699,
+        "sourceUrl": "https://storage.sekai.best/sekai-live2d-assets/live2d/motion/v1/main/05_minori/05minori_motion_base/motion/w-cute-posetilthead07.motion3.json"
+      },
+      {
+        "url": "/private/pjsk/assets/ffa0b61ff19f036616625bc3f1421f597bca5f5b220c7250248ad4c97c075666.mp3",
+        "sha256": "ffa0b61ff19f036616625bc3f1421f597bca5f5b220c7250248ad4c97c075666",
+        "bytes": 32826,
+        "sourceUrl": "https://storage.sekai.best/sekai-jp-assets/sound/scenario/voice/mmj_01_01/voice_ms_idol1_03_05.mp3"
+      }
+    ]
+  },
+  "models": [
+    {
+      "target": "/private/pjsk/assets/31a92461758db8be5eac05369bccb80fa046c6b19243f16de1592a75c49ec541.model3.json",
+      "original": "/private/pjsk/assets/18a0380d07f2d15b5925bdef9f00eedfc96fa1faf23b07cec3946c26aabb1c98.json",
+      "motions": {
+        "Motion": [
+          {
+            "Name": "w-cute-fidget01",
+            "File": "/private/pjsk/assets/83831d6caf8a3dc7f8893f3ce47c6281d1990ce0ce7eef091eb37e2ca56e389e.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-cute-nod02",
+            "File": "/private/pjsk/assets/c7b0f8f7eec639b794590669d4d084cb3ffe73c15eb04d24c2fbf34c16f0574e.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-cute-tilthead06",
+            "File": "/private/pjsk/assets/ba737996515950941b8ecc14dbf0258a9801ab33a0ca7961d3b693edf883f026.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-normal-relief01",
+            "File": "/private/pjsk/assets/9a1a83499a9bc8f9ce47dcdfa57f4dec6f5f1d113c6970a703459f0fd02af95c.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-normal-tilthead01",
+            "File": "/private/pjsk/assets/fd8849f504b01f2e1f8a6fe6092b220e7bd15612fd2fa6943b3a8c9fcc3afa65.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-normal-nod06",
+            "File": "/private/pjsk/assets/a7bdab393889657de4a25ff2b8d2be00db11e14821af6e0c77a3fca9e5d1a91f.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-cute-forward02",
+            "File": "/private/pjsk/assets/f064a6dad8749322f58b9dccb7028f95c96e472e474296f25e4fdad37e37b75c.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-cute-tilthead07",
+            "File": "/private/pjsk/assets/2319f702c7bf8d848a3784c861a597d85b7e94ee278c7ba5430a7c9725abd39f.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-cute-glad02",
+            "File": "/private/pjsk/assets/ee5f3f4eedf5ad2979152c45ee1a0ad5468a70162624dcdccfb5a48b7ba77fa3.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-normal-sad01",
+            "File": "/private/pjsk/assets/40fca3d67c49415dc2621b1eda53c0e7a66eb141b3cc2e70b262c2a0338c7c19.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-normal-trouble01",
+            "File": "/private/pjsk/assets/895404ad32bc164ebc5d09933e6c472e777c37518a4a3b126c184a79387215df.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-normal-tilthead03",
+            "File": "/private/pjsk/assets/7b603a6f97408cb02875dc9497ecefada62a50a8f21f323f48cd7ad9c7600c4e.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-cute-posetilthead07",
+            "File": "/private/pjsk/assets/ff32b2ea603be3a09bc70cee56a7e44ef46da2516ef6371ddda8e339adf22f22.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-normal-nod01",
+            "File": "/private/pjsk/assets/359cfb57c6c34f65380803bf509b7d169bc152efe6d5c18a4ab7c6d6de7d04b5.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-normal-nod02",
+            "File": "/private/pjsk/assets/9aaeb7de95c6e569221fc22e236d958bde53447317808aace58e30e4d2b60a08.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-cute-glad04",
+            "File": "/private/pjsk/assets/8ffe2a1cddc373031d8393626563b6f83de2db1ed5bce9dc6a8af23ffa6d5993.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-cute-glad06",
+            "File": "/private/pjsk/assets/7f82aace8196bb9b48321df9fe8358b11db73ff8610f95f22ce26abc976941c8.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-cute-glad03",
+            "File": "/private/pjsk/assets/ad681990c13e65fe7c764b93d8da8a58e173edd96f429a6eca4801a9d6aeb15b.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-cute-glad05",
+            "File": "/private/pjsk/assets/bf48e658263b8577bbf7d135d800b2eb82bcabc27f5a3e95867192a38eedb596.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-cute-tilthead03",
+            "File": "/private/pjsk/assets/e796ec264586f8f57c486fec69a5dc8729f29a31b439a6aba2d50ef5a11fc767.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-normal-sigh01",
+            "File": "/private/pjsk/assets/dc93d19a8be9d29c4cb1b32a5f69879500b150815b89a32ae9f495cad21cb603.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-normal-shakehead01",
+            "File": "/private/pjsk/assets/e4e88c12276043005ce24d3a9ae7e85547d5100d8eba6b579b55ef76ae451083.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-animal-fidget02",
+            "File": "/private/pjsk/assets/7421ffe9c49729f305e15364695865737c360ae16d9c3d2fc6c5c26cc079d7c9.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-normal-shakehead03",
+            "File": "/private/pjsk/assets/52bd2653c63c68d082bdd0dbaf3d15dd4a8f2d807b809d4f264c34ce30f59af7.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-cute-shakehead02",
+            "File": "/private/pjsk/assets/5c8ea91bd15298791c7e484c3aeb3519123c2a02cad5ae9b29162f7f6f2990fe.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-cute-shy02",
+            "File": "/private/pjsk/assets/0207cb3a4580da972f9d083ac5be48ee25b505db99b44a9399097fd3ca857842.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-cute-shy01",
+            "File": "/private/pjsk/assets/dbac644c3cf1f6c5181eb2ed0678fb5713ba164197469b0241fe3df6a0768bed.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-normal-tilthead02",
+            "File": "/private/pjsk/assets/0d7dbbef2d3183e07cdeed68a2272d167df3aecaa1a569083b5d961369e8f7fc.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-cute-tilthead08",
+            "File": "/private/pjsk/assets/65f6c4920a210c61fad72c22e157b368e301501cdd3affdd7f78264a0cab55e2.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          }
+        ],
+        "Facial": [
+          {
+            "Name": "face_sad_02",
+            "File": "/private/pjsk/assets/115ee8073db9f7b76c15524e6209c3870c892cfd9badc32ce1378a08c45c1d82.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "face_serious_01",
+            "File": "/private/pjsk/assets/41ac5c992acd0769577dc97ba4867e5b1f2d01da49413468112aba7df2a942a6.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "face_closeeye_02",
+            "File": "/private/pjsk/assets/2bc1f8e237ca84e23735ac97238f485e6d3ac6671b9ab1e7ce3e45f2c398f43c.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "face_smallmouth_01",
+            "File": "/private/pjsk/assets/b9b11430f64a258d8d7c11d63adda6731a8a2b4f184882ed4afb48930a48d803.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "face_hawawa_01",
+            "File": "/private/pjsk/assets/0aa70a8ab841b7f3d93e8ec0f89d22cab08350f99886dcaad8855fd80bcbd2b0.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "face_sad_01",
+            "File": "/private/pjsk/assets/b8033580df7ee21210911325f1e0e268bd332fa2329c092025c32ff84a825374.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "face_smile_01",
+            "File": "/private/pjsk/assets/f1b092ed1d1508f5b59ce972d1fcc6957001533c229dcb01633e8d4a752841ab.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "face_smile_02",
+            "File": "/private/pjsk/assets/9e89efb99e0c944b63bd2dfa70b425747ca2368f3450be4e2d60aecba6f93a0b.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "face_surprise_01",
+            "File": "/private/pjsk/assets/c4b896e68a6686775bfe79476e3c85de0da481994736da3763913226ae77d3fb.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "face_surprise_02",
+            "File": "/private/pjsk/assets/c0dad823b3234e56bbaa1608ee1266087931b3abe9ef9ff75ede52690bfac1d2.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "face_shy_02",
+            "File": "/private/pjsk/assets/2666f2b575589c6998178258544dc1ab3e3b7e11abd3252a74d414e5ebfedd0d.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "face_sad_03",
+            "File": "/private/pjsk/assets/87f3b028c056ddd7172bfcd66b1c18d5197a0ab0c51bd6e571a406b457e8a765.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "face_cry_01",
+            "File": "/private/pjsk/assets/b22511db01817e66f1ec2735e6d0f10e5979d0fa7c313906411ae3665e68ec4f.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "face_trouble_02",
+            "File": "/private/pjsk/assets/3f35843aa0bb4f56f80ecf72347dc0a105f2af2deb6cd869ed6de445118c997f.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          }
+        ]
+      }
+    },
+    {
+      "target": "/private/pjsk/assets/865b6da5168e29dfcec7df8012f502c108614b83470c422a97fcd5ff1f6fdf77.model3.json",
+      "original": "/private/pjsk/assets/68de3330c98870405e63e313f4a5e6a1a6ee4a25c51e2cdaa6c23039d6bd61f9.json",
+      "motions": {
+        "Motion": [
+          {
+            "Name": "w-cute-fidget01",
+            "File": "/private/pjsk/assets/83831d6caf8a3dc7f8893f3ce47c6281d1990ce0ce7eef091eb37e2ca56e389e.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-cute-nod02",
+            "File": "/private/pjsk/assets/c7b0f8f7eec639b794590669d4d084cb3ffe73c15eb04d24c2fbf34c16f0574e.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-cute-tilthead06",
+            "File": "/private/pjsk/assets/ba737996515950941b8ecc14dbf0258a9801ab33a0ca7961d3b693edf883f026.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-normal-relief01",
+            "File": "/private/pjsk/assets/9a1a83499a9bc8f9ce47dcdfa57f4dec6f5f1d113c6970a703459f0fd02af95c.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-normal-tilthead01",
+            "File": "/private/pjsk/assets/fd8849f504b01f2e1f8a6fe6092b220e7bd15612fd2fa6943b3a8c9fcc3afa65.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-normal-nod06",
+            "File": "/private/pjsk/assets/a7bdab393889657de4a25ff2b8d2be00db11e14821af6e0c77a3fca9e5d1a91f.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-cute-forward02",
+            "File": "/private/pjsk/assets/f064a6dad8749322f58b9dccb7028f95c96e472e474296f25e4fdad37e37b75c.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-cute-tilthead07",
+            "File": "/private/pjsk/assets/2319f702c7bf8d848a3784c861a597d85b7e94ee278c7ba5430a7c9725abd39f.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-cute-glad02",
+            "File": "/private/pjsk/assets/ee5f3f4eedf5ad2979152c45ee1a0ad5468a70162624dcdccfb5a48b7ba77fa3.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-normal-sad01",
+            "File": "/private/pjsk/assets/40fca3d67c49415dc2621b1eda53c0e7a66eb141b3cc2e70b262c2a0338c7c19.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-normal-trouble01",
+            "File": "/private/pjsk/assets/895404ad32bc164ebc5d09933e6c472e777c37518a4a3b126c184a79387215df.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-normal-tilthead03",
+            "File": "/private/pjsk/assets/7b603a6f97408cb02875dc9497ecefada62a50a8f21f323f48cd7ad9c7600c4e.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-cute-posetilthead07",
+            "File": "/private/pjsk/assets/ff32b2ea603be3a09bc70cee56a7e44ef46da2516ef6371ddda8e339adf22f22.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-normal-nod01",
+            "File": "/private/pjsk/assets/359cfb57c6c34f65380803bf509b7d169bc152efe6d5c18a4ab7c6d6de7d04b5.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-normal-nod02",
+            "File": "/private/pjsk/assets/9aaeb7de95c6e569221fc22e236d958bde53447317808aace58e30e4d2b60a08.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-cute-glad04",
+            "File": "/private/pjsk/assets/8ffe2a1cddc373031d8393626563b6f83de2db1ed5bce9dc6a8af23ffa6d5993.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-cute-glad06",
+            "File": "/private/pjsk/assets/7f82aace8196bb9b48321df9fe8358b11db73ff8610f95f22ce26abc976941c8.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-cute-glad03",
+            "File": "/private/pjsk/assets/ad681990c13e65fe7c764b93d8da8a58e173edd96f429a6eca4801a9d6aeb15b.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-cute-glad05",
+            "File": "/private/pjsk/assets/bf48e658263b8577bbf7d135d800b2eb82bcabc27f5a3e95867192a38eedb596.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-cute-tilthead03",
+            "File": "/private/pjsk/assets/e796ec264586f8f57c486fec69a5dc8729f29a31b439a6aba2d50ef5a11fc767.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-normal-sigh01",
+            "File": "/private/pjsk/assets/dc93d19a8be9d29c4cb1b32a5f69879500b150815b89a32ae9f495cad21cb603.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-normal-shakehead01",
+            "File": "/private/pjsk/assets/e4e88c12276043005ce24d3a9ae7e85547d5100d8eba6b579b55ef76ae451083.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-animal-fidget02",
+            "File": "/private/pjsk/assets/7421ffe9c49729f305e15364695865737c360ae16d9c3d2fc6c5c26cc079d7c9.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-normal-shakehead03",
+            "File": "/private/pjsk/assets/52bd2653c63c68d082bdd0dbaf3d15dd4a8f2d807b809d4f264c34ce30f59af7.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-cute-shakehead02",
+            "File": "/private/pjsk/assets/5c8ea91bd15298791c7e484c3aeb3519123c2a02cad5ae9b29162f7f6f2990fe.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-cute-shy02",
+            "File": "/private/pjsk/assets/0207cb3a4580da972f9d083ac5be48ee25b505db99b44a9399097fd3ca857842.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-cute-shy01",
+            "File": "/private/pjsk/assets/dbac644c3cf1f6c5181eb2ed0678fb5713ba164197469b0241fe3df6a0768bed.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-normal-tilthead02",
+            "File": "/private/pjsk/assets/0d7dbbef2d3183e07cdeed68a2272d167df3aecaa1a569083b5d961369e8f7fc.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-cute-tilthead08",
+            "File": "/private/pjsk/assets/65f6c4920a210c61fad72c22e157b368e301501cdd3affdd7f78264a0cab55e2.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          }
+        ],
+        "Facial": [
+          {
+            "Name": "face_sad_02",
+            "File": "/private/pjsk/assets/115ee8073db9f7b76c15524e6209c3870c892cfd9badc32ce1378a08c45c1d82.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "face_serious_01",
+            "File": "/private/pjsk/assets/41ac5c992acd0769577dc97ba4867e5b1f2d01da49413468112aba7df2a942a6.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "face_closeeye_02",
+            "File": "/private/pjsk/assets/2bc1f8e237ca84e23735ac97238f485e6d3ac6671b9ab1e7ce3e45f2c398f43c.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "face_smallmouth_01",
+            "File": "/private/pjsk/assets/b9b11430f64a258d8d7c11d63adda6731a8a2b4f184882ed4afb48930a48d803.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "face_hawawa_01",
+            "File": "/private/pjsk/assets/0aa70a8ab841b7f3d93e8ec0f89d22cab08350f99886dcaad8855fd80bcbd2b0.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "face_sad_01",
+            "File": "/private/pjsk/assets/b8033580df7ee21210911325f1e0e268bd332fa2329c092025c32ff84a825374.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "face_smile_01",
+            "File": "/private/pjsk/assets/f1b092ed1d1508f5b59ce972d1fcc6957001533c229dcb01633e8d4a752841ab.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "face_smile_02",
+            "File": "/private/pjsk/assets/9e89efb99e0c944b63bd2dfa70b425747ca2368f3450be4e2d60aecba6f93a0b.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "face_surprise_01",
+            "File": "/private/pjsk/assets/c4b896e68a6686775bfe79476e3c85de0da481994736da3763913226ae77d3fb.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "face_surprise_02",
+            "File": "/private/pjsk/assets/c0dad823b3234e56bbaa1608ee1266087931b3abe9ef9ff75ede52690bfac1d2.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "face_shy_02",
+            "File": "/private/pjsk/assets/2666f2b575589c6998178258544dc1ab3e3b7e11abd3252a74d414e5ebfedd0d.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "face_sad_03",
+            "File": "/private/pjsk/assets/87f3b028c056ddd7172bfcd66b1c18d5197a0ab0c51bd6e571a406b457e8a765.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "face_cry_01",
+            "File": "/private/pjsk/assets/b22511db01817e66f1ec2735e6d0f10e5979d0fa7c313906411ae3665e68ec4f.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "face_trouble_02",
+            "File": "/private/pjsk/assets/3f35843aa0bb4f56f80ecf72347dc0a105f2af2deb6cd869ed6de445118c997f.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          }
+        ]
+      }
+    },
+    {
+      "target": "/private/pjsk/assets/6a93b335816f5caf818eb9dd4a3bffae24d035d4d5a66a92939db426cb81d1bc.model3.json",
+      "original": "/private/pjsk/assets/848262520e06b67e1f91a0897beac7c27a2caa73ca81979554a43565bf88003b.json",
+      "motions": {
+        "Motion": [
+          {
+            "Name": "w-normal-pose06",
+            "File": "/private/pjsk/assets/9dbdc41502ad9ac301722f809d185964f529e1e362916be1e248293733a2d9e4.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-normal-nod01",
+            "File": "/private/pjsk/assets/359cfb57c6c34f65380803bf509b7d169bc152efe6d5c18a4ab7c6d6de7d04b5.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-animal-nod01",
+            "File": "/private/pjsk/assets/f50dff137d3f5d25f880f6e4543e65020bc9c4062d2c2d981ce816a859033e7e.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-cute-tilthead08",
+            "File": "/private/pjsk/assets/65f6c4920a210c61fad72c22e157b368e301501cdd3affdd7f78264a0cab55e2.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-normal-shakehead02",
+            "File": "/private/pjsk/assets/9a8e02af054ba9e3464050d4617acf2a35bc6e6400dd4095d650b32090b7327d.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-normal-nod03",
+            "File": "/private/pjsk/assets/6cae50019908ffa03f9451007bbea7f9c68f95cb99633a291b0211b1abeb44c6.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-normal-greeting01",
+            "File": "/private/pjsk/assets/5eca3e5ed2f76417a1e74804915e64a5216ed67c72c285c8339d8b732f9807c3.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-normal-tilthead05",
+            "File": "/private/pjsk/assets/67d15a5461506a42287039dec6b5adb8890a7b93e3be0cfd081ef110a9a3a994.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-cool-sigh02",
+            "File": "/private/pjsk/assets/f1df519ff8193940118752084ffcea499d339f7b1f99e62fef3d6afccab2e7da.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-cool-tilthead04",
+            "File": "/private/pjsk/assets/9423dd189cfbd70fc27c120c5fc236d1d4c9c20af7b7a7f8e8d22d55db888fd6.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-normal-blushed01",
+            "File": "/private/pjsk/assets/90d33e18dc88f8d48cbac9d2c0fa8b543586f3f36ff3740e077220ee44c0ea86.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-normal-tilthead01",
+            "File": "/private/pjsk/assets/fd8849f504b01f2e1f8a6fe6092b220e7bd15612fd2fa6943b3a8c9fcc3afa65.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-cool-glad01",
+            "File": "/private/pjsk/assets/a979d7cd2a54c5e57c9764c33b35fb11fd85ecfebccfe144d1b0e226c2352098.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-normal-nod05",
+            "File": "/private/pjsk/assets/57ae0d52d9136a806942f676d09e461627917898d106805a0653893fd5611e7a.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-cool-tilthead03",
+            "File": "/private/pjsk/assets/f98fc358daa5e621f685dd2f4ddb60274ec057e67197e795b35cc009f17db558.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          }
+        ],
+        "Facial": [
+          {
+            "Name": "face_smile_06",
+            "File": "/private/pjsk/assets/aa0380ace10735ab69415bf2a3a9e39af7afefcbd59ffe22e02288d81d8784c0.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "face_normal_01",
+            "File": "/private/pjsk/assets/8fbd26d5da092d5423367665b0dc6404d831b3c2481dba1fc1bdd77161120d01.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "face_trouble_01",
+            "File": "/private/pjsk/assets/e6311fe7269a43f8ac544ce8139226f9734aed7d0f325f0d4ac6f7b0ccbcaef6.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "face_surprise_01",
+            "File": "/private/pjsk/assets/bb7a620735b99bad5ed865bd64986377f6f17571b27c8aa7627812525bed1e37.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          }
+        ]
+      }
+    },
+    {
+      "target": "/private/pjsk/assets/044b385a6726e6c18982460914883d69033563757606a796d78be53c2e047b70.model3.json",
+      "original": "/private/pjsk/assets/6ca78b5f6265f3d9dc8f24b54c300596151e5da4e064e9431d9e7e013655d5bd.json",
+      "motions": {
+        "Motion": [
+          {
+            "Name": "w-normal-pose06",
+            "File": "/private/pjsk/assets/9dbdc41502ad9ac301722f809d185964f529e1e362916be1e248293733a2d9e4.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-normal-nod01",
+            "File": "/private/pjsk/assets/359cfb57c6c34f65380803bf509b7d169bc152efe6d5c18a4ab7c6d6de7d04b5.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-animal-nod01",
+            "File": "/private/pjsk/assets/f50dff137d3f5d25f880f6e4543e65020bc9c4062d2c2d981ce816a859033e7e.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-cute-tilthead08",
+            "File": "/private/pjsk/assets/65f6c4920a210c61fad72c22e157b368e301501cdd3affdd7f78264a0cab55e2.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-normal-shakehead02",
+            "File": "/private/pjsk/assets/9a8e02af054ba9e3464050d4617acf2a35bc6e6400dd4095d650b32090b7327d.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-normal-nod03",
+            "File": "/private/pjsk/assets/6cae50019908ffa03f9451007bbea7f9c68f95cb99633a291b0211b1abeb44c6.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-normal-greeting01",
+            "File": "/private/pjsk/assets/5eca3e5ed2f76417a1e74804915e64a5216ed67c72c285c8339d8b732f9807c3.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-normal-tilthead05",
+            "File": "/private/pjsk/assets/67d15a5461506a42287039dec6b5adb8890a7b93e3be0cfd081ef110a9a3a994.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-cool-sigh02",
+            "File": "/private/pjsk/assets/f1df519ff8193940118752084ffcea499d339f7b1f99e62fef3d6afccab2e7da.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-cool-tilthead04",
+            "File": "/private/pjsk/assets/9423dd189cfbd70fc27c120c5fc236d1d4c9c20af7b7a7f8e8d22d55db888fd6.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-normal-blushed01",
+            "File": "/private/pjsk/assets/90d33e18dc88f8d48cbac9d2c0fa8b543586f3f36ff3740e077220ee44c0ea86.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-normal-tilthead01",
+            "File": "/private/pjsk/assets/fd8849f504b01f2e1f8a6fe6092b220e7bd15612fd2fa6943b3a8c9fcc3afa65.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-cool-glad01",
+            "File": "/private/pjsk/assets/a979d7cd2a54c5e57c9764c33b35fb11fd85ecfebccfe144d1b0e226c2352098.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-normal-nod05",
+            "File": "/private/pjsk/assets/57ae0d52d9136a806942f676d09e461627917898d106805a0653893fd5611e7a.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "w-cool-tilthead03",
+            "File": "/private/pjsk/assets/f98fc358daa5e621f685dd2f4ddb60274ec057e67197e795b35cc009f17db558.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          }
+        ],
+        "Facial": [
+          {
+            "Name": "face_smile_06",
+            "File": "/private/pjsk/assets/aa0380ace10735ab69415bf2a3a9e39af7afefcbd59ffe22e02288d81d8784c0.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "face_normal_01",
+            "File": "/private/pjsk/assets/8fbd26d5da092d5423367665b0dc6404d831b3c2481dba1fc1bdd77161120d01.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "face_trouble_01",
+            "File": "/private/pjsk/assets/e6311fe7269a43f8ac544ce8139226f9734aed7d0f325f0d4ac6f7b0ccbcaef6.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          },
+          {
+            "Name": "face_surprise_01",
+            "File": "/private/pjsk/assets/bb7a620735b99bad5ed865bd64986377f6f17571b27c8aa7627812525bed1e37.json",
+            "FadeInTime": 0.1,
+            "FadeOutTime": 0.1
+          }
+        ]
+      }
+    }
+  ]
+}

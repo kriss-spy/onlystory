@@ -7,9 +7,14 @@ import {
 } from 'lucide-react';
 import { backgroundUrl } from '../fixtures';
 import { useMediaUrl } from '../hooks';
-import type { Fixture, StoryNode } from '../model';
+import type { Fixture, MovieStreams, StoryNode, VoiceLanguage } from '../model';
 import { IconButton } from './Primitives';
-import { usePlaybackPreferences } from '../store';
+import { usePlaybackPreferences, useStore } from '../store';
+import {
+  attachMovieStreams,
+  supportsMovieStreams,
+  movieAudioCached,
+} from '../movie-streams';
 
 function MovieSubtitle({
   track,
@@ -50,6 +55,7 @@ export function Stage({
   embedded?: boolean;
 }) {
   const preferences = usePlaybackPreferences();
+  const { notify } = useStore();
   const src = useMediaUrl(
     node.kind === 'video'
       ? undefined
@@ -64,9 +70,65 @@ export function Stage({
           url: node.video,
           voices: node.videoVoices,
           subtitles: node.videoSubtitles,
+          streams: node.movieStreams,
         };
+  const streams = movieAsset.streams;
+  const [selectedStream, setSelectedStream] = useState<{
+    streams: MovieStreams;
+    voice: VoiceLanguage;
+  }>();
+  const streamVoice =
+    selectedStream && selectedStream.streams === streams
+      ? selectedStream.voice
+      : preferences.voice;
+  const streamReady = navigator.onLine || selectedStream?.streams === streams;
+  useEffect(() => {
+    if (!streams || !supportsMovieStreams(streams, preferences.voice)) return;
+    let active = true;
+    void (async () => {
+      let voice = preferences.voice;
+      if (
+        !navigator.onLine &&
+        !(await movieAudioCached(streams, preferences.voice))
+      ) {
+        let available = false;
+        if (await movieAudioCached(streams, streamVoice)) {
+          voice = streamVoice;
+          available = true;
+        } else
+          for (const alternative of Object.keys(
+            streams.audio,
+          ) as VoiceLanguage[])
+            if (
+              supportsMovieStreams(streams, alternative) &&
+              (await movieAudioCached(streams, alternative))
+            ) {
+              voice = alternative;
+              available = true;
+              break;
+            }
+        if (!active) return;
+        notify(
+          available
+            ? 'This movie language is not downloaded. The current audio remains available.'
+            : 'This movie language is not downloaded. Download it to play offline.',
+        );
+      }
+      if (active)
+        setSelectedStream((current) =>
+          current?.streams === streams && current.voice === voice
+            ? current
+            : { streams, voice },
+        );
+    })();
+    return () => {
+      active = false;
+    };
+  }, [streams, preferences.voice, notify]);
+  const streaming =
+    streams && supportsMovieStreams(streams, streamVoice) ? streams : undefined;
   const movie = useMediaUrl(
-    node.kind === 'video'
+    node.kind === 'video' && !streaming
       ? (movieAsset.voices?.[preferences.voice]?.url ?? movieAsset.url)
       : undefined,
   );
@@ -76,6 +138,7 @@ export function Stage({
   const [loaded, setLoaded] = useState('');
   const [failed, setFailed] = useState('');
   const [movieFailed, setMovieFailed] = useState(false);
+  const [movieAttempt, setMovieAttempt] = useState(0);
   const video = useRef<HTMLVideoElement>(null);
   const currentTime = useRef(videoTime);
   const storedTime = useRef(videoTime);
@@ -90,10 +153,15 @@ export function Stage({
   }, [node.id]);
   useEffect(() => {
     const player = video.current;
-    if (!player || !movie) return;
+    if (!player || (!movie && !streaming) || (streaming && !streamReady))
+      return;
+    const identity = streaming
+      ? `${streaming.video.init.url}:${streamVoice}`
+      : movie!;
     if (
-      appliedMovie.current?.url === movie &&
-      appliedMovie.current.node === node.id
+      appliedMovie.current?.url === identity &&
+      appliedMovie.current.node === node.id &&
+      !!player.getAttribute('src')
     )
       return;
     const sameNode = appliedMovie.current?.node === node.id;
@@ -104,11 +172,29 @@ export function Stage({
         rate: sameNode ? player.playbackRate : 1,
       };
     restoring.current = true;
-    appliedMovie.current = { node: node.id, url: movie };
+    appliedMovie.current = { node: node.id, url: identity };
     setMovieFailed(false);
-    player.src = movie;
+    if (streaming) {
+      const dispose = attachMovieStreams(
+        player,
+        streaming,
+        streamVoice,
+        restore.current.time,
+        () => setMovieFailed(true),
+      );
+      return () => {
+        restore.current = {
+          time: player.currentTime,
+          playing: !player.paused && !player.ended,
+          rate: player.playbackRate,
+        };
+        restoring.current = true;
+        dispose();
+      };
+    }
+    player.src = movie!;
     player.load();
-  }, [movie, node.id]);
+  }, [movie, streaming, streamVoice, streamReady, node.id, movieAttempt]);
   useEffect(() => {
     if (video.current) video.current.volume = preferences.voiceVolume;
   }, [preferences.voiceVolume, movie]);
@@ -241,7 +327,8 @@ export function Stage({
               <button
                 onClick={() => {
                   setMovieFailed(false);
-                  video.current?.load();
+                  if (streaming) setMovieAttempt((attempt) => attempt + 1);
+                  else video.current?.load();
                   retry();
                 }}
               >
@@ -252,6 +339,8 @@ export function Stage({
           ) : null}
           <video
             ref={video}
+            data-movie-mode={streaming ? 'shared-streams' : 'combined'}
+            data-movie-voice={streaming ? streamVoice : preferences.voice}
             hidden={movieFailed}
             controls
             playsInline

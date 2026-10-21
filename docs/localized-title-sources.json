@@ -1,0 +1,85 @@
+{
+  "generatedOn": "2026-10-19",
+  "basis": "Regional game-master extracts preserved by Sekai-World; titles only, no claim of translated dialogue",
+  "alignment": "Matching story kind, episode ID, scenario ID, chapter/event bundle identity and episode number",
+  "chapters": 1623,
+  "coverage": {
+    "ja": 1623,
+    "en": 1615,
+    "zh-CN": 1623
+  },
+  "sources": [
+    {
+      "region": "jp",
+      "table": "unitStories",
+      "revision": "22fc10d36c34c1e148f9776fe47b4fd81064ce48",
+      "url": "https://raw.githubusercontent.com/Sekai-World/sekai-master-db-diff/22fc10d36c34c1e148f9776fe47b4fd81064ce48/unitStories.json",
+      "bytes": 56089,
+      "sha256": "e18858c428133c0669a8c3b9ab63518c4c03c8ce283a6c61cb5a83869068e37b"
+    },
+    {
+      "region": "jp",
+      "table": "eventStories",
+      "revision": "22fc10d36c34c1e148f9776fe47b4fd81064ce48",
+      "url": "https://raw.githubusercontent.com/Sekai-World/sekai-master-db-diff/22fc10d36c34c1e148f9776fe47b4fd81064ce48/eventStories.json",
+      "bytes": 802069,
+      "sha256": "fd6d8ad5551b6e7f2b42ce15691c25710d117dc22b63410556c2a25d3fa4bf25"
+    },
+    {
+      "region": "jp",
+      "table": "events",
+      "revision": "22fc10d36c34c1e148f9776fe47b4fd81064ce48",
+      "url": "https://raw.githubusercontent.com/Sekai-World/sekai-master-db-diff/22fc10d36c34c1e148f9776fe47b4fd81064ce48/events.json",
+      "bytes": 2886626,
+      "sha256": "6ed77d1fb60bd7d8abac1285e27b129b0efe513f42658d5a6ee60732aa6a630c"
+    },
+    {
+      "region": "en",
+      "table": "unitStories",
+      "revision": "3b076ae97bf688e25e804713f470378e56aed549",
+      "url": "https://raw.githubusercontent.com/Sekai-World/sekai-master-db-en-diff/3b076ae97bf688e25e804713f470378e56aed549/unitStories.json",
+      "bytes": 57396,
+      "sha256": "d61fb5c6cba62abe3267ac74cc21337356903f80e7611fb04b195b78f38740ea"
+    },
+    {
+      "region": "en",
+      "table": "eventStories",
+      "revision": "3b076ae97bf688e25e804713f470378e56aed549",
+      "url": "https://raw.githubusercontent.com/Sekai-World/sekai-master-db-en-diff/3b076ae97bf688e25e804713f470378e56aed549/eventStories.json",
+      "bytes": 660579,
+      "sha256": "6fb64fb135e748531384d4076504f593475fa639bb549f44e86a2854f702e845"
+    },
+    {
+      "region": "en",
+      "table": "events",
+      "revision": "3b076ae97bf688e25e804713f470378e56aed549",
+      "url": "https://raw.githubusercontent.com/Sekai-World/sekai-master-db-en-diff/3b076ae97bf688e25e804713f470378e56aed549/events.json",
+      "bytes": 2363032,
+      "sha256": "7e20ebf7c88387620b585b62f5feb8a04a01ba1f9eba2b1343a382810793db5e"
+    },
+    {
+      "region": "cn",
+      "table": "unitStories",
+      "revision": "4ddc66b18ad8c776ca066e30d32b7276cd1d2022",
+      "url": "https://raw.githubusercontent.com/Sekai-World/sekai-master-db-cn-diff/4ddc66b18ad8c776ca066e30d32b7276cd1d2022/unitStories.json",
+      "bytes": 55176,
+      "sha256": "ebef4f75e7492a86f1ca20e6d9bc7b36873113ea516bf20623569146540209ed"
+    },
+    {
+      "region": "cn",
+      "table": "eventStories",
+      "revision": "4ddc66b18ad8c776ca066e30d32b7276cd1d2022",
+      "url": "https://raw.githubusercontent.com/Sekai-World/sekai-master-db-cn-diff/4ddc66b18ad8c776ca066e30d32b7276cd1d2022/eventStories.json",
+      "bytes": 655266,
+      "sha256": "8015d31b9efe62a46b5206e5548e913f9d3b388ec8e740fad85e6fc404d6e9dc"
+    },
+    {
+      "region": "cn",
+      "table": "events",
+      "revision": "4ddc66b18ad8c776ca066e30d32b7276cd1d2022",
+      "url": "https://raw.githubusercontent.com/Sekai-World/sekai-master-db-cn-diff/4ddc66b18ad8c776ca066e30d32b7276cd1d2022/events.json",
+      "bytes": 1477479,
+      "sha256": "9aad0088dc96ae7ea1b8c5ba2f14d53e1c52f2986f0ebcd6ef38d805f72d8f02"
+    }
+  ]
+}

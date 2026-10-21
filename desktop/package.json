@@ -1,0 +1,9 @@
+{
+  "name": "onlystory-desktop",
+  "productName": "Onlystory",
+  "version": "0.2.0",
+  "description": "An offline visual-novel reader",
+  "author": "Onlystory contributors",
+  "private": true,
+  "main": "main.cjs"
+}

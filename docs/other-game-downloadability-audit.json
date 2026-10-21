@@ -1,0 +1,75 @@
+{
+  "checkedAt": "2026-10-19T13:54:44.944Z",
+  "scope": "Current non-preview GFL1, GFL2 and Blue Archive Onlystory catalog. PJSK and design fixtures excluded.",
+  "verdict": "Not all available stories can be acquired by a new standalone user without an Onlystory asset backend. BA prologue only has implemented Windows acquisition, and manual browser import.",
+  "catalogEntries": 4628,
+  "availableStories": 4627,
+  "additionalIncompleteEntries": 1,
+  "localInventory": {
+    "checkedAt": "2026-10-19T13:49:53.944Z",
+    "method": "Every current non-preview game story; chapter asset lists plus all scene-program file inventories; HTTP HEAD for every deduplicated declared file, rejecting HTML fallbacks. Source support uses the production hasOnlineSource predicate.",
+    "uniqueDeclaredFiles": 30896,
+    "reachableFiles": 30896,
+    "sceneInventories": 2374,
+    "games": {
+      "ba": {
+        "stories": 1659,
+        "available": 1659,
+        "incomplete": 0,
+        "standaloneSources": 1,
+        "uniqueDeclaredFiles": 15624,
+        "reachableDeclaredFiles": 15624,
+        "storiesWithMissingDeclaredFiles": 0
+      },
+      "gfl1": {
+        "stories": 2254,
+        "available": 2253,
+        "incomplete": 1,
+        "standaloneSources": 0,
+        "uniqueDeclaredFiles": 7358,
+        "reachableDeclaredFiles": 7358,
+        "storiesWithMissingDeclaredFiles": 0
+      },
+      "gfl2": {
+        "stories": 715,
+        "available": 715,
+        "incomplete": 0,
+        "standaloneSources": 0,
+        "uniqueDeclaredFiles": 7914,
+        "reachableDeclaredFiles": 7914,
+        "storiesWithMissingDeclaredFiles": 0
+      }
+    },
+    "evidence": {
+      "file": ".cache/other-game-download-audit/local-inventory.json",
+      "bytes": 6549498,
+      "sha256": "01fb003e9506698608a015c6eda1a97cc0f35531a9fa99e1e675d5973128a93c"
+    }
+  },
+  "perGameEvidence": [
+    {
+      "file": "docs/gfl1-downloadability-audit.json",
+      "bytes": 5875,
+      "sha256": "210e00d80bb8308b122a54c5cf2c0978772c4c653ae033d6e828ce80d21f611b"
+    },
+    {
+      "file": "docs/gfl2-downloadability-audit.json",
+      "bytes": 20023,
+      "sha256": "1cc681b5e46094256f9d6c0f0b5be7959a70e26a1060d9692b7c775d66c4e214"
+    },
+    {
+      "file": "docs/ba-downloadability-audit.json",
+      "bytes": 4608,
+      "sha256": "219a268d1d3ca2916686f8f702cca27a8604800ddcfdf218ab4366c320ed5018"
+    }
+  ],
+  "automation": "node scripts/audit-download-inventory.mjs",
+  "devSession": "psmux -L codex attach -t onlystory-dev",
+  "limits": [
+    "Local HTTP HEAD checks establish declared-file access, not complete download/hash/decode/offline-playback verification.",
+    "Public-source probe scope and exact full-body versus header checks are specified in each per-game report.",
+    "Prepared local exports do not establish source acquisition on a new machine.",
+    "Existing provenance gaps not listed as files are separate from missing HTTP assets.",
+    "No app implementation changes or executable rebuilds were made."
+  ]
+}

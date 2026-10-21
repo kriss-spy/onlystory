@@ -1,0 +1,42 @@
+{
+  "appId": "app.onlystory.reader",
+  "productName": "Onlystory",
+  "electronVersion": "44.9.0",
+  "electronDist": "node_modules/electron/dist",
+  "directories": { "app": "desktop", "output": "release" },
+  "files": [
+    "main.cjs",
+    "preload.cjs",
+    "source-downloader.cjs",
+    "media-converter.cjs",
+    "package.json",
+    "sources.json",
+    "native-transforms.json",
+    "tools/**/*",
+    "icon.ico",
+    "web/**/*",
+    "!node_modules/**/*"
+  ],
+  "asar": true,
+  "asarUnpack": ["tools/**/*"],
+  "npmRebuild": false,
+  "win": {
+    "target": [
+      { "target": "portable", "arch": ["x64"] },
+      { "target": "nsis", "arch": ["x64"] }
+    ],
+    "signExecutable": false,
+    "icon": "desktop/icon.ico"
+  },
+  "nsis": {
+    "artifactName": "Onlystory-${version}-Setup-${arch}.${ext}",
+    "oneClick": false,
+    "perMachine": false,
+    "allowToChangeInstallationDirectory": true,
+    "deleteAppDataOnUninstall": false
+  },
+  "portable": {
+    "artifactName": "Onlystory-${version}-portable-${arch}.${ext}"
+  },
+  "publish": null
+}

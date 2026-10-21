@@ -3,26 +3,45 @@ import { Link } from 'react-router-dom';
 import {
   episodeById,
   games,
-  realEpisodes,
+  realEpisodes as importedEpisodes,
+  episodes,
   fullEvent,
   eventForEpisode,
 } from '../content';
-import { passageUrl, startSave } from '../model';
+import { gamePreferences, passageUrl, startSave } from '../model';
+import { collectionTitle, episodeTitle } from '../localized-titles';
 import { eventUrl, groupStoryEvents } from '../catalog';
 import { useStore } from '../store';
+import { hasOnlineSource } from '../downloads/providers';
+import { useLocalLibrary } from '../hooks';
 import { eventArtwork, gameArtwork, artworkStyle } from '../covers';
+
+const importedIds = new Set(importedEpisodes.map((episode) => episode.id));
+const libraryEpisodes = [
+  ...importedEpisodes,
+  ...episodes.filter((episode) => !importedIds.has(episode.id)),
+];
 
 export function LibraryPage() {
   const { data } = useStore();
-  const featuredCover = realEpisodes[0]
-    ? eventArtwork(eventForEpisode(realEpisodes[0]))
-    : undefined;
+  const localLibrary = useLocalLibrary();
+  const realEpisodes = libraryEpisodes.filter(
+    (episode) =>
+      episode.origin === 'game' &&
+      !episode.preview &&
+      (localLibrary || hasOnlineSource(episode) || data.installed[episode.id]),
+  );
+  const featuredCover =
+    !window.onlystoryDesktop && realEpisodes[0]
+      ? eventArtwork(eventForEpisode(realEpisodes[0]))
+      : undefined;
   const recent = Object.values(data.saves)
     .sort((a, b) => b.updatedAt.localeCompare(a.updatedAt))
     .filter(
       (s) =>
         episodeById(s.episodeId)?.origin === 'game' &&
-        !episodeById(s.episodeId)?.preview,
+        !episodeById(s.episodeId)?.preview &&
+        realEpisodes.some((episode) => episode.id === s.episodeId),
     )
     .slice(0, 3);
   return (
@@ -37,6 +56,10 @@ export function LibraryPage() {
             {recent.map((save) => {
               const episode = episodeById(save.episodeId)!;
               const game = games.find((g) => g.id === episode.game)!;
+              const locale = gamePreferences(
+                data.preferences,
+                episode.game,
+              ).catalogLocale;
               return (
                 <Link
                   className="continue-card"
@@ -51,9 +74,10 @@ export function LibraryPage() {
                   </span>
                   <span>
                     <small>
-                      {game.shortName} · {episode.story}
+                      {game.shortName} ·{' '}
+                      {collectionTitle(eventForEpisode(episode), locale)}
                     </small>
-                    <strong>{episode.title}</strong>
+                    <strong>{episodeTitle(episode, locale)}</strong>
                     <small>
                       {save.completed
                         ? 'Finished · revisit'
@@ -89,12 +113,20 @@ export function LibraryPage() {
               ·{' '}
               {realEpisodes[0].textLocales?.includes('en')
                 ? 'Original English text'
-                : '简中原文'}
+                : realEpisodes[0].textLocales?.includes('ja')
+                  ? '日本語原文'
+                  : '简中原文'}
             </small>
-            <strong>{realEpisodes[0].story}</strong>
+            <strong>
+              {collectionTitle(
+                eventForEpisode(realEpisodes[0]),
+                gamePreferences(data.preferences, realEpisodes[0].game)
+                  .catalogLocale,
+              )}
+            </strong>
             <span>
               {realEpisodes[0].game !== 'gfl2'
-                ? `${realEpisodes.filter((episode) => episode.collectionId === realEpisodes[0].collectionId).length} scenes · Original text and available media`
+                ? `${realEpisodes.filter((episode) => episode.collectionId === realEpisodes[0].collectionId).length} stories · ${localLibrary ? 'Original text and available media' : 'Available to download'}`
                 : fullEvent
                   ? `${fullEvent.coverage.sections} 节 · ${fullEvent.coverage.textRows.toLocaleString()} 段原文 · 含原始说话人`
                   : '长梦初醒 · 原始 CG、音乐与音效 · 开场片段'}
@@ -111,17 +143,16 @@ export function LibraryPage() {
       <section>
         <div className="section-title">
           <h2>Your games</h2>
-          <span className="muted">
-            {realEpisodes.length}{' '}
-            {fullEvent ? 'story sections' : 'imported excerpt'}
-          </span>
+          <span className="muted">{realEpisodes.length} stories</span>
         </div>
         <div className="game-grid">
           {games.map((game) => {
             const imported = realEpisodes.filter(
               (episode) => episode.game === game.id,
             );
-            const cover = gameArtwork(game.id);
+            const cover = window.onlystoryDesktop
+              ? undefined
+              : gameArtwork(game.id);
             const eventCount = groupStoryEvents(imported).length;
             return (
               <Link
@@ -147,10 +178,18 @@ export function LibraryPage() {
                   <small>
                     {imported.length
                       ? `${eventCount} ${eventCount === 1 ? 'EVENT' : 'EVENTS'}`
-                      : 'NOT CONNECTED'}
+                      : 'DOWNLOADER PENDING'}
                   </small>
                   <h2>{game.name}</h2>
-                  <p>{imported[0]?.story ?? 'No game stories imported yet.'}</p>
+                  <p>
+                    {imported[0]
+                      ? collectionTitle(
+                          eventForEpisode(imported[0]),
+                          gamePreferences(data.preferences, game.id)
+                            .catalogLocale,
+                        )
+                      : 'Downloader not available yet.'}
+                  </p>
                   <span className="game-open">
                     {imported.length ? 'Browse events' : 'View library'}
                     <ArrowUpRight size={16} />
@@ -163,7 +202,7 @@ export function LibraryPage() {
       </section>
       <footer className="page-note">
         <span className="status-dot" />
-        Private local library
+        Stories and progress stay on this device
       </footer>
     </main>
   );

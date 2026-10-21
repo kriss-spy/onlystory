@@ -9,8 +9,14 @@ import {
 } from 'react';
 import type { Dispatch, ReactNode, SetStateAction } from 'react';
 import { emptyData, mergeData, parseData, gamePreferences } from './model';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { isBaImport, hasOnlineSource } from './downloads/providers';
 import { loadEpisode } from './content';
+import { useLocalLibrary } from './hooks';
+import {
+  savePjskInventory,
+  installationFiles,
+} from './downloads/pjsk-inventory';
 import type {
   AppData,
   Bookmark,
@@ -25,6 +31,13 @@ import {
   migrateMediaCache,
   matchMedia,
 } from './media-storage';
+import { acquireLibraryLock, withMediaLock } from './media-lock';
+import {
+  reclaimRemovedMedia,
+  retainRemovedMedia,
+  REMOVAL_RETENTION_MS,
+  restoreRemovedInstallations,
+} from './media-reclamation';
 
 export const STORAGE_KEY = 'onlystory.v1';
 const CACHE_NAME = 'onlystory.media.v1';
@@ -51,7 +64,9 @@ export interface Transfer {
   filesDone?: number;
   filesTotal?: number;
   fileProgress?: number;
+  fraction?: number;
   error?: string;
+  message?: string;
 }
 interface Store {
   data: AppData;
@@ -63,7 +78,7 @@ interface Store {
   notice: Notice | null;
   dismiss: () => void;
   transfers: Record<string, Transfer>;
-  download: (episode: Episode) => void;
+  download: (episode: Episode, files?: File[]) => void;
   cancel: (id: string) => void;
   remove: (episode: Episode | Episode[]) => void;
   importBackup: (file: File) => Promise<void>;
@@ -96,6 +111,8 @@ function load(): AppData {
 const Context = createContext<Store | null>(null);
 const controllers = new Map<string, AbortController>();
 export function AppProvider({ children }: { children: ReactNode }) {
+  const localLibrary = useLocalLibrary();
+  const navigate = useNavigate();
   const [data, setData] = useState<AppData>(load);
   const latestData = useRef(data);
   latestData.current = data;
@@ -107,21 +124,54 @@ export function AppProvider({ children }: { children: ReactNode }) {
     setNotice({ message, action });
   }, []);
   useEffect(() => {
+    const cleanup = () => {
+      void reclaimRemovedMedia(
+        () => {
+          // Read after acquiring the exclusive lock, including other windows' installs.
+          const raw = localStorage.getItem(STORAGE_KEY);
+          return raw ? parseData(JSON.parse(raw)) : latestData.current;
+        },
+        { dryRun: false },
+      )
+        .then((report) => {
+          if (report.files.length)
+            window.dispatchEvent(new Event('onlystory:storage-changed'));
+        })
+        .catch(() => {});
+    };
+    cleanup();
+    const timer = window.setInterval(cleanup, 15_000);
+    return () => window.clearInterval(timer);
+  }, []);
+  useEffect(() => {
     let active = true;
     void (async () => {
       if (!('caches' in window)) return;
       await migrateMediaCache().catch(() => {});
       const cache = await caches.open(CACHE_NAME);
       const missing: string[] = [];
+      const checked = new Map<string, boolean>();
       for (const [id, installation] of Object.entries(
         latestData.current.installations ?? {},
       )) {
         if (!latestData.current.installed[id]) continue;
-        for (const url of installation.files)
-          if (!(await matchMedia(cache, url))) {
-            missing.push(id);
-            break;
+        try {
+          for (const url of await installationFiles(
+            cache,
+            id,
+            installation.files,
+          )) {
+            if (!active) return;
+            if (!checked.has(url))
+              checked.set(url, !!(await matchMedia(cache, url)));
+            if (!checked.get(url)) {
+              missing.push(id);
+              break;
+            }
           }
+        } catch {
+          missing.push(id);
+        }
       }
       if (active && missing.length)
         setData((old) => ({
@@ -205,8 +255,20 @@ export function AppProvider({ children }: { children: ReactNode }) {
     [],
   );
   const download = useCallback(
-    (catalogEpisode: Episode) => {
+    (catalogEpisode: Episode, originals?: File[]) => {
       let episode = catalogEpisode;
+      if (
+        episode.origin === 'game' &&
+        !hasOnlineSource(episode) &&
+        localLibrary !== true
+      ) {
+        notify('This story does not have a verified downloader yet.');
+        return;
+      }
+      if (isBaImport(episode) && !originals && !window.onlystoryDesktop) {
+        navigate(`/downloads/${episode.id}`);
+        return;
+      }
       if (controllers.has(episode.id)) return;
       const controller = new AbortController();
       const p = gamePreferences(latestData.current.preferences, episode.game);
@@ -225,14 +287,50 @@ export function AppProvider({ children }: { children: ReactNode }) {
       void (async () => {
         let bytes = 0;
         let total = 0;
+        let releaseLibrary = () => {};
         try {
           if (!('caches' in window))
             throw new Error(
               'Downloads need a secure browser context. Use localhost or HTTPS.',
             );
+          releaseLibrary = await acquireLibraryLock(controller.signal);
           const cache = await caches.open(CACHE_NAME);
+          let directFiles: string[] | undefined;
+          if (isBaImport(episode)) {
+            const { importBaChapter } = await import('./downloads/ba');
+            directFiles = await importBaChapter(
+              episode,
+              originals,
+              controller.signal,
+              (progress) =>
+                setTransfers((old) => ({
+                  ...old,
+                  [episode.id]: {
+                    episodeId: episode.id,
+                    status: 'downloading',
+                    ...progress,
+                  },
+                })),
+            );
+          } else if (episode.acquisition) {
+            const { downloadPjskChapter } = await import('./downloads/pjsk');
+            directFiles = await downloadPjskChapter(
+              episode,
+              cache,
+              controller.signal,
+              (progress) =>
+                setTransfers((old) => ({
+                  ...old,
+                  [episode.id]: {
+                    episodeId: episode.id,
+                    status: 'downloading',
+                    ...progress,
+                  },
+                })),
+            );
+          }
           if (episode.content?.format === 'pjsk-text-v1')
-            episode = await loadEpisode(episode);
+            episode = await loadEpisode(episode, !!directFiles);
           if (episode.renderer?.id === 'pjsk') {
             const { preloadScene } = await import('./playback/pjsk/PjskScene');
             await preloadScene();
@@ -262,9 +360,9 @@ export function AppProvider({ children }: { children: ReactNode }) {
           const inventory = new Set(
             initialProgram?.files.map((file) => file.url),
           );
-          const paths = [...new Set(episode.assets)].filter(
-            (url) => !inventory.has(url) || allowed?.has(url),
-          );
+          const paths = [
+            ...new Set([...episode.assets, ...(directFiles ?? [])]),
+          ].filter((url) => !inventory.has(url) || allowed?.has(url));
           const queued = new Set(paths);
           let filesDone = 0;
           let hasMovie = Object.keys(initialProgram?.videos ?? {}).length > 0;
@@ -280,6 +378,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
               path,
               controller.signal,
               (received, length) => {
+                if (directFiles) return;
                 // Stream chunks must not redraw the entire download catalog.
                 // File boundaries and completion still publish immediately.
                 const now = performance.now();
@@ -352,54 +451,82 @@ export function AppProvider({ children }: { children: ReactNode }) {
                 }
               }
             }
-            setTransfers((old) => ({
-              ...old,
-              [episode.id]: {
-                episodeId: episode.id,
-                status: 'downloading',
-                bytes,
-                total,
-                filesDone,
-                filesTotal: paths.length,
-                fileProgress: 0,
-              },
-            }));
+            if (!directFiles)
+              setTransfers((old) => ({
+                ...old,
+                [episode.id]: {
+                  episodeId: episode.id,
+                  status: 'downloading',
+                  bytes,
+                  total,
+                  filesDone,
+                  filesTotal: paths.length,
+                  fileProgress: 0,
+                },
+              }));
           }
           controller.signal.throwIfAborted();
-          setData((old) => ({
-            ...old,
-            installed: { ...old.installed, [episode.id]: true },
-            installations: {
-              ...old.installations,
-              [episode.id]: {
-                files: [
-                  ...new Set([
-                    ...(old.installations?.[episode.id]?.files ?? []),
-                    ...paths,
-                  ]),
-                ],
-                voices: hasMovie
-                  ? [
+          const compactInventory =
+            episode.game === 'pjsk' && !!episode.acquisition;
+          const installationPaths = compactInventory
+            ? await savePjskInventory(cache, episode.id, paths)
+            : paths;
+          controller.signal.throwIfAborted();
+          await new Promise<void>((resolve) =>
+            setData((old) => {
+              const next: AppData = {
+                ...old,
+                installed: { ...old.installed, [episode.id]: true },
+                installations: {
+                  ...old.installations,
+                  [episode.id]: {
+                    files: [
                       ...new Set([
-                        ...(old.installations?.[episode.id]?.voices ?? []),
-                        voice,
+                        ...(compactInventory || !old.installed[episode.id]
+                          ? []
+                          : (old.installations?.[episode.id]?.files ?? [])),
+                        ...installationPaths,
                       ]),
-                    ]
-                  : ['zh-CN', 'ja'],
-                variants: [
-                  ...new Set([
-                    ...(old.installations?.[episode.id]?.variants ?? []),
-                    ...(hasGenderMovie ? [gender] : ['male', 'female']).flatMap(
-                      (variant) =>
-                        (hasMovie ? [voice] : ['zh-CN', 'ja']).map(
-                          (language) => `${variant}:${language}`,
+                    ],
+                    voices: hasMovie
+                      ? [
+                          ...new Set([
+                            ...(old.installed[episode.id]
+                              ? (old.installations?.[episode.id]?.voices ?? [])
+                              : []),
+                            voice,
+                          ]),
+                        ]
+                      : ['zh-CN', 'ja'],
+                    variants: [
+                      ...new Set([
+                        ...(old.installed[episode.id]
+                          ? (old.installations?.[episode.id]?.variants ?? [])
+                          : []),
+                        ...(hasGenderMovie
+                          ? [gender]
+                          : ['male', 'female']
+                        ).flatMap((variant) =>
+                          (hasMovie ? [voice] : ['zh-CN', 'ja']).map(
+                            (language) => `${variant}:${language}`,
+                          ),
                         ),
-                    ),
-                  ]),
-                ],
-              },
-            },
-          }));
+                      ]),
+                    ],
+                  },
+                },
+              };
+              latestData.current = next;
+              // Publish reachability before releasing the shared library lock.
+              try {
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
+              } catch {
+                /* The regular persistence effect reports this. */
+              }
+              resolve();
+              return next;
+            }),
+          );
           setTransfers((old) => ({
             ...old,
             [episode.id]: {
@@ -423,44 +550,96 @@ export function AppProvider({ children }: { children: ReactNode }) {
             },
           }));
         } finally {
+          releaseLibrary();
           controllers.delete(episode.id);
         }
       })();
     },
-    [notify],
+    [notify, navigate, localLibrary],
   );
   const cancel = useCallback((id: string) => controllers.get(id)?.abort(), []);
   const remove = useCallback(
     (input: Episode | Episode[]) => {
       const items = Array.isArray(input) ? input : [input];
-      const previous = Object.fromEntries(
-        items.map((episode) => [
-          episode.id,
-          data.installed[episode.id] === true,
-        ]),
-      );
-      setData((old) => ({
-        ...old,
-        installed: {
-          ...old.installed,
-          ...Object.fromEntries(items.map((episode) => [episode.id, false])),
-        },
-      }));
-      notify(
-        items.length === 1
-          ? 'Episode removed. Your progress and bookmarks are kept.'
-          : `${items.length} episodes removed. Your progress and bookmarks are kept.`,
-        {
+      const snapshot = latestData.current;
+      for (const episode of items) controllers.get(episode.id)?.abort();
+      void (async () => {
+        const cache = await caches.open(CACHE_NAME);
+        const removal = await withMediaLock(
+          'onlystory:media-library',
+          undefined,
+          () =>
+            retainRemovedMedia(
+              cache,
+              snapshot,
+              items.map((episode) => episode.id),
+            ),
+          'shared',
+        );
+        setData((old) => ({
+          ...old,
+          installed: {
+            ...old.installed,
+            ...Object.fromEntries(items.map((episode) => [episode.id, false])),
+          },
+        }));
+        const action = {
           label: 'Undo',
-          run: () =>
-            setData((old) => ({
-              ...old,
-              installed: { ...old.installed, ...previous },
-            })),
-        },
+          run: () => {
+            void withMediaLock(
+              'onlystory:media-library',
+              undefined,
+              async () => {
+                if (!(await cache.match(removal))) {
+                  notify(
+                    'Undo has expired. Download the story again to restore it.',
+                  );
+                  return;
+                }
+                await cache.delete(removal);
+                await new Promise<void>((resolve) =>
+                  setData((old) => {
+                    const next = restoreRemovedInstallations(
+                      old,
+                      snapshot,
+                      items.map((episode) => episode.id),
+                    );
+                    latestData.current = next;
+                    try {
+                      localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
+                    } catch {
+                      /* Reported by persistence. */
+                    }
+                    resolve();
+                    return next;
+                  }),
+                );
+              },
+            );
+          },
+        };
+        notify(
+          items.length === 1
+            ? 'Episode removed. Your progress and bookmarks are kept.'
+            : `${items.length} episodes removed. Your progress and bookmarks are kept.`,
+          action,
+        );
+        window.setTimeout(
+          () =>
+            setNotice((current) =>
+              current?.action === action
+                ? { message: current.message }
+                : current,
+            ),
+          REMOVAL_RETENTION_MS,
+        );
+      })().catch(() =>
+        notify(
+          'The download could not be removed. Retry after checking browser storage.',
+        ),
       );
     },
-    [notify, data.installed, data.installations],
+    [notify],
   );
   const importBackup = useCallback(
     async (file: File) => {

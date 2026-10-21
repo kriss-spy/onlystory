@@ -1,6 +1,6 @@
 # General UI polish plan
 
-Status: UI pass and browser verification complete. Multilingual alias dictionaries and additional source-language libraries remain separate data work. Updated 2026-10-19.
+Status: shared UI implemented; verified localized titles and aligned BA English are now included. Final release verification is tracked in [remaining-work.md](remaining-work.md). Updated 2026-10-19.
 
 Cross-game interface improvements that apply to the shared reader, catalog and management UI rather than a single game's pipeline. Follow the applicable rules in [UI-ANTI-PATTERNS.md](UI-ANTI-PATTERNS.md) when implementing. Game-specific import boundaries stay documented in each game's pipeline notes.
 
@@ -20,7 +20,7 @@ Event search should accept queries in any supported language while titles displa
 
 ### Multi-language hot switch in supported games
 
-Add an in-reader language switch for games whose library provides multiple text languages, switching text (and voice where available) without leaving the scene. Example: switch between JP and EN in Blue Archive once an EN library exists; the current BA library is JP-only. Games without a second language keep the switch hidden rather than disabled.
+Add an in-reader language switch for games whose library provides multiple text languages, switching text (and voice where available) without leaving the scene. Blue Archive offers JP/EN only for completely aligned chapters from the pinned official databases. Games and chapters without a second language keep the switch hidden rather than disabled.
 
 ### Simpler homepage without body-page scroll
 
@@ -56,7 +56,7 @@ These details were missing from the original proposal. Routine layout and stylin
 
 ### Scope and defaults
 
-- Keep existing routes, saved passages, bookmarks, chapter ordering and original source titles. Default to the existing list layout and neutral Onlystory palette.
+- Keep existing routes, saved passages, bookmarks and chapter ordering. Preserve original source titles as metadata and as the default display language. Default to the existing list layout and neutral Onlystory palette.
 - Persist layout and per-game overrides inside the version 1 preferences object. Old backups inherit the existing global values; absent overrides continue to follow global defaults. Validate and bound imported values. Resetting one game's overrides preserves other games, saves and downloads.
 - Keep Light/Dark/System global. A game's selected palette changes accent and control colors throughout its catalog, reader and portaled panels. Other games and the library keep their own selected or default palette. Do not recolor original artwork.
 - Start reader settings on Reading. General settings contains appearance, scoped language/player/audio preferences, library configuration and backup tools. The library settings entry opens general settings directly.
@@ -78,10 +78,10 @@ These details were missing from the original proposal. Routine layout and stylin
 
 ### Language data boundaries
 
-- Search accepts normalized original titles and supplied localized aliases. Normalize Unicode width, case, accents and whitespace. Catalog display keeps the original source title.
-- `Episode.titleAliases` and `Episode.collectionAliases` are optional source-metadata fields. Cross-language matching for an arbitrary title requires verified aliases from the importer. The current imports do not contain a complete multilingual title dictionary; adding that dictionary remains a separate data task. Do not generate guessed translations.
+- Search accepts normalized original titles, verified localized titles and supplied aliases. Normalize Unicode width, case, accents and whitespace. The catalog displays the chosen catalog language independently of dialogue language, falling back to the original when a title is missing.
+- `Episode.titleLocales`, `collectionLocales` and chapter title locales come from pinned regional metadata matched by source identities. PJSK metadata is recorded in [localized-title-sources.json](localized-title-sources.json); BA uses the pinned global and JP databases. Aliases alone do not satisfy localized display. Do not generate guessed translations.
 - Offer an in-reader text-language selector only when that installed episode declares multiple text locales. Switching preserves passage, choices and bookmarks and pauses automatic playback. Single-language episodes have no switch.
-- An EN Blue Archive library and aligned cross-region passage identities are prerequisites for JP/EN switching in real BA stories. This UI work does not acquire or claim that content.
+- BA English must align the entire chapter's passage ordering and choice structure with JP. Record unmatched chapters and retain Japanese for those chapters. A regional version difference must never move a saved passage or invent a translation. See [ba-english-verification.json](ba-english-verification.json).
 - Scope GFL2 protagonist variants to GFL2. Show voice-language selection for GFL2 movies and global defaults; current BA and PJSK voices remain their original Japanese, and GFL1 has no alternative voice library.
 
 ### Verification and completion
@@ -91,9 +91,9 @@ These details were missing from the original proposal. Routine layout and stylin
 - Check empty search results, missing content, failed/retried/canceled downloads, reload persistence, old backup migration and independent settings across games.
 - Inspect desktop/mobile screenshots and verify large-catalog scrolling and navigation. Record executed checks and remaining data limitations here before marking the work complete.
 
-## Verification record, 2026-10-19
+## Earlier UI verification, 2026-10-19
 
-Implemented the locked branch-aware seek scale and choice markers, measured file download progress, scoped preferences and playback/download consumers, game palettes, compact reader settings, sortable collection tables, responsive card layouts, source-alias search support and conditional text-language switching. Source-title alias dictionaries and additional text libraries remain the data prerequisites described above.
+Implemented the locked branch-aware seek scale and choice markers, measured file download progress, scoped preferences and playback/download consumers, game palettes, compact reader settings, sortable collection tables, responsive card layouts, source-alias search support and conditional text-language switching. The record below predates the real BA English and localized-title implementation; it is historical evidence, not the final verification of those additions.
 
 - Final `npm run check` passes: formatting, data-derived catalog-spec checks, 87 unit tests, 123 import/host tests, TypeScript and the production build. Five source-dependent import checks skip in this checkout. The existing large-bundle warning remains.
 - All 745 browser cases have passing results across the full sweep and fresh retry. The final full sweep passed 738 cases. Six cases timed out while the computer was suspended, with recorded durations of 25 minutes or nine hours. One opening-scene assertion used a five-second deadline for an authored two-second delay followed by a two-second fade. After correcting that deadline, `npm run test:browser -- --last-failed` passed all seven cases on a fresh server. The opening case also passed four consecutive focused repetitions. The full `npm run verify` invocation recorded those seven failures; the subsequent retry and remaining verification commands exited successfully.
@@ -105,3 +105,47 @@ Implemented the locked branch-aware seek scale and choice markers, measured file
 - Logs are in `.cache/verification-complete.log` and `.cache/verification-final-retry.log`. Focused readiness evidence is in `.cache/isolated-server-check.log` and `.cache/opening-final-repeat.log`; screenshots and traces remain under `.cache/ui-polish-final`, `.cache/ui-polish-focused` and the Playwright output directories.
 
 Concurrent PWA and asset-research work in the shared checkout was preserved. Its PWA behavior was included in verification. No commit was created.
+
+## Language and storage follow-through, 2026-10-20
+
+BA now supplies official English for 1,519 fully aligned chapters, with 140
+Japanese-only chapters retained explicitly. Dialogue, speakers, choices, player-name
+fallbacks and authored screen text switch on the existing passage graph. The
+whole-database import test includes the global source's 64-bit group identities;
+the representative browser checks retain branch identity and saved-passage resume.
+See [English source verification](ba-english-verification.json) and
+[reader verification](ba-english-browser-verification.json).
+
+Catalog language is a separate scoped preference. Verified BA and PJSK collection,
+chapter and episode names display in the selected language, fall back to the
+original and remain searchable in every supplied language. PJSK has English names
+for 1,615 of 1,623 chapters and original Japanese/Chinese names for all 1,623.
+The [metadata provenance](localized-title-sources.json) records the exact regional
+revisions and matching identities.
+
+The established toolbar selection and progress control now include incremental
+input estimates. Storage reclamation waits through the 30-second Undo window,
+retains shared dependencies and coordinates with other browser windows. Large
+legacy entries migrate with streamed hashes. Movie playback uses one shared
+picture stream with selected audio, retaining the same media clock when switching
+voices. [Storage evidence](storage-followthrough.md) and
+[movie playback evidence](movie-playback-verification.json) record the checks and
+limits.
+
+Fresh static installations gate unavailable GFL downloads before requesting
+maintainer files, including the management page. A local library retains its
+existing reading and download workflow. The final release, browser and offline
+evidence is collected in [standalone-verification.json](standalone-verification.json).
+
+Final `npm run check` passes formatting, catalog-spec checks, 117 unit tests,
+142 import tests, TypeScript and the production build. One unit test and five
+source-dependent import tests skip. All 756 original browser case identities have
+passing evidence across the full sweep and focused reruns, as recorded in the
+[coverage audit](browser-coverage-audit.json). This is combined coverage rather
+than one clean full-suite run. All 17 production PWA cases passed; seven checks
+cover the final CSS build, and an additional cold offline test verifies complete
+visible English dialogue after real BA original-file imports. The final Windows
+installer passed isolated installation, four BA chapters through offline completion,
+media decoding, language switching and uninstall. The packaged PJSK and portable
+launcher checks also passed. Exact artifact hashes, build boundaries and retained
+failed attempts are in the linked verification records.

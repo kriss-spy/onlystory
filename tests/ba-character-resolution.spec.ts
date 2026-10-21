@@ -1,6 +1,9 @@
 import { test, expect } from '@playwright/test';
 import fs from 'node:fs';
 import { createHash } from 'node:crypto';
+import { preferJapaneseBa } from './helpers/ba-language';
+
+test.beforeEach(async ({ page }) => preferJapaneseBa(page));
 
 test('Shiroko close-up loads the full-resolution original Windows texture', async ({
   page,

@@ -11,6 +11,68 @@ import {
 import { tmpdir } from 'node:os';
 import { resolve, dirname } from 'node:path';
 import { digest, shareAssets, publicFile } from './storage-library.mjs';
+import { readdirSync, statSync } from 'node:fs';
+
+test('shared movie descriptors reference complete immutable fragment inventories and retain combined compatibility paths', () => {
+  const root = process.cwd();
+  const index = JSON.parse(
+    readFileSync(resolve('public/private/shared/index.json'), 'utf8'),
+  );
+  let descriptors = 0;
+  for (const directory of readdirSync(resolve('public/private'), {
+    withFileTypes: true,
+  }).filter((entry) => entry.isDirectory())) {
+    const filename = resolve(
+      'public/private',
+      directory.name,
+      'videos/manifest.json',
+    );
+    if (!existsSync(filename)) continue;
+    const manifest = JSON.parse(readFileSync(filename, 'utf8'));
+    const inventory = new Map(
+      manifest.files.map((file) => [file.url, file.bytes]),
+    );
+    for (const movie of Object.values(manifest.videos ?? {}))
+      for (const asset of [movie, movie.female]) {
+        if (!asset?.streams) continue;
+        descriptors++;
+        assert.ok(asset.streams.duration > 0);
+        assert.ok(existsSync(publicFile(root, asset.voices['zh-CN'].url)));
+        assert.ok(existsSync(publicFile(root, asset.voices.ja.url)));
+        for (const track of [
+          asset.streams.video,
+          ...Object.values(asset.streams.audio),
+        ]) {
+          assert.match(track.mime, /^(?:video|audio)\/mp4; codecs="[^"]+"$/);
+          assert.ok(track.segments.length);
+          let time = 0;
+          for (const segment of track.segments) {
+            assert.ok(segment.duration > 0);
+            assert.ok(
+              Math.abs(segment.start - time) < 0.0001,
+              'fragment timeline has a gap or overlap',
+            );
+            time = segment.start + segment.duration;
+          }
+          assert.ok(
+            time <= asset.streams.duration + 0.0001,
+            `fragment timeline ${time} exceeds movie duration ${asset.streams.duration}`,
+          );
+          for (const file of [track.init, ...track.segments]) {
+            assert.match(file.url, /^\/private\/shared\/[a-f0-9]{64}\.m4s$/);
+            assert.equal(inventory.get(file.url), file.bytes);
+            assert.equal(index.objects[file.url]?.bytes, file.bytes);
+            assert.equal(
+              index.objects[file.url]?.sha256,
+              file.url.split('/').at(-1).split('.')[0],
+            );
+            assert.equal(statSync(publicFile(root, file.url)).size, file.bytes);
+          }
+        }
+      }
+  }
+  assert.ok(descriptors > 0, 'no shared movie descriptors were published');
+});
 
 test('shares identical payloads and models, preserves variants, and imports idempotently', () => {
   const root = mkdtempSync(resolve(tmpdir(), 'onlystory-share-'));

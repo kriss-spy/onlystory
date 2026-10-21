@@ -1,4 +1,10 @@
+import { preferJapaneseBa } from './helpers/ba-language';
 import { test, expect } from '@playwright/test';
+import { selectPrologueOriginals } from './helpers/ba-originals';
+
+test.use({ serviceWorkers: 'allow' });
+
+test.beforeEach(async ({ page }) => preferJapaneseBa(page));
 
 test.setTimeout(60000);
 const reader = '/read/ba/ba-jp-11000';
@@ -64,11 +70,10 @@ test('BA catalog, choices, deep links, bookmarks, seeking and end use the ordina
 
 test('downloaded BA chapter reopens and seeks while private data requests are blocked', async ({
   page,
-}) => {
+}, testInfo) => {
+  test.setTimeout(240000);
   await page.goto('/games/ba/events/ba-jp-prologue');
-  await page
-    .getByRole('button', { name: 'Download プロローグ · 11000', exact: true })
-    .click();
+  await selectPrologueOriginals(page, testInfo);
   await expect
     .poll(
       () =>
@@ -78,7 +83,7 @@ test('downloaded BA chapter reopens and seeks while private data requests are bl
               'ba-jp-11000'
             ],
         ),
-      { timeout: 30000 },
+      { timeout: 180000 },
     )
     .toBe(true);
   await page.route('**/private/ba-jp/**', (route) => route.abort());

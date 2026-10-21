@@ -400,7 +400,7 @@ export class BaStage {
       signal ? 0.88 : light,
       signal ? 0.96 : light,
       signal ? 1 : light,
-      signal ? 0.82 : 1,
+      signal ? 0.9 : 1,
     );
     if (!this.reduced && elapsed < 0.6) {
       if (actor.action === 'a')
@@ -541,7 +541,7 @@ export class BaStage {
         this.signalContext.globalCompositeOperation = 'source-over';
         this.signalContext.drawImage(this.canvas, 0, 0);
         this.signalContext.globalCompositeOperation = 'source-atop';
-        this.signalContext.fillStyle = 'rgba(30,70,110,.12)';
+        this.signalContext.fillStyle = 'rgba(20,80,125,.30)';
         // Keep fine projection lines in scene space, independent of display DPI.
         const scenePixel = this.signalCanvas.height / 1080;
         const offset = this.reduced ? 0 : ((this.clock * 12) % 6) * scenePixel;
@@ -550,7 +550,7 @@ export class BaStage {
             0,
             y,
             this.signalCanvas.width,
-            scenePixel,
+            1.5 * scenePixel,
           );
         this.signalContext.globalCompositeOperation = 'source-over';
         this.context.gl.clear(this.context.gl.COLOR_BUFFER_BIT);

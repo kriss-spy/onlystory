@@ -260,6 +260,7 @@ test('download cancellation, retry, navigation and cached media are real', async
   await expect(
     row.getByRole('button', { name: /Cancel download/ }),
   ).toBeVisible();
+  await expect.poll(() => typeof release).toBe('function');
   await row.getByRole('button', { name: /Cancel download/ }).click();
   await expect(row).toContainText('Download canceled');
   release();
@@ -318,22 +319,28 @@ test('themes persist, backups export, invalid import preserves progress and keyb
   const download = page.waitForEvent('download');
   await page.getByRole('button', { name: 'Export backup' }).click();
   expect((await download).suggestedFilename()).toBe('onlystory-backup.json');
-  await page.locator('input[type=file]').setInputFiles({
-    name: 'bad.json',
-    mimeType: 'application/json',
-    buffer: Buffer.from('{"version":999}'),
-  });
+  await page
+    .getByRole('dialog')
+    .locator('input[type=file]')
+    .setInputFiles({
+      name: 'bad.json',
+      mimeType: 'application/json',
+      buffer: Buffer.from('{"version":999}'),
+    });
   await expect(page.getByRole('alert')).toContainText('not a supported');
   const backup = await page.evaluate(() =>
     JSON.parse(localStorage.getItem('onlystory.v1')!),
   );
   backup.preferences.fontSize = 26;
   backup.installed['gfl2-2'] = true;
-  await page.locator('input[type=file]').setInputFiles({
-    name: 'valid.json',
-    mimeType: 'application/json',
-    buffer: Buffer.from(JSON.stringify(backup)),
-  });
+  await page
+    .getByRole('dialog')
+    .locator('input[type=file]')
+    .setInputFiles({
+      name: 'valid.json',
+      mimeType: 'application/json',
+      buffer: Buffer.from(JSON.stringify(backup)),
+    });
   await expect(
     page.getByText(
       'Backup merged. Newer progress and device downloads were kept.',
@@ -369,17 +376,31 @@ test('large catalogs keep a bounded DOM, search deep results and restore scroll'
   await page.goto('/games/gfl2?stress=10000&sort=story');
   await expect(page.getByText('10,000 events')).toBeVisible();
   expect(await page.locator('.event-row').count()).toBeLessThan(25);
-  await page.locator('.catalog-scroll').evaluate((el) => {
-    el.scrollTop = 116 * 500;
-  });
-  await expect(
-    page.getByRole('heading', { name: 'Archive 00501', exact: true }),
-  ).toBeVisible();
-  await page.getByRole('link', { name: /Archive 00501/ }).click();
+  const rowHeight = await page
+    .locator('.event-row')
+    .first()
+    .evaluate((row) => row.getBoundingClientRect().height);
+  await page.locator('.catalog-scroll').evaluate((el, height) => {
+    el.scrollTop = height * 500;
+  }, rowHeight);
+  const visibleArchive = await page
+    .locator('.catalog-scroll')
+    .evaluate((el) => {
+      const viewport = el.getBoundingClientRect();
+      return [...el.querySelectorAll('h2')].find((heading) => {
+        const box = heading.getBoundingClientRect();
+        return box.top >= viewport.top && box.bottom <= viewport.bottom;
+      })?.textContent;
+    });
+  expect(Number(visibleArchive?.match(/\d+/)?.[0])).toBeGreaterThan(300);
+  const scrolled = await page
+    .locator('.catalog-scroll')
+    .evaluate((el) => el.scrollTop);
+  await page.getByRole('link').filter({ hasText: visibleArchive! }).click();
   await page.goBack();
   await expect
     .poll(() => page.locator('.catalog-scroll').evaluate((el) => el.scrollTop))
-    .toBeGreaterThan(57000);
+    .toBeGreaterThan(scrolled - 500);
   await page.getByRole('searchbox', { name: 'Search events' }).fill('09999');
   await expect(
     page.getByRole('heading', { name: 'Archive 09999', exact: true }),

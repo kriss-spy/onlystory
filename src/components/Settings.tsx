@@ -6,6 +6,7 @@ import { gamePreferences } from '../model';
 import { useStore } from '../store';
 import type { GameId, Preferences } from '../model';
 import { AppInstallation } from './AppInstallation';
+import { catalogTitleLocales, originalTitleLocales } from '../localized-titles';
 
 export function Settings({ onNavigate }: { onNavigate?: () => void }) {
   const { data, preferences, importBackup, exportBackup, notify } = useStore();
@@ -28,8 +29,13 @@ export function Settings({ onNavigate }: { onNavigate?: () => void }) {
             [scope]: { ...data.preferences.games?.[scope], ...patch },
           },
         });
-  const textLocales =
-    scope === 'defaults'
+  const currentStory = location.pathname.startsWith('/read/')
+    ? episodes.find((episode) => episode.id === location.pathname.split('/')[3])
+    : undefined;
+  const storyTextLocales = currentStory?.textLocales ?? [];
+  const textLocales = currentStory
+    ? storyTextLocales
+    : scope === 'defaults'
       ? ['en', 'zh-CN', 'ja']
       : [
           ...new Set(
@@ -46,6 +52,25 @@ export function Settings({ onNavigate }: { onNavigate?: () => void }) {
     'zh-CN': '中文',
     ja: '日本語',
   };
+  const languageNames: Record<string, string> = {
+    en: 'English',
+    'zh-CN': 'Chinese',
+    ja: 'Japanese',
+  };
+  const catalogLocales =
+    scope === 'defaults'
+      ? new Set(Object.keys(localeNames))
+      : catalogTitleLocales(episodes, scope);
+  const catalogLocale = p.catalogLocale ?? 'original';
+  const catalogLanguageUnavailable =
+    catalogLocale !== 'original' && !catalogLocales.has(catalogLocale);
+  const storyTitleUnavailable =
+    currentStory &&
+    catalogLocale !== 'original' &&
+    catalogLocale !== originalTitleLocales[currentStory.game] &&
+    !currentStory.titleLocales?.[catalogLocale]?.trim();
+  const textLanguageUnavailable =
+    storyTextLocales.length > 0 && !storyTextLocales.includes(p.textLocale);
   const fileInput = useRef<HTMLInputElement>(null);
   const [error, setError] = useState('');
   const number = (
@@ -245,9 +270,42 @@ export function Settings({ onNavigate }: { onNavigate?: () => void }) {
                 : games.find((game) => game.id === scope)?.name}
             </h3>
             <label className="setting">
+              Catalog language
+              <select
+                aria-label="Catalog language"
+                aria-describedby="catalog-language-note"
+                value={catalogLanguageUnavailable ? 'original' : catalogLocale}
+                onChange={(event) =>
+                  scoped({
+                    catalogLocale: event.target
+                      .value as Preferences['catalogLocale'],
+                  })
+                }
+              >
+                <option value="original">Original titles</option>
+                {Object.entries(localeNames)
+                  .filter(([locale]) => catalogLocales.has(locale))
+                  .map(([locale, name]) => (
+                    <option key={locale} value={locale}>
+                      {name}
+                    </option>
+                  ))}
+              </select>
+            </label>
+            <p className="field-note" id="catalog-language-note">
+              {catalogLanguageUnavailable
+                ? `${languageNames[catalogLocale]} catalog titles are unavailable for ${games.find((game) => game.id === scope)?.name}. Showing original titles. `
+                : storyTitleUnavailable
+                  ? `${languageNames[catalogLocale]} titles are unavailable for this story. Showing its original title. `
+                  : ''}
+              Event and story titles. Missing translations keep their original
+              titles. This does not change dialogue.
+            </p>
+            <label className="setting">
               Text language
               <select
                 aria-label="Text language"
+                aria-describedby="text-language-note"
                 disabled={!textLocales.length}
                 value={
                   textLocales.includes(p.textLocale)
@@ -270,6 +328,13 @@ export function Settings({ onNavigate }: { onNavigate?: () => void }) {
                 ))}
               </select>
             </label>
+            <p className="field-note" id="text-language-note">
+              {textLanguageUnavailable
+                ? `${languageNames[p.textLocale]} is unavailable for this story. Showing ${languageNames[storyTextLocales[0]]}. Your preference is kept for other stories.`
+                : currentStory
+                  ? 'Dialogue languages available for this story.'
+                  : 'Preferred dialogue language. Stories without this translation use their original language.'}
+            </p>
             {scope === 'gfl2' ? (
               <label className="setting">
                 Protagonist version
@@ -301,11 +366,11 @@ export function Settings({ onNavigate }: { onNavigate?: () => void }) {
                 />
               </label>
             ) : null}
-            <p className="field-note">
-              Used where the source provides alternate text or a player-name
-              placeholder. Chapters without a selected translation keep their
-              source language. The current BA library has Japanese text only.
-            </p>
+            {scope !== 'pjsk' ? (
+              <p className="field-note">
+                Player name is used where the source provides a placeholder.
+              </p>
+            ) : null}
           </section>
         ) : null}
         {view === 'audio' ? (

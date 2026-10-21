@@ -80,7 +80,12 @@ describe('real BA prologue chapter', () => {
     const node = decodeBaChapter(input(), episode).nodes.find((n) =>
       n.text.ja?.includes('[USERNAME]'),
     )!;
-    expect(passageText(node, defaultPreferences).text).toContain('プレイヤー');
+    expect(
+      passageText(node, { ...defaultPreferences, textLocale: 'ja' }).text,
+    ).toContain('プレイヤー');
+    expect(
+      passageText(node, { ...defaultPreferences, textLocale: 'en' }).text,
+    ).toContain('Sensei');
     expect(passageText(node, defaultPreferences).text).not.toContain('指挥官');
     expect(
       passageText(node, { ...defaultPreferences, playerName: '$&' }).text,

@@ -94,6 +94,7 @@ export function startAppInstallation() {
   const installed = () =>
     publish({
       installed:
+        !!window.onlystoryDesktop ||
         display.matches ||
         (navigator as Navigator & { standalone?: boolean }).standalone === true,
     });

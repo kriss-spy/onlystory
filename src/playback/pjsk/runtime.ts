@@ -10,6 +10,7 @@ import {
   Rectangle,
   BLEND_MODES,
 } from 'pixi.js';
+import '../pixi-csp';
 import type {
   Live2DModel,
   Cubism4MotionManager,

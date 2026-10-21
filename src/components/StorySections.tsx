@@ -3,6 +3,8 @@ import { ChevronRight } from 'lucide-react';
 import { storySections, type StoryEvent } from '../catalog';
 import { useStore } from '../store';
 import { StoryList } from './StoryList';
+import { gamePreferences } from '../model';
+import { localizedTitle } from '../localized-titles';
 
 export function StorySections({
   event,
@@ -94,7 +96,13 @@ export function StorySections({
                 }}
               >
                 <ChevronRight size={18} aria-hidden="true" />
-                <span>{section.chapter.title}</span>
+                <span>
+                  {localizedTitle(
+                    section.chapter.title,
+                    section.chapter.titleLocales,
+                    gamePreferences(data.preferences, event.game).catalogLocale,
+                  )}
+                </span>
                 <small>
                   {completed
                     ? `${completed} / ${section.stories.length} read`

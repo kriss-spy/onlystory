@@ -1,0 +1,42 @@
+{
+  "checkedAt": "2026-10-19T15:44:47.525Z",
+  "scope": "Chrome on Windows; imported GFL2 Ilion movie via the common MovieStreams player",
+  "passed": true,
+  "sources": {
+    "src/components/Stage.tsx": "6d7acebf3271c94b9a140f07af6cf290ed6d598d59e88ea9bd1ddab38181b7d8",
+    "src/movie-streams.ts": "20d57f3243819fb44b9692af97e673fab138dada2000e6e6e2f17da935084988",
+    "src/pages/Reader.tsx": "c563cc3d223dd7f940e179409d86bf8cdd081389e99c4962d071e04b6316028e"
+  },
+  "checks": [
+    "One HTML media element with picture and selected audio SourceBuffers",
+    "Paused/playing language switches preserve time, rate and volume",
+    "Reload retains selected language and saved movie position",
+    "Real audio decoding observed after switching",
+    "Random forward/backward seek reaches buffered media; buffered intersection remains below 50 seconds",
+    "Near-end playback reaches ended",
+    "Selected-language installation excludes other audio and combined MP4 compatibility files",
+    "Missing offline language keeps installed current track and explains missing download",
+    "Adding another language reuses picture/cache objects; downloaded movie seeks offline"
+  ],
+  "commands": [
+    "npx playwright test --config .cache/movie-final.config.ts tests/movie-voice.spec.ts",
+    "npx playwright test --config .cache/movie-final.config.ts tests/storage.spec.ts --grep 'movie downloads'"
+  ],
+  "evidence": [
+    ".cache/final-movie-quality-results",
+    ".cache/final-movie-results2",
+    "movie-stream-verification.json"
+  ],
+  "accounting": {
+    "uniqueSharedFragmentFiles": 1764,
+    "uniqueSharedFragmentBytes": 2953724152,
+    "retainedCombinedFiles": 46,
+    "retainedCombinedBytes": 5766587228,
+    "note": "These are distinct URL inventories in current descriptors. Combined fallbacks are retained physically; shared-stream delivery savings do not mean those files were reclaimed."
+  },
+  "limits": [
+    "Other browsers and devices were not exercised",
+    "No combined fallback exports were deleted",
+    "Browser heap measurements were not used as a whole-library memory guarantee"
+  ]
+}

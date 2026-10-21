@@ -32,9 +32,12 @@ const total = events.length + main.groups.length;
 const newestEvent = [...events].sort((a, b) => b.startAt - a.startAt)[0];
 const newestLink = new RegExp(`/pjsk-cn-event-${newestEvent.eventId}(?:[?]|$)`);
 async function countResults(page: Page, count: number) {
-  await expect(page.locator('.section-title .muted')).toHaveText(
-    `${count.toLocaleString()} ${count === 1 ? 'event' : 'events'}`,
-  );
+  await expect(
+    page.getByText(
+      `${count.toLocaleString()} ${count === 1 ? 'event' : 'events'}`,
+      { exact: true },
+    ),
+  ).toBeVisible();
   const rows = page.locator('.event-row');
   if (count > 80) {
     await expect.poll(() => rows.count()).toBeGreaterThan(0);

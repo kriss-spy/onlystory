@@ -1,0 +1,628 @@
+{
+  "checkedAt": "2026-10-19T13:53:31.207Z",
+  "scope": "Current real GFL2 CN imported event sections from src/content.ts; excludes legacy opening preview and fictional fixtures.",
+  "conclusion": "No complete download on a new machine from public sources is implemented or verified. Local library copies are complete at their declared file boundary; public model availability is partial and does not supply scripts, backgrounds, sound or movies.",
+  "catalog": {
+    "collections": 36,
+    "stories": 715,
+    "passages": 117679,
+    "sceneStories": 715
+  },
+  "localLibrary": {
+    "uniqueDeclaredUrls": 7914,
+    "uniqueSceneAssetUrls": 5769,
+    "missingDiskFiles": [],
+    "sceneAssetsByExtension": {
+      ".js": 1,
+      ".png": 3,
+      ".webp": 892,
+      ".json": 2386,
+      ".moc3": 374,
+      ".ogg": 2049,
+      ".mp4": 46,
+      ".vtt": 18
+    },
+    "sourceOrReconstructionGaps": {
+      "chapterOccurrences": 288,
+      "chapters": 168,
+      "distinctKindLabelPairs": 50,
+      "distinctLabelsByKind": {
+        "expression": 22,
+        "background": 19,
+        "audio": 3,
+        "text": 3,
+        "video": 1,
+        "character": 2
+      }
+    },
+    "localHttpCheck": {
+      "stories": 715,
+      "available": 715,
+      "incomplete": 0,
+      "standaloneSources": 0,
+      "uniqueDeclaredFiles": 7914,
+      "reachableDeclaredFiles": 7914,
+      "storiesWithMissingDeclaredFiles": 0
+    }
+  },
+  "standaloneSupport": {
+    "availableGfl2AcquisitionRecipes": 0,
+    "fullyVerifiedOnlineStoryDownloads": 0,
+    "notes": "hasOnlineSource only enables acquisition recipes and the BA prologue. Current GFL2 episodes have neither. Desktop store rejects GFL2 downloads; development browser can cache prepared files served by Vite, which is a different operation."
+  },
+  "publicModels": {
+    "root": "https://srpg-kr.github.io/l2d-assets/Resources/",
+    "requiredDistinctPrefabNames": 377,
+    "exactDefinitionMatches": 373,
+    "definitionGet200": 376,
+    "aliasDefinitions": [
+      {
+        "local": "CHA_Dmitriy_Young_NPC",
+        "remote": "CHA_Dmitriy_Young_NPC_01",
+        "modelUrl": "https://srpg-kr.github.io/l2d-assets/Resources/CHA_Dmitriy_Young_NPC_01/CHA_Dmitriy_Young_NPC_01.model3.json",
+        "mocUrl": "https://srpg-kr.github.io/l2d-assets/Resources/CHA_Dmitriy_Young_NPC_01/CHA_Dmitriy_Young_NPC_01.moc3",
+        "status": 200,
+        "bytes": 181888,
+        "sha256": "5d601644da7f6236b31a4a3a9f4e50b7e5959c4439740eca0d95cfa1ade0bcf4",
+        "localSha256": [
+          "5d601644da7f6236b31a4a3a9f4e50b7e5959c4439740eca0d95cfa1ade0bcf4"
+        ],
+        "mocMatchesLocal": true,
+        "limitation": "MOC3 bytes only; no texture/expression/transform equivalence claim."
+      },
+      {
+        "local": "CHA_ELID__01",
+        "remote": "CHA_ELID_01",
+        "modelUrl": "https://srpg-kr.github.io/l2d-assets/Resources/CHA_ELID_01/CHA_ELID_01.model3.json",
+        "mocUrl": "https://srpg-kr.github.io/l2d-assets/Resources/CHA_ELID_01/CHA_ELID_01.moc3",
+        "status": 200,
+        "bytes": 8128,
+        "sha256": "fa2474c700c89c800175c60033dde5b32e75b8b8fdd5981b992fefc97f5f8820",
+        "localSha256": [
+          "fa2474c700c89c800175c60033dde5b32e75b8b8fdd5981b992fefc97f5f8820"
+        ],
+        "mocMatchesLocal": true,
+        "limitation": "MOC3 bytes only; no texture/expression/transform equivalence claim."
+      },
+      {
+        "local": "CHA_Jiangyu_SSR_01",
+        "remote": "CHA_Jiangyu_NPC_01",
+        "modelUrl": "https://srpg-kr.github.io/l2d-assets/Resources/CHA_Jiangyu_NPC_01/CHA_Jiangyu_NPC_01.model3.json",
+        "mocUrl": "https://srpg-kr.github.io/l2d-assets/Resources/CHA_Jiangyu_NPC_01/CHA_Jiangyu_NPC_01.moc3",
+        "status": 200,
+        "bytes": 253248,
+        "sha256": "0200c5292796414b1de6291c72f5979094f8c05a5d1f25386219fb29f880d5ce",
+        "localSha256": [
+          "0200c5292796414b1de6291c72f5979094f8c05a5d1f25386219fb29f880d5ce"
+        ],
+        "mocMatchesLocal": true,
+        "limitation": "MOC3 bytes only; no texture/expression/transform equivalence claim."
+      }
+    ],
+    "nonvisualPrefab": "SoundOnly_02",
+    "dependencyHeadChecks": 4147,
+    "dependencyHead200": 4116,
+    "dependencyHead200WithAllowOriginStar": 4116,
+    "dependencyFailures": [
+      {
+        "url": "https://srpg-kr.github.io/l2d-assets/Resources/CHA_Groza_SR_01/motions/Mouthopen_02s.motion3.json",
+        "status": 404,
+        "cors": "*",
+        "bytes": "9379",
+        "contentType": "text/html; charset=utf-8"
+      },
+      {
+        "url": "https://srpg-kr.github.io/l2d-assets/Resources/CHA_Groza_SR_01/motions/Mouthopen_10s.motion3.json",
+        "status": 404,
+        "cors": "*",
+        "bytes": "9379",
+        "contentType": "text/html; charset=utf-8"
+      },
+      {
+        "url": "https://srpg-kr.github.io/l2d-assets/Resources/CHA_Groza_SR_01/motions/Mouthopen_5s.motion3.json",
+        "status": 404,
+        "cors": "*",
+        "bytes": "9379",
+        "contentType": "text/html; charset=utf-8"
+      },
+      {
+        "url": "https://srpg-kr.github.io/l2d-assets/Resources/CHA_Groza_SR_01/motions/NTP.motion3.json",
+        "status": 404,
+        "cors": "*",
+        "bytes": "9379",
+        "contentType": "text/html; charset=utf-8"
+      },
+      {
+        "url": "https://srpg-kr.github.io/l2d-assets/Resources/CHA_Groza_SR_01/motions/TP.motion3.json",
+        "status": 404,
+        "cors": "*",
+        "bytes": "9379",
+        "contentType": "text/html; charset=utf-8"
+      },
+      {
+        "url": "https://srpg-kr.github.io/l2d-assets/Resources/CHA_Easley_01/motions/Mouthopen_10s.motion3.json",
+        "status": 404,
+        "cors": "*",
+        "bytes": "9379",
+        "contentType": "text/html; charset=utf-8"
+      },
+      {
+        "url": "https://srpg-kr.github.io/l2d-assets/Resources/CHA_Easley_01/motions/Mouthopen_2s.motion3.json",
+        "status": 404,
+        "cors": "*",
+        "bytes": "9379",
+        "contentType": "text/html; charset=utf-8"
+      },
+      {
+        "url": "https://srpg-kr.github.io/l2d-assets/Resources/CHA_Easley_01/motions/Mouthopen_5s.motion3.json",
+        "status": 404,
+        "cors": "*",
+        "bytes": "9379",
+        "contentType": "text/html; charset=utf-8"
+      },
+      {
+        "url": "https://srpg-kr.github.io/l2d-assets/Resources/CHA_RNDmale_NPC_01/motions/A.motion3.json",
+        "status": 404,
+        "cors": "*",
+        "bytes": "9379",
+        "contentType": "text/html; charset=utf-8"
+      },
+      {
+        "url": "https://srpg-kr.github.io/l2d-assets/Resources/CHA_RNDmale_NPC_01/motions/N.motion3.json",
+        "status": 404,
+        "cors": "*",
+        "bytes": "9379",
+        "contentType": "text/html; charset=utf-8"
+      },
+      {
+        "url": "https://srpg-kr.github.io/l2d-assets/Resources/CHA_Niter_NPC_01/motions/Mouthopen_10s.motion3.json",
+        "status": 404,
+        "cors": "*",
+        "bytes": "9379",
+        "contentType": "text/html; charset=utf-8"
+      },
+      {
+        "url": "https://srpg-kr.github.io/l2d-assets/Resources/CHA_Niter_NPC_01/motions/Mouthopen_2s.motion3.json",
+        "status": 404,
+        "cors": "*",
+        "bytes": "9379",
+        "contentType": "text/html; charset=utf-8"
+      },
+      {
+        "url": "https://srpg-kr.github.io/l2d-assets/Resources/CHA_Niter_NPC_01/motions/Mouthopen_5s.motion3.json",
+        "status": 404,
+        "cors": "*",
+        "bytes": "9379",
+        "contentType": "text/html; charset=utf-8"
+      },
+      {
+        "url": "https://srpg-kr.github.io/l2d-assets/Resources/CHA_RNDmale_NPC_02/motions/A.motion3.json",
+        "status": 404,
+        "cors": "*",
+        "bytes": "9379",
+        "contentType": "text/html; charset=utf-8"
+      },
+      {
+        "url": "https://srpg-kr.github.io/l2d-assets/Resources/CHA_RNDmale_NPC_02/motions/N.motion3.json",
+        "status": 404,
+        "cors": "*",
+        "bytes": "9379",
+        "contentType": "text/html; charset=utf-8"
+      },
+      {
+        "url": "https://srpg-kr.github.io/l2d-assets/Resources/CHA_Sweeper_NPC_01/motions/motions/Mouthopen_10s.motion3.json",
+        "status": 404,
+        "cors": "*",
+        "bytes": "9379",
+        "contentType": "text/html; charset=utf-8"
+      },
+      {
+        "url": "https://srpg-kr.github.io/l2d-assets/Resources/CHA_Sweeper_NPC_01/motions/motions/Mouthopen_2s.motion3.json",
+        "status": 404,
+        "cors": "*",
+        "bytes": "9379",
+        "contentType": "text/html; charset=utf-8"
+      },
+      {
+        "url": "https://srpg-kr.github.io/l2d-assets/Resources/CHA_Sweeper_NPC_01/motions/motions/Mouthopen_5s.motion3.json",
+        "status": 404,
+        "cors": "*",
+        "bytes": "9379",
+        "contentType": "text/html; charset=utf-8"
+      },
+      {
+        "url": "https://srpg-kr.github.io/l2d-assets/Resources/CHA_Rosaline_NPC_01/motions/Mouthopen_10s.motion3.json",
+        "status": 404,
+        "cors": "*",
+        "bytes": "9379",
+        "contentType": "text/html; charset=utf-8"
+      },
+      {
+        "url": "https://srpg-kr.github.io/l2d-assets/Resources/CHA_Rosaline_NPC_01/motions/Mouthopen_2s.motion3.json",
+        "status": 404,
+        "cors": "*",
+        "bytes": "9379",
+        "contentType": "text/html; charset=utf-8"
+      },
+      {
+        "url": "https://srpg-kr.github.io/l2d-assets/Resources/CHA_Rosaline_NPC_01/motions/Mouthopen_5s.motion3.json",
+        "status": 404,
+        "cors": "*",
+        "bytes": "9379",
+        "contentType": "text/html; charset=utf-8"
+      },
+      {
+        "url": "https://srpg-kr.github.io/l2d-assets/Resources/CHA_Unitas_NPC_01/motions/Mouthopen_10s.motion3.json",
+        "status": 404,
+        "cors": "*",
+        "bytes": "9379",
+        "contentType": "text/html; charset=utf-8"
+      },
+      {
+        "url": "https://srpg-kr.github.io/l2d-assets/Resources/CHA_Unitas_NPC_01/motions/Mouthopen_2s.motion3.json",
+        "status": 404,
+        "cors": "*",
+        "bytes": "9379",
+        "contentType": "text/html; charset=utf-8"
+      },
+      {
+        "url": "https://srpg-kr.github.io/l2d-assets/Resources/CHA_Unitas_NPC_01/motions/Mouthopen_5s.motion3.json",
+        "status": 404,
+        "cors": "*",
+        "bytes": "9379",
+        "contentType": "text/html; charset=utf-8"
+      },
+      {
+        "url": "https://srpg-kr.github.io/l2d-assets/Resources/CHA_Unitas_NPC_01/motions/OFF.motion3.json",
+        "status": 404,
+        "cors": "*",
+        "bytes": "9379",
+        "contentType": "text/html; charset=utf-8"
+      },
+      {
+        "url": "https://srpg-kr.github.io/l2d-assets/Resources/CHA_Unitas_NPC_01/motions/ON.motion3.json",
+        "status": 404,
+        "cors": "*",
+        "bytes": "9379",
+        "contentType": "text/html; charset=utf-8"
+      },
+      {
+        "url": "https://srpg-kr.github.io/l2d-assets/Resources/CHA_Unitas_NPC_02/motions/Mouthopen_10s.motion3.json",
+        "status": 404,
+        "cors": "*",
+        "bytes": "9379",
+        "contentType": "text/html; charset=utf-8"
+      },
+      {
+        "url": "https://srpg-kr.github.io/l2d-assets/Resources/CHA_Unitas_NPC_02/motions/Mouthopen_2s.motion3.json",
+        "status": 404,
+        "cors": "*",
+        "bytes": "9379",
+        "contentType": "text/html; charset=utf-8"
+      },
+      {
+        "url": "https://srpg-kr.github.io/l2d-assets/Resources/CHA_Unitas_NPC_02/motions/Mouthopen_5s.motion3.json",
+        "status": 404,
+        "cors": "*",
+        "bytes": "9379",
+        "contentType": "text/html; charset=utf-8"
+      },
+      {
+        "url": "https://srpg-kr.github.io/l2d-assets/Resources/CHA_Unitas_NPC_02/motions/OFF.motion3.json",
+        "status": 404,
+        "cors": "*",
+        "bytes": "9379",
+        "contentType": "text/html; charset=utf-8"
+      },
+      {
+        "url": "https://srpg-kr.github.io/l2d-assets/Resources/CHA_Unitas_NPC_02/motions/ON.motion3.json",
+        "status": 404,
+        "cors": "*",
+        "bytes": "9379",
+        "contentType": "text/html; charset=utf-8"
+      }
+    ],
+    "affectedPublicModels": 9,
+    "method": "Fresh GET all matched model definitions; fresh HEAD every unique referenced dependency, 6 workers, up to 3 attempts, native HTTPS keep-alive. No complete media body/hash or scene fidelity comparison. Git tree snapshot used only for model path discovery.",
+    "limits": [
+      "HEAD checks response availability and CORS headers. It does not verify complete media bodies or content hashes.",
+      "MOC3 bodies for the three aliases match local SHA256; texture pixels, expressions, motion semantics and transforms were not compared.",
+      "Public model definitions and their dependencies are not a complete chapter source.",
+      "No public acquisition mapping was verified for current GFL2 source books, localization/content tables, backgrounds, audio or movies. This is not proof that no such source exists.",
+      "Mirror motion references were not mapped to motions exercised by imported Onlystory chapters. A 404 mirror reference does not establish that an individual available chapter fails playback."
+    ],
+    "correctedMotionLinks": [
+      {
+        "url": "https://srpg-kr.github.io/l2d-assets/Resources/CHA_Sweeper_NPC_01/motions/Mouthopen_10s.motion3.json",
+        "status": 200,
+        "cors": "*"
+      },
+      {
+        "url": "https://srpg-kr.github.io/l2d-assets/Resources/CHA_Sweeper_NPC_01/motions/Mouthopen_2s.motion3.json",
+        "status": 200,
+        "cors": "*"
+      },
+      {
+        "url": "https://srpg-kr.github.io/l2d-assets/Resources/CHA_Sweeper_NPC_01/motions/Mouthopen_5s.motion3.json",
+        "status": 200,
+        "cors": "*"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "url": "https://github.com/srpg-kr/l2d-assets",
+      "role": "Public Live2D provider; README identifies model/texture/motion/config scope."
+    },
+    {
+      "url": "https://github.com/nijinekoyo/GF2AssetBundleDecryption",
+      "role": "Local installed-cache decoder; table mode requires tables downloaded after starting the game."
+    },
+    {
+      "url": "https://github.com/0x795E69D8/exilium-tools/tree/main/game_update_tracker",
+      "role": "Update tracker scans installed clients; its README requires a local GF2_Exilium.exe directory. Not a CDN downloader."
+    }
+  ],
+  "automation": {
+    "directory": ".cache/other-game-download-audit/gfl2",
+    "inventory": "audit.mjs",
+    "publicDependencyProbe": "check-dependencies.mjs",
+    "aliasProbe": "check-aliases.mjs",
+    "aliasDependencyProbe": "check-alias-dependencies.mjs",
+    "resultJournal": "dependency-head-checks.jsonl"
+  },
+  "groups": [
+    {
+      "id": "gfl2-activity33-text",
+      "title": "金翅雀与橄榄枝",
+      "sections": 24,
+      "passages": 4443,
+      "sceneSections": 24
+    },
+    {
+      "id": "gfl2-ilion",
+      "title": "伊利昂之围",
+      "sections": 65,
+      "passages": 14520,
+      "sceneSections": 65
+    },
+    {
+      "id": "gfl2-cafe-revised",
+      "title": "方糖特调沙龙 · 苦涩荆棘与矢车菊（重制版）",
+      "sections": 10,
+      "passages": 2621,
+      "sceneSections": 10
+    },
+    {
+      "id": "gfl2-cn-4011",
+      "title": "驻足之地",
+      "sections": 8,
+      "passages": 578,
+      "sceneSections": 8
+    },
+    {
+      "id": "gfl2-cn-4012",
+      "title": "拂晓的回响",
+      "sections": 12,
+      "passages": 1293,
+      "sceneSections": 12
+    },
+    {
+      "id": "gfl2-cn-4013",
+      "title": "远日点",
+      "sections": 31,
+      "passages": 3467,
+      "sceneSections": 31
+    },
+    {
+      "id": "gfl2-cn-4015",
+      "title": "逃离赛博格",
+      "sections": 11,
+      "passages": 1511,
+      "sceneSections": 11
+    },
+    {
+      "id": "gfl2-cn-4016",
+      "title": "纪念日礼赞",
+      "sections": 10,
+      "passages": 569,
+      "sceneSections": 10
+    },
+    {
+      "id": "gfl2-cn-4017",
+      "title": "共诉隐匿时",
+      "sections": 10,
+      "passages": 735,
+      "sceneSections": 10
+    },
+    {
+      "id": "gfl2-cn-4018",
+      "title": "密米尔的返演",
+      "sections": 35,
+      "passages": 3690,
+      "sceneSections": 35
+    },
+    {
+      "id": "gfl2-cn-4020",
+      "title": "烟火迎春归",
+      "sections": 15,
+      "passages": 1821,
+      "sceneSections": 15
+    },
+    {
+      "id": "gfl2-cn-4021",
+      "title": "素银匿信",
+      "sections": 13,
+      "passages": 1045,
+      "sceneSections": 13
+    },
+    {
+      "id": "gfl2-cn-4022",
+      "title": "匿影而生",
+      "sections": 13,
+      "passages": 1429,
+      "sceneSections": 13
+    },
+    {
+      "id": "gfl2-cn-4023",
+      "title": "错位锚定",
+      "sections": 44,
+      "passages": 4592,
+      "sceneSections": 44
+    },
+    {
+      "id": "gfl2-cn-4025",
+      "title": "镜茧与囚蝶",
+      "sections": 15,
+      "passages": 2661,
+      "sceneSections": 15
+    },
+    {
+      "id": "gfl2-cn-4026",
+      "title": "心跳游乐园",
+      "sections": 13,
+      "passages": 1527,
+      "sceneSections": 13
+    },
+    {
+      "id": "gfl2-cn-4027",
+      "title": "沉没夜潮",
+      "sections": 11,
+      "passages": 1527,
+      "sceneSections": 11
+    },
+    {
+      "id": "gfl2-cn-4028",
+      "title": "火花之罪",
+      "sections": 50,
+      "passages": 8335,
+      "sceneSections": 50
+    },
+    {
+      "id": "gfl2-cn-4032",
+      "title": "虚境新始",
+      "sections": 13,
+      "passages": 2219,
+      "sceneSections": 13
+    },
+    {
+      "id": "gfl2-cn-4033",
+      "title": "歧路双轨",
+      "sections": 29,
+      "passages": 4814,
+      "sceneSections": 29
+    },
+    {
+      "id": "gfl2-cn-4035",
+      "title": "前进吧，王牌配送员！",
+      "sections": 11,
+      "passages": 1080,
+      "sceneSections": 11
+    },
+    {
+      "id": "gfl2-cn-4037",
+      "title": "铸碑者的黎明",
+      "sections": 38,
+      "passages": 5089,
+      "sceneSections": 38
+    },
+    {
+      "id": "gfl2-cn-4039",
+      "title": "信号波重度依赖",
+      "sections": 14,
+      "passages": 3087,
+      "sceneSections": 14
+    },
+    {
+      "id": "gfl2-cn-4040",
+      "title": "瑞骋迎春至",
+      "sections": 14,
+      "passages": 2479,
+      "sceneSections": 14
+    },
+    {
+      "id": "gfl2-cn-4041",
+      "title": "月下安魂曲",
+      "sections": 15,
+      "passages": 3040,
+      "sceneSections": 15
+    },
+    {
+      "id": "gfl2-cn-4042",
+      "title": "镜像冗余",
+      "sections": 42,
+      "passages": 9837,
+      "sceneSections": 42
+    },
+    {
+      "id": "gfl2-cn-4044",
+      "title": "琥珀月光",
+      "sections": 13,
+      "passages": 2334,
+      "sceneSections": 13
+    },
+    {
+      "id": "gfl2-cn-4045",
+      "title": "忒弥斯棋局",
+      "sections": 15,
+      "passages": 2800,
+      "sceneSections": 15
+    },
+    {
+      "id": "gfl2-cn-4046",
+      "title": "梦中的永无岛",
+      "sections": 18,
+      "passages": 4359,
+      "sceneSections": 18
+    },
+    {
+      "id": "gfl2-cn-4050",
+      "title": "寂静的匹丝缇",
+      "sections": 14,
+      "passages": 3121,
+      "sceneSections": 14
+    },
+    {
+      "id": "gfl2-cn-4052",
+      "title": "静默突触",
+      "sections": 35,
+      "passages": 9867,
+      "sceneSections": 35
+    },
+    {
+      "id": "gfl2-daiyan-revised",
+      "title": "异乡乐徽 · 于灰败的羽翼中（重制版）",
+      "sections": 10,
+      "passages": 1532,
+      "sceneSections": 10
+    },
+    {
+      "id": "gfl2-glass-island",
+      "title": "玻璃岛的驻行者",
+      "sections": 19,
+      "passages": 2305,
+      "sceneSections": 19
+    },
+    {
+      "id": "gfl2-interwoven",
+      "title": "交织突进",
+      "sections": 11,
+      "passages": 1864,
+      "sceneSections": 11
+    },
+    {
+      "id": "gfl2-quartet",
+      "title": "狂想四重奏",
+      "sections": 10,
+      "passages": 1261,
+      "sceneSections": 10
+    },
+    {
+      "id": "gfl2-trace",
+      "title": "循迹追演",
+      "sections": 4,
+      "passages": 227,
+      "sceneSections": 4
+    }
+  ]
+}

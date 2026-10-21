@@ -1,6 +1,11 @@
 import { test, expect, type Page } from '@playwright/test';
 import { readFileSync } from 'node:fs';
+import { gunzipSync } from 'node:zlib';
 import { emptyData, startSave, advance, type Episode } from '../src/model';
+import catalog from '../src/downloads/ba/catalog.json' with { type: 'json' };
+import { baOriginalFolder } from './helpers/ba-originals';
+
+test.use({ serviceWorkers: 'allow' });
 
 test.setTimeout(120000);
 const definitions = JSON.parse(
@@ -57,6 +62,7 @@ const link = (group: number, target: ReturnType<typeof passage>) =>
   `/read/ba/ba-jp-${group}?line=${encodeURIComponent(target.node.id)}&choices=${encodeURIComponent(JSON.stringify(target.save.frames.at(-1)!.answers))}`;
 test.beforeEach(async ({ page }) => {
   const data = emptyData();
+  data.preferences.textLocale = 'ja';
   data.preferences.textSpeed = 0;
   data.preferences.voice = 'ja';
   await page.addInitScript(
@@ -199,8 +205,16 @@ test('real nested choices and command-only responses preserve their paths', asyn
 
 test('event popups use original images and downloaded event movies reopen offline', async ({
   page,
-}) => {
+}, info) => {
+  test.setTimeout(360000);
   const first = definitions[0];
+  const entry = catalog.find((entry) => entry.group === first.group)!;
+  const recipe = JSON.parse(
+    gunzipSync(
+      readFileSync(`src/downloads/ba/recipes/${entry.recipe}`),
+    ).toString(),
+  );
+  const folder = baOriginalFolder(info, recipe.inputs);
   const popup = passage(
     first.group,
     (n, row) => n.kind === 'text' && !!row?.PopupFileName,
@@ -208,10 +222,11 @@ test('event popups use original images and downloaded event movies reopen offlin
   await page.goto(link(first.group, popup));
   await ready(page);
   await expect(page.locator('.ba-popup img')).toBeVisible();
-  await page.goto(`/games/ba/events/${first.collectionId}`);
+  await page.goto(`/downloads/${recipe.episode.id}`);
   await page
-    .getByRole('button', { name: `Download ${first.title}`, exact: true })
-    .click();
+    .getByLabel('Choose original folder', { exact: true })
+    .setInputFiles(folder);
+  await page.getByRole('button', { name: 'Import story', exact: true }).click();
   await expect
     .poll(
       () =>
@@ -220,7 +235,7 @@ test('event popups use original images and downloaded event movies reopen offlin
             !!JSON.parse(localStorage.getItem('onlystory.v1')!).installed[id],
           `ba-jp-${first.group}`,
         ),
-      { timeout: 90000 },
+      { timeout: 240000 },
     )
     .toBe(true);
   await page.route('**/private/ba-jp/**', (route) => route.abort());

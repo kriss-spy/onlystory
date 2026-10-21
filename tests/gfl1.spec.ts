@@ -85,6 +85,9 @@ test('downloaded sound effect decodes without a media server and respects the so
     },
   );
   await page.goto('/manage');
+  await page
+    .getByRole('combobox', { name: 'Download game' })
+    .selectOption('gfl1');
   await page.getByRole('searchbox', { name: 'Search downloads' }).fill('1-5');
   const row = page
     .locator('.download-item')

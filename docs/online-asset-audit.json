@@ -1,0 +1,117 @@
+{
+  "checkedAt": "2026-10-19T06:50:49.485Z",
+  "scope": "Existing recorded game-content sources. Direct browser downloads without an Onlystory backend. No claim of exhaustive full-body downloads.",
+  "pjsk": {
+    "checkedAt": "2026-10-19T06:49:57.562Z",
+    "scenarioPackages": 1627,
+    "distinctTargets": 151576,
+    "listedObjects": 151563,
+    "matchingListedSizes": 151563,
+    "matchingDeferredMd5s": 126113,
+    "metadataDownloads": 12,
+    "metadataSizeMismatches": [],
+    "listingRequests": 692,
+    "successfulSampleGets": 310,
+    "listingErrors": [],
+    "unresolvedMissing": [],
+    "modelIndexException": {
+      "id": "pjsk-model-index-full",
+      "url": "https://storage.sekai.best/sekai-live2d-assets/live2d/model_list.json",
+      "full": true,
+      "status": 200,
+      "bytes": 161478,
+      "sha256": "089a100c51d65bd26b5d979c362984f3c4c44e589b98d086336b0a580d12554a"
+    },
+    "completeOfflineChapter": "mmj_01_01 only; see existing static-host acquisition browser test",
+    "method": "Browser-readable bucket listings, expected sizes and deferred MD5 ETags; representative object bodies; metadata and model-index full bodies. Not all media bodies downloaded."
+  },
+  "ba": {
+    "checkedAt": "2026-10-19T06:43:21.438Z",
+    "chapterManifests": 1659,
+    "uniqueExportedFileUrls": 5670,
+    "distinctOfficialUrls": 2835,
+    "statusCounts": {
+      "206": 2835
+    },
+    "sourceFamilies": {
+      "Windows_PatchPack": 14,
+      "MediaResources": 2796,
+      "Android_PatchPack": 24,
+      "TableBundles": 1
+    },
+    "knownExpectedSizes": 2821,
+    "sizeMismatches": [],
+    "withoutAllowOrigin": 2835,
+    "browserProbes": [
+      {
+        "id": "ba-Windows_PatchPack",
+        "url": "https://prod-clientpatch.bluearchiveyostar.com/r96_nvji95owgkbcxlmkb8mi/Windows_PatchPack/FullPatch_058.zip",
+        "error": "TypeError: Failed to fetch"
+      },
+      {
+        "id": "ba-MediaResources",
+        "url": "https://prod-clientpatch.bluearchiveyostar.com/r96_nvji95owgkbcxlmkb8mi/MediaResources/GameData/UIs/03_Scenario/01_Background/BG_HyakkiyakoObservatory.jpg",
+        "error": "TypeError: Failed to fetch"
+      },
+      {
+        "id": "ba-Android_PatchPack",
+        "url": "https://prod-clientpatch.bluearchiveyostar.com/r96_nvji95owgkbcxlmkb8mi/Android_PatchPack/FullPatch_092.zip",
+        "error": "TypeError: Failed to fetch"
+      },
+      {
+        "id": "ba-TableBundles",
+        "url": "https://prod-clientpatch.bluearchiveyostar.com/r96_nvji95owgkbcxlmkb8mi/TableBundles/ExcelDB.db",
+        "error": "TypeError: Failed to fetch"
+      }
+    ],
+    "method": "Every recorded official source URL; HTTP GET Range bytes=0-0 with Origin, cancel body; status, total size and CORS headers. No extraction/content checksum verification."
+  },
+  "gfl": {
+    "report": "docs/gfl-online-asset-audit.md",
+    "evidence": "docs/gfl-online-asset-audit.json"
+  },
+  "inventoryFingerprints": [
+    {
+      "path": ".cache/pjsk/library/private/pjsk/sources.json",
+      "bytes": 18873560,
+      "sha256": "f2757c37e333ec84c53a689db5182a9d6a081dbf9801ec109949cfa362c40292"
+    },
+    {
+      "path": ".cache/pjsk/library/private/pjsk/deferred.json",
+      "bytes": 49173989,
+      "sha256": "a126a8af08eedeb6cbe2d701e387e129885b050c9f1e49f7e4d379b1a1e374e3"
+    },
+    {
+      "path": ".cache/ba-jp-catalog.json",
+      "bytes": 7540133,
+      "sha256": "9a30807b94e5a1729aac3f037d2404bbe2be783126b1ee718581e87f14d3adbe"
+    }
+  ],
+  "evidenceFingerprints": [
+    {
+      "path": ".cache/online-asset-audit/pjsk-final.json",
+      "bytes": 56527209,
+      "sha256": "6daf10268d5d74db70ce1c6d8d71839620f53bcb5f3de7bee4edbef57d9f6ff6"
+    },
+    {
+      "path": ".cache/online-asset-audit/ba-results.json",
+      "bytes": 941616,
+      "sha256": "754a9e34b78a14b6a2fd195cc141626dcf261c7274846fc13a732c0e2e552e9a"
+    },
+    {
+      "path": ".cache/online-asset-audit/supplement-results.json",
+      "bytes": 1279,
+      "sha256": "9f1005bca3004c8af0b385322227ad9f4c6c9bfd417a473b6dfdab72a89bf158"
+    },
+    {
+      "path": ".cache/browser-source-audit/latest.json",
+      "bytes": 10670,
+      "sha256": "59f2380a60f09161d6f6a30630ff387068b92dc53f3f3f4113c5ec925dbcf283"
+    },
+    {
+      "path": "docs/gfl-online-asset-audit.json",
+      "bytes": 38189,
+      "sha256": "e3aacd69b3ae0fdc64d407434273042264fea96ebd66448484a1c7b686e57f1a"
+    }
+  ]
+}

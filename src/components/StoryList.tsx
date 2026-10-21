@@ -1,13 +1,18 @@
 import { useLayoutEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useVirtualizer } from '@tanstack/react-virtual';
-import { Check, Download } from 'lucide-react';
+import { Check } from 'lucide-react';
 import { episodeById } from '../content';
-import { passageUrl, startSave } from '../model';
+import { passageUrl, startSave, gamePreferences } from '../model';
+import { episodeTitle } from '../localized-titles';
 import type { StoryRow } from '../catalog';
 import { isInstalled, useStore } from '../store';
 import { useNarrow } from '../hooks';
-import { IconButton } from './Primitives';
+import {
+  DownloadCheckbox,
+  DownloadSupportNotice,
+  useDownloadSelection,
+} from './DownloadSelection';
 
 const scrollPositions = new Map<string, number>();
 export function StoryList({
@@ -21,7 +26,8 @@ export function StoryList({
   catalogFrom?: string;
   independent?: boolean;
 }) {
-  const { data, download, transfers } = useStore();
+  const { data, transfers } = useStore();
+  const selection = useDownloadSelection();
   const scroll = useRef<HTMLDivElement>(null);
   const narrow = useNarrow();
   const layout = data.preferences.catalogLayout ?? 'list';
@@ -49,6 +55,10 @@ export function StoryList({
   );
   const render = (row: StoryRow, index: number, start?: number) => {
     const { episode, branch } = row;
+    const title = episodeTitle(
+      episode,
+      gamePreferences(data.preferences, episode.game).catalogLocale,
+    );
     // Stress archives use existing, explicitly fictional playback fixtures.
     const actual =
       episodeById(episode.id) ??
@@ -82,9 +92,23 @@ export function StoryList({
         ) : null}
         {branch ? <span aria-hidden="true" className="branch-spine" /> : null}
         <span aria-hidden="true" className="story-point" />
-        <article className="story-card">
+        <article
+          className={`story-card ${selection.selected.has(actual.id) ? 'download-selected' : ''}`}
+        >
+          <DownloadCheckbox episodes={[actual]} label={`Select ${title}`} />
           <Link
             className="story-card-link"
+            aria-disabled={
+              selection.selecting && !selection.eligible(actual)
+                ? true
+                : undefined
+            }
+            onClick={(event) => {
+              if (selection.selecting) {
+                event.preventDefault();
+                selection.toggle([actual]);
+              }
+            }}
             to={href}
             state={{ from, catalogFrom }}
           >
@@ -93,9 +117,18 @@ export function StoryList({
                 ? `Side story${branch.title ? ` · ${branch.title}` : ''}`
                 : `${episode.game === 'ba' ? (episode.category === 'Event' ? 'Event story' : episode.category) : 'Main story'} · ${String(episode.order).padStart(2, '0')}`}
             </small>
-            <h2>{episode.title}</h2>
+            <h2>{title}</h2>
             <p>{episode.description}</p>
             <span className="episode-meta">
+              <DownloadSupportNotice episodes={[actual]} />
+              {transfers[actual.id]?.status === 'failed' ? (
+                <span
+                  className="download-error"
+                  title={transfers[actual.id].error}
+                >
+                  Download failed · select to retry
+                </span>
+              ) : null}
               {save?.completed ? (
                 <>
                   <Check size={12} /> Read
@@ -110,15 +143,6 @@ export function StoryList({
               <span>{episode.minutes} min</span>
             </span>
           </Link>
-          {!installed ? (
-            <IconButton
-              label={`Download ${episode.title}`}
-              disabled={transfers[actual.id]?.status === 'downloading'}
-              onClick={() => download(actual)}
-            >
-              <Download size={18} />
-            </IconButton>
-          ) : null}
         </article>
       </li>
     );

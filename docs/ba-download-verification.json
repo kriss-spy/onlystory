@@ -1,0 +1,10290 @@
+{
+  "verifiedAt": "2026-10-19T14:53:14.719Z",
+  "scope": "Client-side BA download conversion. These checks do not claim every story was played end to end in a browser.",
+  "database": {
+    "sha256": "0ceb1d1a0f118febb172c1a6e45d4cc7711b1fc4bb8718df035cf99a7825f159",
+    "nonPrologueGroupsCompared": 1658,
+    "nonPrologueRowsCompared": 245150,
+    "characterRowsCompared": 2752,
+    "method": "Authenticated SQLCipher originals decoded by new JavaScript module; all non-prologue scenario rows and all character rows deep-compared with maintained official exports. Main VoiceJp names restored from chapter recipe mapping."
+  },
+  "compilation": {
+    "verifiedAt": "2026-10-19T14:33:38.632Z",
+    "groups": 1659,
+    "sourceRows": 245379,
+    "nodes": 139852,
+    "steps": 139852,
+    "elapsedMs": 16563,
+    "source": "Pinned official encrypted DB decoded with JS; prologue retained pinned community original",
+    "assertions": [
+      "episode passage counts",
+      "exact once source-row accounting",
+      "newly compiled scene steps equal installed scene steps"
+    ],
+    "chapters": [
+      {
+        "group": 11000,
+        "rows": 229,
+        "nodes": 144,
+        "steps": 144
+      },
+      {
+        "group": 10000005,
+        "rows": 179,
+        "nodes": 121,
+        "steps": 121
+      },
+      {
+        "group": 10000010,
+        "rows": 92,
+        "nodes": 71,
+        "steps": 71
+      },
+      {
+        "group": 10000025,
+        "rows": 122,
+        "nodes": 105,
+        "steps": 105
+      },
+      {
+        "group": 10000030,
+        "rows": 121,
+        "nodes": 109,
+        "steps": 109
+      },
+      {
+        "group": 10000040,
+        "rows": 71,
+        "nodes": 56,
+        "steps": 56
+      },
+      {
+        "group": 10000045,
+        "rows": 89,
+        "nodes": 70,
+        "steps": 70
+      },
+      {
+        "group": 10000050,
+        "rows": 114,
+        "nodes": 99,
+        "steps": 99
+      },
+      {
+        "group": 10000065,
+        "rows": 148,
+        "nodes": 107,
+        "steps": 107
+      },
+      {
+        "group": 10000070,
+        "rows": 159,
+        "nodes": 116,
+        "steps": 116
+      },
+      {
+        "group": 10000080,
+        "rows": 92,
+        "nodes": 61,
+        "steps": 61
+      },
+      {
+        "group": 10000085,
+        "rows": 55,
+        "nodes": 37,
+        "steps": 37
+      },
+      {
+        "group": 10000090,
+        "rows": 10,
+        "nodes": 9,
+        "steps": 9
+      },
+      {
+        "group": 10000095,
+        "rows": 80,
+        "nodes": 49,
+        "steps": 49
+      },
+      {
+        "group": 10001005,
+        "rows": 98,
+        "nodes": 59,
+        "steps": 59
+      },
+      {
+        "group": 10001010,
+        "rows": 158,
+        "nodes": 111,
+        "steps": 111
+      },
+      {
+        "group": 10001025,
+        "rows": 45,
+        "nodes": 36,
+        "steps": 36
+      },
+      {
+        "group": 10001030,
+        "rows": 197,
+        "nodes": 136,
+        "steps": 136
+      },
+      {
+        "group": 10001045,
+        "rows": 49,
+        "nodes": 41,
+        "steps": 41
+      },
+      {
+        "group": 10001050,
+        "rows": 134,
+        "nodes": 110,
+        "steps": 110
+      },
+      {
+        "group": 10001065,
+        "rows": 46,
+        "nodes": 36,
+        "steps": 36
+      },
+      {
+        "group": 10001070,
+        "rows": 119,
+        "nodes": 86,
+        "steps": 86
+      },
+      {
+        "group": 10001085,
+        "rows": 45,
+        "nodes": 39,
+        "steps": 39
+      },
+      {
+        "group": 10001090,
+        "rows": 40,
+        "nodes": 32,
+        "steps": 32
+      },
+      {
+        "group": 10001105,
+        "rows": 115,
+        "nodes": 95,
+        "steps": 95
+      },
+      {
+        "group": 10002005,
+        "rows": 296,
+        "nodes": 192,
+        "steps": 192
+      },
+      {
+        "group": 10002010,
+        "rows": 87,
+        "nodes": 44,
+        "steps": 44
+      },
+      {
+        "group": 10002025,
+        "rows": 26,
+        "nodes": 15,
+        "steps": 15
+      },
+      {
+        "group": 10002030,
+        "rows": 74,
+        "nodes": 40,
+        "steps": 40
+      },
+      {
+        "group": 10002045,
+        "rows": 38,
+        "nodes": 27,
+        "steps": 27
+      },
+      {
+        "group": 10002050,
+        "rows": 92,
+        "nodes": 58,
+        "steps": 58
+      },
+      {
+        "group": 10002065,
+        "rows": 9,
+        "nodes": 8,
+        "steps": 8
+      },
+      {
+        "group": 10002070,
+        "rows": 124,
+        "nodes": 83,
+        "steps": 83
+      },
+      {
+        "group": 10002085,
+        "rows": 46,
+        "nodes": 27,
+        "steps": 27
+      },
+      {
+        "group": 10002090,
+        "rows": 102,
+        "nodes": 57,
+        "steps": 57
+      },
+      {
+        "group": 10002105,
+        "rows": 20,
+        "nodes": 13,
+        "steps": 13
+      },
+      {
+        "group": 10002110,
+        "rows": 38,
+        "nodes": 24,
+        "steps": 24
+      },
+      {
+        "group": 10002120,
+        "rows": 149,
+        "nodes": 101,
+        "steps": 101
+      },
+      {
+        "group": 10002135,
+        "rows": 126,
+        "nodes": 79,
+        "steps": 79
+      },
+      {
+        "group": 10002140,
+        "rows": 45,
+        "nodes": 31,
+        "steps": 31
+      },
+      {
+        "group": 10002150,
+        "rows": 43,
+        "nodes": 31,
+        "steps": 31
+      },
+      {
+        "group": 10002160,
+        "rows": 38,
+        "nodes": 25,
+        "steps": 25
+      },
+      {
+        "group": 10002170,
+        "rows": 63,
+        "nodes": 47,
+        "steps": 47
+      },
+      {
+        "group": 10002180,
+        "rows": 70,
+        "nodes": 46,
+        "steps": 46
+      },
+      {
+        "group": 10002190,
+        "rows": 75,
+        "nodes": 31,
+        "steps": 31
+      },
+      {
+        "group": 10002200,
+        "rows": 53,
+        "nodes": 38,
+        "steps": 38
+      },
+      {
+        "group": 10003005,
+        "rows": 219,
+        "nodes": 177,
+        "steps": 177
+      },
+      {
+        "group": 10003010,
+        "rows": 192,
+        "nodes": 126,
+        "steps": 126
+      },
+      {
+        "group": 10003020,
+        "rows": 70,
+        "nodes": 52,
+        "steps": 52
+      },
+      {
+        "group": 10003030,
+        "rows": 158,
+        "nodes": 121,
+        "steps": 121
+      },
+      {
+        "group": 10003045,
+        "rows": 120,
+        "nodes": 81,
+        "steps": 81
+      },
+      {
+        "group": 10003050,
+        "rows": 54,
+        "nodes": 31,
+        "steps": 31
+      },
+      {
+        "group": 10003055,
+        "rows": 25,
+        "nodes": 17,
+        "steps": 17
+      },
+      {
+        "group": 10003065,
+        "rows": 118,
+        "nodes": 86,
+        "steps": 86
+      },
+      {
+        "group": 10003070,
+        "rows": 184,
+        "nodes": 143,
+        "steps": 143
+      },
+      {
+        "group": 10003080,
+        "rows": 11,
+        "nodes": 6,
+        "steps": 6
+      },
+      {
+        "group": 10003095,
+        "rows": 38,
+        "nodes": 25,
+        "steps": 25
+      },
+      {
+        "group": 10003105,
+        "rows": 62,
+        "nodes": 57,
+        "steps": 57
+      },
+      {
+        "group": 10003110,
+        "rows": 26,
+        "nodes": 22,
+        "steps": 22
+      },
+      {
+        "group": 10004005,
+        "rows": 48,
+        "nodes": 34,
+        "steps": 34
+      },
+      {
+        "group": 10004010,
+        "rows": 190,
+        "nodes": 126,
+        "steps": 126
+      },
+      {
+        "group": 10004020,
+        "rows": 57,
+        "nodes": 46,
+        "steps": 46
+      },
+      {
+        "group": 10004030,
+        "rows": 106,
+        "nodes": 77,
+        "steps": 77
+      },
+      {
+        "group": 10004040,
+        "rows": 124,
+        "nodes": 82,
+        "steps": 82
+      },
+      {
+        "group": 10004050,
+        "rows": 72,
+        "nodes": 54,
+        "steps": 54
+      },
+      {
+        "group": 10004060,
+        "rows": 208,
+        "nodes": 113,
+        "steps": 113
+      },
+      {
+        "group": 10004075,
+        "rows": 154,
+        "nodes": 102,
+        "steps": 102
+      },
+      {
+        "group": 10004085,
+        "rows": 56,
+        "nodes": 49,
+        "steps": 49
+      },
+      {
+        "group": 11001,
+        "rows": 8,
+        "nodes": 6,
+        "steps": 6
+      },
+      {
+        "group": 11002,
+        "rows": 14,
+        "nodes": 8,
+        "steps": 8
+      },
+      {
+        "group": 11005,
+        "rows": 58,
+        "nodes": 35,
+        "steps": 35
+      },
+      {
+        "group": 11008,
+        "rows": 209,
+        "nodes": 149,
+        "steps": 149
+      },
+      {
+        "group": 11010,
+        "rows": 54,
+        "nodes": 36,
+        "steps": 36
+      },
+      {
+        "group": 11020,
+        "rows": 139,
+        "nodes": 105,
+        "steps": 105
+      },
+      {
+        "group": 11025,
+        "rows": 7,
+        "nodes": 6,
+        "steps": 6
+      },
+      {
+        "group": 11030,
+        "rows": 60,
+        "nodes": 55,
+        "steps": 55
+      },
+      {
+        "group": 11035,
+        "rows": 9,
+        "nodes": 7,
+        "steps": 7
+      },
+      {
+        "group": 11040,
+        "rows": 82,
+        "nodes": 67,
+        "steps": 67
+      },
+      {
+        "group": 11050,
+        "rows": 179,
+        "nodes": 143,
+        "steps": 143
+      },
+      {
+        "group": 11060,
+        "rows": 117,
+        "nodes": 104,
+        "steps": 104
+      },
+      {
+        "group": 11065,
+        "rows": 4,
+        "nodes": 2,
+        "steps": 2
+      },
+      {
+        "group": 11070,
+        "rows": 97,
+        "nodes": 75,
+        "steps": 75
+      },
+      {
+        "group": 11080,
+        "rows": 274,
+        "nodes": 231,
+        "steps": 231
+      },
+      {
+        "group": 11090,
+        "rows": 76,
+        "nodes": 59,
+        "steps": 59
+      },
+      {
+        "group": 11095,
+        "rows": 28,
+        "nodes": 21,
+        "steps": 21
+      },
+      {
+        "group": 11100,
+        "rows": 103,
+        "nodes": 84,
+        "steps": 84
+      },
+      {
+        "group": 11110,
+        "rows": 96,
+        "nodes": 76,
+        "steps": 76
+      },
+      {
+        "group": 11115,
+        "rows": 15,
+        "nodes": 12,
+        "steps": 12
+      },
+      {
+        "group": 11120,
+        "rows": 99,
+        "nodes": 85,
+        "steps": 85
+      },
+      {
+        "group": 11130,
+        "rows": 175,
+        "nodes": 150,
+        "steps": 150
+      },
+      {
+        "group": 11140,
+        "rows": 129,
+        "nodes": 101,
+        "steps": 101
+      },
+      {
+        "group": 11145,
+        "rows": 4,
+        "nodes": 2,
+        "steps": 2
+      },
+      {
+        "group": 11150,
+        "rows": 166,
+        "nodes": 135,
+        "steps": 135
+      },
+      {
+        "group": 11160,
+        "rows": 69,
+        "nodes": 60,
+        "steps": 60
+      },
+      {
+        "group": 11170,
+        "rows": 127,
+        "nodes": 102,
+        "steps": 102
+      },
+      {
+        "group": 11180,
+        "rows": 65,
+        "nodes": 54,
+        "steps": 54
+      },
+      {
+        "group": 11190,
+        "rows": 49,
+        "nodes": 35,
+        "steps": 35
+      },
+      {
+        "group": 11195,
+        "rows": 25,
+        "nodes": 18,
+        "steps": 18
+      },
+      {
+        "group": 11200,
+        "rows": 70,
+        "nodes": 62,
+        "steps": 62
+      },
+      {
+        "group": 11205,
+        "rows": 40,
+        "nodes": 28,
+        "steps": 28
+      },
+      {
+        "group": 12010,
+        "rows": 254,
+        "nodes": 182,
+        "steps": 182
+      },
+      {
+        "group": 12015,
+        "rows": 69,
+        "nodes": 52,
+        "steps": 52
+      },
+      {
+        "group": 12020,
+        "rows": 184,
+        "nodes": 140,
+        "steps": 140
+      },
+      {
+        "group": 12030,
+        "rows": 110,
+        "nodes": 87,
+        "steps": 87
+      },
+      {
+        "group": 12040,
+        "rows": 153,
+        "nodes": 125,
+        "steps": 125
+      },
+      {
+        "group": 12050,
+        "rows": 190,
+        "nodes": 166,
+        "steps": 166
+      },
+      {
+        "group": 12060,
+        "rows": 37,
+        "nodes": 31,
+        "steps": 31
+      },
+      {
+        "group": 12065,
+        "rows": 4,
+        "nodes": 2,
+        "steps": 2
+      },
+      {
+        "group": 12070,
+        "rows": 19,
+        "nodes": 18,
+        "steps": 18
+      },
+      {
+        "group": 12075,
+        "rows": 4,
+        "nodes": 2,
+        "steps": 2
+      },
+      {
+        "group": 12080,
+        "rows": 27,
+        "nodes": 21,
+        "steps": 21
+      },
+      {
+        "group": 12085,
+        "rows": 4,
+        "nodes": 2,
+        "steps": 2
+      },
+      {
+        "group": 12090,
+        "rows": 38,
+        "nodes": 33,
+        "steps": 33
+      },
+      {
+        "group": 12095,
+        "rows": 4,
+        "nodes": 2,
+        "steps": 2
+      },
+      {
+        "group": 12100,
+        "rows": 63,
+        "nodes": 33,
+        "steps": 33
+      },
+      {
+        "group": 12110,
+        "rows": 124,
+        "nodes": 100,
+        "steps": 100
+      },
+      {
+        "group": 12120,
+        "rows": 184,
+        "nodes": 146,
+        "steps": 146
+      },
+      {
+        "group": 12130,
+        "rows": 109,
+        "nodes": 75,
+        "steps": 75
+      },
+      {
+        "group": 12135,
+        "rows": 4,
+        "nodes": 2,
+        "steps": 2
+      },
+      {
+        "group": 12140,
+        "rows": 190,
+        "nodes": 137,
+        "steps": 137
+      },
+      {
+        "group": 12145,
+        "rows": 4,
+        "nodes": 2,
+        "steps": 2
+      },
+      {
+        "group": 12150,
+        "rows": 38,
+        "nodes": 17,
+        "steps": 17
+      },
+      {
+        "group": 12155,
+        "rows": 43,
+        "nodes": 25,
+        "steps": 25
+      },
+      {
+        "group": 12160,
+        "rows": 183,
+        "nodes": 143,
+        "steps": 143
+      },
+      {
+        "group": 12170,
+        "rows": 108,
+        "nodes": 86,
+        "steps": 86
+      },
+      {
+        "group": 12175,
+        "rows": 23,
+        "nodes": 18,
+        "steps": 18
+      },
+      {
+        "group": 12180,
+        "rows": 42,
+        "nodes": 29,
+        "steps": 29
+      },
+      {
+        "group": 12185,
+        "rows": 92,
+        "nodes": 60,
+        "steps": 60
+      },
+      {
+        "group": 12190,
+        "rows": 28,
+        "nodes": 19,
+        "steps": 19
+      },
+      {
+        "group": 12195,
+        "rows": 150,
+        "nodes": 79,
+        "steps": 79
+      },
+      {
+        "group": 12200,
+        "rows": 67,
+        "nodes": 53,
+        "steps": 53
+      },
+      {
+        "group": 13010,
+        "rows": 417,
+        "nodes": 223,
+        "steps": 223
+      },
+      {
+        "group": 13020,
+        "rows": 280,
+        "nodes": 155,
+        "steps": 155
+      },
+      {
+        "group": 13030,
+        "rows": 116,
+        "nodes": 79,
+        "steps": 79
+      },
+      {
+        "group": 13035,
+        "rows": 97,
+        "nodes": 50,
+        "steps": 50
+      },
+      {
+        "group": 13040,
+        "rows": 390,
+        "nodes": 218,
+        "steps": 218
+      },
+      {
+        "group": 13050,
+        "rows": 250,
+        "nodes": 147,
+        "steps": 147
+      },
+      {
+        "group": 13060,
+        "rows": 283,
+        "nodes": 166,
+        "steps": 166
+      },
+      {
+        "group": 13070,
+        "rows": 312,
+        "nodes": 179,
+        "steps": 179
+      },
+      {
+        "group": 13080,
+        "rows": 455,
+        "nodes": 142,
+        "steps": 142
+      },
+      {
+        "group": 13090,
+        "rows": 514,
+        "nodes": 201,
+        "steps": 201
+      },
+      {
+        "group": 13100,
+        "rows": 215,
+        "nodes": 89,
+        "steps": 89
+      },
+      {
+        "group": 13110,
+        "rows": 459,
+        "nodes": 225,
+        "steps": 225
+      },
+      {
+        "group": 13120,
+        "rows": 541,
+        "nodes": 236,
+        "steps": 236
+      },
+      {
+        "group": 13130,
+        "rows": 429,
+        "nodes": 182,
+        "steps": 182
+      },
+      {
+        "group": 13140,
+        "rows": 140,
+        "nodes": 57,
+        "steps": 57
+      },
+      {
+        "group": 13150,
+        "rows": 163,
+        "nodes": 71,
+        "steps": 71
+      },
+      {
+        "group": 13160,
+        "rows": 456,
+        "nodes": 224,
+        "steps": 224
+      },
+      {
+        "group": 13170,
+        "rows": 370,
+        "nodes": 140,
+        "steps": 140
+      },
+      {
+        "group": 13175,
+        "rows": 13,
+        "nodes": 8,
+        "steps": 8
+      },
+      {
+        "group": 13180,
+        "rows": 382,
+        "nodes": 162,
+        "steps": 162
+      },
+      {
+        "group": 13185,
+        "rows": 73,
+        "nodes": 33,
+        "steps": 33
+      },
+      {
+        "group": 13190,
+        "rows": 351,
+        "nodes": 145,
+        "steps": 145
+      },
+      {
+        "group": 13195,
+        "rows": 18,
+        "nodes": 8,
+        "steps": 8
+      },
+      {
+        "group": 13200,
+        "rows": 245,
+        "nodes": 107,
+        "steps": 107
+      },
+      {
+        "group": 13210,
+        "rows": 420,
+        "nodes": 223,
+        "steps": 223
+      },
+      {
+        "group": 13215,
+        "rows": 21,
+        "nodes": 10,
+        "steps": 10
+      },
+      {
+        "group": 13220,
+        "rows": 47,
+        "nodes": 21,
+        "steps": 21
+      },
+      {
+        "group": 13225,
+        "rows": 137,
+        "nodes": 51,
+        "steps": 51
+      },
+      {
+        "group": 13230,
+        "rows": 117,
+        "nodes": 63,
+        "steps": 63
+      },
+      {
+        "group": 13235,
+        "rows": 4,
+        "nodes": 2,
+        "steps": 2
+      },
+      {
+        "group": 13240,
+        "rows": 156,
+        "nodes": 70,
+        "steps": 70
+      },
+      {
+        "group": 13245,
+        "rows": 4,
+        "nodes": 2,
+        "steps": 2
+      },
+      {
+        "group": 13250,
+        "rows": 110,
+        "nodes": 47,
+        "steps": 47
+      },
+      {
+        "group": 13255,
+        "rows": 4,
+        "nodes": 2,
+        "steps": 2
+      },
+      {
+        "group": 13260,
+        "rows": 42,
+        "nodes": 20,
+        "steps": 20
+      },
+      {
+        "group": 13265,
+        "rows": 4,
+        "nodes": 2,
+        "steps": 2
+      },
+      {
+        "group": 13270,
+        "rows": 444,
+        "nodes": 204,
+        "steps": 204
+      },
+      {
+        "group": 13280,
+        "rows": 96,
+        "nodes": 26,
+        "steps": 26
+      },
+      {
+        "group": 13290,
+        "rows": 122,
+        "nodes": 29,
+        "steps": 29
+      },
+      {
+        "group": 13300,
+        "rows": 163,
+        "nodes": 68,
+        "steps": 68
+      },
+      {
+        "group": 13310,
+        "rows": 158,
+        "nodes": 98,
+        "steps": 98
+      },
+      {
+        "group": 13320,
+        "rows": 232,
+        "nodes": 96,
+        "steps": 96
+      },
+      {
+        "group": 13330,
+        "rows": 281,
+        "nodes": 110,
+        "steps": 110
+      },
+      {
+        "group": 13340,
+        "rows": 160,
+        "nodes": 79,
+        "steps": 79
+      },
+      {
+        "group": 13350,
+        "rows": 71,
+        "nodes": 29,
+        "steps": 29
+      },
+      {
+        "group": 13355,
+        "rows": 35,
+        "nodes": 21,
+        "steps": 21
+      },
+      {
+        "group": 13360,
+        "rows": 165,
+        "nodes": 91,
+        "steps": 91
+      },
+      {
+        "group": 13365,
+        "rows": 62,
+        "nodes": 24,
+        "steps": 24
+      },
+      {
+        "group": 13370,
+        "rows": 222,
+        "nodes": 132,
+        "steps": 132
+      },
+      {
+        "group": 13380,
+        "rows": 95,
+        "nodes": 56,
+        "steps": 56
+      },
+      {
+        "group": 13390,
+        "rows": 148,
+        "nodes": 94,
+        "steps": 94
+      },
+      {
+        "group": 13395,
+        "rows": 4,
+        "nodes": 2,
+        "steps": 2
+      },
+      {
+        "group": 13400,
+        "rows": 113,
+        "nodes": 52,
+        "steps": 52
+      },
+      {
+        "group": 13410,
+        "rows": 442,
+        "nodes": 240,
+        "steps": 240
+      },
+      {
+        "group": 13420,
+        "rows": 173,
+        "nodes": 90,
+        "steps": 90
+      },
+      {
+        "group": 13430,
+        "rows": 296,
+        "nodes": 135,
+        "steps": 135
+      },
+      {
+        "group": 21010,
+        "rows": 99,
+        "nodes": 81,
+        "steps": 81
+      },
+      {
+        "group": 21020,
+        "rows": 144,
+        "nodes": 121,
+        "steps": 121
+      },
+      {
+        "group": 21030,
+        "rows": 89,
+        "nodes": 64,
+        "steps": 64
+      },
+      {
+        "group": 21035,
+        "rows": 4,
+        "nodes": 2,
+        "steps": 2
+      },
+      {
+        "group": 21040,
+        "rows": 201,
+        "nodes": 144,
+        "steps": 144
+      },
+      {
+        "group": 21050,
+        "rows": 235,
+        "nodes": 168,
+        "steps": 168
+      },
+      {
+        "group": 21060,
+        "rows": 83,
+        "nodes": 66,
+        "steps": 66
+      },
+      {
+        "group": 21070,
+        "rows": 195,
+        "nodes": 161,
+        "steps": 161
+      },
+      {
+        "group": 21075,
+        "rows": 33,
+        "nodes": 15,
+        "steps": 15
+      },
+      {
+        "group": 21080,
+        "rows": 70,
+        "nodes": 57,
+        "steps": 57
+      },
+      {
+        "group": 21090,
+        "rows": 139,
+        "nodes": 109,
+        "steps": 109
+      },
+      {
+        "group": 21100,
+        "rows": 50,
+        "nodes": 47,
+        "steps": 47
+      },
+      {
+        "group": 21105,
+        "rows": 4,
+        "nodes": 2,
+        "steps": 2
+      },
+      {
+        "group": 21110,
+        "rows": 152,
+        "nodes": 118,
+        "steps": 118
+      },
+      {
+        "group": 21115,
+        "rows": 4,
+        "nodes": 2,
+        "steps": 2
+      },
+      {
+        "group": 21120,
+        "rows": 232,
+        "nodes": 183,
+        "steps": 183
+      },
+      {
+        "group": 21130,
+        "rows": 223,
+        "nodes": 179,
+        "steps": 179
+      },
+      {
+        "group": 21135,
+        "rows": 24,
+        "nodes": 13,
+        "steps": 13
+      },
+      {
+        "group": 21140,
+        "rows": 137,
+        "nodes": 102,
+        "steps": 102
+      },
+      {
+        "group": 21150,
+        "rows": 226,
+        "nodes": 183,
+        "steps": 183
+      },
+      {
+        "group": 21155,
+        "rows": 4,
+        "nodes": 2,
+        "steps": 2
+      },
+      {
+        "group": 21160,
+        "rows": 118,
+        "nodes": 95,
+        "steps": 95
+      },
+      {
+        "group": 21165,
+        "rows": 4,
+        "nodes": 2,
+        "steps": 2
+      },
+      {
+        "group": 21170,
+        "rows": 135,
+        "nodes": 105,
+        "steps": 105
+      },
+      {
+        "group": 21180,
+        "rows": 198,
+        "nodes": 142,
+        "steps": 142
+      },
+      {
+        "group": 21190,
+        "rows": 129,
+        "nodes": 112,
+        "steps": 112
+      },
+      {
+        "group": 21195,
+        "rows": 196,
+        "nodes": 151,
+        "steps": 151
+      },
+      {
+        "group": 21200,
+        "rows": 261,
+        "nodes": 204,
+        "steps": 204
+      },
+      {
+        "group": 22010,
+        "rows": 228,
+        "nodes": 82,
+        "steps": 82
+      },
+      {
+        "group": 22020,
+        "rows": 421,
+        "nodes": 201,
+        "steps": 201
+      },
+      {
+        "group": 22030,
+        "rows": 213,
+        "nodes": 137,
+        "steps": 137
+      },
+      {
+        "group": 22040,
+        "rows": 249,
+        "nodes": 157,
+        "steps": 157
+      },
+      {
+        "group": 22050,
+        "rows": 455,
+        "nodes": 213,
+        "steps": 213
+      },
+      {
+        "group": 22060,
+        "rows": 238,
+        "nodes": 118,
+        "steps": 118
+      },
+      {
+        "group": 22065,
+        "rows": 4,
+        "nodes": 2,
+        "steps": 2
+      },
+      {
+        "group": 22070,
+        "rows": 173,
+        "nodes": 57,
+        "steps": 57
+      },
+      {
+        "group": 22080,
+        "rows": 213,
+        "nodes": 85,
+        "steps": 85
+      },
+      {
+        "group": 22090,
+        "rows": 281,
+        "nodes": 149,
+        "steps": 149
+      },
+      {
+        "group": 22095,
+        "rows": 4,
+        "nodes": 2,
+        "steps": 2
+      },
+      {
+        "group": 22100,
+        "rows": 358,
+        "nodes": 128,
+        "steps": 128
+      },
+      {
+        "group": 22110,
+        "rows": 151,
+        "nodes": 99,
+        "steps": 99
+      },
+      {
+        "group": 22120,
+        "rows": 206,
+        "nodes": 150,
+        "steps": 150
+      },
+      {
+        "group": 22130,
+        "rows": 96,
+        "nodes": 59,
+        "steps": 59
+      },
+      {
+        "group": 22135,
+        "rows": 46,
+        "nodes": 14,
+        "steps": 14
+      },
+      {
+        "group": 22140,
+        "rows": 142,
+        "nodes": 76,
+        "steps": 76
+      },
+      {
+        "group": 22150,
+        "rows": 169,
+        "nodes": 75,
+        "steps": 75
+      },
+      {
+        "group": 22155,
+        "rows": 51,
+        "nodes": 16,
+        "steps": 16
+      },
+      {
+        "group": 22160,
+        "rows": 168,
+        "nodes": 88,
+        "steps": 88
+      },
+      {
+        "group": 22170,
+        "rows": 75,
+        "nodes": 43,
+        "steps": 43
+      },
+      {
+        "group": 22175,
+        "rows": 103,
+        "nodes": 55,
+        "steps": 55
+      },
+      {
+        "group": 22180,
+        "rows": 259,
+        "nodes": 106,
+        "steps": 106
+      },
+      {
+        "group": 22185,
+        "rows": 4,
+        "nodes": 2,
+        "steps": 2
+      },
+      {
+        "group": 22190,
+        "rows": 276,
+        "nodes": 97,
+        "steps": 97
+      },
+      {
+        "group": 22200,
+        "rows": 153,
+        "nodes": 106,
+        "steps": 106
+      },
+      {
+        "group": 22210,
+        "rows": 297,
+        "nodes": 137,
+        "steps": 137
+      },
+      {
+        "group": 22220,
+        "rows": 256,
+        "nodes": 148,
+        "steps": 148
+      },
+      {
+        "group": 22230,
+        "rows": 148,
+        "nodes": 83,
+        "steps": 83
+      },
+      {
+        "group": 22240,
+        "rows": 292,
+        "nodes": 149,
+        "steps": 149
+      },
+      {
+        "group": 22250,
+        "rows": 179,
+        "nodes": 115,
+        "steps": 115
+      },
+      {
+        "group": 31010,
+        "rows": 55,
+        "nodes": 30,
+        "steps": 30
+      },
+      {
+        "group": 31020,
+        "rows": 84,
+        "nodes": 58,
+        "steps": 58
+      },
+      {
+        "group": 31030,
+        "rows": 150,
+        "nodes": 130,
+        "steps": 130
+      },
+      {
+        "group": 31040,
+        "rows": 174,
+        "nodes": 120,
+        "steps": 120
+      },
+      {
+        "group": 31050,
+        "rows": 61,
+        "nodes": 40,
+        "steps": 40
+      },
+      {
+        "group": 31060,
+        "rows": 84,
+        "nodes": 63,
+        "steps": 63
+      },
+      {
+        "group": 31070,
+        "rows": 76,
+        "nodes": 47,
+        "steps": 47
+      },
+      {
+        "group": 31080,
+        "rows": 84,
+        "nodes": 48,
+        "steps": 48
+      },
+      {
+        "group": 31090,
+        "rows": 89,
+        "nodes": 75,
+        "steps": 75
+      },
+      {
+        "group": 31100,
+        "rows": 151,
+        "nodes": 98,
+        "steps": 98
+      },
+      {
+        "group": 31110,
+        "rows": 180,
+        "nodes": 103,
+        "steps": 103
+      },
+      {
+        "group": 31120,
+        "rows": 165,
+        "nodes": 118,
+        "steps": 118
+      },
+      {
+        "group": 31130,
+        "rows": 230,
+        "nodes": 141,
+        "steps": 141
+      },
+      {
+        "group": 31140,
+        "rows": 105,
+        "nodes": 65,
+        "steps": 65
+      },
+      {
+        "group": 31150,
+        "rows": 115,
+        "nodes": 82,
+        "steps": 82
+      },
+      {
+        "group": 31160,
+        "rows": 151,
+        "nodes": 95,
+        "steps": 95
+      },
+      {
+        "group": 31170,
+        "rows": 103,
+        "nodes": 72,
+        "steps": 72
+      },
+      {
+        "group": 32010,
+        "rows": 222,
+        "nodes": 166,
+        "steps": 166
+      },
+      {
+        "group": 32020,
+        "rows": 247,
+        "nodes": 151,
+        "steps": 151
+      },
+      {
+        "group": 32030,
+        "rows": 143,
+        "nodes": 112,
+        "steps": 112
+      },
+      {
+        "group": 32040,
+        "rows": 291,
+        "nodes": 182,
+        "steps": 182
+      },
+      {
+        "group": 32050,
+        "rows": 224,
+        "nodes": 154,
+        "steps": 154
+      },
+      {
+        "group": 32060,
+        "rows": 38,
+        "nodes": 26,
+        "steps": 26
+      },
+      {
+        "group": 32065,
+        "rows": 66,
+        "nodes": 24,
+        "steps": 24
+      },
+      {
+        "group": 32070,
+        "rows": 214,
+        "nodes": 141,
+        "steps": 141
+      },
+      {
+        "group": 32080,
+        "rows": 169,
+        "nodes": 108,
+        "steps": 108
+      },
+      {
+        "group": 32090,
+        "rows": 51,
+        "nodes": 44,
+        "steps": 44
+      },
+      {
+        "group": 32100,
+        "rows": 117,
+        "nodes": 89,
+        "steps": 89
+      },
+      {
+        "group": 32105,
+        "rows": 17,
+        "nodes": 7,
+        "steps": 7
+      },
+      {
+        "group": 32110,
+        "rows": 246,
+        "nodes": 144,
+        "steps": 144
+      },
+      {
+        "group": 32120,
+        "rows": 98,
+        "nodes": 61,
+        "steps": 61
+      },
+      {
+        "group": 32130,
+        "rows": 189,
+        "nodes": 85,
+        "steps": 85
+      },
+      {
+        "group": 32140,
+        "rows": 286,
+        "nodes": 207,
+        "steps": 207
+      },
+      {
+        "group": 32150,
+        "rows": 126,
+        "nodes": 81,
+        "steps": 81
+      },
+      {
+        "group": 32160,
+        "rows": 86,
+        "nodes": 45,
+        "steps": 45
+      },
+      {
+        "group": 32165,
+        "rows": 4,
+        "nodes": 2,
+        "steps": 2
+      },
+      {
+        "group": 32170,
+        "rows": 134,
+        "nodes": 90,
+        "steps": 90
+      },
+      {
+        "group": 32175,
+        "rows": 49,
+        "nodes": 26,
+        "steps": 26
+      },
+      {
+        "group": 32180,
+        "rows": 36,
+        "nodes": 23,
+        "steps": 23
+      },
+      {
+        "group": 32185,
+        "rows": 79,
+        "nodes": 57,
+        "steps": 57
+      },
+      {
+        "group": 32190,
+        "rows": 143,
+        "nodes": 92,
+        "steps": 92
+      },
+      {
+        "group": 32200,
+        "rows": 58,
+        "nodes": 35,
+        "steps": 35
+      },
+      {
+        "group": 33010,
+        "rows": 204,
+        "nodes": 151,
+        "steps": 151
+      },
+      {
+        "group": 33020,
+        "rows": 154,
+        "nodes": 105,
+        "steps": 105
+      },
+      {
+        "group": 33030,
+        "rows": 282,
+        "nodes": 213,
+        "steps": 213
+      },
+      {
+        "group": 33040,
+        "rows": 143,
+        "nodes": 97,
+        "steps": 97
+      },
+      {
+        "group": 33050,
+        "rows": 139,
+        "nodes": 92,
+        "steps": 92
+      },
+      {
+        "group": 33060,
+        "rows": 213,
+        "nodes": 129,
+        "steps": 129
+      },
+      {
+        "group": 33070,
+        "rows": 181,
+        "nodes": 113,
+        "steps": 113
+      },
+      {
+        "group": 33075,
+        "rows": 21,
+        "nodes": 11,
+        "steps": 11
+      },
+      {
+        "group": 33080,
+        "rows": 120,
+        "nodes": 54,
+        "steps": 54
+      },
+      {
+        "group": 33085,
+        "rows": 4,
+        "nodes": 2,
+        "steps": 2
+      },
+      {
+        "group": 33090,
+        "rows": 14,
+        "nodes": 6,
+        "steps": 6
+      },
+      {
+        "group": 33095,
+        "rows": 152,
+        "nodes": 78,
+        "steps": 78
+      },
+      {
+        "group": 33100,
+        "rows": 216,
+        "nodes": 120,
+        "steps": 120
+      },
+      {
+        "group": 33110,
+        "rows": 250,
+        "nodes": 138,
+        "steps": 138
+      },
+      {
+        "group": 33120,
+        "rows": 91,
+        "nodes": 40,
+        "steps": 40
+      },
+      {
+        "group": 33130,
+        "rows": 135,
+        "nodes": 77,
+        "steps": 77
+      },
+      {
+        "group": 33140,
+        "rows": 471,
+        "nodes": 167,
+        "steps": 167
+      },
+      {
+        "group": 33150,
+        "rows": 96,
+        "nodes": 76,
+        "steps": 76
+      },
+      {
+        "group": 33160,
+        "rows": 332,
+        "nodes": 204,
+        "steps": 204
+      },
+      {
+        "group": 33170,
+        "rows": 169,
+        "nodes": 118,
+        "steps": 118
+      },
+      {
+        "group": 33180,
+        "rows": 134,
+        "nodes": 96,
+        "steps": 96
+      },
+      {
+        "group": 33190,
+        "rows": 420,
+        "nodes": 248,
+        "steps": 248
+      },
+      {
+        "group": 33195,
+        "rows": 4,
+        "nodes": 2,
+        "steps": 2
+      },
+      {
+        "group": 33200,
+        "rows": 22,
+        "nodes": 18,
+        "steps": 18
+      },
+      {
+        "group": 33205,
+        "rows": 4,
+        "nodes": 2,
+        "steps": 2
+      },
+      {
+        "group": 33210,
+        "rows": 16,
+        "nodes": 13,
+        "steps": 13
+      },
+      {
+        "group": 33215,
+        "rows": 21,
+        "nodes": 16,
+        "steps": 16
+      },
+      {
+        "group": 33220,
+        "rows": 29,
+        "nodes": 19,
+        "steps": 19
+      },
+      {
+        "group": 33225,
+        "rows": 4,
+        "nodes": 2,
+        "steps": 2
+      },
+      {
+        "group": 33230,
+        "rows": 59,
+        "nodes": 33,
+        "steps": 33
+      },
+      {
+        "group": 33235,
+        "rows": 4,
+        "nodes": 2,
+        "steps": 2
+      },
+      {
+        "group": 33240,
+        "rows": 83,
+        "nodes": 58,
+        "steps": 58
+      },
+      {
+        "group": 33245,
+        "rows": 32,
+        "nodes": 18,
+        "steps": 18
+      },
+      {
+        "group": 33250,
+        "rows": 173,
+        "nodes": 90,
+        "steps": 90
+      },
+      {
+        "group": 34010,
+        "rows": 135,
+        "nodes": 70,
+        "steps": 70
+      },
+      {
+        "group": 34020,
+        "rows": 253,
+        "nodes": 192,
+        "steps": 192
+      },
+      {
+        "group": 34030,
+        "rows": 207,
+        "nodes": 163,
+        "steps": 163
+      },
+      {
+        "group": 34040,
+        "rows": 147,
+        "nodes": 100,
+        "steps": 100
+      },
+      {
+        "group": 34050,
+        "rows": 142,
+        "nodes": 105,
+        "steps": 105
+      },
+      {
+        "group": 34060,
+        "rows": 110,
+        "nodes": 66,
+        "steps": 66
+      },
+      {
+        "group": 34070,
+        "rows": 226,
+        "nodes": 145,
+        "steps": 145
+      },
+      {
+        "group": 34080,
+        "rows": 174,
+        "nodes": 119,
+        "steps": 119
+      },
+      {
+        "group": 34090,
+        "rows": 34,
+        "nodes": 26,
+        "steps": 26
+      },
+      {
+        "group": 34095,
+        "rows": 12,
+        "nodes": 8,
+        "steps": 8
+      },
+      {
+        "group": 34100,
+        "rows": 24,
+        "nodes": 17,
+        "steps": 17
+      },
+      {
+        "group": 34105,
+        "rows": 26,
+        "nodes": 9,
+        "steps": 9
+      },
+      {
+        "group": 34110,
+        "rows": 289,
+        "nodes": 119,
+        "steps": 119
+      },
+      {
+        "group": 34120,
+        "rows": 213,
+        "nodes": 103,
+        "steps": 103
+      },
+      {
+        "group": 34130,
+        "rows": 183,
+        "nodes": 114,
+        "steps": 114
+      },
+      {
+        "group": 34140,
+        "rows": 186,
+        "nodes": 124,
+        "steps": 124
+      },
+      {
+        "group": 34145,
+        "rows": 13,
+        "nodes": 9,
+        "steps": 9
+      },
+      {
+        "group": 34150,
+        "rows": 23,
+        "nodes": 16,
+        "steps": 16
+      },
+      {
+        "group": 34155,
+        "rows": 91,
+        "nodes": 53,
+        "steps": 53
+      },
+      {
+        "group": 34160,
+        "rows": 82,
+        "nodes": 46,
+        "steps": 46
+      },
+      {
+        "group": 34170,
+        "rows": 194,
+        "nodes": 109,
+        "steps": 109
+      },
+      {
+        "group": 34180,
+        "rows": 390,
+        "nodes": 249,
+        "steps": 249
+      },
+      {
+        "group": 34190,
+        "rows": 115,
+        "nodes": 86,
+        "steps": 86
+      },
+      {
+        "group": 34195,
+        "rows": 33,
+        "nodes": 12,
+        "steps": 12
+      },
+      {
+        "group": 34200,
+        "rows": 17,
+        "nodes": 7,
+        "steps": 7
+      },
+      {
+        "group": 34205,
+        "rows": 4,
+        "nodes": 2,
+        "steps": 2
+      },
+      {
+        "group": 34210,
+        "rows": 46,
+        "nodes": 19,
+        "steps": 19
+      },
+      {
+        "group": 34215,
+        "rows": 19,
+        "nodes": 10,
+        "steps": 10
+      },
+      {
+        "group": 34220,
+        "rows": 68,
+        "nodes": 49,
+        "steps": 49
+      },
+      {
+        "group": 34225,
+        "rows": 19,
+        "nodes": 13,
+        "steps": 13
+      },
+      {
+        "group": 34230,
+        "rows": 168,
+        "nodes": 58,
+        "steps": 58
+      },
+      {
+        "group": 34240,
+        "rows": 69,
+        "nodes": 37,
+        "steps": 37
+      },
+      {
+        "group": 34245,
+        "rows": 134,
+        "nodes": 74,
+        "steps": 74
+      },
+      {
+        "group": 34250,
+        "rows": 263,
+        "nodes": 139,
+        "steps": 139
+      },
+      {
+        "group": 34255,
+        "rows": 76,
+        "nodes": 25,
+        "steps": 25
+      },
+      {
+        "group": 34260,
+        "rows": 290,
+        "nodes": 148,
+        "steps": 148
+      },
+      {
+        "group": 34270,
+        "rows": 262,
+        "nodes": 111,
+        "steps": 111
+      },
+      {
+        "group": 41010,
+        "rows": 197,
+        "nodes": 121,
+        "steps": 121
+      },
+      {
+        "group": 41020,
+        "rows": 249,
+        "nodes": 152,
+        "steps": 152
+      },
+      {
+        "group": 41025,
+        "rows": 250,
+        "nodes": 129,
+        "steps": 129
+      },
+      {
+        "group": 41030,
+        "rows": 294,
+        "nodes": 192,
+        "steps": 192
+      },
+      {
+        "group": 41040,
+        "rows": 114,
+        "nodes": 80,
+        "steps": 80
+      },
+      {
+        "group": 41050,
+        "rows": 122,
+        "nodes": 90,
+        "steps": 90
+      },
+      {
+        "group": 41060,
+        "rows": 292,
+        "nodes": 168,
+        "steps": 168
+      },
+      {
+        "group": 41070,
+        "rows": 149,
+        "nodes": 91,
+        "steps": 91
+      },
+      {
+        "group": 41080,
+        "rows": 91,
+        "nodes": 65,
+        "steps": 65
+      },
+      {
+        "group": 41085,
+        "rows": 266,
+        "nodes": 158,
+        "steps": 158
+      },
+      {
+        "group": 41090,
+        "rows": 97,
+        "nodes": 62,
+        "steps": 62
+      },
+      {
+        "group": 41100,
+        "rows": 190,
+        "nodes": 108,
+        "steps": 108
+      },
+      {
+        "group": 41105,
+        "rows": 129,
+        "nodes": 76,
+        "steps": 76
+      },
+      {
+        "group": 41110,
+        "rows": 200,
+        "nodes": 97,
+        "steps": 97
+      },
+      {
+        "group": 41120,
+        "rows": 165,
+        "nodes": 93,
+        "steps": 93
+      },
+      {
+        "group": 41130,
+        "rows": 171,
+        "nodes": 109,
+        "steps": 109
+      },
+      {
+        "group": 41140,
+        "rows": 110,
+        "nodes": 83,
+        "steps": 83
+      },
+      {
+        "group": 41150,
+        "rows": 113,
+        "nodes": 61,
+        "steps": 61
+      },
+      {
+        "group": 41160,
+        "rows": 198,
+        "nodes": 112,
+        "steps": 112
+      },
+      {
+        "group": 41170,
+        "rows": 148,
+        "nodes": 71,
+        "steps": 71
+      },
+      {
+        "group": 41180,
+        "rows": 167,
+        "nodes": 84,
+        "steps": 84
+      },
+      {
+        "group": 41185,
+        "rows": 208,
+        "nodes": 92,
+        "steps": 92
+      },
+      {
+        "group": 41190,
+        "rows": 203,
+        "nodes": 101,
+        "steps": 101
+      },
+      {
+        "group": 41200,
+        "rows": 192,
+        "nodes": 99,
+        "steps": 99
+      },
+      {
+        "group": 42010,
+        "rows": 227,
+        "nodes": 133,
+        "steps": 133
+      },
+      {
+        "group": 42020,
+        "rows": 198,
+        "nodes": 109,
+        "steps": 109
+      },
+      {
+        "group": 42030,
+        "rows": 176,
+        "nodes": 126,
+        "steps": 126
+      },
+      {
+        "group": 42040,
+        "rows": 130,
+        "nodes": 66,
+        "steps": 66
+      },
+      {
+        "group": 42050,
+        "rows": 214,
+        "nodes": 143,
+        "steps": 143
+      },
+      {
+        "group": 42060,
+        "rows": 157,
+        "nodes": 114,
+        "steps": 114
+      },
+      {
+        "group": 42070,
+        "rows": 208,
+        "nodes": 141,
+        "steps": 141
+      },
+      {
+        "group": 42080,
+        "rows": 159,
+        "nodes": 115,
+        "steps": 115
+      },
+      {
+        "group": 42090,
+        "rows": 269,
+        "nodes": 184,
+        "steps": 184
+      },
+      {
+        "group": 42100,
+        "rows": 240,
+        "nodes": 157,
+        "steps": 157
+      },
+      {
+        "group": 42110,
+        "rows": 325,
+        "nodes": 155,
+        "steps": 155
+      },
+      {
+        "group": 42120,
+        "rows": 209,
+        "nodes": 81,
+        "steps": 81
+      },
+      {
+        "group": 42130,
+        "rows": 275,
+        "nodes": 146,
+        "steps": 146
+      },
+      {
+        "group": 42140,
+        "rows": 332,
+        "nodes": 172,
+        "steps": 172
+      },
+      {
+        "group": 42150,
+        "rows": 115,
+        "nodes": 63,
+        "steps": 63
+      },
+      {
+        "group": 42160,
+        "rows": 208,
+        "nodes": 116,
+        "steps": 116
+      },
+      {
+        "group": 42170,
+        "rows": 229,
+        "nodes": 129,
+        "steps": 129
+      },
+      {
+        "group": 42175,
+        "rows": 4,
+        "nodes": 2,
+        "steps": 2
+      },
+      {
+        "group": 42180,
+        "rows": 191,
+        "nodes": 84,
+        "steps": 84
+      },
+      {
+        "group": 42185,
+        "rows": 109,
+        "nodes": 42,
+        "steps": 42
+      },
+      {
+        "group": 42190,
+        "rows": 194,
+        "nodes": 89,
+        "steps": 89
+      },
+      {
+        "group": 42195,
+        "rows": 4,
+        "nodes": 2,
+        "steps": 2
+      },
+      {
+        "group": 42200,
+        "rows": 148,
+        "nodes": 87,
+        "steps": 87
+      },
+      {
+        "group": 42205,
+        "rows": 303,
+        "nodes": 115,
+        "steps": 115
+      },
+      {
+        "group": 42210,
+        "rows": 113,
+        "nodes": 52,
+        "steps": 52
+      },
+      {
+        "group": 42215,
+        "rows": 5,
+        "nodes": 2,
+        "steps": 2
+      },
+      {
+        "group": 42220,
+        "rows": 114,
+        "nodes": 44,
+        "steps": 44
+      },
+      {
+        "group": 42225,
+        "rows": 219,
+        "nodes": 95,
+        "steps": 95
+      },
+      {
+        "group": 42230,
+        "rows": 116,
+        "nodes": 35,
+        "steps": 35
+      },
+      {
+        "group": 42235,
+        "rows": 159,
+        "nodes": 68,
+        "steps": 68
+      },
+      {
+        "group": 42240,
+        "rows": 291,
+        "nodes": 146,
+        "steps": 146
+      },
+      {
+        "group": 51010,
+        "rows": 185,
+        "nodes": 74,
+        "steps": 74
+      },
+      {
+        "group": 51020,
+        "rows": 105,
+        "nodes": 37,
+        "steps": 37
+      },
+      {
+        "group": 51025,
+        "rows": 5,
+        "nodes": 2,
+        "steps": 2
+      },
+      {
+        "group": 51030,
+        "rows": 234,
+        "nodes": 101,
+        "steps": 101
+      },
+      {
+        "group": 51040,
+        "rows": 255,
+        "nodes": 151,
+        "steps": 151
+      },
+      {
+        "group": 51050,
+        "rows": 350,
+        "nodes": 178,
+        "steps": 178
+      },
+      {
+        "group": 51060,
+        "rows": 363,
+        "nodes": 144,
+        "steps": 144
+      },
+      {
+        "group": 51070,
+        "rows": 312,
+        "nodes": 157,
+        "steps": 157
+      },
+      {
+        "group": 51080,
+        "rows": 255,
+        "nodes": 90,
+        "steps": 90
+      },
+      {
+        "group": 51085,
+        "rows": 33,
+        "nodes": 14,
+        "steps": 14
+      },
+      {
+        "group": 51090,
+        "rows": 239,
+        "nodes": 139,
+        "steps": 139
+      },
+      {
+        "group": 51095,
+        "rows": 67,
+        "nodes": 28,
+        "steps": 28
+      },
+      {
+        "group": 51100,
+        "rows": 164,
+        "nodes": 76,
+        "steps": 76
+      },
+      {
+        "group": 51110,
+        "rows": 325,
+        "nodes": 133,
+        "steps": 133
+      },
+      {
+        "group": 51120,
+        "rows": 328,
+        "nodes": 154,
+        "steps": 154
+      },
+      {
+        "group": 51125,
+        "rows": 4,
+        "nodes": 2,
+        "steps": 2
+      },
+      {
+        "group": 51130,
+        "rows": 290,
+        "nodes": 131,
+        "steps": 131
+      },
+      {
+        "group": 51140,
+        "rows": 326,
+        "nodes": 177,
+        "steps": 177
+      },
+      {
+        "group": 51150,
+        "rows": 246,
+        "nodes": 160,
+        "steps": 160
+      },
+      {
+        "group": 51160,
+        "rows": 205,
+        "nodes": 109,
+        "steps": 109
+      },
+      {
+        "group": 51170,
+        "rows": 479,
+        "nodes": 216,
+        "steps": 216
+      },
+      {
+        "group": 51180,
+        "rows": 317,
+        "nodes": 129,
+        "steps": 129
+      },
+      {
+        "group": 51185,
+        "rows": 3,
+        "nodes": 2,
+        "steps": 2
+      },
+      {
+        "group": 51190,
+        "rows": 420,
+        "nodes": 210,
+        "steps": 210
+      },
+      {
+        "group": 51200,
+        "rows": 226,
+        "nodes": 105,
+        "steps": 105
+      },
+      {
+        "group": 51205,
+        "rows": 137,
+        "nodes": 61,
+        "steps": 61
+      },
+      {
+        "group": 51210,
+        "rows": 421,
+        "nodes": 173,
+        "steps": 173
+      },
+      {
+        "group": 51220,
+        "rows": 143,
+        "nodes": 66,
+        "steps": 66
+      },
+      {
+        "group": 51225,
+        "rows": 177,
+        "nodes": 72,
+        "steps": 72
+      },
+      {
+        "group": 51230,
+        "rows": 348,
+        "nodes": 152,
+        "steps": 152
+      },
+      {
+        "group": 51240,
+        "rows": 278,
+        "nodes": 129,
+        "steps": 129
+      },
+      {
+        "group": 51245,
+        "rows": 445,
+        "nodes": 155,
+        "steps": 155
+      },
+      {
+        "group": 51250,
+        "rows": 229,
+        "nodes": 85,
+        "steps": 85
+      },
+      {
+        "group": 51260,
+        "rows": 378,
+        "nodes": 186,
+        "steps": 186
+      },
+      {
+        "group": 52010,
+        "rows": 159,
+        "nodes": 44,
+        "steps": 44
+      },
+      {
+        "group": 52020,
+        "rows": 156,
+        "nodes": 74,
+        "steps": 74
+      },
+      {
+        "group": 52030,
+        "rows": 178,
+        "nodes": 60,
+        "steps": 60
+      },
+      {
+        "group": 52035,
+        "rows": 258,
+        "nodes": 94,
+        "steps": 94
+      },
+      {
+        "group": 52040,
+        "rows": 242,
+        "nodes": 88,
+        "steps": 88
+      },
+      {
+        "group": 52050,
+        "rows": 315,
+        "nodes": 116,
+        "steps": 116
+      },
+      {
+        "group": 52060,
+        "rows": 239,
+        "nodes": 146,
+        "steps": 146
+      },
+      {
+        "group": 52070,
+        "rows": 468,
+        "nodes": 224,
+        "steps": 224
+      },
+      {
+        "group": 52080,
+        "rows": 159,
+        "nodes": 48,
+        "steps": 48
+      },
+      {
+        "group": 52085,
+        "rows": 133,
+        "nodes": 33,
+        "steps": 33
+      },
+      {
+        "group": 52090,
+        "rows": 219,
+        "nodes": 87,
+        "steps": 87
+      },
+      {
+        "group": 52100,
+        "rows": 341,
+        "nodes": 180,
+        "steps": 180
+      },
+      {
+        "group": 52115,
+        "rows": 291,
+        "nodes": 133,
+        "steps": 133
+      },
+      {
+        "group": 52120,
+        "rows": 320,
+        "nodes": 122,
+        "steps": 122
+      },
+      {
+        "group": 52125,
+        "rows": 4,
+        "nodes": 2,
+        "steps": 2
+      },
+      {
+        "group": 52130,
+        "rows": 32,
+        "nodes": 14,
+        "steps": 14
+      },
+      {
+        "group": 52135,
+        "rows": 223,
+        "nodes": 94,
+        "steps": 94
+      },
+      {
+        "group": 52140,
+        "rows": 91,
+        "nodes": 37,
+        "steps": 37
+      },
+      {
+        "group": 52145,
+        "rows": 96,
+        "nodes": 30,
+        "steps": 30
+      },
+      {
+        "group": 52150,
+        "rows": 126,
+        "nodes": 55,
+        "steps": 55
+      },
+      {
+        "group": 52160,
+        "rows": 123,
+        "nodes": 65,
+        "steps": 65
+      },
+      {
+        "group": 52170,
+        "rows": 125,
+        "nodes": 71,
+        "steps": 71
+      },
+      {
+        "group": 52180,
+        "rows": 203,
+        "nodes": 138,
+        "steps": 138
+      },
+      {
+        "group": 52190,
+        "rows": 70,
+        "nodes": 39,
+        "steps": 39
+      },
+      {
+        "group": 52195,
+        "rows": 75,
+        "nodes": 37,
+        "steps": 37
+      },
+      {
+        "group": 52200,
+        "rows": 209,
+        "nodes": 122,
+        "steps": 122
+      },
+      {
+        "group": 52210,
+        "rows": 169,
+        "nodes": 78,
+        "steps": 78
+      },
+      {
+        "group": 52220,
+        "rows": 192,
+        "nodes": 120,
+        "steps": 120
+      },
+      {
+        "group": 52230,
+        "rows": 69,
+        "nodes": 46,
+        "steps": 46
+      },
+      {
+        "group": 52235,
+        "rows": 164,
+        "nodes": 85,
+        "steps": 85
+      },
+      {
+        "group": 52240,
+        "rows": 326,
+        "nodes": 164,
+        "steps": 164
+      },
+      {
+        "group": 52245,
+        "rows": 4,
+        "nodes": 2,
+        "steps": 2
+      },
+      {
+        "group": 52250,
+        "rows": 130,
+        "nodes": 81,
+        "steps": 81
+      },
+      {
+        "group": 52260,
+        "rows": 218,
+        "nodes": 89,
+        "steps": 89
+      },
+      {
+        "group": 52265,
+        "rows": 4,
+        "nodes": 2,
+        "steps": 2
+      },
+      {
+        "group": 52270,
+        "rows": 201,
+        "nodes": 75,
+        "steps": 75
+      },
+      {
+        "group": 52280,
+        "rows": 286,
+        "nodes": 184,
+        "steps": 184
+      },
+      {
+        "group": 61010,
+        "rows": 121,
+        "nodes": 59,
+        "steps": 59
+      },
+      {
+        "group": 61020,
+        "rows": 224,
+        "nodes": 153,
+        "steps": 153
+      },
+      {
+        "group": 61030,
+        "rows": 345,
+        "nodes": 214,
+        "steps": 214
+      },
+      {
+        "group": 61040,
+        "rows": 300,
+        "nodes": 227,
+        "steps": 227
+      },
+      {
+        "group": 61050,
+        "rows": 357,
+        "nodes": 246,
+        "steps": 246
+      },
+      {
+        "group": 61060,
+        "rows": 211,
+        "nodes": 120,
+        "steps": 120
+      },
+      {
+        "group": 61070,
+        "rows": 340,
+        "nodes": 230,
+        "steps": 230
+      },
+      {
+        "group": 61080,
+        "rows": 245,
+        "nodes": 149,
+        "steps": 149
+      },
+      {
+        "group": 61085,
+        "rows": 4,
+        "nodes": 2,
+        "steps": 2
+      },
+      {
+        "group": 61090,
+        "rows": 253,
+        "nodes": 182,
+        "steps": 182
+      },
+      {
+        "group": 61100,
+        "rows": 472,
+        "nodes": 360,
+        "steps": 360
+      },
+      {
+        "group": 61110,
+        "rows": 444,
+        "nodes": 281,
+        "steps": 281
+      },
+      {
+        "group": 61120,
+        "rows": 458,
+        "nodes": 266,
+        "steps": 266
+      },
+      {
+        "group": 62010,
+        "rows": 507,
+        "nodes": 265,
+        "steps": 265
+      },
+      {
+        "group": 62020,
+        "rows": 293,
+        "nodes": 152,
+        "steps": 152
+      },
+      {
+        "group": 62025,
+        "rows": 4,
+        "nodes": 2,
+        "steps": 2
+      },
+      {
+        "group": 62030,
+        "rows": 337,
+        "nodes": 139,
+        "steps": 139
+      },
+      {
+        "group": 62035,
+        "rows": 4,
+        "nodes": 2,
+        "steps": 2
+      },
+      {
+        "group": 62040,
+        "rows": 324,
+        "nodes": 168,
+        "steps": 168
+      },
+      {
+        "group": 62050,
+        "rows": 482,
+        "nodes": 235,
+        "steps": 235
+      },
+      {
+        "group": 62060,
+        "rows": 486,
+        "nodes": 231,
+        "steps": 231
+      },
+      {
+        "group": 62070,
+        "rows": 281,
+        "nodes": 186,
+        "steps": 186
+      },
+      {
+        "group": 62080,
+        "rows": 342,
+        "nodes": 245,
+        "steps": 245
+      },
+      {
+        "group": 62090,
+        "rows": 228,
+        "nodes": 148,
+        "steps": 148
+      },
+      {
+        "group": 62100,
+        "rows": 43,
+        "nodes": 28,
+        "steps": 28
+      },
+      {
+        "group": 62105,
+        "rows": 161,
+        "nodes": 82,
+        "steps": 82
+      },
+      {
+        "group": 62110,
+        "rows": 43,
+        "nodes": 25,
+        "steps": 25
+      },
+      {
+        "group": 62115,
+        "rows": 188,
+        "nodes": 101,
+        "steps": 101
+      },
+      {
+        "group": 63010,
+        "rows": 177,
+        "nodes": 128,
+        "steps": 128
+      },
+      {
+        "group": 63020,
+        "rows": 268,
+        "nodes": 156,
+        "steps": 156
+      },
+      {
+        "group": 63035,
+        "rows": 70,
+        "nodes": 42,
+        "steps": 42
+      },
+      {
+        "group": 63040,
+        "rows": 150,
+        "nodes": 94,
+        "steps": 94
+      },
+      {
+        "group": 63050,
+        "rows": 160,
+        "nodes": 98,
+        "steps": 98
+      },
+      {
+        "group": 63055,
+        "rows": 4,
+        "nodes": 2,
+        "steps": 2
+      },
+      {
+        "group": 63060,
+        "rows": 264,
+        "nodes": 169,
+        "steps": 169
+      },
+      {
+        "group": 63070,
+        "rows": 208,
+        "nodes": 118,
+        "steps": 118
+      },
+      {
+        "group": 63080,
+        "rows": 337,
+        "nodes": 223,
+        "steps": 223
+      },
+      {
+        "group": 63090,
+        "rows": 383,
+        "nodes": 216,
+        "steps": 216
+      },
+      {
+        "group": 63100,
+        "rows": 543,
+        "nodes": 327,
+        "steps": 327
+      },
+      {
+        "group": 101010,
+        "rows": 56,
+        "nodes": 22,
+        "steps": 22
+      },
+      {
+        "group": 101020,
+        "rows": 306,
+        "nodes": 201,
+        "steps": 201
+      },
+      {
+        "group": 101030,
+        "rows": 214,
+        "nodes": 146,
+        "steps": 146
+      },
+      {
+        "group": 101040,
+        "rows": 415,
+        "nodes": 231,
+        "steps": 231
+      },
+      {
+        "group": 101050,
+        "rows": 184,
+        "nodes": 104,
+        "steps": 104
+      },
+      {
+        "group": 101060,
+        "rows": 189,
+        "nodes": 127,
+        "steps": 127
+      },
+      {
+        "group": 101070,
+        "rows": 203,
+        "nodes": 125,
+        "steps": 125
+      },
+      {
+        "group": 101080,
+        "rows": 174,
+        "nodes": 90,
+        "steps": 90
+      },
+      {
+        "group": 101090,
+        "rows": 289,
+        "nodes": 174,
+        "steps": 174
+      },
+      {
+        "group": 101100,
+        "rows": 165,
+        "nodes": 100,
+        "steps": 100
+      },
+      {
+        "group": 101110,
+        "rows": 12,
+        "nodes": 8,
+        "steps": 8
+      },
+      {
+        "group": 101115,
+        "rows": 8,
+        "nodes": 7,
+        "steps": 7
+      },
+      {
+        "group": 101120,
+        "rows": 104,
+        "nodes": 64,
+        "steps": 64
+      },
+      {
+        "group": 101125,
+        "rows": 4,
+        "nodes": 2,
+        "steps": 2
+      },
+      {
+        "group": 101130,
+        "rows": 132,
+        "nodes": 91,
+        "steps": 91
+      },
+      {
+        "group": 101135,
+        "rows": 55,
+        "nodes": 37,
+        "steps": 37
+      },
+      {
+        "group": 101140,
+        "rows": 51,
+        "nodes": 29,
+        "steps": 29
+      },
+      {
+        "group": 101145,
+        "rows": 52,
+        "nodes": 26,
+        "steps": 26
+      },
+      {
+        "group": 101150,
+        "rows": 180,
+        "nodes": 96,
+        "steps": 96
+      },
+      {
+        "group": 102010,
+        "rows": 134,
+        "nodes": 71,
+        "steps": 71
+      },
+      {
+        "group": 102015,
+        "rows": 4,
+        "nodes": 2,
+        "steps": 2
+      },
+      {
+        "group": 102020,
+        "rows": 472,
+        "nodes": 316,
+        "steps": 316
+      },
+      {
+        "group": 102030,
+        "rows": 301,
+        "nodes": 163,
+        "steps": 163
+      },
+      {
+        "group": 102040,
+        "rows": 439,
+        "nodes": 275,
+        "steps": 275
+      },
+      {
+        "group": 102050,
+        "rows": 43,
+        "nodes": 23,
+        "steps": 23
+      },
+      {
+        "group": 102060,
+        "rows": 34,
+        "nodes": 18,
+        "steps": 18
+      },
+      {
+        "group": 102065,
+        "rows": 4,
+        "nodes": 2,
+        "steps": 2
+      },
+      {
+        "group": 102070,
+        "rows": 47,
+        "nodes": 17,
+        "steps": 17
+      },
+      {
+        "group": 102075,
+        "rows": 4,
+        "nodes": 2,
+        "steps": 2
+      },
+      {
+        "group": 102080,
+        "rows": 43,
+        "nodes": 20,
+        "steps": 20
+      },
+      {
+        "group": 102085,
+        "rows": 4,
+        "nodes": 2,
+        "steps": 2
+      },
+      {
+        "group": 102090,
+        "rows": 17,
+        "nodes": 13,
+        "steps": 13
+      },
+      {
+        "group": 102095,
+        "rows": 4,
+        "nodes": 2,
+        "steps": 2
+      },
+      {
+        "group": 102100,
+        "rows": 24,
+        "nodes": 11,
+        "steps": 11
+      },
+      {
+        "group": 102105,
+        "rows": 4,
+        "nodes": 2,
+        "steps": 2
+      },
+      {
+        "group": 102110,
+        "rows": 93,
+        "nodes": 45,
+        "steps": 45
+      },
+      {
+        "group": 102115,
+        "rows": 4,
+        "nodes": 2,
+        "steps": 2
+      },
+      {
+        "group": 102120,
+        "rows": 79,
+        "nodes": 23,
+        "steps": 23
+      },
+      {
+        "group": 102125,
+        "rows": 4,
+        "nodes": 2,
+        "steps": 2
+      },
+      {
+        "group": 102130,
+        "rows": 166,
+        "nodes": 52,
+        "steps": 52
+      },
+      {
+        "group": 102135,
+        "rows": 4,
+        "nodes": 2,
+        "steps": 2
+      },
+      {
+        "group": 102140,
+        "rows": 161,
+        "nodes": 33,
+        "steps": 33
+      },
+      {
+        "group": 102145,
+        "rows": 36,
+        "nodes": 22,
+        "steps": 22
+      },
+      {
+        "group": 102150,
+        "rows": 107,
+        "nodes": 61,
+        "steps": 61
+      },
+      {
+        "group": 102155,
+        "rows": 4,
+        "nodes": 2,
+        "steps": 2
+      },
+      {
+        "group": 102160,
+        "rows": 31,
+        "nodes": 16,
+        "steps": 16
+      },
+      {
+        "group": 102165,
+        "rows": 4,
+        "nodes": 2,
+        "steps": 2
+      },
+      {
+        "group": 102170,
+        "rows": 72,
+        "nodes": 38,
+        "steps": 38
+      },
+      {
+        "group": 102175,
+        "rows": 4,
+        "nodes": 2,
+        "steps": 2
+      },
+      {
+        "group": 102180,
+        "rows": 128,
+        "nodes": 63,
+        "steps": 63
+      },
+      {
+        "group": 102185,
+        "rows": 35,
+        "nodes": 26,
+        "steps": 26
+      },
+      {
+        "group": 102190,
+        "rows": 65,
+        "nodes": 35,
+        "steps": 35
+      },
+      {
+        "group": 102195,
+        "rows": 55,
+        "nodes": 34,
+        "steps": 34
+      },
+      {
+        "group": 102200,
+        "rows": 95,
+        "nodes": 24,
+        "steps": 24
+      },
+      {
+        "group": 102205,
+        "rows": 30,
+        "nodes": 8,
+        "steps": 8
+      },
+      {
+        "group": 102210,
+        "rows": 41,
+        "nodes": 8,
+        "steps": 8
+      },
+      {
+        "group": 103010,
+        "rows": 342,
+        "nodes": 136,
+        "steps": 136
+      },
+      {
+        "group": 103020,
+        "rows": 344,
+        "nodes": 171,
+        "steps": 171
+      },
+      {
+        "group": 103030,
+        "rows": 233,
+        "nodes": 138,
+        "steps": 138
+      },
+      {
+        "group": 103040,
+        "rows": 87,
+        "nodes": 47,
+        "steps": 47
+      },
+      {
+        "group": 103050,
+        "rows": 164,
+        "nodes": 65,
+        "steps": 65
+      },
+      {
+        "group": 103055,
+        "rows": 48,
+        "nodes": 17,
+        "steps": 17
+      },
+      {
+        "group": 103060,
+        "rows": 210,
+        "nodes": 97,
+        "steps": 97
+      },
+      {
+        "group": 103070,
+        "rows": 315,
+        "nodes": 178,
+        "steps": 178
+      },
+      {
+        "group": 103080,
+        "rows": 268,
+        "nodes": 149,
+        "steps": 149
+      },
+      {
+        "group": 103090,
+        "rows": 526,
+        "nodes": 241,
+        "steps": 241
+      },
+      {
+        "group": 103100,
+        "rows": 510,
+        "nodes": 203,
+        "steps": 203
+      },
+      {
+        "group": 103110,
+        "rows": 145,
+        "nodes": 42,
+        "steps": 42
+      },
+      {
+        "group": 103120,
+        "rows": 305,
+        "nodes": 161,
+        "steps": 161
+      },
+      {
+        "group": 103130,
+        "rows": 323,
+        "nodes": 120,
+        "steps": 120
+      },
+      {
+        "group": 103140,
+        "rows": 95,
+        "nodes": 45,
+        "steps": 45
+      },
+      {
+        "group": 103145,
+        "rows": 4,
+        "nodes": 2,
+        "steps": 2
+      },
+      {
+        "group": 103150,
+        "rows": 184,
+        "nodes": 90,
+        "steps": 90
+      },
+      {
+        "group": 103160,
+        "rows": 339,
+        "nodes": 154,
+        "steps": 154
+      },
+      {
+        "group": 104010,
+        "rows": 264,
+        "nodes": 117,
+        "steps": 117
+      },
+      {
+        "group": 104020,
+        "rows": 253,
+        "nodes": 130,
+        "steps": 130
+      },
+      {
+        "group": 104030,
+        "rows": 190,
+        "nodes": 72,
+        "steps": 72
+      },
+      {
+        "group": 104035,
+        "rows": 4,
+        "nodes": 2,
+        "steps": 2
+      },
+      {
+        "group": 104040,
+        "rows": 110,
+        "nodes": 50,
+        "steps": 50
+      },
+      {
+        "group": 104050,
+        "rows": 162,
+        "nodes": 80,
+        "steps": 80
+      },
+      {
+        "group": 104060,
+        "rows": 208,
+        "nodes": 107,
+        "steps": 107
+      },
+      {
+        "group": 104070,
+        "rows": 204,
+        "nodes": 80,
+        "steps": 80
+      },
+      {
+        "group": 104071,
+        "rows": 4,
+        "nodes": 2,
+        "steps": 2
+      },
+      {
+        "group": 104080,
+        "rows": 226,
+        "nodes": 97,
+        "steps": 97
+      },
+      {
+        "group": 104090,
+        "rows": 235,
+        "nodes": 144,
+        "steps": 144
+      },
+      {
+        "group": 104100,
+        "rows": 226,
+        "nodes": 141,
+        "steps": 141
+      },
+      {
+        "group": 104110,
+        "rows": 51,
+        "nodes": 37,
+        "steps": 37
+      },
+      {
+        "group": 104120,
+        "rows": 50,
+        "nodes": 23,
+        "steps": 23
+      },
+      {
+        "group": 200001,
+        "rows": 504,
+        "nodes": 85,
+        "steps": 85
+      },
+      {
+        "group": 200002,
+        "rows": 105,
+        "nodes": 65,
+        "steps": 65
+      },
+      {
+        "group": 200003,
+        "rows": 159,
+        "nodes": 80,
+        "steps": 80
+      },
+      {
+        "group": 200004,
+        "rows": 57,
+        "nodes": 38,
+        "steps": 38
+      },
+      {
+        "group": 201010,
+        "rows": 129,
+        "nodes": 96,
+        "steps": 96
+      },
+      {
+        "group": 201020,
+        "rows": 309,
+        "nodes": 204,
+        "steps": 204
+      },
+      {
+        "group": 201030,
+        "rows": 164,
+        "nodes": 111,
+        "steps": 111
+      },
+      {
+        "group": 201040,
+        "rows": 137,
+        "nodes": 89,
+        "steps": 89
+      },
+      {
+        "group": 201050,
+        "rows": 146,
+        "nodes": 101,
+        "steps": 101
+      },
+      {
+        "group": 201060,
+        "rows": 269,
+        "nodes": 154,
+        "steps": 154
+      },
+      {
+        "group": 201070,
+        "rows": 294,
+        "nodes": 152,
+        "steps": 152
+      },
+      {
+        "group": 201080,
+        "rows": 218,
+        "nodes": 145,
+        "steps": 145
+      },
+      {
+        "group": 201090,
+        "rows": 117,
+        "nodes": 51,
+        "steps": 51
+      },
+      {
+        "group": 201100,
+        "rows": 152,
+        "nodes": 100,
+        "steps": 100
+      },
+      {
+        "group": 211010,
+        "rows": 199,
+        "nodes": 90,
+        "steps": 90
+      },
+      {
+        "group": 211020,
+        "rows": 182,
+        "nodes": 103,
+        "steps": 103
+      },
+      {
+        "group": 211030,
+        "rows": 147,
+        "nodes": 81,
+        "steps": 81
+      },
+      {
+        "group": 211040,
+        "rows": 170,
+        "nodes": 115,
+        "steps": 115
+      },
+      {
+        "group": 211050,
+        "rows": 266,
+        "nodes": 164,
+        "steps": 164
+      },
+      {
+        "group": 211060,
+        "rows": 235,
+        "nodes": 137,
+        "steps": 137
+      },
+      {
+        "group": 211070,
+        "rows": 273,
+        "nodes": 138,
+        "steps": 138
+      },
+      {
+        "group": 211080,
+        "rows": 234,
+        "nodes": 131,
+        "steps": 131
+      },
+      {
+        "group": 211090,
+        "rows": 299,
+        "nodes": 166,
+        "steps": 166
+      },
+      {
+        "group": 211100,
+        "rows": 343,
+        "nodes": 191,
+        "steps": 191
+      },
+      {
+        "group": 211110,
+        "rows": 219,
+        "nodes": 134,
+        "steps": 134
+      },
+      {
+        "group": 211120,
+        "rows": 369,
+        "nodes": 171,
+        "steps": 171
+      },
+      {
+        "group": 211130,
+        "rows": 184,
+        "nodes": 108,
+        "steps": 108
+      },
+      {
+        "group": 211140,
+        "rows": 359,
+        "nodes": 175,
+        "steps": 175
+      },
+      {
+        "group": 211150,
+        "rows": 170,
+        "nodes": 99,
+        "steps": 99
+      },
+      {
+        "group": 211160,
+        "rows": 338,
+        "nodes": 108,
+        "steps": 108
+      },
+      {
+        "group": 211170,
+        "rows": 555,
+        "nodes": 284,
+        "steps": 284
+      },
+      {
+        "group": 212010,
+        "rows": 254,
+        "nodes": 161,
+        "steps": 161
+      },
+      {
+        "group": 212020,
+        "rows": 164,
+        "nodes": 97,
+        "steps": 97
+      },
+      {
+        "group": 212030,
+        "rows": 217,
+        "nodes": 110,
+        "steps": 110
+      },
+      {
+        "group": 212040,
+        "rows": 190,
+        "nodes": 100,
+        "steps": 100
+      },
+      {
+        "group": 212050,
+        "rows": 228,
+        "nodes": 109,
+        "steps": 109
+      },
+      {
+        "group": 212060,
+        "rows": 195,
+        "nodes": 120,
+        "steps": 120
+      },
+      {
+        "group": 212070,
+        "rows": 181,
+        "nodes": 107,
+        "steps": 107
+      },
+      {
+        "group": 212080,
+        "rows": 158,
+        "nodes": 92,
+        "steps": 92
+      },
+      {
+        "group": 212090,
+        "rows": 150,
+        "nodes": 74,
+        "steps": 74
+      },
+      {
+        "group": 212100,
+        "rows": 167,
+        "nodes": 101,
+        "steps": 101
+      },
+      {
+        "group": 212110,
+        "rows": 214,
+        "nodes": 113,
+        "steps": 113
+      },
+      {
+        "group": 212120,
+        "rows": 384,
+        "nodes": 192,
+        "steps": 192
+      },
+      {
+        "group": 212130,
+        "rows": 169,
+        "nodes": 96,
+        "steps": 96
+      },
+      {
+        "group": 212140,
+        "rows": 341,
+        "nodes": 178,
+        "steps": 178
+      },
+      {
+        "group": 212150,
+        "rows": 252,
+        "nodes": 116,
+        "steps": 116
+      },
+      {
+        "group": 212160,
+        "rows": 199,
+        "nodes": 97,
+        "steps": 97
+      },
+      {
+        "group": 212161,
+        "rows": 4,
+        "nodes": 2,
+        "steps": 2
+      },
+      {
+        "group": 212162,
+        "rows": 4,
+        "nodes": 2,
+        "steps": 2
+      },
+      {
+        "group": 212170,
+        "rows": 399,
+        "nodes": 140,
+        "steps": 140
+      },
+      {
+        "group": 212180,
+        "rows": 815,
+        "nodes": 327,
+        "steps": 327
+      },
+      {
+        "group": 212190,
+        "rows": 470,
+        "nodes": 257,
+        "steps": 257
+      },
+      {
+        "group": 212200,
+        "rows": 292,
+        "nodes": 141,
+        "steps": 141
+      },
+      {
+        "group": 212210,
+        "rows": 227,
+        "nodes": 137,
+        "steps": 137
+      },
+      {
+        "group": 221010,
+        "rows": 137,
+        "nodes": 102,
+        "steps": 102
+      },
+      {
+        "group": 221020,
+        "rows": 270,
+        "nodes": 150,
+        "steps": 150
+      },
+      {
+        "group": 221030,
+        "rows": 265,
+        "nodes": 171,
+        "steps": 171
+      },
+      {
+        "group": 221040,
+        "rows": 175,
+        "nodes": 123,
+        "steps": 123
+      },
+      {
+        "group": 221050,
+        "rows": 157,
+        "nodes": 105,
+        "steps": 105
+      },
+      {
+        "group": 221060,
+        "rows": 175,
+        "nodes": 94,
+        "steps": 94
+      },
+      {
+        "group": 221070,
+        "rows": 99,
+        "nodes": 74,
+        "steps": 74
+      },
+      {
+        "group": 221080,
+        "rows": 134,
+        "nodes": 100,
+        "steps": 100
+      },
+      {
+        "group": 221090,
+        "rows": 199,
+        "nodes": 132,
+        "steps": 132
+      },
+      {
+        "group": 221100,
+        "rows": 230,
+        "nodes": 139,
+        "steps": 139
+      },
+      {
+        "group": 221110,
+        "rows": 123,
+        "nodes": 86,
+        "steps": 86
+      },
+      {
+        "group": 221120,
+        "rows": 108,
+        "nodes": 58,
+        "steps": 58
+      },
+      {
+        "group": 221130,
+        "rows": 183,
+        "nodes": 71,
+        "steps": 71
+      },
+      {
+        "group": 221140,
+        "rows": 223,
+        "nodes": 128,
+        "steps": 128
+      },
+      {
+        "group": 1101,
+        "rows": 89,
+        "nodes": 67,
+        "steps": 67
+      },
+      {
+        "group": 1102,
+        "rows": 62,
+        "nodes": 51,
+        "steps": 51
+      },
+      {
+        "group": 1103,
+        "rows": 83,
+        "nodes": 66,
+        "steps": 66
+      },
+      {
+        "group": 1104,
+        "rows": 68,
+        "nodes": 51,
+        "steps": 51
+      },
+      {
+        "group": 1201,
+        "rows": 122,
+        "nodes": 83,
+        "steps": 83
+      },
+      {
+        "group": 1202,
+        "rows": 156,
+        "nodes": 92,
+        "steps": 92
+      },
+      {
+        "group": 1203,
+        "rows": 180,
+        "nodes": 90,
+        "steps": 90
+      },
+      {
+        "group": 2201,
+        "rows": 181,
+        "nodes": 139,
+        "steps": 139
+      },
+      {
+        "group": 1401,
+        "rows": 64,
+        "nodes": 45,
+        "steps": 45
+      },
+      {
+        "group": 1402,
+        "rows": 66,
+        "nodes": 57,
+        "steps": 57
+      },
+      {
+        "group": 1403,
+        "rows": 112,
+        "nodes": 77,
+        "steps": 77
+      },
+      {
+        "group": 1501,
+        "rows": 50,
+        "nodes": 45,
+        "steps": 45
+      },
+      {
+        "group": 1502,
+        "rows": 129,
+        "nodes": 72,
+        "steps": 72
+      },
+      {
+        "group": 1503,
+        "rows": 88,
+        "nodes": 54,
+        "steps": 54
+      },
+      {
+        "group": 1601,
+        "rows": 118,
+        "nodes": 84,
+        "steps": 84
+      },
+      {
+        "group": 1602,
+        "rows": 132,
+        "nodes": 95,
+        "steps": 95
+      },
+      {
+        "group": 1701,
+        "rows": 58,
+        "nodes": 49,
+        "steps": 49
+      },
+      {
+        "group": 1702,
+        "rows": 62,
+        "nodes": 37,
+        "steps": 37
+      },
+      {
+        "group": 1703,
+        "rows": 91,
+        "nodes": 70,
+        "steps": 70
+      },
+      {
+        "group": 1801,
+        "rows": 82,
+        "nodes": 69,
+        "steps": 69
+      },
+      {
+        "group": 1802,
+        "rows": 98,
+        "nodes": 84,
+        "steps": 84
+      },
+      {
+        "group": 1901,
+        "rows": 93,
+        "nodes": 70,
+        "steps": 70
+      },
+      {
+        "group": 1902,
+        "rows": 205,
+        "nodes": 150,
+        "steps": 150
+      },
+      {
+        "group": 2001,
+        "rows": 97,
+        "nodes": 87,
+        "steps": 87
+      },
+      {
+        "group": 2002,
+        "rows": 179,
+        "nodes": 112,
+        "steps": 112
+      },
+      {
+        "group": 2101,
+        "rows": 140,
+        "nodes": 114,
+        "steps": 114
+      },
+      {
+        "group": 2102,
+        "rows": 123,
+        "nodes": 112,
+        "steps": 112
+      },
+      {
+        "group": 1301,
+        "rows": 93,
+        "nodes": 66,
+        "steps": 66
+      },
+      {
+        "group": 1302,
+        "rows": 108,
+        "nodes": 65,
+        "steps": 65
+      },
+      {
+        "group": 1303,
+        "rows": 86,
+        "nodes": 53,
+        "steps": 53
+      },
+      {
+        "group": 2301,
+        "rows": 126,
+        "nodes": 103,
+        "steps": 103
+      },
+      {
+        "group": 2302,
+        "rows": 281,
+        "nodes": 142,
+        "steps": 142
+      },
+      {
+        "group": 2401,
+        "rows": 74,
+        "nodes": 69,
+        "steps": 69
+      },
+      {
+        "group": 2402,
+        "rows": 141,
+        "nodes": 99,
+        "steps": 99
+      },
+      {
+        "group": 2403,
+        "rows": 173,
+        "nodes": 137,
+        "steps": 137
+      },
+      {
+        "group": 2404,
+        "rows": 234,
+        "nodes": 162,
+        "steps": 162
+      },
+      {
+        "group": 2501,
+        "rows": 96,
+        "nodes": 73,
+        "steps": 73
+      },
+      {
+        "group": 2502,
+        "rows": 170,
+        "nodes": 110,
+        "steps": 110
+      },
+      {
+        "group": 2601,
+        "rows": 148,
+        "nodes": 112,
+        "steps": 112
+      },
+      {
+        "group": 2602,
+        "rows": 85,
+        "nodes": 70,
+        "steps": 70
+      },
+      {
+        "group": 2701,
+        "rows": 48,
+        "nodes": 43,
+        "steps": 43
+      },
+      {
+        "group": 2702,
+        "rows": 111,
+        "nodes": 66,
+        "steps": 66
+      },
+      {
+        "group": 2801,
+        "rows": 84,
+        "nodes": 68,
+        "steps": 68
+      },
+      {
+        "group": 2802,
+        "rows": 114,
+        "nodes": 74,
+        "steps": 74
+      },
+      {
+        "group": 2901,
+        "rows": 235,
+        "nodes": 149,
+        "steps": 149
+      },
+      {
+        "group": 2902,
+        "rows": 271,
+        "nodes": 172,
+        "steps": 172
+      },
+      {
+        "group": 3001,
+        "rows": 206,
+        "nodes": 91,
+        "steps": 91
+      },
+      {
+        "group": 3002,
+        "rows": 127,
+        "nodes": 53,
+        "steps": 53
+      },
+      {
+        "group": 3003,
+        "rows": 94,
+        "nodes": 56,
+        "steps": 56
+      },
+      {
+        "group": 3101,
+        "rows": 179,
+        "nodes": 97,
+        "steps": 97
+      },
+      {
+        "group": 3102,
+        "rows": 101,
+        "nodes": 52,
+        "steps": 52
+      },
+      {
+        "group": 3103,
+        "rows": 140,
+        "nodes": 82,
+        "steps": 82
+      },
+      {
+        "group": 3201,
+        "rows": 170,
+        "nodes": 115,
+        "steps": 115
+      },
+      {
+        "group": 3202,
+        "rows": 138,
+        "nodes": 83,
+        "steps": 83
+      },
+      {
+        "group": 3301,
+        "rows": 197,
+        "nodes": 90,
+        "steps": 90
+      },
+      {
+        "group": 3302,
+        "rows": 95,
+        "nodes": 54,
+        "steps": 54
+      },
+      {
+        "group": 3303,
+        "rows": 141,
+        "nodes": 84,
+        "steps": 84
+      },
+      {
+        "group": 3401,
+        "rows": 184,
+        "nodes": 93,
+        "steps": 93
+      },
+      {
+        "group": 3402,
+        "rows": 150,
+        "nodes": 106,
+        "steps": 106
+      },
+      {
+        "group": 3403,
+        "rows": 283,
+        "nodes": 141,
+        "steps": 141
+      },
+      {
+        "group": 3501,
+        "rows": 154,
+        "nodes": 109,
+        "steps": 109
+      },
+      {
+        "group": 3502,
+        "rows": 152,
+        "nodes": 99,
+        "steps": 99
+      },
+      {
+        "group": 3601,
+        "rows": 99,
+        "nodes": 76,
+        "steps": 76
+      },
+      {
+        "group": 3602,
+        "rows": 95,
+        "nodes": 55,
+        "steps": 55
+      },
+      {
+        "group": 3603,
+        "rows": 190,
+        "nodes": 112,
+        "steps": 112
+      },
+      {
+        "group": 3701,
+        "rows": 268,
+        "nodes": 154,
+        "steps": 154
+      },
+      {
+        "group": 3702,
+        "rows": 173,
+        "nodes": 95,
+        "steps": 95
+      },
+      {
+        "group": 3703,
+        "rows": 368,
+        "nodes": 181,
+        "steps": 181
+      },
+      {
+        "group": 10005005,
+        "rows": 145,
+        "nodes": 103,
+        "steps": 103
+      },
+      {
+        "group": 10005010,
+        "rows": 143,
+        "nodes": 106,
+        "steps": 106
+      },
+      {
+        "group": 10005015,
+        "rows": 143,
+        "nodes": 85,
+        "steps": 85
+      },
+      {
+        "group": 10005020,
+        "rows": 117,
+        "nodes": 78,
+        "steps": 78
+      },
+      {
+        "group": 10005025,
+        "rows": 42,
+        "nodes": 32,
+        "steps": 32
+      },
+      {
+        "group": 10005030,
+        "rows": 206,
+        "nodes": 142,
+        "steps": 142
+      },
+      {
+        "group": 10005040,
+        "rows": 219,
+        "nodes": 141,
+        "steps": 141
+      },
+      {
+        "group": 10005050,
+        "rows": 126,
+        "nodes": 88,
+        "steps": 88
+      },
+      {
+        "group": 10005055,
+        "rows": 91,
+        "nodes": 53,
+        "steps": 53
+      },
+      {
+        "group": 10005060,
+        "rows": 33,
+        "nodes": 22,
+        "steps": 22
+      },
+      {
+        "group": 10005065,
+        "rows": 216,
+        "nodes": 135,
+        "steps": 135
+      },
+      {
+        "group": 10007005,
+        "rows": 216,
+        "nodes": 120,
+        "steps": 120
+      },
+      {
+        "group": 10007010,
+        "rows": 78,
+        "nodes": 58,
+        "steps": 58
+      },
+      {
+        "group": 10007025,
+        "rows": 168,
+        "nodes": 95,
+        "steps": 95
+      },
+      {
+        "group": 10007030,
+        "rows": 90,
+        "nodes": 68,
+        "steps": 68
+      },
+      {
+        "group": 10007045,
+        "rows": 52,
+        "nodes": 34,
+        "steps": 34
+      },
+      {
+        "group": 10007050,
+        "rows": 100,
+        "nodes": 73,
+        "steps": 73
+      },
+      {
+        "group": 10007065,
+        "rows": 114,
+        "nodes": 75,
+        "steps": 75
+      },
+      {
+        "group": 10007070,
+        "rows": 87,
+        "nodes": 59,
+        "steps": 59
+      },
+      {
+        "group": 10007080,
+        "rows": 146,
+        "nodes": 96,
+        "steps": 96
+      },
+      {
+        "group": 10007090,
+        "rows": 110,
+        "nodes": 68,
+        "steps": 68
+      },
+      {
+        "group": 10007105,
+        "rows": 108,
+        "nodes": 71,
+        "steps": 71
+      },
+      {
+        "group": 10007115,
+        "rows": 125,
+        "nodes": 75,
+        "steps": 75
+      },
+      {
+        "group": 10008005,
+        "rows": 102,
+        "nodes": 71,
+        "steps": 71
+      },
+      {
+        "group": 10008010,
+        "rows": 348,
+        "nodes": 217,
+        "steps": 217
+      },
+      {
+        "group": 10008025,
+        "rows": 131,
+        "nodes": 85,
+        "steps": 85
+      },
+      {
+        "group": 10008030,
+        "rows": 77,
+        "nodes": 37,
+        "steps": 37
+      },
+      {
+        "group": 10008035,
+        "rows": 18,
+        "nodes": 10,
+        "steps": 10
+      },
+      {
+        "group": 10008040,
+        "rows": 43,
+        "nodes": 18,
+        "steps": 18
+      },
+      {
+        "group": 10008045,
+        "rows": 116,
+        "nodes": 71,
+        "steps": 71
+      },
+      {
+        "group": 10008050,
+        "rows": 70,
+        "nodes": 44,
+        "steps": 44
+      },
+      {
+        "group": 10008055,
+        "rows": 141,
+        "nodes": 101,
+        "steps": 101
+      },
+      {
+        "group": 10008060,
+        "rows": 137,
+        "nodes": 86,
+        "steps": 86
+      },
+      {
+        "group": 10008070,
+        "rows": 111,
+        "nodes": 59,
+        "steps": 59
+      },
+      {
+        "group": 10008080,
+        "rows": 96,
+        "nodes": 48,
+        "steps": 48
+      },
+      {
+        "group": 10008090,
+        "rows": 159,
+        "nodes": 75,
+        "steps": 75
+      },
+      {
+        "group": 10008100,
+        "rows": 98,
+        "nodes": 53,
+        "steps": 53
+      },
+      {
+        "group": 10008110,
+        "rows": 77,
+        "nodes": 47,
+        "steps": 47
+      },
+      {
+        "group": 10008115,
+        "rows": 87,
+        "nodes": 36,
+        "steps": 36
+      },
+      {
+        "group": 10008120,
+        "rows": 46,
+        "nodes": 34,
+        "steps": 34
+      },
+      {
+        "group": 10008125,
+        "rows": 33,
+        "nodes": 19,
+        "steps": 19
+      },
+      {
+        "group": 10008130,
+        "rows": 33,
+        "nodes": 18,
+        "steps": 18
+      },
+      {
+        "group": 10008135,
+        "rows": 108,
+        "nodes": 61,
+        "steps": 61
+      },
+      {
+        "group": 10009000,
+        "rows": 75,
+        "nodes": 59,
+        "steps": 59
+      },
+      {
+        "group": 80000001,
+        "rows": 53,
+        "nodes": 38,
+        "steps": 38
+      },
+      {
+        "group": 10009005,
+        "rows": 224,
+        "nodes": 128,
+        "steps": 128
+      },
+      {
+        "group": 80000002,
+        "rows": 60,
+        "nodes": 39,
+        "steps": 39
+      },
+      {
+        "group": 10009075,
+        "rows": 118,
+        "nodes": 76,
+        "steps": 76
+      },
+      {
+        "group": 80000003,
+        "rows": 55,
+        "nodes": 38,
+        "steps": 38
+      },
+      {
+        "group": 80000004,
+        "rows": 29,
+        "nodes": 23,
+        "steps": 23
+      },
+      {
+        "group": 10009080,
+        "rows": 72,
+        "nodes": 43,
+        "steps": 43
+      },
+      {
+        "group": 80000005,
+        "rows": 39,
+        "nodes": 29,
+        "steps": 29
+      },
+      {
+        "group": 10009090,
+        "rows": 59,
+        "nodes": 26,
+        "steps": 26
+      },
+      {
+        "group": 80000006,
+        "rows": 42,
+        "nodes": 29,
+        "steps": 29
+      },
+      {
+        "group": 10009100,
+        "rows": 90,
+        "nodes": 43,
+        "steps": 43
+      },
+      {
+        "group": 80000007,
+        "rows": 61,
+        "nodes": 33,
+        "steps": 33
+      },
+      {
+        "group": 10009110,
+        "rows": 74,
+        "nodes": 39,
+        "steps": 39
+      },
+      {
+        "group": 80000008,
+        "rows": 57,
+        "nodes": 33,
+        "steps": 33
+      },
+      {
+        "group": 10009120,
+        "rows": 78,
+        "nodes": 32,
+        "steps": 32
+      },
+      {
+        "group": 80000009,
+        "rows": 28,
+        "nodes": 24,
+        "steps": 24
+      },
+      {
+        "group": 10009130,
+        "rows": 156,
+        "nodes": 60,
+        "steps": 60
+      },
+      {
+        "group": 80000010,
+        "rows": 62,
+        "nodes": 42,
+        "steps": 42
+      },
+      {
+        "group": 80000011,
+        "rows": 56,
+        "nodes": 34,
+        "steps": 34
+      },
+      {
+        "group": 80000012,
+        "rows": 56,
+        "nodes": 35,
+        "steps": 35
+      },
+      {
+        "group": 80000013,
+        "rows": 42,
+        "nodes": 28,
+        "steps": 28
+      },
+      {
+        "group": 80000014,
+        "rows": 29,
+        "nodes": 23,
+        "steps": 23
+      },
+      {
+        "group": 80000015,
+        "rows": 32,
+        "nodes": 21,
+        "steps": 21
+      },
+      {
+        "group": 80000016,
+        "rows": 38,
+        "nodes": 30,
+        "steps": 30
+      },
+      {
+        "group": 80000017,
+        "rows": 59,
+        "nodes": 33,
+        "steps": 33
+      },
+      {
+        "group": 80000018,
+        "rows": 59,
+        "nodes": 36,
+        "steps": 36
+      },
+      {
+        "group": 80000019,
+        "rows": 45,
+        "nodes": 27,
+        "steps": 27
+      },
+      {
+        "group": 80000020,
+        "rows": 32,
+        "nodes": 29,
+        "steps": 29
+      },
+      {
+        "group": 80000021,
+        "rows": 41,
+        "nodes": 22,
+        "steps": 22
+      },
+      {
+        "group": 80000022,
+        "rows": 37,
+        "nodes": 26,
+        "steps": 26
+      },
+      {
+        "group": 80000023,
+        "rows": 37,
+        "nodes": 33,
+        "steps": 33
+      },
+      {
+        "group": 80000024,
+        "rows": 58,
+        "nodes": 30,
+        "steps": 30
+      },
+      {
+        "group": 80000025,
+        "rows": 54,
+        "nodes": 36,
+        "steps": 36
+      },
+      {
+        "group": 80000026,
+        "rows": 29,
+        "nodes": 24,
+        "steps": 24
+      },
+      {
+        "group": 80000027,
+        "rows": 37,
+        "nodes": 24,
+        "steps": 24
+      },
+      {
+        "group": 80000028,
+        "rows": 43,
+        "nodes": 30,
+        "steps": 30
+      },
+      {
+        "group": 80000029,
+        "rows": 39,
+        "nodes": 31,
+        "steps": 31
+      },
+      {
+        "group": 80000030,
+        "rows": 37,
+        "nodes": 26,
+        "steps": 26
+      },
+      {
+        "group": 80000031,
+        "rows": 39,
+        "nodes": 28,
+        "steps": 28
+      },
+      {
+        "group": 80000032,
+        "rows": 47,
+        "nodes": 29,
+        "steps": 29
+      },
+      {
+        "group": 80000033,
+        "rows": 75,
+        "nodes": 55,
+        "steps": 55
+      },
+      {
+        "group": 80000034,
+        "rows": 60,
+        "nodes": 49,
+        "steps": 49
+      },
+      {
+        "group": 80000035,
+        "rows": 59,
+        "nodes": 35,
+        "steps": 35
+      },
+      {
+        "group": 80000036,
+        "rows": 93,
+        "nodes": 56,
+        "steps": 56
+      },
+      {
+        "group": 80000037,
+        "rows": 85,
+        "nodes": 74,
+        "steps": 74
+      },
+      {
+        "group": 80000038,
+        "rows": 121,
+        "nodes": 77,
+        "steps": 77
+      },
+      {
+        "group": 80000039,
+        "rows": 104,
+        "nodes": 66,
+        "steps": 66
+      },
+      {
+        "group": 80000040,
+        "rows": 81,
+        "nodes": 53,
+        "steps": 53
+      },
+      {
+        "group": 80000041,
+        "rows": 60,
+        "nodes": 45,
+        "steps": 45
+      },
+      {
+        "group": 80000042,
+        "rows": 59,
+        "nodes": 44,
+        "steps": 44
+      },
+      {
+        "group": 80000043,
+        "rows": 71,
+        "nodes": 46,
+        "steps": 46
+      },
+      {
+        "group": 80000044,
+        "rows": 90,
+        "nodes": 54,
+        "steps": 54
+      },
+      {
+        "group": 80000045,
+        "rows": 72,
+        "nodes": 49,
+        "steps": 49
+      },
+      {
+        "group": 80000046,
+        "rows": 105,
+        "nodes": 57,
+        "steps": 57
+      },
+      {
+        "group": 80000047,
+        "rows": 65,
+        "nodes": 47,
+        "steps": 47
+      },
+      {
+        "group": 80000048,
+        "rows": 51,
+        "nodes": 41,
+        "steps": 41
+      },
+      {
+        "group": 80000049,
+        "rows": 102,
+        "nodes": 57,
+        "steps": 57
+      },
+      {
+        "group": 80000050,
+        "rows": 123,
+        "nodes": 77,
+        "steps": 77
+      },
+      {
+        "group": 80000051,
+        "rows": 114,
+        "nodes": 74,
+        "steps": 74
+      },
+      {
+        "group": 80000052,
+        "rows": 56,
+        "nodes": 38,
+        "steps": 38
+      },
+      {
+        "group": 80000053,
+        "rows": 68,
+        "nodes": 36,
+        "steps": 36
+      },
+      {
+        "group": 80000054,
+        "rows": 60,
+        "nodes": 38,
+        "steps": 38
+      },
+      {
+        "group": 80000055,
+        "rows": 49,
+        "nodes": 36,
+        "steps": 36
+      },
+      {
+        "group": 80000056,
+        "rows": 40,
+        "nodes": 32,
+        "steps": 32
+      },
+      {
+        "group": 80000057,
+        "rows": 60,
+        "nodes": 36,
+        "steps": 36
+      },
+      {
+        "group": 80000058,
+        "rows": 55,
+        "nodes": 39,
+        "steps": 39
+      },
+      {
+        "group": 80000059,
+        "rows": 56,
+        "nodes": 37,
+        "steps": 37
+      },
+      {
+        "group": 80000060,
+        "rows": 57,
+        "nodes": 35,
+        "steps": 35
+      },
+      {
+        "group": 80000061,
+        "rows": 77,
+        "nodes": 43,
+        "steps": 43
+      },
+      {
+        "group": 80000062,
+        "rows": 49,
+        "nodes": 33,
+        "steps": 33
+      },
+      {
+        "group": 80000063,
+        "rows": 49,
+        "nodes": 37,
+        "steps": 37
+      },
+      {
+        "group": 80000064,
+        "rows": 58,
+        "nodes": 33,
+        "steps": 33
+      },
+      {
+        "group": 80000065,
+        "rows": 56,
+        "nodes": 37,
+        "steps": 37
+      },
+      {
+        "group": 80000066,
+        "rows": 52,
+        "nodes": 34,
+        "steps": 34
+      },
+      {
+        "group": 80000067,
+        "rows": 50,
+        "nodes": 39,
+        "steps": 39
+      },
+      {
+        "group": 80000068,
+        "rows": 56,
+        "nodes": 34,
+        "steps": 34
+      },
+      {
+        "group": 80000069,
+        "rows": 62,
+        "nodes": 38,
+        "steps": 38
+      },
+      {
+        "group": 80000070,
+        "rows": 56,
+        "nodes": 28,
+        "steps": 28
+      },
+      {
+        "group": 80000071,
+        "rows": 54,
+        "nodes": 40,
+        "steps": 40
+      },
+      {
+        "group": 80000072,
+        "rows": 63,
+        "nodes": 38,
+        "steps": 38
+      },
+      {
+        "group": 80000073,
+        "rows": 66,
+        "nodes": 45,
+        "steps": 45
+      },
+      {
+        "group": 80000074,
+        "rows": 58,
+        "nodes": 48,
+        "steps": 48
+      },
+      {
+        "group": 80000075,
+        "rows": 52,
+        "nodes": 46,
+        "steps": 46
+      },
+      {
+        "group": 80000076,
+        "rows": 71,
+        "nodes": 64,
+        "steps": 64
+      },
+      {
+        "group": 80000077,
+        "rows": 55,
+        "nodes": 49,
+        "steps": 49
+      },
+      {
+        "group": 80000078,
+        "rows": 57,
+        "nodes": 52,
+        "steps": 52
+      },
+      {
+        "group": 80000079,
+        "rows": 60,
+        "nodes": 53,
+        "steps": 53
+      },
+      {
+        "group": 80000080,
+        "rows": 138,
+        "nodes": 94,
+        "steps": 94
+      },
+      {
+        "group": 80000081,
+        "rows": 150,
+        "nodes": 97,
+        "steps": 97
+      },
+      {
+        "group": 80000082,
+        "rows": 87,
+        "nodes": 78,
+        "steps": 78
+      },
+      {
+        "group": 80000083,
+        "rows": 119,
+        "nodes": 85,
+        "steps": 85
+      },
+      {
+        "group": 80000084,
+        "rows": 180,
+        "nodes": 137,
+        "steps": 137
+      },
+      {
+        "group": 80000085,
+        "rows": 61,
+        "nodes": 40,
+        "steps": 40
+      },
+      {
+        "group": 80000086,
+        "rows": 57,
+        "nodes": 41,
+        "steps": 41
+      },
+      {
+        "group": 80000087,
+        "rows": 73,
+        "nodes": 49,
+        "steps": 49
+      },
+      {
+        "group": 80000088,
+        "rows": 50,
+        "nodes": 40,
+        "steps": 40
+      },
+      {
+        "group": 80000089,
+        "rows": 62,
+        "nodes": 46,
+        "steps": 46
+      },
+      {
+        "group": 80000090,
+        "rows": 48,
+        "nodes": 41,
+        "steps": 41
+      },
+      {
+        "group": 80000091,
+        "rows": 69,
+        "nodes": 48,
+        "steps": 48
+      },
+      {
+        "group": 80000092,
+        "rows": 95,
+        "nodes": 53,
+        "steps": 53
+      },
+      {
+        "group": 80000093,
+        "rows": 66,
+        "nodes": 57,
+        "steps": 57
+      },
+      {
+        "group": 10010005,
+        "rows": 131,
+        "nodes": 55,
+        "steps": 55
+      },
+      {
+        "group": 10010010,
+        "rows": 124,
+        "nodes": 70,
+        "steps": 70
+      },
+      {
+        "group": 10010020,
+        "rows": 266,
+        "nodes": 161,
+        "steps": 161
+      },
+      {
+        "group": 10010030,
+        "rows": 180,
+        "nodes": 104,
+        "steps": 104
+      },
+      {
+        "group": 10010045,
+        "rows": 90,
+        "nodes": 47,
+        "steps": 47
+      },
+      {
+        "group": 10010050,
+        "rows": 106,
+        "nodes": 73,
+        "steps": 73
+      },
+      {
+        "group": 10010065,
+        "rows": 154,
+        "nodes": 107,
+        "steps": 107
+      },
+      {
+        "group": 10010070,
+        "rows": 65,
+        "nodes": 32,
+        "steps": 32
+      },
+      {
+        "group": 10010085,
+        "rows": 152,
+        "nodes": 79,
+        "steps": 79
+      },
+      {
+        "group": 10010090,
+        "rows": 66,
+        "nodes": 31,
+        "steps": 31
+      },
+      {
+        "group": 10010105,
+        "rows": 132,
+        "nodes": 89,
+        "steps": 89
+      },
+      {
+        "group": 10010110,
+        "rows": 116,
+        "nodes": 54,
+        "steps": 54
+      },
+      {
+        "group": 10010125,
+        "rows": 173,
+        "nodes": 91,
+        "steps": 91
+      },
+      {
+        "group": 10010130,
+        "rows": 160,
+        "nodes": 77,
+        "steps": 77
+      },
+      {
+        "group": 10010145,
+        "rows": 94,
+        "nodes": 57,
+        "steps": 57
+      },
+      {
+        "group": 10011005,
+        "rows": 237,
+        "nodes": 134,
+        "steps": 134
+      },
+      {
+        "group": 10011010,
+        "rows": 244,
+        "nodes": 144,
+        "steps": 144
+      },
+      {
+        "group": 10011020,
+        "rows": 83,
+        "nodes": 41,
+        "steps": 41
+      },
+      {
+        "group": 10011025,
+        "rows": 119,
+        "nodes": 74,
+        "steps": 74
+      },
+      {
+        "group": 10011030,
+        "rows": 266,
+        "nodes": 142,
+        "steps": 142
+      },
+      {
+        "group": 10011035,
+        "rows": 151,
+        "nodes": 91,
+        "steps": 91
+      },
+      {
+        "group": 10011040,
+        "rows": 161,
+        "nodes": 83,
+        "steps": 83
+      },
+      {
+        "group": 10011045,
+        "rows": 29,
+        "nodes": 19,
+        "steps": 19
+      },
+      {
+        "group": 10011050,
+        "rows": 198,
+        "nodes": 103,
+        "steps": 103
+      },
+      {
+        "group": 10011055,
+        "rows": 24,
+        "nodes": 19,
+        "steps": 19
+      },
+      {
+        "group": 10011060,
+        "rows": 146,
+        "nodes": 98,
+        "steps": 98
+      },
+      {
+        "group": 10011065,
+        "rows": 43,
+        "nodes": 29,
+        "steps": 29
+      },
+      {
+        "group": 10011070,
+        "rows": 273,
+        "nodes": 145,
+        "steps": 145
+      },
+      {
+        "group": 10011075,
+        "rows": 46,
+        "nodes": 25,
+        "steps": 25
+      },
+      {
+        "group": 10011080,
+        "rows": 90,
+        "nodes": 55,
+        "steps": 55
+      },
+      {
+        "group": 10011085,
+        "rows": 106,
+        "nodes": 47,
+        "steps": 47
+      },
+      {
+        "group": 10011090,
+        "rows": 107,
+        "nodes": 38,
+        "steps": 38
+      },
+      {
+        "group": 10011095,
+        "rows": 188,
+        "nodes": 77,
+        "steps": 77
+      },
+      {
+        "group": 10011105,
+        "rows": 194,
+        "nodes": 125,
+        "steps": 125
+      },
+      {
+        "group": 10012005,
+        "rows": 62,
+        "nodes": 26,
+        "steps": 26
+      },
+      {
+        "group": 10012010,
+        "rows": 64,
+        "nodes": 42,
+        "steps": 42
+      },
+      {
+        "group": 10012015,
+        "rows": 133,
+        "nodes": 94,
+        "steps": 94
+      },
+      {
+        "group": 10012020,
+        "rows": 177,
+        "nodes": 128,
+        "steps": 128
+      },
+      {
+        "group": 10012025,
+        "rows": 75,
+        "nodes": 41,
+        "steps": 41
+      },
+      {
+        "group": 10012030,
+        "rows": 183,
+        "nodes": 111,
+        "steps": 111
+      },
+      {
+        "group": 10012035,
+        "rows": 71,
+        "nodes": 33,
+        "steps": 33
+      },
+      {
+        "group": 10012040,
+        "rows": 186,
+        "nodes": 108,
+        "steps": 108
+      },
+      {
+        "group": 10012045,
+        "rows": 78,
+        "nodes": 45,
+        "steps": 45
+      },
+      {
+        "group": 10012050,
+        "rows": 148,
+        "nodes": 93,
+        "steps": 93
+      },
+      {
+        "group": 10012055,
+        "rows": 35,
+        "nodes": 19,
+        "steps": 19
+      },
+      {
+        "group": 10012065,
+        "rows": 236,
+        "nodes": 104,
+        "steps": 104
+      },
+      {
+        "group": 10012070,
+        "rows": 164,
+        "nodes": 87,
+        "steps": 87
+      },
+      {
+        "group": 10012080,
+        "rows": 68,
+        "nodes": 37,
+        "steps": 37
+      },
+      {
+        "group": 10012090,
+        "rows": 148,
+        "nodes": 92,
+        "steps": 92
+      },
+      {
+        "group": 10012095,
+        "rows": 74,
+        "nodes": 59,
+        "steps": 59
+      },
+      {
+        "group": 10013005,
+        "rows": 237,
+        "nodes": 145,
+        "steps": 145
+      },
+      {
+        "group": 10013010,
+        "rows": 233,
+        "nodes": 162,
+        "steps": 162
+      },
+      {
+        "group": 10013020,
+        "rows": 203,
+        "nodes": 107,
+        "steps": 107
+      },
+      {
+        "group": 10013030,
+        "rows": 186,
+        "nodes": 113,
+        "steps": 113
+      },
+      {
+        "group": 10013035,
+        "rows": 223,
+        "nodes": 116,
+        "steps": 116
+      },
+      {
+        "group": 10013040,
+        "rows": 38,
+        "nodes": 26,
+        "steps": 26
+      },
+      {
+        "group": 10013050,
+        "rows": 269,
+        "nodes": 114,
+        "steps": 114
+      },
+      {
+        "group": 10013055,
+        "rows": 233,
+        "nodes": 103,
+        "steps": 103
+      },
+      {
+        "group": 10013060,
+        "rows": 138,
+        "nodes": 86,
+        "steps": 86
+      },
+      {
+        "group": 10013065,
+        "rows": 117,
+        "nodes": 54,
+        "steps": 54
+      },
+      {
+        "group": 10013070,
+        "rows": 60,
+        "nodes": 47,
+        "steps": 47
+      },
+      {
+        "group": 10013080,
+        "rows": 276,
+        "nodes": 148,
+        "steps": 148
+      },
+      {
+        "group": 10013090,
+        "rows": 443,
+        "nodes": 214,
+        "steps": 214
+      },
+      {
+        "group": 10014005,
+        "rows": 47,
+        "nodes": 37,
+        "steps": 37
+      },
+      {
+        "group": 10014010,
+        "rows": 59,
+        "nodes": 37,
+        "steps": 37
+      },
+      {
+        "group": 10014015,
+        "rows": 79,
+        "nodes": 45,
+        "steps": 45
+      },
+      {
+        "group": 10014020,
+        "rows": 126,
+        "nodes": 93,
+        "steps": 93
+      },
+      {
+        "group": 10014025,
+        "rows": 138,
+        "nodes": 92,
+        "steps": 92
+      },
+      {
+        "group": 10014030,
+        "rows": 105,
+        "nodes": 82,
+        "steps": 82
+      },
+      {
+        "group": 10014035,
+        "rows": 94,
+        "nodes": 77,
+        "steps": 77
+      },
+      {
+        "group": 10014040,
+        "rows": 143,
+        "nodes": 93,
+        "steps": 93
+      },
+      {
+        "group": 10014045,
+        "rows": 101,
+        "nodes": 56,
+        "steps": 56
+      },
+      {
+        "group": 10014050,
+        "rows": 78,
+        "nodes": 63,
+        "steps": 63
+      },
+      {
+        "group": 10014055,
+        "rows": 79,
+        "nodes": 43,
+        "steps": 43
+      },
+      {
+        "group": 10014060,
+        "rows": 63,
+        "nodes": 51,
+        "steps": 51
+      },
+      {
+        "group": 10014065,
+        "rows": 72,
+        "nodes": 44,
+        "steps": 44
+      },
+      {
+        "group": 10014070,
+        "rows": 166,
+        "nodes": 87,
+        "steps": 87
+      },
+      {
+        "group": 10014075,
+        "rows": 120,
+        "nodes": 58,
+        "steps": 58
+      },
+      {
+        "group": 10014080,
+        "rows": 92,
+        "nodes": 64,
+        "steps": 64
+      },
+      {
+        "group": 10014085,
+        "rows": 94,
+        "nodes": 54,
+        "steps": 54
+      },
+      {
+        "group": 10015005,
+        "rows": 165,
+        "nodes": 97,
+        "steps": 97
+      },
+      {
+        "group": 10015010,
+        "rows": 146,
+        "nodes": 100,
+        "steps": 100
+      },
+      {
+        "group": 10015020,
+        "rows": 164,
+        "nodes": 101,
+        "steps": 101
+      },
+      {
+        "group": 10015030,
+        "rows": 145,
+        "nodes": 92,
+        "steps": 92
+      },
+      {
+        "group": 10015035,
+        "rows": 31,
+        "nodes": 18,
+        "steps": 18
+      },
+      {
+        "group": 10015040,
+        "rows": 153,
+        "nodes": 93,
+        "steps": 93
+      },
+      {
+        "group": 10015045,
+        "rows": 94,
+        "nodes": 54,
+        "steps": 54
+      },
+      {
+        "group": 10015050,
+        "rows": 206,
+        "nodes": 114,
+        "steps": 114
+      },
+      {
+        "group": 10015060,
+        "rows": 186,
+        "nodes": 81,
+        "steps": 81
+      },
+      {
+        "group": 10015070,
+        "rows": 252,
+        "nodes": 129,
+        "steps": 129
+      },
+      {
+        "group": 10015075,
+        "rows": 149,
+        "nodes": 70,
+        "steps": 70
+      },
+      {
+        "group": 10016005,
+        "rows": 128,
+        "nodes": 84,
+        "steps": 84
+      },
+      {
+        "group": 10016010,
+        "rows": 136,
+        "nodes": 97,
+        "steps": 97
+      },
+      {
+        "group": 10016020,
+        "rows": 171,
+        "nodes": 117,
+        "steps": 117
+      },
+      {
+        "group": 10016030,
+        "rows": 32,
+        "nodes": 24,
+        "steps": 24
+      },
+      {
+        "group": 10016035,
+        "rows": 152,
+        "nodes": 98,
+        "steps": 98
+      },
+      {
+        "group": 10016040,
+        "rows": 147,
+        "nodes": 118,
+        "steps": 118
+      },
+      {
+        "group": 10016050,
+        "rows": 180,
+        "nodes": 131,
+        "steps": 131
+      },
+      {
+        "group": 10016060,
+        "rows": 155,
+        "nodes": 109,
+        "steps": 109
+      },
+      {
+        "group": 10016070,
+        "rows": 219,
+        "nodes": 146,
+        "steps": 146
+      },
+      {
+        "group": 10016080,
+        "rows": 155,
+        "nodes": 113,
+        "steps": 113
+      },
+      {
+        "group": 10016085,
+        "rows": 203,
+        "nodes": 120,
+        "steps": 120
+      },
+      {
+        "group": 10016090,
+        "rows": 237,
+        "nodes": 151,
+        "steps": 151
+      },
+      {
+        "group": 10016100,
+        "rows": 106,
+        "nodes": 69,
+        "steps": 69
+      },
+      {
+        "group": 10016110,
+        "rows": 108,
+        "nodes": 59,
+        "steps": 59
+      },
+      {
+        "group": 10016120,
+        "rows": 120,
+        "nodes": 63,
+        "steps": 63
+      },
+      {
+        "group": 10016130,
+        "rows": 108,
+        "nodes": 65,
+        "steps": 65
+      },
+      {
+        "group": 10016140,
+        "rows": 109,
+        "nodes": 63,
+        "steps": 63
+      },
+      {
+        "group": 10016150,
+        "rows": 105,
+        "nodes": 60,
+        "steps": 60
+      },
+      {
+        "group": 10016160,
+        "rows": 101,
+        "nodes": 60,
+        "steps": 60
+      },
+      {
+        "group": 10017005,
+        "rows": 78,
+        "nodes": 55,
+        "steps": 55
+      },
+      {
+        "group": 10017010,
+        "rows": 71,
+        "nodes": 44,
+        "steps": 44
+      },
+      {
+        "group": 10017025,
+        "rows": 150,
+        "nodes": 76,
+        "steps": 76
+      },
+      {
+        "group": 10017030,
+        "rows": 148,
+        "nodes": 90,
+        "steps": 90
+      },
+      {
+        "group": 10017040,
+        "rows": 113,
+        "nodes": 84,
+        "steps": 84
+      },
+      {
+        "group": 10017050,
+        "rows": 178,
+        "nodes": 107,
+        "steps": 107
+      },
+      {
+        "group": 10017060,
+        "rows": 179,
+        "nodes": 115,
+        "steps": 115
+      },
+      {
+        "group": 10017065,
+        "rows": 53,
+        "nodes": 26,
+        "steps": 26
+      },
+      {
+        "group": 10017070,
+        "rows": 141,
+        "nodes": 82,
+        "steps": 82
+      },
+      {
+        "group": 10017085,
+        "rows": 145,
+        "nodes": 78,
+        "steps": 78
+      },
+      {
+        "group": 10017090,
+        "rows": 59,
+        "nodes": 36,
+        "steps": 36
+      },
+      {
+        "group": 10018005,
+        "rows": 87,
+        "nodes": 44,
+        "steps": 44
+      },
+      {
+        "group": 10018010,
+        "rows": 202,
+        "nodes": 99,
+        "steps": 99
+      },
+      {
+        "group": 10018015,
+        "rows": 128,
+        "nodes": 68,
+        "steps": 68
+      },
+      {
+        "group": 10018020,
+        "rows": 224,
+        "nodes": 96,
+        "steps": 96
+      },
+      {
+        "group": 10018030,
+        "rows": 82,
+        "nodes": 46,
+        "steps": 46
+      },
+      {
+        "group": 10018040,
+        "rows": 130,
+        "nodes": 79,
+        "steps": 79
+      },
+      {
+        "group": 10018050,
+        "rows": 117,
+        "nodes": 74,
+        "steps": 74
+      },
+      {
+        "group": 10018060,
+        "rows": 138,
+        "nodes": 77,
+        "steps": 77
+      },
+      {
+        "group": 10018065,
+        "rows": 82,
+        "nodes": 41,
+        "steps": 41
+      },
+      {
+        "group": 10018070,
+        "rows": 59,
+        "nodes": 29,
+        "steps": 29
+      },
+      {
+        "group": 10018075,
+        "rows": 129,
+        "nodes": 76,
+        "steps": 76
+      },
+      {
+        "group": 10018080,
+        "rows": 185,
+        "nodes": 109,
+        "steps": 109
+      },
+      {
+        "group": 10018090,
+        "rows": 270,
+        "nodes": 145,
+        "steps": 145
+      },
+      {
+        "group": 10018100,
+        "rows": 268,
+        "nodes": 130,
+        "steps": 130
+      },
+      {
+        "group": 10018105,
+        "rows": 121,
+        "nodes": 58,
+        "steps": 58
+      },
+      {
+        "group": 10019005,
+        "rows": 54,
+        "nodes": 13,
+        "steps": 13
+      },
+      {
+        "group": 10019010,
+        "rows": 85,
+        "nodes": 28,
+        "steps": 28
+      },
+      {
+        "group": 10019015,
+        "rows": 10,
+        "nodes": 4,
+        "steps": 4
+      },
+      {
+        "group": 10019020,
+        "rows": 91,
+        "nodes": 29,
+        "steps": 29
+      },
+      {
+        "group": 10019025,
+        "rows": 10,
+        "nodes": 4,
+        "steps": 4
+      },
+      {
+        "group": 10019030,
+        "rows": 12,
+        "nodes": 5,
+        "steps": 5
+      },
+      {
+        "group": 10019035,
+        "rows": 7,
+        "nodes": 4,
+        "steps": 4
+      },
+      {
+        "group": 10019040,
+        "rows": 43,
+        "nodes": 7,
+        "steps": 7
+      },
+      {
+        "group": 10019045,
+        "rows": 10,
+        "nodes": 4,
+        "steps": 4
+      },
+      {
+        "group": 10019050,
+        "rows": 35,
+        "nodes": 10,
+        "steps": 10
+      },
+      {
+        "group": 10019055,
+        "rows": 10,
+        "nodes": 4,
+        "steps": 4
+      },
+      {
+        "group": 10019060,
+        "rows": 69,
+        "nodes": 23,
+        "steps": 23
+      },
+      {
+        "group": 10019070,
+        "rows": 35,
+        "nodes": 13,
+        "steps": 13
+      },
+      {
+        "group": 10019075,
+        "rows": 10,
+        "nodes": 4,
+        "steps": 4
+      },
+      {
+        "group": 10019080,
+        "rows": 108,
+        "nodes": 59,
+        "steps": 59
+      },
+      {
+        "group": 10019085,
+        "rows": 35,
+        "nodes": 18,
+        "steps": 18
+      },
+      {
+        "group": 10020005,
+        "rows": 94,
+        "nodes": 44,
+        "steps": 44
+      },
+      {
+        "group": 10020010,
+        "rows": 78,
+        "nodes": 27,
+        "steps": 27
+      },
+      {
+        "group": 10020015,
+        "rows": 46,
+        "nodes": 24,
+        "steps": 24
+      },
+      {
+        "group": 10020020,
+        "rows": 34,
+        "nodes": 12,
+        "steps": 12
+      },
+      {
+        "group": 10020025,
+        "rows": 87,
+        "nodes": 34,
+        "steps": 34
+      },
+      {
+        "group": 10020030,
+        "rows": 80,
+        "nodes": 41,
+        "steps": 41
+      },
+      {
+        "group": 10020035,
+        "rows": 180,
+        "nodes": 85,
+        "steps": 85
+      },
+      {
+        "group": 10020040,
+        "rows": 46,
+        "nodes": 20,
+        "steps": 20
+      },
+      {
+        "group": 10020045,
+        "rows": 47,
+        "nodes": 21,
+        "steps": 21
+      },
+      {
+        "group": 10021005,
+        "rows": 6,
+        "nodes": 5,
+        "steps": 5
+      },
+      {
+        "group": 10021010,
+        "rows": 16,
+        "nodes": 7,
+        "steps": 7
+      },
+      {
+        "group": 10021015,
+        "rows": 247,
+        "nodes": 123,
+        "steps": 123
+      },
+      {
+        "group": 10021016,
+        "rows": 266,
+        "nodes": 114,
+        "steps": 114
+      },
+      {
+        "group": 10021017,
+        "rows": 181,
+        "nodes": 89,
+        "steps": 89
+      },
+      {
+        "group": 10021020,
+        "rows": 11,
+        "nodes": 7,
+        "steps": 7
+      },
+      {
+        "group": 10021021,
+        "rows": 27,
+        "nodes": 14,
+        "steps": 14
+      },
+      {
+        "group": 10021022,
+        "rows": 199,
+        "nodes": 77,
+        "steps": 77
+      },
+      {
+        "group": 10022005,
+        "rows": 13,
+        "nodes": 10,
+        "steps": 10
+      },
+      {
+        "group": 10023005,
+        "rows": 62,
+        "nodes": 57,
+        "steps": 57
+      },
+      {
+        "group": 10023010,
+        "rows": 184,
+        "nodes": 109,
+        "steps": 109
+      },
+      {
+        "group": 10023020,
+        "rows": 295,
+        "nodes": 159,
+        "steps": 159
+      },
+      {
+        "group": 10023030,
+        "rows": 211,
+        "nodes": 145,
+        "steps": 145
+      },
+      {
+        "group": 10023040,
+        "rows": 237,
+        "nodes": 131,
+        "steps": 131
+      },
+      {
+        "group": 10023050,
+        "rows": 40,
+        "nodes": 23,
+        "steps": 23
+      },
+      {
+        "group": 10023055,
+        "rows": 264,
+        "nodes": 135,
+        "steps": 135
+      },
+      {
+        "group": 10023060,
+        "rows": 220,
+        "nodes": 119,
+        "steps": 119
+      },
+      {
+        "group": 10023070,
+        "rows": 139,
+        "nodes": 66,
+        "steps": 66
+      },
+      {
+        "group": 10023075,
+        "rows": 245,
+        "nodes": 114,
+        "steps": 114
+      },
+      {
+        "group": 10023080,
+        "rows": 167,
+        "nodes": 101,
+        "steps": 101
+      },
+      {
+        "group": 10023090,
+        "rows": 102,
+        "nodes": 36,
+        "steps": 36
+      },
+      {
+        "group": 10023095,
+        "rows": 150,
+        "nodes": 58,
+        "steps": 58
+      },
+      {
+        "group": 10023100,
+        "rows": 47,
+        "nodes": 35,
+        "steps": 35
+      },
+      {
+        "group": 10023105,
+        "rows": 163,
+        "nodes": 80,
+        "steps": 80
+      },
+      {
+        "group": 10023110,
+        "rows": 259,
+        "nodes": 150,
+        "steps": 150
+      },
+      {
+        "group": 10024005,
+        "rows": 122,
+        "nodes": 85,
+        "steps": 85
+      },
+      {
+        "group": 10024010,
+        "rows": 217,
+        "nodes": 145,
+        "steps": 145
+      },
+      {
+        "group": 10024020,
+        "rows": 216,
+        "nodes": 120,
+        "steps": 120
+      },
+      {
+        "group": 10024025,
+        "rows": 33,
+        "nodes": 21,
+        "steps": 21
+      },
+      {
+        "group": 10024030,
+        "rows": 169,
+        "nodes": 113,
+        "steps": 113
+      },
+      {
+        "group": 10024040,
+        "rows": 67,
+        "nodes": 40,
+        "steps": 40
+      },
+      {
+        "group": 10024045,
+        "rows": 151,
+        "nodes": 83,
+        "steps": 83
+      },
+      {
+        "group": 10024050,
+        "rows": 165,
+        "nodes": 96,
+        "steps": 96
+      },
+      {
+        "group": 10024060,
+        "rows": 226,
+        "nodes": 146,
+        "steps": 146
+      },
+      {
+        "group": 10024070,
+        "rows": 140,
+        "nodes": 91,
+        "steps": 91
+      },
+      {
+        "group": 10024080,
+        "rows": 159,
+        "nodes": 96,
+        "steps": 96
+      },
+      {
+        "group": 10024090,
+        "rows": 135,
+        "nodes": 78,
+        "steps": 78
+      },
+      {
+        "group": 10024100,
+        "rows": 92,
+        "nodes": 50,
+        "steps": 50
+      },
+      {
+        "group": 10025005,
+        "rows": 220,
+        "nodes": 121,
+        "steps": 121
+      },
+      {
+        "group": 10025010,
+        "rows": 153,
+        "nodes": 73,
+        "steps": 73
+      },
+      {
+        "group": 10025020,
+        "rows": 199,
+        "nodes": 92,
+        "steps": 92
+      },
+      {
+        "group": 10025030,
+        "rows": 179,
+        "nodes": 118,
+        "steps": 118
+      },
+      {
+        "group": 10025040,
+        "rows": 284,
+        "nodes": 139,
+        "steps": 139
+      },
+      {
+        "group": 10025050,
+        "rows": 191,
+        "nodes": 119,
+        "steps": 119
+      },
+      {
+        "group": 10025060,
+        "rows": 214,
+        "nodes": 111,
+        "steps": 111
+      },
+      {
+        "group": 10025070,
+        "rows": 248,
+        "nodes": 127,
+        "steps": 127
+      },
+      {
+        "group": 10025075,
+        "rows": 31,
+        "nodes": 14,
+        "steps": 14
+      },
+      {
+        "group": 10025080,
+        "rows": 174,
+        "nodes": 89,
+        "steps": 89
+      },
+      {
+        "group": 10025090,
+        "rows": 53,
+        "nodes": 34,
+        "steps": 34
+      },
+      {
+        "group": 10025100,
+        "rows": 188,
+        "nodes": 86,
+        "steps": 86
+      },
+      {
+        "group": 10025105,
+        "rows": 86,
+        "nodes": 42,
+        "steps": 42
+      },
+      {
+        "group": 10025110,
+        "rows": 275,
+        "nodes": 139,
+        "steps": 139
+      },
+      {
+        "group": 10026005,
+        "rows": 20,
+        "nodes": 9,
+        "steps": 9
+      },
+      {
+        "group": 10026010,
+        "rows": 207,
+        "nodes": 118,
+        "steps": 118
+      },
+      {
+        "group": 10026020,
+        "rows": 176,
+        "nodes": 136,
+        "steps": 136
+      },
+      {
+        "group": 10026030,
+        "rows": 160,
+        "nodes": 89,
+        "steps": 89
+      },
+      {
+        "group": 10026035,
+        "rows": 83,
+        "nodes": 56,
+        "steps": 56
+      },
+      {
+        "group": 10026040,
+        "rows": 141,
+        "nodes": 97,
+        "steps": 97
+      },
+      {
+        "group": 10026045,
+        "rows": 60,
+        "nodes": 23,
+        "steps": 23
+      },
+      {
+        "group": 10026050,
+        "rows": 124,
+        "nodes": 93,
+        "steps": 93
+      },
+      {
+        "group": 10026060,
+        "rows": 87,
+        "nodes": 52,
+        "steps": 52
+      },
+      {
+        "group": 10026065,
+        "rows": 84,
+        "nodes": 52,
+        "steps": 52
+      },
+      {
+        "group": 10026070,
+        "rows": 124,
+        "nodes": 78,
+        "steps": 78
+      },
+      {
+        "group": 10026080,
+        "rows": 171,
+        "nodes": 114,
+        "steps": 114
+      },
+      {
+        "group": 10026090,
+        "rows": 68,
+        "nodes": 44,
+        "steps": 44
+      },
+      {
+        "group": 10026095,
+        "rows": 66,
+        "nodes": 45,
+        "steps": 45
+      },
+      {
+        "group": 10026100,
+        "rows": 288,
+        "nodes": 219,
+        "steps": 219
+      },
+      {
+        "group": 10027005,
+        "rows": 191,
+        "nodes": 95,
+        "steps": 95
+      },
+      {
+        "group": 10027010,
+        "rows": 217,
+        "nodes": 124,
+        "steps": 124
+      },
+      {
+        "group": 10027020,
+        "rows": 152,
+        "nodes": 97,
+        "steps": 97
+      },
+      {
+        "group": 10027030,
+        "rows": 194,
+        "nodes": 130,
+        "steps": 130
+      },
+      {
+        "group": 10027045,
+        "rows": 223,
+        "nodes": 95,
+        "steps": 95
+      },
+      {
+        "group": 10027050,
+        "rows": 120,
+        "nodes": 90,
+        "steps": 90
+      },
+      {
+        "group": 10027060,
+        "rows": 314,
+        "nodes": 175,
+        "steps": 175
+      },
+      {
+        "group": 10027070,
+        "rows": 162,
+        "nodes": 87,
+        "steps": 87
+      },
+      {
+        "group": 10027080,
+        "rows": 225,
+        "nodes": 123,
+        "steps": 123
+      },
+      {
+        "group": 10027090,
+        "rows": 77,
+        "nodes": 42,
+        "steps": 42
+      },
+      {
+        "group": 10027100,
+        "rows": 79,
+        "nodes": 38,
+        "steps": 38
+      },
+      {
+        "group": 10027110,
+        "rows": 38,
+        "nodes": 18,
+        "steps": 18
+      },
+      {
+        "group": 10027115,
+        "rows": 117,
+        "nodes": 49,
+        "steps": 49
+      },
+      {
+        "group": 10027120,
+        "rows": 117,
+        "nodes": 71,
+        "steps": 71
+      },
+      {
+        "group": 10027125,
+        "rows": 173,
+        "nodes": 89,
+        "steps": 89
+      },
+      {
+        "group": 10028005,
+        "rows": 114,
+        "nodes": 23,
+        "steps": 23
+      },
+      {
+        "group": 10028010,
+        "rows": 283,
+        "nodes": 115,
+        "steps": 115
+      },
+      {
+        "group": 10028020,
+        "rows": 128,
+        "nodes": 68,
+        "steps": 68
+      },
+      {
+        "group": 10028025,
+        "rows": 184,
+        "nodes": 75,
+        "steps": 75
+      },
+      {
+        "group": 10028030,
+        "rows": 182,
+        "nodes": 108,
+        "steps": 108
+      },
+      {
+        "group": 10028035,
+        "rows": 80,
+        "nodes": 54,
+        "steps": 54
+      },
+      {
+        "group": 10028040,
+        "rows": 282,
+        "nodes": 129,
+        "steps": 129
+      },
+      {
+        "group": 10028045,
+        "rows": 184,
+        "nodes": 125,
+        "steps": 125
+      },
+      {
+        "group": 10028050,
+        "rows": 165,
+        "nodes": 83,
+        "steps": 83
+      },
+      {
+        "group": 10028060,
+        "rows": 230,
+        "nodes": 137,
+        "steps": 137
+      },
+      {
+        "group": 10028070,
+        "rows": 83,
+        "nodes": 58,
+        "steps": 58
+      },
+      {
+        "group": 10028080,
+        "rows": 62,
+        "nodes": 24,
+        "steps": 24
+      },
+      {
+        "group": 10029005,
+        "rows": 24,
+        "nodes": 17,
+        "steps": 17
+      },
+      {
+        "group": 10029010,
+        "rows": 201,
+        "nodes": 162,
+        "steps": 162
+      },
+      {
+        "group": 10029020,
+        "rows": 107,
+        "nodes": 83,
+        "steps": 83
+      },
+      {
+        "group": 10029025,
+        "rows": 77,
+        "nodes": 58,
+        "steps": 58
+      },
+      {
+        "group": 10029030,
+        "rows": 172,
+        "nodes": 129,
+        "steps": 129
+      },
+      {
+        "group": 10029040,
+        "rows": 93,
+        "nodes": 78,
+        "steps": 78
+      },
+      {
+        "group": 10029050,
+        "rows": 41,
+        "nodes": 34,
+        "steps": 34
+      },
+      {
+        "group": 10029055,
+        "rows": 178,
+        "nodes": 109,
+        "steps": 109
+      },
+      {
+        "group": 10029060,
+        "rows": 133,
+        "nodes": 81,
+        "steps": 81
+      },
+      {
+        "group": 10029065,
+        "rows": 135,
+        "nodes": 63,
+        "steps": 63
+      },
+      {
+        "group": 10029075,
+        "rows": 117,
+        "nodes": 74,
+        "steps": 74
+      },
+      {
+        "group": 10029085,
+        "rows": 227,
+        "nodes": 130,
+        "steps": 130
+      },
+      {
+        "group": 10030005,
+        "rows": 163,
+        "nodes": 71,
+        "steps": 71
+      },
+      {
+        "group": 10030010,
+        "rows": 184,
+        "nodes": 96,
+        "steps": 96
+      },
+      {
+        "group": 10030020,
+        "rows": 197,
+        "nodes": 90,
+        "steps": 90
+      },
+      {
+        "group": 10030030,
+        "rows": 241,
+        "nodes": 117,
+        "steps": 117
+      },
+      {
+        "group": 10030040,
+        "rows": 262,
+        "nodes": 112,
+        "steps": 112
+      },
+      {
+        "group": 10030050,
+        "rows": 222,
+        "nodes": 105,
+        "steps": 105
+      },
+      {
+        "group": 10030060,
+        "rows": 276,
+        "nodes": 129,
+        "steps": 129
+      },
+      {
+        "group": 10030070,
+        "rows": 311,
+        "nodes": 121,
+        "steps": 121
+      },
+      {
+        "group": 10030075,
+        "rows": 91,
+        "nodes": 38,
+        "steps": 38
+      },
+      {
+        "group": 10030080,
+        "rows": 125,
+        "nodes": 54,
+        "steps": 54
+      },
+      {
+        "group": 10031005,
+        "rows": 217,
+        "nodes": 136,
+        "steps": 136
+      },
+      {
+        "group": 10031010,
+        "rows": 75,
+        "nodes": 51,
+        "steps": 51
+      },
+      {
+        "group": 10031020,
+        "rows": 283,
+        "nodes": 121,
+        "steps": 121
+      },
+      {
+        "group": 10031030,
+        "rows": 185,
+        "nodes": 100,
+        "steps": 100
+      },
+      {
+        "group": 10031040,
+        "rows": 122,
+        "nodes": 73,
+        "steps": 73
+      },
+      {
+        "group": 10031050,
+        "rows": 130,
+        "nodes": 92,
+        "steps": 92
+      },
+      {
+        "group": 10031060,
+        "rows": 188,
+        "nodes": 99,
+        "steps": 99
+      },
+      {
+        "group": 10031070,
+        "rows": 338,
+        "nodes": 183,
+        "steps": 183
+      },
+      {
+        "group": 10031080,
+        "rows": 145,
+        "nodes": 64,
+        "steps": 64
+      },
+      {
+        "group": 10031081,
+        "rows": 4,
+        "nodes": 2,
+        "steps": 2
+      },
+      {
+        "group": 10032005,
+        "rows": 101,
+        "nodes": 44,
+        "steps": 44
+      },
+      {
+        "group": 10032010,
+        "rows": 251,
+        "nodes": 129,
+        "steps": 129
+      },
+      {
+        "group": 10032015,
+        "rows": 53,
+        "nodes": 35,
+        "steps": 35
+      },
+      {
+        "group": 10032020,
+        "rows": 236,
+        "nodes": 124,
+        "steps": 124
+      },
+      {
+        "group": 10032030,
+        "rows": 200,
+        "nodes": 90,
+        "steps": 90
+      },
+      {
+        "group": 10032035,
+        "rows": 98,
+        "nodes": 49,
+        "steps": 49
+      },
+      {
+        "group": 10032040,
+        "rows": 198,
+        "nodes": 95,
+        "steps": 95
+      },
+      {
+        "group": 10032045,
+        "rows": 135,
+        "nodes": 47,
+        "steps": 47
+      },
+      {
+        "group": 10032050,
+        "rows": 192,
+        "nodes": 97,
+        "steps": 97
+      },
+      {
+        "group": 10032055,
+        "rows": 73,
+        "nodes": 34,
+        "steps": 34
+      },
+      {
+        "group": 10032060,
+        "rows": 93,
+        "nodes": 58,
+        "steps": 58
+      },
+      {
+        "group": 10032065,
+        "rows": 233,
+        "nodes": 122,
+        "steps": 122
+      },
+      {
+        "group": 10032070,
+        "rows": 93,
+        "nodes": 42,
+        "steps": 42
+      },
+      {
+        "group": 10032075,
+        "rows": 161,
+        "nodes": 87,
+        "steps": 87
+      },
+      {
+        "group": 10032080,
+        "rows": 111,
+        "nodes": 68,
+        "steps": 68
+      },
+      {
+        "group": 80000094,
+        "rows": 69,
+        "nodes": 48,
+        "steps": 48
+      },
+      {
+        "group": 80000095,
+        "rows": 67,
+        "nodes": 44,
+        "steps": 44
+      },
+      {
+        "group": 80000096,
+        "rows": 84,
+        "nodes": 54,
+        "steps": 54
+      },
+      {
+        "group": 80000097,
+        "rows": 66,
+        "nodes": 54,
+        "steps": 54
+      },
+      {
+        "group": 80000098,
+        "rows": 68,
+        "nodes": 43,
+        "steps": 43
+      },
+      {
+        "group": 80000099,
+        "rows": 69,
+        "nodes": 51,
+        "steps": 51
+      },
+      {
+        "group": 80000100,
+        "rows": 63,
+        "nodes": 57,
+        "steps": 57
+      },
+      {
+        "group": 80000101,
+        "rows": 72,
+        "nodes": 65,
+        "steps": 65
+      },
+      {
+        "group": 80000102,
+        "rows": 76,
+        "nodes": 62,
+        "steps": 62
+      },
+      {
+        "group": 80000103,
+        "rows": 62,
+        "nodes": 54,
+        "steps": 54
+      },
+      {
+        "group": 80000104,
+        "rows": 65,
+        "nodes": 47,
+        "steps": 47
+      },
+      {
+        "group": 80000105,
+        "rows": 84,
+        "nodes": 49,
+        "steps": 49
+      },
+      {
+        "group": 80000106,
+        "rows": 45,
+        "nodes": 28,
+        "steps": 28
+      },
+      {
+        "group": 80000107,
+        "rows": 121,
+        "nodes": 78,
+        "steps": 78
+      },
+      {
+        "group": 80000108,
+        "rows": 112,
+        "nodes": 77,
+        "steps": 77
+      },
+      {
+        "group": 80000109,
+        "rows": 87,
+        "nodes": 71,
+        "steps": 71
+      },
+      {
+        "group": 80000110,
+        "rows": 81,
+        "nodes": 42,
+        "steps": 42
+      },
+      {
+        "group": 80000111,
+        "rows": 186,
+        "nodes": 109,
+        "steps": 109
+      },
+      {
+        "group": 80000112,
+        "rows": 240,
+        "nodes": 134,
+        "steps": 134
+      },
+      {
+        "group": 80000113,
+        "rows": 113,
+        "nodes": 68,
+        "steps": 68
+      },
+      {
+        "group": 80000114,
+        "rows": 72,
+        "nodes": 53,
+        "steps": 53
+      },
+      {
+        "group": 80000115,
+        "rows": 156,
+        "nodes": 80,
+        "steps": 80
+      },
+      {
+        "group": 80000116,
+        "rows": 142,
+        "nodes": 96,
+        "steps": 96
+      },
+      {
+        "group": 10033005,
+        "rows": 175,
+        "nodes": 81,
+        "steps": 81
+      },
+      {
+        "group": 10033010,
+        "rows": 298,
+        "nodes": 179,
+        "steps": 179
+      },
+      {
+        "group": 10033020,
+        "rows": 358,
+        "nodes": 192,
+        "steps": 192
+      },
+      {
+        "group": 10033030,
+        "rows": 221,
+        "nodes": 107,
+        "steps": 107
+      },
+      {
+        "group": 10033040,
+        "rows": 166,
+        "nodes": 101,
+        "steps": 101
+      },
+      {
+        "group": 10033045,
+        "rows": 41,
+        "nodes": 27,
+        "steps": 27
+      },
+      {
+        "group": 10033050,
+        "rows": 114,
+        "nodes": 68,
+        "steps": 68
+      },
+      {
+        "group": 10033055,
+        "rows": 20,
+        "nodes": 11,
+        "steps": 11
+      },
+      {
+        "group": 10033060,
+        "rows": 148,
+        "nodes": 83,
+        "steps": 83
+      },
+      {
+        "group": 10033065,
+        "rows": 113,
+        "nodes": 57,
+        "steps": 57
+      },
+      {
+        "group": 10033070,
+        "rows": 177,
+        "nodes": 112,
+        "steps": 112
+      },
+      {
+        "group": 10033080,
+        "rows": 121,
+        "nodes": 64,
+        "steps": 64
+      },
+      {
+        "group": 10033090,
+        "rows": 96,
+        "nodes": 52,
+        "steps": 52
+      },
+      {
+        "group": 10033095,
+        "rows": 47,
+        "nodes": 20,
+        "steps": 20
+      },
+      {
+        "group": 10033100,
+        "rows": 456,
+        "nodes": 181,
+        "steps": 181
+      },
+      {
+        "group": 10033110,
+        "rows": 254,
+        "nodes": 124,
+        "steps": 124
+      },
+      {
+        "group": 10034005,
+        "rows": 88,
+        "nodes": 42,
+        "steps": 42
+      },
+      {
+        "group": 10034010,
+        "rows": 268,
+        "nodes": 160,
+        "steps": 160
+      },
+      {
+        "group": 10034020,
+        "rows": 269,
+        "nodes": 148,
+        "steps": 148
+      },
+      {
+        "group": 10034030,
+        "rows": 257,
+        "nodes": 136,
+        "steps": 136
+      },
+      {
+        "group": 10034040,
+        "rows": 270,
+        "nodes": 169,
+        "steps": 169
+      },
+      {
+        "group": 10034050,
+        "rows": 365,
+        "nodes": 227,
+        "steps": 227
+      },
+      {
+        "group": 10034060,
+        "rows": 159,
+        "nodes": 109,
+        "steps": 109
+      },
+      {
+        "group": 10034070,
+        "rows": 379,
+        "nodes": 225,
+        "steps": 225
+      },
+      {
+        "group": 10034080,
+        "rows": 97,
+        "nodes": 50,
+        "steps": 50
+      },
+      {
+        "group": 10034081,
+        "rows": 19,
+        "nodes": 2,
+        "steps": 2
+      },
+      {
+        "group": 10034090,
+        "rows": 77,
+        "nodes": 37,
+        "steps": 37
+      },
+      {
+        "group": 10034100,
+        "rows": 74,
+        "nodes": 41,
+        "steps": 41
+      },
+      {
+        "group": 10034110,
+        "rows": 26,
+        "nodes": 21,
+        "steps": 21
+      },
+      {
+        "group": 10034120,
+        "rows": 22,
+        "nodes": 15,
+        "steps": 15
+      },
+      {
+        "group": 10034130,
+        "rows": 41,
+        "nodes": 25,
+        "steps": 25
+      },
+      {
+        "group": 10034140,
+        "rows": 21,
+        "nodes": 19,
+        "steps": 19
+      },
+      {
+        "group": 10034150,
+        "rows": 21,
+        "nodes": 14,
+        "steps": 14
+      },
+      {
+        "group": 10034160,
+        "rows": 42,
+        "nodes": 19,
+        "steps": 19
+      },
+      {
+        "group": 10034170,
+        "rows": 17,
+        "nodes": 14,
+        "steps": 14
+      },
+      {
+        "group": 10034180,
+        "rows": 49,
+        "nodes": 25,
+        "steps": 25
+      },
+      {
+        "group": 10034190,
+        "rows": 22,
+        "nodes": 16,
+        "steps": 16
+      },
+      {
+        "group": 11434010,
+        "rows": 36,
+        "nodes": 22,
+        "steps": 22
+      },
+      {
+        "group": 11434020,
+        "rows": 56,
+        "nodes": 25,
+        "steps": 25
+      },
+      {
+        "group": 11034030,
+        "rows": 38,
+        "nodes": 29,
+        "steps": 29
+      },
+      {
+        "group": 11034060,
+        "rows": 20,
+        "nodes": 12,
+        "steps": 12
+      },
+      {
+        "group": 11134030,
+        "rows": 21,
+        "nodes": 21,
+        "steps": 21
+      },
+      {
+        "group": 11134060,
+        "rows": 21,
+        "nodes": 14,
+        "steps": 14
+      },
+      {
+        "group": 11234030,
+        "rows": 27,
+        "nodes": 26,
+        "steps": 26
+      },
+      {
+        "group": 11234060,
+        "rows": 43,
+        "nodes": 24,
+        "steps": 24
+      },
+      {
+        "group": 11334030,
+        "rows": 34,
+        "nodes": 25,
+        "steps": 25
+      },
+      {
+        "group": 11334060,
+        "rows": 21,
+        "nodes": 19,
+        "steps": 19
+      },
+      {
+        "group": 11034010,
+        "rows": 12,
+        "nodes": 8,
+        "steps": 8
+      },
+      {
+        "group": 11334020,
+        "rows": 9,
+        "nodes": 8,
+        "steps": 8
+      },
+      {
+        "group": 11234040,
+        "rows": 9,
+        "nodes": 9,
+        "steps": 9
+      },
+      {
+        "group": 11134050,
+        "rows": 11,
+        "nodes": 8,
+        "steps": 8
+      },
+      {
+        "group": 11134010,
+        "rows": 11,
+        "nodes": 7,
+        "steps": 7
+      },
+      {
+        "group": 11234020,
+        "rows": 10,
+        "nodes": 9,
+        "steps": 9
+      },
+      {
+        "group": 11334040,
+        "rows": 10,
+        "nodes": 7,
+        "steps": 7
+      },
+      {
+        "group": 11034050,
+        "rows": 13,
+        "nodes": 10,
+        "steps": 10
+      },
+      {
+        "group": 11334010,
+        "rows": 9,
+        "nodes": 6,
+        "steps": 6
+      },
+      {
+        "group": 11134020,
+        "rows": 15,
+        "nodes": 8,
+        "steps": 8
+      },
+      {
+        "group": 11034040,
+        "rows": 8,
+        "nodes": 5,
+        "steps": 5
+      },
+      {
+        "group": 11234050,
+        "rows": 9,
+        "nodes": 6,
+        "steps": 6
+      },
+      {
+        "group": 11234010,
+        "rows": 13,
+        "nodes": 7,
+        "steps": 7
+      },
+      {
+        "group": 11034020,
+        "rows": 15,
+        "nodes": 8,
+        "steps": 8
+      },
+      {
+        "group": 11134040,
+        "rows": 11,
+        "nodes": 8,
+        "steps": 8
+      },
+      {
+        "group": 11334050,
+        "rows": 11,
+        "nodes": 8,
+        "steps": 8
+      },
+      {
+        "group": 10035005,
+        "rows": 57,
+        "nodes": 52,
+        "steps": 52
+      },
+      {
+        "group": 10035010,
+        "rows": 171,
+        "nodes": 127,
+        "steps": 127
+      },
+      {
+        "group": 10035020,
+        "rows": 200,
+        "nodes": 134,
+        "steps": 134
+      },
+      {
+        "group": 10035030,
+        "rows": 197,
+        "nodes": 139,
+        "steps": 139
+      },
+      {
+        "group": 10035040,
+        "rows": 168,
+        "nodes": 105,
+        "steps": 105
+      },
+      {
+        "group": 10035050,
+        "rows": 130,
+        "nodes": 90,
+        "steps": 90
+      },
+      {
+        "group": 10035060,
+        "rows": 140,
+        "nodes": 99,
+        "steps": 99
+      },
+      {
+        "group": 10035070,
+        "rows": 61,
+        "nodes": 40,
+        "steps": 40
+      },
+      {
+        "group": 10035075,
+        "rows": 57,
+        "nodes": 40,
+        "steps": 40
+      },
+      {
+        "group": 10035080,
+        "rows": 167,
+        "nodes": 99,
+        "steps": 99
+      },
+      {
+        "group": 10035090,
+        "rows": 111,
+        "nodes": 43,
+        "steps": 43
+      },
+      {
+        "group": 10035095,
+        "rows": 132,
+        "nodes": 64,
+        "steps": 64
+      },
+      {
+        "group": 10035100,
+        "rows": 237,
+        "nodes": 119,
+        "steps": 119
+      },
+      {
+        "group": 10035110,
+        "rows": 110,
+        "nodes": 57,
+        "steps": 57
+      },
+      {
+        "group": 10035120,
+        "rows": 130,
+        "nodes": 52,
+        "steps": 52
+      },
+      {
+        "group": 10035130,
+        "rows": 192,
+        "nodes": 75,
+        "steps": 75
+      },
+      {
+        "group": 10035140,
+        "rows": 205,
+        "nodes": 63,
+        "steps": 63
+      },
+      {
+        "group": 10035150,
+        "rows": 138,
+        "nodes": 69,
+        "steps": 69
+      },
+      {
+        "group": 10035160,
+        "rows": 197,
+        "nodes": 79,
+        "steps": 79
+      },
+      {
+        "group": 10036005,
+        "rows": 98,
+        "nodes": 49,
+        "steps": 49
+      },
+      {
+        "group": 10036010,
+        "rows": 120,
+        "nodes": 59,
+        "steps": 59
+      },
+      {
+        "group": 10036020,
+        "rows": 275,
+        "nodes": 174,
+        "steps": 174
+      },
+      {
+        "group": 10036030,
+        "rows": 261,
+        "nodes": 139,
+        "steps": 139
+      },
+      {
+        "group": 10036035,
+        "rows": 126,
+        "nodes": 68,
+        "steps": 68
+      },
+      {
+        "group": 10036040,
+        "rows": 265,
+        "nodes": 156,
+        "steps": 156
+      },
+      {
+        "group": 10036045,
+        "rows": 97,
+        "nodes": 52,
+        "steps": 52
+      },
+      {
+        "group": 10036050,
+        "rows": 259,
+        "nodes": 129,
+        "steps": 129
+      },
+      {
+        "group": 10036055,
+        "rows": 50,
+        "nodes": 28,
+        "steps": 28
+      },
+      {
+        "group": 10036060,
+        "rows": 189,
+        "nodes": 117,
+        "steps": 117
+      },
+      {
+        "group": 10036070,
+        "rows": 253,
+        "nodes": 149,
+        "steps": 149
+      },
+      {
+        "group": 10036080,
+        "rows": 147,
+        "nodes": 70,
+        "steps": 70
+      },
+      {
+        "group": 10036090,
+        "rows": 140,
+        "nodes": 66,
+        "steps": 66
+      },
+      {
+        "group": 10036095,
+        "rows": 115,
+        "nodes": 63,
+        "steps": 63
+      },
+      {
+        "group": 10036100,
+        "rows": 98,
+        "nodes": 66,
+        "steps": 66
+      },
+      {
+        "group": 10036110,
+        "rows": 135,
+        "nodes": 70,
+        "steps": 70
+      },
+      {
+        "group": 10036120,
+        "rows": 67,
+        "nodes": 41,
+        "steps": 41
+      },
+      {
+        "group": 10036130,
+        "rows": 36,
+        "nodes": 27,
+        "steps": 27
+      },
+      {
+        "group": 10036140,
+        "rows": 33,
+        "nodes": 18,
+        "steps": 18
+      },
+      {
+        "group": 10036150,
+        "rows": 52,
+        "nodes": 33,
+        "steps": 33
+      },
+      {
+        "group": 10036160,
+        "rows": 88,
+        "nodes": 47,
+        "steps": 47
+      },
+      {
+        "group": 10037005,
+        "rows": 100,
+        "nodes": 54,
+        "steps": 54
+      },
+      {
+        "group": 10037010,
+        "rows": 211,
+        "nodes": 124,
+        "steps": 124
+      },
+      {
+        "group": 10037020,
+        "rows": 415,
+        "nodes": 184,
+        "steps": 184
+      },
+      {
+        "group": 10037030,
+        "rows": 337,
+        "nodes": 183,
+        "steps": 183
+      },
+      {
+        "group": 10037040,
+        "rows": 239,
+        "nodes": 124,
+        "steps": 124
+      },
+      {
+        "group": 10037050,
+        "rows": 271,
+        "nodes": 160,
+        "steps": 160
+      },
+      {
+        "group": 10037060,
+        "rows": 189,
+        "nodes": 103,
+        "steps": 103
+      },
+      {
+        "group": 10037070,
+        "rows": 274,
+        "nodes": 157,
+        "steps": 157
+      },
+      {
+        "group": 10037080,
+        "rows": 294,
+        "nodes": 145,
+        "steps": 145
+      },
+      {
+        "group": 10037090,
+        "rows": 125,
+        "nodes": 44,
+        "steps": 44
+      },
+      {
+        "group": 10037095,
+        "rows": 54,
+        "nodes": 28,
+        "steps": 28
+      },
+      {
+        "group": 10037100,
+        "rows": 68,
+        "nodes": 31,
+        "steps": 31
+      },
+      {
+        "group": 10037105,
+        "rows": 69,
+        "nodes": 27,
+        "steps": 27
+      },
+      {
+        "group": 10037110,
+        "rows": 208,
+        "nodes": 109,
+        "steps": 109
+      },
+      {
+        "group": 10037115,
+        "rows": 59,
+        "nodes": 21,
+        "steps": 21
+      },
+      {
+        "group": 10038005,
+        "rows": 264,
+        "nodes": 136,
+        "steps": 136
+      },
+      {
+        "group": 10038010,
+        "rows": 387,
+        "nodes": 187,
+        "steps": 187
+      },
+      {
+        "group": 10038020,
+        "rows": 501,
+        "nodes": 219,
+        "steps": 219
+      },
+      {
+        "group": 10038030,
+        "rows": 344,
+        "nodes": 170,
+        "steps": 170
+      },
+      {
+        "group": 10038040,
+        "rows": 214,
+        "nodes": 80,
+        "steps": 80
+      },
+      {
+        "group": 10038045,
+        "rows": 92,
+        "nodes": 38,
+        "steps": 38
+      },
+      {
+        "group": 10038050,
+        "rows": 227,
+        "nodes": 82,
+        "steps": 82
+      },
+      {
+        "group": 10038055,
+        "rows": 178,
+        "nodes": 71,
+        "steps": 71
+      },
+      {
+        "group": 10038060,
+        "rows": 384,
+        "nodes": 186,
+        "steps": 186
+      },
+      {
+        "group": 10038070,
+        "rows": 364,
+        "nodes": 157,
+        "steps": 157
+      },
+      {
+        "group": 10038080,
+        "rows": 179,
+        "nodes": 93,
+        "steps": 93
+      },
+      {
+        "group": 10038085,
+        "rows": 60,
+        "nodes": 20,
+        "steps": 20
+      },
+      {
+        "group": 10038090,
+        "rows": 77,
+        "nodes": 28,
+        "steps": 28
+      },
+      {
+        "group": 10038095,
+        "rows": 47,
+        "nodes": 17,
+        "steps": 17
+      },
+      {
+        "group": 10038100,
+        "rows": 151,
+        "nodes": 79,
+        "steps": 79
+      },
+      {
+        "group": 10038105,
+        "rows": 142,
+        "nodes": 72,
+        "steps": 72
+      },
+      {
+        "group": 10038110,
+        "rows": 328,
+        "nodes": 108,
+        "steps": 108
+      },
+      {
+        "group": 10039005,
+        "rows": 97,
+        "nodes": 38,
+        "steps": 38
+      },
+      {
+        "group": 10039010,
+        "rows": 240,
+        "nodes": 168,
+        "steps": 168
+      },
+      {
+        "group": 10039020,
+        "rows": 157,
+        "nodes": 102,
+        "steps": 102
+      },
+      {
+        "group": 10039025,
+        "rows": 127,
+        "nodes": 76,
+        "steps": 76
+      },
+      {
+        "group": 10039030,
+        "rows": 222,
+        "nodes": 122,
+        "steps": 122
+      },
+      {
+        "group": 10039035,
+        "rows": 61,
+        "nodes": 36,
+        "steps": 36
+      },
+      {
+        "group": 10039040,
+        "rows": 229,
+        "nodes": 154,
+        "steps": 154
+      },
+      {
+        "group": 10039050,
+        "rows": 306,
+        "nodes": 191,
+        "steps": 191
+      },
+      {
+        "group": 10039060,
+        "rows": 252,
+        "nodes": 133,
+        "steps": 133
+      },
+      {
+        "group": 10039070,
+        "rows": 196,
+        "nodes": 124,
+        "steps": 124
+      },
+      {
+        "group": 10039080,
+        "rows": 234,
+        "nodes": 134,
+        "steps": 134
+      },
+      {
+        "group": 10039090,
+        "rows": 298,
+        "nodes": 131,
+        "steps": 131
+      },
+      {
+        "group": 10039100,
+        "rows": 290,
+        "nodes": 123,
+        "steps": 123
+      },
+      {
+        "group": 10039110,
+        "rows": 312,
+        "nodes": 117,
+        "steps": 117
+      },
+      {
+        "group": 10039120,
+        "rows": 338,
+        "nodes": 131,
+        "steps": 131
+      },
+      {
+        "group": 10039130,
+        "rows": 476,
+        "nodes": 236,
+        "steps": 236
+      },
+      {
+        "group": 10039140,
+        "rows": 286,
+        "nodes": 115,
+        "steps": 115
+      },
+      {
+        "group": 10039150,
+        "rows": 205,
+        "nodes": 100,
+        "steps": 100
+      },
+      {
+        "group": 10039160,
+        "rows": 407,
+        "nodes": 165,
+        "steps": 165
+      },
+      {
+        "group": 10040005,
+        "rows": 41,
+        "nodes": 14,
+        "steps": 14
+      },
+      {
+        "group": 10040010,
+        "rows": 368,
+        "nodes": 211,
+        "steps": 211
+      },
+      {
+        "group": 10040020,
+        "rows": 223,
+        "nodes": 152,
+        "steps": 152
+      },
+      {
+        "group": 10040030,
+        "rows": 307,
+        "nodes": 172,
+        "steps": 172
+      },
+      {
+        "group": 10040040,
+        "rows": 317,
+        "nodes": 176,
+        "steps": 176
+      },
+      {
+        "group": 10040050,
+        "rows": 400,
+        "nodes": 186,
+        "steps": 186
+      },
+      {
+        "group": 10040060,
+        "rows": 69,
+        "nodes": 51,
+        "steps": 51
+      },
+      {
+        "group": 10040065,
+        "rows": 203,
+        "nodes": 78,
+        "steps": 78
+      },
+      {
+        "group": 10040070,
+        "rows": 171,
+        "nodes": 119,
+        "steps": 119
+      },
+      {
+        "group": 10040080,
+        "rows": 171,
+        "nodes": 112,
+        "steps": 112
+      },
+      {
+        "group": 10040090,
+        "rows": 95,
+        "nodes": 68,
+        "steps": 68
+      },
+      {
+        "group": 10040100,
+        "rows": 76,
+        "nodes": 41,
+        "steps": 41
+      },
+      {
+        "group": 10040110,
+        "rows": 151,
+        "nodes": 90,
+        "steps": 90
+      },
+      {
+        "group": 10040120,
+        "rows": 151,
+        "nodes": 88,
+        "steps": 88
+      },
+      {
+        "group": 10040130,
+        "rows": 55,
+        "nodes": 40,
+        "steps": 40
+      },
+      {
+        "group": 10041005,
+        "rows": 40,
+        "nodes": 15,
+        "steps": 15
+      },
+      {
+        "group": 10041010,
+        "rows": 274,
+        "nodes": 148,
+        "steps": 148
+      },
+      {
+        "group": 10041020,
+        "rows": 117,
+        "nodes": 41,
+        "steps": 41
+      },
+      {
+        "group": 10041030,
+        "rows": 112,
+        "nodes": 57,
+        "steps": 57
+      },
+      {
+        "group": 10041040,
+        "rows": 118,
+        "nodes": 58,
+        "steps": 58
+      },
+      {
+        "group": 10041050,
+        "rows": 125,
+        "nodes": 58,
+        "steps": 58
+      },
+      {
+        "group": 10041060,
+        "rows": 146,
+        "nodes": 73,
+        "steps": 73
+      },
+      {
+        "group": 10041070,
+        "rows": 244,
+        "nodes": 120,
+        "steps": 120
+      },
+      {
+        "group": 10041080,
+        "rows": 120,
+        "nodes": 52,
+        "steps": 52
+      },
+      {
+        "group": 10042005,
+        "rows": 217,
+        "nodes": 158,
+        "steps": 158
+      },
+      {
+        "group": 10042010,
+        "rows": 233,
+        "nodes": 100,
+        "steps": 100
+      },
+      {
+        "group": 10042020,
+        "rows": 182,
+        "nodes": 130,
+        "steps": 130
+      },
+      {
+        "group": 10042030,
+        "rows": 219,
+        "nodes": 151,
+        "steps": 151
+      },
+      {
+        "group": 10042040,
+        "rows": 143,
+        "nodes": 109,
+        "steps": 109
+      },
+      {
+        "group": 10042050,
+        "rows": 137,
+        "nodes": 88,
+        "steps": 88
+      },
+      {
+        "group": 10042055,
+        "rows": 17,
+        "nodes": 15,
+        "steps": 15
+      },
+      {
+        "group": 10042060,
+        "rows": 133,
+        "nodes": 94,
+        "steps": 94
+      },
+      {
+        "group": 10042070,
+        "rows": 121,
+        "nodes": 58,
+        "steps": 58
+      },
+      {
+        "group": 10042080,
+        "rows": 209,
+        "nodes": 128,
+        "steps": 128
+      },
+      {
+        "group": 10043005,
+        "rows": 162,
+        "nodes": 69,
+        "steps": 69
+      },
+      {
+        "group": 10043010,
+        "rows": 254,
+        "nodes": 120,
+        "steps": 120
+      },
+      {
+        "group": 10043020,
+        "rows": 191,
+        "nodes": 91,
+        "steps": 91
+      },
+      {
+        "group": 10043025,
+        "rows": 33,
+        "nodes": 16,
+        "steps": 16
+      },
+      {
+        "group": 10043030,
+        "rows": 285,
+        "nodes": 126,
+        "steps": 126
+      },
+      {
+        "group": 10043040,
+        "rows": 209,
+        "nodes": 141,
+        "steps": 141
+      },
+      {
+        "group": 10043050,
+        "rows": 371,
+        "nodes": 196,
+        "steps": 196
+      },
+      {
+        "group": 10043060,
+        "rows": 246,
+        "nodes": 127,
+        "steps": 127
+      },
+      {
+        "group": 10043070,
+        "rows": 171,
+        "nodes": 59,
+        "steps": 59
+      },
+      {
+        "group": 10043075,
+        "rows": 101,
+        "nodes": 34,
+        "steps": 34
+      },
+      {
+        "group": 10043080,
+        "rows": 292,
+        "nodes": 136,
+        "steps": 136
+      },
+      {
+        "group": 10043090,
+        "rows": 188,
+        "nodes": 90,
+        "steps": 90
+      },
+      {
+        "group": 10044005,
+        "rows": 28,
+        "nodes": 9,
+        "steps": 9
+      },
+      {
+        "group": 10044010,
+        "rows": 308,
+        "nodes": 158,
+        "steps": 158
+      },
+      {
+        "group": 10044020,
+        "rows": 212,
+        "nodes": 130,
+        "steps": 130
+      },
+      {
+        "group": 10044030,
+        "rows": 236,
+        "nodes": 140,
+        "steps": 140
+      },
+      {
+        "group": 10044040,
+        "rows": 144,
+        "nodes": 97,
+        "steps": 97
+      },
+      {
+        "group": 10044050,
+        "rows": 106,
+        "nodes": 57,
+        "steps": 57
+      },
+      {
+        "group": 10044055,
+        "rows": 27,
+        "nodes": 16,
+        "steps": 16
+      },
+      {
+        "group": 10044060,
+        "rows": 185,
+        "nodes": 99,
+        "steps": 99
+      },
+      {
+        "group": 10044070,
+        "rows": 77,
+        "nodes": 44,
+        "steps": 44
+      },
+      {
+        "group": 10044075,
+        "rows": 91,
+        "nodes": 65,
+        "steps": 65
+      },
+      {
+        "group": 10044080,
+        "rows": 135,
+        "nodes": 90,
+        "steps": 90
+      },
+      {
+        "group": 10044090,
+        "rows": 247,
+        "nodes": 150,
+        "steps": 150
+      },
+      {
+        "group": 10044100,
+        "rows": 200,
+        "nodes": 144,
+        "steps": 144
+      },
+      {
+        "group": 10045005,
+        "rows": 87,
+        "nodes": 45,
+        "steps": 45
+      },
+      {
+        "group": 10045010,
+        "rows": 131,
+        "nodes": 84,
+        "steps": 84
+      },
+      {
+        "group": 10045020,
+        "rows": 103,
+        "nodes": 53,
+        "steps": 53
+      },
+      {
+        "group": 10045025,
+        "rows": 52,
+        "nodes": 29,
+        "steps": 29
+      },
+      {
+        "group": 10045030,
+        "rows": 140,
+        "nodes": 83,
+        "steps": 83
+      },
+      {
+        "group": 10045040,
+        "rows": 258,
+        "nodes": 134,
+        "steps": 134
+      },
+      {
+        "group": 10045050,
+        "rows": 116,
+        "nodes": 78,
+        "steps": 78
+      },
+      {
+        "group": 10045060,
+        "rows": 253,
+        "nodes": 128,
+        "steps": 128
+      },
+      {
+        "group": 10045070,
+        "rows": 180,
+        "nodes": 97,
+        "steps": 97
+      },
+      {
+        "group": 10045080,
+        "rows": 202,
+        "nodes": 148,
+        "steps": 148
+      },
+      {
+        "group": 10045090,
+        "rows": 253,
+        "nodes": 119,
+        "steps": 119
+      },
+      {
+        "group": 10045100,
+        "rows": 205,
+        "nodes": 115,
+        "steps": 115
+      },
+      {
+        "group": 10045105,
+        "rows": 41,
+        "nodes": 29,
+        "steps": 29
+      },
+      {
+        "group": 10045110,
+        "rows": 203,
+        "nodes": 107,
+        "steps": 107
+      },
+      {
+        "group": 10045120,
+        "rows": 116,
+        "nodes": 71,
+        "steps": 71
+      },
+      {
+        "group": 10046005,
+        "rows": 160,
+        "nodes": 63,
+        "steps": 63
+      },
+      {
+        "group": 10046010,
+        "rows": 290,
+        "nodes": 154,
+        "steps": 154
+      },
+      {
+        "group": 10046020,
+        "rows": 427,
+        "nodes": 152,
+        "steps": 152
+      },
+      {
+        "group": 10046025,
+        "rows": 133,
+        "nodes": 61,
+        "steps": 61
+      },
+      {
+        "group": 10046030,
+        "rows": 441,
+        "nodes": 196,
+        "steps": 196
+      },
+      {
+        "group": 10046040,
+        "rows": 414,
+        "nodes": 200,
+        "steps": 200
+      },
+      {
+        "group": 10046050,
+        "rows": 364,
+        "nodes": 159,
+        "steps": 159
+      },
+      {
+        "group": 10046060,
+        "rows": 247,
+        "nodes": 132,
+        "steps": 132
+      },
+      {
+        "group": 10046070,
+        "rows": 364,
+        "nodes": 152,
+        "steps": 152
+      },
+      {
+        "group": 10046080,
+        "rows": 328,
+        "nodes": 167,
+        "steps": 167
+      },
+      {
+        "group": 10046085,
+        "rows": 4,
+        "nodes": 2,
+        "steps": 2
+      },
+      {
+        "group": 10046090,
+        "rows": 257,
+        "nodes": 125,
+        "steps": 125
+      },
+      {
+        "group": 10046100,
+        "rows": 104,
+        "nodes": 37,
+        "steps": 37
+      },
+      {
+        "group": 10046110,
+        "rows": 14,
+        "nodes": 6,
+        "steps": 6
+      },
+      {
+        "group": 10046120,
+        "rows": 15,
+        "nodes": 9,
+        "steps": 9
+      },
+      {
+        "group": 10046130,
+        "rows": 27,
+        "nodes": 22,
+        "steps": 22
+      },
+      {
+        "group": 10046140,
+        "rows": 35,
+        "nodes": 27,
+        "steps": 27
+      },
+      {
+        "group": 10046150,
+        "rows": 37,
+        "nodes": 28,
+        "steps": 28
+      },
+      {
+        "group": 10046160,
+        "rows": 37,
+        "nodes": 24,
+        "steps": 24
+      },
+      {
+        "group": 10046170,
+        "rows": 58,
+        "nodes": 35,
+        "steps": 35
+      },
+      {
+        "group": 10046180,
+        "rows": 40,
+        "nodes": 33,
+        "steps": 33
+      },
+      {
+        "group": 10046190,
+        "rows": 35,
+        "nodes": 24,
+        "steps": 24
+      },
+      {
+        "group": 10046200,
+        "rows": 47,
+        "nodes": 38,
+        "steps": 38
+      },
+      {
+        "group": 10046210,
+        "rows": 49,
+        "nodes": 42,
+        "steps": 42
+      },
+      {
+        "group": 10046220,
+        "rows": 31,
+        "nodes": 28,
+        "steps": 28
+      },
+      {
+        "group": 10046230,
+        "rows": 34,
+        "nodes": 17,
+        "steps": 17
+      },
+      {
+        "group": 10046240,
+        "rows": 41,
+        "nodes": 27,
+        "steps": 27
+      },
+      {
+        "group": 10046250,
+        "rows": 55,
+        "nodes": 37,
+        "steps": 37
+      },
+      {
+        "group": 10046260,
+        "rows": 41,
+        "nodes": 33,
+        "steps": 33
+      },
+      {
+        "group": 10046270,
+        "rows": 35,
+        "nodes": 20,
+        "steps": 20
+      },
+      {
+        "group": 10046280,
+        "rows": 20,
+        "nodes": 17,
+        "steps": 17
+      },
+      {
+        "group": 10047005,
+        "rows": 37,
+        "nodes": 20,
+        "steps": 20
+      },
+      {
+        "group": 10047010,
+        "rows": 167,
+        "nodes": 102,
+        "steps": 102
+      },
+      {
+        "group": 10047020,
+        "rows": 284,
+        "nodes": 149,
+        "steps": 149
+      },
+      {
+        "group": 10047030,
+        "rows": 201,
+        "nodes": 109,
+        "steps": 109
+      },
+      {
+        "group": 10047040,
+        "rows": 251,
+        "nodes": 139,
+        "steps": 139
+      },
+      {
+        "group": 10047050,
+        "rows": 244,
+        "nodes": 133,
+        "steps": 133
+      },
+      {
+        "group": 10047060,
+        "rows": 182,
+        "nodes": 99,
+        "steps": 99
+      },
+      {
+        "group": 10047070,
+        "rows": 250,
+        "nodes": 122,
+        "steps": 122
+      },
+      {
+        "group": 10047080,
+        "rows": 184,
+        "nodes": 114,
+        "steps": 114
+      },
+      {
+        "group": 10047090,
+        "rows": 185,
+        "nodes": 60,
+        "steps": 60
+      },
+      {
+        "group": 10047095,
+        "rows": 42,
+        "nodes": 20,
+        "steps": 20
+      },
+      {
+        "group": 10047100,
+        "rows": 38,
+        "nodes": 21,
+        "steps": 21
+      },
+      {
+        "group": 10047105,
+        "rows": 183,
+        "nodes": 79,
+        "steps": 79
+      },
+      {
+        "group": 10047110,
+        "rows": 154,
+        "nodes": 90,
+        "steps": 90
+      },
+      {
+        "group": 10048005,
+        "rows": 96,
+        "nodes": 58,
+        "steps": 58
+      },
+      {
+        "group": 10048010,
+        "rows": 174,
+        "nodes": 129,
+        "steps": 129
+      },
+      {
+        "group": 10048020,
+        "rows": 198,
+        "nodes": 140,
+        "steps": 140
+      },
+      {
+        "group": 10048030,
+        "rows": 209,
+        "nodes": 145,
+        "steps": 145
+      },
+      {
+        "group": 10048040,
+        "rows": 157,
+        "nodes": 115,
+        "steps": 115
+      },
+      {
+        "group": 10048050,
+        "rows": 169,
+        "nodes": 120,
+        "steps": 120
+      },
+      {
+        "group": 10048060,
+        "rows": 178,
+        "nodes": 147,
+        "steps": 147
+      },
+      {
+        "group": 10048070,
+        "rows": 189,
+        "nodes": 118,
+        "steps": 118
+      },
+      {
+        "group": 10048080,
+        "rows": 169,
+        "nodes": 113,
+        "steps": 113
+      },
+      {
+        "group": 10048090,
+        "rows": 153,
+        "nodes": 125,
+        "steps": 125
+      },
+      {
+        "group": 10048100,
+        "rows": 238,
+        "nodes": 139,
+        "steps": 139
+      },
+      {
+        "group": 10048110,
+        "rows": 87,
+        "nodes": 79,
+        "steps": 79
+      },
+      {
+        "group": 10049005,
+        "rows": 35,
+        "nodes": 13,
+        "steps": 13
+      },
+      {
+        "group": 10049010,
+        "rows": 145,
+        "nodes": 82,
+        "steps": 82
+      },
+      {
+        "group": 10049020,
+        "rows": 161,
+        "nodes": 120,
+        "steps": 120
+      },
+      {
+        "group": 10049030,
+        "rows": 226,
+        "nodes": 148,
+        "steps": 148
+      },
+      {
+        "group": 10049040,
+        "rows": 243,
+        "nodes": 125,
+        "steps": 125
+      },
+      {
+        "group": 10049050,
+        "rows": 139,
+        "nodes": 79,
+        "steps": 79
+      },
+      {
+        "group": 10049055,
+        "rows": 92,
+        "nodes": 53,
+        "steps": 53
+      },
+      {
+        "group": 10049060,
+        "rows": 210,
+        "nodes": 156,
+        "steps": 156
+      },
+      {
+        "group": 10049070,
+        "rows": 81,
+        "nodes": 54,
+        "steps": 54
+      },
+      {
+        "group": 10049075,
+        "rows": 94,
+        "nodes": 34,
+        "steps": 34
+      },
+      {
+        "group": 10049080,
+        "rows": 156,
+        "nodes": 107,
+        "steps": 107
+      },
+      {
+        "group": 10049090,
+        "rows": 92,
+        "nodes": 51,
+        "steps": 51
+      },
+      {
+        "group": 10049100,
+        "rows": 354,
+        "nodes": 160,
+        "steps": 160
+      },
+      {
+        "group": 10049110,
+        "rows": 117,
+        "nodes": 89,
+        "steps": 89
+      },
+      {
+        "group": 10049120,
+        "rows": 41,
+        "nodes": 18,
+        "steps": 18
+      },
+      {
+        "group": 10049130,
+        "rows": 135,
+        "nodes": 101,
+        "steps": 101
+      },
+      {
+        "group": 10049140,
+        "rows": 160,
+        "nodes": 96,
+        "steps": 96
+      },
+      {
+        "group": 10050005,
+        "rows": 210,
+        "nodes": 163,
+        "steps": 163
+      },
+      {
+        "group": 10050010,
+        "rows": 216,
+        "nodes": 138,
+        "steps": 138
+      },
+      {
+        "group": 10050020,
+        "rows": 206,
+        "nodes": 155,
+        "steps": 155
+      },
+      {
+        "group": 10050030,
+        "rows": 151,
+        "nodes": 120,
+        "steps": 120
+      },
+      {
+        "group": 10050040,
+        "rows": 210,
+        "nodes": 133,
+        "steps": 133
+      },
+      {
+        "group": 10050050,
+        "rows": 273,
+        "nodes": 218,
+        "steps": 218
+      },
+      {
+        "group": 10050060,
+        "rows": 229,
+        "nodes": 135,
+        "steps": 135
+      },
+      {
+        "group": 10050070,
+        "rows": 133,
+        "nodes": 111,
+        "steps": 111
+      },
+      {
+        "group": 10050080,
+        "rows": 308,
+        "nodes": 189,
+        "steps": 189
+      },
+      {
+        "group": 10050090,
+        "rows": 182,
+        "nodes": 135,
+        "steps": 135
+      },
+      {
+        "group": 10051005,
+        "rows": 125,
+        "nodes": 69,
+        "steps": 69
+      },
+      {
+        "group": 10051010,
+        "rows": 177,
+        "nodes": 154,
+        "steps": 154
+      },
+      {
+        "group": 10051020,
+        "rows": 231,
+        "nodes": 184,
+        "steps": 184
+      },
+      {
+        "group": 10051030,
+        "rows": 186,
+        "nodes": 132,
+        "steps": 132
+      },
+      {
+        "group": 10051040,
+        "rows": 186,
+        "nodes": 125,
+        "steps": 125
+      },
+      {
+        "group": 10051045,
+        "rows": 42,
+        "nodes": 26,
+        "steps": 26
+      },
+      {
+        "group": 10051050,
+        "rows": 197,
+        "nodes": 130,
+        "steps": 130
+      },
+      {
+        "group": 10051060,
+        "rows": 166,
+        "nodes": 109,
+        "steps": 109
+      },
+      {
+        "group": 10051070,
+        "rows": 217,
+        "nodes": 157,
+        "steps": 157
+      },
+      {
+        "group": 10051080,
+        "rows": 221,
+        "nodes": 145,
+        "steps": 145
+      },
+      {
+        "group": 10051090,
+        "rows": 198,
+        "nodes": 135,
+        "steps": 135
+      },
+      {
+        "group": 10051100,
+        "rows": 324,
+        "nodes": 178,
+        "steps": 178
+      },
+      {
+        "group": 10051110,
+        "rows": 82,
+        "nodes": 48,
+        "steps": 48
+      },
+      {
+        "group": 10052010,
+        "rows": 85,
+        "nodes": 52,
+        "steps": 52
+      },
+      {
+        "group": 10052015,
+        "rows": 33,
+        "nodes": 28,
+        "steps": 28
+      },
+      {
+        "group": 10052020,
+        "rows": 285,
+        "nodes": 149,
+        "steps": 149
+      },
+      {
+        "group": 10052030,
+        "rows": 70,
+        "nodes": 42,
+        "steps": 42
+      },
+      {
+        "group": 10052040,
+        "rows": 104,
+        "nodes": 68,
+        "steps": 68
+      },
+      {
+        "group": 10052050,
+        "rows": 158,
+        "nodes": 133,
+        "steps": 133
+      },
+      {
+        "group": 10052055,
+        "rows": 23,
+        "nodes": 19,
+        "steps": 19
+      },
+      {
+        "group": 10052060,
+        "rows": 87,
+        "nodes": 63,
+        "steps": 63
+      },
+      {
+        "group": 10052065,
+        "rows": 78,
+        "nodes": 55,
+        "steps": 55
+      },
+      {
+        "group": 10052070,
+        "rows": 115,
+        "nodes": 65,
+        "steps": 65
+      },
+      {
+        "group": 10052075,
+        "rows": 57,
+        "nodes": 20,
+        "steps": 20
+      },
+      {
+        "group": 10052080,
+        "rows": 246,
+        "nodes": 143,
+        "steps": 143
+      },
+      {
+        "group": 10052090,
+        "rows": 78,
+        "nodes": 48,
+        "steps": 48
+      },
+      {
+        "group": 10052095,
+        "rows": 21,
+        "nodes": 15,
+        "steps": 15
+      },
+      {
+        "group": 10052100,
+        "rows": 39,
+        "nodes": 30,
+        "steps": 30
+      },
+      {
+        "group": 10052105,
+        "rows": 13,
+        "nodes": 7,
+        "steps": 7
+      },
+      {
+        "group": 10052110,
+        "rows": 116,
+        "nodes": 75,
+        "steps": 75
+      },
+      {
+        "group": 10052115,
+        "rows": 138,
+        "nodes": 111,
+        "steps": 111
+      },
+      {
+        "group": 10052120,
+        "rows": 220,
+        "nodes": 121,
+        "steps": 121
+      },
+      {
+        "group": 10052130,
+        "rows": 118,
+        "nodes": 90,
+        "steps": 90
+      },
+      {
+        "group": 10052135,
+        "rows": 30,
+        "nodes": 15,
+        "steps": 15
+      },
+      {
+        "group": 10052140,
+        "rows": 272,
+        "nodes": 187,
+        "steps": 187
+      },
+      {
+        "group": 10052150,
+        "rows": 182,
+        "nodes": 93,
+        "steps": 93
+      },
+      {
+        "group": 10052153,
+        "rows": 19,
+        "nodes": 9,
+        "steps": 9
+      },
+      {
+        "group": 10052155,
+        "rows": 160,
+        "nodes": 75,
+        "steps": 75
+      },
+      {
+        "group": 10052160,
+        "rows": 107,
+        "nodes": 73,
+        "steps": 73
+      },
+      {
+        "group": 10052170,
+        "rows": 5,
+        "nodes": 4,
+        "steps": 4
+      },
+      {
+        "group": 10052175,
+        "rows": 257,
+        "nodes": 134,
+        "steps": 134
+      },
+      {
+        "group": 10052180,
+        "rows": 89,
+        "nodes": 51,
+        "steps": 51
+      },
+      {
+        "group": 10052190,
+        "rows": 44,
+        "nodes": 27,
+        "steps": 27
+      },
+      {
+        "group": 10052195,
+        "rows": 575,
+        "nodes": 365,
+        "steps": 365
+      },
+      {
+        "group": 10053005,
+        "rows": 204,
+        "nodes": 155,
+        "steps": 155
+      },
+      {
+        "group": 10053010,
+        "rows": 143,
+        "nodes": 94,
+        "steps": 94
+      },
+      {
+        "group": 10053020,
+        "rows": 212,
+        "nodes": 142,
+        "steps": 142
+      },
+      {
+        "group": 10053030,
+        "rows": 364,
+        "nodes": 201,
+        "steps": 201
+      },
+      {
+        "group": 10053040,
+        "rows": 299,
+        "nodes": 154,
+        "steps": 154
+      },
+      {
+        "group": 10053050,
+        "rows": 201,
+        "nodes": 114,
+        "steps": 114
+      },
+      {
+        "group": 10053060,
+        "rows": 354,
+        "nodes": 189,
+        "steps": 189
+      },
+      {
+        "group": 10053070,
+        "rows": 270,
+        "nodes": 141,
+        "steps": 141
+      },
+      {
+        "group": 10053080,
+        "rows": 183,
+        "nodes": 91,
+        "steps": 91
+      },
+      {
+        "group": 10053085,
+        "rows": 261,
+        "nodes": 151,
+        "steps": 151
+      },
+      {
+        "group": 10053090,
+        "rows": 154,
+        "nodes": 64,
+        "steps": 64
+      },
+      {
+        "group": 10053100,
+        "rows": 108,
+        "nodes": 70,
+        "steps": 70
+      },
+      {
+        "group": 10053110,
+        "rows": 91,
+        "nodes": 50,
+        "steps": 50
+      },
+      {
+        "group": 10053120,
+        "rows": 49,
+        "nodes": 30,
+        "steps": 30
+      },
+      {
+        "group": 10053130,
+        "rows": 64,
+        "nodes": 26,
+        "steps": 26
+      },
+      {
+        "group": 10054005,
+        "rows": 145,
+        "nodes": 83,
+        "steps": 83
+      },
+      {
+        "group": 10054010,
+        "rows": 232,
+        "nodes": 166,
+        "steps": 166
+      },
+      {
+        "group": 10054020,
+        "rows": 290,
+        "nodes": 195,
+        "steps": 195
+      },
+      {
+        "group": 10054030,
+        "rows": 190,
+        "nodes": 103,
+        "steps": 103
+      },
+      {
+        "group": 10054040,
+        "rows": 408,
+        "nodes": 237,
+        "steps": 237
+      },
+      {
+        "group": 10054050,
+        "rows": 236,
+        "nodes": 174,
+        "steps": 174
+      },
+      {
+        "group": 10054060,
+        "rows": 226,
+        "nodes": 146,
+        "steps": 146
+      },
+      {
+        "group": 10054070,
+        "rows": 238,
+        "nodes": 152,
+        "steps": 152
+      },
+      {
+        "group": 10054080,
+        "rows": 222,
+        "nodes": 158,
+        "steps": 158
+      },
+      {
+        "group": 10054090,
+        "rows": 156,
+        "nodes": 88,
+        "steps": 88
+      },
+      {
+        "group": 10054095,
+        "rows": 38,
+        "nodes": 17,
+        "steps": 17
+      },
+      {
+        "group": 10054100,
+        "rows": 146,
+        "nodes": 92,
+        "steps": 92
+      },
+      {
+        "group": 10054110,
+        "rows": 257,
+        "nodes": 163,
+        "steps": 163
+      },
+      {
+        "group": 10054120,
+        "rows": 82,
+        "nodes": 48,
+        "steps": 48
+      },
+      {
+        "group": 10055005,
+        "rows": 126,
+        "nodes": 44,
+        "steps": 44
+      },
+      {
+        "group": 10055010,
+        "rows": 265,
+        "nodes": 125,
+        "steps": 125
+      },
+      {
+        "group": 10055020,
+        "rows": 379,
+        "nodes": 248,
+        "steps": 248
+      },
+      {
+        "group": 10055030,
+        "rows": 274,
+        "nodes": 176,
+        "steps": 176
+      },
+      {
+        "group": 10055040,
+        "rows": 229,
+        "nodes": 109,
+        "steps": 109
+      },
+      {
+        "group": 10055050,
+        "rows": 232,
+        "nodes": 149,
+        "steps": 149
+      },
+      {
+        "group": 10055060,
+        "rows": 346,
+        "nodes": 178,
+        "steps": 178
+      },
+      {
+        "group": 10055070,
+        "rows": 292,
+        "nodes": 162,
+        "steps": 162
+      },
+      {
+        "group": 10055080,
+        "rows": 127,
+        "nodes": 60,
+        "steps": 60
+      },
+      {
+        "group": 10055085,
+        "rows": 116,
+        "nodes": 71,
+        "steps": 71
+      },
+      {
+        "group": 10055090,
+        "rows": 226,
+        "nodes": 147,
+        "steps": 147
+      },
+      {
+        "group": 10055095,
+        "rows": 4,
+        "nodes": 2,
+        "steps": 2
+      },
+      {
+        "group": 10055100,
+        "rows": 89,
+        "nodes": 56,
+        "steps": 56
+      },
+      {
+        "group": 10055110,
+        "rows": 70,
+        "nodes": 45,
+        "steps": 45
+      },
+      {
+        "group": 10055120,
+        "rows": 48,
+        "nodes": 44,
+        "steps": 44
+      },
+      {
+        "group": 10055130,
+        "rows": 99,
+        "nodes": 59,
+        "steps": 59
+      },
+      {
+        "group": 10055140,
+        "rows": 158,
+        "nodes": 111,
+        "steps": 111
+      },
+      {
+        "group": 10055150,
+        "rows": 86,
+        "nodes": 62,
+        "steps": 62
+      },
+      {
+        "group": 10055155,
+        "rows": 50,
+        "nodes": 41,
+        "steps": 41
+      },
+      {
+        "group": 10055160,
+        "rows": 65,
+        "nodes": 48,
+        "steps": 48
+      },
+      {
+        "group": 10055165,
+        "rows": 21,
+        "nodes": 18,
+        "steps": 18
+      },
+      {
+        "group": 10055170,
+        "rows": 130,
+        "nodes": 94,
+        "steps": 94
+      },
+      {
+        "group": 10055175,
+        "rows": 63,
+        "nodes": 42,
+        "steps": 42
+      },
+      {
+        "group": 10055180,
+        "rows": 103,
+        "nodes": 66,
+        "steps": 66
+      },
+      {
+        "group": 10055185,
+        "rows": 23,
+        "nodes": 20,
+        "steps": 20
+      },
+      {
+        "group": 10055190,
+        "rows": 86,
+        "nodes": 62,
+        "steps": 62
+      },
+      {
+        "group": 10055195,
+        "rows": 84,
+        "nodes": 48,
+        "steps": 48
+      },
+      {
+        "group": 10055200,
+        "rows": 18,
+        "nodes": 18,
+        "steps": 18
+      },
+      {
+        "group": 10056005,
+        "rows": 196,
+        "nodes": 120,
+        "steps": 120
+      },
+      {
+        "group": 10056010,
+        "rows": 212,
+        "nodes": 138,
+        "steps": 138
+      },
+      {
+        "group": 10056020,
+        "rows": 98,
+        "nodes": 60,
+        "steps": 60
+      },
+      {
+        "group": 10056030,
+        "rows": 129,
+        "nodes": 91,
+        "steps": 91
+      },
+      {
+        "group": 10056040,
+        "rows": 150,
+        "nodes": 94,
+        "steps": 94
+      },
+      {
+        "group": 10056050,
+        "rows": 112,
+        "nodes": 69,
+        "steps": 69
+      },
+      {
+        "group": 10056060,
+        "rows": 173,
+        "nodes": 109,
+        "steps": 109
+      },
+      {
+        "group": 10056070,
+        "rows": 192,
+        "nodes": 124,
+        "steps": 124
+      },
+      {
+        "group": 10056080,
+        "rows": 181,
+        "nodes": 110,
+        "steps": 110
+      },
+      {
+        "group": 10056090,
+        "rows": 115,
+        "nodes": 71,
+        "steps": 71
+      },
+      {
+        "group": 10056100,
+        "rows": 144,
+        "nodes": 62,
+        "steps": 62
+      },
+      {
+        "group": 10056105,
+        "rows": 120,
+        "nodes": 68,
+        "steps": 68
+      },
+      {
+        "group": 10056110,
+        "rows": 133,
+        "nodes": 82,
+        "steps": 82
+      },
+      {
+        "group": 10057005,
+        "rows": 99,
+        "nodes": 45,
+        "steps": 45
+      },
+      {
+        "group": 10057010,
+        "rows": 225,
+        "nodes": 124,
+        "steps": 124
+      },
+      {
+        "group": 10057020,
+        "rows": 133,
+        "nodes": 54,
+        "steps": 54
+      },
+      {
+        "group": 10057030,
+        "rows": 196,
+        "nodes": 129,
+        "steps": 129
+      },
+      {
+        "group": 10057040,
+        "rows": 267,
+        "nodes": 152,
+        "steps": 152
+      },
+      {
+        "group": 10057050,
+        "rows": 185,
+        "nodes": 126,
+        "steps": 126
+      },
+      {
+        "group": 10057060,
+        "rows": 192,
+        "nodes": 76,
+        "steps": 76
+      },
+      {
+        "group": 10057070,
+        "rows": 298,
+        "nodes": 115,
+        "steps": 115
+      },
+      {
+        "group": 10057080,
+        "rows": 239,
+        "nodes": 94,
+        "steps": 94
+      },
+      {
+        "group": 10057090,
+        "rows": 140,
+        "nodes": 75,
+        "steps": 75
+      },
+      {
+        "group": 10057100,
+        "rows": 211,
+        "nodes": 126,
+        "steps": 126
+      },
+      {
+        "group": 10057110,
+        "rows": 247,
+        "nodes": 112,
+        "steps": 112
+      },
+      {
+        "group": 10057120,
+        "rows": 290,
+        "nodes": 116,
+        "steps": 116
+      },
+      {
+        "group": 10057130,
+        "rows": 120,
+        "nodes": 51,
+        "steps": 51
+      },
+      {
+        "group": 10057140,
+        "rows": 967,
+        "nodes": 680,
+        "steps": 680
+      }
+    ]
+  },
+  "audio": {
+    "inspectedSelectors": 787,
+    "modes": [15, 7],
+    "vorbisSetupIds": [2358607825, 2365614477, 1832501054],
+    "ima": [
+      {
+        "name": "SE_BoxCover_01",
+        "frames": 26496,
+        "channels": 2,
+        "frequency": 22050,
+        "pcmEqualsNative": true
+      },
+      {
+        "name": "SE_BoxMove_01",
+        "frames": 24896,
+        "channels": 2,
+        "pcmEqualsNative": true
+      },
+      {
+        "name": "SE_Lamp_01",
+        "frames": 56064,
+        "channels": 2,
+        "pcmEqualsNative": true
+      }
+    ],
+    "additionalVorbisSetup": {
+      "name": "SE_Bell_04",
+      "setupId": 1832501054,
+      "frames": 236941,
+      "channels": 2,
+      "pcmBytes": 947764,
+      "nativePcmBytes": 947764,
+      "maxAbsolutePcmDifference": 2
+    },
+    "fullCorpusDecode": {
+      "verifiedAt": "2026-10-19T14:38:43.886Z",
+      "selectors": 787,
+      "decoderFailures": 0,
+      "pcmLengthMismatches": 0,
+      "maxAbsolutePcmDifference": 2,
+      "method": "All required Unity AudioClip banks converted with the actual JS runtime functions. Every Vorbis output decoded by FFmpeg to16-bitPCM; compared complete PCM byte lengths and every sample against maintained original waveforms. IMA output PCM compared directly."
+    }
+  },
+  "automatedTests": {
+    "command": "node --test scripts/ba-download-database.test.mjs scripts/ba-download-cache.test.mjs scripts/ba-download-audio.test.mjs",
+    "passed": 7,
+    "covered": [
+      "SQLCipher authenticated page decryption including reserved regions",
+      "corrupted-page rejection",
+      "FlatBuffer omitted-field defaults",
+      "output source/selector fingerprint matching",
+      "cached media body hash verification and corruption fallback",
+      "source cache requires shared names and intact per-group digest",
+      "Xbox IMA channel interleaving, authored trimming and truncation rejection"
+    ]
+  },
+  "cacheRetry": {
+    "source": "Incomplete first exports have no shared-character completion entry, so cachedDatabaseChapter returns null and retry decrypts the original again. Cache identity includes pinned database SHA and schema snapshot. A corrupt requested chapter source also forces original re-export.",
+    "media": "Only output receipts published after successful staging can be reused. Reuse verifies source/selector fingerprint and cached media body SHA. Interrupted imports do not create a completed story installation."
+  },
+  "generatedRecipeCompilation": {
+    "verifiedAt": "2026-10-19T14:41:39.835Z",
+    "command": "node --test scripts/ba-download-library.test.mjs",
+    "passed": 1,
+    "failed": 0,
+    "skipped": 0,
+    "chapters": 1659,
+    "catalogSha256": "9d4d826c98f2ccfd4ca68d0679add7be7bf47e40aa5cd232ae5f3ddcb03d8191",
+    "assertions": [
+      "Every compressed recipe matches published SHA256 and byte size",
+      "Original database matches pinned SHA256 before client decryption",
+      "Each nonprologue chapter compiled directly from newly decoded original DB rows and recipe voice mapping",
+      "Prologue retains pinned community source snapshot",
+      "Every chapter node count matches downloadable episode metadata",
+      "Every source row enters scene program exactly once",
+      "Every declared asset URL has a conversion output selector"
+    ]
+  },
+  "assetRecipes": {
+    "chapters": 1659,
+    "pinnedOriginals": 2837,
+    "uniqueOutputs": 5670,
+    "kinds": {
+      "copy": 2711,
+      "license": 2,
+      "text": 1294,
+      "texture": 773,
+      "vorbis": 787,
+      "video": 68,
+      "audio": 35
+    },
+    "newBrowserTexturesVerified": 668,
+    "existingVerifiedTextureSelectors": 105,
+    "maxNewTextureChannelError": 1,
+    "catalogSha256": "9d4d826c98f2ccfd4ca68d0679add7be7bf47e40aa5cd232ae5f3ddcb03d8191"
+  },
+  "browserVerification": {
+    "verifiedAt": "2026-10-19T14:48:37.605Z",
+    "staticHostOnly": true,
+    "preparedPrivateFilesBlocked": true,
+    "externalBrowserRequestsBlocked": true,
+    "checks": [
+      {
+        "test": "tests/pwa/ba-download.spec.ts",
+        "group": 2401,
+        "result": "passed",
+        "assertions": [
+          "corrupted recipe evicted and refetched",
+          "fresh import from supplied pinned originals including official database",
+          "complete cached output inventory",
+          "cold offline new page renders BA reader without errors"
+        ]
+      },
+      {
+        "test": "tests/pwa/local-import.spec.ts",
+        "group": 11000,
+        "result": "passed",
+        "assertions": [
+          "corrupt original rejected",
+          "background import",
+          "cold offline reader"
+        ]
+      },
+      {
+        "test": "tests/pwa/pjsk-download.spec.ts",
+        "passed": 4,
+        "assertions": [
+          "toolbar select then start with progress ring",
+          "GFL gaps pending, all BA collections selectable",
+          "grid/table selection in both themes",
+          "large-catalog search and on-demand recipes"
+        ]
+      },
+      {
+        "test": "tests/pwa/ba-selection.spec.ts",
+        "groups": [2401, 2402],
+        "result": "passed",
+        "elapsedSeconds": 29.3,
+        "assertions": [
+          "empty media cache on static-only host",
+          "toolbar selects two chapters",
+          "second press opens actual directory chooser",
+          "both imports complete with progress ring",
+          "complete cached media inventories",
+          "both readers cold-open offline without errors"
+        ]
+      }
+    ]
+  },
+  "repositoryChecks": {
+    "command": "npm run check",
+    "result": "passed",
+    "vitest": {
+      "passed": 104,
+      "skipped": 1
+    },
+    "importTests": {
+      "passed": 134,
+      "skipped": 5,
+      "failed": 0
+    },
+    "followup": "Management-page compact link fix rebuilt and passed four catalog UI checks."
+  },
+  "nativeVerification": {
+    "checkedAt": "2026-10-19T14:50:22.494Z",
+    "runtime": "Electron development runtime, prepared production static shell",
+    "live": false,
+    "originalInputs": 33,
+    "seededOriginals": [
+      147, 148, 158, 170, 174, 436, 437, 438, 439, 2836, 168, 1104, 2831, 156,
+      157, 159, 164, 169, 171, 172, 173, 175, 2829, 2834, 2835, 1665, 1666
+    ],
+    "verifiedLiveDownloads": [
+      {
+        "id": 150,
+        "url": "https://yuuka.cdn.diyigemt.com/image/ba-all-data/effectTexture/fire1.png",
+        "bytes": 929,
+        "sha256": "67bcdcfda28e5941844310bcb71d77c6a5b606f8caf32df3bc183aaa2c0cdded"
+      },
+      {
+        "id": 151,
+        "url": "https://yuuka.cdn.diyigemt.com/image/ba-all-data/effectTexture/fire2.png",
+        "bytes": 1627,
+        "sha256": "39cb5ceba6c3444c41adf5665b54fd58de6bddd83892b1e62f9961936dec984f"
+      },
+      {
+        "id": 152,
+        "url": "https://yuuka.cdn.diyigemt.com/image/ba-all-data/effectTexture/fire3.png",
+        "bytes": 1657,
+        "sha256": "9781dcbf2f94e96e253b28581b187c479730909137f964b23d316331743d9383"
+      },
+      {
+        "id": 153,
+        "url": "https://yuuka.cdn.diyigemt.com/image/ba-all-data/effectTexture/HardRain.png",
+        "bytes": 212,
+        "sha256": "99178bcde779dc94297c2cedd1f2b8c7b5ad037b8465f6ab39baa3c2853713bd"
+      },
+      {
+        "id": 149,
+        "url": "https://yuuka.cdn.diyigemt.com/image/ba-all-data/effectTexture/FX_TEX_Smoke_17.png",
+        "bytes": 29548,
+        "sha256": "d7364160fbfbbdcc11f784d45a28ee6e97b0857554c3fd81bbad1aacf7b7635e"
+      },
+      {
+        "id": 7,
+        "url": "https://prod-clientpatch.bluearchiveyostar.com/r96_nvji95owgkbcxlmkb8mi/MediaResources/Prologue/UIs/03_Scenario/01_Background/BG_Black.jpg",
+        "bytes": 3754,
+        "sha256": "5bef3f73788b2c04a7d5b161dba34a5b11438f97ca7e3fe19551946d8cd60584"
+      }
+    ],
+    "preparedAssetsSeeded": 0,
+    "privateBackendAvailable": false,
+    "nativeNetworkDisabledOffline": true,
+    "chromiumNetworkDisabledOffline": true,
+    "blockedRendererRequests": [],
+    "chapters": [
+      {
+        "id": "ba-jp-11010",
+        "group": 11010,
+        "category": "Main story",
+        "passages": 36,
+        "steps": 36,
+        "media": 66,
+        "installationFiles": 72,
+        "missing": [],
+        "importMs": 30698,
+        "offlineRestartReady": true,
+        "decoded": {
+          "audio": 7,
+          "movies": []
+        },
+        "offlineCompleted": true,
+        "choicesSelected": 2,
+        "moviesSkippedAfterDecode": 0,
+        "acknowledgedCutsceneBarriers": 0
+      },
+      {
+        "id": "ba-jp-2401",
+        "group": 2401,
+        "category": "Group story",
+        "passages": 69,
+        "steps": 69,
+        "media": 63,
+        "installationFiles": 69,
+        "missing": [],
+        "importMs": 6923,
+        "offlineRestartReady": true,
+        "decoded": {
+          "audio": 6,
+          "movies": []
+        },
+        "offlineCompleted": true,
+        "choicesSelected": 9,
+        "moviesSkippedAfterDecode": 0,
+        "acknowledgedCutsceneBarriers": 0
+      },
+      {
+        "id": "ba-jp-10000010",
+        "group": 10000010,
+        "category": "Event",
+        "passages": 71,
+        "steps": 71,
+        "media": 87,
+        "installationFiles": 93,
+        "missing": [],
+        "importMs": 13624,
+        "offlineRestartReady": true,
+        "decoded": {
+          "audio": 12,
+          "movies": []
+        },
+        "offlineCompleted": true,
+        "choicesSelected": 8,
+        "moviesSkippedAfterDecode": 0,
+        "acknowledgedCutsceneBarriers": 0
+      },
+      {
+        "id": "ba-jp-104071",
+        "group": 104071,
+        "category": "Main story",
+        "passages": 2,
+        "steps": 2,
+        "media": 55,
+        "installationFiles": 61,
+        "missing": [],
+        "importMs": 40980,
+        "offlineRestartReady": true,
+        "decoded": {
+          "audio": 1,
+          "movies": [
+            {
+              "url": "/private/ba-jp/shared/media/videos/11001_h264.mp4",
+              "width": 1280,
+              "height": 720,
+              "duration": 307.974333
+            }
+          ]
+        },
+        "offlineCompleted": true,
+        "choicesSelected": 0,
+        "moviesSkippedAfterDecode": 1,
+        "acknowledgedCutsceneBarriers": 0
+      }
+    ],
+    "pageErrors": [],
+    "evidence": ".cache/ba-native-verification/2026-10-19T14-47-46-519Z/results.json",
+    "evidenceSha256": "b6a3f9d5d9fb17638b3706e199233f1ece6b5333c332d4065e1828e1b79b6a61",
+    "scope": "Representative original-file imports and offline restart/completion, not all 1659 chapters played. One movie container decoded then skipped; no prepared Onlystory media seeded."
+  }
+}

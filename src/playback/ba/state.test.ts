@@ -67,6 +67,17 @@ it('accounts for every presentation row including montage, captions and waits', 
   state = applyBaRow(state, rows[8]);
   expect(state.captions).toHaveLength(0);
 });
+it('preserves distinct screen-text anchors for prose and positioned labels', () => {
+  const anchors = ['#st', '#stm', '#str'].map(
+    (command) =>
+      applyBaRow(initialBaState(), {
+        ...rows[0],
+        ScriptKr: `${command};[0,100];instant;64;caption`,
+        TextJp: 'caption',
+      }).captions[0].alignment,
+  );
+  expect(anchors).toEqual(['left', 'center', 'right']);
+});
 it('restores authored characters, movement, effects and audio without sharing mutable state', () => {
   let state = initialBaState();
   for (const row of rows.filter((r) => r.row <= 207))

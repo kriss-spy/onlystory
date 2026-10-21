@@ -1,0 +1,408 @@
+{
+  "checkedAt": "2026-10-19T07:23:40.734Z",
+  "browserVersion": "155.0.8059.82",
+  "originalFiles": 156,
+  "originalBytes": 120245302,
+  "rebuiltMediaFiles": 232,
+  "types": {
+    "copy": 152,
+    "license": 1,
+    "vorbis": 15,
+    "texture": 52,
+    "text": 12
+  },
+  "models": 6,
+  "sourceRows": 229,
+  "nodes": 144,
+  "choicePrompts": 7,
+  "completedChoices": [
+    "\"……？\"",
+    "ついていく。",
+    "\"私が？\"",
+    "みんなに挨拶する。",
+    "\"よろしくね。\"",
+    "\"大丈夫？\"",
+    "\"私が指揮する、任せて。\""
+  ],
+  "elapsedImportMs": 3268.5,
+  "textureComparisons": [
+    {
+      "url": "/private/ba-jp/11000/media/effects/FX_TEX_Hit_01.png",
+      "maxChannelError": 1,
+      "differingChannels": 11496
+    },
+    {
+      "url": "/private/ba-jp/11000/media/effects/FX_TEX_Bulletline_02.png",
+      "maxChannelError": 1,
+      "differingChannels": 1950
+    },
+    {
+      "url": "/private/ba-jp/11000/media/effects/FX_TEX_Smoke_RGB_15.png",
+      "maxChannelError": 1,
+      "differingChannels": 2961
+    },
+    {
+      "url": "/private/ba-jp/11000/media/effects/FX_TEX_Cartoon_Star.png",
+      "maxChannelError": 1,
+      "differingChannels": 2703
+    },
+    {
+      "url": "/private/ba-jp/11000/media/effects/FX_TEX_Dust_01.png",
+      "maxChannelError": 1,
+      "differingChannels": 11335
+    },
+    {
+      "url": "/private/ba-jp/11000/media/effects/FX_TEX_Flare_03.png",
+      "maxChannelError": 1,
+      "differingChannels": 6260
+    },
+    {
+      "url": "/private/ba-jp/11000/media/effects/FX_TEX_Img_Heart_04.png",
+      "maxChannelError": 1,
+      "differingChannels": 2417
+    },
+    {
+      "url": "/private/ba-jp/11000/media/effects/FX_TEX_Speed_Line_03.png",
+      "maxChannelError": 1,
+      "differingChannels": 25865
+    },
+    {
+      "url": "/private/ba-jp/11000/media/characters/chinatsu_spr/chinatsu_spr.png",
+      "maxChannelError": 1,
+      "differingChannels": 366439
+    },
+    {
+      "url": "/private/ba-jp/11000/media/characters/hasumi_spr/hasumi_spr.png",
+      "maxChannelError": 1,
+      "differingChannels": 1161046
+    },
+    {
+      "url": "/private/ba-jp/11000/media/characters/momoka_spr/momoka_spr.png",
+      "maxChannelError": 1,
+      "differingChannels": 390637
+    },
+    {
+      "url": "/private/ba-jp/11000/media/characters/rin_spr/rin_spr.png",
+      "maxChannelError": 1,
+      "differingChannels": 394178
+    },
+    {
+      "url": "/private/ba-jp/11000/media/characters/suzumi_spr/suzumi_spr.png",
+      "maxChannelError": 1,
+      "differingChannels": 238335
+    },
+    {
+      "url": "/private/ba-jp/11000/media/characters/yuuka_spr/yuuka_spr.png",
+      "maxChannelError": 1,
+      "differingChannels": 288026
+    },
+    {
+      "url": "/private/ba-jp/11000/media/emotion/Emoji_Action.png",
+      "maxChannelError": 1,
+      "differingChannels": 2867
+    },
+    {
+      "url": "/private/ba-jp/11000/media/emotion/Emoji_Aggro.png",
+      "maxChannelError": 1,
+      "differingChannels": 2825
+    },
+    {
+      "url": "/private/ba-jp/11000/media/emotion/Emoji_Anxiety.png",
+      "maxChannelError": 1,
+      "differingChannels": 3270
+    },
+    {
+      "url": "/private/ba-jp/11000/media/emotion/Emoji_Balloon_N.png",
+      "maxChannelError": 1,
+      "differingChannels": 6519
+    },
+    {
+      "url": "/private/ba-jp/11000/media/emotion/Emoji_Balloon_T.png",
+      "maxChannelError": 1,
+      "differingChannels": 7116
+    },
+    {
+      "url": "/private/ba-jp/11000/media/emotion/Emoji_Bulb_1.png",
+      "maxChannelError": 1,
+      "differingChannels": 4111
+    },
+    {
+      "url": "/private/ba-jp/11000/media/emotion/Emoji_Bulb_2.png",
+      "maxChannelError": 1,
+      "differingChannels": 3788
+    },
+    {
+      "url": "/private/ba-jp/11000/media/emotion/Emoji_Chat.png",
+      "maxChannelError": 1,
+      "differingChannels": 10536
+    },
+    {
+      "url": "/private/ba-jp/11000/media/emotion/Emoji_Evidence.png",
+      "maxChannelError": 1,
+      "differingChannels": 2714
+    },
+    {
+      "url": "/private/ba-jp/11000/media/emotion/Emoji_Exclamation.png",
+      "maxChannelError": 1,
+      "differingChannels": 4557
+    },
+    {
+      "url": "/private/ba-jp/11000/media/emotion/Emoji_ExclamationMark.png",
+      "maxChannelError": 1,
+      "differingChannels": 6778
+    },
+    {
+      "url": "/private/ba-jp/11000/media/emotion/Emoji_Heart.png",
+      "maxChannelError": 1,
+      "differingChannels": 5878
+    },
+    {
+      "url": "/private/ba-jp/11000/media/emotion/Emoji_Ice_M.png",
+      "maxChannelError": 1,
+      "differingChannels": 8144
+    },
+    {
+      "url": "/private/ba-jp/11000/media/emotion/Emoji_Ice_S.png",
+      "maxChannelError": 1,
+      "differingChannels": 5521
+    },
+    {
+      "url": "/private/ba-jp/11000/media/emotion/Emoji_Ice_V.png",
+      "maxChannelError": 1,
+      "differingChannels": 6829
+    },
+    {
+      "url": "/private/ba-jp/11000/media/emotion/Emoji_Idea.png",
+      "maxChannelError": 1,
+      "differingChannels": 296
+    },
+    {
+      "url": "/private/ba-jp/11000/media/emotion/Emoji_ItemDocument.png",
+      "maxChannelError": 1,
+      "differingChannels": 8463
+    },
+    {
+      "url": "/private/ba-jp/11000/media/emotion/Emoji_ItemFlyer.png",
+      "maxChannelError": 1,
+      "differingChannels": 6360
+    },
+    {
+      "url": "/private/ba-jp/11000/media/emotion/Emoji_ItemSack.png",
+      "maxChannelError": 1,
+      "differingChannels": 6168
+    },
+    {
+      "url": "/private/ba-jp/11000/media/emotion/Emoji_Keyword.png",
+      "maxChannelError": 1,
+      "differingChannels": 3412
+    },
+    {
+      "url": "/private/ba-jp/11000/media/emotion/Emoji_Keyword_843.png",
+      "maxChannelError": 1,
+      "differingChannels": 2009
+    },
+    {
+      "url": "/private/ba-jp/11000/media/emotion/Emoji_Keyword_90101000.png",
+      "maxChannelError": 1,
+      "differingChannels": 2900
+    },
+    {
+      "url": "/private/ba-jp/11000/media/emotion/Emoji_Momotalk.png",
+      "maxChannelError": 1,
+      "differingChannels": 4406
+    },
+    {
+      "url": "/private/ba-jp/11000/media/emotion/Emoji_Note.png",
+      "maxChannelError": 1,
+      "differingChannels": 5896
+    },
+    {
+      "url": "/private/ba-jp/11000/media/emotion/Emoji_Phone.png",
+      "maxChannelError": 1,
+      "differingChannels": 8512
+    },
+    {
+      "url": "/private/ba-jp/11000/media/emotion/Emoji_Question.png",
+      "maxChannelError": 1,
+      "differingChannels": 6714
+    },
+    {
+      "url": "/private/ba-jp/11000/media/emotion/Emoji_QuestionMark.png",
+      "maxChannelError": 1,
+      "differingChannels": 9627
+    },
+    {
+      "url": "/private/ba-jp/11000/media/emotion/Emoji_Sad.png",
+      "maxChannelError": 1,
+      "differingChannels": 1500
+    },
+    {
+      "url": "/private/ba-jp/11000/media/emotion/Emoji_Shy.png",
+      "maxChannelError": 1,
+      "differingChannels": 26139
+    },
+    {
+      "url": "/private/ba-jp/11000/media/emotion/Emoji_Sigh.png",
+      "maxChannelError": 1,
+      "differingChannels": 6297
+    },
+    {
+      "url": "/private/ba-jp/11000/media/emotion/Emoji_SNS.png",
+      "maxChannelError": 1,
+      "differingChannels": 8200
+    },
+    {
+      "url": "/private/ba-jp/11000/media/emotion/Emoji_Steam.png",
+      "maxChannelError": 1,
+      "differingChannels": 10668
+    },
+    {
+      "url": "/private/ba-jp/11000/media/emotion/Emoji_Sweat_1.png",
+      "maxChannelError": 1,
+      "differingChannels": 3172
+    },
+    {
+      "url": "/private/ba-jp/11000/media/emotion/Emoji_Sweat_2.png",
+      "maxChannelError": 1,
+      "differingChannels": 1409
+    },
+    {
+      "url": "/private/ba-jp/11000/media/emotion/Emoji_Tear_1.png",
+      "maxChannelError": 1,
+      "differingChannels": 2068
+    },
+    {
+      "url": "/private/ba-jp/11000/media/emotion/Emoji_Tear_2.png",
+      "maxChannelError": 1,
+      "differingChannels": 1066
+    },
+    {
+      "url": "/private/ba-jp/11000/media/emotion/Emoji_Twinkle.png",
+      "maxChannelError": 1,
+      "differingChannels": 9140
+    },
+    {
+      "url": "/private/ba-jp/11000/media/emotion/Emoji_Zzz.png",
+      "maxChannelError": 1,
+      "differingChannels": 3382
+    }
+  ],
+  "audioComparisons": [
+    {
+      "url": "/private/ba-jp/11000/media/sound/UI_FX_BG_UnderFire.wav",
+      "frames": 47452,
+      "channels": 1,
+      "maxPcmError": 2,
+      "rmsPcmError": 0.7469768230034706
+    },
+    {
+      "url": "/private/ba-jp/11000/media/sound/SE_HangUp_01.wav",
+      "frames": 20888,
+      "channels": 2,
+      "maxPcmError": 2,
+      "rmsPcmError": 0.6980611382525276
+    },
+    {
+      "url": "/private/ba-jp/11000/media/sound/SE_FootStep_02.wav",
+      "frames": 48331,
+      "channels": 2,
+      "maxPcmError": 1,
+      "rmsPcmError": 0.547867975004967
+    },
+    {
+      "url": "/private/ba-jp/11000/media/sound/SE_Wind_01.wav",
+      "frames": 70825,
+      "channels": 2,
+      "maxPcmError": 1,
+      "rmsPcmError": 0.6805969017010086
+    },
+    {
+      "url": "/private/ba-jp/11000/media/sound/SE_DoorBell_02.wav",
+      "frames": 48919,
+      "channels": 1,
+      "maxPcmError": 2,
+      "rmsPcmError": 0.7488552285965765
+    },
+    {
+      "url": "/private/ba-jp/11000/media/sound/SE_Work_01.wav",
+      "frames": 75815,
+      "channels": 2,
+      "maxPcmError": 1,
+      "rmsPcmError": 0.7120466881122143
+    },
+    {
+      "url": "/private/ba-jp/11000/media/sound/SE_Confirm_02.wav",
+      "frames": 5807,
+      "channels": 2,
+      "maxPcmError": 1,
+      "rmsPcmError": 0.7189410156027847
+    },
+    {
+      "url": "/private/ba-jp/11000/media/sound/SE_Radio_01.wav",
+      "frames": 29751,
+      "channels": 2,
+      "maxPcmError": 1,
+      "rmsPcmError": 0.7119152337583042
+    },
+    {
+      "url": "/private/ba-jp/11000/media/sound/SE_Rapid_02.wav",
+      "frames": 48329,
+      "channels": 2,
+      "maxPcmError": 1,
+      "rmsPcmError": 0.7307716391900408
+    },
+    {
+      "url": "/private/ba-jp/11000/media/sound/SE_Boom_02.wav",
+      "frames": 33122,
+      "channels": 2,
+      "maxPcmError": 2,
+      "rmsPcmError": 0.757318418982537
+    },
+    {
+      "url": "/private/ba-jp/11000/media/sound/SE_Typing_02.wav",
+      "frames": 37662,
+      "channels": 1,
+      "maxPcmError": 1,
+      "rmsPcmError": 0.7049820056373988
+    },
+    {
+      "url": "/private/ba-jp/11000/media/sound/SE_Run_03.wav",
+      "frames": 27010,
+      "channels": 2,
+      "maxPcmError": 1,
+      "rmsPcmError": 0.6952395382526776
+    },
+    {
+      "url": "/private/ba-jp/11000/media/sound/SE_Beep_02.wav",
+      "frames": 21760,
+      "channels": 1,
+      "maxPcmError": 1,
+      "rmsPcmError": 0.5886877855226227
+    },
+    {
+      "url": "/private/ba-jp/11000/media/sound/SE_Gear_02.wav",
+      "frames": 24932,
+      "channels": 1,
+      "maxPcmError": 1,
+      "rmsPcmError": 0.7163769209211681
+    },
+    {
+      "url": "/private/ba-jp/11000/media/sound/SE_Close_01.wav",
+      "frames": 87208,
+      "channels": 1,
+      "maxPcmError": 2,
+      "rmsPcmError": 0.7724783347944549
+    }
+  ],
+  "blockedExternalRequests": [],
+  "privateRequests": ["/private/shared/index.json"],
+  "pageErrors": [],
+  "offlineCompletion": true,
+  "limitations": [
+    "Technical experiment only, no product import UI.",
+    "One pinned JP prologue, desktop Chrome only.",
+    "ASTC decoder rounding differs from the native reference by at most one 8-bit channel value.",
+    "Two pinned Vorbis setup headers only.",
+    "The 156-file download experience has not been simplified."
+  ]
+}

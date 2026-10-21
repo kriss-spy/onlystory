@@ -1,0 +1,179 @@
+{
+  "checkedAt": "2026-10-19T13:53:21.066Z",
+  "catalog": {
+    "total": 2254,
+    "available": 2253,
+    "byAvailability": {
+      "available": 2253,
+      "incomplete": 1
+    },
+    "collections": 60,
+    "acquisitionDescriptors": 0
+  },
+  "text": {
+    "total": 2253,
+    "http200": 2253,
+    "downloadedBodyBytes": 15119065,
+    "rawArchiveMatch": 1772,
+    "normalizedTextMatch": 2253,
+    "gitBlobVerified": 2253,
+    "encodingCorrections": [
+      {
+        "script": "-71-15-EXT",
+        "encoding": "gb18030",
+        "source": "extracted.encodingProvenance"
+      }
+    ],
+    "failed": []
+  },
+  "source": {
+    "records": 608,
+    "uniqueUrls": 1200,
+    "http200": 1200,
+    "failures": [],
+    "regions": {
+      "ch": {
+        "mappedRecords": 600,
+        "unmappedRecords": 8,
+        "unmappedDistinctPaths": [
+          "resources.assets",
+          "recovered-banks/BGE_AVG_Chapter01.acb",
+          "recovered-banks/BGE_AVG_Chapter01.hcakey",
+          "5016.stc",
+          "5044.stc"
+        ],
+        "uniqueUrls": 600,
+        "http200": 600,
+        "statusCounts": {
+          "200": 600
+        },
+        "allowOriginWildcard": 600,
+        "matchingManifestDeclaredLength": 600,
+        "declaredLengthMismatches": [],
+        "exactSteamBundleFilenameAndManifestSize": 347
+      },
+      "us": {
+        "mappedRecords": 600,
+        "unmappedRecords": 8,
+        "unmappedDistinctPaths": [
+          "resources.assets",
+          "recovered-banks/BGE_AVG_Chapter01.acb",
+          "recovered-banks/BGE_AVG_Chapter01.hcakey",
+          "5016.stc",
+          "5044.stc"
+        ],
+        "uniqueUrls": 600,
+        "http200": 600,
+        "statusCounts": {
+          "200": 600
+        },
+        "allowOriginWildcard": 0,
+        "matchingManifestDeclaredLength": 600,
+        "declaredLengthMismatches": [],
+        "exactSteamBundleFilenameAndManifestSize": 0
+      }
+    }
+  },
+  "limitations": [
+    "Full original media bodies were not downloaded or hash-verified in this run. HEAD probes establish endpoint response only.",
+    "Source packages need native Unity/CRI conversion; current standalone app has no GFL1 acquisition descriptor/importer.",
+    "Public text tree is a moving main snapshot; gitBlobVerified compares fresh bodies to the retained tree snapshot."
+  ],
+  "existingMissingMedia": [
+    {
+      "kind": "background",
+      "id": 252,
+      "name": "TEAPARTYNIGHT"
+    },
+    {
+      "kind": "background",
+      "id": 253,
+      "name": "LAKE"
+    },
+    {
+      "kind": "background",
+      "id": 562,
+      "name": "2022saros_Sky"
+    },
+    {
+      "kind": "bgm",
+      "cue": "BGM_Pause",
+      "stream": "BGM_Pause",
+      "reason": "No current AudioTemplate entry or exact stream/cue/bank file in installed Steam EN resources; original script cue retained without substituting another track."
+    },
+    {
+      "kind": "bgm",
+      "cue": "BGM_UnPause",
+      "stream": "BGM_UnPause",
+      "reason": "No current AudioTemplate entry or exact stream/cue/bank file in installed Steam EN resources; original script cue retained without substituting another track."
+    },
+    {
+      "kind": "bgm",
+      "cue": "SpecialActivity",
+      "stream": "SpecialActivity",
+      "reason": "No current AudioTemplate entry or exact stream/cue/bank file in installed Steam EN resources; original script cue retained without substituting another track."
+    },
+    {
+      "kind": "bgm",
+      "cue": "bossbattle_loop",
+      "stream": "bossbattle_loop",
+      "reason": "No current AudioTemplate entry or exact stream/cue/bank file in installed Steam EN resources; original script cue retained without substituting another track."
+    },
+    {
+      "kind": "bgm",
+      "cue": "m_va_spirit_potion",
+      "stream": "m_va_spirit_potion",
+      "reason": "No current AudioTemplate entry or exact stream/cue/bank file in installed Steam EN resources; original script cue retained without substituting another track."
+    },
+    {
+      "kind": "sfx",
+      "cue": "AVG_2023Slow_Heart_telescreen3",
+      "stream": "AVG_2023Slow_Heart_telescreen3",
+      "reason": "Expected one CRI stream named AVG_2023Slow_Heart_telescreen3, found 0"
+    },
+    {
+      "kind": "sfx",
+      "cue": "AVG_20Winter_Error",
+      "stream": "AVG_20Winter_Error",
+      "reason": "Expected one CRI stream named AVG_20Winter_Error, found 0"
+    },
+    {
+      "kind": "sfx",
+      "cue": "AVG_20Winter_Open_Light",
+      "stream": "AVG_20Winter_Open_Light",
+      "reason": "Expected one CRI stream named AVG_20Winter_Open_Light, found 0"
+    },
+    {
+      "kind": "sfx",
+      "cue": "AVG_Division_Camera",
+      "stream": "AVG_Division_Camera",
+      "reason": "Expected one CRI stream named AVG_Division_Camera, found 0"
+    },
+    {
+      "kind": "sfx",
+      "cue": "AVG_Division_Flare_Gun",
+      "stream": "AVG_Division_Flare_Gun",
+      "reason": "Expected one CRI stream named AVG_Division_Flare_Gun, found 0"
+    },
+    {
+      "kind": "sfx",
+      "cue": "AVG_The_Division_Grenade_Explosion",
+      "stream": "AVG_The_Division_Grenade_Explosion",
+      "reason": "Expected one CRI stream named AVG_The_Division_Grenade_Explosion, found 0"
+    }
+  ],
+  "verdict": {
+    "standaloneNewMachineFullStoryDownload": false,
+    "textSourceBodiesAllVerified": true,
+    "mediaSourcePayloadsAllVerified": false,
+    "blockers": [
+      "No GFL1 acquisition descriptors or standalone importer.",
+      "Eight source provenance records have no match in these regional manifests.",
+      "Regional logical-name matches do not establish original Steam byte identity.",
+      "Unity/CRI/native-table conversion currently relies on native tooling."
+    ],
+    "incompleteExcludedCatalogId": "gfl1--59-EXT-AR1"
+  },
+  "evidenceDirectory": ".cache/other-game-download-audit/gfl1",
+  "reproduce": "node .cache/other-game-download-audit/gfl1/audit.mjs"
+}

@@ -41,9 +41,11 @@ test('original PJSK covers and accessible native group marks decode across the v
 }, testInfo) => {
   await page.setViewportSize({ width: 1163, height: 800 });
   await page.goto('/games/pjsk?sort=release');
-  await expect(page.locator('.section-title .muted')).toHaveText(
-    `${events.length + main.groups.length} events`,
-  );
+  await expect(
+    page.getByText(`${events.length + main.groups.length} events`, {
+      exact: true,
+    }),
+  ).toBeVisible();
   await decoded(page);
   expect(await page.locator('.event-row').count()).toBeLessThan(40);
   await expect(

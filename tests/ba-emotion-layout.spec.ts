@@ -6,6 +6,7 @@ test('prologue emotions use green question art and remain beside the rendered fa
 }, info) => {
   test.setTimeout(90000);
   const data = emptyData();
+  data.preferences.textLocale = 'ja';
   data.preferences.textSpeed = 0;
   data.preferences.reducedMotion = true;
   await page.addInitScript(

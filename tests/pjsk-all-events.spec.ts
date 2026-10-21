@@ -7,6 +7,7 @@ import corpus from '../docs/pjsk-all-events.json' with { type: 'json' };
 import { pjskLibraryRoot } from '../scripts/local-environment.mjs';
 import { parseVoiceListing } from '../scripts/pjsk-voice-listing.mjs';
 import { collectPjskCostumes } from '../scripts/pjsk-program.mjs';
+import { pjskInstallationFingerprint } from '../scripts/pjsk-installation-provenance.mjs';
 import { decodePjskText } from '../src/playback/pjsk/text';
 import {
   emptyData,
@@ -73,6 +74,7 @@ test('full CN archive: all available episodes preserve source commands, text, gr
   const publication = read<{
     finishedAt?: string;
     implementationHash: string;
+    implementationInputs: unknown[];
     installed: number;
     failed: number;
     unavailable: number;
@@ -85,29 +87,14 @@ test('full CN archive: all available episodes preserve source commands, text, gr
   assert.equal(publication.installed, availability.availableEpisodes);
   assert.equal(publication.failed, 0);
   assert.equal(publication.unavailable, availability.unavailableEpisodes);
-  const implementationHash = digest(
-    Buffer.concat([
-      ...[
-        'pjsk-media.mjs',
-        'pjsk-program.mjs',
-        'pjsk-scenario.mjs',
-        'pjsk-import.mjs',
-        'pjsk-voice-listing.mjs',
-        'pjsk-voice-bindings.mjs',
-        'pjsk-model-overrides.mjs',
-      ].map((name) => readFileSync(resolve('scripts', name))),
-      ...[
-        'pjsk-model-overrides.json',
-        'pjsk-video-backgrounds.json',
-        'pjsk-voice-bindings.json',
-      ].map((name) => readFileSync(resolve('docs', name))),
-    ]),
-  );
+  const { implementationHash, implementationInputs } =
+    pjskInstallationFingerprint();
   assert.equal(
     publication.implementationHash,
     implementationHash,
     'Archive must be published with the current compiler and reviewed source resolutions',
   );
+  assert.deepEqual(publication.implementationInputs, implementationInputs);
   for (const event of availableEvents)
     for (const entry of event.episodes) {
       assert.equal(

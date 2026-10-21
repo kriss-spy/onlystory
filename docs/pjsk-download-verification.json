@@ -1,0 +1,149 @@
+{
+  "version": "0.2.0",
+  "checkedAt": "2026-10-20T01:35:35.423Z",
+  "scope": "Imported CN main stories and events with Japanese media",
+  "coverage": {
+    "chapters": 1623,
+    "main": 125,
+    "events": 1498,
+    "recipesCompressedBytes": 41900805,
+    "unavailableChapters": 128,
+    "unavailableStatusCounts": {
+      "404": 128
+    }
+  },
+  "artifacts": [
+    {
+      "file": "Onlystory-0.2.0-portable-x64.exe",
+      "bytes": 214873806,
+      "sha256": "7a81f881e005b863f968b9f312a19ee9957172664d2ccc0f9b9ad48f70b5d1c6"
+    },
+    {
+      "file": "Onlystory-0.2.0-Setup-x64.exe",
+      "bytes": 215088250,
+      "sha256": "a0ea72dbde31d9b4d05ab1116f6435c5d8edb3050c4dac97ce96cad5bbc95362"
+    },
+    {
+      "file": "Onlystory-web.zip",
+      "bytes": 93695976,
+      "sha256": "2c199b10751c4382bd9ad99d19347d4e6a44828b646fe24a3d1c70a155ee4366"
+    }
+  ],
+  "corpusReconstruction": {
+    "checkedAt": "2026-10-19T10:18:18.557Z",
+    "chapters": 1623,
+    "uniqueModelSettings": 11536,
+    "browserCompilerOutputsVerified": true
+  },
+  "nativeOfflineCases": [
+    {
+      "checkedAt": "2026-10-20T01:22:08.264Z",
+      "executable": "C:\\Users\\krisspy\\Projects\\onlystory\\release\\win-unpacked\\Onlystory.exe",
+      "chapter": "pjsk-cn-unit-30001",
+      "passages": 62,
+      "voices": 47,
+      "models": 4,
+      "offlineRestartCompleted": true,
+      "compactInventory": true,
+      "errors": []
+    },
+    {
+      "checkedAt": "2026-10-19T10:42:03.089Z",
+      "chapter": "pjsk-cn-event-1000065",
+      "passages": 17,
+      "voices": 13,
+      "models": 1,
+      "offlineRestartCompleted": true,
+      "compactInventory": true,
+      "errors": []
+    },
+    {
+      "checkedAt": "2026-10-19T10:34:33.521Z",
+      "chapter": "pjsk-cn-event-1000163",
+      "passages": 93,
+      "voices": 81,
+      "models": 6,
+      "offlineRestartCompleted": true,
+      "errors": []
+    },
+    {
+      "checkedAt": "2026-10-19T10:38:26.436Z",
+      "chapter": "pjsk-cn-event-1001361",
+      "passages": 45,
+      "voices": 44,
+      "models": 16,
+      "offlineRestartCompleted": true,
+      "errors": []
+    }
+  ],
+  "portable": {
+    "checkedAt": "2026-10-20T01:23:28.089Z",
+    "executable": "C:\\Users\\krisspy\\Projects\\onlystory\\release\\Onlystory-0.2.0-portable-x64.exe",
+    "bytes": 214873806,
+    "sha256": "7a81f881e005b863f968b9f312a19ee9957172664d2ccc0f9b9ad48f70b5d1c6",
+    "runtime": {
+      "desktop": true,
+      "platform": "win32",
+      "nodeIntegration": false,
+      "secure": true
+    },
+    "startupPassed": true,
+    "catalogSelectionPassed": true,
+    "downloadProgressPassed": true
+  },
+  "web": {
+    "evidence": "docs/pwa-verification.json",
+    "fullSuitePassed": 17,
+    "finalCssFocusedPassed": 7,
+    "allRecipesPrecachedOnLaunch": false
+  },
+  "projectChecks": {
+    "command": "npm run check",
+    "passed": true,
+    "log": ".cache/final-check-css.log",
+    "unitPassed": 117,
+    "unitSkipped": 1,
+    "importPassed": 142,
+    "importSkipped": 5,
+    "typecheck": true,
+    "productionBuild": true
+  },
+  "storage": {
+    "completeCatalogInstallationIndexUnder1MiB": true,
+    "largeInventoriesInMediaCache": true,
+    "sharedFileChecksDeduplicated": true
+  },
+  "packagedContents": {
+    "chapterRecipes": 1623,
+    "gameMediaFiles": 0,
+    "nodeModules": 0,
+    "nobleLicenseIncluded": true
+  },
+  "limits": [
+    "CN main/event catalog only; other regions and card-side stories are outside this catalog",
+    "The pinned catalog records 128 unavailable CN scripts. The individual HTTP checks retain their own timestamp in docs/pjsk-unavailable-source-check.json.",
+    "Compiler and model reconstruction covers every recipe; live offline playback covers representative chapters",
+    "Upstream mirror availability can change; checksum failures keep chapters uninstalled",
+    "Windows executables are unsigned; final isolated NSIS installation, reading and uninstall passed."
+  ],
+  "uiVerification": {
+    "checkedAt": "2026-10-20T01:35:35.423Z",
+    "interaction": "Download button enters catalog multi-select; second press queues selected stories; same button displays aggregate progress",
+    "catalogLayouts": ["list", "grid", "table"],
+    "themes": ["light", "dark"],
+    "evidence": "docs/browser-verification.json",
+    "projectChecks": ".cache/final-check-css.log",
+    "packagedPortable": ".cache/portable-smoke/results.json",
+    "note": "Historical corpus and additional native sample timestamps above are retained; final unit30001, release artifacts and installer evidence are current."
+  },
+  "previousReleaseCheckedAt": "2026-10-19T13:16:10.580Z",
+  "sourceAvailabilityEvidence": "docs/pjsk-unavailable-source-check.json",
+  "finalInstaller": {
+    "evidence": ".cache/nsis-verification/2026-10-20T01-30-01-979Z/results.json",
+    "installationPassed": true,
+    "installedAppPassed": true,
+    "uninstallPassed": true
+  },
+  "installerRevalidation": "docs/pjsk-installer-revalidation.json",
+  "preparedRestoration": "docs/pjsk-prepared-restoration.json"
+}

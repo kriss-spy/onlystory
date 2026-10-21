@@ -1,6 +1,11 @@
 # Blue Archive story pipeline
 
-Open `/games/ba` or `/read/ba/ba-jp-11000`. Prologue script 11000 has Japanese text, original backgrounds/CGs, six animated Spine characters and expressions, 118 Japanese voice clips, four looping music tracks and 14 sound effects. All seven response prompts preserve their real branches. Reader saves, seeking, bookmarks and downloads use the common reader.
+The standalone app can reconstruct every currently imported BA chapter from the
+pinned originals using [download recipes](ba-download-recipes.md). That importer
+shares this pipeline's story and scene compilers. It does not require the
+maintainer's prepared `public/private` library on the user's machine.
+
+Open `/games/ba` or `/read/ba/ba-jp-11000`. Prologue script 11000 has Japanese and verified official global English text, original backgrounds/CGs, six animated Spine characters and expressions, 118 Japanese voice clips, four looping music tracks and original sound effects, including emotion bubbles. All seven response prompts preserve their real branches. Reader saves, seeking, bookmarks and downloads use the common reader.
 
 ## Reproduce
 
@@ -9,6 +14,7 @@ Install Git, uv, .NET 10 SDK and ffmpeg, then run:
 ```powershell
 npm ci
 npm run acquire:ba
+npm run acquire:ba-english
 npm run test:ba-import
 npm test
 npm run build
@@ -22,6 +28,24 @@ The acquisition command uses the preserved JP catalog and verifies its downloads
 The current cached catalog identifies game version `1.73.459696`. Repeated runs retain this catalog and verify cached downloads against its byte sizes and CRC32. To deliberately acquire a newer catalog, first preserve the current `.cache/ba-jp-assets` and `.cache/ba-jp-catalog.json`, then move them aside. Packaging stops on missing resources or unsupported script commands. A future catalog may need adapter changes.
 
 `scripts/ba-assets.py` runs in the downloader's UnityPy environment. It extracts referenced Spine 4.2 skeletons, atlas pages, original emoji sprites, effect textures and WAV sound effects, and copies referenced backgrounds and Ogg music/voices. Two voice references use split files in this JP build; ffmpeg concatenates the ordered parts. The resulting `assets.json` records source URLs, CRCs, sizes, SHA-256 hashes and metadata-table hashes. Every packaged file enters the episode download inventory. Raw packs remain in the ignored cache.
+
+Emotion commands have implicit audio even when the source row's `Sound` field is empty.
+`src/playback/ba/emotion-sounds.json` maps authored tokens to the original
+`SFX_Emoticon_Motion_*` clips. The semantic names match the pinned
+`ScenarioCharacterEmotionExcelTable` and BA Archive renderer at revision
+`4ddc9ee241f6028d724346acda190155dc98aaf6`; `[?]` uses `Question`, while `[?!]`
+uses `Surprise`. Original clips come from the verified official
+`FullPatch_Prologue_000.zip` audio bundle. Native packaging includes only the clips
+needed by each chapter, and browser recipes include their verified extraction
+selectors. Emotion audio uses sound-effects volume independently of reduced
+motion; seek reconstruction does not replay past cues.
+
+For an existing prepared library with verified shared clips, run
+`scripts/ba-assets.py --definitions scripts/ba-library.json --emotion-audio-only`
+in the downloader environment, followed by
+`node scripts/publish-ba-emotion-sounds.mjs`. This updates manifests, scene assets,
+catalog revisions and compressed offline recipes while preserving imported text.
+Normal acquisition includes emotion audio automatically.
 
 The independently written renderer uses `@esotericsoftware/spine-webgl` 4.2.120. Its license accompanies both the public vendor directory and the packaged media. See [the runtime license](../public/vendor/spine/LICENSE). Game media retains its original ownership; source-code licensing does not grant game-asset rights.
 
@@ -45,9 +69,73 @@ The Japanese script and character-name table come from BA Archive revision `4ddc
 
 `import:ba` alone imports the script and uses visual assets when present. Without an asset manifest it prepares a labeled text-only episode. It caches source JSON under `.cache/ba-source/<revision>`, writes chapter/source/provenance under `public/private/ba-jp/11000`, and updates `src/generated/ba-stories.json`. Generated stories and game media are ignored by Git. Prepare them before building a fresh workspace.
 
-All 229 source rows remain intact: 136 text passages, seven choice prompts and 86 command-only rows, plus a synthetic completion node. Scene steps account for every row exactly once. Five prompts have a single clickable response; two numbered prompts branch and rejoin without entering sibling responses. IDs use the group and zero-based row, such as `11000:190`. Japanese text is the actual reading language; English/Chinese fallback fields do not translate it. `[USERNAME]` defaults to `プレイヤー`.
+All 229 source rows remain intact: 136 text passages, seven choice prompts and 86 command-only rows, plus a synthetic completion node. Scene steps account for every row exactly once. Five prompts have a single clickable response; two numbered prompts branch and rejoin without entering sibling responses. IDs use the group and zero-based row, such as `11000:190`. `[USERNAME]` defaults to `プレイヤー` in Japanese and `Sensei` in English. Chinese is not advertised for BA, and untranslated English fields remain empty.
 
 The compiler rejects unknown commands/actions, unsupported flow and background effects, missing media, untranslated dialogue, unresolved speakers, orphan responses and broken scene alignment. Import tests additionally parse every original skeleton, verify referenced face animations and check every packaged byte against its manifest hash.
+
+## Official English and language switching
+
+`acquire:ba-english` verifies the original Nexon global `ExcelDB.db` for build
+`1.93.454564`, SHA-256
+`0ba93f542493a9ca8b9f98a4b13f4a912740b337940a264b43430b7046811391`.
+The field layout comes from the published, exact-version
+[BA-FlatData archive](https://github.com/beichen23333/BA-FlatData/blob/c4a07d3006ffde30b2a7857d8cc2614c9fa996ba/GL1.93.454564.zip),
+whose SHA-256 is recorded in `scripts/ba-gl-schema-1.93.json`.
+The downloader's existing authenticated SQLCipher reader decodes the database.
+The application also verifies and decodes these same original bytes locally.
+No Onlystory service or asset proxy is involved.
+
+As of the pinned source's 2026-10-19 release gate, 1,519 of the 1,659 imported JP
+chapters have complete, aligned official English, covering 110,713 text passages
+and 8,177 choice prompts. The other 140 retain Japanese only. Of those, 113 groups
+are absent from the global source, six are not visibly open in its mode/event
+tables, two have different row counts, 17 have empty English dialogue, one has
+different choice identifiers and one has a different narrative anchor. Every
+withheld group and reason is listed in `ba-english-verification.json`.
+This describes the pinned sources, not every live regional release.
+
+The published global schema archive incorrectly narrows `ScenarioScriptExcel.GroupId`
+to Int32. The pinned original's eight-byte field for group `83300100100` contains
+little-endian `04a8126513000000`, which decodes as Int64 `83300100100`; Int32
+truncates it to `1695721476`. The committed snapshot corrects that field to Int64
+and records this evidence in `verifiedCorrections`. Its revised snapshot name
+also separates the corrected decoded-source cache. The regression test runs the
+actual whole-database exporter, including groups outside the imported library,
+before checking the advertised English corpus.
+
+Alignment requires the same scenario group, row count, row order and selection
+group. Each row must retain its exact Korean narrative/choice anchor, or its
+exact Japanese text with the same speaker and command/choice role. Regional
+presentation waits and Japanese typo revisions can differ. Different branches,
+missing dialogue and missing translated speakers fail the whole chapter's
+English publication. Movies' command placeholders are not treated as dialogue.
+Original Japanese source files and media remain unchanged.
+
+The shared language selector changes dialogue, speaker names, choices, caption
+text, locations, player-name fallback and dialogue wait positions. It pauses
+playback and retains passage IDs, branch history, bookmarks and saved progress.
+Audio remains Japanese. Translations are installed with the original-file recipe
+and remain available offline. The shared global database is downloaded or supplied
+once and its decoded, integrity-checked rows are reused across chapters.
+Browsers can import `ExcelDB.global.db` alongside the Japanese originals, while
+the desktop app downloads the pinned original directly.
+
+`src/ba-localized-titles.json` contains verified English titles for 1,513 chapters
+and English collection names for 103 collections, covering 1,546 imported
+records. Main/club titles resolve official localization hashes; event titles use
+official English title-card rows and collection localization keys. Missing titles
+retain their original Japanese labels. These dictionaries also enter multilingual
+catalog search.
+
+`scripts/ba-localization.test.mjs` authenticates and decodes the actual global
+database using the application's WebCrypto/SQL.js implementation, then checks every
+advertised English passage, speaker, choice, scene-text row and unchanged JP
+graph. `tests/ba-language.spec.ts` checks live switching, translated choice labels,
+branch identity, screen captions and saved-passage English resume. The PWA
+two-story folder-import test also switches Japanese/English after a cold offline
+launch. Representative playback does not mean every chapter was played manually.
+The [English browser verification record](ba-english-browser-verification.json)
+records the focused browser run and its retained screenshot.
 
 ## Playback and verification
 
@@ -55,7 +143,7 @@ The BA player handles scene fades/crossfades, source waits, camera movement, cha
 
 Browser checks exercise animated characters, real voice decoding/progression, active music, source captions, branches, transient shot effects, original textures, missing-texture recovery and downloaded visual/audio playback with BA requests blocked. Text-reader checks cover choices, completion, bookmarks, progress, reload, fast-forward and 320 by 700 layout. A scene failure offers retry or a working text fallback.
 
-Unity particle simulation, hologram shaders and movement easing are approximated in browser code using original art. They have not been matched frame by frame against game footage. The entire small prologue model/background set loads before the scene begins, about 2.5 seconds in the measured warm local run; slower devices can take longer. Offline verification covers cached story/media in the loaded application, not installation of the application shell for a cold offline launch.
+Unity particle simulation, hologram shaders and movement easing are approximated in browser code using original art. They have not been matched frame by frame against game footage. The entire small prologue model/background set loads before the scene begins, about 2.5 seconds in the measured warm local run; slower devices can take longer. The original scene checks covered cached media in an open application. The separate [standalone verification](standalone-verification.json) records original-file imports and cold offline application launches.
 
 ## Full-resolution character textures
 
@@ -99,7 +187,7 @@ Seven `#timelineNS` cues in five segments reference native Unity 3D scenes, with
 
 `src/playback/ba/source-gaps.json` holds 78 scoped gaps across the main-story, group and event imports: 58 missing Japanese text cells, 9 absent character aliases, 5 background IDs, 3 background-effect IDs, 2 sound keys and 1 actor effect. Exact group/row/field/value entries permit only these known gaps: keep the authored row and omit the unresolved cue, then display a notice. New unknown references still fail import. Native combat, weather, flash, grain, scrolling and eyelid effects use browser compositions with original art and recorded native layer placement; shader geometry and emitter timing are approximations. Some native background-effect AudioSource clip references remain unresolved.
 
-`ba-main-library.test.mjs` checks every main chapter's graph, exact source-row accounting, packaged hashes, original skeletons, animation/skin references, declared gaps and cutscene barriers. Browser checks cover representative scenes across all 26 collections, numeric movie cues, fingertip interactions, timeline acknowledgement, and dialogue wait markers. Offline checks cover cached media in the loaded application; a cold offline application-shell install remains outside this verification.
+`ba-main-library.test.mjs` checks every main chapter's graph, exact source-row accounting, packaged hashes, original skeletons, animation/skin references, declared gaps and cutscene barriers. Browser checks cover representative scenes across all 26 collections, numeric movie cues, fingertip interactions, timeline acknowledgement, and dialogue wait markers. The scene suite checks cached media in an open application; the [standalone checks](standalone-verification.json) cover representative imports and cold offline launches.
 
 ## Club group stories
 
@@ -110,3 +198,7 @@ The pinned official database exposes all 68 visible, open Club group-story modes
 `scripts/ba-group-catalog.py` uses the official `EmblemDBSchema` `GroupStory` category to assign each of the 27 club collections to its featured school and writes the school badges used by catalog filtering. Each collection cover uses a distinct representative original story background from its packaged media. Run `npm run catalog:ba-groups` to republish the label and cover metadata after a group-story import.
 
 Two scoped source gaps and two expression gaps are declared rather than invented: group `2901` row 162 has no authored Japanese text, group `2404` row 157 references an absent off-screen character alias, group `2502` row 53 requests a face absent from the shipped skeleton, and group `3401` row 122 requests another absent face. The reader keeps the preceding expression for each missing face and continues the surrounding story.
+
+## Browser movie conversion check
+
+The [browser verification record](ba-browser-movie-verification.json) covers the complete original 59-second `212000_MV` movie and its separate soundtrack. The production static app imported verified originals with browser FFmpeg, produced a 1280 × 720 H.264/AAC movie, then opened it in a new offline window and sought near its end with decoded video and audio. No prepared chapter or media was seeded, no native bridge was present, and no private backend served content. The record includes the measured import time and exact tested build. This is representative evidence for one complete movie; longer movies and other browsers have not been timed by this check.

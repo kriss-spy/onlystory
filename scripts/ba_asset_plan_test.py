@@ -8,6 +8,7 @@ from unittest.mock import patch
 
 from ba_asset_plan import (
     bundle_members,
+    emotion_sound_names,
     character_model,
     check_shared_assets,
     missing_background,
@@ -19,6 +20,21 @@ from ba_asset_plan import (
 
 
 class AssetPlanTests(unittest.TestCase):
+    def test_emotion_sound_dependencies_use_authored_token_not_shared_sprite(self):
+        self.assertEqual(
+            emotion_sound_names(
+                [
+                    {"ScriptKr": "#1;em;[?]\n#2;EM;[?!]\n#3;em;[...]"},
+                    {"ScriptKr": "#1;fx;[?]\n#1;em;unknown"},
+                ]
+            ),
+            {
+                "SFX_Emoticon_Motion_Question",
+                "SFX_Emoticon_Motion_Surprise",
+                "SFX_Emoticon_Motion_Dot",
+            },
+        )
+
     def test_native_actor_fx_dependency_only_for_authored_actor_commands(self):
         self.assertTrue(needs_native_actor_fx([{"ScriptKr": "#3;fx;NKUltra"}]))
         self.assertTrue(needs_native_actor_fx([{"ScriptKr": "#1;fx;nkultrabreak"}]))

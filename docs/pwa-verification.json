@@ -1,0 +1,384 @@
+{
+  "verifiedAt": "2026-10-20T01:20:28.839Z",
+  "environment": {
+    "browser": "Chrome",
+    "platform": "Windows",
+    "workers": 2
+  },
+  "fullSuite": {
+    "status": "passed",
+    "expected": 17,
+    "passed": 17,
+    "failed": 0,
+    "skipped": 0,
+    "reportedDuration": "15.2m",
+    "command": "$env:PJSK_LIVE_DOWNLOAD='1'; npx playwright test --config playwright.pwa.config.ts --output .cache/final-pwa-results",
+    "log": ".cache/final-pwa-groupid64.log",
+    "artifactRoot": ".cache/final-pwa-results",
+    "artifacts": [
+      ".cache/final-pwa-results/ba-download-BA-database-ch-25b68-t-and-cold-launches-offline/ba-database-offline.png",
+      ".cache/final-pwa-results/ba-movie-a-complete-origin-a44cb-after-a-cold-offline-launch/ba-browser-movie-verification.json",
+      ".cache/final-pwa-results/ba-movie-a-complete-origin-a44cb-after-a-cold-offline-launch/ba-full-movie-offline.png",
+      ".cache/final-pwa-results/ba-selection-BA-toolbar-se-918f5-lder-and-opens-both-offline/ba-jp-2401-offline.png",
+      ".cache/final-pwa-results/ba-selection-BA-toolbar-se-918f5-lder-and-opens-both-offline/ba-jp-2402-offline.png",
+      ".cache/final-pwa-results/ba-selection-BA-toolbar-se-918f5-lder-and-opens-both-offline/ba-two-stories-installed.png",
+      ".cache/final-pwa-results/local-import-BA-original-f-338ee-kground-and-reopens-offline/import-dark.png",
+      ".cache/final-pwa-results/local-import-BA-original-f-338ee-kground-and-reopens-offline/offline-choice.png",
+      ".cache/final-pwa-results/pjsk-download-catalog-down-aedf5-progress-on-the-same-button/catalog-download-ring.png",
+      ".cache/final-pwa-results/pjsk-download-static-only--29839-reads-every-passage-offline/pjsk-offline-complete.png"
+    ],
+    "build": {
+      "capturedAt": "2026-10-20T01:11:32.731Z",
+      "build": "Full production build with GL GroupId64, Manage guard and release order; before sr-only overflow CSS fix",
+      "hashes": {
+        "dist/index.html": "5b2c9a2e97021cb599b5bd7880d06614387aa4c8b3ac48a58d86fa4e371081e0",
+        "dist/sw.js": "e2824f730b1ab5dde89712597b22f2f70aed250c7f3669c7a0717d7096c2df9f",
+        "dist/manifest.webmanifest": "9b9066c9560410240d6134bd091be32e3e5ca87259e2b33cbb809f23012aa6fc"
+      }
+    },
+    "archivedWebBundle": ".cache/release-before-layout-fix/Onlystory-web.zip",
+    "archiveHashRecord": ".cache/release-before-layout-fix/artifacts.json",
+    "tests": [
+      {
+        "number": 1,
+        "file": "tests/pwa/acquisition.spec.ts",
+        "line": 5,
+        "title": "a fresh static install gates GFL stories before requesting unavailable chapter files",
+        "status": "passed",
+        "reportedDuration": "10.8s"
+      },
+      {
+        "number": 2,
+        "file": "tests/pwa/app.spec.ts",
+        "line": 67,
+        "title": "manifest and icons are installable, and settings expose offline readiness",
+        "status": "passed",
+        "reportedDuration": "2.8s"
+      },
+      {
+        "number": 3,
+        "file": "tests/pwa/app.spec.ts",
+        "line": 113,
+        "title": "a downloaded original story reopens offline in a new window and retains its passage",
+        "status": "passed",
+        "reportedDuration": "57.3s"
+      },
+      {
+        "number": 4,
+        "file": "tests/pwa/app.spec.ts",
+        "line": 162,
+        "title": "cached media support aliases and ranges without caching undownloaded files",
+        "status": "passed",
+        "reportedDuration": "2.2s"
+      },
+      {
+        "number": 5,
+        "file": "tests/pwa/app.spec.ts",
+        "line": 216,
+        "title": "updates wait for restart and preserve progress, downloads and another open window",
+        "status": "passed",
+        "reportedDuration": "8.2s"
+      },
+      {
+        "number": 6,
+        "file": "tests/pwa/app.spec.ts",
+        "line": 275,
+        "title": "failed offline setup can be retried without replacing the working page",
+        "status": "passed",
+        "reportedDuration": "3.6s"
+      },
+      {
+        "number": 7,
+        "file": "tests/pwa/app.spec.ts",
+        "line": 298,
+        "title": "an incomplete update leaves the existing offline app available",
+        "status": "passed",
+        "reportedDuration": "4.7s"
+      },
+      {
+        "number": 8,
+        "file": "tests/pwa/ba-download.spec.ts",
+        "line": 10,
+        "title": "BA database chapter imports from originals on a static host and cold launches offline",
+        "status": "passed",
+        "reportedDuration": "1.8m"
+      },
+      {
+        "number": 9,
+        "file": "tests/pwa/ba-movie.spec.ts",
+        "line": 10,
+        "title": "a complete original BA movie converts in the browser and seeks after a cold offline launch",
+        "status": "passed",
+        "reportedDuration": "14.1m"
+      },
+      {
+        "number": 10,
+        "file": "tests/pwa/ba-selection.spec.ts",
+        "line": 10,
+        "title": "BA toolbar selects two stories, imports their original folder, and opens both offline",
+        "status": "passed",
+        "reportedDuration": "1.9m"
+      },
+      {
+        "number": 11,
+        "file": "tests/pwa/local-import.spec.ts",
+        "line": 8,
+        "title": "BA original-file UI rejects corruption, imports in background and reopens offline",
+        "status": "passed",
+        "reportedDuration": "1.7m"
+      },
+      {
+        "number": 12,
+        "file": "tests/pwa/pjsk-download.spec.ts",
+        "line": 88,
+        "title": "static-only host downloads PJSK directly, then reads every passage offline",
+        "status": "passed",
+        "reportedDuration": "3.7m"
+      },
+      {
+        "number": 13,
+        "file": "tests/pwa/pjsk-download.spec.ts",
+        "line": 253,
+        "title": "catalog downloads select in place and show progress on the same button",
+        "status": "passed",
+        "reportedDuration": "4.4s"
+      },
+      {
+        "number": 14,
+        "file": "tests/pwa/pjsk-download.spec.ts",
+        "line": 317,
+        "title": "unverified downloaders stay pending and all BA collections are selectable",
+        "status": "passed",
+        "reportedDuration": "18.2s"
+      },
+      {
+        "number": 15,
+        "file": "tests/pwa/pjsk-download.spec.ts",
+        "line": 379,
+        "title": "catalog selection works in grid and table layouts in both themes",
+        "status": "passed",
+        "reportedDuration": "6.1s"
+      },
+      {
+        "number": 16,
+        "file": "tests/pwa/pjsk-download.spec.ts",
+        "line": 413,
+        "title": "failed source downloads are retryable and never marked installed",
+        "status": "passed",
+        "reportedDuration": "5.4s"
+      },
+      {
+        "number": 17,
+        "file": "tests/pwa/pjsk-download.spec.ts",
+        "line": 445,
+        "title": "all PJSK chapters are searchable without rendering or precaching the entire download catalog",
+        "status": "passed",
+        "reportedDuration": "3.5s"
+      }
+    ],
+    "actualDirectPjskDownload": true,
+    "retainedOriginalBaImport": true,
+    "coldOfflineEnglishAfterOriginalFolderImport": "The original full-suite assertions allowed hidden/empty shell dialogue and did not establish rendered offline English. Superseded by finalCssRenderedSelection.",
+    "completeOriginalBaMovie": {
+      "artifact": ".cache/final-pwa-results/ba-movie-a-complete-origin-a44cb-after-a-cold-offline-launch/ba-browser-movie-verification.json",
+      "conversionMs": 836239,
+      "metadata": {
+        "duration": 59.032993,
+        "width": 1280,
+        "height": 720
+      },
+      "decoded": {
+        "frames": 138,
+        "audioBytes": 146310
+      },
+      "coldOffline": true,
+      "errors": []
+    },
+    "timingNote": "Full-suite console timings are stored exactly as reported, including rounded minute values. Movie conversionMs comes from the exact measured test interval.",
+    "baSelectionScreenshotLimitation": "The original ba-jp-2401/2402 offline screenshots captured loading at title passages. Retained as historical run artifacts; use finalCssRenderedSelection screenshots for rendered offline English evidence."
+  },
+  "priorAttempt": {
+    "log": ".cache/pwa-first-attempt.log",
+    "status": "stopped after 6 passes and 2 actual import failures",
+    "cause": "The original global database contains 64-bit GroupId values. The old Int32 schema truncated a large unrequested group while exporting the entire database.",
+    "resolution": "Pinned GroupId Int64 schema and cache-schema invalidation; regression covers the actual original whole-database export. The final full run passes both previously failing cases."
+  },
+  "finalCssFocusedSuite": {
+    "status": "passed",
+    "log": ".cache/final-pwa-layout.log",
+    "jsonReport": ".cache/final-pwa-layout-report.json",
+    "artifactRoot": ".cache/final-pwa-layout-results",
+    "passed": 7,
+    "failed": 0,
+    "skipped": 0,
+    "durationMs": 52405.576,
+    "startedAt": "2026-10-20T01:18:11.455Z",
+    "tests": [
+      {
+        "file": "acquisition.spec.ts",
+        "line": 5,
+        "title": "a fresh static install gates GFL stories before requesting unavailable chapter files",
+        "status": "passed",
+        "durationMs": 10736
+      },
+      {
+        "file": "app.spec.ts",
+        "line": 67,
+        "title": "manifest and icons are installable, and settings expose offline readiness",
+        "status": "passed",
+        "durationMs": 2503
+      },
+      {
+        "file": "app.spec.ts",
+        "line": 113,
+        "title": "a downloaded original story reopens offline in a new window and retains its passage",
+        "status": "passed",
+        "durationMs": 48485
+      },
+      {
+        "file": "app.spec.ts",
+        "line": 162,
+        "title": "cached media support aliases and ranges without caching undownloaded files",
+        "status": "passed",
+        "durationMs": 2224
+      },
+      {
+        "file": "app.spec.ts",
+        "line": 216,
+        "title": "updates wait for restart and preserve progress, downloads and another open window",
+        "status": "passed",
+        "durationMs": 8473
+      },
+      {
+        "file": "app.spec.ts",
+        "line": 275,
+        "title": "failed offline setup can be retried without replacing the working page",
+        "status": "passed",
+        "durationMs": 3602
+      },
+      {
+        "file": "app.spec.ts",
+        "line": 298,
+        "title": "an incomplete update leaves the existing offline app available",
+        "status": "passed",
+        "durationMs": 4347
+      }
+    ],
+    "build": {
+      "description": "Final production build including the sr-only overflow CSS correction.",
+      "hashes": {
+        "dist/index.html": "8812da3f0d891af6602277e83c6d3cdc9139b7ff44760a5baf2b6bf4e7b8ba46",
+        "dist/sw.js": "f8270aa87e567cd6bd1ab97c830d0fef41e729c8debb8aab06042e09463b44c9",
+        "dist/manifest.webmanifest": "9b9066c9560410240d6134bd091be32e3e5ca87259e2b33cbb809f23012aa6fc"
+      }
+    },
+    "publishedImporterChunksMatchFullSuite": true,
+    "publishedImporterChunksSha256": {
+      "assets/ba-catalog-D3_Lw69y.js": "a29eabb7d491d1c30a342a17133d11d944007059741aee7516c1ee7500189a19",
+      "assets/ba-D3WNitZ1.js": "10c0a34b7f974570db13c772a9bbea6a4b38cf59511b990f9a438a00b3a77db4",
+      "assets/pjsk-catalog-CMMAN9ge.js": "2c72ee720597d5cad8bf168cecb6147e50d100d7e242f3c5d94dac45428bfe2d",
+      "assets/pjsk-EvfUKK5z.js": "9bd6a3907b5d9e9469dfb343f7392cfb2f3490b789c8f12e575bfd38ffa532f9",
+      "assets/worker-bCO5kG0t.js": "43fd3990c0390282911ed4bdc341bc20e3bf15417ed5b74626e497402a5b8aec",
+      "assets/worker-DzHB5YQC.js": "b8aa943ea79f385b0df11ba13b6f51b60fd1dd49fa2b59233e3db0512a817aa8"
+    },
+    "renamedJavaScriptComparison": [
+      {
+        "before": "assets/BaScene-uYzb54S1.js",
+        "after": "assets/BaScene-BEfD6hFy.js",
+        "identicalAfterBuildAssetReferenceNormalization": true
+      },
+      {
+        "before": "assets/Download-D4zSKwe5.js",
+        "after": "assets/Download-Dq-B430d.js",
+        "identicalAfterBuildAssetReferenceNormalization": true
+      },
+      {
+        "before": "assets/Gfl2EventScene-HXdkjW8s.js",
+        "after": "assets/Gfl2EventScene-BVaOFimH.js",
+        "identicalAfterBuildAssetReferenceNormalization": true
+      },
+      {
+        "before": "assets/index-wSn9DkCo.js",
+        "after": "assets/index-CYQuOpn2.js",
+        "identicalAfterBuildAssetReferenceNormalization": true
+      },
+      {
+        "before": "assets/PjskScene-BxI2OGjT.js",
+        "after": "assets/PjskScene-DR0KIjv_.js",
+        "identicalAfterBuildAssetReferenceNormalization": true
+      },
+      {
+        "before": "assets/Primitives-CVYv6TaB.js",
+        "after": "assets/Primitives-CgF1TkXV.js",
+        "identicalAfterBuildAssetReferenceNormalization": true
+      },
+      {
+        "before": "assets/store-Vms_upqU.js",
+        "after": "assets/store-Cn2JyZZR.js",
+        "identicalAfterBuildAssetReferenceNormalization": true
+      }
+    ],
+    "comparisonNote": "Importer worker and BA/PJSK acquisition chunks are byte-identical. CSS dependency hashes rename other bundles; normalized comparison replaces only 8-character .js/.css asset hash references. Service worker changes its shell revision and precache inventory.",
+    "comparisonArtifact": ".cache/final-pwa-importer-comparison.json"
+  },
+  "importerSourceSha256": {
+    "src/downloads/ba.ts": "57e433a08b395fd901a5077620431628720fc565f532b7521e49d98d98db353d",
+    "src/downloads/pjsk.ts": "2a2ab43597d3139dbe79a6b3c28a8ecb99faa2f032c02063c6ab8490feed9f70",
+    "src/downloads/ba/database.mjs": "5cbe9e59b6f5f665d5c3dc877fc224fdb15fca526193fab54354a1d2998be75f",
+    "src/downloads/ba/worker.mjs": "7317486df47e1361bb73b39f815e2ad9917f4d09c986560ee9b48ed502d7ecec",
+    "src/downloads/ba/convert.ts": "9964eec2a725f5ef0e33fa68b1cb94d56dca15af32654ddd96aa4dcdc1a69448",
+    "src/downloads/ba/source-cache.mjs": "b3cd3a7269ec932bb91bd57c04a0fb0cab259803911234020dfe537275b5298c",
+    "src/downloads/ba/output-cache.mjs": "a71730f34f2e32be5878494d9118deb60356ffa1f29a7872fc60efb1f917eb27"
+  },
+  "finalCssRenderedSelection": {
+    "status": "passed",
+    "passed": 1,
+    "failed": 0,
+    "skipped": 0,
+    "durationMs": 69484.467,
+    "startedAt": "2026-10-20T01:28:13.234Z",
+    "testDurationMs": 68454,
+    "command": "npx playwright test --config playwright.pwa.config.ts tests/pwa/ba-selection.spec.ts --output .cache/final-pwa-selection-rendered-v3-results --reporter=list,json",
+    "log": ".cache/final-pwa-selection-rendered-v3.log",
+    "jsonReport": ".cache/final-pwa-selection-rendered-v3-report.json",
+    "artifactRoot": ".cache/final-pwa-selection-rendered-v3-results/ba-selection-BA-toolbar-se-918f5-lder-and-opens-both-offline",
+    "build": {
+      "description": "Final production build including the sr-only overflow CSS correction.",
+      "hashes": {
+        "dist/index.html": "8812da3f0d891af6602277e83c6d3cdc9139b7ff44760a5baf2b6bf4e7b8ba46",
+        "dist/sw.js": "f8270aa87e567cd6bd1ab97c830d0fef41e729c8debb8aab06042e09463b44c9",
+        "dist/manifest.webmanifest": "9b9066c9560410240d6134bd091be32e3e5ca87259e2b33cbb809f23012aa6fc"
+      }
+    },
+    "serverIsolation": "The shared staticHost helper copies dist into a dedicated temporary static root before starting. A preceding final-CSS snapshot was compared with stable dist: all 3345 files were byte-identical. The final rerun used stable final-CSS dist with no builds in progress.",
+    "checks": [
+      "Import both 2401/2402 from actual retained original files using toolbar selection and folder picker.",
+      "Select the first actual named-character dialogue from each imported chapter, avoiding native title cards and hidden shell text.",
+      "Cold offline playback renders the complete official English dialogue and animated character/background scene.",
+      "Switch EN to JA at the same passage URL and assert the exact Japanese text differs from official English.",
+      "Select EN and reload offline; require scene aria-busy=false, no loading overlay, visible exact English dialogue and last-character opacity 1 before capture.",
+      "No runtime page errors or additional private-file requests during offline playback."
+    ],
+    "screenshotsVisuallyInspected": true,
+    "screenshots": [
+      ".cache/final-pwa-selection-rendered-v3-results/ba-selection-BA-toolbar-se-918f5-lder-and-opens-both-offline/ba-jp-2401-offline.png",
+      ".cache/final-pwa-selection-rendered-v3-results/ba-selection-BA-toolbar-se-918f5-lder-and-opens-both-offline/ba-jp-2402-offline.png"
+    ],
+    "observedPassages": [
+      {
+        "id": "2401:15",
+        "speaker": "Kaede",
+        "english": "No, this isn't what I imagined at all."
+      },
+      {
+        "id": "2402:1",
+        "speaker": "Kaede",
+        "english": "Okay, testing the camera. Testing... One, two..."
+      }
+    ],
+    "earlierStrengthenedAttempt": {
+      "log": ".cache/final-pwa-selection-rendered.log",
+      "result": "Correctly failed at a native title card because its shell dialogue was hidden. The final test selects a named-character passage from the imported chapter."
+    }
+  }
+}

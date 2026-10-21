@@ -5,8 +5,8 @@ test('BA dialogue honors authored pauses and Reveal text still completes it', as
   page,
 }) => {
   const data = emptyData();
-  data.preferences.layout = 'text';
   data.preferences.textLocale = 'ja';
+  data.preferences.layout = 'text';
   data.preferences.textSpeed = 20;
   await page.addInitScript(
     (value) => localStorage.setItem('onlystory.v1', JSON.stringify(value)),
@@ -18,6 +18,7 @@ test('BA dialogue honors authored pauses and Reveal text still completes it', as
     const node = chapter.nodes.find((node: any) => node.kind === 'text');
     node.text = { en: 'あいう', 'zh-CN': 'あいう', ja: 'あいう' };
     node.scene.textPauses = [{ offset: 1, delay: 800 }];
+    node.scene.textPausesLocales = { ja: node.scene.textPauses };
     await route.fulfill({ response, json: chapter });
   });
   await page.goto('/read/ba/ba-jp-11000');

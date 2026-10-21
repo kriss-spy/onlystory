@@ -8,7 +8,7 @@ import {
 } from '../src/playback/ba/script.ts';
 import { baSourceGaps } from '../src/playback/ba/source-gaps.ts';
 export const plainText = (text) => parseBaText(text).text;
-const localized = (text) => ({ en: text, 'zh-CN': text, ja: text });
+const localized = (text) => ({ en: '', 'zh-CN': text, ja: text });
 const fail = (message) => {
   throw new Error(`BA import: ${message}`);
 };

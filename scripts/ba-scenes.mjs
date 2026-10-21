@@ -246,6 +246,7 @@ export function compileBaScenes(source, chapter, assets) {
     version: 1,
     id: chapter.id,
     steps,
+    ...(chapter.rowLocales ? { rowLocales: chapter.rowLocales } : {}),
     assets,
     ...(baSourceCorrections(source.GroupId).length
       ? { sourceCorrections: baSourceCorrections(source.GroupId) }

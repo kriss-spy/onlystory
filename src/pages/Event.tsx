@@ -17,11 +17,16 @@ import { PjskGroupMark } from '../components/PjskGroupMark';
 import { SchoolMarks } from '../components/SchoolMarks';
 import { EventCover } from '../components/EventCover';
 import { CatalogLayout } from '../components/CatalogLayout';
+import { TextLanguages } from '../components/TextLanguages';
+import { useStore } from '../store';
+import { gamePreferences } from '../model';
+import { collectionTitle } from '../localized-titles';
 
 const scrollPositions = new Map<string, number>();
 export function EventPage() {
   const { game: id, event: eventId } = useParams();
   const game = gameById(id);
+  const { data } = useStore();
   const [params, setParams] = useSearchParams();
   const location = useLocation();
   const scroll = useRef<HTMLDivElement>(null);
@@ -68,7 +73,10 @@ export function EventPage() {
       <div className="event-heading">
         <PageTitle
           eyebrow={`${game.shortName} · ${event.category}`}
-          title={event.title}
+          title={collectionTitle(
+            event,
+            gamePreferences(data.preferences, game.id).catalogLocale,
+          )}
           back={from}
         >
           <p className="event-summary">
@@ -80,6 +88,7 @@ export function EventPage() {
               ? ` · ${event.main.length} main · ${event.stories.length - event.main.length} side`
               : ''}
           </p>
+          <TextLanguages stories={event.stories} />
           {event.notice ? <p role="note">{event.notice}</p> : null}
           <SchoolMarks event={event} />
         </PageTitle>

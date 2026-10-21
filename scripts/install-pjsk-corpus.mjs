@@ -6,6 +6,7 @@ import { installPjskEpisode } from './pjsk-media.mjs';
 import { writeJson } from './pjsk-import.mjs';
 import { sha256 } from './pjsk-scenario.mjs';
 import { pjskLibraryRoot } from './local-environment.mjs';
+import { pjskInstallationFingerprint } from './pjsk-installation-provenance.mjs';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
 const { values } = parseArgs({
@@ -30,24 +31,8 @@ const unavailable = new Map(
 const output = resolve(root, values.report);
 await mkdir(output, { recursive: true });
 const reportPath = resolve(output, 'installation.json');
-const implementationHash = sha256(
-  Buffer.concat([
-    ...(await Promise.all(
-      [
-        'pjsk-media.mjs',
-        'pjsk-program.mjs',
-        'pjsk-scenario.mjs',
-        'pjsk-import.mjs',
-        'pjsk-voice-listing.mjs',
-        'pjsk-voice-bindings.mjs',
-        'pjsk-model-overrides.mjs',
-      ].map((name) => readFile(resolve(root, 'scripts', name))),
-    )),
-    await readFile(resolve(root, 'docs/pjsk-model-overrides.json')),
-    await readFile(resolve(root, 'docs/pjsk-video-backgrounds.json')),
-    await readFile(resolve(root, 'docs/pjsk-voice-bindings.json')),
-  ]),
-);
+const fingerprint = pjskInstallationFingerprint(root);
+const { implementationHash } = fingerprint;
 let previous = {};
 if (values.resume) {
   try {
@@ -58,7 +43,7 @@ if (values.resume) {
 }
 const report = {
   milestone: corpus.milestone,
-  implementationHash,
+  ...fingerprint,
   startedAt: new Date().toISOString(),
   expected: corpus.expectedEpisodeCount,
   episodes: values.resume ? (previous.episodes ?? {}) : {},

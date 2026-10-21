@@ -1,0 +1,236 @@
+{
+  "snapshotDate": "2026-10-20",
+  "scope": "Current Onlystory real-content catalogs, prepared shared library and published standalone recipes. Excludes synthetic design fixtures and the separate legacy preview from totals.",
+  "definitions": {
+    "collection": "A named event, main-story chapter/volume, or group-story collection.",
+    "story": "An individually readable chapter, section or scenario segment, not one passage.",
+    "readable": "Published readable source exists in the shared library or a supported recipe. Does not imply installed in this browser or complete native-game presentation.",
+    "dialogue": "Actual story text, excluding catalog titles and renderer fallback fields.",
+    "voice": "Original spoken dialogue audio, kept separate from movie soundtracks, music and sound effects."
+  },
+  "totals": {
+    "collections": 410,
+    "readableCollections": 394,
+    "listedStories": 6379,
+    "readableStories": 6250,
+    "unavailableStories": 129,
+    "metadataOnlyCollections": 16,
+    "previewStoriesExcluded": 1
+  },
+  "games": [
+    {
+      "gameId": "gfl1",
+      "gameName": "Girls' Frontline",
+      "counts": {
+        "collections": 60,
+        "readableCollections": 60,
+        "listedStories": 2254,
+        "readableStories": 2253
+      },
+      "summary": {
+        "collectionCount": 60,
+        "storyCount": 2254,
+        "readableStoryCount": 2253,
+        "unavailableStoryCount": 1,
+        "mainStoryCollectionCount": 14,
+        "mainStoryCount": 373,
+        "eventCollectionCount": 46,
+        "eventTypes": {
+          "story": 25,
+          "special": 12,
+          "collaboration": 9
+        },
+        "textLanguages": ["en"],
+        "voiceLanguages": [],
+        "passageCount": 120905,
+        "sourceRowCount": 117788,
+        "backgroundMusicCueCount": 251,
+        "soundEffectCueCount": 306,
+        "uniqueReferencedAudioFileCount": 545,
+        "movieCount": 0,
+        "uniqueReferencedAssetCount": 7358,
+        "missingLocalAssetCount": 0,
+        "localAvailability": "The current development library contains every catalog-referenced asset; omitted native source/media gaps remain explicitly reported.",
+        "standaloneAvailability": "Pending on a fresh static/standalone install. GFL1 has no standalone acquisition recipe; an existing local library host is required.",
+        "countDefinitions": {
+          "collection": "Distinct collectionId in src/generated/gfl1-catalog.json, preserving native catalog ordering.",
+          "story": "One catalog entry, including main scenes, separate gameplay triggers, alternate endings, unplaced appendices and the one missing-source placeholder.",
+          "readableStory": "Catalog availability is available and import report has original source rows. Does not mean every optional original media effect is reproduced.",
+          "passage": "Compiler text/choice node count, report.textRows; source rows and command-only passages are counted separately.",
+          "audioCue": "Audio provenance records by native logical cue, which may share encoded audio files. No dialogue voices are imported."
+        }
+      },
+      "inventory": "content-inventory/gfl1.json",
+      "storyList": "content-inventory/gfl1.md",
+      "snapshotSha256": "80bdc4bc6fd80438cff6a41b3d99c80e4049d291103ad57196dc22718b360dda"
+    },
+    {
+      "gameId": "gfl2",
+      "gameName": "Girls' Frontline 2: Exilium",
+      "counts": {
+        "collections": 36,
+        "readableCollections": 36,
+        "listedStories": 715,
+        "readableStories": 715
+      },
+      "summary": {
+        "collectionCount": 36,
+        "storyCount": 715,
+        "readableStoryCount": 715,
+        "passageCount": 117679,
+        "textLanguages": ["zh-CN"],
+        "voiceLanguages": [],
+        "dialogueVoiceLanguages": [],
+        "movieVoiceLanguages": ["zh-CN", "ja"],
+        "protagonistVariants": ["male", "female"],
+        "variantPassageCount": 519,
+        "choiceGroups": 15,
+        "storiesWithSourceGaps": 168,
+        "uniqueDeclaredFiles": 9678,
+        "missingLocalFiles": [],
+        "distinctMovieIds": 20,
+        "distinctMovieSourceVariantUrls": 23,
+        "distinctMusicCueLabels": 112,
+        "distinctSoundCueLabels": 1330,
+        "storiesWithMovies": 18,
+        "sideStorySections": 45,
+        "sourceGapOccurrencesByKind": {
+          "expression": 233,
+          "background": 42,
+          "audio": 7,
+          "text": 3,
+          "video": 1,
+          "character": 2
+        }
+      },
+      "inventory": "content-inventory/gfl2.json",
+      "storyList": "content-inventory/gfl2.md",
+      "snapshotSha256": "71b57644452d08feb8e41eea7d4c931a54a2b746e4e220d75dcd03396584bdbd"
+    },
+    {
+      "gameId": "pjsk",
+      "gameName": "Project SEKAI",
+      "counts": {
+        "collections": 204,
+        "readableCollections": 188,
+        "listedStories": 1751,
+        "readableStories": 1623
+      },
+      "summary": {
+        "metadataStories": 1751,
+        "publishedCatalogStories": 1623,
+        "readableStories": 1623,
+        "mainStoryCount": 125,
+        "readableMainCollections": 6,
+        "eventStoryCount": 1498,
+        "readableEventCollections": 182,
+        "metadataOnlyStories": 128,
+        "metadataOnlyEventCollections": 16,
+        "textLanguages": ["zh-CN"],
+        "voiceLanguages": ["ja"],
+        "titleCoverage": {
+          "ja": 1623,
+          "en": 1615,
+          "zh-CN": 1623
+        },
+        "chaptersWithMedia": {
+          "backgrounds": 1623,
+          "videoBackgrounds": 2,
+          "music": 1623,
+          "sounds": 1551,
+          "voices": 1623,
+          "models": 1623,
+          "movies": 135,
+          "performances": 5,
+          "effects": 395,
+          "effectAssets": 393
+        },
+        "uniqueReferencedMedia": {
+          "backgrounds": 878,
+          "videoBackgrounds": 2,
+          "music": 309,
+          "sounds": 1009,
+          "voices": 133697,
+          "models": 11536,
+          "movies": 135,
+          "performances": 5,
+          "effects": 90,
+          "effectAssets": 135
+        },
+        "capabilityCounts": {
+          "Original Chinese text": 1623,
+          "Japanese voice": 1623,
+          "Live2D": 1623,
+          "BGM & sound effects": 1623,
+          "Original motion projected onto the native costume rig": 33,
+          "Continuous score approximation for native music blocks": 5,
+          "Continuous score approximation for native adaptive music controls": 3,
+          "Original video backgrounds with browser loop/mute policy": 2,
+          "Original song audio in place of native 3D performance": 5
+        },
+        "countDefinitions": [
+          "A story is one readable chapter/section, not a passage.",
+          "125 main stories are the six named main-story collections; 1,498 event stories are readable chapters in 182 named event collections.",
+          "128 further event-script metadata rows across 16 collections have no readable episode or download recipe and are excluded from 1,623 available stories.",
+          "Catalog title translation coverage is counted per available story."
+        ]
+      },
+      "inventory": "content-inventory/pjsk.json",
+      "storyList": "content-inventory/pjsk.md",
+      "snapshotSha256": "0e6e3de816f505458b9bb6123aa530f31aa8d8c4b15e785e8fbca1f0f2d0d5af"
+    },
+    {
+      "gameId": "ba",
+      "gameName": "Blue Archive",
+      "counts": {
+        "collections": 110,
+        "readableCollections": 110,
+        "listedStories": 1659,
+        "readableStories": 1659
+      },
+      "summary": {
+        "catalogCollections": 110,
+        "catalogStories": 1659,
+        "readableStories": 1659,
+        "collectionCategories": {
+          "Main story": 26,
+          "Event": 57,
+          "Group story": 27
+        },
+        "storyCategories": {
+          "Main story": 613,
+          "Event": 978,
+          "Group story": 68
+        },
+        "textLanguages": ["ja", "en"],
+        "englishStories": 1519,
+        "japaneseOnlyStories": 140,
+        "voicedStories": 10,
+        "movieStories": 68,
+        "uniqueVoiceFiles": 288,
+        "uniqueMovies": 68,
+        "uniqueMusicFiles": 303,
+        "uniqueSoundFiles": 771,
+        "mediaCountDefinition": "Unique payload SHA-256 values in published integrity manifests, not repeated references or URL aliases.",
+        "unsupportedNative3dCues": 9,
+        "localizedTitles": {
+          "source": "JP catalog plus official global EN regional metadata",
+          "englishStoryTitles": 1513,
+          "englishCollectionTitles": 103
+        },
+        "sourceBuild": {
+          "JP": "1.73.459696",
+          "globalEnglish": "1.93.454564"
+        },
+        "acquisition": {
+          "local": "All stories are in the current shared library.",
+          "windows": "All 1,659 stories have recipes that fetch and compile original files.",
+          "browser": "All 1,659 stories can be imported from user-selected original files. Official source CORS blocks direct browser fetching."
+        }
+      },
+      "inventory": "content-inventory/ba.json",
+      "storyList": "content-inventory/ba.md",
+      "snapshotSha256": "5c9248e6ccea02f28df029f2540b6ab507ecc5a443996cd9ea9eaa720f052677"
+    }
+  ]
+}

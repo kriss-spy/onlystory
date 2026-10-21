@@ -1,6 +1,6 @@
 # Storage optimization plan
 
-Status: shared asset migration and lossless atlas conversion implemented. Movie stream sharing and automatic reclamation remain pending. Updated 2026-10-16.
+Status: shared assets, lossless atlas conversion, streamed cache migration, Undo-aware reclamation, incremental estimates, cross-window locks and shared movie delivery are implemented. Final browser and packaged verification is tracked in [remaining-work.md](remaining-work.md). Updated 2026-10-20.
 
 The target is a library containing events from several games, potentially more than 20 GB. Store identical assets once, preserve the original movie picture streams, compress eligible textures losslessly, and install only selected events and languages. Keep standalone desktop and private server modes as first-class storage targets.
 
@@ -12,15 +12,17 @@ The shared importer and exact atlas conversion reduce the current exported libra
 
 Imports now store immutable payloads under `/private/shared/<full-sha256>.<extension>`. Event manifests and nested model references use those URLs. Provenance retains original file identities and source records. Old URLs resolve through the host's alias index, including correct MIME types and byte ranges. Repeated imports validate shared payload hashes and reuse the existing objects.
 
-The frontend build excludes the media library and is about **2.3 MB**, including the demo and Cubism runtime. `npm run preview` and `npm start` serve the library separately. This removes the previous extra 2.523 GB build copy; it does not include a desktop executable or authenticated remote server.
+The frontend build excludes the media library. It includes the reader, playback/conversion runtimes and compressed download recipes. `npm run preview` and `npm start` serve the imported library separately. Windows portable and NSIS builds package the app runtime with external app-data source and conversion caches. Current artifact sizes and hashes belong in [standalone-verification.json](standalone-verification.json); the earlier 2.3 MB shell measurement predates these runtimes and recipes. An authenticated remote server remains separate work.
 
-Downloads now use a maximum of three asset transfers, share in-flight work across episode jobs, and stream into CacheStorage instead of accumulating movie chunks in JavaScript. They include only the selected movie voice, record installed dependencies/languages, and check managed downloads for missing cache entries at startup. Management shows actual cached media bytes and estimated browser space. Small byte-identical old cache entries migrate by SHA-256; re-encoded textures and large movies keep their existing cache entries for compatibility.
+Downloads use a maximum of three asset transfers, share work across jobs and windows using content-identity locks, and stream into CacheStorage. They include only the selected movie audio, record installed dependencies/languages and check installed inventories at startup. Selection shows unique incremental and reused bytes before transfer. Management shows cached media bytes and browser space. Byte-identical legacy cache entries migrate with incremental SHA-256, including files larger than 16 MiB. Differently encoded assets retain their valid compatibility entries.
 
-The first rollout deliberately retains combined-language movie exports and the four legacy multi-track movies. Sharing their video streams remains the next implementation phase. Automatic cache reclamation, a complete large-file cache migration, pre-download incremental estimates, cross-tab transfer coordination, and desktop packaging are also still pending. Removing a download still preserves shared cached media for Undo.
+The shared fragmented MP4 descriptors contain one picture track and separate Chinese/Japanese audio tracks. All 40 movie descriptors passed full picture elementary-stream and AAC packet equality checks against the combined originals; see [movie-stream-verification.json](movie-stream-verification.json). Compatible clients download one shared picture plus selected audio; the player uses one media clock and bounded segment buffering. Chrome passes playback, switching, reload, seeking, audio decoding, completion and selected/missing-language offline checks; see [movie-playback-verification.json](movie-playback-verification.json). Across unique URLs, both-language shared fragments total 2,953,724,152 bytes versus 5,766,587,228 bytes of combined files. Combined MP4 exports remain physically retained as compatibility fallbacks and are excluded from normal MSE downloads. The delivery savings are not a claim that those fallback bytes were deleted.
+
+Removing a download creates a durable 30-second Undo journal. After expiry, reachability-based cleanup reclaims only media absent from retained installed inventories, active library operations and Undo entries. Shared media survive while referenced. Cleanup can resume after interruption. Verified original source packs and native conversion caches remain available for reuse; their separate retention is explicit in management.
 
 Detailed image equality records and current sizes are saved in [storage-implementation.json](storage-implementation.json). Disposable benchmark and conversion payloads were removed after verifying their canonical replacements; their JSON evidence remains. The original game installation and extraction evidence were not changed.
 
-Validation passed for 36 unit tests, 15 import/host tests, and 74 unique browser checks across a full suite and focused follow-up runs. These cover every imported story, the original cast, high-DPI sharpness, holograms, old URL/cache compatibility, cancellation/retry, selective movie-language downloads, and offline seeking. The closed-eye expression check also passed three repeated runs after fixing its premature readiness marker. A production-host smoke check verified a real shared scene, deep links, and the download page at 320-pixel width. Reimporting the real library leaves all 13 catalog/manifest/index JSON files byte-identical.
+The earlier shared-asset and image implementation passed 36 unit tests, 15 import/host tests, and 74 unique browser checks across a full suite and focused follow-up runs. These cover every imported story, the original cast, high-DPI sharpness, holograms, old URL/cache compatibility, cancellation/retry, selective movie-language downloads, and offline seeking. The closed-eye expression check also passed three repeated runs after fixing its premature readiness marker. A production-host smoke check verified a real shared scene, deep links, and the download page at 320-pixel width. Reimporting the real library leaves all 13 catalog/manifest/index JSON files byte-identical. Current migration, reclamation, cross-window and estimate checks are recorded in [storage-followthrough.md](storage-followthrough.md); final combined checks are in [standalone-verification.json](standalone-verification.json).
 
 ### Run and reproduce
 
@@ -163,9 +165,9 @@ Acceptance: building the frontend does not duplicate the external library; a cho
 - [x] Measure shared movie payloads and sample exact atlas compression.
 - [x] Implement the shared store and deterministic importer migration.
 - [x] Convert eligible images after full equality validation.
-- [ ] Prove shared-video playback, then migrate movie packaging.
-- [ ] Add selective installation, incremental sizing, and resilient downloads.
-- [ ] Migrate old cache keys and implement safe reclamation.
-- [ ] Separate the external library from builds for desktop/server delivery.
+- [x] Complete shared-video browser playback verification; packet preservation and descriptor publication pass.
+- [x] Add selective installation, incremental sizing, and resilient downloads.
+- [x] Migrate old cache keys and implement safe reclamation.
+- [x] Separate the external library from builds for desktop/server delivery.
 
-Next, prove shared-video playback before retiring combined movie payloads. The common asset identities are now available for that work.
+Combined movie payloads are retained for supported compatibility paths. Retiring those physical files requires a separate migration and reachability check; current builds obtain delivery savings by selecting shared streams.

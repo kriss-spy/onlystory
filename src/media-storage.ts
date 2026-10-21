@@ -1,3 +1,7 @@
+import { sha256 } from '@noble/hashes/sha2.js';
+import { withMediaLock } from './media-lock';
+import type { MovieStreams } from './model';
+
 export const MEDIA_CACHE = 'onlystory.media.v1';
 type Progress = (bytes: number, total: number) => void;
 interface Job {
@@ -16,6 +20,30 @@ async function cachedAliases(cache: Cache) {
   return (aliases ??= (async () =>
     (await (await cache.match(INDEX))?.json())?.aliases ?? {})());
 }
+export async function canonicalMediaPath(cache: Cache, path: string) {
+  const url = new URL(path, location.href);
+  // Mutable chapter/scene URLs pin their revision in the query. Only a verified
+  // alias can replace that identity with an immutable shared digest URL.
+  return (
+    (await cachedAliases(cache))[url.pathname] ?? url.pathname + url.search
+  );
+}
+export async function responseBytes(response: Response) {
+  const size = Number(response.headers.get('content-length'));
+  if (size > 0) return size;
+  let bytes = 0;
+  const reader = response.body?.getReader();
+  if (!reader) return bytes;
+  try {
+    for (;;) {
+      const next = await reader.read();
+      if (next.done) return bytes;
+      bytes += next.value.byteLength;
+    }
+  } finally {
+    reader.releaseLock();
+  }
+}
 export async function matchMedia(
   cache: Cache | null | undefined,
   path: string,
@@ -29,8 +57,16 @@ export async function matchMedia(
 }
 export async function migrateMediaCache() {
   if (!('caches' in globalThis)) return;
+  return withMediaLock(
+    'onlystory:media-library',
+    undefined,
+    migrateMediaCacheLocked,
+  );
+}
+async function migrateMediaCacheLocked() {
   const cache = await caches.open(MEDIA_CACHE);
-  const response = await fetch(INDEX);
+  const response = await fetch(INDEX).catch(() => cache.match(INDEX));
+  if (!response) return;
   if (!response.ok || !response.headers.get('content-type')?.includes('json'))
     return;
   const index = await response.clone().json();
@@ -44,17 +80,28 @@ export async function migrateMediaCache() {
     if (!target || !expected || key === target) continue;
     const old = await cache.match(request);
     if (!old) continue;
-    // Large movies remain usable through old keys; do not hold them in a JS
-    // buffer merely to migrate an existing download.
-    const length = Number(old.headers.get('content-length'));
-    if (!length || length > 16 * 1024 * 1024) continue;
-    const bytes = await old.clone().arrayBuffer();
-    const actual = Array.from(
-      new Uint8Array(await crypto.subtle.digest('SHA-256', bytes)),
-      (n) => n.toString(16).padStart(2, '0'),
+    // Hash one cache-backed stream, then reopen it for the copy. A cloned tee
+    // would retain the whole movie while the hashing branch drains.
+    const digest = sha256.create();
+    const reader = old.body?.getReader();
+    if (!reader) continue;
+    try {
+      for (;;) {
+        const next = await reader.read();
+        if (next.done) break;
+        digest.update(next.value);
+      }
+    } finally {
+      reader.releaseLock();
+    }
+    const actual = Array.from(digest.digest(), (n) =>
+      n.toString(16).padStart(2, '0'),
     ).join('');
     if (actual !== expected) continue;
-    if (!(await cache.match(target))) await cache.put(target, old);
+    const source = await cache.match(request);
+    if (!source) continue;
+    // The verified old copy also repairs an existing corrupted canonical entry.
+    await cache.put(target, source);
     // Both current and previous scene URLs can resolve the canonical key.
     await cache.delete(request);
   }
@@ -81,14 +128,13 @@ export async function downloadAsset(
   signal.throwIfAborted();
   const existing = await matchMedia(cache, path);
   if (existing) {
-    const size =
-      Number(existing.headers.get('content-length')) ||
-      (await existing.blob()).size;
+    const size = await responseBytes(existing);
     progress(size, size);
     return size;
   }
   signal.throwIfAborted();
-  let job = jobs.get(path);
+  const identity = await canonicalMediaPath(cache, path);
+  let job = jobs.get(identity);
   if (!job) {
     const controller = new AbortController();
     job = {
@@ -102,43 +148,56 @@ export async function downloadAsset(
     current.promise = (async () => {
       const release = await slot();
       try {
-        controller.signal.throwIfAborted();
-        const response = await fetch(path, { signal: controller.signal });
-        if (
-          response.status !== 200 ||
-          response.headers.get('content-type')?.includes('text/html') ||
-          !response.body
-        )
-          throw Error(
-            `The media file ${path.split('/').at(-1)} is unavailable.`,
-          );
-        current.total = Number(response.headers.get('content-length')) || 0;
-        const body = response.body.pipeThrough(
-          new TransformStream<Uint8Array, Uint8Array>({
-            transform(chunk, output) {
-              controller.signal.throwIfAborted();
-              current.bytes += chunk.byteLength;
+        return await withMediaLock(
+          `onlystory:asset:${identity}`,
+          controller.signal,
+          async () => {
+            controller.signal.throwIfAborted();
+            const shared = await matchMedia(cache, path);
+            if (shared) {
+              current.bytes = current.total = await responseBytes(shared);
               for (const listener of current.subscribers)
                 listener(current.bytes, current.total);
-              output.enqueue(chunk);
-            },
-          }),
+              return current.bytes;
+            }
+            const response = await fetch(path, { signal: controller.signal });
+            if (
+              response.status !== 200 ||
+              response.headers.get('content-type')?.includes('text/html') ||
+              !response.body
+            )
+              throw Error(
+                `The media file ${path.split('/').at(-1)} is unavailable.`,
+              );
+            current.total = Number(response.headers.get('content-length')) || 0;
+            const body = response.body.pipeThrough(
+              new TransformStream<Uint8Array, Uint8Array>({
+                transform(chunk, output) {
+                  controller.signal.throwIfAborted();
+                  current.bytes += chunk.byteLength;
+                  for (const listener of current.subscribers)
+                    listener(current.bytes, current.total);
+                  output.enqueue(chunk);
+                },
+              }),
+            );
+            await cache.put(
+              identity,
+              new Response(body, { headers: response.headers }),
+            );
+            if (controller.signal.aborted) {
+              await cache.delete(identity);
+              controller.signal.throwIfAborted();
+            }
+            return current.bytes;
+          },
         );
-        await cache.put(
-          path,
-          new Response(body, { headers: response.headers }),
-        );
-        if (controller.signal.aborted) {
-          await cache.delete(path);
-          controller.signal.throwIfAborted();
-        }
-        return current.bytes;
       } finally {
         release();
-        if (jobs.get(path) === current) jobs.delete(path);
+        if (jobs.get(identity) === current) jobs.delete(identity);
       }
     })();
-    jobs.set(path, current);
+    jobs.set(identity, current);
   }
   const current = job;
   current.subscribers.add(progress);
@@ -167,7 +226,12 @@ export function selectedSceneFiles(
       {
         url?: string;
         voices?: Record<string, { url: string }>;
-        female?: { url: string; voices?: Record<string, { url: string }> };
+        streams?: MovieStreams;
+        female?: {
+          url: string;
+          voices?: Record<string, { url: string }>;
+          streams?: MovieStreams;
+        };
       }
     >;
   },
@@ -181,10 +245,34 @@ export function selectedSceneFiles(
       if (asset?.url) excluded.add(asset.url);
       for (const track of Object.values(asset?.voices ?? {}))
         excluded.add(track.url);
+      if (asset?.streams)
+        for (const track of [
+          asset.streams.video,
+          ...Object.values(asset.streams.audio),
+        ]) {
+          if (!track) continue;
+          excluded.add(track.init.url);
+          for (const segment of track.segments) excluded.add(segment.url);
+        }
     }
     const asset = gender === 'female' && movie.female ? movie.female : movie;
-    const url = asset.voices?.[voice]?.url ?? asset.url;
-    if (url) selected.add(url);
+    const streams = asset.streams;
+    const audio = streams?.audio[voice as keyof MovieStreams['audio']];
+    if (
+      streams &&
+      audio &&
+      typeof MediaSource !== 'undefined' &&
+      MediaSource.isTypeSupported(streams.video.mime) &&
+      MediaSource.isTypeSupported(audio.mime)
+    ) {
+      for (const track of [streams.video, audio]) {
+        selected.add(track.init.url);
+        for (const segment of track.segments) selected.add(segment.url);
+      }
+    } else {
+      const url = asset.voices?.[voice]?.url ?? asset.url;
+      if (url) selected.add(url);
+    }
   }
   return program.files
     .map((file) => file.url)

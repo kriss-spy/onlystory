@@ -5,6 +5,33 @@ import { mkdtempSync, mkdirSync, writeFileSync, rmSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { tmpdir } from 'node:os';
 import { libraryMiddleware } from './library-server.mjs';
+import { compressedRecipeMiddleware } from './compressed-recipes.mjs';
+import { gzipSync } from 'node:zlib';
+
+test('development recipe responses preserve compressed integrity bytes without HTTP auto-decompression', async () => {
+  const root = mkdtempSync(resolve(tmpdir(), 'onlystory-recipes-'));
+  const directory = resolve(root, 'src/downloads/pjsk-recipes');
+  mkdirSync(directory, { recursive: true });
+  const compressed = gzipSync('{"recipe":"pinned"}');
+  writeFileSync(resolve(directory, 'story.json.gz'), compressed);
+  const middleware = compressedRecipeMiddleware(root);
+  const server = createServer((request, response) =>
+    middleware(request, response, () => response.writeHead(418).end()),
+  );
+  try {
+    await new Promise((done) => server.listen(0, '127.0.0.1', done));
+    const url = `http://127.0.0.1:${server.address().port}/src/downloads/pjsk-recipes/story.json.gz`;
+    const response = await fetch(url);
+    assert.equal(response.headers.get('content-encoding'), null);
+    assert.equal(response.headers.get('content-type'), 'application/gzip');
+    assert.deepEqual(Buffer.from(await response.arrayBuffer()), compressed);
+    assert.equal((await fetch(url + '?url')).status, 418);
+    assert.equal((await fetch(url + '?import')).status, 418);
+  } finally {
+    await new Promise((done) => server.close(done));
+    rmSync(root, { recursive: true, force: true });
+  }
+});
 
 test('serves aliases, media ranges, HEAD and missing-media errors', async () => {
   const root = mkdtempSync(resolve(tmpdir(), 'onlystory-server-'));
@@ -43,6 +70,9 @@ test('serves aliases, media ranges, HEAD and missing-media errors', async () => 
     assert.equal(response.headers.get('content-length'), '10');
     assert.equal(await response.text(), '');
     assert.equal((await fetch(url + '/private/missing.mp4')).status, 404);
+    response = await fetch(url + '/onlystory-local-library.json');
+    assert.equal(response.headers.get('cache-control'), 'no-store');
+    assert.deepEqual(await response.json(), { version: 1, localLibrary: true });
     assert.match(await (await fetch(url + '/read/game/story')).text(), /app/);
   } finally {
     await new Promise((r) => server.close(r));

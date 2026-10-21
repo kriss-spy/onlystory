@@ -52,10 +52,12 @@ export function decodeBaChapter(input: unknown, episode: Episode): Episode {
           ))) ||
       node.bgm ||
       node.female ||
-      node.speakerLocales ||
+      (node.speakerLocales && !localized(node.speakerLocales)) ||
       (node.playerName &&
         (node.playerName.token !== '[USERNAME]' ||
-          node.playerName.fallback !== 'プレイヤー')) ||
+          node.playerName.fallback !== 'プレイヤー' ||
+          (node.playerName.fallbackLocales &&
+            !localized(node.playerName.fallbackLocales)))) ||
       (node.kind === 'end'
         ? node.id !== `${group}:end` || node.next !== undefined
         : !node.source ||

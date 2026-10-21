@@ -1,0 +1,60 @@
+{
+  "episode": "ba-jp-212161",
+  "originalInputs": [
+    {
+      "path": "Media/GameData/Scenario/Main/212000_MV_Video.mp4",
+      "url": "https://prod-clientpatch.bluearchiveyostar.com/r96_nvji95owgkbcxlmkb8mi/MediaResources/GameData/Scenario/Main/212000_MV_Video.mp4",
+      "bytes": 11717035,
+      "sha256": "c9bcadbed867ed50f05d2acaccb518aab19c55c02426b93e03fb26a03004c8fb",
+      "crc": "2760227370",
+      "id": 1809,
+      "filename": "212000_MV_Video.mp4"
+    },
+    {
+      "path": "Media/GameData/Scenario/Main/212000_MV_Sound.ogg",
+      "url": "https://prod-clientpatch.bluearchiveyostar.com/r96_nvji95owgkbcxlmkb8mi/MediaResources/GameData/Scenario/Main/212000_MV_Sound.ogg",
+      "bytes": 528518,
+      "sha256": "8d97644958c2847db983e22011275bf65c82fa4247e32d0f49c8fd6508d7fdd8",
+      "crc": "3300697278",
+      "id": 1810,
+      "filename": "212000_MV_Sound.ogg"
+    }
+  ],
+  "movie": {
+    "id": "212161:2",
+    "url": "/private/ba-jp/shared/media/videos/11014_h264.mp4",
+    "bytes": 24126466
+  },
+  "metadata": {
+    "duration": 59.032993,
+    "width": 1280,
+    "height": 720
+  },
+  "decoded": {
+    "frames": 138,
+    "audioBytes": 146310
+  },
+  "conversionMs": 836239,
+  "coldOffline": true,
+  "errors": [],
+  "verifiedAt": "2026-10-20T01:16:15.940Z",
+  "run": {
+    "suite": "Full PWA suite",
+    "result": "17 passed, 0 failed, 0 skipped",
+    "testReportedDuration": "14.1m",
+    "suiteReportedDuration": "15.2m",
+    "log": ".cache/final-pwa-groupid64.log",
+    "originalArtifact": ".cache/final-pwa-results/ba-movie-a-complete-origin-a44cb-after-a-cold-offline-launch/ba-browser-movie-verification.json",
+    "screenshot": ".cache/final-pwa-results/ba-movie-a-complete-origin-a44cb-after-a-cold-offline-launch/ba-full-movie-offline.png",
+    "build": {
+      "capturedAt": "2026-10-20T01:11:32.731Z",
+      "build": "Full production build with GL GroupId64, Manage guard and release order; before sr-only overflow CSS fix",
+      "hashes": {
+        "dist/index.html": "5b2c9a2e97021cb599b5bd7880d06614387aa4c8b3ac48a58d86fa4e371081e0",
+        "dist/sw.js": "e2824f730b1ab5dde89712597b22f2f70aed250c7f3669c7a0717d7096c2df9f",
+        "dist/manifest.webmanifest": "9b9066c9560410240d6134bd091be32e3e5ca87259e2b33cbb809f23012aa6fc"
+      }
+    },
+    "note": "This complete conversion ran while Windows release compression used CPU. conversionMs is the measured import interval; console test and suite durations are retained as reported. This build precedes the sr-only overflow CSS correction."
+  }
+}

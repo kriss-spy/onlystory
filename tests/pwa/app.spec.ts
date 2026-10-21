@@ -1,6 +1,8 @@
 import { test as base, expect } from '@playwright/test';
 import { createServer } from 'node:http';
 import { readFileSync } from 'node:fs';
+import { selectPrologueOriginals } from '../helpers/ba-originals';
+import { waitForImports } from '../helpers/wait-for-imports';
 import { resolve } from 'node:path';
 import { libraryMiddleware } from '../../scripts/library-server.mjs';
 import {
@@ -93,6 +95,7 @@ test('manifest and icons are installable, and settings expose offline readiness'
     expect(size).toBe(icon.sizes);
   }
   await page.getByRole('button', { name: 'Settings', exact: true }).click();
+  await page.getByRole('tab', { name: 'Library', exact: true }).click();
   await expect(
     page.getByText('Ready to open offline.', { exact: false }),
   ).toBeVisible();
@@ -111,24 +114,12 @@ test('a downloaded original story reopens offline in a new window and retains it
   page,
   context,
   host,
-}) => {
+}, testInfo) => {
+  test.setTimeout(600000);
   await ready(page, host.url);
   await page.goto(host.url + '/games/ba/events/ba-jp-prologue');
-  await page
-    .getByRole('button', { name: 'Download プロローグ · 11000', exact: true })
-    .click();
-  await expect
-    .poll(
-      () =>
-        page.evaluate(
-          () =>
-            !!JSON.parse(localStorage.getItem('onlystory.v1')!).installed[
-              'ba-jp-11000'
-            ],
-        ),
-      { timeout: 60000 },
-    )
-    .toBe(true);
+  await selectPrologueOriginals(page, testInfo);
+  await waitForImports(page, ['ba-jp-11000']);
   const route = '/read/ba/ba-jp-11000?line=11000%3A35';
   await page.evaluate(() => {
     const data = JSON.parse(localStorage.getItem('onlystory.v1')!);
@@ -245,6 +236,7 @@ test('updates wait for restart and preserve progress, downloads and another open
   });
   host.update();
   await page.getByRole('button', { name: 'Settings', exact: true }).click();
+  await page.getByRole('tab', { name: 'Library', exact: true }).click();
   await page
     .getByRole('button', { name: 'Check for updates', exact: true })
     .click();
@@ -287,6 +279,7 @@ test('failed offline setup can be retried without replacing the working page', a
   host.failAsset(true);
   await page.goto(host.url + '/library');
   await page.getByRole('button', { name: 'Settings', exact: true }).click();
+  await page.getByRole('tab', { name: 'Library', exact: true }).click();
   await expect(
     page.getByText('Offline launch is not ready.', { exact: true }),
   ).toBeVisible();
@@ -314,6 +307,7 @@ test('an incomplete update leaves the existing offline app available', async ({
   host.failAsset(true);
   host.update();
   await page.getByRole('button', { name: 'Settings', exact: true }).click();
+  await page.getByRole('tab', { name: 'Library', exact: true }).click();
   await page
     .getByRole('button', { name: 'Check for updates', exact: true })
     .click();

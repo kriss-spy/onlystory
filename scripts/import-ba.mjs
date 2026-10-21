@@ -3,6 +3,7 @@ import path from 'node:path';
 import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { compileStory } from './ba-story.mjs';
+import { localizeBaChapter } from './ba-localization.mjs';
 import { compileBaScenes } from './ba-scenes.mjs';
 import { enrichBaExpressions } from './ba-expressions.mjs';
 import { canonicalBaScript } from '../src/playback/ba/script.ts';
@@ -22,6 +23,46 @@ if (!chapters.length || (selected && chapters.length !== selected.size))
   throw new Error('Unknown BA group selection');
 const prepareOnly = process.argv.includes('--prepare');
 const imported = [];
+let english = null,
+  englishNames = null,
+  englishProvenance = null,
+  englishReleased = new Set(),
+  titleLocales = {};
+try {
+  english = JSON.parse(
+    await fs.readFile(
+      path.join(root, '.cache/ba-gl-source/scripts.json'),
+      'utf8',
+    ),
+  );
+  englishNames = {
+    DataList: JSON.parse(
+      await fs.readFile(
+        path.join(root, '.cache/ba-gl-source/ScenarioCharacterNameExcel.json'),
+        'utf8',
+      ),
+    ),
+  };
+  englishProvenance = JSON.parse(
+    await fs.readFile(
+      path.join(root, '.cache/ba-gl-source/provenance.json'),
+      'utf8',
+    ),
+  );
+  englishReleased = new Set(
+    JSON.parse(
+      await fs.readFile(
+        path.join(root, '.cache/ba-gl-source/availability.json'),
+        'utf8',
+      ),
+    ).groups,
+  );
+  titleLocales = JSON.parse(
+    await fs.readFile(path.join(root, 'src/ba-localized-titles.json'), 'utf8'),
+  );
+} catch (error) {
+  if (error.code !== 'ENOENT') throw error;
+}
 for (const definition of chapters) {
   const inputs = {
     story: definition.sourcePath,
@@ -105,6 +146,23 @@ for (const definition of chapters) {
   }
   // Validate before replacing playable reader artifacts.
   const compiled = compileStory(sources.story.data, sources.characters.data);
+  let hasEnglish = false;
+  if (english?.[definition.group] && englishReleased.has(definition.group)) {
+    try {
+      localizeBaChapter(
+        compiled,
+        sources.story.data,
+        { GroupId: definition.group, content: english[definition.group] },
+        englishNames,
+      );
+      hasEnglish = true;
+      provenance.english = englishProvenance;
+    } catch (error) {
+      console.log(
+        `BA ${definition.group} retains Japanese only: ${error.message}`,
+      );
+    }
+  }
   let sceneAssets = null;
   try {
     sceneAssets = JSON.parse(
@@ -210,7 +268,8 @@ for (const definition of chapters) {
         : ['Text only']),
     ],
     origin: 'game',
-    textLocales: ['ja'],
+    textLocales: hasEnglish ? ['ja', 'en'] : ['ja'],
+    ...titleLocales[compiled.id],
     completionLabel: `${definition.title} 読了`,
     collectionId: definition.collectionId,
     collectionNotice: `${definition.sourceFile ? 'Japanese text from the acquired JP scenario database.' : 'Japanese text from a pinned BA Archive snapshot.'}${program ? ` Original JP assets from version ${sceneAssets.gameVersion}.` : ' Text only.'}`,

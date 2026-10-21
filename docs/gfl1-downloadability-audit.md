@@ -1,0 +1,23 @@
+# GFL1 downloadability audit
+
+Checked 2026-10-19 against the currently imported Steam EN catalog. This audit uses fresh public HTTP requests and the retained extraction provenance. It does not change the app or download providers.
+
+GFL1 cannot currently reconstruct its complete library on a new machine through the standalone app. The catalog has no GFL1 acquisition descriptors, and the current downloader has no Unity bundle, CRI audio or native-table importer for GFL1. Existing downloads from the development server use already exported files on this machine.
+
+The available story text has a much stronger result. Every available catalog entry maps to one of the 2,253 extracted source-script names. The additional catalog entry `gfl1--59-EXT-AR1` is incomplete because its original script is missing, and is excluded from the available-story denominator. All 2,253 fresh public HTTP GETs returned 200 and matched the retained Git blob hashes. The downloaded text bodies total 15,119,065 bytes. Of these scripts, 1,772 match the local raw archive bytes exactly; 481 require line-ending normalization. The existing `-71-15-EXT` encoding record also requires GB18030 decoding. All 2,253 decoded texts match the local extraction. Exact results are in [the JSON report](gfl1-downloadability-audit.json).
+
+The public [US original-text repository](https://github.com/gf-data-tools/gf-data-us/tree/main/asset/avgtxt) supplies these original scripts. This establishes text-source availability, not a ready-to-import Onlystory chapter package.
+
+The retained CN and US resource manifests each map 600 of the extraction's 608 source records. All 1,200 distinct mapped HTTPS endpoints returned 200 to fresh HEAD requests, and every declared response length matches its regional manifest. A successful HEAD response verifies endpoint availability at the audit time. It does not verify the complete payload, its checksum, decoding, browser CORS behavior or fidelity to the Steam version. The CN mapping represents about 2.75 GB before deduplicating repeated provenance records. This run does not download those media bodies.
+
+All 600 CN HEAD responses included `Access-Control-Allow-Origin: *`; all 600 US HEAD responses omitted that header. These are native HTTP requests, not browser CORS tests. The previous browser audit read ordinary GET responses from sampled US assets successfully, so a missing header on HEAD alone is insufficient to call those downloads blocked. Every required browser GET still needs verification before shipping a direct browser importer.
+
+Only 347 CN bundle mappings have the same original filename and declared compressed size as the Steam extraction. None of the US bundle names match exactly. Logical asset-name matches for the remaining packages need version and content verification before a downloader can use them reliably. The earlier [online asset audit](gfl-online-asset-audit.md) body-hashed one CN image bundle successfully; it did not verify the remaining bundles.
+
+Eight provenance records remain unmapped by these manifests. They have five distinct paths: built-in `resources.assets`, recovered GFL2 `BGE_AVG_Chapter01.acb` and its `.hcakey` sidecar, and native `5016.stc` and `5044.stc` tables. Repeated bank records account for the difference. These need separately verified sources or a verified reconstruction route. Their absence from this mapping does not establish that no online source exists.
+
+The existing extraction also records 14 missing-media issues: three backgrounds, five BGM cues and six sound effects. They are disclosed reader limitations, not new HTTP failures. Dialogue voices were never imported and are outside this inventory. See [the GFL1 pipeline](gfl1-pipeline.md) for the original identifiers and conversion requirements.
+
+The separate complete local HTTP inventory found all 7,358 currently declared GFL1 files accessible through the development server, with no declared-file failures in the 2,254 catalog entries. This confirms the local exported library is intact. It does not supply an upstream source for a clean installation or resolve the 14 undeclared provenance gaps. Detailed local evidence is in `.cache/other-game-download-audit/local-inventory.json`.
+
+Automation and detailed evidence are retained in `.cache/other-game-download-audit/gfl1/`: `audit.mjs`, `text-get.json`, `source-mapping.json`, `source-head.json` and `summary.json`. Run `node .cache/other-game-download-audit/gfl1/audit.mjs` to repeat the audit against the retained extraction and manifest snapshots. Original URLs and public repository paths are recorded for every request. The script uses at most eight concurrent text requests and six concurrent media HEAD requests, with bounded retries and request timeouts.

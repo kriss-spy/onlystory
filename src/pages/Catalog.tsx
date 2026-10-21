@@ -23,6 +23,14 @@ import { EventCover } from '../components/EventCover';
 import { useNarrow } from '../hooks';
 import { matchesSearch } from '../search';
 import { CatalogLayout } from '../components/CatalogLayout';
+import { TextLanguages } from '../components/TextLanguages';
+import { gamePreferences } from '../model';
+import { collectionTitle, titleSearchValues } from '../localized-titles';
+import {
+  DownloadCheckbox,
+  DownloadSupportNotice,
+  useDownloadSelection,
+} from '../components/DownloadSelection';
 
 const scrollPositions = new Map<string, number>();
 const eventTypes = [
@@ -36,6 +44,10 @@ export function CatalogPage() {
   const [params, setParams] = useSearchParams();
   const location = useLocation();
   const { data } = useStore();
+  const titleLocale = game
+    ? gamePreferences(data.preferences, game.id).catalogLocale
+    : data.preferences.catalogLocale;
+  const selection = useDownloadSelection();
   const scroll = useRef<HTMLDivElement>(null);
   const narrow = useNarrow();
   const layout = data.preferences.catalogLayout ?? 'list';
@@ -78,6 +90,10 @@ export function CatalogPage() {
       groupStoryEvents(catalogSource(game?.id, { examples, previews, stress })),
     [game?.id, examples, previews, stress],
   );
+  const eventOrder = useMemo(
+    () => new Map(events.map((event, index) => [event.id, index])),
+    [events],
+  );
   const missingCategory =
     game?.id === 'ba' &&
     category !== 'all' &&
@@ -94,11 +110,7 @@ export function CatalogPage() {
           (event) =>
             matchesSearch(query, [
               event.title,
-              ...event.stories.flatMap((story) => [
-                story.title,
-                ...(story.titleAliases ?? []),
-                ...(story.collectionAliases ?? []),
-              ]),
+              ...event.stories.flatMap(titleSearchValues),
             ]) &&
             (category === 'all' || event.category === category) &&
             (group === 'all' ||
@@ -112,17 +124,34 @@ export function CatalogPage() {
         .sort((a, b) => {
           if (sort === 'story') return 0;
           if (sort === 'title' || sort === 'title-desc')
-            return a.title.localeCompare(b.title) * (sort === 'title' ? 1 : -1);
+            return (
+              collectionTitle(a, titleLocale).localeCompare(
+                collectionTitle(b, titleLocale),
+              ) * (sort === 'title' ? 1 : -1)
+            );
           if (sort === 'progress') {
             const fraction = (event: typeof a) =>
               event.stories.filter((story) => data.saves[story.id]?.completed)
                 .length / event.stories.length;
-            return fraction(b) - fraction(a) || a.title.localeCompare(b.title);
+            return (
+              fraction(b) - fraction(a) ||
+              collectionTitle(a, titleLocale).localeCompare(
+                collectionTitle(b, titleLocale),
+              )
+            );
           }
-          return compareReleaseDates(a, b, sort === 'release-newest');
+          const newest = sort === 'release-newest';
+          return (
+            compareReleaseDates(a, b, newest) ||
+            (a.date && b.date
+              ? (eventOrder.get(a.id)! - eventOrder.get(b.id)!) *
+                (newest ? -1 : 1)
+              : 0)
+          );
         }),
     [
       events,
+      eventOrder,
       query,
       category,
       group,
@@ -131,12 +160,13 @@ export function CatalogPage() {
       showEventTypes,
       eventType,
       data.saves,
+      titleLocale,
     ],
   );
   const undated = filtered.filter((event) => !event.date).length;
   const releaseOrder = sort === 'release' || sort === 'release-newest';
   const large = filtered.length > 80;
-  const rowHeight = layout === 'table' ? 68 : layout === 'grid' ? 240 : 100;
+  const rowHeight = layout === 'table' ? 92 : layout === 'grid' ? 264 : 124;
   const virtual = useVirtualizer({
     count: large ? Math.ceil(filtered.length / columns) : 0,
     getScrollElement: () => scroll.current,
@@ -178,6 +208,18 @@ export function CatalogPage() {
   const render = (index: number, start?: number) => {
     const event = filtered[index];
     const cover = eventArtwork(event);
+    const selectEvent = (click: React.MouseEvent) => {
+      if (selection.selecting) {
+        click.preventDefault();
+        selection.toggle(event.stories);
+      }
+    };
+    const checkbox = (
+      <DownloadCheckbox
+        episodes={event.stories}
+        label={`Select ${collectionTitle(event, titleLocale)}`}
+      />
+    );
     const read = event.stories.filter(
       (story) => data.saves[story.id]?.completed,
     ).length;
@@ -194,13 +236,22 @@ export function CatalogPage() {
           }}
         >
           <td>
+            {checkbox}
             <Link
+              onClick={selectEvent}
+              aria-disabled={
+                selection.selecting && !event.stories.some(selection.eligible)
+                  ? true
+                  : undefined
+              }
               to={catalogEventUrl(event, params)}
               state={{ from: location.pathname + location.search }}
             >
-              {event.title}
+              {collectionTitle(event, titleLocale)}
             </Link>
             <small>{event.category}</small>
+            <DownloadSupportNotice episodes={event.stories} />
+            <TextLanguages stories={event.stories} />
           </td>
           <td>
             {event.date ? (
@@ -220,7 +271,14 @@ export function CatalogPage() {
         className={`event-row ${event.game === 'pjsk' ? 'pjsk-event-row' : ''}`}
         key={event.id}
       >
+        {checkbox}
         <Link
+          onClick={selectEvent}
+          aria-disabled={
+            selection.selecting && !event.stories.some(selection.eligible)
+              ? true
+              : undefined
+          }
           to={catalogEventUrl(event, params)}
           state={{ from: location.pathname + location.search }}
         >
@@ -254,7 +312,8 @@ export function CatalogPage() {
                 ) : null}
               </small>
             </span>
-            <h2>{event.title}</h2>
+            <h2>{collectionTitle(event, titleLocale)}</h2>
+            <DownloadSupportNotice episodes={event.stories} />
             <span>
               {event.stories.length}{' '}
               {event.stories.length === 1 ? 'story' : 'stories'}
@@ -264,6 +323,7 @@ export function CatalogPage() {
                 : ''}
             </span>
             <SchoolMarks event={event} compact />
+            <TextLanguages stories={event.stories} />
           </span>
         </Link>
       </li>
@@ -286,9 +346,6 @@ export function CatalogPage() {
                 ? 'event'
                 : 'events'}
           </span>
-          <Link className="text-link" to="/manage">
-            Manage availability
-          </Link>
         </div>
       </PageTitle>
       <div className="catalog-toolbar">

@@ -1,0 +1,3537 @@
+{
+  "version": 1,
+  "checkedAt": "2026-10-19T15:41:19.055Z",
+  "passed": true,
+  "method": "Concatenate initialization and ordered fragment files through disk streams. Compare complete SHA-256 of FFmpeg stream-copy H.264 normalized with h264_mp4toannexb and unchanged AAC packet payloads. Compare full packet counts. No decoding/re-encoding or whole-movie JavaScript buffer.",
+  "scope": {
+    "descriptors": 40,
+    "uniquePictureAndAudioPairs": 23,
+    "languagesPerPair": 2
+  },
+  "ffmpeg": "ffmpeg version 9.0.1-full_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers\r",
+  "records": [
+    {
+      "library": "gfl2-cn-4013",
+      "label": "10901",
+      "variant": "male",
+      "verification": "bf02e522ffcee05cb2a5b9a5809d771d23d4c4a739706dfac0fd3ed393b50fea",
+      "reference": "gfl2-cn-4013:10901:male",
+      "streams": [
+        {
+          "voice": "zh-CN",
+          "pictureSHA256": "63c1ada7453b365c8f7162acc2558516ecae35e45fe939f7581ccb2bf4e83e5a",
+          "aacPacketSHA256": "55e255c61e7643ccd15b3be8645e6636bf7a7c8ac5828104e400d36318ba30e1",
+          "original": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "78.733333",
+                "nb_read_packets": "4724"
+              },
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "78.733333",
+                "nb_read_packets": "3692"
+              }
+            ],
+            "format": {
+              "duration": "78.733333"
+            }
+          },
+          "sharedPicture": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "78.733333",
+                "nb_read_packets": "4724"
+              }
+            ],
+            "format": {
+              "duration": "78.733333"
+            }
+          },
+          "sharedAudio": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "78.754667",
+                "nb_read_packets": "3692"
+              }
+            ],
+            "format": {
+              "duration": "78.733333"
+            }
+          },
+          "exactPackets": true
+        },
+        {
+          "voice": "ja",
+          "pictureSHA256": "63c1ada7453b365c8f7162acc2558516ecae35e45fe939f7581ccb2bf4e83e5a",
+          "aacPacketSHA256": "65310dcb61c8f9e40e09af6d9a989f68f416d467df46e7cc76845ef2d27d666e",
+          "original": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "78.733333",
+                "nb_read_packets": "4724"
+              },
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "78.733333",
+                "nb_read_packets": "3692"
+              }
+            ],
+            "format": {
+              "duration": "78.733333"
+            }
+          },
+          "sharedPicture": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "78.733333",
+                "nb_read_packets": "4724"
+              }
+            ],
+            "format": {
+              "duration": "78.733333"
+            }
+          },
+          "sharedAudio": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "78.754667",
+                "nb_read_packets": "3692"
+              }
+            ],
+            "format": {
+              "duration": "78.733333"
+            }
+          },
+          "exactPackets": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "library": "gfl2-cn-4013",
+      "label": "10902",
+      "variant": "male",
+      "verification": "a2d9496cab047ccdc6b31b90169addc290c21a27afb097217692b781e8099414",
+      "reference": "gfl2-cn-4013:10902:male",
+      "streams": [
+        {
+          "voice": "zh-CN",
+          "pictureSHA256": "bad97838db971e04fa0739e4dd813a31de269cecd43091656dde113324a5ac28",
+          "aacPacketSHA256": "96bf0587f366befc4fda71cb266d8a8a91cb91986c48551e3ca55f0218108f83",
+          "original": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "204.183333",
+                "nb_read_packets": "12251"
+              },
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "204.366667",
+                "nb_read_packets": "9581"
+              }
+            ],
+            "format": {
+              "duration": "204.366667"
+            }
+          },
+          "sharedPicture": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "204.183333",
+                "nb_read_packets": "12251"
+              }
+            ],
+            "format": {
+              "duration": "204.183333"
+            }
+          },
+          "sharedAudio": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "204.388000",
+                "nb_read_packets": "9581"
+              }
+            ],
+            "format": {
+              "duration": "204.366667"
+            }
+          },
+          "exactPackets": true
+        },
+        {
+          "voice": "ja",
+          "pictureSHA256": "bad97838db971e04fa0739e4dd813a31de269cecd43091656dde113324a5ac28",
+          "aacPacketSHA256": "01d609603c10bfe5269b93ccc980f6083f61bfdf5826be8d0aa5af9ba690395d",
+          "original": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "204.183333",
+                "nb_read_packets": "12251"
+              },
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "204.366667",
+                "nb_read_packets": "9581"
+              }
+            ],
+            "format": {
+              "duration": "204.366667"
+            }
+          },
+          "sharedPicture": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "204.183333",
+                "nb_read_packets": "12251"
+              }
+            ],
+            "format": {
+              "duration": "204.183333"
+            }
+          },
+          "sharedAudio": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "204.388000",
+                "nb_read_packets": "9581"
+              }
+            ],
+            "format": {
+              "duration": "204.366667"
+            }
+          },
+          "exactPackets": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "library": "gfl2-cn-4013",
+      "label": "11001",
+      "variant": "male",
+      "verification": "6802bda9a21d1599cb42f93514bc10029300723c1ebed465015509b055e49719",
+      "reference": "gfl2-cn-4013:11001:male",
+      "streams": [
+        {
+          "voice": "zh-CN",
+          "pictureSHA256": "09ff45f9bb4096dc7d4a9b911dbb72dd608231fa46256d3146c8a54377ddb00c",
+          "aacPacketSHA256": "992cfdb8517d3f1641e58e863430a63d6a654cefad94c0e8bd358748bccf915f",
+          "original": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "119.566667",
+                "nb_read_packets": "7174"
+              },
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "119.483333",
+                "nb_read_packets": "5602"
+              }
+            ],
+            "format": {
+              "duration": "119.566667"
+            }
+          },
+          "sharedPicture": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "119.566667",
+                "nb_read_packets": "7174"
+              }
+            ],
+            "format": {
+              "duration": "119.566667"
+            }
+          },
+          "sharedAudio": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "119.504667",
+                "nb_read_packets": "5602"
+              }
+            ],
+            "format": {
+              "duration": "119.483333"
+            }
+          },
+          "exactPackets": true
+        },
+        {
+          "voice": "ja",
+          "pictureSHA256": "09ff45f9bb4096dc7d4a9b911dbb72dd608231fa46256d3146c8a54377ddb00c",
+          "aacPacketSHA256": "fbff5c7be9686f7721e86b001cddec5a433b4b5f2c86f83230bbe17b4831fce2",
+          "original": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "119.566667",
+                "nb_read_packets": "7174"
+              },
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "119.483333",
+                "nb_read_packets": "5602"
+              }
+            ],
+            "format": {
+              "duration": "119.566667"
+            }
+          },
+          "sharedPicture": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "119.566667",
+                "nb_read_packets": "7174"
+              }
+            ],
+            "format": {
+              "duration": "119.566667"
+            }
+          },
+          "sharedAudio": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "119.504667",
+                "nb_read_packets": "5602"
+              }
+            ],
+            "format": {
+              "duration": "119.483333"
+            }
+          },
+          "exactPackets": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "library": "gfl2-cn-4013",
+      "label": "11002",
+      "variant": "male",
+      "verification": "813a5f4a56e0a891485a81e716cfd80699a51cf9fc330ec1e50524cf4998b764",
+      "reference": "gfl2-cn-4013:11002:male",
+      "streams": [
+        {
+          "voice": "zh-CN",
+          "pictureSHA256": "7685c463c1690c697107917690ff847e5c05fdbabce0e2e3648befa22dc1e3e9",
+          "aacPacketSHA256": "3fda39213bd1c8eebdd7fe613b98987eeb937bb1a61ab5cefb2f0ce540c24d1e",
+          "original": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "229.400000",
+                "nb_read_packets": "13764"
+              },
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "229.400000",
+                "nb_read_packets": "10755"
+              }
+            ],
+            "format": {
+              "duration": "229.400000"
+            }
+          },
+          "sharedPicture": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "229.400000",
+                "nb_read_packets": "13764"
+              }
+            ],
+            "format": {
+              "duration": "229.400000"
+            }
+          },
+          "sharedAudio": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "229.421333",
+                "nb_read_packets": "10755"
+              }
+            ],
+            "format": {
+              "duration": "229.400000"
+            }
+          },
+          "exactPackets": true
+        },
+        {
+          "voice": "ja",
+          "pictureSHA256": "7685c463c1690c697107917690ff847e5c05fdbabce0e2e3648befa22dc1e3e9",
+          "aacPacketSHA256": "6bac4b500f320eeb38dc9045beaf91ad0dd132d61c028295c3bb22a983c70ebf",
+          "original": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "229.400000",
+                "nb_read_packets": "13764"
+              },
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "229.400000",
+                "nb_read_packets": "10755"
+              }
+            ],
+            "format": {
+              "duration": "229.400000"
+            }
+          },
+          "sharedPicture": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "229.400000",
+                "nb_read_packets": "13764"
+              }
+            ],
+            "format": {
+              "duration": "229.400000"
+            }
+          },
+          "sharedAudio": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "229.421333",
+                "nb_read_packets": "10755"
+              }
+            ],
+            "format": {
+              "duration": "229.400000"
+            }
+          },
+          "exactPackets": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "library": "gfl2-cn-4013",
+      "label": "11003",
+      "variant": "male",
+      "verification": "a9c388277675543fa984938d07a3a3e00dadedaef0381461728cf578313ebbdf",
+      "reference": "gfl2-cn-4013:11003:male",
+      "streams": [
+        {
+          "voice": "zh-CN",
+          "pictureSHA256": "f25eec822304c0a6aff28aace78d52da6252e13af2a9137430adf390be5e2ab7",
+          "aacPacketSHA256": "6808ed59413df2e11c0b7cae4f7958aef876b7626bc70b796195132d10be22f6",
+          "original": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "147.833333",
+                "nb_read_packets": "8870"
+              },
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "147.833333",
+                "nb_read_packets": "6931"
+              }
+            ],
+            "format": {
+              "duration": "147.833333"
+            }
+          },
+          "sharedPicture": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "147.833333",
+                "nb_read_packets": "8870"
+              }
+            ],
+            "format": {
+              "duration": "147.833333"
+            }
+          },
+          "sharedAudio": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "147.854667",
+                "nb_read_packets": "6931"
+              }
+            ],
+            "format": {
+              "duration": "147.833333"
+            }
+          },
+          "exactPackets": true
+        },
+        {
+          "voice": "ja",
+          "pictureSHA256": "f25eec822304c0a6aff28aace78d52da6252e13af2a9137430adf390be5e2ab7",
+          "aacPacketSHA256": "12f8548b48996cc77a613ef8cf2d4ff47589f25bbd93863dc7ca376cfc957044",
+          "original": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "147.833333",
+                "nb_read_packets": "8870"
+              },
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "147.833333",
+                "nb_read_packets": "6931"
+              }
+            ],
+            "format": {
+              "duration": "147.833333"
+            }
+          },
+          "sharedPicture": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "147.833333",
+                "nb_read_packets": "8870"
+              }
+            ],
+            "format": {
+              "duration": "147.833333"
+            }
+          },
+          "sharedAudio": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "147.854667",
+                "nb_read_packets": "6931"
+              }
+            ],
+            "format": {
+              "duration": "147.833333"
+            }
+          },
+          "exactPackets": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "library": "gfl2-cn-4028",
+      "label": "11301",
+      "variant": "male",
+      "verification": "d6e2ad09954f2d9acfcc2afd55dee3a82a0fdc34b20c48fa9924e0ed4922caaf",
+      "reference": "gfl2-cn-4028:11301:male",
+      "streams": [
+        {
+          "voice": "zh-CN",
+          "pictureSHA256": "3f0fcdb0c86d24dea03d3a1307193c19c5fef226790f9e51c641f8a6ca6a6e81",
+          "aacPacketSHA256": "525a621648c9a6fbbd3a5dfb249644c90a2d4b1105e8d1d4e557215389ef2514",
+          "original": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "53.500000",
+                "nb_read_packets": "3210"
+              },
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "53.500000",
+                "nb_read_packets": "2509"
+              }
+            ],
+            "format": {
+              "duration": "53.500000"
+            }
+          },
+          "sharedPicture": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "53.500000",
+                "nb_read_packets": "3210"
+              }
+            ],
+            "format": {
+              "duration": "53.500000"
+            }
+          },
+          "sharedAudio": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "53.521333",
+                "nb_read_packets": "2509"
+              }
+            ],
+            "format": {
+              "duration": "53.500000"
+            }
+          },
+          "exactPackets": true
+        },
+        {
+          "voice": "ja",
+          "pictureSHA256": "3f0fcdb0c86d24dea03d3a1307193c19c5fef226790f9e51c641f8a6ca6a6e81",
+          "aacPacketSHA256": "f89ab57bb9af8a37513e19d51fda0e500cf7e8d2cea1f347094eff6fbe378e74",
+          "original": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "53.500000",
+                "nb_read_packets": "3210"
+              },
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "53.500000",
+                "nb_read_packets": "2509"
+              }
+            ],
+            "format": {
+              "duration": "53.500000"
+            }
+          },
+          "sharedPicture": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "53.500000",
+                "nb_read_packets": "3210"
+              }
+            ],
+            "format": {
+              "duration": "53.500000"
+            }
+          },
+          "sharedAudio": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "53.521333",
+                "nb_read_packets": "2509"
+              }
+            ],
+            "format": {
+              "duration": "53.500000"
+            }
+          },
+          "exactPackets": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "library": "gfl2-cn-4028",
+      "label": "11302",
+      "variant": "male",
+      "verification": "797b852b7e8b657585ee8e63c034cb17159d564a008c9ae1571af655cad0891d",
+      "reference": "gfl2-cn-4028:11302:male",
+      "streams": [
+        {
+          "voice": "zh-CN",
+          "pictureSHA256": "977ee18d58591c68f30934dd36cd22b830b00d9e31d951b84a1d403c136706bc",
+          "aacPacketSHA256": "9467a99f43de44dee0656beff10f0d83eb8e10e2abf1b6e3a8a049a7a61e643d",
+          "original": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "76.416667",
+                "nb_read_packets": "4585"
+              },
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "76.416667",
+                "nb_read_packets": "3584"
+              }
+            ],
+            "format": {
+              "duration": "76.416667"
+            }
+          },
+          "sharedPicture": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "76.416667",
+                "nb_read_packets": "4585"
+              }
+            ],
+            "format": {
+              "duration": "76.416667"
+            }
+          },
+          "sharedAudio": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "76.438000",
+                "nb_read_packets": "3584"
+              }
+            ],
+            "format": {
+              "duration": "76.416667"
+            }
+          },
+          "exactPackets": true
+        },
+        {
+          "voice": "ja",
+          "pictureSHA256": "977ee18d58591c68f30934dd36cd22b830b00d9e31d951b84a1d403c136706bc",
+          "aacPacketSHA256": "da61b2da5edbc97ee6e29407252ca869b3b0cbe93f5b8f1a06e1e65170ba64d6",
+          "original": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "76.416667",
+                "nb_read_packets": "4585"
+              },
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "76.416667",
+                "nb_read_packets": "3584"
+              }
+            ],
+            "format": {
+              "duration": "76.416667"
+            }
+          },
+          "sharedPicture": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "76.416667",
+                "nb_read_packets": "4585"
+              }
+            ],
+            "format": {
+              "duration": "76.416667"
+            }
+          },
+          "sharedAudio": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "76.438000",
+                "nb_read_packets": "3584"
+              }
+            ],
+            "format": {
+              "duration": "76.416667"
+            }
+          },
+          "exactPackets": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "library": "gfl2-cn-4028",
+      "label": "11502",
+      "variant": "male",
+      "verification": "7e5750d908368c36e46fc17be894cd8d90df67251be8331c76c208409edca7c3",
+      "reference": "gfl2-cn-4028:11502:male",
+      "streams": [
+        {
+          "voice": "zh-CN",
+          "pictureSHA256": "e613f9f5bd2df8d2fd790fbd89a1f99bd519e617c7f2228aab66ceeb98f97dcc",
+          "aacPacketSHA256": "86d37a9e2563f24d7a56cea1ca4de29d480953de198fdde50cb5f782e135bae5",
+          "original": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "23.850000",
+                "nb_read_packets": "1431"
+              },
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "23.850000",
+                "nb_read_packets": "1119"
+              }
+            ],
+            "format": {
+              "duration": "23.850000"
+            }
+          },
+          "sharedPicture": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "23.850000",
+                "nb_read_packets": "1431"
+              }
+            ],
+            "format": {
+              "duration": "23.850000"
+            }
+          },
+          "sharedAudio": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "23.871333",
+                "nb_read_packets": "1119"
+              }
+            ],
+            "format": {
+              "duration": "23.850000"
+            }
+          },
+          "exactPackets": true
+        },
+        {
+          "voice": "ja",
+          "pictureSHA256": "e613f9f5bd2df8d2fd790fbd89a1f99bd519e617c7f2228aab66ceeb98f97dcc",
+          "aacPacketSHA256": "56058a53e9be76c9c2efb7cf645c04945c1e18931e84d3265276741b5dced295",
+          "original": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "23.850000",
+                "nb_read_packets": "1431"
+              },
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "23.850000",
+                "nb_read_packets": "1119"
+              }
+            ],
+            "format": {
+              "duration": "23.850000"
+            }
+          },
+          "sharedPicture": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "23.850000",
+                "nb_read_packets": "1431"
+              }
+            ],
+            "format": {
+              "duration": "23.850000"
+            }
+          },
+          "sharedAudio": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "23.871333",
+                "nb_read_packets": "1119"
+              }
+            ],
+            "format": {
+              "duration": "23.850000"
+            }
+          },
+          "exactPackets": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "library": "gfl2-cn-4028",
+      "label": "11503",
+      "variant": "male",
+      "verification": "94f1f30acc9b6ce4d94ed2cf3e3865c7bb65deeacdaf08c7f78d8a9276e50f01",
+      "reference": "gfl2-cn-4028:11503:male",
+      "streams": [
+        {
+          "voice": "zh-CN",
+          "pictureSHA256": "7ea4c17a383cc0ce518a05279c2025d63eaac6b6f54320834046c178af875ad7",
+          "aacPacketSHA256": "ad7af01b76edac630f8c5db90d66a5fc326734dc9fbddd81ea29cbd6467c56c4",
+          "original": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "49.883333",
+                "nb_read_packets": "2993"
+              },
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "49.883333",
+                "nb_read_packets": "2340"
+              }
+            ],
+            "format": {
+              "duration": "49.883333"
+            }
+          },
+          "sharedPicture": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "49.883333",
+                "nb_read_packets": "2993"
+              }
+            ],
+            "format": {
+              "duration": "49.883333"
+            }
+          },
+          "sharedAudio": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "49.904667",
+                "nb_read_packets": "2340"
+              }
+            ],
+            "format": {
+              "duration": "49.883333"
+            }
+          },
+          "exactPackets": true
+        },
+        {
+          "voice": "ja",
+          "pictureSHA256": "7ea4c17a383cc0ce518a05279c2025d63eaac6b6f54320834046c178af875ad7",
+          "aacPacketSHA256": "05325446d3764a200ddc64ee7e6031b80e86b00bd8521dc81482aed09a311381",
+          "original": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "49.883333",
+                "nb_read_packets": "2993"
+              },
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "49.883333",
+                "nb_read_packets": "2340"
+              }
+            ],
+            "format": {
+              "duration": "49.883333"
+            }
+          },
+          "sharedPicture": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "49.883333",
+                "nb_read_packets": "2993"
+              }
+            ],
+            "format": {
+              "duration": "49.883333"
+            }
+          },
+          "sharedAudio": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "49.904667",
+                "nb_read_packets": "2340"
+              }
+            ],
+            "format": {
+              "duration": "49.883333"
+            }
+          },
+          "exactPackets": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "library": "gfl2-cn-4028",
+      "label": "11504",
+      "variant": "male",
+      "verification": "2f7a75287d7b9b7f866053eec93fff4ae775f21f04857e7c4027dcfcf6882751",
+      "reference": "gfl2-cn-4028:11504:male",
+      "streams": [
+        {
+          "voice": "zh-CN",
+          "pictureSHA256": "d6b16426ee2484ef0a0ebf503d4fb02a7a458f90788c03abadf7a4e512e91dcc",
+          "aacPacketSHA256": "fd925dc558af20382f6db1d74dd1cc31b5729aacd0ff2afbabe1f096f3fc2534",
+          "original": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "124.816667",
+                "nb_read_packets": "7489"
+              },
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "122.033333",
+                "nb_read_packets": "5722"
+              }
+            ],
+            "format": {
+              "duration": "124.816667"
+            }
+          },
+          "sharedPicture": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "124.816667",
+                "nb_read_packets": "7489"
+              }
+            ],
+            "format": {
+              "duration": "124.816667"
+            }
+          },
+          "sharedAudio": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "122.054667",
+                "nb_read_packets": "5722"
+              }
+            ],
+            "format": {
+              "duration": "122.033333"
+            }
+          },
+          "exactPackets": true
+        },
+        {
+          "voice": "ja",
+          "pictureSHA256": "d6b16426ee2484ef0a0ebf503d4fb02a7a458f90788c03abadf7a4e512e91dcc",
+          "aacPacketSHA256": "fd925dc558af20382f6db1d74dd1cc31b5729aacd0ff2afbabe1f096f3fc2534",
+          "original": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "124.816667",
+                "nb_read_packets": "7489"
+              },
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "122.033333",
+                "nb_read_packets": "5722"
+              }
+            ],
+            "format": {
+              "duration": "124.816667"
+            }
+          },
+          "sharedPicture": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "124.816667",
+                "nb_read_packets": "7489"
+              }
+            ],
+            "format": {
+              "duration": "124.816667"
+            }
+          },
+          "sharedAudio": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "122.054667",
+                "nb_read_packets": "5722"
+              }
+            ],
+            "format": {
+              "duration": "122.033333"
+            }
+          },
+          "exactPackets": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "library": "gfl2-cn-4037",
+      "label": "11801",
+      "variant": "male",
+      "verification": "a781f2613899c780ef68658e993091f7954423daeda009699ce6519526139347",
+      "reference": "gfl2-cn-4037:11801:male",
+      "streams": [
+        {
+          "voice": "zh-CN",
+          "pictureSHA256": "ed48dcdd1cebb32f359638229fb9e7a2d3a1ef7d35dd1cd6a4fcb572246c6aa1",
+          "aacPacketSHA256": "3127f50a90ba1c1f5799d82931f0ecf8f5ae87c36926e973fa87a782ab11e049",
+          "original": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "103.466667",
+                "nb_read_packets": "6208"
+              },
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "103.466667",
+                "nb_read_packets": "4851"
+              }
+            ],
+            "format": {
+              "duration": "103.466667"
+            }
+          },
+          "sharedPicture": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "103.466667",
+                "nb_read_packets": "6208"
+              }
+            ],
+            "format": {
+              "duration": "103.466667"
+            }
+          },
+          "sharedAudio": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "103.488000",
+                "nb_read_packets": "4851"
+              }
+            ],
+            "format": {
+              "duration": "103.466667"
+            }
+          },
+          "exactPackets": true
+        },
+        {
+          "voice": "ja",
+          "pictureSHA256": "ed48dcdd1cebb32f359638229fb9e7a2d3a1ef7d35dd1cd6a4fcb572246c6aa1",
+          "aacPacketSHA256": "f02e2965138fbfe2e06cad2291141072b1da73ee4b57d1872490ed50162ba4a1",
+          "original": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "103.466667",
+                "nb_read_packets": "6208"
+              },
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "103.466667",
+                "nb_read_packets": "4851"
+              }
+            ],
+            "format": {
+              "duration": "103.466667"
+            }
+          },
+          "sharedPicture": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "103.466667",
+                "nb_read_packets": "6208"
+              }
+            ],
+            "format": {
+              "duration": "103.466667"
+            }
+          },
+          "sharedAudio": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "103.488000",
+                "nb_read_packets": "4851"
+              }
+            ],
+            "format": {
+              "duration": "103.466667"
+            }
+          },
+          "exactPackets": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "library": "gfl2-cn-4037",
+      "label": "11801",
+      "variant": "female",
+      "verification": "ec9f68de527cf4f69bb1f5918113fa8f6d7baeca0309b299c947032d2540f7a8",
+      "reference": "gfl2-cn-4037:11801:female",
+      "streams": [
+        {
+          "voice": "zh-CN",
+          "pictureSHA256": "feaf3d5ab67b53fcfe88a23d490c57fcfa332f5d7eea35401936d2927d1bf335",
+          "aacPacketSHA256": "24c05173770d94209d42d4a4defcd77ac5b883fd36e9faaa020106317e75ea2a",
+          "original": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "103.466667",
+                "nb_read_packets": "6208"
+              },
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "103.466667",
+                "nb_read_packets": "4851"
+              }
+            ],
+            "format": {
+              "duration": "103.466667"
+            }
+          },
+          "sharedPicture": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "103.466667",
+                "nb_read_packets": "6208"
+              }
+            ],
+            "format": {
+              "duration": "103.466667"
+            }
+          },
+          "sharedAudio": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "103.488000",
+                "nb_read_packets": "4851"
+              }
+            ],
+            "format": {
+              "duration": "103.466667"
+            }
+          },
+          "exactPackets": true
+        },
+        {
+          "voice": "ja",
+          "pictureSHA256": "feaf3d5ab67b53fcfe88a23d490c57fcfa332f5d7eea35401936d2927d1bf335",
+          "aacPacketSHA256": "7190afea13b3d1c78beb51677ead22e8e0c02365a618a2079ba727f48d314a07",
+          "original": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "103.466667",
+                "nb_read_packets": "6208"
+              },
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "103.466667",
+                "nb_read_packets": "4851"
+              }
+            ],
+            "format": {
+              "duration": "103.466667"
+            }
+          },
+          "sharedPicture": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "103.466667",
+                "nb_read_packets": "6208"
+              }
+            ],
+            "format": {
+              "duration": "103.466667"
+            }
+          },
+          "sharedAudio": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "103.488000",
+                "nb_read_packets": "4851"
+              }
+            ],
+            "format": {
+              "duration": "103.466667"
+            }
+          },
+          "exactPackets": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "library": "gfl2-cn-4037",
+      "label": "11901",
+      "variant": "male",
+      "verification": "39106dfea835052f0e62a177cac00fa6244df323db3f92eeafe3f0fa54d4e314",
+      "reference": "gfl2-cn-4037:11901:male",
+      "streams": [
+        {
+          "voice": "zh-CN",
+          "pictureSHA256": "cc4d949ebfcf119d73160d694d80ed2aee74bcaea89b1771f715fff26b086fb4",
+          "aacPacketSHA256": "eda1220cda1340d9824fcd6d079ce23d81fc0f4460766f413b867d93373f0a15",
+          "original": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "79.700000",
+                "nb_read_packets": "4782"
+              },
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "79.700000",
+                "nb_read_packets": "3737"
+              }
+            ],
+            "format": {
+              "duration": "79.700000"
+            }
+          },
+          "sharedPicture": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "79.700000",
+                "nb_read_packets": "4782"
+              }
+            ],
+            "format": {
+              "duration": "79.700000"
+            }
+          },
+          "sharedAudio": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "79.721333",
+                "nb_read_packets": "3737"
+              }
+            ],
+            "format": {
+              "duration": "79.700000"
+            }
+          },
+          "exactPackets": true
+        },
+        {
+          "voice": "ja",
+          "pictureSHA256": "cc4d949ebfcf119d73160d694d80ed2aee74bcaea89b1771f715fff26b086fb4",
+          "aacPacketSHA256": "0e7ae56176abab1ba49a448942c45c5f066cb2ac46b1efef28ca0a2724422438",
+          "original": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "79.700000",
+                "nb_read_packets": "4782"
+              },
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "79.483333",
+                "nb_read_packets": "3727"
+              }
+            ],
+            "format": {
+              "duration": "79.700000"
+            }
+          },
+          "sharedPicture": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "79.700000",
+                "nb_read_packets": "4782"
+              }
+            ],
+            "format": {
+              "duration": "79.700000"
+            }
+          },
+          "sharedAudio": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "79.504667",
+                "nb_read_packets": "3727"
+              }
+            ],
+            "format": {
+              "duration": "79.483333"
+            }
+          },
+          "exactPackets": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "library": "gfl2-cn-4037",
+      "label": "11901",
+      "variant": "female",
+      "verification": "1bdd4a736f667dee659550dd70bfead8eee767649482424df66cd07ab5265264",
+      "reference": "gfl2-cn-4037:11901:female",
+      "streams": [
+        {
+          "voice": "zh-CN",
+          "pictureSHA256": "2b5e56b1b118c664fd7d8a425cdc26c7e72a082520ac753b518bb1a0af63459c",
+          "aacPacketSHA256": "f653b484fc57bc27de95090494a529f96b940812d3718fed8c1edc482c57685f",
+          "original": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "79.700000",
+                "nb_read_packets": "4782"
+              },
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "79.700000",
+                "nb_read_packets": "3737"
+              }
+            ],
+            "format": {
+              "duration": "79.700000"
+            }
+          },
+          "sharedPicture": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "79.700000",
+                "nb_read_packets": "4782"
+              }
+            ],
+            "format": {
+              "duration": "79.700000"
+            }
+          },
+          "sharedAudio": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "79.721333",
+                "nb_read_packets": "3737"
+              }
+            ],
+            "format": {
+              "duration": "79.700000"
+            }
+          },
+          "exactPackets": true
+        },
+        {
+          "voice": "ja",
+          "pictureSHA256": "2b5e56b1b118c664fd7d8a425cdc26c7e72a082520ac753b518bb1a0af63459c",
+          "aacPacketSHA256": "2987998f50450912728b8c0222bbd9f2a9806a28774c89659dafd00592ffe0e6",
+          "original": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "79.700000",
+                "nb_read_packets": "4782"
+              },
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "79.483333",
+                "nb_read_packets": "3727"
+              }
+            ],
+            "format": {
+              "duration": "79.700000"
+            }
+          },
+          "sharedPicture": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "79.700000",
+                "nb_read_packets": "4782"
+              }
+            ],
+            "format": {
+              "duration": "79.700000"
+            }
+          },
+          "sharedAudio": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "79.504667",
+                "nb_read_packets": "3727"
+              }
+            ],
+            "format": {
+              "duration": "79.483333"
+            }
+          },
+          "exactPackets": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "library": "gfl2-cn-4042",
+      "label": "12001",
+      "variant": "male",
+      "verification": "78a8c5b55de07b3ec491ec96eac9d61a8084f4cfc0326d1b0550e45b606b2e77",
+      "reference": "gfl2-cn-4042:12001:male",
+      "streams": [
+        {
+          "voice": "zh-CN",
+          "pictureSHA256": "576769a9efc4fb3aafe58bc148668db26f0bfd4b1c92327e59a99f155048f515",
+          "aacPacketSHA256": "6c999a0a25d4e0571ab3f082fc86863a428b040b9d20788a16a17a85f9778fa6",
+          "original": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "64.416667",
+                "nb_read_packets": "3865"
+              },
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "64.416687",
+                "nb_read_packets": "3021"
+              }
+            ],
+            "format": {
+              "duration": "64.416688"
+            }
+          },
+          "sharedPicture": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "64.416667",
+                "nb_read_packets": "3865"
+              }
+            ],
+            "format": {
+              "duration": "64.416667"
+            }
+          },
+          "sharedAudio": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "64.438021",
+                "nb_read_packets": "3021"
+              }
+            ],
+            "format": {
+              "duration": "64.416688"
+            }
+          },
+          "exactPackets": true
+        },
+        {
+          "voice": "ja",
+          "pictureSHA256": "576769a9efc4fb3aafe58bc148668db26f0bfd4b1c92327e59a99f155048f515",
+          "aacPacketSHA256": "8cfbcb103816c3e1f870f6f8d4c4a2113818593b9d36cc0a276abbeb7133f035",
+          "original": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "64.416667",
+                "nb_read_packets": "3865"
+              },
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "64.416687",
+                "nb_read_packets": "3021"
+              }
+            ],
+            "format": {
+              "duration": "64.416688"
+            }
+          },
+          "sharedPicture": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "64.416667",
+                "nb_read_packets": "3865"
+              }
+            ],
+            "format": {
+              "duration": "64.416667"
+            }
+          },
+          "sharedAudio": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "64.438021",
+                "nb_read_packets": "3021"
+              }
+            ],
+            "format": {
+              "duration": "64.416688"
+            }
+          },
+          "exactPackets": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "library": "gfl2-cn-4042",
+      "label": "12001",
+      "variant": "female",
+      "verification": "dffe59d34cdfef2d2367845a7a818e6605b83bbbd2b4e0f8ee7332515ffc00ae",
+      "reference": "gfl2-cn-4042:12001:female",
+      "streams": [
+        {
+          "voice": "zh-CN",
+          "pictureSHA256": "bfb286fc2bc79ab3d3a42dfa18a68d9f269b23f33faf7ab2d8239ad2b0a91915",
+          "aacPacketSHA256": "39b1e6bc98703a4aeae9576a1afb3348e0d034af3a48a6753b0ece22a74b731b",
+          "original": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "64.416667",
+                "nb_read_packets": "3865"
+              },
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "64.416687",
+                "nb_read_packets": "3021"
+              }
+            ],
+            "format": {
+              "duration": "64.416688"
+            }
+          },
+          "sharedPicture": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "64.416667",
+                "nb_read_packets": "3865"
+              }
+            ],
+            "format": {
+              "duration": "64.416667"
+            }
+          },
+          "sharedAudio": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "64.438021",
+                "nb_read_packets": "3021"
+              }
+            ],
+            "format": {
+              "duration": "64.416688"
+            }
+          },
+          "exactPackets": true
+        },
+        {
+          "voice": "ja",
+          "pictureSHA256": "bfb286fc2bc79ab3d3a42dfa18a68d9f269b23f33faf7ab2d8239ad2b0a91915",
+          "aacPacketSHA256": "ab2a7b552e430451c30208eee24bad9c622e51f41de2ab971f55a77ff505136f",
+          "original": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "64.416667",
+                "nb_read_packets": "3865"
+              },
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "64.416687",
+                "nb_read_packets": "3021"
+              }
+            ],
+            "format": {
+              "duration": "64.416688"
+            }
+          },
+          "sharedPicture": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "64.416667",
+                "nb_read_packets": "3865"
+              }
+            ],
+            "format": {
+              "duration": "64.416667"
+            }
+          },
+          "sharedAudio": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "64.438021",
+                "nb_read_packets": "3021"
+              }
+            ],
+            "format": {
+              "duration": "64.416688"
+            }
+          },
+          "exactPackets": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "library": "gfl2-cn-4042",
+      "label": "12002",
+      "variant": "male",
+      "verification": "1f097ce60a5b9dcb6fb61d683a27d393a308e66d2931a75d80685f64c6163c1c",
+      "reference": "gfl2-cn-4042:12002:male",
+      "streams": [
+        {
+          "voice": "zh-CN",
+          "pictureSHA256": "849214d199f02b934fc99c8339ee19ecc4844be8047bbb62ce0d03684041e37d",
+          "aacPacketSHA256": "d7266f687a4438c1d5ab0ddfeaaad344aad88cb6805dcdef18b3319a9cb4b14d",
+          "original": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "101.616667",
+                "nb_read_packets": "6097"
+              },
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "101.616667",
+                "nb_read_packets": "4765"
+              }
+            ],
+            "format": {
+              "duration": "101.616667"
+            }
+          },
+          "sharedPicture": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "101.616667",
+                "nb_read_packets": "6097"
+              }
+            ],
+            "format": {
+              "duration": "101.616667"
+            }
+          },
+          "sharedAudio": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "101.638000",
+                "nb_read_packets": "4765"
+              }
+            ],
+            "format": {
+              "duration": "101.616667"
+            }
+          },
+          "exactPackets": true
+        },
+        {
+          "voice": "ja",
+          "pictureSHA256": "849214d199f02b934fc99c8339ee19ecc4844be8047bbb62ce0d03684041e37d",
+          "aacPacketSHA256": "317949007dc4aa31b5afa47e5fca9610ab10a455e83a0e9ccc89ee1410431402",
+          "original": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "101.616667",
+                "nb_read_packets": "6097"
+              },
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "101.616667",
+                "nb_read_packets": "4765"
+              }
+            ],
+            "format": {
+              "duration": "101.616667"
+            }
+          },
+          "sharedPicture": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "101.616667",
+                "nb_read_packets": "6097"
+              }
+            ],
+            "format": {
+              "duration": "101.616667"
+            }
+          },
+          "sharedAudio": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "101.638000",
+                "nb_read_packets": "4765"
+              }
+            ],
+            "format": {
+              "duration": "101.616667"
+            }
+          },
+          "exactPackets": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "library": "gfl2-glass-island",
+      "label": "30301",
+      "variant": "male",
+      "verification": "360b4a8d8b212afb7538f993e47cdb23ddcf4e4a8c18c1724d009b19b385a3bb",
+      "reference": "gfl2-glass-island:30301:male",
+      "streams": [
+        {
+          "voice": "zh-CN",
+          "pictureSHA256": "ee4f0e4e454d84208b9f6734b5f39ea6c070f90b60a62b9499c4670c389be9e1",
+          "aacPacketSHA256": "721a28f215458777459f88d309315c996b7ba38295da9107bb83ca68592ac0d2",
+          "original": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "179.833333",
+                "nb_read_packets": "10790"
+              },
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "179.800000",
+                "nb_read_packets": "8430"
+              }
+            ],
+            "format": {
+              "duration": "179.833333"
+            }
+          },
+          "sharedPicture": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "179.833333",
+                "nb_read_packets": "10790"
+              }
+            ],
+            "format": {
+              "duration": "179.833333"
+            }
+          },
+          "sharedAudio": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "179.821333",
+                "nb_read_packets": "8430"
+              }
+            ],
+            "format": {
+              "duration": "179.800000"
+            }
+          },
+          "exactPackets": true
+        },
+        {
+          "voice": "ja",
+          "pictureSHA256": "ee4f0e4e454d84208b9f6734b5f39ea6c070f90b60a62b9499c4670c389be9e1",
+          "aacPacketSHA256": "e9d5bb301347b2b9aa8c9a54c0821b3abb470de3b7e2330b43320212c5b1c40f",
+          "original": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "179.833333",
+                "nb_read_packets": "10790"
+              },
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "179.800000",
+                "nb_read_packets": "8430"
+              }
+            ],
+            "format": {
+              "duration": "179.833333"
+            }
+          },
+          "sharedPicture": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "179.833333",
+                "nb_read_packets": "10790"
+              }
+            ],
+            "format": {
+              "duration": "179.833333"
+            }
+          },
+          "sharedAudio": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "179.821333",
+                "nb_read_packets": "8430"
+              }
+            ],
+            "format": {
+              "duration": "179.800000"
+            }
+          },
+          "exactPackets": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "library": "gfl2-glass-island",
+      "label": "30302",
+      "variant": "male",
+      "verification": "69e72d48f0dd2459049542da34cf697f7760e696fbdf57127331f7c5cbc71418",
+      "reference": "gfl2-glass-island:30302:male",
+      "streams": [
+        {
+          "voice": "zh-CN",
+          "pictureSHA256": "765cf63c9ac5f8857275cdf9a69905f917ad86025c0916f8a0d8edd501e6963e",
+          "aacPacketSHA256": "7c0a229d026c4861de19e92b9f0b9466efdac11f20f2ff46c7cb442d33fe41e3",
+          "original": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "197.700000",
+                "nb_read_packets": "11862"
+              },
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "197.700000",
+                "nb_read_packets": "9269"
+              }
+            ],
+            "format": {
+              "duration": "197.700000"
+            }
+          },
+          "sharedPicture": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "197.700000",
+                "nb_read_packets": "11862"
+              }
+            ],
+            "format": {
+              "duration": "197.700000"
+            }
+          },
+          "sharedAudio": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "197.721333",
+                "nb_read_packets": "9269"
+              }
+            ],
+            "format": {
+              "duration": "197.700000"
+            }
+          },
+          "exactPackets": true
+        },
+        {
+          "voice": "ja",
+          "pictureSHA256": "765cf63c9ac5f8857275cdf9a69905f917ad86025c0916f8a0d8edd501e6963e",
+          "aacPacketSHA256": "dcc57870d5217af05a3595053383d575b2a5c5fbd9b7d35bfa6b533205435ef1",
+          "original": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "197.700000",
+                "nb_read_packets": "11862"
+              },
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "197.700000",
+                "nb_read_packets": "9269"
+              }
+            ],
+            "format": {
+              "duration": "197.700000"
+            }
+          },
+          "sharedPicture": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "197.700000",
+                "nb_read_packets": "11862"
+              }
+            ],
+            "format": {
+              "duration": "197.700000"
+            }
+          },
+          "sharedAudio": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "197.721333",
+                "nb_read_packets": "9269"
+              }
+            ],
+            "format": {
+              "duration": "197.700000"
+            }
+          },
+          "exactPackets": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "library": "gfl2-ilion",
+      "label": "12201",
+      "variant": "male",
+      "verification": "46bb2ae252fdeac356c5f18e758760ef727a301a9547387bde6464668aa067f0",
+      "reference": "gfl2-ilion:12201:male",
+      "streams": [
+        {
+          "voice": "zh-CN",
+          "pictureSHA256": "5bfebcabf99759dec025446e73da95bf7678bb20a6555f316134396c485a51c2",
+          "aacPacketSHA256": "17a6f91997177305170fc5c997c4dfe030f2e0a87ef8b4acfb767bc1d6b1bf49",
+          "original": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "97.150000",
+                "nb_read_packets": "5829"
+              },
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "97.150000",
+                "nb_read_packets": "4555"
+              }
+            ],
+            "format": {
+              "duration": "97.150000"
+            }
+          },
+          "sharedPicture": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "97.150000",
+                "nb_read_packets": "5829"
+              }
+            ],
+            "format": {
+              "duration": "97.150000"
+            }
+          },
+          "sharedAudio": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "97.171333",
+                "nb_read_packets": "4555"
+              }
+            ],
+            "format": {
+              "duration": "97.150000"
+            }
+          },
+          "exactPackets": true
+        },
+        {
+          "voice": "ja",
+          "pictureSHA256": "5bfebcabf99759dec025446e73da95bf7678bb20a6555f316134396c485a51c2",
+          "aacPacketSHA256": "d3c7030b5f210e667d6918ae49ab703af1d22e69ed8e9d3817d66f801c09b239",
+          "original": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "97.150000",
+                "nb_read_packets": "5829"
+              },
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "97.150000",
+                "nb_read_packets": "4555"
+              }
+            ],
+            "format": {
+              "duration": "97.150000"
+            }
+          },
+          "sharedPicture": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "97.150000",
+                "nb_read_packets": "5829"
+              }
+            ],
+            "format": {
+              "duration": "97.150000"
+            }
+          },
+          "sharedAudio": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "97.171333",
+                "nb_read_packets": "4555"
+              }
+            ],
+            "format": {
+              "duration": "97.150000"
+            }
+          },
+          "exactPackets": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "library": "gfl2-ilion",
+      "label": "12202",
+      "variant": "male",
+      "verification": "5ffea6d998f12793541255e7e3f91dd498e6d6e6c385dfdbf098e66032e441cd",
+      "reference": "gfl2-ilion:12202:male",
+      "streams": [
+        {
+          "voice": "zh-CN",
+          "pictureSHA256": "d55262ede671bc73dd0d9ef7a7966605571dcb69d7001cf74f6d54a052edefbe",
+          "aacPacketSHA256": "2f371626a207152d423e08700bdfeb86e166b186dbd282c9f63bf9fea7d01649",
+          "original": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "8.316667",
+                "nb_read_packets": "499"
+              },
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "8.316667",
+                "nb_read_packets": "391"
+              }
+            ],
+            "format": {
+              "duration": "8.316667"
+            }
+          },
+          "sharedPicture": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "8.316667",
+                "nb_read_packets": "499"
+              }
+            ],
+            "format": {
+              "duration": "8.316667"
+            }
+          },
+          "sharedAudio": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "8.338000",
+                "nb_read_packets": "391"
+              }
+            ],
+            "format": {
+              "duration": "8.316667"
+            }
+          },
+          "exactPackets": true
+        },
+        {
+          "voice": "ja",
+          "pictureSHA256": "d55262ede671bc73dd0d9ef7a7966605571dcb69d7001cf74f6d54a052edefbe",
+          "aacPacketSHA256": "2f371626a207152d423e08700bdfeb86e166b186dbd282c9f63bf9fea7d01649",
+          "original": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "8.316667",
+                "nb_read_packets": "499"
+              },
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "8.316667",
+                "nb_read_packets": "391"
+              }
+            ],
+            "format": {
+              "duration": "8.316667"
+            }
+          },
+          "sharedPicture": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "8.316667",
+                "nb_read_packets": "499"
+              }
+            ],
+            "format": {
+              "duration": "8.316667"
+            }
+          },
+          "sharedAudio": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "8.338000",
+                "nb_read_packets": "391"
+              }
+            ],
+            "format": {
+              "duration": "8.316667"
+            }
+          },
+          "exactPackets": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "library": "gfl2-ilion",
+      "label": "12301",
+      "variant": "male",
+      "verification": "faaf4ebc3eaf128de74052cf34d022ea17a57b997a0d061fbd9450e011a0b20d",
+      "reference": "gfl2-ilion:12301:male",
+      "streams": [
+        {
+          "voice": "zh-CN",
+          "pictureSHA256": "88d71bf9d72184c71a8c75d09a4a2f07d6da62e5f5e2199f28a8e893cfae9cf1",
+          "aacPacketSHA256": "b7091df0138a985e0c569b9c39a8e70af169bc2acef467d9eaa88548c0b9aaaa",
+          "original": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "49.716667",
+                "nb_read_packets": "2983"
+              },
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "49.716667",
+                "nb_read_packets": "2332"
+              }
+            ],
+            "format": {
+              "duration": "49.716667"
+            }
+          },
+          "sharedPicture": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "49.716667",
+                "nb_read_packets": "2983"
+              }
+            ],
+            "format": {
+              "duration": "49.716667"
+            }
+          },
+          "sharedAudio": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "49.738000",
+                "nb_read_packets": "2332"
+              }
+            ],
+            "format": {
+              "duration": "49.716667"
+            }
+          },
+          "exactPackets": true
+        },
+        {
+          "voice": "ja",
+          "pictureSHA256": "88d71bf9d72184c71a8c75d09a4a2f07d6da62e5f5e2199f28a8e893cfae9cf1",
+          "aacPacketSHA256": "59a43e2e71dbf8979863acddfef9651d31258b1b0b3b329492f490202288f682",
+          "original": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "49.716667",
+                "nb_read_packets": "2983"
+              },
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "49.716667",
+                "nb_read_packets": "2332"
+              }
+            ],
+            "format": {
+              "duration": "49.716667"
+            }
+          },
+          "sharedPicture": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "49.716667",
+                "nb_read_packets": "2983"
+              }
+            ],
+            "format": {
+              "duration": "49.716667"
+            }
+          },
+          "sharedAudio": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "49.738000",
+                "nb_read_packets": "2332"
+              }
+            ],
+            "format": {
+              "duration": "49.716667"
+            }
+          },
+          "exactPackets": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "library": "gfl2-ilion",
+      "label": "12401",
+      "variant": "male",
+      "verification": "2cc372ff7cc94e991aa78f7bfc012df6cf724f4414132ebc44fbd82efab5f34f",
+      "reference": "gfl2-ilion:12401:male",
+      "streams": [
+        {
+          "voice": "zh-CN",
+          "pictureSHA256": "aea4ee932373b8e37445193ef41b0b61b0e3fc058e21e80ef25cc2b57cb02137",
+          "aacPacketSHA256": "d2c66e1faaadffdf9b475a604b24721f3817374910a019bb00debe83bd053375",
+          "original": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "34.733333",
+                "nb_read_packets": "1042"
+              },
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "34.733333",
+                "nb_read_packets": "1630"
+              }
+            ],
+            "format": {
+              "duration": "34.733333"
+            }
+          },
+          "sharedPicture": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "34.733333",
+                "nb_read_packets": "1042"
+              }
+            ],
+            "format": {
+              "duration": "34.733333"
+            }
+          },
+          "sharedAudio": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "34.754667",
+                "nb_read_packets": "1630"
+              }
+            ],
+            "format": {
+              "duration": "34.733333"
+            }
+          },
+          "exactPackets": true
+        },
+        {
+          "voice": "ja",
+          "pictureSHA256": "aea4ee932373b8e37445193ef41b0b61b0e3fc058e21e80ef25cc2b57cb02137",
+          "aacPacketSHA256": "596e816ba15379867ecb332f9b04d93c393a40c06f47bf76ac2c2953f8f5ceca",
+          "original": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "34.733333",
+                "nb_read_packets": "1042"
+              },
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "34.733333",
+                "nb_read_packets": "1630"
+              }
+            ],
+            "format": {
+              "duration": "34.733333"
+            }
+          },
+          "sharedPicture": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "h264",
+                "width": 2560,
+                "height": 1440,
+                "time_base": "1/15360",
+                "start_time": "0.000000",
+                "duration": "34.733333",
+                "nb_read_packets": "1042"
+              }
+            ],
+            "format": {
+              "duration": "34.733333"
+            }
+          },
+          "sharedAudio": {
+            "programs": [],
+            "stream_groups": [],
+            "streams": [
+              {
+                "codec_name": "aac",
+                "sample_rate": "48000",
+                "channels": 2,
+                "time_base": "1/48000",
+                "start_time": "0.000000",
+                "duration": "34.754667",
+                "nb_read_packets": "1630"
+              }
+            ],
+            "format": {
+              "duration": "34.733333"
+            }
+          },
+          "exactPackets": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "library": "gfl2-remaining-assets",
+      "label": "10901",
+      "variant": "male",
+      "verification": "bf02e522ffcee05cb2a5b9a5809d771d23d4c4a739706dfac0fd3ed393b50fea",
+      "duplicateOf": "gfl2-cn-4013:10901:male"
+    },
+    {
+      "library": "gfl2-remaining-assets",
+      "label": "10902",
+      "variant": "male",
+      "verification": "a2d9496cab047ccdc6b31b90169addc290c21a27afb097217692b781e8099414",
+      "duplicateOf": "gfl2-cn-4013:10902:male"
+    },
+    {
+      "library": "gfl2-remaining-assets",
+      "label": "11001",
+      "variant": "male",
+      "verification": "6802bda9a21d1599cb42f93514bc10029300723c1ebed465015509b055e49719",
+      "duplicateOf": "gfl2-cn-4013:11001:male"
+    },
+    {
+      "library": "gfl2-remaining-assets",
+      "label": "11002",
+      "variant": "male",
+      "verification": "813a5f4a56e0a891485a81e716cfd80699a51cf9fc330ec1e50524cf4998b764",
+      "duplicateOf": "gfl2-cn-4013:11002:male"
+    },
+    {
+      "library": "gfl2-remaining-assets",
+      "label": "11003",
+      "variant": "male",
+      "verification": "a9c388277675543fa984938d07a3a3e00dadedaef0381461728cf578313ebbdf",
+      "duplicateOf": "gfl2-cn-4013:11003:male"
+    },
+    {
+      "library": "gfl2-remaining-assets",
+      "label": "11301",
+      "variant": "male",
+      "verification": "d6e2ad09954f2d9acfcc2afd55dee3a82a0fdc34b20c48fa9924e0ed4922caaf",
+      "duplicateOf": "gfl2-cn-4028:11301:male"
+    },
+    {
+      "library": "gfl2-remaining-assets",
+      "label": "11302",
+      "variant": "male",
+      "verification": "797b852b7e8b657585ee8e63c034cb17159d564a008c9ae1571af655cad0891d",
+      "duplicateOf": "gfl2-cn-4028:11302:male"
+    },
+    {
+      "library": "gfl2-remaining-assets",
+      "label": "11502",
+      "variant": "male",
+      "verification": "7e5750d908368c36e46fc17be894cd8d90df67251be8331c76c208409edca7c3",
+      "duplicateOf": "gfl2-cn-4028:11502:male"
+    },
+    {
+      "library": "gfl2-remaining-assets",
+      "label": "11503",
+      "variant": "male",
+      "verification": "94f1f30acc9b6ce4d94ed2cf3e3865c7bb65deeacdaf08c7f78d8a9276e50f01",
+      "duplicateOf": "gfl2-cn-4028:11503:male"
+    },
+    {
+      "library": "gfl2-remaining-assets",
+      "label": "11504",
+      "variant": "male",
+      "verification": "2f7a75287d7b9b7f866053eec93fff4ae775f21f04857e7c4027dcfcf6882751",
+      "duplicateOf": "gfl2-cn-4028:11504:male"
+    },
+    {
+      "library": "gfl2-remaining-assets",
+      "label": "11801",
+      "variant": "male",
+      "verification": "a781f2613899c780ef68658e993091f7954423daeda009699ce6519526139347",
+      "duplicateOf": "gfl2-cn-4037:11801:male"
+    },
+    {
+      "library": "gfl2-remaining-assets",
+      "label": "11801",
+      "variant": "female",
+      "verification": "ec9f68de527cf4f69bb1f5918113fa8f6d7baeca0309b299c947032d2540f7a8",
+      "duplicateOf": "gfl2-cn-4037:11801:female"
+    },
+    {
+      "library": "gfl2-remaining-assets",
+      "label": "11901",
+      "variant": "male",
+      "verification": "39106dfea835052f0e62a177cac00fa6244df323db3f92eeafe3f0fa54d4e314",
+      "duplicateOf": "gfl2-cn-4037:11901:male"
+    },
+    {
+      "library": "gfl2-remaining-assets",
+      "label": "11901",
+      "variant": "female",
+      "verification": "1bdd4a736f667dee659550dd70bfead8eee767649482424df66cd07ab5265264",
+      "duplicateOf": "gfl2-cn-4037:11901:female"
+    },
+    {
+      "library": "gfl2-remaining-assets",
+      "label": "12001",
+      "variant": "male",
+      "verification": "78a8c5b55de07b3ec491ec96eac9d61a8084f4cfc0326d1b0550e45b606b2e77",
+      "duplicateOf": "gfl2-cn-4042:12001:male"
+    },
+    {
+      "library": "gfl2-remaining-assets",
+      "label": "12001",
+      "variant": "female",
+      "verification": "dffe59d34cdfef2d2367845a7a818e6605b83bbbd2b4e0f8ee7332515ffc00ae",
+      "duplicateOf": "gfl2-cn-4042:12001:female"
+    },
+    {
+      "library": "gfl2-remaining-assets",
+      "label": "12002",
+      "variant": "male",
+      "verification": "1f097ce60a5b9dcb6fb61d683a27d393a308e66d2931a75d80685f64c6163c1c",
+      "duplicateOf": "gfl2-cn-4042:12002:male"
+    }
+  ]
+}

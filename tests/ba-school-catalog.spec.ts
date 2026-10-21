@@ -1,5 +1,8 @@
 import { readFileSync } from 'node:fs';
 import { test, expect } from '@playwright/test';
+import { preferJapaneseBa } from './helpers/ba-language';
+
+test.beforeEach(async ({ page }) => preferJapaneseBa(page));
 
 const library = JSON.parse(readFileSync('scripts/ba-library.json', 'utf8')) as {
   category: string;

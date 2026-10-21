@@ -163,6 +163,19 @@ export function libraryMiddleware(
       return;
     }
     if (
+      pathname === '/onlystory-local-library.json' &&
+      ['GET', 'HEAD'].includes(req.method)
+    ) {
+      res.setHeader('Content-Type', 'application/json');
+      res.setHeader('Cache-Control', 'no-store');
+      res.end(
+        req.method === 'HEAD'
+          ? undefined
+          : JSON.stringify({ version: 1, localLibrary: true }),
+      );
+      return;
+    }
+    if (
       !pathname.startsWith('/private/pjsk/remote/') ||
       !['GET', 'HEAD'].includes(req.method)
     )

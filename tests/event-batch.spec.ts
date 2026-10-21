@@ -68,7 +68,8 @@ test('Glass Island keeps both chapters and plays its recovered movie', async ({
   await expect
     .poll(() => video.evaluate((el: HTMLVideoElement) => el.readyState))
     .toBeGreaterThanOrEqual(2);
-  await expect(video).toHaveAttribute('src', /\/private\/shared\/.*\.mp4/);
+  await expect(video).toHaveAttribute('data-movie-mode', 'shared-streams');
+  await expect(video).toHaveAttribute('src', /^blob:/);
   const ending = event.sections.find(
     (s: { lastNode: string }) => s.lastNode === 'AA03002:end',
   );

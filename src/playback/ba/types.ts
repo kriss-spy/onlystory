@@ -3,6 +3,7 @@ export interface BaRow {
   row: number;
   ScriptKr: string;
   TextJp: string;
+  TextEn?: string;
   BGName: number;
   BGMId: number;
   Sound: string;
@@ -74,6 +75,7 @@ export interface BaAssets {
 export interface BaProgram {
   version: 1;
   id: string;
+  rowLocales?: { en?: string[] };
   steps: { id: string; rows: BaRow[]; afterRows?: BaRow[] }[];
   assets: BaAssets;
   warnings?: {
@@ -119,7 +121,7 @@ export interface BaState {
     y: number;
     size: number;
     color: string;
-    alignment?: 'center' | 'right';
+    alignment?: 'left' | 'center' | 'right';
     pauses?: { offset: number; delay: number }[];
     instant?: boolean;
   }[];

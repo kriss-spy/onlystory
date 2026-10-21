@@ -71,9 +71,22 @@ test('movie downloads install only the selected voice, add the other without ref
   );
   const movies = Object.values(program.videos) as {
     voices: Record<string, { url: string }>;
+    streams: import('../src/model').MovieStreams;
   }[];
-  const chinese = movies.map((movie) => movie.voices['zh-CN'].url);
-  const japanese = movies.map((movie) => movie.voices.ja.url);
+  const trackFiles = (track: import('../src/model').MovieTrack) => [
+    track.init.url,
+    ...track.segments.map((segment) => segment.url),
+  ];
+  const chinese = movies.flatMap((movie) =>
+    trackFiles(movie.streams.audio['zh-CN']!),
+  );
+  const japanese = movies.flatMap((movie) =>
+    trackFiles(movie.streams.audio.ja!),
+  );
+  const pictures = movies.flatMap((movie) => trackFiles(movie.streams.video));
+  const fallbacks = movies.flatMap((movie) =>
+    Object.values(movie.voices).map((voice) => voice.url),
+  );
   const requests: string[] = [];
   page.on('request', (request) =>
     requests.push(new URL(request.url()).pathname),
@@ -97,11 +110,49 @@ test('movie downloads install only the selected voice, add the other without ref
     );
   const first = await keys();
   for (const url of japanese) expect(first).toContain(url);
-  for (const url of chinese) expect(first).not.toContain(url);
+  for (const url of chinese.filter((url) => !japanese.includes(url)))
+    expect(first).not.toContain(url);
+  for (const url of pictures) expect(first).toContain(url);
+  for (const url of fallbacks) expect(first).not.toContain(url);
   const shared = program.files.find((file: { url: string }) =>
     file.url.endsWith('.webp'),
   ).url;
   expect(requests.filter((url) => url === shared)).toHaveLength(1);
+  for (const url of pictures)
+    expect(requests.filter((request) => request === url)).toHaveLength(1);
+  await row.locator('a').click();
+  const video = page.getByLabel('Story movie', { exact: true });
+  await page
+    .getByRole('button', { name: 'Reader settings', exact: true })
+    .click();
+  await page.getByRole('tab', { name: 'Audio', exact: true }).click();
+  const playbackVoice = page.getByLabel('Voice language', { exact: true });
+  await playbackVoice.selectOption('ja');
+  await expect(video).toHaveAttribute('data-movie-voice', 'ja');
+  await expect
+    .poll(() => video.evaluate((v: HTMLVideoElement) => v.readyState))
+    .toBeGreaterThanOrEqual(2);
+  await video.evaluate((v: HTMLVideoElement) => {
+    v.pause();
+    v.currentTime = 12;
+  });
+  await context.setOffline(true);
+  await playbackVoice.selectOption('zh-CN');
+  await page.getByRole('button', { name: 'Close', exact: true }).click();
+  await expect(
+    page
+      .getByRole('status')
+      .filter({ hasText: 'This movie language is not downloaded' }),
+  ).toBeVisible();
+  await expect(video).toHaveAttribute('data-movie-voice', 'ja');
+  await expect
+    .poll(() => video.evaluate((v: HTMLVideoElement) => v.currentTime))
+    .toBeCloseTo(12, 0);
+  await context.setOffline(false);
+  await page.goto('/manage?game=gfl2', { waitUntil: 'domcontentloaded' });
+  await page
+    .getByRole('searchbox', { name: 'Search downloads' })
+    .fill(await row.locator('a').innerText());
   await voice.selectOption('zh-CN');
   await row.getByRole('button', { name: /^Download / }).click();
   await expect(row).toContainText('On this device', { timeout: 40000 });
@@ -110,7 +161,6 @@ test('movie downloads install only the selected voice, add the other without ref
   expect(requests.filter((url) => url === shared)).toHaveLength(1);
   await context.setOffline(true);
   await row.locator('a').click();
-  const video = page.getByLabel('Story movie', { exact: true });
   await expect
     .poll(() =>
       video.evaluate((element: HTMLVideoElement) => element.readyState),

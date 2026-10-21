@@ -1,0 +1,56 @@
+{
+  "recordedAt": "2026-10-19 15:46:09 UTC",
+  "scope": "Verified official global English dialogue aligned to the existing Japanese BA passage graph.",
+  "corpusReport": "docs/ba-english-verification.json",
+  "sourceDecoderTest": {
+    "file": "scripts/ba-localization.test.mjs",
+    "status": "passed",
+    "checks": [
+      "Authenticate the pinned official original database SHA-256 and SQLCipher pages using the application decoder.",
+      "Run the actual whole-database exporter and reuse its cached 64-bit group 83300100100 without truncation, including groups outside the imported library.",
+      "Decode every advertised English chapter, then compare every published passage, speaker, choice label and scene-text row to official global source cells.",
+      "Retain the complete original Japanese passage and choice graph.",
+      "Exclude unpublished, incomplete or mismatched English chapters."
+    ],
+    "command": "node --test scripts/ba-download-database.test.mjs scripts/ba-localization.test.mjs",
+    "passed": 8,
+    "failed": 0,
+    "durationSeconds": 66.9
+  },
+  "browser": {
+    "command": "npx playwright test --config .cache/ba-language-playwright.config.mjs --workers=1",
+    "baseUrl": "http://127.0.0.1:4173",
+    "browser": "Chrome",
+    "spec": "tests/ba-language.spec.ts",
+    "passed": 2,
+    "failed": 0,
+    "durationSeconds": 37.5,
+    "checks": [
+      "JP/EN switching retains the same passage URL.",
+      "Official English dialogue, speaker names and choices render.",
+      "Selecting a translated choice retains its original branch and passage IDs.",
+      "English preference and selected passage survive reload and saved-story resume.",
+      "Authored screen captions switch to official English.",
+      "A Japanese-only source gap offers no English selector."
+    ],
+    "lastRun": ".cache/ba-language-browser-results/.last-run.json",
+    "screenshot": ".cache/ba-language-browser-results/ba-language-real-JP-EN-dia-bf36c--selected-branch-in-English/ba-english-branch-resume.png"
+  },
+  "offlineImportSpec": "tests/pwa/ba-selection.spec.ts",
+  "offlineImportStatus": "Passed against the final frozen production build in the full PWA verification run.",
+  "offlineImport": {
+    "spec": "tests/pwa/ba-selection.spec.ts",
+    "passed": 1,
+    "durationSeconds": 114,
+    "groups": [2401, 2402],
+    "log": ".cache/final-pwa-groupid64.log",
+    "artifacts": ".cache/final-pwa-results/ba-selection-*",
+    "checks": [
+      "Import both selected stories from actual retained original files.",
+      "Read both stories after a cold offline reload.",
+      "Switch between real Japanese and English dialogue while preserving the passage URL.",
+      "Retain the English preference and selected passage after reload."
+    ]
+  },
+  "limit": "Exhaustive source and graph validation covers every advertised chapter. Browser playback is representative; every chapter has not been played manually."
+}

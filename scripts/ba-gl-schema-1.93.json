@@ -1,0 +1,487 @@
+{
+  "gameVersion": "1.93.454564",
+  "databaseSha256": "0ba93f542493a9ca8b9f98a4b13f4a912740b337940a264b43430b7046811391",
+  "schemaSnapshot": "global-1.93.454564-c4a07d3-groupid64",
+  "schemaSource": {
+    "url": "https://raw.githubusercontent.com/beichen23333/BA-FlatData/c4a07d3006ffde30b2a7857d8cc2614c9fa996ba/GL1.93.454564.zip",
+    "sha256": "09fa041a7ac0fed1f6b7a924d0e62977940ede9252138dea493fa27aa3637972"
+  },
+  "verifiedCorrections": [
+    {
+      "type": "ScenarioScriptExcel",
+      "field": "GroupId",
+      "publishedType": "System.Int32",
+      "actualType": "System.Int64",
+      "evidence": "Original ScenarioScriptDBSchema group 83300100100 stores little-endian 04a8126513000000 in its eight-byte GroupId slot; Int32 truncates it to 1695721476."
+    }
+  ],
+  "types": {
+    "ScenarioScriptExcel": {
+      "fields": [
+        {
+          "name": "GroupId",
+          "field": {
+            "index": 0,
+            "cs_type": "System.Int64",
+            "is_vector": false
+          },
+          "annotation": "long"
+        },
+        {
+          "name": "SelectionGroup",
+          "field": {
+            "index": 1,
+            "cs_type": "System.Int32",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "BGMId",
+          "field": {
+            "index": 2,
+            "cs_type": "System.Int32",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "Sound",
+          "field": {
+            "index": 3,
+            "cs_type": "System.String",
+            "is_vector": false
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "Transition",
+          "field": {
+            "index": 4,
+            "cs_type": "System.UInt32",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "BGName",
+          "field": {
+            "index": 5,
+            "cs_type": "System.UInt32",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "BGEffect",
+          "field": {
+            "index": 6,
+            "cs_type": "System.UInt32",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "PopupFileName",
+          "field": {
+            "index": 7,
+            "cs_type": "System.String",
+            "is_vector": false
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "ScriptKr",
+          "field": {
+            "index": 8,
+            "cs_type": "System.String",
+            "is_vector": false
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "TextJp",
+          "field": {
+            "index": 9,
+            "cs_type": "System.String",
+            "is_vector": false
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "TextTh",
+          "field": {
+            "index": 10,
+            "cs_type": "System.String",
+            "is_vector": false
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "TextTw",
+          "field": {
+            "index": 11,
+            "cs_type": "System.String",
+            "is_vector": false
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "TextEn",
+          "field": {
+            "index": 12,
+            "cs_type": "System.String",
+            "is_vector": false
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "VoiceId",
+          "field": {
+            "index": 13,
+            "cs_type": "System.UInt32",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "TeenMode",
+          "field": {
+            "index": 14,
+            "cs_type": "System.Boolean",
+            "is_vector": false
+          },
+          "annotation": "int"
+        }
+      ]
+    },
+    "ScenarioCharacterNameExcel": {
+      "fields": [
+        {
+          "name": "CharacterName",
+          "field": {
+            "index": 0,
+            "cs_type": "System.UInt32",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "ProductionStep",
+          "field": {
+            "index": 1,
+            "cs_type": "System.Int32",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "NameKR",
+          "field": {
+            "index": 2,
+            "cs_type": "System.String",
+            "is_vector": false
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "NicknameKR",
+          "field": {
+            "index": 3,
+            "cs_type": "System.String",
+            "is_vector": false
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "NameJP",
+          "field": {
+            "index": 4,
+            "cs_type": "System.String",
+            "is_vector": false
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "NicknameJP",
+          "field": {
+            "index": 5,
+            "cs_type": "System.String",
+            "is_vector": false
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "NameTH",
+          "field": {
+            "index": 6,
+            "cs_type": "System.String",
+            "is_vector": false
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "NicknameTH",
+          "field": {
+            "index": 7,
+            "cs_type": "System.String",
+            "is_vector": false
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "NameTW",
+          "field": {
+            "index": 8,
+            "cs_type": "System.String",
+            "is_vector": false
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "NicknameTW",
+          "field": {
+            "index": 9,
+            "cs_type": "System.String",
+            "is_vector": false
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "NameEN",
+          "field": {
+            "index": 10,
+            "cs_type": "System.String",
+            "is_vector": false
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "NicknameEN",
+          "field": {
+            "index": 11,
+            "cs_type": "System.String",
+            "is_vector": false
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "Shape",
+          "field": {
+            "index": 12,
+            "cs_type": "System.Int32",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "SpinePrefabName",
+          "field": {
+            "index": 13,
+            "cs_type": "System.String",
+            "is_vector": false
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "SmallPortrait",
+          "field": {
+            "index": 14,
+            "cs_type": "System.String",
+            "is_vector": false
+          },
+          "annotation": "str"
+        }
+      ]
+    },
+    "LocalizeExcel": {
+      "fields": [
+        {
+          "name": "Key",
+          "field": {
+            "index": 0,
+            "cs_type": "System.UInt32",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "Kr",
+          "field": {
+            "index": 1,
+            "cs_type": "System.String",
+            "is_vector": false
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "Jp",
+          "field": {
+            "index": 2,
+            "cs_type": "System.String",
+            "is_vector": false
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "Th",
+          "field": {
+            "index": 3,
+            "cs_type": "System.String",
+            "is_vector": false
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "Tw",
+          "field": {
+            "index": 4,
+            "cs_type": "System.String",
+            "is_vector": false
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "En",
+          "field": {
+            "index": 5,
+            "cs_type": "System.String",
+            "is_vector": false
+          },
+          "annotation": "str"
+        }
+      ]
+    },
+    "ScenarioModeExcel": {
+      "fields": [
+        {
+          "name": "ModeId",
+          "field": {
+            "index": 0,
+            "cs_type": "System.Int32",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "ExposedTime",
+          "field": {
+            "index": 7,
+            "cs_type": "System.String",
+            "is_vector": false
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "Hide",
+          "field": {
+            "index": 8,
+            "cs_type": "System.Boolean",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "Open",
+          "field": {
+            "index": 9,
+            "cs_type": "System.Boolean",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "ScenarioOpenDate",
+          "field": {
+            "index": 10,
+            "cs_type": "System.String",
+            "is_vector": false
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "FrontScenarioGroupId",
+          "field": {
+            "index": 14,
+            "cs_type": "System.Int32",
+            "is_vector": true
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "BackScenarioGroupId",
+          "field": {
+            "index": 20,
+            "cs_type": "System.Int32",
+            "is_vector": true
+          },
+          "annotation": "int"
+        }
+      ]
+    },
+    "EventContentSeasonExcel": {
+      "fields": [
+        {
+          "name": "EventContentId",
+          "field": {
+            "index": 0,
+            "cs_type": "System.Int32",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "EventDisplay",
+          "field": {
+            "index": 6,
+            "cs_type": "System.Boolean",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "BeforehandExposedTime",
+          "field": {
+            "index": 13,
+            "cs_type": "System.String",
+            "is_vector": false
+          },
+          "annotation": "str"
+        },
+        {
+          "name": "EventContentOpenTime",
+          "field": {
+            "index": 14,
+            "cs_type": "System.String",
+            "is_vector": false
+          },
+          "annotation": "str"
+        }
+      ]
+    },
+    "EventContentScenarioExcel": {
+      "fields": [
+        {
+          "name": "EventContentId",
+          "field": {
+            "index": 1,
+            "cs_type": "System.Int32",
+            "is_vector": false
+          },
+          "annotation": "int"
+        },
+        {
+          "name": "ScenarioGroupId",
+          "field": {
+            "index": 9,
+            "cs_type": "System.Int32",
+            "is_vector": true
+          },
+          "annotation": "int"
+        }
+      ]
+    }
+  },
+  "enums": {},
+  "availabilityAsOf": "2026-10-19"
+}

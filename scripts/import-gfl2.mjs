@@ -13,6 +13,8 @@ import { importScenes } from './gfl2-scenes.mjs';
 import { importIlion } from './gfl2-ilion.mjs';
 import { shareGameAssets } from './storage-library.mjs';
 import { eventSpecs, importEventPackage } from './gfl2-event-package.mjs';
+import { shareMovieStreams } from './share-movie-streams.mjs';
+import { readdirSync } from 'node:fs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const source = resolve(
@@ -23,6 +25,16 @@ const generated = resolve(root, 'src/generated/gfl2-opening.json');
 importFullEvent(root, source);
 const packages = eventSpecs(root);
 for (const spec of packages) importEventPackage(root, spec);
+for (const directory of readdirSync(resolve(root, 'public/private'))) {
+  if (!directory.startsWith('gfl2-')) continue;
+  const manifest = resolve(
+    root,
+    'public/private',
+    directory,
+    'videos/manifest.json',
+  );
+  if (existsSync(manifest)) shareMovieStreams(manifest);
+}
 shareGameAssets(root);
 importScenes(root, source);
 importIlion(root);

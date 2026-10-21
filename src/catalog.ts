@@ -1,5 +1,6 @@
-import type { Episode, GameId } from './model';
+import type { Episode, GameId, TitleLocales } from './model';
 import { matchesSearch } from './search';
+import { titleSearchValues } from './localized-titles';
 import baMainReleases from './ba-main-releases.json';
 
 const baReleaseDates: Record<string, { date: string; source: string }> =
@@ -15,6 +16,7 @@ export interface StoryEvent {
   id: string;
   game: GameId;
   title: string;
+  titleLocales?: TitleLocales;
   category: Episode['category'];
   eventType?: Episode['eventType'];
   notice?: string;
@@ -82,6 +84,7 @@ export function groupStoryEvents(episodes: Episode[]): StoryEvent[] {
       id: eventIdFor(first),
       game: first.game,
       title: first.story,
+      titleLocales: first.collectionLocales,
       category: first.category,
       eventType: first.eventType,
       notice: first.collectionNotice,
@@ -102,12 +105,7 @@ export function groupStoryEvents(episodes: Episode[]): StoryEvent[] {
 
 export function storyRows(event: StoryEvent, query = '') {
   const matches = (story: Episode) =>
-    matchesSearch(query, [
-      story.title,
-      story.description,
-      ...(story.titleAliases ?? []),
-      ...(story.collectionAliases ?? []),
-    ]);
+    matchesSearch(query, [...titleSearchValues(story), story.description]);
   const branchRows = (branch: StoryBranch, all: boolean): StoryRow[] => {
     const stories = branch.stories.filter((story) => all || matches(story));
     return stories.map((episode, index) => ({

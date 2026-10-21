@@ -1,7 +1,10 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { hasOnlineSource, isBaImport } from '../downloads/providers';
 import { Gfl1Effects } from '../playback/gfl1/Gfl1Effects';
 import { Gfl1Interaction } from '../playback/gfl1/Gfl1Interaction';
 import type { Gfl1Program } from '../playback/gfl1/story';
+import type { BaProgram } from '../playback/ba/types';
+import { isBaScreenTextStep } from '../playback/ba/screen-text';
 import type { CSSProperties, Dispatch, SetStateAction } from 'react';
 import {
   Link,
@@ -54,6 +57,7 @@ import {
   startSave,
   passageText,
   localizedText,
+  gamePreferences,
   readingTimeline,
 } from '../model';
 import type {
@@ -62,7 +66,7 @@ import type {
   Frame,
   ReadingSave,
 } from '../model';
-import { useMediaUrl, useNarrow, useOnline } from '../hooks';
+import { useLocalLibrary, useMediaUrl, useNarrow, useOnline } from '../hooks';
 import { isInstalled, useStore } from '../store';
 import { usePlaybackPreferences } from '../store';
 import { useUi } from '../ui';
@@ -70,6 +74,7 @@ import type { ReaderCommand } from '../ui';
 import { EmptyState, IconButton, Panel } from '../components/Primitives';
 import { SceneHost } from '../components/SceneHost';
 import { StoryProgress } from '../components/StoryProgress';
+import { episodeTitle, localizedTitle } from '../localized-titles';
 
 type ReaderPanel =
   'history' | 'chapters' | 'saves' | 'transcript' | 'information';
@@ -109,11 +114,22 @@ function EpisodeReader({
 }: {
   episode: NonNullable<ReturnType<typeof episodeById>>;
 } & FastForwardControl) {
+  const { data, transfers, download, cancel } = useStore();
+  const title = episodeTitle(
+    episode,
+    gamePreferences(data.preferences, episode.game).catalogLocale,
+  );
+  const localLibrary = useLocalLibrary();
+  const acquired =
+    episode.origin !== 'game' ||
+    localLibrary === true ||
+    data.installed[episode.id] === true;
+  const transfer = transfers[episode.id];
   const [loaded, setLoaded] = useState(episode.content ? null : episode);
   const [error, setError] = useState('');
   const [attempt, setAttempt] = useState(0);
   useEffect(() => {
-    if (!episode.content) return;
+    if (!episode.content || !acquired) return;
     let active = true;
     setError('');
     void loadEpisode(episode)
@@ -133,8 +149,65 @@ function EpisodeReader({
     return () => {
       active = false;
     };
-  }, [episode, attempt, setSkipping]);
-  if (loaded)
+  }, [episode, attempt, setSkipping, acquired]);
+  if (!acquired && localLibrary !== null)
+    return (
+      <main className="reader-gate">
+        <Link className="back-link" to={`/games/${episode.game}`}>
+          <ArrowLeft size={16} />
+          Back to stories
+        </Link>
+        <EmptyState
+          title={hasOnlineSource(episode) ? title : 'Downloader pending'}
+        >
+          {!hasOnlineSource(episode)
+            ? 'This story does not have a verified downloader yet. Its catalog and saved progress remain on this device.'
+            : isBaImport(episode)
+              ? 'Download or import this story’s original files for offline reading.'
+              : 'Download this story for offline reading.'}
+        </EmptyState>
+        {isBaImport(episode) ? (
+          <Link
+            className="button primary-button"
+            to={`/downloads/${episode.id}`}
+          >
+            Download or import story
+          </Link>
+        ) : null}
+        {!hasOnlineSource(episode) ||
+        isBaImport(episode) ? null : transfer?.status === 'downloading' ? (
+          <>
+            <p role="status">
+              Downloading · {transfer.filesDone ?? 0} /{' '}
+              {transfer.filesTotal ?? '…'} files
+            </p>
+            <progress
+              aria-label={`Downloading ${title}`}
+              max={transfer.total || 1}
+              value={transfer.bytes}
+            />
+            <button onClick={() => cancel(episode.id)}>Cancel download</button>
+          </>
+        ) : (
+          <>
+            {transfer?.status === 'failed' ? (
+              <p role="alert">{transfer.error}</p>
+            ) : null}
+            {transfer?.status === 'canceled' ? (
+              <p role="status">
+                Download canceled. Retry to reuse saved files.
+              </p>
+            ) : null}
+            <button onClick={() => download(episode)}>
+              {transfer?.status === 'failed'
+                ? 'Retry download'
+                : 'Download story'}
+            </button>
+          </>
+        )}
+      </main>
+    );
+  if (loaded && acquired)
     return (
       <Reader episode={loaded} skipping={skipping} setSkipping={setSkipping} />
     );
@@ -373,14 +446,32 @@ function Reader({
   const complete =
     textReady &&
     (skipping ||
+      (!textOnly &&
+        episode.renderer?.id === 'ba-scene' &&
+        isBaScreenTextStep(episode.renderer.payload as BaProgram, node.id)) ||
       revealed >= chars.length ||
       p.textSpeed === 0 ||
       node.kind !== 'text');
   const unsupported = fixture === 'unsupported' || node.kind === 'unsupported';
   const installed = isInstalled(store.data, episode);
+  const installation = store.data.installations?.[episode.id];
+  const installedMovieVariant =
+    store.data.installed[episode.id] === true &&
+    !!installation?.voices.length &&
+    (!installation.variants ||
+      installation.variants.some((variant) =>
+        variant.startsWith(`${p.textVariant}:`),
+      )) &&
+    episode.nodes.some(
+      (node) => node.movieStreams || node.femaleVideo?.streams,
+    );
   const offline = fixture === 'offline' || !online;
   const expired = fixture === 'expired';
-  const unavailable = offline && !installed && episode.readingMode !== 'text';
+  const unavailable =
+    offline &&
+    !installed &&
+    !installedMovieVariant &&
+    episode.readingMode !== 'text';
   const needsDownload =
     !installed && episode.availability === 'remote' && !offline;
   const activeVoice =
@@ -487,7 +578,11 @@ function Reader({
     let cursor = revealed;
     let timer: ReturnType<typeof setTimeout>;
     const schedule = () => {
-      const pause = (node.scene.textPauses ?? []).reduce(
+      const pause = (
+        node.scene.textPausesLocales?.[p.textLocale] ??
+        node.scene.textPauses ??
+        []
+      ).reduce(
         (total, point) => total + (point.offset === cursor ? point.delay : 0),
         0,
       );
@@ -508,6 +603,7 @@ function Reader({
     textReady,
     complete,
     p.textSpeed,
+    p.textLocale,
     chars.length,
     panel,
     ui.active,
@@ -998,12 +1094,17 @@ function Reader({
           <ArrowLeft size={19} />
         </Link>
         <div>
-          <strong>{episode.title}</strong>
+          <strong>{episodeTitle(episode, p.catalogLocale)}</strong>
           <small>
             {textOnly ? (
               <span className="mobile-reading-mode">文字模式 · </span>
             ) : null}
-            {game.name} <span> / </span> {episode.story}
+            {game.name} <span> / </span>{' '}
+            {localizedTitle(
+              episode.story,
+              episode.collectionLocales,
+              p.catalogLocale,
+            )}
           </small>
         </div>
         <span className="sample-label">
@@ -1628,7 +1729,7 @@ function Reader({
             <dl>
               <dt>Section</dt>
               <dd>
-                {episode.order} · {episode.title}
+                {episode.order} · {episodeTitle(episode, p.catalogLocale)}
               </dd>
               <dt>Current source</dt>
               <dd>

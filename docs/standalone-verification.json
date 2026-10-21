@@ -1,0 +1,515 @@
+{
+  "checkedAt": "2026-10-20T01:35:35.423Z",
+  "version": "0.2.0",
+  "scope": "Windows x64 portable and NSIS releases, static web application, exhaustive recipe/source checks and representative original imports with cold offline playback",
+  "artifacts": [
+    {
+      "name": "Onlystory-0.2.0-portable-x64.exe",
+      "bytes": 214873806,
+      "sha256": "7a81f881e005b863f968b9f312a19ee9957172664d2ccc0f9b9ad48f70b5d1c6"
+    },
+    {
+      "name": "Onlystory-0.2.0-Setup-x64.exe",
+      "bytes": 215088250,
+      "sha256": "a0ea72dbde31d9b4d05ab1116f6435c5d8edb3050c4dac97ce96cad5bbc95362"
+    },
+    {
+      "name": "Onlystory-web.zip",
+      "bytes": 93695976,
+      "sha256": "2c199b10751c4382bd9ad99d19347d4e6a44828b646fe24a3d1c70a155ee4366"
+    }
+  ],
+  "coverage": {
+    "blueArchiveRecipes": 1659,
+    "blueArchiveEnglishChapters": 1519,
+    "blueArchiveJapaneseOnlyChapters": 140,
+    "projectSekaiRecipes": 1623
+  },
+  "projectChecks": {
+    "command": "npm run check",
+    "passed": true,
+    "log": ".cache/final-check-css.log",
+    "unitPassed": 117,
+    "unitSkipped": 1,
+    "importPassed": 142,
+    "importSkipped": 5,
+    "typecheck": true,
+    "productionBuild": true
+  },
+  "browser": {
+    "originalRun": {
+      "discovered": 756,
+      "passed": 702,
+      "failed": 52,
+      "didNotRun": 2
+    },
+    "finalCaseCoverage": {
+      "originalIdentities": 756,
+      "originalPassed": 702,
+      "originalNonpasses": 54,
+      "repairedOriginalNonpasses": 54,
+      "coveredUniqueOriginalCases": 756,
+      "pendingOriginalCases": 0,
+      "duplicateRerunPassesExcludedFromCoverage": 0,
+      "rerunPassLinesForAlreadyPassedOriginalCasesExcludedFromCoverage": 6
+    },
+    "evidence": "docs/browser-coverage-audit.json",
+    "detail": "docs/browser-verification.json",
+    "note": "This is a union of individually evidenced original and repaired cases across final verification snapshots, not a claim that one clean full-suite invocation passed 756 cases. An incomplete log is a content snapshot; its individual terminal passing case lines count, while unreported cases remain pending."
+  },
+  "pwa": {
+    "fullSuite": {
+      "status": "passed",
+      "passed": 17,
+      "skipped": 0,
+      "reportedDuration": "15.2m"
+    },
+    "finalCssFocusedSuite": {
+      "status": "passed",
+      "passed": 7
+    },
+    "finalCssRenderedSelection": {
+      "status": "passed",
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "durationMs": 69484.467,
+      "startedAt": "2026-10-20T01:28:13.234Z",
+      "testDurationMs": 68454,
+      "command": "npx playwright test --config playwright.pwa.config.ts tests/pwa/ba-selection.spec.ts --output .cache/final-pwa-selection-rendered-v3-results --reporter=list,json",
+      "log": ".cache/final-pwa-selection-rendered-v3.log",
+      "jsonReport": ".cache/final-pwa-selection-rendered-v3-report.json",
+      "artifactRoot": ".cache/final-pwa-selection-rendered-v3-results/ba-selection-BA-toolbar-se-918f5-lder-and-opens-both-offline",
+      "build": {
+        "description": "Final production build including the sr-only overflow CSS correction.",
+        "hashes": {
+          "dist/index.html": "8812da3f0d891af6602277e83c6d3cdc9139b7ff44760a5baf2b6bf4e7b8ba46",
+          "dist/sw.js": "f8270aa87e567cd6bd1ab97c830d0fef41e729c8debb8aab06042e09463b44c9",
+          "dist/manifest.webmanifest": "9b9066c9560410240d6134bd091be32e3e5ca87259e2b33cbb809f23012aa6fc"
+        }
+      },
+      "serverIsolation": "The shared staticHost helper copies dist into a dedicated temporary static root before starting. A preceding final-CSS snapshot was compared with stable dist: all 3345 files were byte-identical. The final rerun used stable final-CSS dist with no builds in progress.",
+      "checks": [
+        "Import both 2401/2402 from actual retained original files using toolbar selection and folder picker.",
+        "Select the first actual named-character dialogue from each imported chapter, avoiding native title cards and hidden shell text.",
+        "Cold offline playback renders the complete official English dialogue and animated character/background scene.",
+        "Switch EN to JA at the same passage URL and assert the exact Japanese text differs from official English.",
+        "Select EN and reload offline; require scene aria-busy=false, no loading overlay, visible exact English dialogue and last-character opacity 1 before capture.",
+        "No runtime page errors or additional private-file requests during offline playback."
+      ],
+      "screenshotsVisuallyInspected": true,
+      "screenshots": [
+        ".cache/final-pwa-selection-rendered-v3-results/ba-selection-BA-toolbar-se-918f5-lder-and-opens-both-offline/ba-jp-2401-offline.png",
+        ".cache/final-pwa-selection-rendered-v3-results/ba-selection-BA-toolbar-se-918f5-lder-and-opens-both-offline/ba-jp-2402-offline.png"
+      ],
+      "observedPassages": [
+        {
+          "id": "2401:15",
+          "speaker": "Kaede",
+          "english": "No, this isn't what I imagined at all."
+        },
+        {
+          "id": "2402:1",
+          "speaker": "Kaede",
+          "english": "Okay, testing the camera. Testing... One, two..."
+        }
+      ],
+      "earlierStrengthenedAttempt": {
+        "log": ".cache/final-pwa-selection-rendered.log",
+        "result": "Correctly failed at a native title card because its shell dialogue was hidden. The final test selects a named-character passage from the imported chapter."
+      }
+    },
+    "evidence": "docs/pwa-verification.json",
+    "note": "Full seventeen-case suite precedes the CSS-only hidden-input fix; importer chunks match, remaining runtime chunks differ only by generated asset references. Final CSS checks and the additional rendered offline-English check are recorded separately."
+  },
+  "portableLauncher": {
+    "checkedAt": "2026-10-20T01:23:28.089Z",
+    "executable": "C:\\Users\\krisspy\\Projects\\onlystory\\release\\Onlystory-0.2.0-portable-x64.exe",
+    "bytes": 214873806,
+    "sha256": "7a81f881e005b863f968b9f312a19ee9957172664d2ccc0f9b9ad48f70b5d1c6",
+    "runtime": {
+      "desktop": true,
+      "platform": "win32",
+      "nodeIntegration": false,
+      "secure": true
+    },
+    "startupPassed": true,
+    "catalogSelectionPassed": true,
+    "downloadProgressPassed": true
+  },
+  "nsis": {
+    "report": ".cache/nsis-verification/2026-10-20T01-30-01-979Z/results.json",
+    "checkedAt": "2026-10-20T01:30:02.566Z",
+    "installer": "C:\\Users\\krisspy\\Projects\\onlystory\\release\\Onlystory-0.2.0-Setup-x64.exe",
+    "installerBytes": 215088250,
+    "installerSha256": "a0ea72dbde31d9b4d05ab1116f6435c5d8edb3050c4dac97ce96cad5bbc95362",
+    "destination": "C:\\Users\\krisspy\\Projects\\onlystory\\.cache\\nsis-verification\\2026-10-20T01-30-01-979Z\\installed",
+    "existingInstallations": [],
+    "installationPassed": true,
+    "registeredInstallation": [
+      {
+        "DisplayName": "Onlystory 0.2.0",
+        "InstallLocation": null,
+        "UninstallString": "\"C:\\Users\\krisspy\\Projects\\onlystory\\.cache\\nsis-verification\\2026-10-20T01-30-01-979Z\\installed\\Uninstall Onlystory.exe\" /currentuser",
+        "PSChildName": "0f547a1c-2cc1-5229-818f-23bd2356e24c"
+      }
+    ],
+    "installedAppPassed": true,
+    "evidence": "C:\\Users\\krisspy\\Projects\\onlystory\\.cache\\ba-native-verification\\2026-10-20T01-30-12-756Z",
+    "chapters": [
+      {
+        "id": "ba-jp-11010",
+        "group": 11010,
+        "category": "Main story",
+        "passages": 36,
+        "steps": 36,
+        "media": 66,
+        "installationFiles": 72,
+        "missing": [],
+        "importMs": 37435,
+        "offlineRestartReady": true,
+        "decoded": {
+          "audio": 7,
+          "movies": []
+        },
+        "offlineLanguageSwitch": {
+          "node": "11010:2",
+          "englishSha256": "da19fa1ab150c8092f96b5e0c9f76897c770086086903e9ee77ea52ddb2a720a",
+          "japaneseSha256": "140d9cc33041a27a4e3b80176a546df01f19f208efa55a241f071c93ba901b58",
+          "passagePreserved": true,
+          "resumedInEnglish": true
+        },
+        "offlineCompleted": true,
+        "choicesSelected": 2,
+        "moviesSkippedAfterDecode": 0,
+        "acknowledgedCutsceneBarriers": 0
+      },
+      {
+        "id": "ba-jp-2401",
+        "group": 2401,
+        "category": "Group story",
+        "passages": 69,
+        "steps": 69,
+        "media": 63,
+        "installationFiles": 69,
+        "missing": [],
+        "importMs": 4844,
+        "offlineRestartReady": true,
+        "decoded": {
+          "audio": 6,
+          "movies": []
+        },
+        "offlineLanguageSwitch": {
+          "node": "2401:1",
+          "englishSha256": "036d060f76efd1a1f02ae5e9e4b26e8cc934434a32b6685364627078ddf6fe9d",
+          "japaneseSha256": "30b7d63de0bf96ea38701a415883550bfb79fb447edeed3139c8347a48e74e64",
+          "passagePreserved": true,
+          "resumedInEnglish": true
+        },
+        "offlineCompleted": true,
+        "choicesSelected": 9,
+        "moviesSkippedAfterDecode": 0,
+        "acknowledgedCutsceneBarriers": 0
+      },
+      {
+        "id": "ba-jp-10000010",
+        "group": 10000010,
+        "category": "Event",
+        "passages": 71,
+        "steps": 71,
+        "media": 87,
+        "installationFiles": 93,
+        "missing": [],
+        "importMs": 11672,
+        "offlineRestartReady": true,
+        "decoded": {
+          "audio": 12,
+          "movies": []
+        },
+        "offlineLanguageSwitch": {
+          "node": "10000010:1",
+          "englishSha256": "a2012628b251a2de4ae0c95bdd32361feb58bb84fd24cdbe0b6bec987eee72d6",
+          "japaneseSha256": "556d7fcda772f555a93a3557a0b6d26c7af1f385555960110f02109903c6545c",
+          "passagePreserved": true,
+          "resumedInEnglish": true
+        },
+        "offlineCompleted": true,
+        "choicesSelected": 8,
+        "moviesSkippedAfterDecode": 0,
+        "acknowledgedCutsceneBarriers": 0
+      },
+      {
+        "id": "ba-jp-104071",
+        "group": 104071,
+        "category": "Main story",
+        "passages": 2,
+        "steps": 2,
+        "media": 55,
+        "installationFiles": 61,
+        "missing": [],
+        "importMs": 34598,
+        "offlineRestartReady": true,
+        "decoded": {
+          "audio": 1,
+          "movies": [
+            {
+              "url": "/private/ba-jp/shared/media/videos/11001_h264.mp4",
+              "width": 1280,
+              "height": 720,
+              "duration": 307.974333
+            }
+          ]
+        },
+        "offlineCompleted": true,
+        "choicesSelected": 0,
+        "moviesSkippedAfterDecode": 1,
+        "acknowledgedCutsceneBarriers": 0
+      }
+    ],
+    "packagedRuntime": {
+      "packaged": true,
+      "version": "0.2.0",
+      "appRoot": "C:\\Users\\krisspy\\Projects\\onlystory\\.cache\\nsis-verification\\2026-10-20T01-30-01-979Z\\installed\\resources\\app.asar",
+      "shellIndexSha256": "8812da3f0d891af6602277e83c6d3cdc9139b7ff44760a5baf2b6bf4e7b8ba46",
+      "sourcesSha256": "cb66db7c2447a1fe5df3e53649d8b68fffda306351124f227a11f311b2548a9b",
+      "nativeTransformsSha256": "a582f6474f35366c51f748ca86493f55bd69573c1ac902df9cd9243cc0f2a06d",
+      "recipeCount": 1659,
+      "privateDirectoryShipped": false
+    },
+    "uninstallPassed": true,
+    "registeredAfterUninstall": []
+  },
+  "blueArchivePackagedOfflineRestart": {
+    "evidence": "C:/Users/krisspy/Projects/onlystory/.cache/ba-native-verification/2026-10-20T01-30-12-756Z/results.json",
+    "checkedAt": "2026-10-20T01:34:33.033Z",
+    "runtime": "Packaged Windows app, shipped production static shell",
+    "executable": "C:\\Users\\krisspy\\Projects\\onlystory\\.cache\\nsis-verification\\2026-10-20T01-30-01-979Z\\installed\\Onlystory.exe",
+    "executableSha256": "b2b41846e7e676c3c31c852d818fe8b1c8b0970b4dd05e653fbeb99f18ec28e4",
+    "packagedRuntime": {
+      "packaged": true,
+      "version": "0.2.0",
+      "appRoot": "C:\\Users\\krisspy\\Projects\\onlystory\\.cache\\nsis-verification\\2026-10-20T01-30-01-979Z\\installed\\resources\\app.asar",
+      "shellIndexSha256": "8812da3f0d891af6602277e83c6d3cdc9139b7ff44760a5baf2b6bf4e7b8ba46",
+      "sourcesSha256": "cb66db7c2447a1fe5df3e53649d8b68fffda306351124f227a11f311b2548a9b",
+      "nativeTransformsSha256": "a582f6474f35366c51f748ca86493f55bd69573c1ac902df9cd9243cc0f2a06d",
+      "recipeCount": 1659,
+      "privateDirectoryShipped": false
+    },
+    "profile": "C:\\Users\\krisspy\\Projects\\onlystory\\.cache\\ba-native-verification\\2026-10-20T01-30-12-756Z\\profile",
+    "live": false,
+    "originalInputs": 34,
+    "seededOriginals": [
+      147, 148, 158, 170, 174, 436, 437, 438, 439, 2836, 2837, 168, 1104, 2831,
+      156, 157, 159, 164, 169, 171, 172, 173, 175, 2829, 2834, 2835, 1665, 1666
+    ],
+    "verifiedLiveDownloads": [
+      {
+        "id": 151,
+        "url": "https://yuuka.cdn.diyigemt.com/image/ba-all-data/effectTexture/fire2.png",
+        "bytes": 1627,
+        "sha256": "39cb5ceba6c3444c41adf5665b54fd58de6bddd83892b1e62f9961936dec984f"
+      },
+      {
+        "id": 149,
+        "url": "https://yuuka.cdn.diyigemt.com/image/ba-all-data/effectTexture/FX_TEX_Smoke_17.png",
+        "bytes": 29548,
+        "sha256": "d7364160fbfbbdcc11f784d45a28ee6e97b0857554c3fd81bbad1aacf7b7635e"
+      },
+      {
+        "id": 152,
+        "url": "https://yuuka.cdn.diyigemt.com/image/ba-all-data/effectTexture/fire3.png",
+        "bytes": 1657,
+        "sha256": "9781dcbf2f94e96e253b28581b187c479730909137f964b23d316331743d9383"
+      },
+      {
+        "id": 150,
+        "url": "https://yuuka.cdn.diyigemt.com/image/ba-all-data/effectTexture/fire1.png",
+        "bytes": 929,
+        "sha256": "67bcdcfda28e5941844310bcb71d77c6a5b606f8caf32df3bc183aaa2c0cdded"
+      },
+      {
+        "id": 153,
+        "url": "https://yuuka.cdn.diyigemt.com/image/ba-all-data/effectTexture/HardRain.png",
+        "bytes": 212,
+        "sha256": "99178bcde779dc94297c2cedd1f2b8c7b5ad037b8465f6ab39baa3c2853713bd"
+      },
+      {
+        "id": 7,
+        "url": "https://prod-clientpatch.bluearchiveyostar.com/r96_nvji95owgkbcxlmkb8mi/MediaResources/Prologue/UIs/03_Scenario/01_Background/BG_Black.jpg",
+        "bytes": 3754,
+        "sha256": "5bef3f73788b2c04a7d5b161dba34a5b11438f97ca7e3fe19551946d8cd60584"
+      }
+    ],
+    "preparedAssetsSeeded": 0,
+    "privateBackendAvailable": false,
+    "nativeNetworkDisabledOffline": true,
+    "chromiumNetworkDisabledOffline": true,
+    "blockedRendererRequests": [],
+    "chapters": [
+      {
+        "id": "ba-jp-11010",
+        "group": 11010,
+        "category": "Main story",
+        "passages": 36,
+        "steps": 36,
+        "media": 66,
+        "installationFiles": 72,
+        "missing": [],
+        "importMs": 37435,
+        "offlineRestartReady": true,
+        "decoded": {
+          "audio": 7,
+          "movies": []
+        },
+        "offlineLanguageSwitch": {
+          "node": "11010:2",
+          "englishSha256": "da19fa1ab150c8092f96b5e0c9f76897c770086086903e9ee77ea52ddb2a720a",
+          "japaneseSha256": "140d9cc33041a27a4e3b80176a546df01f19f208efa55a241f071c93ba901b58",
+          "passagePreserved": true,
+          "resumedInEnglish": true
+        },
+        "offlineCompleted": true,
+        "choicesSelected": 2,
+        "moviesSkippedAfterDecode": 0,
+        "acknowledgedCutsceneBarriers": 0
+      },
+      {
+        "id": "ba-jp-2401",
+        "group": 2401,
+        "category": "Group story",
+        "passages": 69,
+        "steps": 69,
+        "media": 63,
+        "installationFiles": 69,
+        "missing": [],
+        "importMs": 4844,
+        "offlineRestartReady": true,
+        "decoded": {
+          "audio": 6,
+          "movies": []
+        },
+        "offlineLanguageSwitch": {
+          "node": "2401:1",
+          "englishSha256": "036d060f76efd1a1f02ae5e9e4b26e8cc934434a32b6685364627078ddf6fe9d",
+          "japaneseSha256": "30b7d63de0bf96ea38701a415883550bfb79fb447edeed3139c8347a48e74e64",
+          "passagePreserved": true,
+          "resumedInEnglish": true
+        },
+        "offlineCompleted": true,
+        "choicesSelected": 9,
+        "moviesSkippedAfterDecode": 0,
+        "acknowledgedCutsceneBarriers": 0
+      },
+      {
+        "id": "ba-jp-10000010",
+        "group": 10000010,
+        "category": "Event",
+        "passages": 71,
+        "steps": 71,
+        "media": 87,
+        "installationFiles": 93,
+        "missing": [],
+        "importMs": 11672,
+        "offlineRestartReady": true,
+        "decoded": {
+          "audio": 12,
+          "movies": []
+        },
+        "offlineLanguageSwitch": {
+          "node": "10000010:1",
+          "englishSha256": "a2012628b251a2de4ae0c95bdd32361feb58bb84fd24cdbe0b6bec987eee72d6",
+          "japaneseSha256": "556d7fcda772f555a93a3557a0b6d26c7af1f385555960110f02109903c6545c",
+          "passagePreserved": true,
+          "resumedInEnglish": true
+        },
+        "offlineCompleted": true,
+        "choicesSelected": 8,
+        "moviesSkippedAfterDecode": 0,
+        "acknowledgedCutsceneBarriers": 0
+      },
+      {
+        "id": "ba-jp-104071",
+        "group": 104071,
+        "category": "Main story",
+        "passages": 2,
+        "steps": 2,
+        "media": 55,
+        "installationFiles": 61,
+        "missing": [],
+        "importMs": 34598,
+        "offlineRestartReady": true,
+        "decoded": {
+          "audio": 1,
+          "movies": [
+            {
+              "url": "/private/ba-jp/shared/media/videos/11001_h264.mp4",
+              "width": 1280,
+              "height": 720,
+              "duration": 307.974333
+            }
+          ]
+        },
+        "offlineCompleted": true,
+        "choicesSelected": 0,
+        "moviesSkippedAfterDecode": 1,
+        "acknowledgedCutsceneBarriers": 0
+      }
+    ],
+    "screenshotFailures": [],
+    "pageErrors": []
+  },
+  "pjskFinalPackagedLiveDownloadAndOfflineRestart": {
+    "checkedAt": "2026-10-20T01:22:08.264Z",
+    "executable": "C:\\Users\\krisspy\\Projects\\onlystory\\release\\win-unpacked\\Onlystory.exe",
+    "chapter": "pjsk-cn-unit-30001",
+    "passages": 62,
+    "voices": 47,
+    "models": 4,
+    "offlineRestartCompleted": true,
+    "compactInventory": true,
+    "errors": []
+  },
+  "staticWebArchive": {
+    "checkedAt": "2026-10-20T01:35:06.079Z",
+    "artifact": "Onlystory-web.zip",
+    "bytes": 93695976,
+    "sha256": "2c199b10751c4382bd9ad99d19347d4e6a44828b646fe24a3d1c70a155ee4366",
+    "filesVerifiedAgainstFinalDist": 3345,
+    "blueArchiveRecipes": 1659,
+    "projectSekaiRecipes": 1623,
+    "privateGameLibraryIncluded": false,
+    "recipesPrecachedOnStartup": false,
+    "shellFiles": 62,
+    "shellUncompressedBytes": 58155445
+  },
+  "verificationRecords": [
+    "docs/ba-english-verification.json",
+    "docs/ba-english-browser-verification.json",
+    "docs/localized-title-sources.json",
+    "docs/storage-followthrough.md",
+    "docs/movie-stream-verification.json",
+    "docs/movie-playback-verification.json",
+    "docs/ba-browser-movie-verification.json",
+    "docs/pjsk-installer-revalidation.json",
+    "docs/pjsk-prepared-restoration.json",
+    "docs/ba-packaged-verification.json"
+  ],
+  "developmentServer": {
+    "url": "http://127.0.0.1:4173",
+    "httpStatus": 200,
+    "session": "onlystory-dev",
+    "attach": "psmux -L codex attach -t onlystory-dev",
+    "leftRunning": true
+  },
+  "limits": [
+    "Windows executables are unsigned development builds.",
+    "BA English is offered only for complete source-aligned chapters; remaining chapters retain Japanese.",
+    "Browser BA imports require user-selected original files; upstream official Fetch CORS is unavailable.",
+    "Native tests reuse authenticated original source packs and deliberately fetch uncached inputs; no prepared media is seeded.",
+    "GFL source downloaders remain pending in fresh static/standalone installations; existing local libraries remain readable.",
+    "BA native Unity 3D cutscene barriers, declared source gaps and PJSK presentation approximations remain.",
+    "Playback verification is representative Windows Chrome/Electron coverage, not manual playback of every chapter or a cross-browser guarantee.",
+    "Combined movie compatibility files and native original/conversion caches are retained explicitly.",
+    "No public HTTPS host was selected or deployed."
+  ]
+}

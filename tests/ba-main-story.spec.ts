@@ -46,6 +46,7 @@ const ready = (page: Page) =>
 test.setTimeout(120000);
 test.beforeEach(async ({ page }) => {
   const data = emptyData();
+  data.preferences.textLocale = 'ja';
   data.preferences.textSpeed = 0;
   await page.addInitScript(
     (value) => localStorage.setItem('onlystory.v1', JSON.stringify(value)),

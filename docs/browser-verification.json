@@ -1,0 +1,258 @@
+{
+  "checkedAt": "2026-10-20T01:34:49.681Z",
+  "status": "Every original browser identity has individual passing evidence",
+  "scope": "Real Chrome production-shell tests with the local prepared library; production service-worker and clean-static acquisition tests are recorded separately.",
+  "originalSweep": {
+    "command": "PORT=4185 ONLYSTORY_BROWSER_DIST=.cache/final-browser-dist npx playwright test --config .cache/playwright-final-browser.config.ts",
+    "snapshot": {
+      "path": ".cache/final-browser-dist/index.html",
+      "bytes": 1936,
+      "sha256": "ced16f7bdc156908587777bf35b07c324f64db995d676aac49def04d852bf1c8"
+    },
+    "discovered": 756,
+    "passed": 702,
+    "failed": 52,
+    "didNotRun": 2,
+    "duration": "9.5 hours, including a host sleep interruption",
+    "log": {
+      "path": ".cache/final-browser.log",
+      "bytes": 208098,
+      "sha256": "f6535f280fdf20a02cef72c5a46e4cc36a578de30adf522fc30e6b9384468bf8"
+    },
+    "singleCleanSweepPassed": false
+  },
+  "finalCoverage": {
+    "originalIdentities": 756,
+    "originalPassed": 702,
+    "originalNonpasses": 54,
+    "repairedOriginalNonpasses": 54,
+    "coveredUniqueOriginalCases": 756,
+    "pendingOriginalCases": 0,
+    "duplicateRerunPassesExcludedFromCoverage": 0,
+    "rerunPassLinesForAlreadyPassedOriginalCasesExcludedFromCoverage": 6
+  },
+  "caseByCaseEvidence": "docs/browser-coverage-audit.json",
+  "interpretation": "Original failures and the two serial cases that did not run remain visible in the audit. Focused passing reruns cover those same spec paths and complete titles. This is combined case coverage, not a claim of one all-green full-suite invocation.",
+  "repairedCauses": [
+    {
+      "cause": "The isolated build plugin copied runtime vendor files to hardcoded dist, leaving the browser snapshot without Live2D files.",
+      "change": "scripts/library-plugin.mjs now uses resolved build.outDir; browser-test-server takes ONLYSTORY_BROWSER_DIST. The original matching-JS snapshot received its missing static runtime files, then affected cases were rerun.",
+      "evidence": [".cache/final-browser-repaired.log"]
+    },
+    {
+      "cause": "Historical BA tests assumed text and choice defaults were Japanese.",
+      "change": "Use explicit Japanese preferences and the matching choice label; ordinary product English default remains verified separately.",
+      "evidence": [".cache/final-locale-snapshot.log"]
+    },
+    {
+      "cause": "Historical download tests assumed precompiled BA downloads and blocked the service worker required by actual original-file imports.",
+      "change": "Use checksum-pinned original folders and allow the production service worker for imports. The synthetic missing-texture injection blocks it in its own test scope so its routed 404 is real.",
+      "evidence": [".cache/final-ba-import-sw.log", ".cache/final-last2.log"]
+    },
+    {
+      "cause": "Authored localized BA text pauses now use the language-specific pause map.",
+      "change": "The synthetic pause fixture supplies its explicit Japanese pause map.",
+      "evidence": [".cache/final-text-pause.log"]
+    },
+    {
+      "cause": "Glass Island and female Japanese movies now play the common MSE video/audio streams through blob URLs.",
+      "change": "Assert shared-streams mode, source init requests, decoded video/subtitles and completion rather than an obsolete direct MP4 URL.",
+      "evidence": [
+        ".cache/final-browser-repaired.log",
+        ".cache/final-female-movies.log"
+      ]
+    },
+    {
+      "cause": "GFL1 same-date release sorting had a real direction tie bug.",
+      "change": "Catalog release ties use original event order, reversed for newest first; undated entries remain at the end.",
+      "evidence": [".cache/final-order-face.log"]
+    },
+    {
+      "cause": "The current PJSK compiler was not the compiler named by historical publication and main prepared-program metadata.",
+      "change": "Revalidated all retained event originals with the current compiler, retained publication history, and restored only current-recipe-matching main outputs. Browser expectations inspect the same published program as the reader.",
+      "evidence": [
+        "docs/pjsk-installer-revalidation.json",
+        "docs/pjsk-prepared-restoration.json",
+        ".cache/final-pjsk-provenance.log",
+        ".cache/final-pjsk-published.log"
+      ]
+    },
+    {
+      "cause": "The host slept during six PJSK event tests.",
+      "change": "Reran all six complete event cases after resume.",
+      "evidence": [".cache/final-pjsk-resume-rerun.log"]
+    },
+    {
+      "cause": "Some catalog and manager tests used removed markup, off-page virtual rows, a fixed historical row height, or ambiguous new status/file inputs.",
+      "change": "Use exact accessible counts, search published titles before selecting, inspect a visible deep row, scope backup inputs to the dialog, await a real pending request before cancel, and scope completion status.",
+      "evidence": [
+        ".cache/final-pjsk-artwork.log",
+        ".cache/final-pjsk-groups.log",
+        ".cache/final-reader-repaired.log",
+        ".cache/final-layout2.log",
+        ".cache/final-last2.log"
+      ]
+    },
+    {
+      "cause": "The new always-mounted original-folder input inherited normal form minimum dimensions, adding 37px of page overflow.",
+      "change": "The file-input screen-reader-only selector now overrides form specificity and resets minimum sizes. All affected checks retain strict document width and height assertions.",
+      "evidence": [
+        ".cache/final-layout2.log",
+        ".cache/inspect-overflow-fixed.log"
+      ]
+    }
+  ],
+  "layout": {
+    "before": [
+      {
+        "label": "catalog",
+        "viewport": [760, 700],
+        "document": [760, 737],
+        "body": [760, 700]
+      },
+      {
+        "label": "catalog",
+        "viewport": [320, 640],
+        "document": [320, 677],
+        "body": [320, 640]
+      },
+      {
+        "label": "catalog",
+        "viewport": [900, 400],
+        "document": [900, 437],
+        "body": [900, 400]
+      },
+      {
+        "label": "settings",
+        "viewport": [320, 700],
+        "document": [320, 737],
+        "body": [320, 737]
+      },
+      {
+        "label": "reader",
+        "viewport": [320, 640],
+        "document": [320, 677],
+        "body": [320, 640]
+      }
+    ],
+    "after": [
+      {
+        "label": "catalog",
+        "viewport": [760, 700],
+        "document": [760, 700],
+        "body": [760, 700]
+      },
+      {
+        "label": "catalog",
+        "viewport": [320, 640],
+        "document": [320, 640],
+        "body": [320, 640]
+      },
+      {
+        "label": "catalog",
+        "viewport": [900, 400],
+        "document": [900, 400],
+        "body": [900, 400]
+      },
+      {
+        "label": "settings",
+        "viewport": [320, 700],
+        "document": [320, 700],
+        "body": [320, 700]
+      },
+      {
+        "label": "reader",
+        "viewport": [320, 640],
+        "document": [320, 640],
+        "body": [320, 640]
+      }
+    ],
+    "log": {
+      "path": ".cache/final-layout2.log",
+      "bytes": 874,
+      "sha256": "cb7a9693034ad7aabeca5edbd4674da6f173a44b80cf0e5e8d413a28be8d6704"
+    },
+    "screenshots": [
+      ".cache/final-layout2-results/ui-polish-catalog-layouts--c3053-ws-and-virtualize-card-rows/cards-desktop.png",
+      ".cache/final-layout2-results/ui-polish-catalog-layouts--c3053-ws-and-virtualize-card-rows/catalog-mobile.png",
+      ".cache/final-layout2-results/ui-polish-BA-dialogue-opac-eeb30-rsists-for-the-current-game/settings-appearance-phone.png"
+    ]
+  },
+  "acquisition": {
+    "staticGate": {
+      "path": ".cache/final-acquisition-gate2.log",
+      "bytes": 362,
+      "sha256": "075ea8bc6ade55af82b4e3a8107a14178791ebf91a8461e6861240df7e44eb65"
+    },
+    "localPreparedDownloadStillWorks": {
+      "path": ".cache/final-local-download-guard.log",
+      "bytes": 350,
+      "sha256": "79a37ba3d28483773d32e9bc32714243e27de1d57791ed36922dbeddbef802d8"
+    },
+    "actualCompleteBrowserMovie": "docs/ba-browser-movie-verification.json"
+  },
+  "currentDiscovery": {
+    "log": {
+      "path": ".cache/final-browser-discovery.log",
+      "bytes": 84169,
+      "sha256": "053df5c4e793577e99ca49ed267fee37e225721f238c1452f2187e88b29b22e5"
+    },
+    "tests": 756,
+    "files": 73,
+    "originalIdentityCountUnchanged": true
+  },
+  "finalProductionLayouts": {
+    "log": {
+      "path": ".cache/final-css.log",
+      "bytes": 753,
+      "sha256": "81f3fae79ce6ccfb99c2faeb2e1fd287e781513eb76223cf9445dbd486075175"
+    },
+    "passed": 3,
+    "distIndex": {
+      "path": "dist/index.html",
+      "bytes": 1936,
+      "sha256": "8812da3f0d891af6602277e83c6d3cdc9139b7ff44760a5baf2b6bf4e7b8ba46"
+    }
+  },
+  "packagedWindows": {
+    "status": "Final installed application verified",
+    "preCssInstalledAttempt": ".cache/nsis-verification/2026-10-20T01-09-52-164Z/results.json",
+    "incompleteAttempts": [
+      {
+        "path": ".cache/ba-native-verification/2026-10-19T15-48-02-633Z",
+        "reason": "Before the Int64 global GroupId schema fix; stopped and retained."
+      },
+      {
+        "path": ".cache/ba-native-verification/2026-10-20T01-01-53-988Z/failure.json",
+        "reason": "First chapter imported with no missing files; subsequent screenshot capture timed out."
+      },
+      {
+        "path": ".cache/ba-native-verification/2026-10-20T01-05-34-567Z/failure.json",
+        "reason": "Unpacked BA3 log .cache/final-native-ba3.log was interrupted by NSIS closing running Onlystory processes; not counted as complete."
+      },
+      {
+        "path": ".cache/nsis-verification/2026-10-20T01-23-58-894Z/results.json",
+        "reason": "The exact final installer imported all four, but the DOM-only ending wait timed out after the first chapter had saved completion and fast-forward carried into the next chapter. Retained failure; corrected verifier requires saved completion and a stable ending after reloading the completed chapter. Install and uninstall passed."
+      }
+    ],
+    "finalNsis": {
+      "path": ".cache/nsis-verification/2026-10-20T01-30-01-979Z/results.json",
+      "bytes": 4637,
+      "sha256": "e0d83406d5de439c8d51ab2d601d70cf285d9ecebbee228640df5d363cab83c4"
+    },
+    "finalNative": {
+      "path": "C:\\Users\\krisspy\\Projects\\onlystory\\.cache\\ba-native-verification\\2026-10-20T01-30-12-756Z/results.json",
+      "bytes": 6101,
+      "sha256": "a943231d68914301d340416217769523514909ab16ba7b7ec8c10b5e478c46b8"
+    },
+    "installPassed": true,
+    "appPassed": true,
+    "uninstallPassed": true,
+    "durableReport": "docs/ba-packaged-verification.json"
+  },
+  "finalDist": {
+    "path": "dist/index.html",
+    "bytes": 1936,
+    "sha256": "8812da3f0d891af6602277e83c6d3cdc9139b7ff44760a5baf2b6bf4e7b8ba46"
+  }
+}

@@ -24,6 +24,10 @@ export default defineConfig({
   },
   optimizeDeps: { entries: ['index.html'] },
   preview: { host: '127.0.0.1', port: localPort, strictPort: true },
-  build: { copyPublicDir: false },
+  build: {
+    copyPublicDir: false,
+    assetsInlineLimit: (file) =>
+      file.endsWith('.json.gz') ? false : undefined,
+  },
   plugins: [react(), libraryPlugin(), pwaPlugin()],
 });

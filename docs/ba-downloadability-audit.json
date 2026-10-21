@@ -1,0 +1,107 @@
+{
+  "checkedAt": "2026-10-19T13:45:21.831Z",
+  "game": "Blue Archive JP",
+  "gameVersion": "1.73.459696",
+  "scope": "All currently cataloged available stories in this workspace; not latest live JP server coverage.",
+  "availableStories": 1659,
+  "categories": {
+    "Main story": 613,
+    "Event": 978,
+    "Group story": 68
+  },
+  "support": {
+    "windowsStandaloneAutomaticStories": 1,
+    "browserAutomaticOriginalAcquisitionStories": 0,
+    "browserManualOriginalImportStories": 1,
+    "implementedStoryId": "ba-jp-11000",
+    "otherStoriesWithoutStandaloneDownloader": 1658,
+    "prologueOriginals": 156,
+    "prologueOriginalBytes": 120245302,
+    "prologueOutputs": 232
+  },
+  "localInventory": {
+    "references": 162836,
+    "uniqueFiles": 15624,
+    "missing": [],
+    "uniqueExportedFiles": 5670,
+    "exportSizeMismatches": [],
+    "method": "Exhaustive filesystem existence for unique declared story asset paths; byte-size comparison for exported files. No fresh content hashes or per-story offline playback in this audit."
+  },
+  "upstream": {
+    "recordedUrls": 2842,
+    "officialUrls": 2835,
+    "officialFamilies": {
+      "MediaResources": 2796,
+      "Android_PatchPack": 24,
+      "TableBundles": 1,
+      "Windows_PatchPack": 14
+    },
+    "statuses": {
+      "206": 2842
+    },
+    "officialExpectedSizeMatches": 2821,
+    "officialMissingExpectedSizes": 14,
+    "sizeMismatches": 0,
+    "failures": [],
+    "officialWithoutAccessControlAllowOrigin": 2835,
+    "fullBodySmallOriginalsVerified": 7,
+    "method": "GET Range bytes=0-0, Origin https://onlystory.example, cancel body. Endpoint and declared length only, not full content verification."
+  },
+  "browser": {
+    "checkedAt": "2026-10-19T13:46:00.428Z",
+    "browserVersion": "155.0.8059.82",
+    "origin": "http://127.0.0.1:4173",
+    "corsEnabled": true,
+    "results": [
+      {
+        "url": "https://prod-clientpatch.bluearchiveyostar.com/r96_nvji95owgkbcxlmkb8mi/MediaResources/Prologue/UIs/03_Scenario/01_Background/BG_CS_Trinity_01.jpg",
+        "error": "TypeError: Failed to fetch"
+      },
+      {
+        "url": "https://prod-clientpatch.bluearchiveyostar.com/r96_nvji95owgkbcxlmkb8mi/Android_PatchPack/FullPatch_Prologue_000.zip",
+        "error": "TypeError: Failed to fetch"
+      },
+      {
+        "url": "https://prod-clientpatch.bluearchiveyostar.com/r96_nvji95owgkbcxlmkb8mi/Windows_PatchPack/FullPatch_062.zip",
+        "error": "TypeError: Failed to fetch"
+      },
+      {
+        "url": "https://prod-clientpatch.bluearchiveyostar.com/r96_nvji95owgkbcxlmkb8mi/TableBundles/ExcelDB.db",
+        "error": "TypeError: Failed to fetch"
+      },
+      {
+        "url": "https://yuuka.cdn.diyigemt.com/image/ba-all-data/effectTexture/fire1.png",
+        "error": "TimeoutError: signal timed out"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/ba-archive/blue-archive/4ddc9ee241f6028d724346acda190155dc98aaf6/apps/blue-archive-story-viewer/public/story/main/11000.json",
+        "ok": true,
+        "status": 206,
+        "bodyBytes": 1,
+        "type": "cors"
+      }
+    ],
+    "blockedOfficialFamilies": 4
+  },
+  "conclusion": "All recorded official endpoints respond, but all-story downloading without an Onlystory backend is not implemented. Official CORS blocks browser-readable original downloads. Windows native fetch can reach the originals, but only the prologue has an implemented download/extraction recipe; the remaining stories need version-pinned text, bundle, media and movie conversion recipes.",
+  "limits": [
+    "Range probes verify endpoint status and server-declared total size only. They do not verify full-body content, hashes, extraction or all-story offline playback.",
+    "Local /private assets are prepared exports on this development machine. They are not bundled in the static release or provided by original public URLs.",
+    "Fresh complete acquisition on a new machine was not run for every story.",
+    "Existing imported presentation limits, including native Unity timeline barriers and registered missing-source cues, remain."
+  ],
+  "evidence": [
+    {
+      "path": ".cache/other-game-download-audit/ba/results.json",
+      "sha256": "e129ed09b7c1587b41cb53bf5fe6f570fea71f66ad9416c2421d58c09eb4830e"
+    },
+    {
+      "path": ".cache/other-game-download-audit/ba/browser.json",
+      "sha256": "0e8ec22ec79d17150b5cf05d084099712662c70d8dfec9f63a6d91237f526f49"
+    },
+    {
+      "path": ".cache/other-game-download-audit/ba/small-originals.json",
+      "sha256": "90a1ff77c50e910ec35f531eed4b05ca021aea37d8d2d471d76bec82bbbcbc32"
+    }
+  ]
+}

@@ -1,11 +1,31 @@
 # Blue Archive integration readiness
 
-Updated 2026-10-18. The library includes 613 JP main-story/prologue segments across 26 collections, 68 Club group stories across 27 collections, and 978 event chapters across all 57 standard event collections. Main-story coverage follows all 480 visible, open, released Main/Prologue modes in pinned JP build 1.73.459696; its latest exposure date is 2026-08-19, and the event set runs from 2021-02-25 to 2026-09-23. See [pipeline reproduction, provenance and limits](blue-archive-pipeline.md).
+Updated 2026-10-21. The library includes 613 JP main-story/prologue segments across 26 collections, 68 Club group stories across 27 collections, and 978 event chapters across all 57 standard event collections. Main-story coverage follows all 480 visible, open, released Main/Prologue modes in pinned JP build 1.73.459696; its latest exposure date is 2026-08-19, and the event set runs from 2021-02-25 to 2026-09-23. See [pipeline reproduction, provenance and limits](blue-archive-pipeline.md).
 
 The BA adapter has its own compiler, scene format and renderer under `src/playback/ba`. It shares navigation, saves, bookmarks, voice controls and download storage with GFL2. It preserves every source row and actual branch rather than translating instructions into GFL2 commands. Japanese text and the BA player-name default are supported throughout the reader.
+Official English dialogue and choices are available in 1,519 completely aligned
+chapters. The remaining 140 chapters retain Japanese because the pinned global
+source is unreleased or cannot be safely aligned with the pinned Japanese chapter.
+See the per-chapter reasons in [the English verification record](ba-english-verification.json).
+The reader lists only dialogue languages supported by the current story. Catalog
+language controls event and chapter titles separately, and missing titles keep
+the original. Event language badges use JP, CN and EN across all four games.
 
 The local package contains original CGs, animated characters and faces, music, sound effects, voice, emoji art and effect textures. Acquisition verifies official catalog CRCs and stores hashes/provenance. Downloads include scene data and all media; blocked-network tests reopen cached scenes and voice. Missing media offers retry and a text fallback.
 
 The browsing catalog renders the original JP event title logo over its lobby background for all 57 event collections and derives each event's featured school badges from the official pickup roster (boss-raid events without a roster carry none); the five earliest events and all main-story collections keep their hand-curated schools.
 
-Both main-story parts, Part 1 volumes 1–6 and Final, Part 2 volumes 0–2, both prologues, all 68 visible, open Club group-story modes and all 57 standard JP event collections are selected from the official database. Mini and relationship stories, the rhythm minigame, the shortcut collection, the seasonal meetups and the hidden non-displayed season remain outside this package, as does the main-story re-release alias of an existing event. This pinned build does not establish current JP-server completeness. Seven native Unity 3D cutscene cues show explicit unavailable notices and require Continue story; their surrounding text remains readable. Scoped missing source references are marked in the reader. Weather, particles, hologram shaders and movement remain browser approximations; some native effect audio is unresolved. Fictional `/lab` fixtures remain separate from the real library.
+Both main-story parts, Part 1 volumes 1–6 and Final, Part 2 volumes 0–2, both prologues, all 68 visible, open Club group-story modes and all 57 standard JP event collections are selected from the official database. Mini and relationship stories, the rhythm minigame, the shortcut collection, the seasonal meetups and the hidden non-displayed season remain outside this package, as does the main-story re-release alias of an existing event. This pinned build does not establish current JP-server completeness. Nine native Unity 3D cutscene cues, seven in main stories and two in events, show explicit unavailable notices and require Continue story; their surrounding text remains readable. Scoped missing source references are marked in the reader. Weather, particles, hologram shaders and movement remain browser approximations.
+Emotion bubbles now play their mapped original sound effects, including with
+reduced motion enabled. Communication holograms have stronger scanlines and
+opacity while preserving pale highlights. Letter pages reveal one paragraph per
+click, retain earlier paragraphs and fit English and Japanese text above the
+dialogue area. A hidden dialogue box no longer shrinks captions below a readable
+size. These fixes have focused browser regressions; they do not establish exact
+Unity timing or shader parity. Fictional `/lab` fixtures remain separate from the real library.
+
+The same reader fixes ship in the newly built Windows, Linux and web packages.
+Consult `release/artifacts-current.json` for current filenames and checksums.
+Linux launch and browser behavior require testing on Linux; Windows packaging
+and loopback browser checks cannot establish them. See
+[standalone setup and verification](standalone-app.md).

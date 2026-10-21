@@ -1,12 +1,26 @@
 import { test, expect, type Page } from '@playwright/test';
 import { existsSync, readFileSync } from 'node:fs';
+import { gunzipSync } from 'node:zlib';
 import type { Program, SceneState } from '../src/playback/pjsk/types';
 import { emptyData } from '../src/model';
 import { pjskLibraryRoot } from '../scripts/local-environment.mjs';
-import { readPjskEpisode } from './pjsk-installed';
+import { readPublishedPjskEpisode } from './pjsk-installed';
+import catalog from '../src/downloads/pjsk-catalog.json' with { type: 'json' };
+import type { PjskRecipe } from '../src/downloads/pjsk-recipe';
+
+const descriptor = catalog.find(
+  (item) => item.episode.id === 'pjsk-cn-unit-30001',
+)!;
+const directRecipe: PjskRecipe = JSON.parse(
+  gunzipSync(
+    readFileSync('src/downloads/pjsk-recipes/' + descriptor.recipe),
+  ).toString(),
+);
+
+test.use({ serviceWorkers: 'allow' });
 const installed = existsSync('src/generated/pjsk-cn-unit-30001.json');
 const episode = installed
-  ? readPjskEpisode('src/generated/pjsk-cn-unit-30001.json')
+  ? readPublishedPjskEpisode('src/generated/pjsk-cn-unit-30001.json')
   : null;
 const program: Program | null = episode
   ? JSON.parse(
@@ -192,16 +206,38 @@ test('episode downloads through the common manager and plays from browser cache 
   context,
 }, testInfo) => {
   test.setTimeout(120000);
+  // The public mirror is covered separately by the opt-in static-host test.
+  // Exercise manager integration deterministically with the verified originals.
+  const originals = new Map([
+    ...directRecipe.media.files
+      .filter((file) => file.sourceUrl)
+      .map((file) => [file.sourceUrl!, pjskLibraryRoot + file.url] as const),
+    [
+      directRecipe.scenario.sourceUrl,
+      `.cache/pjsk/http/${directRecipe.scenario.sha256}.bin`,
+    ] as const,
+  ]);
+  await context.route(
+    (url) => originals.has(url.href),
+    (route) =>
+      route.fulfill({
+        status: 200,
+        body: readFileSync(originals.get(route.request().url())!),
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Content-Type': 'application/octet-stream',
+        },
+      }),
+  );
   await page.goto('/manage?game=pjsk');
   const row = page
     .locator('.download-item')
     .filter({ has: page.locator(`a[href="${route}"]`) });
-  await page
-    .getByRole('searchbox')
-    .fill(await row.getByRole('link').innerText());
+  await page.getByRole('searchbox').fill(descriptor.episode.title);
   await row.getByRole('link').click();
   await ready(page, 0);
   await page.goBack();
+  await page.getByRole('searchbox').fill(descriptor.episode.title);
   await row.getByRole('button', { name: /^Download / }).click();
   await expect(row).toContainText('On this device', { timeout: 60000 });
   const keys = await page.evaluate(async () =>
@@ -209,7 +245,18 @@ test('episode downloads through the common manager and plays from browser cache 
       (r) => new URL(r.url).pathname,
     ),
   );
-  for (const asset of episode.assets) expect(keys).toContain(asset);
+  for (const asset of [
+    directRecipe.text.url,
+    directRecipe.program.url,
+    '/vendor/live2dcubismcore.min.js',
+    ...directRecipe.media.files.map((file) => file.url),
+  ])
+    expect(keys).toContain(asset);
+  const downloadedProgram = (await page.evaluate(
+    async (url) =>
+      (await (await caches.open('onlystory.media.v1')).match(url))!.json(),
+    directRecipe.program.url,
+  )) as Program;
   await context.setOffline(true);
   await row.getByRole('link').click();
   await ready(page, 0);
@@ -217,7 +264,9 @@ test('episode downloads through the common manager and plays from browser cache 
     .getByRole('slider', { name: 'Story position', exact: true })
     .fill('45');
   await ready(page, 45);
-  expect((await diagnostics(page)).state).toEqual(program!.steps[45].after);
+  expect((await diagnostics(page)).state).toEqual(
+    downloadedProgram.steps[45].after,
+  );
   expect((await diagnostics(page)).models.some((m) => m.visible)).toBe(true);
   await expect(page.locator('.dialogue-window')).toContainText(
     program!.steps[45].text,

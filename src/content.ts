@@ -15,6 +15,9 @@ import type { Opening } from './playback/gfl2/types';
 import { eventIdFor, groupStoryEvents } from './catalog';
 import { gameArtwork } from './covers';
 import { decodeGfl1Story } from './playback/gfl1/story';
+import pjskDownloadRecipe from './downloads/pjsk-mmj-01-01.json';
+import { pjskDownloads } from './downloads/pjsk-catalog';
+import pjskTitles from './pjsk-localized-titles.json';
 // New integrations remain optional in a clean checkout or restored GFL2 library.
 const gfl1Imports = import.meta.glob('./generated/gfl1-catalog.json', {
   eager: true,
@@ -182,12 +185,10 @@ export const realEpisodes: Episode[] = [
 // Keep existing excerpt links, saves and bookmarks working. It is a separate
 // presentation preview, not a duplicate chapter in the main event catalog.
 export const episodes = [
-  ...Object.values(
-    import.meta.glob<Episode>('./generated/pjsk-*.json', {
-      eager: true,
-      import: 'default',
-    }),
-  ),
+  ...pjskDownloads.map((entry) => ({
+    ...entry.episode,
+    ...(pjskTitles as Record<string, Partial<Episode>>)[entry.episode.id],
+  })),
   ...realEpisodes,
   ...(fullEvent ? openingEpisodes : []),
   ...examples,
@@ -200,10 +201,14 @@ export const eventById = (game: string | undefined, id: string | undefined) =>
 export const eventForEpisode = (episode: Episode) =>
   eventById(episode.game, eventIdFor(episode))!;
 const loaded = new Map<string, Promise<Episode>>();
-export function loadEpisode(episode: Episode): Promise<Episode> {
+export function loadEpisode(
+  episode: Episode,
+  refresh = false,
+): Promise<Episode> {
   if (!episode.content) return Promise.resolve(episode);
   const url = episode.content.url;
   const key = `${episode.id}:${episode.content.format}:${episode.content.count}:${episode.entryNodeId}:${url}`;
+  if (refresh) loaded.delete(key);
   const pending = loaded.get(key);
   if (pending) return pending;
   const result = (async () => {
@@ -211,7 +216,23 @@ export function loadEpisode(episode: Episode): Promise<Episode> {
       'caches' in window
         ? await caches.open('onlystory.media.v1').catch(() => null)
         : null;
-    const response = (await cache?.match(url)) ?? (await fetch(url));
+    const cachedText = await cache?.match(url);
+    // Keep the original one-chapter build's downloads readable on upgrade.
+    // Its cache paths must never replace another chapter or a current import.
+    const directText =
+      episode.id === pjskDownloadRecipe.entry.id && !cachedText
+        ? await cache?.match(pjskDownloadRecipe.text.url)
+        : undefined;
+    const response = directText ?? cachedText ?? (await fetch(url));
+    const textEpisode = directText
+      ? {
+          ...episode,
+          assets: episode.assets.map((path) =>
+            path === episode.content!.url ? pjskDownloadRecipe.text.url : path,
+          ),
+          content: { ...episode.content!, url: pjskDownloadRecipe.text.url },
+        }
+      : episode;
     if (
       !response.ok ||
       response.headers.get('content-type')?.includes('text/html')
@@ -267,9 +288,19 @@ export function loadEpisode(episode: Episode): Promise<Episode> {
       throw new Error('This chapter format is unavailable.');
     const decoded =
       episode.content.format === 'pjsk-text-v1'
-        ? decodePjskText(input, episode)
+        ? decodePjskText(input, textEpisode)
         : decodeTextSection(input, episode);
-    if (!episode.content?.sceneUrl) return decoded;
+    if (!episode.content?.sceneUrl) {
+      if (directText && (await cache?.match(pjskDownloadRecipe.program.url)))
+        return {
+          ...decoded,
+          renderer: {
+            id: 'pjsk',
+            payload: { url: pjskDownloadRecipe.program.url },
+          },
+        };
+      return decoded;
+    }
     const sceneResponse =
       (await cache?.match(episode.content.sceneUrl)) ??
       (await fetch(episode.content.sceneUrl));
@@ -298,6 +329,7 @@ export function loadEpisode(episode: Episode): Promise<Episode> {
           ? {
               ...node,
               video: program.videos?.[node.video ?? '']?.url,
+              movieStreams: program.videos?.[node.video ?? '']?.streams,
               videoSubtitles: program.videos?.[node.video ?? '']?.subtitles,
               videoVoices: program.videos?.[node.video ?? '']?.voices,
               femaleVideo: program.videos?.[node.video ?? '']?.female,

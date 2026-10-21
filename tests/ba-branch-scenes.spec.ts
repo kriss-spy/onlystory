@@ -32,6 +32,7 @@ test('branch exit cues play only after its dialogue and survive seeking to the j
     route.fulfill({ json: program }),
   );
   const data = emptyData();
+  data.preferences.textLocale = 'ja';
   data.preferences.textSpeed = 0;
   await page.addInitScript(
     (value) => localStorage.setItem('onlystory.v1', JSON.stringify(value)),
@@ -55,7 +56,7 @@ test('branch exit cues play only after its dialogue and survive seeking to the j
   await page
     .getByRole('button', {
       name: chapter.nodes.find((n: any) => n.id === '11000:190').choices[0]
-        .label.en,
+        .label.ja,
       exact: true,
     })
     .click();

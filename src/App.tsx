@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import { Component, lazy, Suspense } from 'react';
 import type { ErrorInfo, ReactNode } from 'react';
 import { Link, Navigate, Route, Routes } from 'react-router-dom';
 import { Shell } from './components/Shell';
@@ -10,6 +10,7 @@ import { ReaderRoute } from './pages/Reader';
 import { BookmarksPage } from './pages/Bookmarks';
 import { ManagePage } from './pages/Manage';
 import { LabPage } from './pages/Lab';
+const DownloadPage = lazy(() => import('./pages/Download'));
 
 class ErrorBoundary extends Component<
   { children: ReactNode },
@@ -49,6 +50,20 @@ export default function App() {
           <Route path="/read/:game/:episode" element={<ReaderRoute />} />
           <Route path="/bookmarks" element={<BookmarksPage />} />
           <Route path="/manage" element={<ManagePage />} />
+          <Route
+            path="/downloads/:episode"
+            element={
+              <Suspense
+                fallback={
+                  <main className="page" role="status">
+                    Loading download…
+                  </main>
+                }
+              >
+                <DownloadPage />
+              </Suspense>
+            }
+          />
           <Route path="/lab" element={<LabPage />} />
           <Route
             path="*"

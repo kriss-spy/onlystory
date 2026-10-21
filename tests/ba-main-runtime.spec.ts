@@ -88,6 +88,7 @@ test('white silhouettes replace colored texels and invisible actors require no s
     return route.fulfill({ json: value });
   });
   const data = emptyData();
+  data.preferences.textLocale = 'ja';
   data.preferences.textSpeed = 0;
   await page.addInitScript(
     (value) => localStorage.setItem('onlystory.v1', JSON.stringify(value)),

@@ -23,6 +23,30 @@ export function readPjskEpisode(path: string): Episode {
     : episode;
 }
 
+let publishedEpisodes: Map<string, Episode>;
+// The reader prefers the current download catalog over historical installed
+// metadata. Browser expectations must inspect the same immutable program.
+export function readPublishedPjskEpisode(path: string): Episode {
+  const installed = JSON.parse(readFileSync(path, 'utf8')) as Episode;
+  publishedEpisodes ??= new Map(
+    JSON.parse(readFileSync('src/downloads/pjsk-catalog.json', 'utf8')).map(
+      (item: { episode: Episode }) => [item.episode.id, item.episode],
+    ),
+  );
+  const episode = publishedEpisodes.get(installed.id) ?? installed;
+  return episode.content?.format === 'pjsk-text-v1'
+    ? decodePjskText(
+        JSON.parse(
+          readFileSync(
+            resolve(pjskLibraryRoot, '.' + episode.content.url),
+            'utf8',
+          ),
+        ),
+        episode,
+      )
+    : episode;
+}
+
 let deferred: Record<
   string,
   {

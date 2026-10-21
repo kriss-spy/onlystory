@@ -111,7 +111,7 @@ self.addEventListener('fetch', (event) => {
     );
   } else if (
     request.mode === 'navigate' &&
-    /^\/(?:$|library\/?$|bookmarks\/?$|manage\/?$|lab\/?$|games\/|read\/)/.test(
+    /^\/(?:$|library\/?$|bookmarks\/?$|manage\/?$|lab\/?$|games\/|read\/|downloads\/)/.test(
       url.pathname,
     )
   ) {

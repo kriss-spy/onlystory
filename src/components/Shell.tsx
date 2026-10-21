@@ -25,13 +25,27 @@ import { readerCommand, UiContext } from '../ui';
 import type { GlobalPanel, ReaderCommand } from '../ui';
 import { IconButton, Panel } from './Primitives';
 import { Settings } from './Settings';
+import {
+  DownloadSelectionProvider,
+  DownloadSelectionButton,
+  useDownloadSelection,
+} from './DownloadSelection';
 import type { GameId } from '../model';
 import { gamePreferences } from '../model';
 
 export function Shell({ children }: { children: ReactNode }) {
+  return (
+    <DownloadSelectionProvider>
+      <ShellContent>{children}</ShellContent>
+    </DownloadSelectionProvider>
+  );
+}
+
+function ShellContent({ children }: { children: ReactNode }) {
+  const selection = useDownloadSelection();
   const location = useLocation();
   const navigate = useNavigate();
-  const { notice, dismiss, transfers, data } = useStore();
+  const { notice, dismiss, data } = useStore();
   const [panel, setPanel] = useState<GlobalPanel | null>(null);
   const [query, setQuery] = useState('');
   const focus = useRef<HTMLElement | null>(null);
@@ -57,9 +71,6 @@ export function Shell({ children }: { children: ReactNode }) {
     setPanel(name);
   }, []);
   const close = useCallback(() => setPanel(null), []);
-  const active = Object.values(transfers).filter(
-    (t) => t.status === 'downloading',
-  ).length;
   useEffect(() => {
     setPanel(null);
   }, [location.pathname]);
@@ -138,9 +149,9 @@ export function Shell({ children }: { children: ReactNode }) {
         shortcut: '',
       },
       {
-        label: 'Manage downloads',
+        label: 'Select stories to download',
         icon: Download,
-        run: () => navigate('/manage'),
+        run: selection.press,
         shortcut: '',
       },
       {
@@ -176,7 +187,7 @@ export function Shell({ children }: { children: ReactNode }) {
         shortcut: '',
       },
     ],
-    [inReader, navigate, open],
+    [inReader, navigate, open, selection.press],
   );
   const filtered = commands.filter((c) => {
     let i = 0;
@@ -200,14 +211,7 @@ export function Shell({ children }: { children: ReactNode }) {
               <NavLink aria-label="Bookmarks" to="/bookmarks">
                 <Bookmark size={18} />
               </NavLink>
-              <NavLink
-                aria-label="Manage downloads"
-                to="/manage"
-                className="download-nav"
-              >
-                <Download size={18} />
-                {active ? <span className="nav-count">{active}</span> : null}
-              </NavLink>
+              <DownloadSelectionButton />
               <IconButton
                 label="Commands & shortcuts"
                 shortcut="Ctrl+K"

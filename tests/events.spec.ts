@@ -15,6 +15,9 @@ test('Goldfinch story names include source codes and distinguish battle halves o
     'CA-1-1 精英姿态 · 战后',
   );
   await page.goto('/manage');
+  await page
+    .getByRole('searchbox', { name: 'Search downloads' })
+    .fill('CA-1-1');
   await expect(
     page.getByRole('link', { name: 'CA-1-1 精英姿态 · 战前', exact: true }),
   ).toBeVisible();

@@ -1,5 +1,6 @@
 export type GameId = 'gfl2' | 'pjsk' | 'ba' | 'gfl1';
 export type Locale = 'en' | 'zh-CN' | 'ja';
+export type TitleLocales = Partial<Record<Locale, string>>;
 export type LocalizedText = Record<'en' | 'zh-CN', string> & { ja?: string };
 export type VoiceLanguage = 'zh-CN' | 'ja';
 export type Availability = 'available' | 'remote' | 'incomplete';
@@ -20,10 +21,23 @@ export interface Scene {
   fontScale?: number;
   autoAdvance?: boolean;
   textPauses?: { offset: number; delay: number }[];
+  textPausesLocales?: Partial<
+    Record<Locale, { offset: number; delay: number }[]>
+  >;
   background: 'platform' | 'observatory' | 'corridor';
   actors: Actor[];
   effect?: 'rain' | 'signal';
   window?: 'narration' | 'dialogue' | 'system';
+}
+export interface MovieTrack {
+  mime: string;
+  init: { url: string; bytes: number };
+  segments: { url: string; bytes: number; start: number; duration: number }[];
+}
+export interface MovieStreams {
+  duration: number;
+  video: MovieTrack;
+  audio: Partial<Record<VoiceLanguage, MovieTrack>>;
 }
 export interface StoryNode {
   id: string;
@@ -31,7 +45,11 @@ export interface StoryNode {
   speaker: string;
   text: LocalizedText;
   speakerLocales?: LocalizedText;
-  playerName?: { token: string; fallback: string };
+  playerName?: {
+    token: string;
+    fallback: string;
+    fallbackLocales?: LocalizedText;
+  };
   scene: Scene;
   next?: string;
   choices?: {
@@ -42,11 +60,13 @@ export interface StoryNode {
   }[];
   voice?: string;
   video?: string;
+  movieStreams?: MovieStreams;
   performance?: { title: string; notice: string };
   femaleVideo?: {
     url: string;
     voices?: StoryNode['videoVoices'];
     subtitles?: StoryNode['videoSubtitles'];
+    streams?: MovieStreams;
   };
   videoVoices?: Partial<Record<VoiceLanguage, { url: string }>>;
   videoSubtitles?: {
@@ -68,6 +88,9 @@ export interface Game {
   cover: Scene['background'];
 }
 export interface Episode {
+  titleLocales?: TitleLocales;
+  collectionLocales?: TitleLocales;
+  acquisition?: 'pjsk-mmj-01-01-v1';
   titleAliases?: string[];
   collectionAliases?: string[];
   id: string;
@@ -99,7 +122,12 @@ export interface Episode {
   collectionId?: string;
   group?: string;
   collectionNotice?: string;
-  chapter?: { id: string; title: string; order: number };
+  chapter?: {
+    id: string;
+    title: string;
+    order: number;
+    titleLocales?: TitleLocales;
+  };
   placement?: {
     kind: 'side';
     branch: string;
@@ -136,6 +164,7 @@ export interface Bookmark {
   createdAt: string;
 }
 export interface Preferences {
+  catalogLocale?: 'original' | Locale;
   catalogLayout?: 'list' | 'table' | 'grid';
   gameThemes?: Partial<Record<GameId, 'default' | GameId>>;
   games?: Partial<
@@ -145,6 +174,7 @@ export interface Preferences {
         Pick<
           Preferences,
           | 'textLocale'
+          | 'catalogLocale'
           | 'voice'
           | 'playerName'
           | 'textVariant'
@@ -189,6 +219,7 @@ export interface AppData {
 }
 
 export const defaultPreferences: Preferences = {
+  catalogLocale: 'original',
   theme: 'system',
   layout: 'scene',
   chaptersOpen: false,
@@ -238,7 +269,9 @@ export function passageText(node: StoryNode, preferences: Preferences) {
   const name = node.playerName
     ? customName && customName !== defaultPreferences.playerName
       ? customName
-      : node.playerName.fallback
+      : node.playerName.fallbackLocales
+        ? localizedText(node.playerName.fallbackLocales, preferences.textLocale)
+        : node.playerName.fallback
     : customName || '指挥官';
   const token = node.playerName?.token ?? '{}';
   return {
@@ -702,6 +735,7 @@ export function parseData(input: unknown): AppData {
       theme: ['system', 'light', 'dark'],
       layout: ['scene', 'desk', 'text'],
       textLocale: ['en', 'zh-CN', 'ja'],
+      catalogLocale: ['original', 'en', 'zh-CN', 'ja'],
       voice: ['zh-CN', 'ja'],
       source: ['device', 'server-preview'],
       textVariant: ['male', 'female'],
@@ -740,6 +774,7 @@ export function parseData(input: unknown): AppData {
             Object.entries(raw).filter(([key]) =>
               [
                 'textLocale',
+                'catalogLocale',
                 'voice',
                 'playerName',
                 'textVariant',
@@ -754,6 +789,7 @@ export function parseData(input: unknown): AppData {
         const scoped: NonNullable<Preferences['games']>[GameId] = {};
         for (const key of [
           'textLocale',
+          'catalogLocale',
           'voice',
           'playerName',
           'textVariant',

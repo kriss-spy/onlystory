@@ -1,4 +1,4 @@
-// Match supplied source aliases without changing the displayed original title.
+// Normalize supplied titles and aliases independently of the display language.
 export const normalizeSearch = (value: string) =>
   value
     .normalize('NFKC')

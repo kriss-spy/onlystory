@@ -1,5 +1,11 @@
+import { preferJapaneseBa } from './helpers/ba-language';
 import { test, expect, type Page } from '@playwright/test';
 import { emptyData } from '../src/model';
+import { selectPrologueOriginals } from './helpers/ba-originals';
+
+test.use({ serviceWorkers: 'allow' });
+
+test.beforeEach(async ({ page }) => preferJapaneseBa(page));
 
 test.setTimeout(90000);
 test.describe.configure({ mode: 'serial' });
@@ -69,6 +75,7 @@ test('resumes suspended music and voice with the scene audio gesture', async ({
 
 test.beforeEach(async ({ page }) => {
   const data = emptyData();
+  data.preferences.textLocale = 'ja';
   data.preferences.textSpeed = 0;
   data.preferences.voice = 'ja';
   await page.addInitScript((data) => {
@@ -327,11 +334,10 @@ test('restores branch scenes and original emotions, dust, gunfire and shot effec
 
 test('downloaded models, backgrounds and voices reopen with every BA network request blocked', async ({
   page,
-}) => {
+}, testInfo) => {
+  test.setTimeout(240000);
   await page.goto('/games/ba/events/ba-jp-prologue');
-  await page
-    .getByRole('button', { name: 'Download プロローグ · 11000', exact: true })
-    .click();
+  await selectPrologueOriginals(page, testInfo);
   await expect
     .poll(
       () =>
@@ -341,7 +347,7 @@ test('downloaded models, backgrounds and voices reopen with every BA network req
               'ba-jp-11000'
             ],
         ),
-      { timeout: 60000 },
+      { timeout: 180000 },
     )
     .toBe(true);
   await page.route('**/private/ba-jp/**', (route) => route.abort());
@@ -397,26 +403,31 @@ test('renders the communication portrait separately and keeps authored expressio
   );
 });
 
-test('a missing original texture exposes retry and a working text fallback', async ({
-  page,
-}) => {
-  const errors: string[] = [];
-  page.on('pageerror', (e) => errors.push(e.message));
-  await page.route('**/media/characters/rin_spr/*.png', (route) =>
-    route.fulfill({ status: 404, body: '' }),
-  );
-  await page.goto(link(90));
-  await expect(
-    page.getByRole('button', { name: 'Read text instead', exact: true }),
-  ).toBeVisible({ timeout: 20000 });
-  await page
-    .getByRole('button', { name: 'Read text instead', exact: true })
-    .click();
-  await expect(page.locator('.reader-page')).toHaveClass(/layout-text/);
-  await expect(page.locator('.dialogue-window')).toBeVisible();
-  await page.getByRole('button', { name: 'Next passage', exact: true }).click();
-  await expect(
-    page.getByRole('button', { name: '"……？"', exact: true }),
-  ).toBeVisible();
-  expect(errors).toEqual([]);
+test.describe(() => {
+  test.use({ serviceWorkers: 'block' });
+  test('a missing original texture exposes retry and a working text fallback', async ({
+    page,
+  }) => {
+    const errors: string[] = [];
+    page.on('pageerror', (e) => errors.push(e.message));
+    await page.route('**/media/characters/rin_spr/*.png', (route) =>
+      route.fulfill({ status: 404, body: '' }),
+    );
+    await page.goto(link(90));
+    await expect(
+      page.getByRole('button', { name: 'Read text instead', exact: true }),
+    ).toBeVisible({ timeout: 20000 });
+    await page
+      .getByRole('button', { name: 'Read text instead', exact: true })
+      .click();
+    await expect(page.locator('.reader-page')).toHaveClass(/layout-text/);
+    await expect(page.locator('.dialogue-window')).toBeVisible();
+    await page
+      .getByRole('button', { name: 'Next passage', exact: true })
+      .click();
+    await expect(
+      page.getByRole('button', { name: '"……？"', exact: true }),
+    ).toBeVisible();
+    expect(errors).toEqual([]);
+  });
 });

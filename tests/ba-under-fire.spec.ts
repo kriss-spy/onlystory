@@ -6,6 +6,7 @@ test('festival chapter 8 gunfire uses transparent ground impacts and animated sm
 }, info) => {
   test.setTimeout(90000);
   const data = emptyData();
+  data.preferences.textLocale = 'ja';
   data.preferences.textSpeed = 0;
   await page.addInitScript(
     (data) => localStorage.setItem('onlystory.v1', JSON.stringify(data)),

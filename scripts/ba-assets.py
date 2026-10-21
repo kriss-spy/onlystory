@@ -11,6 +11,7 @@ import re
 import shutil
 import subprocess
 import tempfile
+import time
 import urllib.request
 import zipfile
 import zlib
@@ -24,6 +25,7 @@ from ba_asset_plan import (
     character_model,
     character_variant,
     check_shared_assets,
+    emotion_sound_names,
     load_table,
     missing_background,
     needs_native_actor_fx,
@@ -244,6 +246,60 @@ def update_underfire_art(group, audio_only=False):
         if audio_only
         else "5 transparent textures and official gunfire audio",
     )
+
+
+@lru_cache(maxsize=1)
+def verified_emotion_outputs():
+    root = Path(__file__).resolve().parents[1]
+    return (
+        json.loads((root / "src/downloads/ba/outputs.json").read_text(encoding="utf8")),
+        json.loads((root / "src/downloads/ba/sources.json").read_text(encoding="utf8")),
+    )
+
+
+def update_emotion_audio(group):
+    """Attach only required, already verified original clips to a staged chapter."""
+    root = Path(__file__).resolve().parents[1]
+    folder = root / "public/private/ba-jp" / str(group)
+    path = folder / "assets.json"
+    manifest = json.loads(path.read_text(encoding="utf8"))
+    rows = json.loads((folder / "source.json").read_text(encoding="utf8"))["content"]
+    outputs = {
+        item["name"]: item
+        for item in verified_emotion_outputs()[0]
+        if item.get("kind") == "vorbis"
+        and item.get("name", "").startswith("SFX_Emoticon_Motion_")
+    }
+    inputs = verified_emotion_outputs()[1]
+    for name in sorted(emotion_sound_names(rows)):
+        selector = outputs[name]
+        url = selector["url"]
+        payload = root / "public" / url.lstrip("/")
+        if fingerprint(payload) != {key: selector[key] for key in ("bytes", "sha256")}:
+            raise ValueError(f"Emotion clip integrity mismatch: {name}")
+        manifest["sounds"][name] = url
+        if not any(item["url"] == url for item in manifest["files"]):
+            manifest["files"].append(
+                {key: selector[key] for key in ("url", "bytes", "sha256")}
+            )
+        source = inputs[selector["input"]]
+        if not any(item["url"] == source["url"] for item in manifest["inputs"]):
+            manifest["inputs"].append(
+                {key: value for key, value in source.items() if key not in ("id", "filename")}
+            )
+    serialized = json.dumps(manifest, ensure_ascii=False, indent=2) + "\n"
+    if path.read_text(encoding="utf8") != serialized:
+        partial = path.with_suffix(".json.partial")
+        partial.write_text(serialized, encoding="utf8")
+        for attempt in range(10):
+            try:
+                partial.replace(path)
+                break
+            except PermissionError:
+                if attempt == 9:
+                    raise
+                time.sleep(0.1)
+    print("Updated original emotion audio", group, len(emotion_sound_names(rows)))
 
 
 def package(group, check_only=False):
@@ -628,6 +684,7 @@ def package(group, check_only=False):
         for i, r in enumerate(rows)
         if r["Sound"] and (i, r["Sound"]) not in sound_gaps
     }
+    sound_names.update(emotion_sound_names(rows))
     for name in sound_names:
         cached = cache.stage_sound(name, OUT, record)
         if cached:
@@ -866,6 +923,7 @@ if __name__ == "__main__":
     parser.add_argument("--check-only", action="store_true")
     parser.add_argument("--underfire-art-only", action="store_true")
     parser.add_argument("--underfire-audio-only", action="store_true")
+    parser.add_argument("--emotion-audio-only", action="store_true")
     parser.add_argument("--canonicalize-urls-only", action="store_true")
     args = parser.parse_args()
     if args.canonicalize_urls_only and args.check_only:
@@ -884,21 +942,30 @@ if __name__ == "__main__":
     for group in groups:
         if args.canonicalize_urls_only:
             continue
-        if not (args.underfire_art_only or args.underfire_audio_only):
+        if not (
+            args.underfire_art_only or args.underfire_audio_only or args.emotion_audio_only
+        ):
             source = ROOT / "public/private/ba-jp" / str(group) / "source.json"
             declared_sound_gaps = {
                 (gap["row"], gap["value"])
                 for gap in source_gaps(group)
                 if gap["field"] == "Sound"
             }
+            rows = json.loads(source.read_text(encoding="utf8"))["content"]
+            _BATCH_SOUND_NAMES.update(emotion_sound_names(rows))
             _BATCH_SOUND_NAMES.update(
                 r.get("Sound")
-                for i, r in enumerate(
-                    json.loads(source.read_text(encoding="utf8"))["content"]
-                )
+                for i, r in enumerate(rows)
                 if r.get("Sound") and (i, r["Sound"]) not in declared_sound_gaps
             )
     for group in groups:
+        if args.emotion_audio_only:
+            if args.check_only:
+                raise ValueError(
+                    "--emotion-audio-only cannot be combined with --check-only"
+                )
+            update_emotion_audio(group)
+            continue
         if args.canonicalize_urls_only:
             path = ROOT / "public/private/ba-jp" / str(group) / "assets.json"
             manifest = json.loads(path.read_text(encoding="utf8"))

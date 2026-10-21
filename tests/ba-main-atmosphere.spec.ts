@@ -5,6 +5,7 @@ test.setTimeout(90000);
 test.describe.configure({ mode: 'serial' });
 test.beforeEach(async ({ page }) => {
   const data = emptyData();
+  data.preferences.textLocale = 'ja';
   data.preferences.textSpeed = 0;
   await page.addInitScript(
     (value) => localStorage.setItem('onlystory.v1', JSON.stringify(value)),

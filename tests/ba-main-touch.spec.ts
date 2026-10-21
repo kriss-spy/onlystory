@@ -41,6 +41,7 @@ for (const [group, row, x] of [
     const save = find(startSave(episode));
     expect(save).toBeTruthy();
     const data = emptyData();
+    data.preferences.textLocale = 'ja';
     data.preferences.textSpeed = 0;
     await page.addInitScript(
       (value) => localStorage.setItem('onlystory.v1', JSON.stringify(value)),

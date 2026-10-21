@@ -121,12 +121,25 @@ for (const label of ['11801', '11901', '12001'])
         }),
       ),
     );
+    const requested = new Set<string>();
+    page.on('request', (request) =>
+      requested.add(new URL(request.url()).pathname),
+    );
     await page.goto(
       `/read/gfl2/${selected.section.id}?line=${encodeURIComponent(selected.node.id)}`,
     );
     const video = page.getByLabel('Story movie', { exact: true }),
       expected = selected.program.videos[label].female;
-    await expect(video).toHaveAttribute('src', expected.voices.ja.url);
+    await expect(video).toHaveAttribute('src', /^blob:/);
+    await expect(video).toHaveAttribute('data-movie-mode', 'shared-streams');
+    await expect(video).toHaveAttribute('data-movie-voice', 'ja');
+    await expect
+      .poll(
+        () =>
+          requested.has(expected.streams.video.init.url) &&
+          requested.has(expected.streams.audio.ja.init.url),
+      )
+      .toBe(true);
     await expect
       .poll(() => video.evaluate((el: HTMLVideoElement) => el.readyState))
       .toBeGreaterThanOrEqual(2);

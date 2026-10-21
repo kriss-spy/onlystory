@@ -8,6 +8,8 @@ import type { BaProgram } from './types';
 import { baTouchRegion } from './touch';
 import { canonicalBaScriptLine } from './script';
 import { baSoundForRow } from './source-gaps';
+import { baEmotionSounds } from './emotion-sounds';
+import { isBaScreenTextStep } from './screen-text';
 
 export default function BaScene({
   payload,
@@ -50,6 +52,10 @@ export default function BaScene({
   const resolveTouch = useRef<(() => void) | null>(null);
   const store = useStore();
   const p = usePlaybackPreferences();
+  const sceneRow = (row: import('./types').BaRow) =>
+    p.textLocale === 'en' && program.rowLocales?.en?.[row.row] !== undefined
+      ? { ...row, TextJp: program.rowLocales.en[row.row] }
+      : row;
   const reduced =
     p.reducedMotion || matchMedia('(prefers-reduced-motion: reduce)').matches;
   const previous = useRef({
@@ -144,12 +150,12 @@ export default function BaScene({
     const controller = new AbortController();
     const before = previous.current;
     const advancing = before.node && pathKey === `${before.path}|${nodeId}`;
-    const instant =
+    const silent =
       fastForward ||
-      reduced ||
       before.seek !== seekVersion ||
       before.finish !== finishVersion ||
       (!advancing && (before.node !== '' || program.steps[0].id !== nodeId));
+    const instant = silent || reduced || isBaScreenTextStep(program, nodeId);
     previous.current = {
       node: nodeId,
       path: pathKey,
@@ -168,13 +174,13 @@ export default function BaScene({
     for (const id of previousPath) {
       const step = byId.get(id);
       for (const row of step?.rows ?? [])
-        state = applyBaRow(state, row, program.assets);
+        state = applyBaRow(state, sceneRow(row), program.assets);
       if (id !== before.node || !advancing)
         for (const row of step?.afterRows ?? [])
-          state = applyBaRow(state, row, program.assets);
+          state = applyBaRow(state, sceneRow(row), program.assets);
     }
     player.stage.finish();
-    if (!advancing || instant) player.audio?.stopSounds();
+    if (!advancing || silent) player.audio?.stopSounds();
     setBusy(true);
     setTouchScript('');
     setCutscene(null);
@@ -208,19 +214,21 @@ export default function BaScene({
       });
     void (async () => {
       player.stage.show(state, true);
-      if (!instant) player.audio?.setMusic(state.music);
+      if (!silent) player.audio?.setMusic(state.music);
       for (const row of [...leaving, ...current.rows]) {
         if (controller.signal.aborted) return;
         if (!instant) {
           const fade = player.stage.fadeOut(row, instant);
           if (fade) await wait(fade);
         }
-        state = applyBaRow(state, row, program.assets);
+        state = applyBaRow(state, sceneRow(row), program.assets);
         player.stage.show(state, instant);
         player.stage.moveCamera(row, instant);
-        if (!instant) {
+        if (!silent) {
           player.audio?.setMusic(state.music);
           player.audio?.playSound(baSoundForRow(row, program.assets));
+          for (const sound of baEmotionSounds(state))
+            player.audio?.playSound(sound);
           if (row.BGEffect === 3134544579 && row.Sound !== 'UI_FX_BG_UnderFire')
             player.audio?.playSound('UI_FX_BG_UnderFire');
         }
@@ -294,6 +302,7 @@ export default function BaScene({
     finishVersion,
     fastForward,
     reduced,
+    p.textLocale,
   ]);
 
   return (
@@ -343,9 +352,9 @@ export default function BaScene({
           <span aria-hidden="true" />
         </button>
       ) : null}
-      {(!loaded || busy) && !error ? (
+      {!loaded && !error ? (
         <span className="ba-loading" role="status">
-          {loaded ? 'Scene playing…' : 'Loading original scene…'}
+          Loading original scene…
         </span>
       ) : null}
       {blocked ? (

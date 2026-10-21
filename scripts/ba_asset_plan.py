@@ -49,6 +49,22 @@ def missing_background(group, rows, ident):
     return bool(positions) and all((i, ident) in declared for i in positions)
 
 
+def emotion_sound_names(rows):
+    """Original implicit emotion audio, independent from a row's explicit Sound."""
+    mapping = json.loads(
+        (ROOT / "src/playback/ba/emotion-sounds.json").read_text(encoding="utf8")
+    )
+    return {
+        mapping[parts[2]]
+        for row in rows
+        for line in row.get("ScriptKr", "").splitlines()
+        if len(parts := line.strip().split(";")) >= 3
+        and re.fullmatch(r"#[1-5]", parts[0])
+        and parts[1].lower() == "em"
+        and parts[2] in mapping
+    }
+
+
 def needs_native_actor_fx(rows):
     return any(
         re.match(r"^#[1-5];fx;nkultra(?:break)?(?:;|$)", line, re.IGNORECASE)

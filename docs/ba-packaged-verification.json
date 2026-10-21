@@ -1,0 +1,277 @@
+{
+  "checkedAt": "2026-10-20T01:34:49.355Z",
+  "status": "PASS",
+  "command": "node scripts/verify-nsis.mjs",
+  "scope": "The final Windows NSIS installer was installed into an isolated workspace cache directory. Its shipped packaged application imported four authentic BA recipes with no prepared chapters or media, restarted cold with both renderer and native networking disabled, completed every chapter, then uninstalled and removed its owned registry registration.",
+  "installer": {
+    "path": "release/Onlystory-0.2.0-Setup-x64.exe",
+    "bytes": 215088250,
+    "sha256": "a0ea72dbde31d9b4d05ab1116f6435c5d8edb3050c4dac97ce96cad5bbc95362"
+  },
+  "inventory": {
+    "sourceManifest": {
+      "path": "src/downloads/ba/sources.json",
+      "bytes": 1201640,
+      "sha256": "cb66db7c2447a1fe5df3e53649d8b68fffda306351124f227a11f311b2548a9b"
+    },
+    "pinnedOriginals": 2838,
+    "publishedRecipes": 1659,
+    "englishChapters": 1519,
+    "note": "Manifest counts describe the current catalog. This packaged test exercises the 34 originals required by its four representative recipes; it does not claim a new download of every catalog source. The historical download inventory report predates the additional global English database source."
+  },
+  "isolatedInstall": {
+    "destination": "C:\\Users\\krisspy\\Projects\\onlystory\\.cache\\nsis-verification\\2026-10-20T01-30-01-979Z\\installed",
+    "existingInstallations": [],
+    "installationPassed": true,
+    "registeredInstallation": [
+      {
+        "DisplayName": "Onlystory 0.2.0",
+        "InstallLocation": null,
+        "UninstallString": "\"C:\\Users\\krisspy\\Projects\\onlystory\\.cache\\nsis-verification\\2026-10-20T01-30-01-979Z\\installed\\Uninstall Onlystory.exe\" /currentuser",
+        "PSChildName": "0f547a1c-2cc1-5229-818f-23bd2356e24c"
+      }
+    ],
+    "installedAppPassed": true,
+    "uninstallPassed": true,
+    "registeredAfterUninstall": []
+  },
+  "nativeVerification": {
+    "checkedAt": "2026-10-20T01:34:33.033Z",
+    "runtime": "Packaged Windows app, shipped production static shell",
+    "executable": "C:\\Users\\krisspy\\Projects\\onlystory\\.cache\\nsis-verification\\2026-10-20T01-30-01-979Z\\installed\\Onlystory.exe",
+    "executableSha256": "b2b41846e7e676c3c31c852d818fe8b1c8b0970b4dd05e653fbeb99f18ec28e4",
+    "packagedRuntime": {
+      "packaged": true,
+      "version": "0.2.0",
+      "appRoot": "C:\\Users\\krisspy\\Projects\\onlystory\\.cache\\nsis-verification\\2026-10-20T01-30-01-979Z\\installed\\resources\\app.asar",
+      "shellIndexSha256": "8812da3f0d891af6602277e83c6d3cdc9139b7ff44760a5baf2b6bf4e7b8ba46",
+      "sourcesSha256": "cb66db7c2447a1fe5df3e53649d8b68fffda306351124f227a11f311b2548a9b",
+      "nativeTransformsSha256": "a582f6474f35366c51f748ca86493f55bd69573c1ac902df9cd9243cc0f2a06d",
+      "recipeCount": 1659,
+      "privateDirectoryShipped": false
+    },
+    "profile": "C:\\Users\\krisspy\\Projects\\onlystory\\.cache\\ba-native-verification\\2026-10-20T01-30-12-756Z\\profile",
+    "live": false,
+    "originalInputs": 34,
+    "seededOriginals": [
+      147, 148, 158, 170, 174, 436, 437, 438, 439, 2836, 2837, 168, 1104, 2831,
+      156, 157, 159, 164, 169, 171, 172, 173, 175, 2829, 2834, 2835, 1665, 1666
+    ],
+    "verifiedLiveDownloads": [
+      {
+        "id": 151,
+        "url": "https://yuuka.cdn.diyigemt.com/image/ba-all-data/effectTexture/fire2.png",
+        "bytes": 1627,
+        "sha256": "39cb5ceba6c3444c41adf5665b54fd58de6bddd83892b1e62f9961936dec984f"
+      },
+      {
+        "id": 149,
+        "url": "https://yuuka.cdn.diyigemt.com/image/ba-all-data/effectTexture/FX_TEX_Smoke_17.png",
+        "bytes": 29548,
+        "sha256": "d7364160fbfbbdcc11f784d45a28ee6e97b0857554c3fd81bbad1aacf7b7635e"
+      },
+      {
+        "id": 152,
+        "url": "https://yuuka.cdn.diyigemt.com/image/ba-all-data/effectTexture/fire3.png",
+        "bytes": 1657,
+        "sha256": "9781dcbf2f94e96e253b28581b187c479730909137f964b23d316331743d9383"
+      },
+      {
+        "id": 150,
+        "url": "https://yuuka.cdn.diyigemt.com/image/ba-all-data/effectTexture/fire1.png",
+        "bytes": 929,
+        "sha256": "67bcdcfda28e5941844310bcb71d77c6a5b606f8caf32df3bc183aaa2c0cdded"
+      },
+      {
+        "id": 153,
+        "url": "https://yuuka.cdn.diyigemt.com/image/ba-all-data/effectTexture/HardRain.png",
+        "bytes": 212,
+        "sha256": "99178bcde779dc94297c2cedd1f2b8c7b5ad037b8465f6ab39baa3c2853713bd"
+      },
+      {
+        "id": 7,
+        "url": "https://prod-clientpatch.bluearchiveyostar.com/r96_nvji95owgkbcxlmkb8mi/MediaResources/Prologue/UIs/03_Scenario/01_Background/BG_Black.jpg",
+        "bytes": 3754,
+        "sha256": "5bef3f73788b2c04a7d5b161dba34a5b11438f97ca7e3fe19551946d8cd60584"
+      }
+    ],
+    "preparedAssetsSeeded": 0,
+    "privateBackendAvailable": false,
+    "nativeNetworkDisabledOffline": true,
+    "chromiumNetworkDisabledOffline": true,
+    "blockedRendererRequests": [],
+    "chapters": [
+      {
+        "id": "ba-jp-11010",
+        "group": 11010,
+        "category": "Main story",
+        "passages": 36,
+        "steps": 36,
+        "media": 66,
+        "installationFiles": 72,
+        "missing": [],
+        "importMs": 37435,
+        "offlineRestartReady": true,
+        "decoded": {
+          "audio": 7,
+          "movies": []
+        },
+        "offlineLanguageSwitch": {
+          "node": "11010:2",
+          "englishSha256": "da19fa1ab150c8092f96b5e0c9f76897c770086086903e9ee77ea52ddb2a720a",
+          "japaneseSha256": "140d9cc33041a27a4e3b80176a546df01f19f208efa55a241f071c93ba901b58",
+          "passagePreserved": true,
+          "resumedInEnglish": true
+        },
+        "offlineCompleted": true,
+        "choicesSelected": 2,
+        "moviesSkippedAfterDecode": 0,
+        "acknowledgedCutsceneBarriers": 0
+      },
+      {
+        "id": "ba-jp-2401",
+        "group": 2401,
+        "category": "Group story",
+        "passages": 69,
+        "steps": 69,
+        "media": 63,
+        "installationFiles": 69,
+        "missing": [],
+        "importMs": 4844,
+        "offlineRestartReady": true,
+        "decoded": {
+          "audio": 6,
+          "movies": []
+        },
+        "offlineLanguageSwitch": {
+          "node": "2401:1",
+          "englishSha256": "036d060f76efd1a1f02ae5e9e4b26e8cc934434a32b6685364627078ddf6fe9d",
+          "japaneseSha256": "30b7d63de0bf96ea38701a415883550bfb79fb447edeed3139c8347a48e74e64",
+          "passagePreserved": true,
+          "resumedInEnglish": true
+        },
+        "offlineCompleted": true,
+        "choicesSelected": 9,
+        "moviesSkippedAfterDecode": 0,
+        "acknowledgedCutsceneBarriers": 0
+      },
+      {
+        "id": "ba-jp-10000010",
+        "group": 10000010,
+        "category": "Event",
+        "passages": 71,
+        "steps": 71,
+        "media": 87,
+        "installationFiles": 93,
+        "missing": [],
+        "importMs": 11672,
+        "offlineRestartReady": true,
+        "decoded": {
+          "audio": 12,
+          "movies": []
+        },
+        "offlineLanguageSwitch": {
+          "node": "10000010:1",
+          "englishSha256": "a2012628b251a2de4ae0c95bdd32361feb58bb84fd24cdbe0b6bec987eee72d6",
+          "japaneseSha256": "556d7fcda772f555a93a3557a0b6d26c7af1f385555960110f02109903c6545c",
+          "passagePreserved": true,
+          "resumedInEnglish": true
+        },
+        "offlineCompleted": true,
+        "choicesSelected": 8,
+        "moviesSkippedAfterDecode": 0,
+        "acknowledgedCutsceneBarriers": 0
+      },
+      {
+        "id": "ba-jp-104071",
+        "group": 104071,
+        "category": "Main story",
+        "passages": 2,
+        "steps": 2,
+        "media": 55,
+        "installationFiles": 61,
+        "missing": [],
+        "importMs": 34598,
+        "offlineRestartReady": true,
+        "decoded": {
+          "audio": 1,
+          "movies": [
+            {
+              "url": "/private/ba-jp/shared/media/videos/11001_h264.mp4",
+              "width": 1280,
+              "height": 720,
+              "duration": 307.974333
+            }
+          ]
+        },
+        "offlineCompleted": true,
+        "choicesSelected": 0,
+        "moviesSkippedAfterDecode": 1,
+        "acknowledgedCutsceneBarriers": 0
+      }
+    ],
+    "screenshotFailures": [],
+    "pageErrors": []
+  },
+  "completionCriteria": {
+    "allFourColdOfflineCompleted": true,
+    "persistedCompletionRequired": true,
+    "stableEndingAfterReloadRequired": true,
+    "languageSwitchRequiresSamePassageAndEnglishResume": true,
+    "movieIsDecodedBeforeSkip": true,
+    "japaneseOnlyMovie": ["ba-jp-104071"],
+    "audioFilesDecoded": 26,
+    "choicesSelected": 19,
+    "englishSwitchAndResumeChapters": [
+      "ba-jp-11010",
+      "ba-jp-2401",
+      "ba-jp-10000010"
+    ]
+  },
+  "evidence": {
+    "nsis": {
+      "path": ".cache/nsis-verification/2026-10-20T01-30-01-979Z/results.json",
+      "bytes": 4637,
+      "sha256": "e0d83406d5de439c8d51ab2d601d70cf285d9ecebbee228640df5d363cab83c4"
+    },
+    "native": {
+      "path": ".cache/ba-native-verification/2026-10-20T01-30-12-756Z/results.json",
+      "bytes": 6101,
+      "sha256": "a943231d68914301d340416217769523514909ab16ba7b7ec8c10b5e478c46b8"
+    },
+    "console": {
+      "path": ".cache/final-nsis3.log",
+      "bytes": 1396,
+      "sha256": "043b4a96ca09d09f0d543d90edeb45060d598b929c2a0605ea5eaba9e3d49d44"
+    },
+    "nativeRequests": {
+      "path": ".cache/ba-native-verification/2026-10-20T01-30-12-756Z/native-requests.jsonl",
+      "bytes": 2030,
+      "sha256": "e2d4f308aaed857f259a6cd1eb420575d6ff928f67d8033683d2281879e0e3fa"
+    }
+  },
+  "priorAttemptsNotCountedAsFinalPass": [
+    {
+      "path": ".cache/ba-native-verification/2026-10-19T15-48-02-633Z",
+      "reason": "Stopped before the real global GroupId Int64 schema fix; retained as incomplete."
+    },
+    {
+      "path": ".cache/ba-native-verification/2026-10-20T01-01-53-988Z/failure.json",
+      "reason": "The first real chapter import had no missing files. The subsequent screenshot capture timed out; retained as incomplete."
+    },
+    {
+      "path": ".cache/ba-native-verification/2026-10-20T01-05-34-567Z/failure.json",
+      "reason": "All four imported, but a concurrent NSIS install closed the unpacked app during offline verification. This interrupted run is not counted as complete."
+    },
+    {
+      "path": ".cache/nsis-verification/2026-10-20T01-09-52-164Z/results.json",
+      "reason": "All four completed offline and uninstall passed, but this installer preceded the final hidden-file-input CSS fix. Retained as a pre-CSS pass, not the final artifact."
+    },
+    {
+      "path": ".cache/nsis-verification/2026-10-20T01-23-58-894Z/results.json",
+      "nativeFailure": ".cache/ba-native-verification/2026-10-20T01-24-10-355Z/failure.json",
+      "diagnostic": ".cache/native-offline-diagnostic.log",
+      "reason": "The exact final installer imported all four. The first chapter was saved completed with both choices, but fast-forward had advanced into the next chapter before the harness sampled its ending element, so the DOM-only wait timed out. Installation and uninstall passed. The harness now requires persisted completion and reloads the completed chapter to require its stable ending; this fresh isolated run verifies those criteria for all four."
+    }
+  ]
+}

@@ -1,5 +1,54 @@
 const clone = (value) => structuredClone(value);
 
+// Shared by the native installer and browser downloader, including choices and movies.
+export function compilePjskDownloadText(program, programUrl) {
+  return {
+    format: 'pjsk-text-v1',
+    id: program.id,
+    nodes: program.steps.map((step, i) => ({
+      id: step.id,
+      kind: step.kind,
+      speaker: step.speaker,
+      text: { en: step.text, 'zh-CN': step.text },
+      scene: {
+        background: 'platform',
+        actors: [],
+        window: step.after.fullscreen ? 'system' : 'dialogue',
+      },
+      voice: step.voices[0]
+        ? program.media.voices[step.voices[0].VoiceId]
+        : undefined,
+      ...(step.movie ? { video: program.media.movies[step.movie] } : {}),
+      ...(step.performance
+        ? {
+            video: program.media.performances[step.performance].url,
+            performance: program.media.performances[step.performance],
+          }
+        : {}),
+      ...(step.choices
+        ? {
+            choices: step.choices.map((label, choice) => ({
+              id: `${step.id}:choice:${choice}`,
+              label: { en: label, 'zh-CN': label },
+              next: program.steps[i + 1]?.id,
+            })),
+          }
+        : {}),
+      source: {
+        script: program.scenarioId,
+        row: step.index,
+        index: i,
+        contentId: step.index,
+      },
+      next: program.steps[i + 1]?.id,
+    })),
+    assets: [
+      ...program.media.files.map((f) => f.url),
+      ...(programUrl ? [programUrl] : []),
+    ].sort(),
+  };
+}
+
 function layoutCostume(source, record, previous) {
   // Motion/depth commands address the current model. Their costume field is
   // not a model change (event_74_05 even contains a literal backslash here).

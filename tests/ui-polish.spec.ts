@@ -294,9 +294,9 @@ test('download progress advances through files and supports cancel and retry', a
   await expect(row).toContainText('Download canceled');
   await row.getByRole('button', { name: /^Download / }).click();
   await page.getByRole('link', { name: 'Library', exact: true }).click();
-  await expect(page.getByRole('status')).toContainText(
-    'is available on this device',
-  );
+  await expect(
+    page.getByRole('status').filter({ hasText: 'is available on this device' }),
+  ).toBeVisible();
   await page.goto('/manage?examples=1');
   await page.getByLabel('Search downloads').fill('A signal after midnight');
   await expect(page.locator('.download-item').first()).toContainText(

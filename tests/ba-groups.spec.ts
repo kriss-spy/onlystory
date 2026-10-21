@@ -1,3 +1,4 @@
+import { preferJapaneseBa } from './helpers/ba-language';
 import { readFileSync } from 'node:fs';
 import { test, expect } from '@playwright/test';
 
@@ -11,6 +12,8 @@ const groupCollections = new Set(
     .filter((definition) => definition.category === 'Group story')
     .map((definition) => definition.collectionId),
 ).size;
+
+test.beforeEach(async ({ page }) => preferJapaneseBa(page));
 
 test.setTimeout(60000);
 

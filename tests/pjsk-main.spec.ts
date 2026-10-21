@@ -7,13 +7,13 @@ import { pjskLibraryRoot } from '../scripts/local-environment.mjs';
 import type { Episode } from '../src/model';
 import type { Program } from '../src/playback/pjsk/types';
 import { emptyData } from '../src/model';
-import { readPjskEpisode, assertPjskFile } from './pjsk-installed';
+import { readPublishedPjskEpisode, assertPjskFile } from './pjsk-installed';
 
 const read = <T>(path: string): T => JSON.parse(readFileSync(path, 'utf8'));
 const installed = (id: string) => {
   const path = resolve('src/generated', `${id}.json`);
   expect(existsSync(path), `Required corpus episode missing: ${id}`).toBe(true);
-  return readPjskEpisode(path);
+  return readPublishedPjskEpisode(path);
 };
 const programFor = (episode: Episode) =>
   read<Program>(

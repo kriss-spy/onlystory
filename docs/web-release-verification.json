@@ -1,0 +1,13 @@
+{
+  "checkedAt": "2026-10-20T01:35:06.079Z",
+  "artifact": "Onlystory-web.zip",
+  "bytes": 93695976,
+  "sha256": "2c199b10751c4382bd9ad99d19347d4e6a44828b646fe24a3d1c70a155ee4366",
+  "filesVerifiedAgainstFinalDist": 3345,
+  "blueArchiveRecipes": 1659,
+  "projectSekaiRecipes": 1623,
+  "privateGameLibraryIncluded": false,
+  "recipesPrecachedOnStartup": false,
+  "shellFiles": 62,
+  "shellUncompressedBytes": 58155445
+}
