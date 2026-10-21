@@ -7,7 +7,8 @@ The relocated production build was also opened in Chrome with an external librar
 ## Test the current web release on Linux
 
 `Onlystory-web.zip` is the cross-platform app package. It is different from the
-large recovery archive described below, and contains no game media. Current
+large recovery archive described below. It bundles catalog artwork; story media
+is downloaded separately. Current
 filenames, sizes and hashes are in `release/artifacts-current.json` and
 `release/SHA256SUMS.txt`.
 

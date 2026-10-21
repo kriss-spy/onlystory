@@ -1,1 +1,262 @@
-{}
+{
+  "Reading": {
+    "zh-CN": "阅读",
+    "ja": "読書"
+  },
+  "Appearance": {
+    "zh-CN": "外观",
+    "ja": "表示"
+  },
+  "Audio": {
+    "zh-CN": "音频",
+    "ja": "音声"
+  },
+  "Language": {
+    "zh-CN": "语言",
+    "ja": "言語"
+  },
+  "Library": {
+    "zh-CN": "资料库",
+    "ja": "ライブラリ"
+  },
+  "Settings sections": {
+    "zh-CN": "设置分类",
+    "ja": "設定項目"
+  },
+  "Layout": {
+    "zh-CN": "布局",
+    "ja": "レイアウト"
+  },
+  "Scene first": {
+    "zh-CN": "场景优先",
+    "ja": "シーン優先"
+  },
+  "Reading desk": {
+    "zh-CN": "阅读桌面",
+    "ja": "読書デスク"
+  },
+  "Text only": {
+    "zh-CN": "纯文本",
+    "ja": "テキストのみ"
+  },
+  "Dialogue size": {
+    "zh-CN": "对话字号",
+    "ja": "会話の文字サイズ"
+  },
+  "Characters per second": {
+    "zh-CN": "每秒字符数",
+    "ja": "1秒あたりの文字数"
+  },
+  "Set text speed to 0 for instant text.": {
+    "zh-CN": "文字速度设为 0 即可立即显示全文。",
+    "ja": "文字速度を0にすると全文を即時表示します。"
+  },
+  "Auto reading delay": {
+    "zh-CN": "自动阅读间隔",
+    "ja": "自動送りの待ち時間"
+  },
+  "Chapter panel width": {
+    "zh-CN": "章节面板宽度",
+    "ja": "章パネルの幅"
+  },
+  "Wait for voice before auto advance": {
+    "zh-CN": "语音结束后自动前进",
+    "ja": "ボイス終了後に自動で進む"
+  },
+  "Reduce scene motion": {
+    "zh-CN": "减少场景动态",
+    "ja": "シーンの動きを抑える"
+  },
+  "Dialogue opacity": {
+    "zh-CN": "对话框不透明度",
+    "ja": "会話欄の不透明度"
+  },
+  "System": {
+    "zh-CN": "跟随系统",
+    "ja": "システムに従う"
+  },
+  "Light": {
+    "zh-CN": "浅色",
+    "ja": "ライト"
+  },
+  "Dark": {
+    "zh-CN": "深色",
+    "ja": "ダーク"
+  },
+  "Game theme": {
+    "zh-CN": "游戏主题",
+    "ja": "ゲームのテーマ"
+  },
+  "Use global defaults for this game": {
+    "zh-CN": "此游戏使用全局默认设置",
+    "ja": "このゲームに全体の初期設定を使う"
+  },
+  "App language": {
+    "zh-CN": "应用语言",
+    "ja": "アプリの言語"
+  },
+  "Applies to the whole app. Catalog titles and dialogue have their own language settings.": {
+    "zh-CN": "应用于整个界面。目录标题和对话语言可单独设置。",
+    "ja": "アプリ全体に適用します。目録のタイトルと会話の言語は個別に設定できます。"
+  },
+  "Language and player defaults": {
+    "zh-CN": "语言和玩家默认设置",
+    "ja": "言語とプレイヤーの初期設定"
+  },
+  "Catalog language": {
+    "zh-CN": "目录语言",
+    "ja": "目録の言語"
+  },
+  "Original titles": {
+    "zh-CN": "原始标题",
+    "ja": "原文のタイトル"
+  },
+  "Text language": {
+    "zh-CN": "文本语言",
+    "ja": "テキストの言語"
+  },
+  "No text library imported": {
+    "zh-CN": "尚未导入文本库",
+    "ja": "テキストライブラリ未読み込み"
+  },
+  "Dialogue languages available for this story.": {
+    "zh-CN": "此故事可用的对话语言。",
+    "ja": "このストーリーで利用できる会話の言語です。"
+  },
+  "Preferred dialogue language. Stories without this translation use their original language.": {
+    "zh-CN": "首选对话语言。没有对应译文的故事将使用原文。",
+    "ja": "会話の優先言語です。翻訳がないストーリーは原文で表示します。"
+  },
+  "Protagonist version": {
+    "zh-CN": "主角版本",
+    "ja": "主人公のバージョン"
+  },
+  "Male original": {
+    "zh-CN": "男性原版",
+    "ja": "男性版の原文"
+  },
+  "Female original": {
+    "zh-CN": "女性原版",
+    "ja": "女性版の原文"
+  },
+  "Player name": {
+    "zh-CN": "玩家名称",
+    "ja": "プレイヤー名"
+  },
+  "Player name is used where the source provides a placeholder.": {
+    "zh-CN": "原文含名称占位符时使用此名称。",
+    "ja": "原文に名前の置換欄がある場合に使用します。"
+  },
+  "Voice language": {
+    "zh-CN": "语音语言",
+    "ja": "ボイスの言語"
+  },
+  "Selects movie audio where available. BA dialogue uses original Japanese voices. Recovered GFL2 regular dialogue has no voice track.": {
+    "zh-CN": "选择可用的影片音轨。蔚蓝档案对话使用日语原声。已恢复的少前2普通对话没有语音。",
+    "ja": "利用可能な動画の音声を選択します。ブルーアーカイブの会話は日本語の原音を使用します。復元されたドルフロ2の通常会話には音声がありません。"
+  },
+  "Music volume": {
+    "zh-CN": "音乐音量",
+    "ja": "音楽の音量"
+  },
+  "Sound effects volume": {
+    "zh-CN": "音效音量",
+    "ja": "効果音の音量"
+  },
+  "Voice volume": {
+    "zh-CN": "语音音量",
+    "ja": "ボイスの音量"
+  },
+  "Source": {
+    "zh-CN": "来源",
+    "ja": "ソース"
+  },
+  "On this device": {
+    "zh-CN": "此设备上",
+    "ja": "この端末"
+  },
+  "Private server preview": {
+    "zh-CN": "私有服务器预览",
+    "ja": "プライベートサーバーのプレビュー"
+  },
+  "This previews server availability states. No server or account is connected.": {
+    "zh-CN": "此处仅预览服务器可用状态，尚未连接服务器或账号。",
+    "ja": "サーバーの利用状態をプレビューします。サーバーやアカウントには接続していません。"
+  },
+  "Manage episode downloads": {
+    "zh-CN": "管理故事下载",
+    "ja": "ストーリーのダウンロード管理"
+  },
+  "Your data": {
+    "zh-CN": "个人数据",
+    "ja": "自分のデータ"
+  },
+  "Export progress, branches, bookmarks and preferences. Restoring merges with your current records.": {
+    "zh-CN": "导出进度、分支、书签和偏好设置。恢复时会与当前记录合并。",
+    "ja": "進捗、分岐、しおり、設定を書き出します。復元時は現在の記録に統合します。"
+  },
+  "Export backup": {
+    "zh-CN": "导出备份",
+    "ja": "バックアップを書き出す"
+  },
+  "Restore backup": {
+    "zh-CN": "恢复备份",
+    "ja": "バックアップを復元"
+  },
+  "The backup could not be read.": {
+    "zh-CN": "无法读取备份。",
+    "ja": "バックアップを読み込めませんでした。"
+  },
+  "About this build": {
+    "zh-CN": "关于此版本",
+    "ja": "このビルドについて"
+  },
+  "Private local build. GFL1, GFL2, Project SEKAI and Blue Archive use the shared reader with original imported text and media. Source gaps and presentation limits are disclosed in the reader. Fictional interface fixtures are under design checks.": {
+    "zh-CN": "私有本地版本。少女前线1/2、世界计划和蔚蓝档案通过共享阅读器呈现导入的原文和媒体。阅读器会说明源文件缺失和演出限制。虚构界面样例位于设计检查中。",
+    "ja": "ローカルのプライベートビルドです。ドルフロ1/2、プロセカ、ブルーアーカイブを共通リーダーで閲覧できます。読み込んだ原文とメディアを使用します。ソースの欠落や演出の制限はリーダーに表示します。架空の画面例はデザイン確認にあります。"
+  },
+  "Cross-game design checks": {
+    "zh-CN": "跨游戏设计检查",
+    "ja": "ゲーム共通のデザイン確認"
+  },
+  "English": {
+    "zh-CN": "英语",
+    "ja": "英語"
+  },
+  "Chinese": {
+    "zh-CN": "中文",
+    "ja": "中国語"
+  },
+  "Japanese": {
+    "zh-CN": "日语",
+    "ja": "日本語"
+  },
+  "Close": {
+    "zh-CN": "关闭",
+    "ja": "閉じる"
+  },
+  "Featured schools": {
+    "zh-CN": "登场学校",
+    "ja": "登場する学校"
+  },
+  "{name} school mark": {
+    "zh-CN": "{name}校徽",
+    "ja": "{name}の校章"
+  },
+  "{language} catalog titles are unavailable for {game}. Showing original titles. ": {
+    "zh-CN": "{game}没有{language}目录标题，显示原始标题。",
+    "ja": "{game}の{language}タイトルは利用できません。原文を表示します。"
+  },
+  "{language} titles are unavailable for this story. Showing its original title. ": {
+    "zh-CN": "此故事没有{language}标题，显示原始标题。",
+    "ja": "このストーリーの{language}タイトルは利用できません。原文を表示します。"
+  },
+  "{language} is unavailable for this story. Showing {fallback}. Your preference is kept for other stories.": {
+    "zh-CN": "此故事没有{language}译文，显示{fallback}。其他故事仍使用您的偏好设置。",
+    "ja": "このストーリーは{language}に対応していないため{fallback}で表示します。他のストーリーでは設定を維持します。"
+  },
+  "Event and story titles. Missing translations keep their original titles. This does not change dialogue.": {
+    "zh-CN": "活动和故事标题。缺少译文时保留原始标题，不影响对话语言。",
+    "ja": "イベントとストーリーのタイトルです。翻訳がなければ原文を表示します。会話の言語は変更しません。"
+  }
+}

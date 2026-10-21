@@ -80,6 +80,7 @@ export function libraryPlugin() {
         'vendor',
         'favicon.svg',
         'icons',
+        'catalog-art',
         'manifest.webmanifest',
       ])
         cpSync(resolve('public', name), resolve(output, name), {

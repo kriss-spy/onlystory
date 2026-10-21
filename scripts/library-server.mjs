@@ -15,6 +15,7 @@ const types = {
   '.m4a': 'audio/mp4',
   '.webp': 'image/webp',
   '.png': 'image/png',
+  '.webp': 'image/webp',
   '.jpg': 'image/jpeg',
   '.ogg': 'audio/ogg',
   '.vtt': 'text/vtt',
