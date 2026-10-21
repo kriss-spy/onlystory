@@ -1,3 +1,4 @@
+import { useI18n } from '../../i18n';
 import { lazy, Suspense, useEffect, useRef, useState } from 'react';
 import type { CSSProperties } from 'react';
 import type { Locale, StoryNode } from '../../model';
@@ -59,6 +60,7 @@ export function Gfl1Interaction({
   locale: Locale;
   reducedMotion: boolean;
 }) {
+  const { t } = useI18n();
   const [code, setCode] = useState('');
   const [errors, setErrors] = useState(0);
   const [shots, setShots] = useState(0);
@@ -88,7 +90,7 @@ export function Gfl1Interaction({
     return (
       <form
         className="gfl1-password"
-        aria-label="Keycode lock"
+        aria-label={t('Keycode lock')}
         onSubmit={(event) => {
           event.preventDefault();
           if (disabled) return;
@@ -99,7 +101,7 @@ export function Gfl1Interaction({
           }
         }}
       >
-        <label htmlFor="gfl1-keycode">Enter the keycode</label>
+        <label htmlFor="gfl1-keycode">{t('Enter the keycode')}</label>
         <input
           id="gfl1-keycode"
           autoFocus
@@ -112,23 +114,23 @@ export function Gfl1Interaction({
           aria-describedby={errors ? 'gfl1-keycode-error' : undefined}
         />
         <button type="submit" disabled={disabled || !code}>
-          Unlock
+          {t('Unlock')}
         </button>
         {errors ? (
           <p id="gfl1-keycode-error" role="alert">
-            Incorrect keycode. Try again.
+            {t('Incorrect keycode. Try again.')}
           </p>
         ) : null}
       </form>
     );
   if (interaction.kind === 'shoot')
     return (
-      <div className="gfl1-shoot-panel" aria-label="Shooting scene">
+      <div className="gfl1-shoot-panel" aria-label={t('Shooting scene')}>
         {interaction.models && !textOnly ? (
           <Suspense
             fallback={
               <p className="gfl1-source-note" role="status">
-                Loading original scene…
+                {t('Loading original scene…')}
               </p>
             }
           >
@@ -153,7 +155,7 @@ export function Gfl1Interaction({
               setFiring(true);
             }}
           >
-            {firing ? 'Firing…' : 'Fire'}
+            {firing ? t('Firing…') : t('Fire')}
           </button>
           <p role="status">
             {shots} / {interaction.manualCount}
@@ -177,7 +179,7 @@ export function Gfl1Interaction({
   )
     return null;
   return (
-    <div className="gfl1-investigation" aria-label="Inspect the scene">
+    <div className="gfl1-investigation" aria-label={t('Inspect the scene')}>
       <p className="gfl1-investigation-tip">{interaction.tips}</p>
       {interaction.spots.map((spot, index) => {
         const answer = choices?.find((choice) => choice.id === spot.id);

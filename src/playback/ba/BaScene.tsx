@@ -1,3 +1,5 @@
+import { playbackMessage } from '../messages';
+import { useI18n } from '../../i18n';
 import { useEffect, useRef, useState } from 'react';
 import { Volume2 } from 'lucide-react';
 import { useStore, usePlaybackPreferences } from '../../store';
@@ -30,6 +32,7 @@ export default function BaScene({
   onReady: (node: string, ready: boolean) => void;
   textComplete: boolean;
 }) {
+  const { t } = useI18n();
   const program = payload as BaProgram;
   const host = useRef<HTMLDivElement>(null);
   const players = useRef<{ stage: BaStage; audio: BaAudio | null } | null>(
@@ -305,6 +308,14 @@ export default function BaScene({
     p.textLocale,
   ]);
 
+  useEffect(() => {
+    host.current
+      ?.querySelector('canvas.ba-actors')
+      ?.setAttribute(
+        'aria-label',
+        t('Original Blue Archive animated characters'),
+      );
+  }, [loaded, t]);
   return (
     <div
       className="stage native-stage ba-stage"
@@ -314,8 +325,8 @@ export default function BaScene({
       <div className="ba-canvas" ref={host} />
       {cutscene ? (
         <div className="ba-cutscene-notice" role="status">
-          <strong>3D cutscene unavailable</strong>
-          <p>{cutscene.reason}</p>
+          <strong>{t('3D cutscene unavailable')}</strong>
+          <p>{playbackMessage(t, cutscene.reason)}</p>
           <button
             autoFocus
             onClick={(event) => {
@@ -323,21 +334,21 @@ export default function BaScene({
               resolveTouch.current?.();
             }}
           >
-            Continue story
+            {t('Continue story')}
           </button>
         </div>
       ) : null}
       {sourceNotices.length ? (
         <div className="ba-source-notices" role="status">
           {[...new Set(sourceNotices)].map((notice) => (
-            <p key={notice}>{notice}</p>
+            <p key={notice}>{playbackMessage(t, notice)}</p>
           ))}
         </div>
       ) : null}
       {touch ? (
         <button
           className="ba-touch-target"
-          aria-label="Touch fingertips"
+          aria-label={t('Touch fingertips')}
           style={{
             left: `${touch.left}%`,
             top: `${touch.top}%`,
@@ -354,13 +365,13 @@ export default function BaScene({
       ) : null}
       {!loaded && !error ? (
         <span className="ba-loading" role="status">
-          Loading original scene…
+          {t('Loading original scene…')}
         </span>
       ) : null}
       {blocked ? (
         <button
           className="ba-enable-audio"
-          aria-label="Enable scene audio"
+          aria-label={t('Enable scene audio')}
           onClick={() => {
             window.dispatchEvent(new Event('onlystory-enable-audio'));
             void players.current?.audio
@@ -373,11 +384,13 @@ export default function BaScene({
       ) : null}
       {error ? (
         <div className="scene-notices" role="alert">
-          {error}
+          {playbackMessage(t, error)}
           <button onClick={() => store.preferences({ layout: 'text' })}>
-            Read text instead
+            {t('Read text instead')}
           </button>
-          <button onClick={() => setAttempt((a) => a + 1)}>Retry scene</button>
+          <button onClick={() => setAttempt((a) => a + 1)}>
+            {t('Retry scene')}
+          </button>
         </div>
       ) : null}
     </div>

@@ -1,3 +1,4 @@
+import { useI18n } from '../../i18n';
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { useMediaUrl } from '../../hooks';
 import type { Gfl1Frame, Gfl1Program } from './story';
@@ -14,12 +15,13 @@ function OriginalImage({
   className: string;
   style?: CSSProperties;
 }) {
+  const { t } = useI18n();
   const src = useMediaUrl(url);
   const [failed, setFailed] = useState('');
   if (!url || failed === url)
     return (
       <span className="gfl1-missing" role="status">
-        Missing original image: {name}
+        {t('Missing original image: {name}', { name })}
       </span>
     );
   return src ? (
@@ -183,6 +185,7 @@ export function Gfl1Scene({
   reducedMotion: boolean;
   seekVersion?: number;
 }) {
+  const { t } = useI18n();
   const program = payload as Gfl1Program;
   const previousLocation = useRef({ nodeId, seekVersion });
   const [animatePassage, setAnimatePassage] = useState(false);
@@ -248,13 +251,13 @@ export function Gfl1Scene({
         />
       ) : !background.color ? (
         <span className="gfl1-missing" role="status">
-          Missing original background: {background.name}
+          {t('Missing original background: {name}', { name: background.name })}
         </span>
       ) : null}
       {gameplayShade && frame.background.url ? (
         <OriginalImage
           url={frame.background.url}
-          name="Original gameplay shade"
+          name={t('Original gameplay shade')}
           className="gfl1-background-shade"
         />
       ) : null}
@@ -293,14 +296,16 @@ export function Gfl1Scene({
       ) : null}
       {frame.effects?.includes('credits') ? (
         <span className="gfl1-source-note" role="status">
-          The original rolling credits are unavailable. The source script is
-          preserved in Story information.
+          {t(
+            'The original rolling credits are unavailable. The source script is preserved in Story information.',
+          )}
         </span>
       ) : null}
       {frame.nativeEffects?.length ? (
         <span className="gfl1-source-note" role="status">
-          An original visual effect in this scene is not available yet. Dialogue
-          remains available.
+          {t(
+            'An original visual effect in this scene is not available yet. Dialogue remains available.',
+          )}
         </span>
       ) : null}
     </div>

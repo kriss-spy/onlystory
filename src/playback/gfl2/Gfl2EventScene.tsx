@@ -1,3 +1,5 @@
+import { playbackMessage } from '../messages';
+import { useI18n } from '../../i18n';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { AlertTriangle, Volume2 } from 'lucide-react';
 import { usePlaybackPreferences } from '../../store';
@@ -22,6 +24,7 @@ export default function Gfl2EventScene({
   seekVersion: number;
   path: string[];
 }) {
+  const { t } = useI18n();
   const program = payload as EventProgram;
   const pathKey = path.join('|');
   const linearTimeline = useMemo(
@@ -57,8 +60,11 @@ export default function Gfl2EventScene({
     ...new Set([
       ...problems,
       ...(timeline[index]?.warnings ?? []),
-      ...program.unresolved.map(
-        (item) => `Original ${item.kind} unavailable: ${item.label}`,
+      ...program.unresolved.map((item) =>
+        t('Original {kind} unavailable: {label}', {
+          kind: t(item.kind),
+          label: item.label,
+        }),
       ),
     ]),
   ];
@@ -134,13 +140,18 @@ export default function Gfl2EventScene({
     p.soundVolume,
     reduced,
   ]);
+  useEffect(() => {
+    host.current
+      ?.querySelector('canvas')
+      ?.setAttribute('aria-label', t('Original GFL2 scene'));
+  }, [program, t]);
   return (
     <div className="stage native-stage event-stage" data-testid="scene-stage">
       <div ref={host} className="event-canvas" data-testid="native-layers" />
       {blocked ? (
         <div className="native-audio-control">
           <IconButton
-            label="Enable scene audio"
+            label={t('Enable scene audio')}
             onClick={() =>
               void players.current?.audio
                 ?.enable()
@@ -158,12 +169,12 @@ export default function Gfl2EventScene({
       ) : null}
       {notices.length ? (
         <details className="scene-notices">
-          <summary aria-label="Scene notices">
+          <summary aria-label={t('Scene notices')}>
             <AlertTriangle size={16} />
           </summary>
           <div role="status">
             {notices.map((problem) => (
-              <p key={problem}>{problem}</p>
+              <p key={problem}>{playbackMessage(t, problem)}</p>
             ))}
           </div>
         </details>

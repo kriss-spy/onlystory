@@ -1,3 +1,5 @@
+import { playbackMessage } from '../messages';
+import { useI18n } from '../../i18n';
 import { useEffect, useRef, useState } from 'react';
 import { Volume2 } from 'lucide-react';
 import { IconButton } from '../../components/Primitives';
@@ -12,6 +14,7 @@ export function Gfl2Scene({
   payload: unknown;
   index: number;
 }) {
+  const { t } = useI18n();
   const data = payload as Opening;
   const root = useRef<HTMLDivElement>(null);
   const player = useRef<Gfl2OpeningPlayer | null>(null);
@@ -58,13 +61,13 @@ export function Gfl2Scene({
       <div className="native-layers" ref={root} data-testid="native-layers" />
       {problem ? (
         <div className="stage-message" role="status">
-          {problem}
+          {playbackMessage(t, problem)}
         </div>
       ) : null}
       {blocked ? (
         <div className="native-audio-control">
           <IconButton
-            label="Enable scene audio"
+            label={t('Enable scene audio')}
             onClick={() => {
               void player.current
                 ?.enableAudio()

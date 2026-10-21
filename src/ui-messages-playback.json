@@ -1,0 +1,254 @@
+{
+  "Enable scene audio": {
+    "zh-CN": "启用场景音频",
+    "ja": "シーン音声を有効にする"
+  },
+  "Loading scene…": {
+    "zh-CN": "正在加载场景…",
+    "ja": "シーンを読み込み中…"
+  },
+  "Loading original scene…": {
+    "zh-CN": "正在加载原始场景…",
+    "ja": "オリジナルシーンを読み込み中…"
+  },
+  "3D cutscene unavailable": {
+    "zh-CN": "3D 过场动画不可用",
+    "ja": "3D カットシーンを再生できません"
+  },
+  "Continue story": {
+    "zh-CN": "继续阅读",
+    "ja": "続きを読む"
+  },
+  "Touch fingertips": {
+    "zh-CN": "触碰指尖",
+    "ja": "指先に触れる"
+  },
+  "Read text instead": {
+    "zh-CN": "改为阅读文本",
+    "ja": "テキストで読む"
+  },
+  "Retry scene": {
+    "zh-CN": "重试场景",
+    "ja": "シーンを再試行"
+  },
+  "Scene notices": {
+    "zh-CN": "场景提示",
+    "ja": "シーンの注意事項"
+  },
+  "Keycode lock": {
+    "zh-CN": "密码锁",
+    "ja": "暗証番号ロック"
+  },
+  "Enter the keycode": {
+    "zh-CN": "输入密码",
+    "ja": "暗証番号を入力"
+  },
+  "Unlock": {
+    "zh-CN": "解锁",
+    "ja": "解除"
+  },
+  "Incorrect keycode. Try again.": {
+    "zh-CN": "密码错误，请重试。",
+    "ja": "暗証番号が違います。もう一度入力してください。"
+  },
+  "Shooting scene": {
+    "zh-CN": "射击场景",
+    "ja": "射撃シーン"
+  },
+  "Firing…": {
+    "zh-CN": "正在射击…",
+    "ja": "射撃中…"
+  },
+  "Fire": {
+    "zh-CN": "射击",
+    "ja": "撃つ"
+  },
+  "Inspect the scene": {
+    "zh-CN": "调查场景",
+    "ja": "シーンを調べる"
+  },
+  "Missing original image: {name}": {
+    "zh-CN": "原始图片缺失：{name}",
+    "ja": "オリジナル画像がありません: {name}"
+  },
+  "Missing original background: {name}": {
+    "zh-CN": "原始背景缺失：{name}",
+    "ja": "オリジナル背景がありません: {name}"
+  },
+  "Original gameplay shade": {
+    "zh-CN": "原始战斗画面遮罩",
+    "ja": "オリジナルの戦闘画面マスク"
+  },
+  "The original rolling credits are unavailable. The source script is preserved in Story information.": {
+    "zh-CN": "原始滚动制作名单不可用。可在故事信息中查看保留的源脚本。",
+    "ja": "オリジナルのエンドロールは再生できません。元のスクリプトはストーリー情報で確認できます。"
+  },
+  "An original visual effect in this scene is not available yet. Dialogue remains available.": {
+    "zh-CN": "此场景的部分原始视觉效果暂不可用，仍可阅读对话。",
+    "ja": "このシーンのオリジナル視覚効果の一部はまだ再現できません。会話はそのまま読めます。"
+  },
+  "Original scene model unavailable: {error}": {
+    "zh-CN": "原始场景模型不可用：{error}",
+    "ja": "オリジナルシーンモデルを利用できません: {error}"
+  },
+  "Original {kind} unavailable: {label}": {
+    "zh-CN": "原始{kind}不可用：{label}",
+    "ja": "オリジナルの{kind}を利用できません: {label}"
+  },
+  "Scene audio is unavailable in this browser.": {
+    "zh-CN": "当前浏览器无法播放场景音频。",
+    "ja": "このブラウザーではシーン音声を再生できません。"
+  },
+  "Your browser could not enable scene audio.": {
+    "zh-CN": "浏览器无法启用场景音频。",
+    "ja": "ブラウザーでシーン音声を有効にできませんでした。"
+  },
+  "Scene audio could not be enabled.": {
+    "zh-CN": "无法启用场景音频。",
+    "ja": "シーン音声を有効にできませんでした。"
+  },
+  "Scene audio could not be initialized.": {
+    "zh-CN": "无法初始化场景音频。",
+    "ja": "シーン音声を初期化できませんでした。"
+  },
+  "This scene does not match the current passage.": {
+    "zh-CN": "此场景与当前段落不匹配。",
+    "ja": "このシーンは現在の文章に対応していません。"
+  },
+  "Invalid PJSK scene package.": {
+    "zh-CN": "PJSK 场景数据包无效。",
+    "ja": "PJSK のシーンデータが無効です。"
+  },
+  "The Live2D runtime is unavailable. Backgrounds and text remain readable.": {
+    "zh-CN": "Live2D 运行组件不可用，仍可查看背景和文本。",
+    "ja": "Live2D ランタイムを利用できません。背景とテキストは表示できます。"
+  },
+  "Scene rendering is unavailable in this browser. You can keep reading the original text.": {
+    "zh-CN": "当前浏览器无法渲染场景，仍可继续阅读原文。",
+    "ja": "このブラウザーではシーンを描画できません。原文はそのまま読めます。"
+  },
+  "background": {
+    "zh-CN": "背景",
+    "ja": "背景"
+  },
+  "portrait": {
+    "zh-CN": "立绘",
+    "ja": "立ち絵"
+  },
+  "music": {
+    "zh-CN": "音乐",
+    "ja": "音楽"
+  },
+  "sound": {
+    "zh-CN": "音效",
+    "ja": "効果音"
+  },
+  "effect": {
+    "zh-CN": "特效",
+    "ja": "エフェクト"
+  },
+  "voice": {
+    "zh-CN": "语音",
+    "ja": "ボイス"
+  },
+  "Hologram unavailable: {error}": {
+    "zh-CN": "全息影像不可用：{error}",
+    "ja": "ホログラムを利用できません: {error}"
+  },
+  "Audio unavailable: {name}. You can keep reading.": {
+    "zh-CN": "音频不可用：{name}。仍可继续阅读。",
+    "ja": "音声を利用できません: {name}。そのまま読み進められます。"
+  },
+  "Audio cue unavailable: {name}. You can keep reading.": {
+    "zh-CN": "音频提示不可用：{name}。仍可继续阅读。",
+    "ja": "音声キューを利用できません: {name}。そのまま読み進められます。"
+  },
+  "Background unavailable: {name}. You can keep reading.": {
+    "zh-CN": "背景不可用：{name}。仍可继续阅读。",
+    "ja": "背景を表示できません: {name}。そのまま読み進められます。"
+  },
+  "The authored {alias} alias has no ScenarioCharacterName row in the pinned JP build. Preserve the row and omit only this actor cue.": {
+    "zh-CN": "固定日服版本的 ScenarioCharacterName 表中没有角色别名 {alias}。保留原始文本，仅省略此角色演出。",
+    "ja": "固定された日本版の ScenarioCharacterName にキャラクターの別名 {alias} がありません。元の行を保持し、このキャラクター演出だけを省略します。"
+  },
+  "The authored Japanese line is absent from the pinned JP scenario table. Continue without inventing replacement text.": {
+    "zh-CN": "固定日服版本的剧情表中缺少此行日文。不补写替代文本，继续阅读。",
+    "ja": "固定された日本版のシナリオテーブルにこの日本語の行がありません。代わりの文章を作らずに続行します。"
+  },
+  "The authored Ki cut-in effect has no reader implementation in the pinned package. Continue without this effect.": {
+    "zh-CN": "阅读器尚未实现固定资源包中的 Ki 插入特效。省略此特效，继续阅读。",
+    "ja": "固定パッケージの Ki カットイン効果はリーダーに未実装です。この効果を省略して続行します。"
+  },
+  "The authored background ID is absent from the pinned JP background table. Keep the preceding background.": {
+    "zh-CN": "固定日服版本的背景表中缺少此背景 ID。保留上一张背景。",
+    "ja": "固定された日本版の背景テーブルにこの背景 ID がありません。直前の背景を維持します。"
+  },
+  "The authored background-effect ID is absent from the pinned JP effect table. Continue without this effect.": {
+    "zh-CN": "固定日服版本的特效表中缺少此背景特效 ID。省略此特效，继续阅读。",
+    "ja": "固定された日本版のエフェクトテーブルにこの背景効果 ID がありません。この効果を省略して続行します。"
+  },
+  "The authored key matches no unique pinned clip: the package holds two case-variant clips (SE_Gear_02 and SE_gear_02). Play no replacement sound.": {
+    "zh-CN": "此音效键无法唯一匹配固定资源包中的音频：包内同时存在 SE_Gear_02 和 SE_gear_02。不播放替代音效。",
+    "ja": "この効果音キーに一致する音声を一意に選べません。固定パッケージに SE_Gear_02 と SE_gear_02 の両方があるため、代わりの音は再生しません。"
+  },
+  "The authored off-screen character alias is absent from the pinned JP character table. Preserve the row and omit only this exit cue.": {
+    "zh-CN": "固定日服版本的角色表中缺少此画外角色别名。保留原始文本，仅省略此退场演出。",
+    "ja": "固定された日本版のキャラクターテーブルにこの画面外キャラクターの別名がありません。元の行を保持し、この退場演出だけを省略します。"
+  },
+  "The authored sound key has no matching resource in the pinned JP package. Play no replacement sound.": {
+    "zh-CN": "固定日服资源包中没有与此音效键匹配的资源。不播放替代音效。",
+    "ja": "固定された日本版のパッケージにこの効果音キーに一致するリソースがありません。代わりの音は再生しません。"
+  },
+  "The row only displays the authored clock overlay; the pinned JP TextJp is empty. Continue without inventing replacement text.": {
+    "zh-CN": "此行仅显示原始时钟图层，固定日服版本的 TextJp 为空。不补写替代文本，继续阅读。",
+    "ja": "この行は元の時計表示のみで、固定された日本版の TextJp は空です。代わりの文章を作らずに続行します。"
+  },
+  "The row only emits the authored all-hands exclamation; the pinned JP TextJp is empty. Continue without inventing replacement text.": {
+    "zh-CN": "此行仅显示原始集体感叹效果，固定日服版本的 TextJp 为空。不补写替代文本，继续阅读。",
+    "ja": "この行は元の一同の感嘆演出のみで、固定された日本版の TextJp は空です。代わりの文章を作らずに続行します。"
+  },
+  "The row only places the authored English <System Message> label; the pinned JP TextJp is empty. Continue without inventing replacement text.": {
+    "zh-CN": "此行仅显示原始英文 <System Message> 标签，固定日服版本的 TextJp 为空。不补写替代文本，继续阅读。",
+    "ja": "この行は元の英語の <System Message> ラベルのみで、固定された日本版の TextJp は空です。代わりの文章を作らずに続行します。"
+  },
+  "The row only steps an authored system overlay (clock or label); the pinned JP TextJp is empty. Continue without inventing replacement text.": {
+    "zh-CN": "此行仅切换原始系统图层，如时钟或标签，固定日服版本的 TextJp 为空。不补写替代文本，继续阅读。",
+    "ja": "この行は時計やラベルなど元のシステム表示の切り替えのみで、固定された日本版の TextJp は空です。代わりの文章を作らずに続行します。"
+  },
+  "Original Unity 3D cutscene is not supported by this reader.": {
+    "zh-CN": "此阅读器尚不支持原始 Unity 3D 过场动画。",
+    "ja": "このリーダーはオリジナルの Unity 3D カットシーンに対応していません。"
+  },
+  "The authored expression is absent from the original packaged skeleton. Keep the preceding expression.": {
+    "zh-CN": "原始资源包的骨骼数据中缺少此表情。保留上一个表情。",
+    "ja": "元のパッケージのスケルトンにこの表情がありません。直前の表情を維持します。"
+  },
+  "The authored actor effect has no reader implementation. Continue without this effect.": {
+    "zh-CN": "阅读器尚未实现此角色特效。省略此特效，继续阅读。",
+    "ja": "このキャラクター効果はリーダーに未実装です。この効果を省略して続行します。"
+  },
+  "Original Blue Archive animated characters": {
+    "zh-CN": "蔚蓝档案原始角色动画",
+    "ja": "ブルーアーカイブのオリジナルキャラクターアニメーション"
+  },
+  "Original GFL2 scene": {
+    "zh-CN": "少女前线 2 原始场景",
+    "ja": "ドールズフロントライン2 のオリジナルシーン"
+  },
+  "Original Project SEKAI scene": {
+    "zh-CN": "世界计划原始场景",
+    "ja": "プロジェクトセカイのオリジナルシーン"
+  },
+  "character": {
+    "zh-CN": "角色",
+    "ja": "キャラクター"
+  },
+  "sprite": {
+    "zh-CN": "精灵图",
+    "ja": "スプライト"
+  },
+  "particle": {
+    "zh-CN": "粒子效果",
+    "ja": "パーティクル効果"
+  }
+}
