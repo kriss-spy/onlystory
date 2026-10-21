@@ -8,8 +8,10 @@ import {
   restartForUpdate,
 } from '../pwa';
 import { useStore } from '../store';
+import { useI18n } from '../i18n';
 
 export function AppInstallation() {
+  const { t } = useI18n();
   const app = useSyncExternalStore(subscribeApp, appSnapshot);
   const { transfers } = useStore();
   const downloading = Object.values(transfers).some(
@@ -17,38 +19,43 @@ export function AppInstallation() {
   );
   return (
     <section aria-labelledby="app-installation-title">
-      <h3 id="app-installation-title">App installation</h3>
+      <h3 id="app-installation-title">{t('App installation')}</h3>
       <p className="field-note" role="status">
         {app.offline === 'ready'
-          ? 'Ready to open offline. Download stories before disconnecting.'
+          ? t('Ready to open offline. Download stories before disconnecting.')
           : app.offline === 'preparing'
-            ? 'Preparing the app for offline use…'
-            : 'Offline launch is not ready.'}
+            ? t('Preparing the app for offline use…')
+            : t('Offline launch is not ready.')}
       </p>
       {app.installed ? (
         <p className="field-note">
-          Onlystory is running or installed as an app.
+          {t('Onlystory is running or installed as an app.')}
         </p>
       ) : app.canInstall ? (
-        <button onClick={() => void installApp()}>Install Onlystory</button>
+        <button onClick={() => void installApp()}>
+          {t('Install Onlystory')}
+        </button>
       ) : (
         <p className="field-note">
-          To install, use your browser’s Install app or Add to Home Screen
-          command. On iPhone or iPad, use Safari’s Share menu.
+          {t(
+            'To install, use your browser’s Install app or Add to Home Screen command. On iPhone or iPad, use Safari’s Share menu.',
+          )}
         </p>
       )}
       {app.offline === 'ready' ? (
         <div className="button-row">
           {app.updateReady ? (
             <button disabled={downloading} onClick={restartForUpdate}>
-              Restart to update
+              {t('Restart to update')}
             </button>
           ) : (
             <button
               disabled={app.checking}
               onClick={() => void checkAppUpdate()}
             >
-              {app.checking ? 'Checking for updates…' : 'Check for updates'}
+              {app.checking
+                ? t('Checking for updates…')
+                : t('Check for updates')}
             </button>
           )}
         </div>
@@ -57,15 +64,15 @@ export function AppInstallation() {
         window.isSecureContext &&
         'serviceWorker' in navigator ? (
         <button onClick={() => void prepareOfflineApp()}>
-          Retry offline setup
+          {t('Retry offline setup')}
         </button>
       ) : null}
       {app.updateReady ? (
         <p className="field-note">
-          An update is ready.{' '}
+          {t('An update is ready.')}{' '}
           {downloading
-            ? 'Finish or cancel downloads before restarting.'
-            : 'Restart when you are ready. Progress and downloads are kept.'}
+            ? t('Finish or cancel downloads before restarting.')
+            : t('Restart when you are ready. Progress and downloads are kept.')}
         </p>
       ) : null}
       {app.message ? (

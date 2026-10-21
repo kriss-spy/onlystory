@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { ArrowUpRight, FlaskConical } from 'lucide-react';
 import { games } from '../fixtures';
 import { PageTitle } from '../components/Shell';
+import { useI18n } from '../i18n';
 
 const checks = [
   {
@@ -78,27 +79,29 @@ const checks = [
   },
 ];
 export function LabPage() {
+  const { t } = useI18n();
   return (
     <main className="page">
       <PageTitle
-        eyebrow="MILESTONE ONE"
-        title="Cross-game design checks"
+        eyebrow={t('MILESTONE ONE')}
+        title={t('Cross-game design checks')}
         back="/library"
       >
         <p>
-          Purpose-built fixtures for checking the shared interface. These
-          exercise UI behavior, not original game playback.
+          {t(
+            'Purpose-built fixtures for checking the shared interface. These exercise UI behavior, not original game playback.',
+          )}
         </p>
       </PageTitle>
       <p className="page-note">
         <Link className="text-link" to="/read/gfl2/gfl2-a33001-opening">
-          Original GFL2 opening presentation
+          {t('Original GFL2 opening presentation')}
         </Link>
         <Link className="text-link" to="/games/gfl2?examples=1">
-          Fictional catalog fixtures
+          {t('Fictional catalog fixtures')}
         </Link>
         <Link className="text-link" to="/manage?examples=1">
-          Fixture downloads
+          {t('Fixture downloads')}
         </Link>
       </p>
       <div className="lab-list">
@@ -112,8 +115,8 @@ export function LabPage() {
             <FlaskConical size={19} />
             <span>
               <small>{games.find((g) => g.id === check.game)?.shortName}</small>
-              <h2>{check.title}</h2>
-              <p>{check.description}</p>
+              <h2>{t(check.title)}</h2>
+              <p>{t(check.description)}</p>
             </span>
             <ArrowUpRight size={18} />
           </Link>

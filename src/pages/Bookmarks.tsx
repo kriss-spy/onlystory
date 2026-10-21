@@ -6,8 +6,10 @@ import { passageUrl } from '../model';
 import { useStore } from '../store';
 import { EmptyState, IconButton } from '../components/Primitives';
 import { PageTitle } from '../components/Shell';
+import { useI18n } from '../i18n';
 
 export function BookmarksPage() {
+  const { t, locale } = useI18n();
   const { data, setData, notify } = useStore();
   const [query, setQuery] = useState('');
   const items = data.bookmarks
@@ -19,33 +21,35 @@ export function BookmarksPage() {
     .sort((a, b) => b.createdAt.localeCompare(a.createdAt));
   return (
     <main className="page">
-      <PageTitle eyebrow="YOUR COLLECTION" title="Saved passages">
-        <p>A line worth returning to, with its story branch intact.</p>
+      <PageTitle eyebrow={t('YOUR COLLECTION')} title={t('Saved passages')}>
+        <p>{t('A line worth returning to, with its story branch intact.')}</p>
       </PageTitle>
       <label className="search-field">
         <Search size={17} />
         <input
           type="search"
-          aria-label="Search bookmarks"
-          placeholder="Find a passage or episode…"
+          aria-label={t('Search bookmarks')}
+          placeholder={t('Find a passage or episode…')}
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />
       </label>
       {!items.length ? (
         <EmptyState
-          title={query ? 'No matching bookmarks' : 'Nothing bookmarked yet'}
+          title={
+            query ? t('No matching bookmarks') : t('Nothing bookmarked yet')
+          }
           action={
             !query ? (
               <Link className="button primary-button" to="/library">
-                Browse the library
+                {t('Browse the library')}
               </Link>
             ) : undefined
           }
         >
           {query
-            ? 'Try another word or episode title.'
-            : 'Use the bookmark icon or B while reading to keep a passage.'}
+            ? t('Try another word or episode title.')
+            : t('Use the bookmark icon or B while reading to keep a passage.')}
         </EmptyState>
       ) : (
         <div className="bookmark-list">
@@ -58,8 +62,9 @@ export function BookmarksPage() {
                   <div>
                     <strong>{item.label}</strong>
                     <p className="muted">
-                      This episode is not in the current library. Its bookmark
-                      is preserved.
+                      {t(
+                        'This episode is not in the current library. Its bookmark is preserved.',
+                      )}
                     </p>
                   </div>
                 </article>
@@ -77,20 +82,20 @@ export function BookmarksPage() {
                   <p>{item.label}</p>
                   <span className="field-note">
                     {Object.keys(item.snapshot.frames.at(-1)!.answers).length
-                      ? 'Branch included'
-                      : 'Story opening'}{' '}
-                    · {new Date(item.createdAt).toLocaleDateString()}
+                      ? t('Branch included')
+                      : t('Story opening')}{' '}
+                    · {new Date(item.createdAt).toLocaleDateString(locale)}
                   </span>
                 </Link>
                 <IconButton
-                  label="Remove bookmark"
+                  label={t('Remove bookmark')}
                   onClick={() => {
                     setData((old) => ({
                       ...old,
                       bookmarks: old.bookmarks.filter((b) => b.id !== item.id),
                     }));
-                    notify('Bookmark removed.', {
-                      label: 'Undo',
+                    notify(t('Bookmark removed.'), {
+                      label: t('Undo'),
                       run: () =>
                         setData((old) => ({
                           ...old,

@@ -10,7 +10,22 @@ import { ReaderRoute } from './pages/Reader';
 import { BookmarksPage } from './pages/Bookmarks';
 import { ManagePage } from './pages/Manage';
 import { LabPage } from './pages/Lab';
+import { useI18n } from './i18n';
 const DownloadPage = lazy(() => import('./pages/Download'));
+
+function AppError() {
+  const { t } = useI18n();
+  return (
+    <main className="page">
+      <EmptyState title={t('This view could not be opened')}>
+        {t('Your saved progress is still on this device.')}
+      </EmptyState>
+      <button onClick={() => location.assign('/library')}>
+        {t('Return to library')}
+      </button>
+    </main>
+  );
+}
 
 class ErrorBoundary extends Component<
   { children: ReactNode },
@@ -24,21 +39,11 @@ class ErrorBoundary extends Component<
     console.error('Onlystory could not render this view.', error, info);
   }
   render() {
-    return this.state.failed ? (
-      <main className="page">
-        <EmptyState title="This view could not be opened">
-          Your saved progress is still on this device.
-        </EmptyState>
-        <button onClick={() => location.assign('/library')}>
-          Return to library
-        </button>
-      </main>
-    ) : (
-      this.props.children
-    );
+    return this.state.failed ? <AppError /> : this.props.children;
   }
 }
 export default function App() {
+  const { t } = useI18n();
   return (
     <ErrorBoundary>
       <Shell>
@@ -56,7 +61,7 @@ export default function App() {
               <Suspense
                 fallback={
                   <main className="page" role="status">
-                    Loading download…
+                    {t('Loading download…')}
                   </main>
                 }
               >
@@ -70,8 +75,8 @@ export default function App() {
             element={
               <main className="page">
                 <EmptyState
-                  title="Page not found"
-                  action={<Link to="/library">Return to library</Link>}
+                  title={t('Page not found')}
+                  action={<Link to="/library">{t('Return to library')}</Link>}
                 />
               </main>
             }

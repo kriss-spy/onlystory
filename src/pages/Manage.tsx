@@ -9,8 +9,10 @@ import { EmptyState, formatBytes, IconButton } from '../components/Primitives';
 import { PageTitle } from '../components/Shell';
 import { hasOnlineSource, isBaImport } from '../downloads/providers';
 import { useLocalLibrary } from '../hooks';
+import { useI18n } from '../i18n';
 
 export function ManagePage() {
+  const { t } = useI18n();
   const { data, transfers, download, cancel, remove, preferences } = useStore();
   const localLibrary = useLocalLibrary();
   const canDownload = (episode: Episode) =>
@@ -94,25 +96,29 @@ export function ManagePage() {
   );
   return (
     <main className="page manage-page">
-      <PageTitle eyebrow="ON THIS DEVICE" title="Episode downloads">
+      <PageTitle eyebrow={t('ON THIS DEVICE')} title={t('Episode downloads')}>
         <p>
-          Take the stories you want with you. Keep your reading history either
-          way.
+          {t(
+            'Take the stories you want with you. Keep your reading history either way.',
+          )}
         </p>
       </PageTitle>
-      <section className="online-stories" aria-label="Verified story sources">
+      <section
+        className="online-stories"
+        aria-label={t('Verified story sources')}
+      >
         <Link className="acquisition-link" to="/games/ba">
           <Download size={19} />
           <span>
-            <strong>Blue Archive</strong>
-            <small>Browse stories to download or import</small>
+            <strong>{t('Blue Archive')}</strong>
+            <small>{t('Browse stories to download or import')}</small>
           </span>
         </Link>
         <Link className="acquisition-link" to="/games/pjsk">
           <Download size={19} />
           <span>
-            <strong>Project SEKAI</strong>
-            <small>Browse main stories and events to download</small>
+            <strong>{t('Project SEKAI')}</strong>
+            <small>{t('Browse main stories and events to download')}</small>
           </span>
         </Link>
       </section>
@@ -121,8 +127,8 @@ export function ManagePage() {
           <Search size={17} />
           <input
             type="search"
-            aria-label="Search downloads"
-            placeholder="Find an episode or game…"
+            aria-label={t('Search downloads')}
+            placeholder={t('Find an episode or game…')}
             value={query}
             onChange={(e) => {
               setQuery(e.target.value);
@@ -131,7 +137,7 @@ export function ManagePage() {
           />
         </label>
         <select
-          aria-label="Download game"
+          aria-label={t('Download game')}
           value={game ?? 'all'}
           onChange={(event) => {
             setPage(1);
@@ -141,7 +147,7 @@ export function ManagePage() {
             setParams(next, { replace: true });
           }}
         >
-          <option value="all">All games</option>
+          <option value="all">{t('All games')}</option>
           {games.map((game) => (
             <option key={game.id} value={game.id}>
               {game.shortName}
@@ -160,14 +166,14 @@ export function ManagePage() {
                 setParams(next, { replace: true });
               }}
             />{' '}
-            Show stories awaiting a downloader
+            {t('Show stories awaiting a downloader')}
           </label>
         ) : null}
         {!game || game === 'gfl2' ? (
           <label className="check">
-            {game ? 'Movie voice' : 'Default movie voice'}
+            {game ? t('Movie voice') : t('Default movie voice')}
             <select
-              aria-label="Download voice language"
+              aria-label={t('Download voice language')}
               value={selectedPreferences.voice}
               onChange={(event) => {
                 const voice = event.target.value as 'zh-CN' | 'ja';
@@ -190,9 +196,9 @@ export function ManagePage() {
         ) : null}
         {selected.length ? (
           <div className="button-row">
-            <span>{selected.length} selected</span>
+            <span>{t('{count} selected', { count: selected.length })}</span>
             <IconButton
-              label="Download selected episodes"
+              label={t('Download selected episodes')}
               disabled={
                 !episodes.some((e) => selected.includes(e.id) && canDownload(e))
               }
@@ -205,7 +211,7 @@ export function ManagePage() {
               <Download size={18} />
             </IconButton>
             <IconButton
-              label="Remove selected episodes"
+              label={t('Remove selected episodes')}
               onClick={() => {
                 remove(collection.filter((e) => selected.includes(e.id)));
                 setSelected([]);
@@ -213,7 +219,10 @@ export function ManagePage() {
             >
               <Trash2 size={18} />
             </IconButton>
-            <IconButton label="Clear selection" onClick={() => setSelected([])}>
+            <IconButton
+              label={t('Clear selection')}
+              onClick={() => setSelected([])}
+            >
               <X size={17} />
             </IconButton>
           </div>
@@ -221,16 +230,18 @@ export function ManagePage() {
       </div>
       {storage ? (
         <p className="field-note">
-          {formatBytes(storage.bytes)} cached media
+          {t('{size} cached media', { size: formatBytes(storage.bytes) })}
           {storage.quota !== undefined && storage.usage !== undefined
-            ? ` · ${formatBytes(Math.max(0, storage.quota - storage.usage))} estimated browser space available`
+            ? t(' · {size} estimated browser space available', {
+                size: formatBytes(Math.max(0, storage.quota - storage.usage)),
+              })
             : ''}
-          . Downloads include the selected movie voice.
+          {t('. Downloads include the selected movie voice.')}
         </p>
       ) : null}
       {!visible.length ? (
-        <EmptyState title="No matching episodes">
-          Try another title or game.
+        <EmptyState title={t('No matching episodes')}>
+          {t('Try another title or game.')}
         </EmptyState>
       ) : (
         <div className="download-list">
@@ -238,7 +249,7 @@ export function ManagePage() {
             <label className="check">
               <input
                 type="checkbox"
-                aria-label="Select all visible episodes"
+                aria-label={t('Select all visible episodes')}
                 disabled={!selectable.length}
                 checked={
                   selectable.length > 0 &&
@@ -259,10 +270,10 @@ export function ManagePage() {
                   )
                 }
               />
-              Select visible
+              {t('Select visible')}
             </label>
             <span className="field-note">
-              Downloads continue while you read.
+              {t('Downloads continue while you read.')}
             </span>
           </div>
           {pageEpisodes.map((episode) => (
@@ -282,28 +293,32 @@ export function ManagePage() {
         </div>
       )}
       {pageCount > 1 ? (
-        <nav className="button-row" aria-label="Download pages">
+        <nav className="button-row" aria-label={t('Download pages')}>
           <button
             disabled={currentPage === 1}
             onClick={() => setPage(currentPage - 1)}
           >
-            Previous
+            {t('Previous')}
           </button>
           <span>
-            {currentPage} / {pageCount} · {visible.length} episodes
+            {t('{page} / {pages} · {count} stories', {
+              page: currentPage,
+              pages: pageCount,
+              count: visible.length,
+            })}
           </span>
           <button
             disabled={currentPage === pageCount}
             onClick={() => setPage(currentPage + 1)}
           >
-            Next
+            {t('Next')}
           </button>
         </nav>
       ) : null}
       <p className="page-note">
-        Removing a story keeps its progress and bookmarks. Undo is available for
-        30 seconds; unused playback media are then reclaimed. Media needed by
-        other stories and native original-file caches are kept.
+        {t(
+          'Removing a story keeps its progress and bookmarks. Undo is available for 30 seconds; unused playback media are then reclaimed. Media needed by other stories and native original-file caches are kept.',
+        )}
       </p>
     </main>
   );
@@ -331,11 +346,14 @@ const DownloadItem = memo(function DownloadItem({
   cancel,
   remove,
 }: DownloadItemProps) {
+  const { t } = useI18n();
   const busy = job?.status === 'downloading';
   return (
     <article className="download-item">
       <input
-        aria-label={`Select ${gameById(episode.game)?.shortName} ${episode.title}`}
+        aria-label={t('Select {story}', {
+          story: `${gameById(episode.game)?.shortName} ${episode.title}`,
+        })}
         type="checkbox"
         checked={selected}
         disabled={!installed && !canDownload}
@@ -350,13 +368,17 @@ const DownloadItem = memo(function DownloadItem({
           {busy ? (
             <>
               <span>
-                {job.message || 'Downloading'} · {formatBytes(job.bytes)}
+                {job.message ? t(job.message) : t('Downloading')} ·{' '}
+                {formatBytes(job.bytes)}
                 {job.filesTotal
-                  ? ` · ${job.filesDone ?? 0} / ${job.filesTotal} files`
-                  : ' · Preparing files'}
+                  ? t(' · {done} / {total} files', {
+                      done: job.filesDone ?? 0,
+                      total: job.filesTotal,
+                    })
+                  : t(' · Preparing files')}
               </span>
               <progress
-                aria-label={`Downloading ${episode.title}`}
+                aria-label={t('Downloading {story}', { story: episode.title })}
                 max={job.filesTotal || 1}
                 value={
                   job.filesTotal
@@ -373,46 +395,48 @@ const DownloadItem = memo(function DownloadItem({
               {job.error}
             </span>
           ) : job?.status === 'canceled' && !installed ? (
-            <span>Download canceled. Your progress is unchanged.</span>
+            <span>{t('Download canceled. Your progress is unchanged.')}</span>
           ) : installed ? (
             <span>
               <Check size={12} />
-              On this device ·{' '}
+              {t('On this device ·')}{' '}
               {episode.origin === 'game'
                 ? episode.game === 'gfl1'
-                  ? 'English text, original images and available music'
+                  ? t('English text, original images and available music')
                   : episode.readingMode === 'text'
                     ? episode.textLocales?.includes('ja')
-                      ? 'Japanese text and preserved source scripts'
-                      : '简中原文与保留的剧本'
+                      ? t('Japanese text and preserved source scripts')
+                      : t('Chinese text and preserved source scripts')
                     : episode.game === 'ba'
-                      ? 'Japanese text, animated characters, CGs and audio'
-                      : '简中原文、CG、音乐与音效'
-                : 'EN text, 简中 text, EN sample voice'}
+                      ? t('Japanese text, animated characters, CGs and audio')
+                      : t('Chinese text, CGs, music and sound effects')
+                : t('English and Chinese text, English sample voice')}
             </span>
           ) : (
             <span>
               {!canDownload
-                ? 'Downloader not available yet'
+                ? t('Downloader not available yet')
                 : isBaImport(episode) && !window.onlystoryDesktop
-                  ? 'Import original files for offline reading'
+                  ? t('Import original files for offline reading')
                   : episode.availability === 'incomplete'
-                    ? 'Partial archive · missing scene is disclosed in the reader'
-                    : 'Available to download'}
+                    ? t(
+                        'Partial archive · missing scene is disclosed in the reader',
+                      )
+                    : t('Available to download')}
             </span>
           )}
         </div>
       </div>
       {busy ? (
         <IconButton
-          label={`Cancel download ${episode.title}`}
+          label={t('Cancel download {story}', { story: episode.title })}
           onClick={() => cancel(episode.id)}
         >
           <X size={18} />
         </IconButton>
       ) : installed ? (
         <IconButton
-          label={`Remove download ${episode.title}`}
+          label={t('Remove download {story}', { story: episode.title })}
           onClick={() => remove(episode)}
         >
           <Trash2 size={18} />
@@ -420,7 +444,12 @@ const DownloadItem = memo(function DownloadItem({
       ) : (
         <IconButton
           disabled={!canDownload}
-          label={`${job?.status === 'failed' ? 'Retry download' : 'Download'} ${episode.title}`}
+          label={t(
+            job?.status === 'failed'
+              ? 'Retry download {story}'
+              : 'Download {story}',
+            { story: episode.title },
+          )}
           onClick={() => download(episode)}
         >
           {job?.status === 'failed' ? (
