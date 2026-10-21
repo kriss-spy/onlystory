@@ -488,10 +488,11 @@ export function CatalogPage() {
       </div>
       {releaseOrder && undated > 0 ? (
         <p className="muted release-order-note" role="note">
-          {undated}{' '}
-          {undated === 1 ? t('collection has') : t('collections have')}
           {t(
-            'no release date in the imported source. Undated collections appear after dated releases, in source order.',
+            undated === 1
+              ? '{count} collection has no release date in the imported source. Undated collections appear after dated releases, in source order.'
+              : '{count} collections have no release date in the imported source. Undated collections appear after dated releases, in source order.',
+            { count: undated },
           )}
         </p>
       ) : null}

@@ -1,4 +1,36 @@
 {
+  "About {size} of original files.": {
+    "zh-CN": "原始文件约 {size}。",
+    "ja": "元ファイルは約 {size} です。"
+  },
+  "{status} · {done} / {total} files": {
+    "zh-CN": "{status} · {done} / {total} 个文件",
+    "ja": "{status} · {done} / {total} ファイル"
+  },
+  "{selected} / {total} original files selected.": {
+    "zh-CN": "已选择 {selected} / {total} 个原始文件。",
+    "ja": "{selected} / {total} 個の元ファイルを選択済み。"
+  },
+  "File contents will be verified during import.": {
+    "zh-CN": "导入时会校验文件内容。",
+    "ja": "インポート時にファイル内容を検証します。"
+  },
+  "Source files · {count} remaining": {
+    "zh-CN": "源文件 · 剩余 {count} 个",
+    "ja": "元ファイル · 残り {count} 個"
+  },
+  "Downloading original files": {
+    "zh-CN": "正在下载原始文件",
+    "ja": "元ファイルをダウンロード中"
+  },
+  "{count} collection has no release date in the imported source. Undated collections appear after dated releases, in source order.": {
+    "zh-CN": "{count} 个合集在导入来源中没有发布日期。无日期合集将按原始顺序排在有日期合集之后。",
+    "ja": "{count} 件のコレクションにインポート元の公開日がありません。日付不明のコレクションは、公開日のあるものの後に元の順序で表示されます。"
+  },
+  "{count} collections have no release date in the imported source. Undated collections appear after dated releases, in source order.": {
+    "zh-CN": "{count} 个合集在导入来源中没有发布日期。无日期合集将按原始顺序排在有日期合集之后。",
+    "ja": "{count} 件のコレクションにインポート元の公開日がありません。日付不明のコレクションは、公開日のあるものの後に元の順序で表示されます。"
+  },
   " ({value0})": {
     "zh-CN": "（{value0}）",
     "ja": "（{value0}）"

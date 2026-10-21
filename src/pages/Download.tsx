@@ -108,9 +108,7 @@ export default function DownloadPage() {
           {ba
             ? t('Japanese text, animated characters, backgrounds and audio.')
             : t('Chinese text, Live2D scenes and Japanese voices.')}{' '}
-          {t('About')}
-          {formatBytes(total)}
-          {t('of original files.')}
+          {t('About {size} of original files.', { size: formatBytes(total) })}
         </p>
       </PageTitle>
       <section className="acquisition-card" aria-label={t('Get story')}>
@@ -132,9 +130,11 @@ export default function DownloadPage() {
             {busy ? (
               <div role="status" aria-live="polite">
                 <p>
-                  {job.message || t('Downloading story')} · {job.filesDone ?? 0}{' '}
-                  / {job.filesTotal ?? '…'}
-                  {t('files')}
+                  {t('{status} · {done} / {total} files', {
+                    status: t(job.message || 'Downloading story'),
+                    done: job.filesDone ?? 0,
+                    total: job.filesTotal ?? '…',
+                  })}
                 </p>
                 <progress
                   aria-label={t('Story download progress')}
@@ -241,17 +241,19 @@ export default function DownloadPage() {
             </button>
           </div>
           <p role="status">
-            {matched.size} / {baRecipe.inputs.length}
-            {t('original files selected')}
-            {files.length
-              ? t('. File contents will be verified during import.')
-              : '.'}
+            {t('{selected} / {total} original files selected.', {
+              selected: matched.size,
+              total: baRecipe.inputs.length,
+            })}
+            {files.length ? (
+              <> {t('File contents will be verified during import.')}</>
+            ) : null}
           </p>
           <details open={!desktop && !installed}>
             <summary>
-              {t('Source files ·')}
-              {baRecipe.inputs.length - matched.size}
-              {t('remaining')}
+              {t('Source files · {count} remaining', {
+                count: baRecipe.inputs.length - matched.size,
+              })}
             </summary>
             <label className="check">
               <input

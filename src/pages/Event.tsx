@@ -86,8 +86,9 @@ export function EventPage() {
             {event.game === 'pjsk' ? (
               <PjskGroupMark group={event.stories[0]?.group} />
             ) : null}
-            {event.stories.length}
-            {t('stories')}
+            {event.stories.length === 1
+              ? t('1 story')
+              : t('{count} stories', { count: event.stories.length })}
             {event.branches.length
               ? t(' · {value0} main · {value1} side', {
                   value0: event.main.length,
