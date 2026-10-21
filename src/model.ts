@@ -164,6 +164,7 @@ export interface Bookmark {
   createdAt: string;
 }
 export interface Preferences {
+  uiLocale?: Locale;
   catalogLocale?: 'original' | Locale;
   catalogLayout?: 'list' | 'table' | 'grid';
   gameThemes?: Partial<Record<GameId, 'default' | GameId>>;
@@ -735,6 +736,7 @@ export function parseData(input: unknown): AppData {
       theme: ['system', 'light', 'dark'],
       layout: ['scene', 'desk', 'text'],
       textLocale: ['en', 'zh-CN', 'ja'],
+      uiLocale: ['en', 'zh-CN', 'ja'],
       catalogLocale: ['original', 'en', 'zh-CN', 'ja'],
       voice: ['zh-CN', 'ja'],
       source: ['device', 'server-preview'],
