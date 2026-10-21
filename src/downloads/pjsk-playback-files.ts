@@ -1,4 +1,4 @@
-import reviewedRecipe from './pjsk-mmj-01-01.json';
+import reviewedRecipe from './pjsk-mmj-01-01.json' with { type: 'json' };
 
 const discoverySource =
   'https://storage.sekai.best/sekai-live2d-assets/live2d/model_list.json';
