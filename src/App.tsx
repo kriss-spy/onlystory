@@ -9,6 +9,7 @@ import { EventPage } from './pages/Event';
 import { ReaderRoute } from './pages/Reader';
 import { BookmarksPage } from './pages/Bookmarks';
 import { ManagePage } from './pages/Manage';
+import { DownloadHistoryPage } from './components/DownloadSelection';
 import { LabPage } from './pages/Lab';
 import { useI18n } from './i18n';
 const DownloadPage = lazy(() => import('./pages/Download'));
@@ -55,6 +56,7 @@ export default function App() {
           <Route path="/read/:game/:episode" element={<ReaderRoute />} />
           <Route path="/bookmarks" element={<BookmarksPage />} />
           <Route path="/manage" element={<ManagePage />} />
+          <Route path="/downloads" element={<DownloadHistoryPage />} />
           <Route
             path="/downloads/:episode"
             element={

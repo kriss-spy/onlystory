@@ -21,34 +21,42 @@ test('download history groups attempts, expands stories and survives reload', as
   );
   await page.reload();
   await page
-    .getByRole('button', { name: 'Download history', exact: true })
+    .getByRole('link', { name: 'Download history', exact: true })
     .click();
-  const panel = page.getByRole('dialog', { name: 'Downloads', exact: true });
+  const panel = page.getByRole('main', { name: 'Downloads', exact: true });
   await expect(panel).toBeVisible();
+  await expect(page).toHaveURL(/\/downloads$/);
+  await expect(page.getByRole('dialog')).toHaveCount(0);
+  await expect(panel).not.toContainText('Downloads run while the app is open.');
+  await expect(
+    panel.getByRole('button', { name: 'Add stories to download' }),
+  ).toHaveCount(0);
   await expect(panel).toContainText('Downloaded');
   await expect(panel).toContainText('Canceled');
-  await expect(panel.getByRole('progressbar')).toHaveCount(2);
+  await expect(panel.getByRole('progressbar')).toHaveCount(0);
   const summary = panel.locator('summary').first();
-  const firstProgress = panel.getByRole('progressbar').first();
+  const firstStory = panel.locator('li').first();
+  const titleBox = await summary.locator('span').boundingBox();
+  const countBox = await summary.locator('small').boundingBox();
+  expect(Math.abs(titleBox!.y - countBox!.y)).toBeLessThan(8);
+  expect(countBox!.x).toBeGreaterThan(titleBox!.x + titleBox!.width);
   await summary.click();
-  await expect(firstProgress).toBeHidden();
+  await expect(firstStory).toBeHidden();
   await summary.click();
-  await expect(firstProgress).toBeVisible();
-  await panel.getByRole('button', { name: 'Close', exact: true }).click();
-  await expect(
-    page.getByRole('button', { name: 'Download history', exact: true }),
-  ).toBeFocused();
+  await expect(firstStory).toBeVisible();
+  await page.reload();
+  await expect(panel.locator('li')).toHaveCount(2);
+  await page.goBack();
+  await expect(page).toHaveURL(/\/library$/);
   const download = page.getByRole('button', {
     name: 'Select stories to download',
     exact: true,
   });
-  await download.focus();
-  await page.keyboard.press('ArrowDown');
-  await expect(panel).toBeVisible();
-  await panel.getByRole('button', { name: 'Close', exact: true }).click();
-  await expect(panel).toBeHidden();
-  await page.mouse.move(10, 200);
   await download.hover();
+  await page.waitForTimeout(1100);
+  await expect(page).toHaveURL(/\/library$/);
+  await expect(page.getByRole('dialog')).toHaveCount(0);
+  await page.goForward();
   await expect(panel).toBeVisible();
 });
 
@@ -75,7 +83,7 @@ test('BA help explains region, languages, counts and agent preparation', async (
   );
 });
 
-test('active download button opens queue and selection estimates do not restart', async ({
+test('downloads keep progress and allow adding stories without a sidebar', async ({
   page,
   context,
 }) => {
@@ -95,16 +103,21 @@ test('active download button opens queue and selection estimates do not restart'
   await page
     .getByRole('button', { name: 'Download selected stories (2)', exact: true })
     .click();
-  await page.getByRole('button', { name: /^Downloading 2 stories/ }).click();
-  const panel = page.getByRole('dialog', { name: 'Downloads', exact: true });
+  await page
+    .getByRole('link', { name: 'Download history', exact: true })
+    .click();
+  const panel = page.getByRole('main', { name: 'Downloads', exact: true });
   await expect(panel.getByRole('progressbar')).toHaveCount(2);
-  await panel.getByRole('button', { name: 'Add stories to download' }).click();
+  await expect(
+    panel.getByRole('button', { name: 'Cancel download', exact: true }),
+  ).toHaveCount(2);
+  await page.goBack();
+  await page.getByRole('button', { name: /^Downloading 2 stories/ }).click();
   await expect(stories.first()).toBeVisible();
   await page
     .getByRole('button', { name: 'Cancel download selection', exact: true })
     .click();
   await page.getByRole('button', { name: /^Downloading 2 stories/ }).click();
-  await panel.getByRole('button', { name: 'Add stories to download' }).click();
   await stories.first().check();
   await page
     .getByRole('button', { name: 'Download selected stories (1)', exact: true })
@@ -176,12 +189,12 @@ test('two windows keep live job ownership and preserve both completed histories'
   const other = await context.newPage();
   await other.goto('/manage?examples=1&game=gfl2');
   await other
-    .getByRole('button', { name: 'Download history', exact: true })
+    .getByRole('link', { name: 'Download history', exact: true })
     .click();
-  const history = other.getByRole('dialog', { name: 'Downloads', exact: true });
+  const history = other.getByRole('main', { name: 'Downloads', exact: true });
   await expect(history).toContainText('No downloads yet.');
   await expect(history).not.toContainText('Canceled');
-  await history.getByRole('button', { name: 'Close', exact: true }).click();
+  await other.goBack();
   await other.getByLabel('Search downloads').fill('The last train');
   const second = other.locator('.download-item').first();
   await second.getByRole('button', { name: /^Download / }).click();
@@ -190,14 +203,11 @@ test('two windows keep live job ownership and preserve both completed histories'
   await expect(first).toContainText('On this device', { timeout: 30000 });
   await expect(second).toContainText('On this device', { timeout: 30000 });
   await other
-    .getByRole('button', { name: 'Download history', exact: true })
+    .getByRole('link', { name: 'Download history', exact: true })
     .click();
   await expect(history.locator('li')).toHaveCount(2);
   await expect(history).not.toContainText('Canceled');
   await other.reload();
-  await other
-    .getByRole('button', { name: 'Download history', exact: true })
-    .click();
   await expect(history.locator('li')).toHaveCount(2);
-  await expect(history.locator('progress[value="1"]')).toHaveCount(2);
+  await expect(history.getByRole('progressbar')).toHaveCount(0);
 });

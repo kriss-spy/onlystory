@@ -39,7 +39,7 @@ export function GettingStarted({ game }: { game: GameId }) {
               </li>
               <li>
                 {t(
-                  'Use the download button to select several stories or a whole collection. While downloading, click it to open the queue. Download history is also available with the clock button, a long hover, or Arrow Down on the download button.',
+                  'Use the download button to select several stories or a whole collection. You can add more stories while downloads run. Open Download history with the clock button to review progress and past downloads.',
                 )}
               </li>
               <li>

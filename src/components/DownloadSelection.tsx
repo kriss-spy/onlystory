@@ -6,7 +6,15 @@ import {
   useState,
   type ReactNode,
 } from 'react';
-import { CircleOff, Clock3, Download, History, X } from 'lucide-react';
+import {
+  ChevronRight,
+  CircleOff,
+  Clock3,
+  Download,
+  History,
+  X,
+} from 'lucide-react';
+import { NavLink } from 'react-router-dom';
 import { episodeById, eventForEpisode } from '../content';
 import { collectionTitle, episodeTitle } from '../localized-titles';
 import { gamePreferences } from '../model';
@@ -19,7 +27,7 @@ import {
   isBaImport,
   needsFurtherReverseEngineering,
 } from '../downloads/providers';
-import { formatBytes, IconButton, Panel } from './Primitives';
+import { formatBytes, IconButton } from './Primitives';
 import {
   estimateDownloads,
   type DownloadEstimate,
@@ -173,13 +181,6 @@ export function DownloadSelectionButton() {
   const selection = useDownloadSelection();
   const { t } = useI18n();
   const { transfers, cancel } = useStore();
-  const [queueOpen, setQueueOpen] = useState(false);
-  const hoverTimer = useRef<ReturnType<typeof setTimeout> | undefined>(
-    undefined,
-  );
-  const trigger = useRef<HTMLElement | null>(null);
-  const stopHover = () => clearTimeout(hoverTimer.current);
-  useEffect(() => () => clearTimeout(hoverTimer.current), []);
   const active = Object.values(transfers).filter(
     (t) => t.status === 'downloading',
   );
@@ -224,26 +225,7 @@ export function DownloadSelectionButton() {
         className="download-nav"
         aria-pressed={selection.selecting}
         aria-busy={busy}
-        aria-haspopup="dialog"
-        aria-expanded={queueOpen}
-        onMouseEnter={() => {
-          if (!busy && !selection.selecting)
-            hoverTimer.current = setTimeout(() => setQueueOpen(true), 900);
-        }}
-        onMouseLeave={stopHover}
-        onKeyDown={(event) => {
-          if (event.key === 'ArrowDown') {
-            event.preventDefault();
-            trigger.current = event.currentTarget;
-            setQueueOpen(true);
-          }
-        }}
-        onClick={(event) => {
-          stopHover();
-          trigger.current = event.currentTarget;
-          if (busy && !selection.selecting) setQueueOpen(true);
-          else selection.press();
-        }}
+        onClick={selection.press}
       >
         <Download size={18} />
         {busy ? (
@@ -275,21 +257,15 @@ export function DownloadSelectionButton() {
         ) : null}
       </IconButton>
       {!selection.selecting ? (
-        <IconButton
-          label={t('Download history')}
-          onClick={(event) => {
-            trigger.current = event.currentTarget;
-            setQueueOpen(true);
-          }}
+        <NavLink
+          to="/downloads"
+          className="icon-link"
+          aria-label={t('Download history')}
+          title={t('Download history')}
         >
           <History size={16} />
-        </IconButton>
+        </NavLink>
       ) : null}
-      <DownloadQueue
-        open={queueOpen}
-        onClose={() => setQueueOpen(false)}
-        returnFocus={trigger.current}
-      />
       {selection.selecting ? (
         <IconButton
           label={t('Cancel download selection')}
@@ -354,18 +330,9 @@ export function DownloadSelectionButton() {
   );
 }
 
-function DownloadQueue({
-  open,
-  onClose,
-  returnFocus,
-}: {
-  open: boolean;
-  onClose: () => void;
-  returnFocus: HTMLElement | null;
-}) {
+export function DownloadHistoryPage() {
   const { t } = useI18n();
   const { data, transfers, cancel } = useStore();
-  const selection = useDownloadSelection();
   const groups = new Map<
     string,
     { title: string; jobs: (typeof transfers)[string][] }
@@ -385,24 +352,11 @@ function DownloadQueue({
     groups.get(key)!.jobs.push(job);
   }
   return (
-    <Panel
-      open={open}
-      onClose={onClose}
-      title={t('Downloads')}
-      description={t(
-        'Downloads run while the app is open. History records the latest attempt for each story on this device.',
-      )}
-      returnFocus={returnFocus}
+    <main
+      className="page download-history-page"
+      aria-labelledby="download-history-title"
     >
-      <button
-        className="primary-button"
-        onClick={() => {
-          onClose();
-          if (!selection.selecting) selection.press();
-        }}
-      >
-        {t('Add stories to download')}
-      </button>
+      <h1 id="download-history-title">{t('Downloads')}</h1>
       {!groups.size ? (
         <p>
           {t(
@@ -414,9 +368,12 @@ function DownloadQueue({
         {[...groups].map(([key, group]) => (
           <details key={key} open>
             <summary>
-              {group.title}
+              <ChevronRight size={16} aria-hidden="true" />
+              <span>{group.title}</span>
               <small>
-                {t('{count} stories', { count: group.jobs.length })}
+                {group.jobs.length === 1
+                  ? t('1 story')
+                  : t('{count} stories', { count: group.jobs.length })}
               </small>
             </summary>
             <ul>
@@ -457,12 +414,18 @@ function DownloadQueue({
                         </IconButton>
                       ) : null}
                     </div>
-                    <progress
-                      aria-label={t('Download progress for {title}', { title })}
-                      max={1}
-                      value={transferFraction(job)}
-                    />
-                    {job.message ? <small>{t(job.message)}</small> : null}
+                    {job.status === 'downloading' ? (
+                      <>
+                        <progress
+                          aria-label={t('Download progress for {title}', {
+                            title,
+                          })}
+                          max={1}
+                          value={transferFraction(job)}
+                        />
+                        {job.message ? <small>{t(job.message)}</small> : null}
+                      </>
+                    ) : null}
                     {job.error && job.status === 'failed' ? (
                       <p className="error-text">{job.error}</p>
                     ) : null}
@@ -482,7 +445,7 @@ function DownloadQueue({
           </details>
         ))}
       </div>
-    </Panel>
+    </main>
   );
 }
 

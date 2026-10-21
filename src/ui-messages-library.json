@@ -595,6 +595,10 @@
     "zh-CN": "已下载 {count} 篇",
     "ja": "{count} 話ダウンロード済み"
   },
+  "1 story": {
+    "zh-CN": "1 篇故事",
+    "ja": "1 ストーリー"
+  },
   "{count} stories": {
     "zh-CN": "{count} 篇故事",
     "ja": "{count} 話"
@@ -719,9 +723,9 @@
     "zh-CN": "使用下载按钮选择支持下载器的故事。“下载器待开发”和“不支持”表示原始来源仍需准备。只有目录条目和阅读进度并不包含故事文件。",
     "ja": "ダウンロードボタンで、対応するダウンローダーがあるストーリーを選べます。「ダウンローダー準備中」「未対応」は元ファイルの準備が必要なことを示します。カタログの項目や保存した進捗だけでは、ストーリーファイルは含まれません。"
   },
-  "Use the download button to select several stories or a whole collection. While downloading, click it to open the queue. Download history is also available with the clock button, a long hover, or Arrow Down on the download button.": {
-    "zh-CN": "使用下载按钮选择多篇故事或整个合集。下载时点击该按钮可打开队列。也可通过时钟按钮、长时间悬停，或在下载按钮上按向下键查看下载历史。",
-    "ja": "ダウンロードボタンで複数のストーリーやコレクション全体を選べます。ダウンロード中に押すとキューが開きます。時計ボタン、長めのホバー、またはダウンロードボタンで下矢印キーを押す操作でも履歴を開けます。"
+  "Use the download button to select several stories or a whole collection. You can add more stories while downloads run. Open Download history with the clock button to review progress and past downloads.": {
+    "zh-CN": "使用下载按钮选择多篇故事或整个合集。下载期间也可继续添加故事。点击时钟按钮打开下载历史，查看进度和过往下载。",
+    "ja": "ダウンロードボタンで複数のストーリーやコレクション全体を選べます。ダウンロード中でもストーリーを追加できます。時計ボタンからダウンロード履歴を開くと、進捗と過去のダウンロードを確認できます。"
   },
   "Supported text languages": {
     "zh-CN": "支持的文本语言",

@@ -3829,44 +3829,81 @@ input[type='file'].sr-only,
   color: var(--accent);
   font-size: 12px;
 }
-.download-queue {
-  margin-top: 24px;
+.download-history-page > h1 {
+  font-size: 26px;
+  letter-spacing: -0.5px;
+  margin-bottom: 20px;
 }
 .download-queue details {
   border-bottom: 1px solid var(--line);
-  padding-block: 12px;
+  padding-block: 8px;
 }
 .download-queue summary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+  padding-block: 8px;
   cursor: pointer;
   font-weight: 600;
 }
+.download-queue summary::-webkit-details-marker {
+  display: none;
+}
+.download-queue summary > svg {
+  flex-shrink: 0;
+}
+.download-queue details[open] > summary > svg {
+  transform: rotate(90deg);
+}
+.download-queue summary > span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
 .download-queue summary small {
-  display: block;
-  margin: 6px 0 0 18px;
+  margin-left: 4px;
+  flex-shrink: 0;
   font-weight: normal;
+  color: var(--muted);
 }
 .download-queue ul {
   list-style: none;
-  padding: 0 0 0 18px;
+  margin: 0;
+  padding: 0 0 0 24px;
 }
 .download-queue li {
-  padding-block: 12px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 4px 16px;
+  padding-block: 8px;
 }
 .download-queue li > strong,
 .download-queue li > small {
   display: block;
   overflow-wrap: anywhere;
 }
+.download-queue li > small,
+.download-queue li > p,
+.download-queue progress {
+  grid-column: 1 / -1;
+}
 .download-queue-status {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  min-height: 32px;
+  gap: 8px;
   font-size: 13px;
+  color: var(--muted);
 }
 .download-queue progress {
   width: 100%;
   accent-color: var(--accent);
+}
+@media (max-width: 480px) {
+  .download-queue li {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 4px;
+  }
 }
 .getting-started {
   margin-block: 6px 12px;
