@@ -1,3 +1,4 @@
+import { useI18n } from '../../i18n';
 import { useEffect, useRef, useState } from 'react';
 import { Application, Ticker } from 'pixi.js';
 import type { Live2DModel } from 'pixi-live2d-display/cubism4';
@@ -15,6 +16,7 @@ export function Gfl1ShootingModels({
   reducedMotion: boolean;
   onReady: () => void;
 }) {
+  const { t } = useI18n();
   const root = useRef<HTMLDivElement>(null);
   const models = useRef<{ target: Live2DModel; gun: Live2DModel } | undefined>(
     undefined,
@@ -135,7 +137,7 @@ export function Gfl1ShootingModels({
     >
       {problem ? (
         <p className="gfl1-source-note" role="status">
-          Original scene model unavailable: {problem}
+          {t('Original scene model unavailable: {error}', { error: problem })}
         </p>
       ) : null}
     </div>

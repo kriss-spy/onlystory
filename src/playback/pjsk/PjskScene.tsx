@@ -1,3 +1,5 @@
+import { playbackMessage } from '../messages';
+import { useI18n } from '../../i18n';
 import { useEffect, useRef, useState } from 'react';
 import type { ReactNode } from 'react';
 import { Volume2 } from 'lucide-react';
@@ -26,6 +28,7 @@ export default function PjskScene({
   voiceLevel?: () => number;
   movie?: ReactNode;
 }) {
+  const { t } = useI18n();
   const root = useRef<HTMLDivElement>(null),
     caption = useRef<HTMLDivElement>(null);
   const player = useRef<PjskPlayer | null>(null);
@@ -109,6 +112,11 @@ export default function PjskScene({
       active = false;
     };
   }, [runtime, index, seekVersion, fastForward]);
+  useEffect(() => {
+    root.current
+      ?.querySelector('canvas')
+      ?.setAttribute('aria-label', t('Original Project SEKAI scene'));
+  }, [runtime, t]);
   return (
     <div
       className="stage native-stage pjsk-stage"
@@ -122,17 +130,17 @@ export default function PjskScene({
       ) : null}
       {problem ? (
         <div className="stage-message" role="alert">
-          {problem}
+          {playbackMessage(t, problem)}
         </div>
       ) : loading ? (
         <div className="pjsk-loading" role="status">
-          Loading scene…
+          {t('Loading scene…')}
         </div>
       ) : null}
       {blocked ? (
         <div className="native-audio-control">
           <IconButton
-            label="Enable scene audio"
+            label={t('Enable scene audio')}
             onClick={() => {
               void player.current
                 ?.enableAudio()
