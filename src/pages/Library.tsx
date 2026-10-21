@@ -33,10 +33,9 @@ export function LibraryPage() {
       !episode.preview &&
       (localLibrary || hasOnlineSource(episode) || data.installed[episode.id]),
   );
-  const featuredCover =
-    !window.onlystoryDesktop && realEpisodes[0]
-      ? eventArtwork(eventForEpisode(realEpisodes[0]))
-      : undefined;
+  const featuredCover = realEpisodes[0]
+    ? eventArtwork(eventForEpisode(realEpisodes[0]))
+    : undefined;
   const recent = Object.values(data.saves)
     .sort((a, b) => b.updatedAt.localeCompare(a.updatedAt))
     .filter(
@@ -169,9 +168,7 @@ export function LibraryPage() {
             const imported = realEpisodes.filter(
               (episode) => episode.game === game.id,
             );
-            const cover = window.onlystoryDesktop
-              ? undefined
-              : gameArtwork(game.id);
+            const cover = gameArtwork(game.id);
             const eventCount = groupStoryEvents(imported).length;
             return (
               <Link

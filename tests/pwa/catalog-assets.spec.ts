@@ -4,6 +4,45 @@ import { readFileSync } from 'node:fs';
 const assets = JSON.parse(
   readFileSync('src/catalog-assets.json', 'utf8'),
 ) as Record<string, { url: string }>;
+const covers = JSON.parse(readFileSync('src/cover-art.json', 'utf8'));
+
+test('desktop library renders bundled game covers online and after an offline reload', async ({
+  page,
+  context,
+}) => {
+  await context.addInitScript(() => {
+    Object.defineProperty(window, 'onlystoryDesktop', { value: {} });
+  });
+  const host = await staticHost();
+  const checkCovers = async () => {
+    const images = page.locator('.game-cover img');
+    await expect(images).toHaveCount(Object.keys(covers.games).length);
+    expect(
+      await images.evaluateAll((images) =>
+        Promise.all(
+          images.map(async (image) => {
+            const cover = image as HTMLImageElement;
+            await cover.decode();
+            return (
+              cover.naturalWidth > 0 &&
+              cover.getAttribute('src')!.startsWith('/catalog-art/')
+            );
+          }),
+        ),
+      ),
+    ).toEqual(Object.keys(covers.games).map(() => true));
+  };
+  try {
+    await page.goto(host.origin + '/library');
+    await page.waitForFunction(() => !!navigator.serviceWorker.controller);
+    await checkCovers();
+    await context.setOffline(true);
+    await page.reload();
+    await checkCovers();
+  } finally {
+    await host.close();
+  }
+});
 
 test('release catalog artwork and app language survive a cold offline launch', async ({
   page,
