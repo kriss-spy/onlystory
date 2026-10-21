@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react';
+import { useI18n } from '../i18n';
 import { Download, Upload } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { games, episodes } from '../content';
@@ -9,6 +10,7 @@ import { AppInstallation } from './AppInstallation';
 import { catalogTitleLocales, originalTitleLocales } from '../localized-titles';
 
 export function Settings({ onNavigate }: { onNavigate?: () => void }) {
+  const { t, locale } = useI18n();
   const { data, preferences, importBackup, exportBackup, notify } = useStore();
   const location = useLocation();
   const routeGame = location.pathname.split('/')[2];
@@ -83,7 +85,7 @@ export function Settings({ onNavigate }: { onNavigate?: () => void }) {
   ) => (
     <label className="setting">
       <span>
-        {label}
+        {t(label)}
         <output>
           {key === 'dialogueOpacity'
             ? Math.round(Number(p[key] ?? 1) * 100)
@@ -93,7 +95,7 @@ export function Settings({ onNavigate }: { onNavigate?: () => void }) {
       </span>
       <input
         type="range"
-        aria-label={label}
+        aria-label={t(label)}
         min={min}
         max={max}
         step={step}
@@ -113,7 +115,7 @@ export function Settings({ onNavigate }: { onNavigate?: () => void }) {
       <div
         className="settings-navigation"
         role="tablist"
-        aria-label="Settings sections"
+        aria-label={t('Settings sections')}
       >
         {['Reading', 'Appearance', 'Audio', 'Language', 'Library'].map(
           (label) => (
@@ -148,7 +150,7 @@ export function Settings({ onNavigate }: { onNavigate?: () => void }) {
                 tabs[next].focus();
               }}
             >
-              {label}
+              {t(label)}
             </button>
           ),
         )}
@@ -161,11 +163,11 @@ export function Settings({ onNavigate }: { onNavigate?: () => void }) {
         {view === 'reading' ? (
           <>
             <section>
-              <h3>Reading</h3>
+              <h3>{t('Reading')}</h3>
               <label className="setting">
-                Layout
+                {t('Layout')}
                 <select
-                  aria-label="Layout"
+                  aria-label={t('Layout')}
                   value={p.layout}
                   onChange={(e) =>
                     preferences({
@@ -174,25 +176,32 @@ export function Settings({ onNavigate }: { onNavigate?: () => void }) {
                     })
                   }
                 >
-                  <option value="scene">Scene first</option>
-                  <option value="desk">Reading desk</option>
-                  <option value="text">Text only</option>
+                  <option value="scene">{t('Scene first')}</option>
+                  <option value="desk">{t('Reading desk')}</option>
+                  <option value="text">{t('Text only')}</option>
                 </select>
               </label>
-              {number('fontSize', 'Dialogue size', 16, 32, 1, ' px')}
-              {number('textSpeed', 'Characters per second', 0, 100)}
+              {number('fontSize', t('Dialogue size'), 16, 32, 1, ' px')}
+              {number('textSpeed', t('Characters per second'), 0, 100)}
               <p className="field-note">
-                Set text speed to 0 for instant text.
+                {t('Set text speed to 0 for instant text.')}
               </p>
-              {number('autoDelay', 'Auto reading delay', 0.5, 10, 0.1, ' s')}
-              {number('panelWidth', 'Chapter panel width', 180, 360, 8, ' px')}
+              {number('autoDelay', t('Auto reading delay'), 0.5, 10, 0.1, ' s')}
+              {number(
+                'panelWidth',
+                t('Chapter panel width'),
+                180,
+                360,
+                8,
+                ' px',
+              )}
               <label className="check">
                 <input
                   type="checkbox"
                   checked={p.waitVoice}
                   onChange={(e) => scoped({ waitVoice: e.target.checked })}
                 />
-                Wait for voice before auto advance
+                {t('Wait for voice before auto advance')}
               </label>
               <label className="check">
                 <input
@@ -202,35 +211,35 @@ export function Settings({ onNavigate }: { onNavigate?: () => void }) {
                     preferences({ reducedMotion: e.target.checked })
                   }
                 />
-                Reduce scene motion
+                {t('Reduce scene motion')}
               </label>
             </section>
           </>
         ) : null}
         {view === 'appearance' ? (
           <section>
-            <h3>Appearance</h3>
-            {number('dialogueOpacity', 'Dialogue opacity', 0, 1, 0.05, '%')}
+            <h3>{t('Appearance')}</h3>
+            {number('dialogueOpacity', t('Dialogue opacity'), 0, 1, 0.05, '%')}
             <label className="setting">
-              Appearance
+              {t('Appearance')}
               <select
-                aria-label="Appearance"
+                aria-label={t('Appearance')}
                 value={p.theme}
                 onChange={(e) =>
                   scoped({ theme: e.target.value as Preferences['theme'] })
                 }
               >
-                <option value="system">System</option>
-                <option value="light">Light</option>
-                <option value="dark">Dark</option>
+                <option value="system">{t('System')}</option>
+                <option value="light">{t('Light')}</option>
+                <option value="dark">{t('Dark')}</option>
               </select>
             </label>
             {scope !== 'defaults' ? (
               <>
                 <label className="setting">
-                  Game theme
+                  {t('Game theme')}
                   <select
-                    aria-label="Game theme"
+                    aria-label={t('Game theme')}
                     value={data.preferences.gameThemes?.[scope] ?? 'default'}
                     onChange={(event) =>
                       preferences({
@@ -256,7 +265,7 @@ export function Settings({ onNavigate }: { onNavigate?: () => void }) {
                     })
                   }
                 >
-                  Use global defaults for this game
+                  {t('Use global defaults for this game')}
                 </button>
               </>
             ) : null}
@@ -264,15 +273,36 @@ export function Settings({ onNavigate }: { onNavigate?: () => void }) {
         ) : null}
         {view === 'language' ? (
           <section>
+            <label className="setting">
+              {t('App language')}
+              <select
+                aria-label={t('App language')}
+                value={locale}
+                onChange={(event) =>
+                  preferences({
+                    uiLocale: event.target.value as Preferences['uiLocale'],
+                  })
+                }
+              >
+                <option value="en">English</option>
+                <option value="zh-CN">中文</option>
+                <option value="ja">日本語</option>
+              </select>
+            </label>
+            <p className="field-note">
+              {t(
+                'Applies to the whole app. Catalog titles and dialogue have their own language settings.',
+              )}
+            </p>
             <h3>
               {scope === 'defaults'
-                ? 'Language and player defaults'
+                ? t('Language and player defaults')
                 : games.find((game) => game.id === scope)?.name}
             </h3>
             <label className="setting">
-              Catalog language
+              {t('Catalog language')}
               <select
-                aria-label="Catalog language"
+                aria-label={t('Catalog language')}
                 aria-describedby="catalog-language-note"
                 value={catalogLanguageUnavailable ? 'original' : catalogLocale}
                 onChange={(event) =>
@@ -282,7 +312,7 @@ export function Settings({ onNavigate }: { onNavigate?: () => void }) {
                   })
                 }
               >
-                <option value="original">Original titles</option>
+                <option value="original">{t('Original titles')}</option>
                 {Object.entries(localeNames)
                   .filter(([locale]) => catalogLocales.has(locale))
                   .map(([locale, name]) => (
@@ -294,17 +324,27 @@ export function Settings({ onNavigate }: { onNavigate?: () => void }) {
             </label>
             <p className="field-note" id="catalog-language-note">
               {catalogLanguageUnavailable
-                ? `${languageNames[catalogLocale]} catalog titles are unavailable for ${games.find((game) => game.id === scope)?.name}. Showing original titles. `
+                ? t(
+                    '{language} catalog titles are unavailable for {game}. Showing original titles. ',
+                    {
+                      language: t(languageNames[catalogLocale]),
+                      game: games.find((game) => game.id === scope)?.name ?? '',
+                    },
+                  )
                 : storyTitleUnavailable
-                  ? `${languageNames[catalogLocale]} titles are unavailable for this story. Showing its original title. `
+                  ? t(
+                      '{language} titles are unavailable for this story. Showing its original title. ',
+                      { language: t(languageNames[catalogLocale]) },
+                    )
                   : ''}
-              Event and story titles. Missing translations keep their original
-              titles. This does not change dialogue.
+              {t(
+                'Event and story titles. Missing translations keep their original titles. This does not change dialogue.',
+              )}
             </p>
             <label className="setting">
-              Text language
+              {t('Text language')}
               <select
-                aria-label="Text language"
+                aria-label={t('Text language')}
                 aria-describedby="text-language-note"
                 disabled={!textLocales.length}
                 value={
@@ -319,7 +359,9 @@ export function Settings({ onNavigate }: { onNavigate?: () => void }) {
                 }
               >
                 {!textLocales.length ? (
-                  <option value={p.textLocale}>No text library imported</option>
+                  <option value={p.textLocale}>
+                    {t('No text library imported')}
+                  </option>
                 ) : null}
                 {textLocales.map((locale) => (
                   <option key={locale} value={locale}>
@@ -330,16 +372,24 @@ export function Settings({ onNavigate }: { onNavigate?: () => void }) {
             </label>
             <p className="field-note" id="text-language-note">
               {textLanguageUnavailable
-                ? `${languageNames[p.textLocale]} is unavailable for this story. Showing ${languageNames[storyTextLocales[0]]}. Your preference is kept for other stories.`
+                ? t(
+                    '{language} is unavailable for this story. Showing {fallback}. Your preference is kept for other stories.',
+                    {
+                      language: t(languageNames[p.textLocale]),
+                      fallback: t(languageNames[storyTextLocales[0]]),
+                    },
+                  )
                 : currentStory
-                  ? 'Dialogue languages available for this story.'
-                  : 'Preferred dialogue language. Stories without this translation use their original language.'}
+                  ? t('Dialogue languages available for this story.')
+                  : t(
+                      'Preferred dialogue language. Stories without this translation use their original language.',
+                    )}
             </p>
             {scope === 'gfl2' ? (
               <label className="setting">
-                Protagonist version
+                {t('Protagonist version')}
                 <select
-                  aria-label="Protagonist version"
+                  aria-label={t('Protagonist version')}
                   value={p.textVariant}
                   onChange={(event) =>
                     scoped({
@@ -348,16 +398,16 @@ export function Settings({ onNavigate }: { onNavigate?: () => void }) {
                     })
                   }
                 >
-                  <option value="male">Male original</option>
-                  <option value="female">Female original</option>
+                  <option value="male">{t('Male original')}</option>
+                  <option value="female">{t('Female original')}</option>
                 </select>
               </label>
             ) : null}
             {scope !== 'pjsk' ? (
               <label className="setting">
-                Player name
+                {t('Player name')}
                 <input
-                  aria-label="Player name"
+                  aria-label={t('Player name')}
                   maxLength={40}
                   value={p.playerName}
                   onChange={(event) =>
@@ -368,19 +418,21 @@ export function Settings({ onNavigate }: { onNavigate?: () => void }) {
             ) : null}
             {scope !== 'pjsk' ? (
               <p className="field-note">
-                Player name is used where the source provides a placeholder.
+                {t(
+                  'Player name is used where the source provides a placeholder.',
+                )}
               </p>
             ) : null}
           </section>
         ) : null}
         {view === 'audio' ? (
           <section>
-            <h3>Audio</h3>
+            <h3>{t('Audio')}</h3>
             {scope === 'defaults' || scope === 'gfl2' ? (
               <label className="setting">
-                Voice language
+                {t('Voice language')}
                 <select
-                  aria-label="Voice language"
+                  aria-label={t('Voice language')}
                   value={p.voice}
                   onChange={(e) =>
                     scoped({ voice: e.target.value as Preferences['voice'] })
@@ -392,22 +444,22 @@ export function Settings({ onNavigate }: { onNavigate?: () => void }) {
               </label>
             ) : null}
             <p className="field-note">
-              Selects movie audio where available. BA dialogue uses original
-              Japanese voices. Recovered GFL2 regular dialogue has no voice
-              track.
+              {t(
+                'Selects movie audio where available. BA dialogue uses original Japanese voices. Recovered GFL2 regular dialogue has no voice track.',
+              )}
             </p>
-            {number('musicVolume', 'Music volume', 0, 1, 0.05)}
-            {number('soundVolume', 'Sound effects volume', 0, 1, 0.05)}
-            {number('voiceVolume', 'Voice volume', 0, 1, 0.05)}
+            {number('musicVolume', t('Music volume'), 0, 1, 0.05)}
+            {number('soundVolume', t('Sound effects volume'), 0, 1, 0.05)}
+            {number('voiceVolume', t('Voice volume'), 0, 1, 0.05)}
           </section>
         ) : null}
         {view === 'library' ? (
           <section>
-            <h3>Library</h3>
+            <h3>{t('Library')}</h3>
             <label className="setting">
-              Source
+              {t('Source')}
               <select
-                aria-label="Source"
+                aria-label={t('Source')}
                 value={p.source}
                 onChange={(e) =>
                   preferences({
@@ -415,36 +467,40 @@ export function Settings({ onNavigate }: { onNavigate?: () => void }) {
                   })
                 }
               >
-                <option value="device">On this device</option>
-                <option value="server-preview">Private server preview</option>
+                <option value="device">{t('On this device')}</option>
+                <option value="server-preview">
+                  {t('Private server preview')}
+                </option>
               </select>
             </label>
             {p.source === 'server-preview' ? (
               <p className="field-note">
-                This previews server availability states. No server or account
-                is connected.
+                {t(
+                  'This previews server availability states. No server or account is connected.',
+                )}
               </p>
             ) : null}
             <Link className="text-link" to="/manage" onClick={onNavigate}>
-              Manage episode downloads
+              {t('Manage episode downloads')}
             </Link>
           </section>
         ) : null}
         {view === 'library' ? (
           <section>
-            <h3>Your data</h3>
+            <h3>{t('Your data')}</h3>
             <p className="field-note">
-              Export progress, branches, bookmarks and preferences. Restoring
-              merges with your current records.
+              {t(
+                'Export progress, branches, bookmarks and preferences. Restoring merges with your current records.',
+              )}
             </p>
             <div className="button-row">
               <button onClick={exportBackup}>
                 <Download size={16} />
-                Export backup
+                {t('Export backup')}
               </button>
               <button onClick={() => fileInput.current?.click()}>
                 <Upload size={16} />
-                Restore backup
+                {t('Restore backup')}
               </button>
             </div>
             <input
@@ -462,7 +518,7 @@ export function Settings({ onNavigate }: { onNavigate?: () => void }) {
                   const message =
                     reason instanceof Error
                       ? reason.message
-                      : 'The backup could not be read.';
+                      : t('The backup could not be read.');
                   setError(message);
                   notify(message);
                 }
@@ -478,15 +534,14 @@ export function Settings({ onNavigate }: { onNavigate?: () => void }) {
         ) : null}
         {view === 'library' ? (
           <section>
-            <h3>About this build</h3>
+            <h3>{t('About this build')}</h3>
             <p className="field-note">
-              Private local build. GFL1, GFL2, Project SEKAI and Blue Archive
-              use the shared reader with original imported text and media.
-              Source gaps and presentation limits are disclosed in the reader.
-              Fictional interface fixtures are under design checks.
+              {t(
+                'Private local build. GFL1, GFL2, Project SEKAI and Blue Archive use the shared reader with original imported text and media. Source gaps and presentation limits are disclosed in the reader. Fictional interface fixtures are under design checks.',
+              )}
             </p>
             <Link className="text-link" to="/lab" onClick={onNavigate}>
-              Cross-game design checks
+              {t('Cross-game design checks')}
             </Link>
           </section>
         ) : null}

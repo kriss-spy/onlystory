@@ -19,6 +19,7 @@ const types = {
   '.webmanifest': 'application/manifest+json',
   '.wasm': 'application/wasm',
   '.png': 'image/png',
+  '.webp': 'image/webp',
   '.svg': 'image/svg+xml',
   '.ico': 'image/x-icon',
   '.woff2': 'font/woff2',

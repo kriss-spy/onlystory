@@ -6,14 +6,16 @@ import extraMessages from './ui-messages-extra.json';
 
 describe('application language', () => {
   it('preserves interpolation parameters in Chinese and Japanese messages', () => {
+    expect(translate('zh-CN', 'App language')).toBe('应用语言');
+    expect(translate('ja', 'App language')).toBe('アプリの言語');
     const placeholders = (text: string) =>
-      [...new Set(text.match(/\{\w+\}/g) ?? [])].sort();
+      (text.match(/\{\w+\}/g) ?? []).sort();
     for (const [source, entry] of Object.entries({
       ...messages,
       ...extraMessages,
     })) {
       for (const locale of ['zh-CN', 'ja'] as const) {
-        expect(entry[locale], `${locale}: ${source}`).toBeTruthy();
+        expect(entry[locale].trim(), `${locale}: ${source}`).toBeTruthy();
         expect(placeholders(entry[locale]), `${locale}: ${source}`).toEqual(
           placeholders(source),
         );

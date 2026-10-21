@@ -3,6 +3,7 @@ import * as Tooltip from '@radix-ui/react-tooltip';
 import { X } from 'lucide-react';
 import { useId } from 'react';
 import type { ButtonHTMLAttributes, ReactNode } from 'react';
+import { useI18n } from '../i18n';
 
 export function IconButton({
   label,
@@ -14,12 +15,13 @@ export function IconButton({
   shortcut?: string;
   children: ReactNode;
 }) {
+  const { t } = useI18n();
   return (
     <Tooltip.Root>
       <Tooltip.Trigger asChild>
         <button
           type="button"
-          aria-label={label}
+          aria-label={t(label)}
           {...props}
           className={`icon-button ${props.className ?? ''}`}
         >
@@ -28,7 +30,7 @@ export function IconButton({
       </Tooltip.Trigger>
       <Tooltip.Portal>
         <Tooltip.Content className="tooltip" sideOffset={7}>
-          {label}
+          {t(label)}
           {shortcut ? <kbd>{shortcut}</kbd> : null}
           <Tooltip.Arrow className="tooltip-arrow" />
         </Tooltip.Content>

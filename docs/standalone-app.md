@@ -8,6 +8,17 @@ are listed in `release/artifacts-current.json`; compare downloads against
 `release/SHA256SUMS.txt`. Older verification records identify their own builds and
 do not establish verification of a newly rebuilt artifact.
 
+Game covers, event covers, title logos, group logos and school emblems are
+bundled with the app under `/catalog-art/`. They are available before downloading
+a story and are included in the web app's offline shell. Story media remains a
+separate download or import. The same catalog bundle goes into Windows, Linux
+and web packages.
+
+Settings → Language → App language selects English, Chinese or Japanese for the
+whole app. The choice is saved on this device and included in progress backups.
+Catalog language and Text language remain separate settings for titles and
+dialogue.
+
 ## Using the desktop app
 
 Run `Onlystory-0.2.0-portable-x64.exe`, or install

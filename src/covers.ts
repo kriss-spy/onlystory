@@ -1,5 +1,6 @@
 import artwork from './cover-art.json';
 import type { CSSProperties } from 'react';
+import { catalogAssetUrl } from './catalog-assets';
 
 export interface CoverArt {
   url: string;
@@ -21,17 +22,28 @@ export const artworkStyle = (cover: CoverArt): CSSProperties => ({
     : {}),
 });
 
+const bundled = (cover: CoverArt | undefined): CoverArt | undefined =>
+  cover && {
+    ...cover,
+    url: catalogAssetUrl(cover.url),
+    ...(cover.logo
+      ? { logo: { ...cover.logo, url: catalogAssetUrl(cover.logo.url) } }
+      : {}),
+  };
+
 export const gameArtwork = (game: string): CoverArt | undefined =>
-  (artwork.games as Record<string, CoverArt>)[game];
+  bundled((artwork.games as Record<string, CoverArt>)[game]);
 
 export const groupArtwork = (
   game: string,
   group: string,
 ): CoverArt | undefined =>
-  (artwork.groups as Record<string, CoverArt>)[`${game}:${group}`];
+  bundled((artwork.groups as Record<string, CoverArt>)[`${game}:${group}`]);
 
 export const eventArtwork = (event: {
   game: string;
   id: string;
 }): CoverArt | undefined =>
-  (artwork.events as Record<string, CoverArt>)[`${event.game}:${event.id}`];
+  bundled(
+    (artwork.events as Record<string, CoverArt>)[`${event.game}:${event.id}`],
+  );

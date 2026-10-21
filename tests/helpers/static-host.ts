@@ -34,6 +34,7 @@ export async function staticHost() {
       '.wasm': 'application/wasm',
       '.svg': 'image/svg+xml',
       '.png': 'image/png',
+      '.webp': 'image/webp',
       '.webmanifest': 'application/manifest+json',
     };
     response.setHeader(
