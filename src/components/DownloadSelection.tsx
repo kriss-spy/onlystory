@@ -256,16 +256,14 @@ export function DownloadSelectionButton() {
           <span className="nav-count">{selection.selected.size}</span>
         ) : null}
       </IconButton>
-      {!selection.selecting ? (
-        <NavLink
-          to="/downloads"
-          className="icon-link"
-          aria-label={t('Download history')}
-          title={t('Download history')}
-        >
-          <History size={16} />
-        </NavLink>
-      ) : null}
+      <NavLink
+        to="/downloads"
+        className="icon-link"
+        aria-label={t('Download history')}
+        title={t('Download history')}
+      >
+        <History size={16} />
+      </NavLink>
       {selection.selecting ? (
         <IconButton
           label={t('Cancel download selection')}

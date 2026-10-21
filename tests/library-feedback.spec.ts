@@ -98,6 +98,20 @@ test('downloads keep progress and allow adding stories without a sidebar', async
   await stories.nth(0).check();
   const size = page.locator('.download-selection-size');
   await expect(size).toContainText(/\d.*new/, { timeout: 30000 });
+  const history = page.getByRole('link', {
+    name: 'Download history',
+    exact: true,
+  });
+  await expect(history).toBeVisible();
+  await page.setViewportSize({ width: 320, height: 800 });
+  await expect
+    .poll(() =>
+      page
+        .locator('.app-header')
+        .evaluate((element) => element.scrollWidth <= element.clientWidth),
+    )
+    .toBe(true);
+  await page.setViewportSize({ width: 1365, height: 900 });
   await stories.nth(1).check();
   await expect(size).not.toHaveText('Checking size…');
   await page
@@ -114,6 +128,18 @@ test('downloads keep progress and allow adding stories without a sidebar', async
   await page.goBack();
   await page.getByRole('button', { name: /^Downloading 2 stories/ }).click();
   await expect(stories.first()).toBeVisible();
+  await expect(history).toBeVisible();
+  await history.click();
+  await expect(panel.getByRole('progressbar')).toHaveCount(2);
+  await expect(panel).not.toContainText('Canceled');
+  await page.goBack();
+  await expect(stories.first()).toBeVisible();
+  await expect(
+    page.getByRole('button', {
+      name: 'Download selected stories (0)',
+      exact: true,
+    }),
+  ).toBeVisible();
   await page
     .getByRole('button', { name: 'Cancel download selection', exact: true })
     .click();

@@ -3918,7 +3918,25 @@ input[type='file'].sr-only,
 }
 
 @media (max-width: 410px) {
+  .app-header:has(.download-nav) {
+    height: auto;
+    min-height: 55px;
+    padding-block: 8px;
+    gap: 8px;
+  }
   .app-header:has(.download-nav) .brand span {
     display: none;
+  }
+  .app-header:has(.download-nav) nav {
+    flex: 1;
+    min-width: 0;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  .download-selection-size {
+    flex-basis: 100%;
+    max-width: none;
+    margin-inline: 0;
+    text-align: right;
   }
 }
