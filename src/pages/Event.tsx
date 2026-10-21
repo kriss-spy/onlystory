@@ -18,12 +18,15 @@ import { SchoolMarks } from '../components/SchoolMarks';
 import { EventCover } from '../components/EventCover';
 import { CatalogLayout } from '../components/CatalogLayout';
 import { TextLanguages } from '../components/TextLanguages';
-import { useStore } from '../store';
+import { isInstalled, useStore } from '../store';
 import { gamePreferences } from '../model';
+import { GettingStarted } from '../components/GettingStarted';
+import { useI18n } from '../i18n';
 import { collectionTitle } from '../localized-titles';
 
 const scrollPositions = new Map<string, number>();
 export function EventPage() {
+  const { t } = useI18n();
   const { game: id, event: eventId } = useParams();
   const game = gameById(id);
   const { data } = useStore();
@@ -58,10 +61,10 @@ export function EventPage() {
     return (
       <main className="page">
         <EmptyState
-          title="Event not found"
-          action={<Link to={fallback}>Return to events</Link>}
+          title={t('Event not found')}
+          action={<Link to={fallback}>{t('Return to events')}</Link>}
         >
-          This event is not in the current library.
+          {t('This event is not in the current library.')}
         </EmptyState>
       </main>
     );
@@ -72,7 +75,7 @@ export function EventPage() {
     >
       <div className="event-heading">
         <PageTitle
-          eyebrow={`${game.shortName} · ${event.category}`}
+          eyebrow={`${game.shortName} · ${t(event.category)}`}
           title={collectionTitle(
             event,
             gamePreferences(data.preferences, game.id).catalogLocale,
@@ -83,10 +86,25 @@ export function EventPage() {
             {event.game === 'pjsk' ? (
               <PjskGroupMark group={event.stories[0]?.group} />
             ) : null}
-            {event.stories.length} stories
+            {event.stories.length}
+            {t('stories')}
             {event.branches.length
-              ? ` · ${event.main.length} main · ${event.stories.length - event.main.length} side`
+              ? t(' · {value0} main · {value1} side', {
+                  value0: event.main.length,
+                  value1: event.stories.length - event.main.length,
+                })
               : ''}
+          </p>
+          <p className="event-download-status">
+            {t('{downloaded} of {total} downloaded · {read} read', {
+              downloaded: event.stories.filter((story) =>
+                isInstalled(data, story),
+              ).length,
+              total: event.stories.length,
+              read: event.stories.filter(
+                (story) => data.saves[story.id]?.completed,
+              ).length,
+            })}
           </p>
           <TextLanguages stories={event.stories} />
           {event.notice ? <p role="note">{event.notice}</p> : null}
@@ -112,8 +130,8 @@ export function EventPage() {
                 <figcaption>
                   <a href={cover.page} target="_blank" rel="noreferrer">
                     {cover.kind === 'unofficial-art'
-                      ? 'Unofficial artwork'
-                      : 'Official artwork'}{' '}
+                      ? t('Unofficial artwork')
+                      : t('Official artwork')}{' '}
                     · {cover.credit}
                   </a>
                 </figcaption>
@@ -122,13 +140,14 @@ export function EventPage() {
           )
         ) : null}
       </div>
+      <GettingStarted game={game.id} />
       <div className="catalog-toolbar">
         <label className="search-field">
           <Search size={17} />
           <input
             type="search"
-            aria-label="Search stories"
-            placeholder="Find a story…"
+            aria-label={t('Search stories')}
+            placeholder={t('Find a story…')}
             value={query}
             onChange={(e) => {
               const next = new URLSearchParams(params);
@@ -141,7 +160,9 @@ export function EventPage() {
         <CatalogLayout />
       </div>
       {!rows.main.length && !rows.independent.length ? (
-        <EmptyState title="No matching stories">Try another title.</EmptyState>
+        <EmptyState title={t('No matching stories')}>
+          {t('Try another title.')}
+        </EmptyState>
       ) : (
         <div
           className="event-outline"

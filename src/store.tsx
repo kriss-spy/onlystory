@@ -12,6 +12,12 @@ import { emptyData, mergeData, parseData, gamePreferences } from './model';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { isBaImport, hasOnlineSource } from './downloads/providers';
 import { loadEpisode } from './content';
+import {
+  HISTORY_KEY,
+  restoreTransfers,
+  readTransferHistory,
+  persistTransfer,
+} from './download-status';
 import { useLocalLibrary } from './hooks';
 import {
   savePjskInventory,
@@ -46,10 +52,10 @@ export const isInstalled = (data: AppData, episode: Episode) => {
   const p = gamePreferences(data.preferences, episode.game);
   return (
     data.installed[episode.id] === true &&
-    (!installation ||
-      (installation.voices.includes(p.voice) &&
-        (!installation.variants ||
-          installation.variants.includes(`${p.textVariant}:${p.voice}`))))
+    !!installation &&
+    installation.voices.includes(p.voice) &&
+    (!installation.variants ||
+      installation.variants.includes(`${p.textVariant}:${p.voice}`))
   );
 };
 interface Notice {
@@ -57,6 +63,7 @@ interface Notice {
   action?: { label: string; run: () => void };
 }
 export interface Transfer {
+  finishedAt?: number;
   episodeId: string;
   status: 'downloading' | 'complete' | 'failed' | 'canceled';
   bytes: number;
@@ -119,7 +126,46 @@ export function AppProvider({ children }: { children: ReactNode }) {
   const [notice, setNotice] = useState<Notice | null>(() =>
     initialProblem ? { message: initialProblem } : null,
   );
-  const [transfers, setTransfers] = useState<Record<string, Transfer>>({});
+  const [transfers, setTransfers] = useState<Record<string, Transfer>>(() => {
+    try {
+      return readTransferHistory(localStorage);
+    } catch {
+      return {};
+    }
+  });
+  const seenTransfers = useRef(transfers);
+  useEffect(() => {
+    const changed = Object.entries(transfers)
+      .filter(
+        ([id, job]) =>
+          job !== seenTransfers.current[id] && job.status !== 'downloading',
+      )
+      .map(([, job]) => job);
+    seenTransfers.current = transfers;
+    if (!changed.length) return;
+    void withMediaLock('onlystory:download-history', undefined, async () => {
+      for (const job of changed) persistTransfer(localStorage, job);
+    }).catch(() => {
+      /* Downloads continue if history storage is unavailable. */
+    });
+  }, [transfers]);
+  useEffect(() => {
+    const syncHistory = (event: StorageEvent) => {
+      if (!event.key?.startsWith(`${HISTORY_KEY}:`) || !event.newValue) return;
+      const incoming = restoreTransfers(event.newValue);
+      setTransfers((old) => {
+        const next = { ...old };
+        for (const [id, job] of Object.entries(incoming)) {
+          if (old[id]?.status === 'downloading') continue;
+          if ((job.finishedAt ?? 0) >= (old[id]?.finishedAt ?? 0))
+            next[id] = job;
+        }
+        return next;
+      });
+    };
+    window.addEventListener('storage', syncHistory);
+    return () => window.removeEventListener('storage', syncHistory);
+  }, []);
   const notify = useCallback((message: string, action?: Notice['action']) => {
     setNotice({ message, action });
   }, []);
@@ -532,6 +578,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
             [episode.id]: {
               episodeId: episode.id,
               status: 'complete',
+              finishedAt: Date.now(),
               bytes,
               total,
             },
@@ -543,6 +590,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
             [episode.id]: {
               episodeId: episode.id,
               status: controller.signal.aborted ? 'canceled' : 'failed',
+              finishedAt: Date.now(),
               bytes,
               total,
               error:

@@ -1,3 +1,4 @@
+import { useI18n } from '../i18n';
 import { useEffect, useMemo, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { ArrowLeft, Check, Download, FolderOpen, X } from 'lucide-react';
@@ -12,6 +13,7 @@ import { hasOnlineSource, isBaImport } from '../downloads/providers';
 import { pjskDownloadById } from '../downloads/pjsk-catalog';
 
 export default function DownloadPage() {
+  const { t } = useI18n();
   const { episode: id } = useParams();
   const episode = episodeById(id);
   const store = useStore();
@@ -54,8 +56,8 @@ export default function DownloadPage() {
   if (!episode || !hasOnlineSource(episode))
     return (
       <main className="page">
-        <EmptyState title="Source not available">
-          <Link to="/manage">Back to downloads</Link>
+        <EmptyState title={t('Source not available')}>
+          <Link to="/manage">{t('Back to downloads')}</Link>
         </EmptyState>
       </main>
     );
@@ -69,11 +71,11 @@ export default function DownloadPage() {
           <>
             <p role="alert">{recipeError}</p>
             <button onClick={() => setAttempt((value) => value + 1)}>
-              Retry
+              {t('Retry')}
             </button>
           </>
         ) : (
-          <p role="status">Preparing download instructions…</p>
+          <p role="status">{t('Preparing download instructions…')}</p>
         )}
       </main>
     );
@@ -95,7 +97,8 @@ export default function DownloadPage() {
   return (
     <main className="page acquisition-page">
       <Link className="back-link" to="/manage?source=online">
-        <ArrowLeft size={16} /> Episode downloads
+        <ArrowLeft size={16} />
+        {t('Episode downloads')}
       </Link>
       <PageTitle
         eyebrow={ba ? 'BLUE ARCHIVE · JP' : 'PROJECT SEKAI'}
@@ -103,22 +106,25 @@ export default function DownloadPage() {
       >
         <p>
           {ba
-            ? 'Japanese text, animated characters, backgrounds and audio.'
-            : 'Chinese text, Live2D scenes and Japanese voices.'}{' '}
-          About {formatBytes(total)} of original files.
+            ? t('Japanese text, animated characters, backgrounds and audio.')
+            : t('Chinese text, Live2D scenes and Japanese voices.')}{' '}
+          {t('About')}
+          {formatBytes(total)}
+          {t('of original files.')}
         </p>
       </PageTitle>
-      <section className="acquisition-card" aria-label="Get story">
+      <section className="acquisition-card" aria-label={t('Get story')}>
         {installed ? (
           <>
             <p className="success-text">
-              <Check size={16} /> Available offline on this device
+              <Check size={16} />
+              {t('Available offline on this device')}
             </p>
             <Link
               className="button primary-button"
               to={`/read/${episode.game}/${episode.id}`}
             >
-              Read story
+              {t('Read story')}
             </Link>
           </>
         ) : (
@@ -126,11 +132,12 @@ export default function DownloadPage() {
             {busy ? (
               <div role="status" aria-live="polite">
                 <p>
-                  {job.message || 'Downloading story'} · {job.filesDone ?? 0} /{' '}
-                  {job.filesTotal ?? '…'} files
+                  {job.message || t('Downloading story')} · {job.filesDone ?? 0}{' '}
+                  / {job.filesTotal ?? '…'}
+                  {t('files')}
                 </p>
                 <progress
-                  aria-label="Story download progress"
+                  aria-label={t('Story download progress')}
                   max={job.fraction != null ? 1 : job.filesTotal || 1}
                   value={
                     job.fraction ??
@@ -138,11 +145,13 @@ export default function DownloadPage() {
                   }
                 />
                 <button onClick={() => store.cancel(episode.id)}>
-                  <X size={16} /> Cancel
+                  <X size={16} />
+                  {t('Cancel')}
                 </button>
                 <p className="field-note">
-                  You can leave this page. Keep the app open until the import
-                  finishes.
+                  {t(
+                    'You can leave this page. Keep the app open until the import finishes.',
+                  )}
                 </p>
               </div>
             ) : (
@@ -154,7 +163,9 @@ export default function DownloadPage() {
                 ) : null}
                 {job?.status === 'canceled' ? (
                   <p role="status">
-                    Canceled. Verified source downloads are kept for retry.
+                    {t(
+                      'Canceled. Verified source downloads are kept for retry.',
+                    )}
                   </p>
                 ) : null}
                 {!ba || desktop ? (
@@ -165,18 +176,20 @@ export default function DownloadPage() {
                     >
                       <Download size={17} />
                       {job?.status === 'failed'
-                        ? 'Retry download and import'
-                        : 'Download and import'}
+                        ? t('Retry download and import')
+                        : t('Download and import')}
                     </button>
                     <p className="field-note">
-                      Files come directly from the original sources. Downloads
-                      are verified before the story is installed.
+                      {t(
+                        'Files come directly from the original sources. Downloads are verified before the story is installed.',
+                      )}
                     </p>
                   </>
                 ) : (
                   <p>
-                    Download the source files below, then choose the files or
-                    their folder to import them.
+                    {t(
+                      'Download the source files below, then choose the files or their folder to import them.',
+                    )}
                   </p>
                 )}
               </>
@@ -186,17 +199,19 @@ export default function DownloadPage() {
       </section>
       {baRecipe ? (
         <section className="acquisition-card" aria-labelledby="originals-title">
-          <h2 id="originals-title">Import original files</h2>
+          <h2 id="originals-title">{t('Import original files')}</h2>
           <p>
-            Choose files you have already downloaded. Onlystory processes them
-            on this device.
+            {t(
+              'Choose files you have already downloaded. Onlystory processes them on this device.',
+            )}
           </p>
           <div className="button-row">
             <label className="button">
-              <FolderOpen size={16} /> Choose files
+              <FolderOpen size={16} />
+              {t('Choose files')}
               <input
                 className="sr-only"
-                aria-label="Choose original files"
+                aria-label={t('Choose original files')}
                 type="file"
                 multiple
                 disabled={busy}
@@ -204,10 +219,11 @@ export default function DownloadPage() {
               />
             </label>
             <label className="button">
-              <FolderOpen size={16} /> Choose folder
+              <FolderOpen size={16} />
+              {t('Choose folder')}
               <input
                 className="sr-only"
-                aria-label="Choose original folder"
+                aria-label={t('Choose original folder')}
                 type="file"
                 multiple
                 ref={(input) => {
@@ -221,18 +237,21 @@ export default function DownloadPage() {
               disabled={busy || matched.size !== baRecipe.inputs.length}
               onClick={() => store.download(episode, files)}
             >
-              Import story
+              {t('Import story')}
             </button>
           </div>
           <p role="status">
-            {matched.size} / {baRecipe.inputs.length} original files selected
+            {matched.size} / {baRecipe.inputs.length}
+            {t('original files selected')}
             {files.length
-              ? '. File contents will be verified during import.'
+              ? t('. File contents will be verified during import.')
               : '.'}
           </p>
           <details open={!desktop && !installed}>
             <summary>
-              Source files · {baRecipe.inputs.length - matched.size} remaining
+              {t('Source files ·')}
+              {baRecipe.inputs.length - matched.size}
+              {t('remaining')}
             </summary>
             <label className="check">
               <input
@@ -240,7 +259,7 @@ export default function DownloadPage() {
                 checked={missingOnly}
                 onChange={(event) => setMissingOnly(event.target.checked)}
               />{' '}
-              Show missing files only
+              {t('Show missing files only')}
             </label>
             <ol className="source-files">
               {baRecipe.inputs
@@ -258,7 +277,7 @@ export default function DownloadPage() {
                     </a>
                     <span>
                       {formatBytes(input.bytes)}
-                      {matched.has(input.id) ? ' · Selected' : ''}
+                      {matched.has(input.id) ? t(' · Selected') : ''}
                     </span>
                   </li>
                 ))}

@@ -6,11 +6,13 @@ import {
   useSearchParams,
 } from 'react-router-dom';
 import { useVirtualizer } from '@tanstack/react-virtual';
-import { Search } from 'lucide-react';
+import { Search, Download } from 'lucide-react';
 import { gameById } from '../content';
 import { compareReleaseDates, groupStoryEvents } from '../catalog';
 import { catalogEventUrl, catalogMode, catalogSource } from '../catalog-source';
-import { useStore } from '../store';
+import { isInstalled, useStore } from '../store';
+import { GettingStarted } from '../components/GettingStarted';
+import { useI18n } from '../i18n';
 import { EmptyState } from '../components/Primitives';
 import { PageTitle } from '../components/Shell';
 import { eventArtwork } from '../covers';
@@ -39,6 +41,7 @@ const eventTypes = [
   { value: 'special', label: 'Seasonal / Special' },
 ] as const;
 export function CatalogPage() {
+  const { t } = useI18n();
   const { game: id } = useParams();
   const game = gameById(id);
   const [params, setParams] = useSearchParams();
@@ -200,8 +203,8 @@ export function CatalogPage() {
     return (
       <main className="page">
         <EmptyState
-          title="Game not found"
-          action={<Link to="/library">Return to library</Link>}
+          title={t('Game not found')}
+          action={<Link to="/library">{t('Return to library')}</Link>}
         />
       </main>
     );
@@ -217,12 +220,25 @@ export function CatalogPage() {
     const checkbox = (
       <DownloadCheckbox
         episodes={event.stories}
-        label={`Select ${collectionTitle(event, titleLocale)}`}
+        label={t('Select {value0}', {
+          value0: collectionTitle(event, titleLocale),
+        })}
       />
     );
     const read = event.stories.filter(
       (story) => data.saves[story.id]?.completed,
     ).length;
+    const downloaded = event.stories.filter((story) =>
+      isInstalled(data, story),
+    ).length;
+    const downloadedMark = downloaded ? (
+      <span className="downloaded-mark">
+        <Download size={12} aria-hidden="true" />
+        {downloaded === event.stories.length
+          ? t('Downloaded')
+          : t('{count} downloaded', { count: downloaded })}
+      </span>
+    ) : null;
     if (layout === 'table')
       return (
         <tr
@@ -249,20 +265,21 @@ export function CatalogPage() {
             >
               {collectionTitle(event, titleLocale)}
             </Link>
-            <small>{event.category}</small>
+            <small>{t(event.category)}</small>
             <DownloadSupportNotice episodes={event.stories} />
+            {downloadedMark}
             <TextLanguages stories={event.stories} />
           </td>
           <td>
             {event.date ? (
               <time dateTime={event.date}>{event.date}</time>
             ) : (
-              'Release date unavailable'
+              t('Release date unavailable')
             )}
           </td>
           <td>{event.stories.length}</td>
           <td>
-            {read} / {event.stories.length}
+            {t('{read} of {total} read', { read, total: event.stories.length })}
           </td>
         </tr>
       );
@@ -298,7 +315,7 @@ export function CatalogPage() {
                 <PjskGroupMark group={event.stories[0]?.group} />
               ) : null}
               <small>
-                {event.category}
+                {t(event.category)}
                 {releaseOrder ? (
                   <>
                     {' '}
@@ -306,7 +323,7 @@ export function CatalogPage() {
                     {event.date ? (
                       <time dateTime={event.date}>{event.date}</time>
                     ) : (
-                      'Release date unavailable'
+                      t('Release date unavailable')
                     )}
                   </>
                 ) : null}
@@ -314,12 +331,15 @@ export function CatalogPage() {
             </span>
             <h2>{collectionTitle(event, titleLocale)}</h2>
             <DownloadSupportNotice episodes={event.stories} />
+            {downloadedMark}
             <span>
               {event.stories.length}{' '}
-              {event.stories.length === 1 ? 'story' : 'stories'}
-              {read ? ` · ${read} read` : ''}
+              {event.stories.length === 1 ? t('story') : t('stories')}
+              {read ? t(' · {value0} read', { value0: read }) : ''}
               {event.branches.length
-                ? ` · ${event.stories.length - event.main.length} side stories`
+                ? t(' · {value0} side stories', {
+                    value0: event.stories.length - event.main.length,
+                  })
                 : ''}
             </span>
             <SchoolMarks event={event} compact />
@@ -340,21 +360,22 @@ export function CatalogPage() {
             {filtered.length.toLocaleString()}{' '}
             {game.id === 'ba'
               ? filtered.length === 1
-                ? 'collection'
-                : 'collections'
+                ? t('collection')
+                : t('collections')
               : filtered.length === 1
-                ? 'event'
-                : 'events'}
+                ? t('event')
+                : t('events')}
           </span>
         </div>
       </PageTitle>
+      <GettingStarted game={game.id} />
       <div className="catalog-toolbar">
         <label className="search-field">
           <Search size={17} />
           <input
             type="search"
-            aria-label="Search events"
-            placeholder="Find an event or story…"
+            aria-label={t('Search events')}
+            placeholder={t('Find an event or story…')}
             value={query}
             onChange={(e) => update('q', e.target.value)}
           />
@@ -362,10 +383,10 @@ export function CatalogPage() {
         <select
           aria-label={
             game.id === 'gfl1'
-              ? 'Story type'
+              ? t('Story type')
               : game.id === 'ba'
-                ? 'Story category'
-                : 'Event category'
+                ? t('Story category')
+                : t('Event category')
           }
           value={
             showEventTypes && eventType !== 'all'
@@ -379,11 +400,11 @@ export function CatalogPage() {
             )
           }
         >
-          <option value="all">All collections</option>
+          <option value="all">{t('All collections')}</option>
           {game.id === 'gfl1' ? (
             <>
-              <option>Main story</option>
-              <option value="Event">All Events</option>
+              <option value="Main story">{t('Main story')}</option>
+              <option value="Event">{t('All Events')}</option>
               {eventTypes.map((type) => {
                 const count = events.filter(
                   (event) =>
@@ -396,7 +417,7 @@ export function CatalogPage() {
                     value={`event:${type.value}`}
                     disabled={!count}
                   >
-                    {type.label} ({count})
+                    {t(type.label)} ({count})
                   </option>
                 );
               })}
@@ -404,9 +425,12 @@ export function CatalogPage() {
           ) : (
             categories.map((value) => (
               <option key={value} value={value}>
-                {value}
+                {t(value)}
                 {game.id === 'ba'
-                  ? ` (${events.filter((event) => event.category === value).length})`
+                  ? t(' ({value0})', {
+                      value0: events.filter((event) => event.category === value)
+                        .length,
+                    })
                   : ''}
               </option>
             ))
@@ -414,11 +438,11 @@ export function CatalogPage() {
         </select>
         {game.id === 'pjsk' ? (
           <select
-            aria-label="Story group"
+            aria-label={t('Story group')}
             value={group ?? 'all'}
             onChange={(e) => update('group', e.target.value)}
           >
-            <option value="all">All groups</option>
+            <option value="all">{t('All groups')}</option>
             {pjskGroups.map(({ id, label }) => (
               <option key={id} value={id}>
                 {label}
@@ -428,11 +452,11 @@ export function CatalogPage() {
         ) : null}
         {game.id === 'ba' ? (
           <select
-            aria-label="School"
+            aria-label={t('School')}
             value={school}
             onChange={(e) => update('school', e.target.value)}
           >
-            <option value="all">All schools / affiliations</option>
+            <option value="all">{t('All schools / affiliations')}</option>
             {baSchools.map((s) => (
               <option value={s.id} key={s.id}>
                 {s.name} (
@@ -447,54 +471,65 @@ export function CatalogPage() {
           </select>
         ) : null}
         <select
-          aria-label="Event order"
+          aria-label={t('Event order')}
           value={sort}
           onChange={(e) => update('sort', e.target.value)}
         >
-          <option value="story">Source order</option>
-          <option value="release">Release order · oldest first</option>
-          <option value="release-newest">Release order · newest first</option>
-          <option value="title">Title · A–Z</option>
-          <option value="title-desc">Title · Z–A</option>
-          <option value="progress">Reading progress</option>
+          <option value="story">{t('Source order')}</option>
+          <option value="release">{t('Release order · oldest first')}</option>
+          <option value="release-newest">
+            {t('Release order · newest first')}
+          </option>
+          <option value="title">{t('Title · A–Z')}</option>
+          <option value="title-desc">{t('Title · Z–A')}</option>
+          <option value="progress">{t('Reading progress')}</option>
         </select>
         <CatalogLayout />
       </div>
       {releaseOrder && undated > 0 ? (
         <p className="muted release-order-note" role="note">
-          {undated} {undated === 1 ? 'collection has' : 'collections have'} no
-          release date in the imported source. Undated collections appear after
-          dated releases, in source order.
+          {undated}{' '}
+          {undated === 1 ? t('collection has') : t('collections have')}
+          {t(
+            'no release date in the imported source. Undated collections appear after dated releases, in source order.',
+          )}
         </p>
       ) : null}
       {!filtered.length ? (
         <EmptyState
           title={
             missingCategory
-              ? 'No imported stories in this category'
+              ? t('No imported stories in this category')
               : missingSchool
-                ? 'No imported stories for this school'
+                ? t('No imported stories for this school')
                 : !events.length && !examples
-                  ? 'No events imported yet'
-                  : 'No matching events'
+                  ? t('No events imported yet')
+                  : t('No matching events')
           }
         >
           {missingCategory
-            ? `${category} content has not been imported yet. Choose another category to read the available stories.`
+            ? t(
+                '{value0} content has not been imported yet. Choose another category to read the available stories.',
+                { value0: category },
+              )
             : missingSchool
-              ? 'No stories featuring this school have been imported yet. Choose another school to browse the available collection.'
+              ? t(
+                  'No stories featuring this school have been imported yet. Choose another school to browse the available collection.',
+                )
               : !events.length && !examples
-                ? 'This game has not been connected. Its design fixtures are available under Cross-game design checks.'
+                ? t(
+                    'This game has not been connected. Its design fixtures are available under Cross-game design checks.',
+                  )
                 : game.id === 'pjsk'
-                  ? 'Try another title, category or group.'
-                  : 'Try another title or category.'}
+                  ? t('Try another title, category or group.')
+                  : t('Try another title or category.')}
         </EmptyState>
       ) : (
         <div
           className="catalog-scroll"
           ref={scroll}
           onScroll={(e) => scrollPositions.set(key, e.currentTarget.scrollTop)}
-          aria-label="Events"
+          aria-label={t('Events')}
         >
           {layout === 'table' ? (
             <table className="event-table">
@@ -518,7 +553,7 @@ export function CatalogPage() {
                         )
                       }
                     >
-                      Title
+                      {t('Title')}
                     </button>
                   </th>
                   <th
@@ -539,16 +574,16 @@ export function CatalogPage() {
                         )
                       }
                     >
-                      Release
+                      {t('Release')}
                     </button>
                   </th>
-                  <th scope="col">Stories</th>
+                  <th scope="col">{t('Stories')}</th>
                   <th
                     scope="col"
                     aria-sort={sort === 'progress' ? 'descending' : 'none'}
                   >
                     <button onClick={() => update('sort', 'progress')}>
-                      Read
+                      {t('Read')}
                     </button>
                   </th>
                 </tr>

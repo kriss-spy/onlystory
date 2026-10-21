@@ -1,3 +1,4 @@
+import { useI18n } from '../i18n';
 import { useState } from 'react';
 import { ChevronRight } from 'lucide-react';
 import { storySections, type StoryEvent } from '../catalog';
@@ -17,6 +18,7 @@ export function StorySections({
   from: string;
   catalogFrom?: string;
 }) {
+  const { t } = useI18n();
   const { data } = useStore();
   const storageKey = `onlystory.chapters.${event.game}.${event.id}`;
   const [folds, setFolds] = useState<Record<string, boolean>>(() => {
@@ -56,7 +58,7 @@ export function StorySections({
             )}
             {!!section.independent.length && (
               <section className="independent-section">
-                <h2>Outside the main timeline</h2>
+                <h2>{t('Outside the main timeline')}</h2>
                 <StoryList
                   rows={section.independent}
                   from={from}
@@ -105,8 +107,11 @@ export function StorySections({
                 </span>
                 <small>
                   {completed
-                    ? `${completed} / ${section.stories.length} read`
-                    : `${section.stories.length} stories`}
+                    ? t('{read} of {total} read', {
+                        read: completed,
+                        total: section.stories.length,
+                      })
+                    : t('{count} stories', { count: section.stories.length })}
                 </small>
               </button>
             </h2>
