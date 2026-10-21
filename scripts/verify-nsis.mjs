@@ -16,7 +16,9 @@ const installer = path.resolve(
     `release/Onlystory-${version}-Setup-x64.exe`,
 );
 if (!fs.existsSync(installer)) throw Error(`Missing installer: ${installer}`);
-const cacheRoot = path.resolve('.cache');
+const cacheRoot = path.resolve(
+  process.env.ONLYSTORY_VERIFICATION_ROOT ?? '.cache',
+);
 const output = path.join(
   cacheRoot,
   'nsis-verification',

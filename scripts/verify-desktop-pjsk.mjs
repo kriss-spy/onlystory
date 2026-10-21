@@ -20,7 +20,8 @@ const recipe = {
 };
 
 const output = path.resolve(
-  '.cache/desktop-pjsk-verification',
+  process.env.ONLYSTORY_VERIFICATION_ROOT ?? '.cache',
+  'desktop-pjsk-verification',
   entry.episode.id,
 );
 fs.mkdirSync(output, { recursive: true });

@@ -4,15 +4,15 @@ Read stories from **Blue Archive, Project SEKAI, and Girls' Frontline 1 & 2** in
 
 ## Download
 
-[**Get the latest preview**](https://github.com/kriss-spy/onlystory/releases/tag/v0.2.0-pre.1)
+[**Get the latest release**](https://github.com/kriss-spy/onlystory/releases/latest)
 
-| Platform    | Download                                                                                                                | Open                                     |
-| ----------- | ----------------------------------------------------------------------------------------------------------------------- | ---------------------------------------- |
-| Windows x64 | [Portable .exe](https://github.com/kriss-spy/onlystory/releases/download/v0.2.0-pre.1/Onlystory-0.2.0-portable-x64.exe) | Run it. No installation needed.          |
-| Windows x64 | [Installer .exe](https://github.com/kriss-spy/onlystory/releases/download/v0.2.0-pre.1/Onlystory-0.2.0-Setup-x64.exe)   | Install, then open Onlystory.            |
-| Linux x64   | [tar.gz](https://github.com/kriss-spy/onlystory/releases/download/v0.2.0-pre.1/Onlystory-0.2.0-linux-x64.tar.gz)        | Extract, then run `./onlystory-desktop`. |
+| Platform    | Download                                                                                                          | Open                                     |
+| ----------- | ----------------------------------------------------------------------------------------------------------------- | ---------------------------------------- |
+| Windows x64 | [Portable .exe](https://github.com/kriss-spy/onlystory/releases/latest/download/Onlystory-0.2.0-portable-x64.exe) | Run it. No installation needed.          |
+| Windows x64 | [Installer .exe](https://github.com/kriss-spy/onlystory/releases/latest/download/Onlystory-0.2.0-Setup-x64.exe)   | Install, then open Onlystory.            |
+| Linux x64   | [tar.gz](https://github.com/kriss-spy/onlystory/releases/latest/download/Onlystory-0.2.0-linux-x64.tar.gz)        | Extract, then run `./onlystory-desktop`. |
 
-Preview builds: Windows apps are unsigned; Linux desktop launch is not yet verified. Checksums are on the release page.
+Windows apps are unsigned. Linux needs a graphical desktop and Electron's system libraries. See the release notes for verification details and checksums.
 
 ## Start reading
 

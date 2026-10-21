@@ -11,6 +11,9 @@ import { _electron, chromium, expect } from '@playwright/test';
 import electronPath from 'electron';
 
 const root = process.cwd();
+// Packaged checks may run alongside browser-test builds in dist/. Keep their
+// expected production shell tied to the explicit build used for packaging.
+const webRoot = path.resolve(process.env.ONLYSTORY_WEB_ROOT ?? 'dist');
 const read = (file) => JSON.parse(fs.readFileSync(file, 'utf8'));
 const digest = (bytes) => createHash('sha256').update(bytes).digest('hex');
 const catalog = read('src/downloads/ba/catalog.json');
@@ -63,7 +66,8 @@ if (
   );
 
 const output = path.resolve(
-  '.cache/ba-native-verification',
+  process.env.ONLYSTORY_VERIFICATION_ROOT ?? '.cache',
+  'ba-native-verification',
   new Date().toISOString().replace(/[:.]/g, '-'),
 );
 const profile = path.join(output, 'profile');
@@ -218,7 +222,7 @@ async function launchPackaged(offline) {
     expect(runtime.packaged).toBe(true);
     expect(runtime.recipeCount).toBe(catalog.length);
     expect(runtime.shellIndexSha256).toBe(
-      digest(fs.readFileSync('dist/index.html')),
+      digest(fs.readFileSync(path.join(webRoot, 'index.html'))),
     );
     expect(runtime.sourcesSha256).toBe(
       digest(fs.readFileSync('src/downloads/ba/sources.json')),

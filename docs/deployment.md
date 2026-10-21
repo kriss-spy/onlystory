@@ -37,6 +37,14 @@ available. See [desktop launch instructions](standalone-app.md). The Linux
 archive needs a graphical desktop and Electron's system libraries. Its runtime
 checks remain separate from web-browser checks.
 
+When verifying desktop releases alongside browser builds, set
+`ONLYSTORY_WEB_ROOT` to the production web directory used for packaging, such as
+`desktop/web`. The BA verifier compares the packaged shell with that directory;
+its default is `dist`. Set `ONLYSTORY_VERIFICATION_ROOT` to a directory with enough
+free space for isolated test installations and profiles. Its default is `.cache`.
+The NSIS verifier refuses to replace an existing Onlystory installation and
+removes only its own test installation after checking it.
+
 ## Restore the archive
 
 Extract the ZIP64 archive with a ZIP64-capable tool. Keep the paths inside it:
