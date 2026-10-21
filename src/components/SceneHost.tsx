@@ -5,6 +5,7 @@ import { Gfl2Scene } from '../playback/gfl2/Gfl2Scene';
 import { Stage } from './Stage';
 import { Gfl1Scene } from '../playback/gfl1/Gfl1Scene';
 import { useStore } from '../store';
+import { useI18n } from '../i18n';
 const Gfl2EventScene = lazy(() => import('../playback/gfl2/Gfl2EventScene'));
 const PjskScene = lazy(() => import('../playback/pjsk/PjskScene'));
 const BaScene = lazy(() => import('../playback/ba/BaScene'));
@@ -33,6 +34,7 @@ export function SceneHost({
   onSceneReady?: (node: string, ready: boolean) => void;
   textComplete?: boolean;
 }) {
+  const { t } = useI18n();
   const {
     data: { preferences },
   } = useStore();
@@ -47,7 +49,7 @@ export function SceneHost({
       <Suspense
         fallback={
           <div className="stage native-stage" role="status">
-            Loading scene…
+            {t('Loading scene…')}
           </div>
         }
       >
@@ -80,7 +82,7 @@ export function SceneHost({
       <Suspense
         fallback={
           <div className="stage native-stage" role="status">
-            Loading scene…
+            {t('Loading scene…')}
           </div>
         }
       >
@@ -101,7 +103,7 @@ export function SceneHost({
       <Suspense
         fallback={
           <div className="stage native-stage" role="status">
-            Loading scene…
+            {t('Loading scene…')}
           </div>
         }
       >
@@ -126,7 +128,7 @@ export function SceneHost({
     return (
       <div className="stage">
         <div className="stage-message" role="status">
-          This story requires an unavailable scene renderer.
+          {t('This story requires an unavailable scene renderer.')}
         </div>
       </div>
     );

@@ -9,6 +9,7 @@ import { backgroundUrl } from '../fixtures';
 import { useMediaUrl } from '../hooks';
 import type { Fixture, MovieStreams, StoryNode, VoiceLanguage } from '../model';
 import { IconButton } from './Primitives';
+import { useI18n } from '../i18n';
 import { usePlaybackPreferences, useStore } from '../store';
 import {
   attachMovieStreams,
@@ -55,6 +56,7 @@ export function Stage({
   embedded?: boolean;
 }) {
   const preferences = usePlaybackPreferences();
+  const { t } = useI18n();
   const { notify } = useStore();
   const src = useMediaUrl(
     node.kind === 'video'
@@ -109,9 +111,11 @@ export function Stage({
             }
         if (!active) return;
         notify(
-          available
-            ? 'This movie language is not downloaded. The current audio remains available.'
-            : 'This movie language is not downloaded. Download it to play offline.',
+          t(
+            available
+              ? 'This movie language is not downloaded. The current audio remains available.'
+              : 'This movie language is not downloaded. Download it to play offline.',
+          ),
         );
       }
       if (active)
@@ -124,7 +128,7 @@ export function Stage({
     return () => {
       active = false;
     };
-  }, [streams, preferences.voice, notify]);
+  }, [streams, preferences.voice, notify, t]);
   const streaming =
     streams && supportsMovieStreams(streams, streamVoice) ? streams : undefined;
   const movie = useMediaUrl(
@@ -226,7 +230,9 @@ export function Stage({
               <svg
                 viewBox="0 0 240 450"
                 role="img"
-                aria-label={`${actor.name}, original sample character stand-in`}
+                aria-label={t('{name}, original sample character stand-in', {
+                  name: actor.name,
+                })}
               >
                 <defs>
                   <linearGradient
@@ -295,9 +301,9 @@ export function Stage({
       node.kind !== 'video' ? (
         <div className="stage-message" role="status">
           <LoaderCircle size={16} className="spin" />
-          <span>Loading scene…</span>
+          <span>{t('Loading scene…')}</span>
           {fixture === 'loading' ? (
-            <IconButton label="Retry scene" onClick={retry}>
+            <IconButton label={t('Retry scene')} onClick={retry}>
               <RotateCw size={16} />
             </IconButton>
           ) : null}
@@ -306,8 +312,8 @@ export function Stage({
       {failed === src && src ? (
         <div className="stage-message" role="status">
           <AlertTriangle size={16} />
-          <span>Background unavailable. You can keep reading.</span>
-          <IconButton label="Retry scene" onClick={retry}>
+          <span>{t('Background unavailable. You can keep reading.')}</span>
+          <IconButton label={t('Retry scene')} onClick={retry}>
             <RotateCw size={16} />
           </IconButton>
         </div>
@@ -323,7 +329,7 @@ export function Stage({
           {movieFailed ? (
             <div className="movie-error">
               <AlertTriangle />
-              <p>The movie could not be loaded.</p>
+              <p>{t('The movie could not be loaded.')}</p>
               <button
                 onClick={() => {
                   setMovieFailed(false);
@@ -333,7 +339,7 @@ export function Stage({
                 }}
               >
                 <RotateCw size={16} />
-                Retry
+                {t('Retry')}
               </button>
             </div>
           ) : null}
@@ -347,10 +353,10 @@ export function Stage({
             preload="metadata"
             aria-label={
               node.performance
-                ? 'Song performance'
+                ? t('Song performance')
                 : node.source
-                  ? 'Story movie'
-                  : 'Sample archive recording'
+                  ? t('Story movie')
+                  : t('Sample archive recording')
             }
             onLoadedMetadata={() => {
               const player = video.current;
@@ -385,7 +391,7 @@ export function Stage({
                 kind="captions"
                 src={captions}
                 srcLang="en"
-                label="English"
+                label={t('English')}
                 default
               />
             ) : null}
@@ -396,13 +402,15 @@ export function Stage({
           <div className="movie-actions">
             <span>
               {node.performance
-                ? 'Song performance · original audio'
+                ? t('Song performance · original audio')
                 : node.source
-                  ? 'Story movie'
-                  : 'Sample recording · 6 seconds'}
+                  ? t('Story movie')
+                  : t('Sample recording · 6 seconds')}
             </span>
             <IconButton
-              label={node.performance ? 'Continue story' : 'Skip this movie'}
+              label={
+                node.performance ? t('Continue story') : t('Skip this movie')
+              }
               onClick={skipVideo}
             >
               <SkipForward size={18} />

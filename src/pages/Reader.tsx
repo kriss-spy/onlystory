@@ -76,6 +76,7 @@ import { SceneHost } from '../components/SceneHost';
 import { StoryProgress } from '../components/StoryProgress';
 import { episodeTitle, localizedTitle } from '../localized-titles';
 import { battleNotice } from '../battle-notices';
+import { useI18n } from '../i18n';
 
 type ReaderPanel = 'history' | 'chapters' | 'saves' | 'information';
 type FastForwardControl = {
@@ -83,6 +84,7 @@ type FastForwardControl = {
   setSkipping: Dispatch<SetStateAction<boolean>>;
 };
 export function ReaderRoute() {
+  const { t } = useI18n();
   const [skipping, setSkipping] = useState(false);
   const { game, episode: id } = useParams();
   const episode = episodeById(id);
@@ -90,10 +92,10 @@ export function ReaderRoute() {
     return (
       <main className="page">
         <EmptyState
-          title="Episode not found"
-          action={<Link to="/library">Return to library</Link>}
+          title={t('Episode not found')}
+          action={<Link to="/library">{t('Return to library')}</Link>}
         >
-          This link does not match an episode in your library.
+          {t('This link does not match an episode in your library.')}
         </EmptyState>
       </main>
     );
@@ -114,6 +116,7 @@ function EpisodeReader({
 }: {
   episode: NonNullable<ReturnType<typeof episodeById>>;
 } & FastForwardControl) {
+  const { t } = useI18n();
   const { data, transfers, download, cancel } = useStore();
   const title = episodeTitle(
     episode,
@@ -155,38 +158,44 @@ function EpisodeReader({
       <main className="reader-gate">
         <Link className="back-link" to={`/games/${episode.game}`}>
           <ArrowLeft size={16} />
-          Back to stories
+          {t('Back to stories')}
         </Link>
         <EmptyState
-          title={hasOnlineSource(episode) ? title : 'Downloader pending'}
+          title={hasOnlineSource(episode) ? title : t('Downloader pending')}
         >
           {!hasOnlineSource(episode)
-            ? 'This story does not have a verified downloader yet. Its catalog and saved progress remain on this device.'
+            ? t(
+                'This story does not have a verified downloader yet. Its catalog and saved progress remain on this device.',
+              )
             : isBaImport(episode)
-              ? 'Download or import this story’s original files for offline reading.'
-              : 'Download this story for offline reading.'}
+              ? t(
+                  'Download or import this story’s original files for offline reading.',
+                )
+              : t('Download this story for offline reading.')}
         </EmptyState>
         {isBaImport(episode) ? (
           <Link
             className="button primary-button"
             to={`/downloads/${episode.id}`}
           >
-            Download or import story
+            {t('Download or import story')}
           </Link>
         ) : null}
         {!hasOnlineSource(episode) ||
         isBaImport(episode) ? null : transfer?.status === 'downloading' ? (
           <>
             <p role="status">
-              Downloading · {transfer.filesDone ?? 0} /{' '}
-              {transfer.filesTotal ?? '…'} files
+              {t('Downloading ·')} {transfer.filesDone ?? 0} /{' '}
+              {transfer.filesTotal ?? '…'} {t('files')}
             </p>
             <progress
-              aria-label={`Downloading ${title}`}
+              aria-label={t('Downloading {story}', { story: title })}
               max={transfer.total || 1}
               value={transfer.bytes}
             />
-            <button onClick={() => cancel(episode.id)}>Cancel download</button>
+            <button onClick={() => cancel(episode.id)}>
+              {t('Cancel download')}
+            </button>
           </>
         ) : (
           <>
@@ -195,13 +204,13 @@ function EpisodeReader({
             ) : null}
             {transfer?.status === 'canceled' ? (
               <p role="status">
-                Download canceled. Retry to reuse saved files.
+                {t('Download canceled. Retry to reuse saved files.')}
               </p>
             ) : null}
             <button onClick={() => download(episode)}>
               {transfer?.status === 'failed'
-                ? 'Retry download'
-                : 'Download story'}
+                ? t('Retry download')
+                : t('Download story')}
             </button>
           </>
         )}
@@ -215,21 +224,23 @@ function EpisodeReader({
     <main className="reader-gate">
       <Link className="back-link" to={`/games/${episode.game}`}>
         <ArrowLeft size={16} />
-        Back to stories
+        {t('Back to stories')}
       </Link>
-      <EmptyState title={error ? 'Chapter unavailable' : 'Loading chapter'}>
-        {error || 'Loading the original text.'}
+      <EmptyState
+        title={error ? t('Chapter unavailable') : t('Loading chapter')}
+      >
+        {error ? t(error) : t('Loading the original text.')}
       </EmptyState>
       {error ? (
         <button onClick={() => setAttempt((value) => value + 1)}>
-          Retry chapter
+          {t('Retry chapter')}
         </button>
       ) : (
-        <p role="status">Loading…</p>
+        <p role="status">{t('Loading…')}</p>
       )}
       {skipping ? (
         <IconButton
-          label="Stop fast-forward"
+          label={t('Stop fast-forward')}
           onClick={() => setSkipping(false)}
         >
           <SkipForward size={20} />
@@ -246,6 +257,7 @@ function Reader({
 }: {
   episode: NonNullable<ReturnType<typeof episodeById>>;
 } & FastForwardControl) {
+  const { t, locale: uiLocale } = useI18n();
   const store = useStore();
   const event = eventForEpisode(episode);
   const following = nextStory(event, episode);
@@ -886,8 +898,8 @@ function Reader({
       ...old,
       checkpoints: [...old.checkpoints, checkpoint],
     }));
-    store.notify('Checkpoint saved.');
-  }, [episode.id, speaker, text, save, store.setData, store.notify]);
+    store.notify(t('Checkpoint saved.'));
+  }, [episode.id, speaker, text, save, store.setData, store.notify, t]);
   const execute = useCallback(
     (command: ReaderCommand) => {
       if (hidden && (command === 'next' || command === 'next-repeat')) {
@@ -907,7 +919,7 @@ function Reader({
         if (canSkip && !unsupported && !blocked) setSkipping((value) => !value);
         else
           store.notify(
-            'Fast-forward stops at choices, movies and unavailable scenes.',
+            t('Fast-forward stops at choices, movies and unavailable scenes.'),
           );
       } else if (
         command === 'history' ||
@@ -953,6 +965,7 @@ function Reader({
       episode,
       text,
       narrow,
+      t,
     ],
   );
   useEffect(() => {
@@ -968,13 +981,13 @@ function Reader({
         <Search size={16} />
         <input
           type="search"
-          aria-label="Search chapters"
+          aria-label={t('Search chapters')}
           value={query}
-          placeholder="Find a chapter…"
+          placeholder={t('Find a chapter…')}
           onChange={(e) => setQuery(e.target.value)}
         />
       </label>
-      <nav aria-label="Chapters">
+      <nav aria-label={t('Chapters')}>
         {storySections(event, query).map((section) => {
           const links = [...section.main, ...section.independent].map(
             ({ episode: e, branch }) => (
@@ -990,7 +1003,8 @@ function Reader({
                   <strong>{e.title}</strong>
                   {branch ? (
                     <small>
-                      Side story{branch.title ? ` · ${branch.title}` : ''}
+                      {t('Side story')}
+                      {branch.title ? ` · ${branch.title}` : ''}
                     </small>
                   ) : null}
                 </span>
@@ -1008,7 +1022,7 @@ function Reader({
               <nav aria-label={section.chapter.title}>{links}</nav>
             </details>
           ) : (
-            <nav key={section.id} aria-label="Event stories">
+            <nav key={section.id} aria-label={t('Event stories')}>
               {links}
             </nav>
           );
@@ -1064,25 +1078,31 @@ function Reader({
       <main className="reader-gate">
         <Link className="back-link" to={from}>
           <ArrowLeft size={16} />
-          Back to stories
+          {t('Back to stories')}
         </Link>
         <EmptyState
           title={
             linkError
-              ? 'Passage unavailable'
+              ? t('Passage unavailable')
               : expired
-                ? 'Server session expired'
+                ? t('Server session expired')
                 : unavailable
-                  ? 'This episode is not on this device'
-                  : 'Download this episode'
+                  ? t('This episode is not on this device')
+                  : t('Download this episode')
           }
         >
           {linkError ||
             (expired
-              ? 'Your local progress is safe. Reconnect to your private server or return to your device library.'
+              ? t(
+                  'Your local progress is safe. Reconnect to your private server or return to your device library.',
+                )
               : unavailable
-                ? 'The server is disconnected. Read an installed episode or reconnect to download this one.'
-                : 'The sample media will be cached on this device. Downloads do not require a game installation.')}
+                ? t(
+                    'The server is disconnected. Read an installed episode or reconnect to download this one.',
+                  )
+                : t(
+                    'The sample media will be cached on this device. Downloads do not require a game installation.',
+                  ))}
         </EmptyState>
         <div className="gate-actions">
           {linkError ? (
@@ -1092,7 +1112,7 @@ function Reader({
                 commit(startSave(episode));
               }}
             >
-              Open episode from the start
+              {t('Open episode from the start')}
             </button>
           ) : expired || unavailable ? (
             <>
@@ -1102,9 +1122,9 @@ function Reader({
                   navigate('/library');
                 }}
               >
-                Return to device library
+                {t('Return to device library')}
               </button>
-              <button onClick={retryScene}>Reconnect preview</button>
+              <button onClick={retryScene}>{t('Reconnect preview')}</button>
             </>
           ) : (
             <>
@@ -1115,10 +1135,10 @@ function Reader({
               >
                 <Download size={17} />
                 {store.transfers[episode.id]?.status === 'downloading'
-                  ? 'Downloading…'
-                  : 'Download episode'}
+                  ? t('Downloading…')
+                  : t('Download episode')}
               </button>
-              <Link to="/manage">View downloads</Link>
+              <Link to="/manage">{t('View downloads')}</Link>
               {store.transfers[episode.id]?.status === 'failed' ? (
                 <p role="alert">{store.transfers[episode.id].error}</p>
               ) : null}
@@ -1127,7 +1147,7 @@ function Reader({
         </div>
         {fixture !== 'normal' ? (
           <p className="page-note">
-            Design fixture · no private server is connected.
+            {t('Design fixture · no private server is connected.')}
           </p>
         ) : null}
       </main>
@@ -1149,7 +1169,7 @@ function Reader({
           className="icon-link"
           to={from}
           state={returnState}
-          aria-label="Back to stories"
+          aria-label={t('Back to stories')}
         >
           <ArrowLeft size={19} />
         </Link>
@@ -1170,28 +1190,32 @@ function Reader({
         <span className="sample-label">
           {episode.game === 'gfl1' && episode.origin === 'game'
             ? textOnly
-              ? 'English · Text mode'
-              : 'English · Original scenes'
+              ? t('English · Text mode')
+              : t('English · Original scenes')
             : textOnly
-              ? `${episode.textLocales?.includes('ja') ? '日本語' : '简中'} · 文字模式`
+              ? t(
+                  episode.textLocales?.includes('ja')
+                    ? 'Japanese · Text mode'
+                    : 'Chinese · Text mode',
+                )
               : episode.origin === 'game'
                 ? episode.game === 'ba'
-                  ? '日本語 · 原始演出'
+                  ? t('Japanese · Original scenes')
                   : episode.preview
-                    ? '简中 · 原文开场'
-                    : '简中 · 原始演出'
-                : 'Design fixture'}
+                    ? t('Chinese · Original opening')
+                    : t('Chinese · Original scenes')
+                : t('Design fixture')}
         </span>
         {episode.origin === 'game' ? (
           <IconButton
-            label="Story information"
+            label={t('Story information')}
             onClick={() => open('information')}
           >
             <Info size={17} />
           </IconButton>
         ) : null}
         <IconButton
-          label={maximized ? 'Restore reader' : 'Maximize reader'}
+          label={maximized ? t('Restore reader') : t('Maximize reader')}
           shortcut="F11"
           aria-pressed={maximized}
           onClick={() => execute('fullscreen')}
@@ -1202,14 +1226,14 @@ function Reader({
       <div className="reading-workspace">
         {p.chaptersOpen && !narrow ? (
           <aside className="chapter-sidebar">
-            <h2>Chapters</h2>
+            <h2>{t('Chapters')}</h2>
             {chapterList}
           </aside>
         ) : null}
         <section
           className="scene-reader"
           ref={sceneRegion}
-          aria-label="Story reader"
+          aria-label={t('Story reader')}
           onPointerDown={(event) => {
             sceneGesture.current =
               event.isPrimary && event.button === 0
@@ -1298,7 +1322,7 @@ function Reader({
           />
           {skippedBattle ? (
             <p className="battle-notice" role="note">
-              {skippedBattle}
+              {t(skippedBattle)}
             </p>
           ) : null}
           {gfl1Frame?.interaction && node.kind === 'choice' ? (
@@ -1323,7 +1347,7 @@ function Reader({
             gfl1Frame.interaction.kind === 'quiz' ||
             (gfl1Frame.interaction.kind === 'exploration' &&
               (textOnly || !gfl1Frame.interaction.spots.length))) ? (
-            <div className="story-choices" aria-label="Choose a response">
+            <div className="story-choices" aria-label={t('Choose a response')}>
               {node.choices?.map((answer, i) => (
                 <button
                   ref={i === 0 ? choice : undefined}
@@ -1341,11 +1365,12 @@ function Reader({
             <div className="unsupported-notice" role="status">
               <AlertTriangle size={17} />
               <span>
-                This archive contains an unsupported or missing scene. It will
-                not be skipped.
+                {t(
+                  'This archive contains an unsupported or missing scene. It will not be skipped.',
+                )}
               </span>
               <button onClick={() => open('history')}>
-                Read available text
+                {t('Read available text')}
               </button>
             </div>
           ) : null}
@@ -1381,7 +1406,7 @@ function Reader({
                 <Bookmark
                   size={14}
                   fill="currentColor"
-                  aria-label="Bookmarked"
+                  aria-label={t('Bookmarked')}
                 />
               ) : null}
             </div>
@@ -1403,10 +1428,10 @@ function Reader({
               <div className="episode-end">
                 <span>
                   <Check size={14} />
-                  {episode.completionLabel ?? 'Episode finished'}
+                  {episode.completionLabel ?? t('Episode finished')}
                 </span>
                 <Link to={from} state={returnState}>
-                  Back to stories
+                  {t('Back to stories')}
                   <ChevronRight size={14} />
                 </Link>
                 {following?.id ? (
@@ -1418,7 +1443,7 @@ function Reader({
                     )}
                     state={location.state}
                   >
-                    Next section · {following?.title}
+                    {t('Next section ·')} {following?.title}
                     <ChevronRight size={14} />
                   </Link>
                 ) : null}
@@ -1436,10 +1461,12 @@ function Reader({
         onPause={pausePlayback}
         onSeek={seek}
       />
-      <nav className="reader-toolbar" aria-label="Reading controls">
+      <nav className="reader-toolbar" aria-label={t('Reading controls')}>
         <div className="toolbar-group">
           <IconButton
-            label={p.chaptersOpen && !narrow ? 'Collapse chapters' : 'Chapters'}
+            label={
+              p.chaptersOpen && !narrow ? t('Collapse chapters') : t('Chapters')
+            }
             shortcut="Ctrl+C"
             aria-pressed={p.chaptersOpen && !narrow}
             onClick={() => execute('chapters')}
@@ -1447,14 +1474,14 @@ function Reader({
             <PanelLeft size={18} />
           </IconButton>
           <IconButton
-            label="History"
+            label={t('History')}
             shortcut="Ctrl+H"
             onClick={() => open('history')}
           >
             <History size={18} />
           </IconButton>
           <IconButton
-            label={bookmarked ? 'Remove bookmark' : 'Bookmark passage'}
+            label={bookmarked ? t('Remove bookmark') : t('Bookmark passage')}
             shortcut="B"
             aria-pressed={bookmarked}
             onClick={() => execute('bookmark')}
@@ -1462,7 +1489,7 @@ function Reader({
             <Bookmark size={18} />
           </IconButton>
           <IconButton
-            label="Save points"
+            label={t('Save points')}
             className="checkpoint-button"
             onClick={() => open('saves')}
           >
@@ -1471,7 +1498,7 @@ function Reader({
         </div>
         <div className="toolbar-group playback-controls">
           <IconButton
-            label="Previous passage"
+            label={t('Previous passage')}
             shortcut="←"
             disabled={save.frames.length < 2}
             onClick={previous}
@@ -1479,7 +1506,7 @@ function Reader({
             <ChevronLeft size={21} />
           </IconButton>
           <IconButton
-            label={auto ? 'Pause auto reading' : 'Auto reading'}
+            label={auto ? t('Pause auto reading') : t('Auto reading')}
             shortcut="A"
             aria-pressed={auto}
             disabled={node.kind !== 'text' || unsupported}
@@ -1488,7 +1515,7 @@ function Reader({
             {auto ? <Pause size={20} /> : <Play size={20} />}
           </IconButton>
           <IconButton
-            label={skipping ? 'Stop fast-forward' : 'Fast-forward'}
+            label={skipping ? t('Stop fast-forward') : t('Fast-forward')}
             shortcut="F"
             aria-pressed={skipping}
             disabled={!canSkip || unsupported}
@@ -1499,12 +1526,12 @@ function Reader({
           <IconButton
             label={
               !sceneReady
-                ? 'Finish scene'
+                ? t('Finish scene')
                 : !complete
-                  ? 'Reveal text'
+                  ? t('Reveal text')
                   : node.kind === 'end' && following?.id
-                    ? 'Next section'
-                    : 'Next passage'
+                    ? t('Next section')
+                    : t('Next passage')
             }
             shortcut="Space / →"
             className="advance-button"
@@ -1515,7 +1542,7 @@ function Reader({
           </IconButton>
           <span
             className="passage-position"
-            aria-label={`Passage ${save.frames.length}`}
+            aria-label={t('Passage {number}', { number: save.frames.length })}
           >
             {String(save.frames.length).padStart(2, '0')}
           </span>
@@ -1523,9 +1550,9 @@ function Reader({
         <div className="toolbar-group utility-controls">
           {(episode.textLocales ?? []).length > 1 ? (
             <select
-              aria-label="Reading language"
+              aria-label={t('Reading language')}
               value={p.textLocale}
-              title="Chinese: C · Japanese: J · English: E"
+              title={t('Chinese: C · Japanese: J · English: E')}
               onChange={(event) =>
                 setReadingLanguage(event.target.value as typeof p.textLocale)
               }
@@ -1538,21 +1565,21 @@ function Reader({
             </select>
           ) : null}
           <IconButton
-            label="Commands & shortcuts"
+            label={t('Commands & shortcuts')}
             shortcut="Ctrl+K"
             onClick={() => ui.open('commands')}
           >
             <Command size={18} />
           </IconButton>
           <IconButton
-            label="Reader settings"
+            label={t('Reader settings')}
             shortcut="Ctrl+,"
             onClick={() => ui.open('settings')}
           >
             <Settings2 size={18} />
           </IconButton>
           <IconButton
-            label="Hide controls"
+            label={t('Hide controls')}
             shortcut="U"
             onClick={() => execute('hide')}
           >
@@ -1563,11 +1590,11 @@ function Reader({
       {audioBlocked || voiceError ? (
         <div className="audio-status" role="status">
           {voiceError
-            ? 'Voice unavailable. Reading can continue.'
-            : 'Your browser paused audio.'}
+            ? t('Voice unavailable. Reading can continue.')
+            : t('Your browser paused audio.')}
           {audioBlocked ? (
             <IconButton
-              label="Enable audio"
+              label={t('Enable audio')}
               onClick={() => {
                 setAudioBlocked(false);
                 setVoiceDone(!activeVoice);
@@ -1583,7 +1610,7 @@ function Reader({
       ) : null}
       {hidden ? (
         <IconButton
-          label="Show controls"
+          label={t('Show controls')}
           className="show-controls"
           onClick={() => setHidden(false)}
         >
@@ -1592,7 +1619,7 @@ function Reader({
       ) : null}
       {maximized ? (
         <IconButton
-          label="Restore reader"
+          label={t('Restore reader')}
           shortcut="F11"
           className="restore-reader"
           onClick={() => setMaximized(false)}
@@ -1627,18 +1654,18 @@ function Reader({
         onClose={() => setPanel(null)}
         title={
           panel === 'history'
-            ? 'History'
+            ? t('History')
             : panel === 'chapters'
-              ? 'Chapters'
+              ? t('Chapters')
               : panel === 'saves'
-                ? 'Save points'
+                ? t('Save points')
                 : panel === 'information'
-                  ? 'Story information'
-                  : 'History'
+                  ? t('Story information')
+                  : t('History')
         }
         description={
           panel === 'history'
-            ? 'Jumping back restores that passage and its branch context.'
+            ? t('Jumping back restores that passage and its branch context.')
             : undefined
         }
         returnFocus={trigger.current}
@@ -1652,8 +1679,8 @@ function Reader({
               <input
                 autoFocus
                 type="search"
-                aria-label="Search episode history"
-                placeholder="Find a passage…"
+                aria-label={t('Search episode history')}
+                placeholder={t('Find a passage…')}
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
               />
@@ -1664,7 +1691,7 @@ function Reader({
                 checked={onlyBookmarks}
                 onChange={(e) => setOnlyBookmarks(e.target.checked)}
               />
-              Bookmarks only
+              {t('Bookmarks only')}
             </label>
             <label className="check">
               <input
@@ -1672,7 +1699,7 @@ function Reader({
                 checked={includeUnread}
                 onChange={(event) => setIncludeUnread(event.target.checked)}
               />
-              Include unread passages and alternate branches
+              {t('Include unread passages and alternate branches')}
             </label>
             <div className="history-list">
               {activeHistory.map(({ index, node: line }) => (
@@ -1695,36 +1722,39 @@ function Reader({
                   <small>
                     {passageText(line, p).speaker} ·{' '}
                     {save.seen.includes(line.id)
-                      ? 'Alternate branch'
-                      : 'Unread'}
+                      ? t('Alternate branch')
+                      : t('Unread')}
                   </small>
                   <p>{passageText(line, p).text}</p>
                 </section>
               ))}
               {!activeHistory.length && !extraHistory.length ? (
-                <p className="field-note">No matching passages.</p>
+                <p className="field-note">{t('No matching passages.')}</p>
               ) : null}
             </div>
           </>
         ) : panel === 'saves' ? (
           <>
             <p className="field-note">
-              Progress saves automatically. Named checkpoints keep a separate
-              restorable reading state.
+              {t(
+                'Progress saves automatically. Named checkpoints keep a separate restorable reading state.',
+              )}
             </p>
             <button onClick={saveCheckpoint}>
               <Save size={16} />
-              Save current point
+              {t('Save current point')}
             </button>
             <div className="checkpoint-list">
               {checkpoints.map((point) => (
                 <article key={point.id}>
                   <div>
                     <strong>{point.label}</strong>
-                    <small>{new Date(point.createdAt).toLocaleString()}</small>
+                    <small>
+                      {new Date(point.createdAt).toLocaleString(uiLocale)}
+                    </small>
                   </div>
                   <IconButton
-                    label="Restore checkpoint"
+                    label={t('Restore checkpoint')}
                     onClick={() => {
                       try {
                         commit(
@@ -1733,9 +1763,11 @@ function Reader({
                         setPanel(null);
                       } catch (error) {
                         store.notify(
-                          error instanceof Error
-                            ? error.message
-                            : 'This checkpoint is unavailable.',
+                          t(
+                            error instanceof Error
+                              ? error.message
+                              : 'This checkpoint is unavailable.',
+                          ),
                         );
                       }
                     }}
@@ -1743,7 +1775,7 @@ function Reader({
                     <RotateCcw size={17} />
                   </IconButton>
                   <IconButton
-                    label="Remove checkpoint"
+                    label={t('Remove checkpoint')}
                     onClick={() => {
                       store.setData((old) => ({
                         ...old,
@@ -1751,8 +1783,8 @@ function Reader({
                           (s) => s.id !== point.id,
                         ),
                       }));
-                      store.notify('Checkpoint removed.', {
-                        label: 'Undo',
+                      store.notify(t('Checkpoint removed.'), {
+                        label: t('Undo'),
                         run: () =>
                           store.setData((old) => ({
                             ...old,
@@ -1768,7 +1800,7 @@ function Reader({
             </div>
             {!checkpoints.length ? (
               <p className="field-note">
-                No named checkpoints for this episode yet.
+                {t('No named checkpoints for this episode yet.')}
               </p>
             ) : null}
           </>
@@ -1778,45 +1810,54 @@ function Reader({
               {['gfl2-event', 'pjsk', 'gfl1', 'ba-scene'].includes(
                 episode.renderer?.id ?? '',
               ) && !textOnly
-                ? 'Original scene playback'
-                : 'Original text reading'}
+                ? t('Original scene playback')
+                : t('Original text reading')}
             </h3>
             <p>
               {episode.renderer?.id === 'pjsk' && !textOnly ? (
-                'This episode plays original Chinese text with Japanese voices, Live2D characters, motions, facial animation, backgrounds, music and sound effects. Browser transitions and timing approximate the original game.'
+                t(
+                  'This episode plays original Chinese text with Japanese voices, Live2D characters, motions, facial animation, backgrounds, music and sound effects. Browser transitions and timing approximate the original game.',
+                )
               ) : episode.renderer?.id === 'gfl1' && !textOnly ? (
-                'This chapter uses original Steam global English text, backgrounds, portrait expressions, communication frames, music and sound effects. Portrait placement, transmission scanning and scene transitions approximate the game. A gameplay map is not imported; transmissions retain the previous illustrated background where available. Dialogue voices are not imported. Open the source script to inspect the original commands.'
+                t(
+                  'This chapter uses original Steam global English text, backgrounds, portrait expressions, communication frames, music and sound effects. Portrait placement, transmission scanning and scene transitions approximate the game. A gameplay map is not imported; transmissions retain the previous illustrated background where available. Dialogue voices are not imported. Open the source script to inspect the original commands.',
+                )
               ) : episode.renderer?.id === 'ba-scene' && !textOnly ? (
-                'This chapter plays original JP backgrounds, Spine character animations and expressions, Japanese dialogue voices, music and sound effects. Scene commands and waits follow the archived source script. Assets are stored locally and included in episode downloads.'
+                t(
+                  'This chapter plays original JP backgrounds, Spine character animations and expressions, Japanese dialogue voices, music and sound effects. Scene commands and waits follow the archived source script. Assets are stored locally and included in episode downloads.',
+                )
               ) : episode.renderer?.id === 'gfl2-event' && !textOnly ? (
-                'This chapter plays recovered backgrounds, Live2D models, expressions, holograms and music in original script order. Movies support Chinese and Japanese audio. Regular dialogue has no voice track. Some Unity effects and browser rendering remain approximate.'
+                t(
+                  'This chapter plays recovered backgrounds, Live2D models, expressions, holograms and music in original script order. Movies support Chinese and Japanese audio. Regular dialogue has no voice track. Some Unity effects and browser rendering remain approximate.',
+                )
               ) : (
                 <>
-                  This chapter follows the recovered script rows with original
-                  text and speaker names. Character visuals, backgrounds,
-                  effects, voice and music are not played in this mode.
+                  {t(
+                    'This chapter follows the recovered script rows with original text and speaker names. Character visuals, backgrounds, effects, voice and music are not played in this mode.',
+                  )}
                 </>
               )}
             </p>
             <p>
-              All source commands are retained. Unknown control flow blocks
-              import instead of being treated as ordinary dialogue.
+              {t(
+                'All source commands are retained. Unknown control flow blocks import instead of being treated as ordinary dialogue.',
+              )}
             </p>
             <dl>
-              <dt>Section</dt>
+              <dt>{t('Section')}</dt>
               <dd>
                 {episode.order} · {episodeTitle(episode, p.catalogLocale)}
               </dd>
-              <dt>Current source</dt>
+              <dt>{t('Current source')}</dt>
               <dd>
-                {node.source?.script} · row {node.source?.row}
+                {node.source?.script} {t('· row')} {node.source?.row}
               </dd>
-              <dt>Original passages</dt>
+              <dt>{t('Original passages')}</dt>
               <dd>{episode.nodes.length}</dd>
             </dl>
             {episode.sourceUrl ? (
               <a className="text-link" href={episode.sourceUrl} download>
-                Download original script data
+                {t('Download original script data')}
               </a>
             ) : null}
           </div>

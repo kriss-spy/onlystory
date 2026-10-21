@@ -32,6 +32,7 @@ import {
 } from './DownloadSelection';
 import type { GameId } from '../model';
 import { gamePreferences } from '../model';
+import { useI18n } from '../i18n';
 
 export function Shell({ children }: { children: ReactNode }) {
   return (
@@ -42,6 +43,7 @@ export function Shell({ children }: { children: ReactNode }) {
 }
 
 function ShellContent({ children }: { children: ReactNode }) {
+  const { t } = useI18n();
   const selection = useDownloadSelection();
   const location = useLocation();
   const navigate = useNavigate();
@@ -157,59 +159,60 @@ function ShellContent({ children }: { children: ReactNode }) {
     return () => window.removeEventListener('keydown', key);
   }, [inReader, open]);
   const commands = useMemo(
-    () => [
-      {
-        label: 'Library',
-        icon: Library,
-        run: () => navigate('/library'),
-        shortcut: '',
-      },
-      {
-        label: 'Bookmarks',
-        icon: Bookmark,
-        run: () => navigate('/bookmarks'),
-        shortcut: '',
-      },
-      {
-        label: 'Select stories to download',
-        icon: Download,
-        run: selection.press,
-        shortcut: '',
-      },
-      {
-        label: inReader ? 'Reader settings' : 'General settings',
-        icon: Settings2,
-        run: () => open('settings'),
-        shortcut: 'Ctrl+,',
-      },
-      ...(inReader
-        ? (
-            [
-              ['Chapters', PanelLeft, 'chapters', 'Ctrl+C'],
-              ['History', History, 'history', 'Ctrl+H'],
-              ['Save checkpoint', Save, 'checkpoint', 'Ctrl+S'],
-              ['Save points', Save, 'saves', ''],
-              ['Bookmark passage', Bookmark, 'bookmark', 'B'],
-              ['Auto reading', Play, 'auto', 'A'],
-              ['Fast-forward', SkipForward, 'skip', 'F'],
-              ['Hide controls', EyeOff, 'hide', 'U'],
-              ['Maximize reader', Maximize, 'fullscreen', 'F11'],
-            ] as const
-          ).map(([label, icon, command, shortcut]) => ({
-            label,
-            icon,
-            run: () => readerCommand(command),
-            shortcut,
-          }))
-        : []),
-      {
-        label: 'Cross-game design checks',
-        icon: FlaskConical,
-        run: () => navigate('/lab'),
-        shortcut: '',
-      },
-    ],
-    [inReader, navigate, open, selection.press],
+    () =>
+      [
+        {
+          label: 'Library',
+          icon: Library,
+          run: () => navigate('/library'),
+          shortcut: '',
+        },
+        {
+          label: 'Bookmarks',
+          icon: Bookmark,
+          run: () => navigate('/bookmarks'),
+          shortcut: '',
+        },
+        {
+          label: 'Select stories to download',
+          icon: Download,
+          run: selection.press,
+          shortcut: '',
+        },
+        {
+          label: inReader ? 'Reader settings' : 'General settings',
+          icon: Settings2,
+          run: () => open('settings'),
+          shortcut: 'Ctrl+,',
+        },
+        ...(inReader
+          ? (
+              [
+                ['Chapters', PanelLeft, 'chapters', 'Ctrl+C'],
+                ['History', History, 'history', 'Ctrl+H'],
+                ['Save checkpoint', Save, 'checkpoint', 'Ctrl+S'],
+                ['Save points', Save, 'saves', ''],
+                ['Bookmark passage', Bookmark, 'bookmark', 'B'],
+                ['Auto reading', Play, 'auto', 'A'],
+                ['Fast-forward', SkipForward, 'skip', 'F'],
+                ['Hide controls', EyeOff, 'hide', 'U'],
+                ['Maximize reader', Maximize, 'fullscreen', 'F11'],
+              ] as const
+            ).map(([label, icon, command, shortcut]) => ({
+              label,
+              icon,
+              run: () => readerCommand(command),
+              shortcut,
+            }))
+          : []),
+        {
+          label: 'Cross-game design checks',
+          icon: FlaskConical,
+          run: () => navigate('/lab'),
+          shortcut: '',
+        },
+      ].map((command) => ({ ...command, label: t(command.label) })),
+    [inReader, navigate, open, selection.press, t],
   );
   const filtered = commands.filter((c) => {
     let i = 0;
@@ -226,23 +229,23 @@ function ShellContent({ children }: { children: ReactNode }) {
               <BookOpen size={21} strokeWidth={1.5} />
               <span>onlystory</span>
             </Link>
-            <nav aria-label="Main navigation">
-              <NavLink aria-label="Library" to="/library">
+            <nav aria-label={t('Main navigation')}>
+              <NavLink aria-label={t('Library')} to="/library">
                 <Library size={18} />
               </NavLink>
-              <NavLink aria-label="Bookmarks" to="/bookmarks">
+              <NavLink aria-label={t('Bookmarks')} to="/bookmarks">
                 <Bookmark size={18} />
               </NavLink>
               <DownloadSelectionButton />
               <IconButton
-                label="Commands & shortcuts"
+                label={t('Commands & shortcuts')}
                 shortcut="Ctrl+K"
                 onClick={() => open('commands')}
               >
                 <Command size={18} />
               </IconButton>
               <IconButton
-                label="Settings"
+                label={t('Settings')}
                 shortcut="Ctrl+,"
                 onClick={() => open('settings')}
               >
@@ -254,7 +257,7 @@ function ShellContent({ children }: { children: ReactNode }) {
         {children}
         {notice ? (
           <div className="toast" role="status">
-            <span>{notice.message}</span>
+            <span>{t(notice.message)}</span>
             {notice.action ? (
               <button
                 onClick={() => {
@@ -262,10 +265,10 @@ function ShellContent({ children }: { children: ReactNode }) {
                   dismiss();
                 }}
               >
-                {notice.action.label}
+                {t(notice.action.label)}
               </button>
             ) : null}
-            <IconButton label="Dismiss notification" onClick={dismiss}>
+            <IconButton label={t('Dismiss notification')} onClick={dismiss}>
               <X size={15} />
             </IconButton>
           </div>
@@ -273,8 +276,8 @@ function ShellContent({ children }: { children: ReactNode }) {
         <Panel
           open={panel === 'settings'}
           onClose={close}
-          title="Settings"
-          description="Preferences are saved on this device."
+          title={t('Settings')}
+          description={t('Preferences are saved on this device.')}
           returnFocus={focus.current}
         >
           <Settings key={location.pathname} onNavigate={close} />
@@ -282,7 +285,7 @@ function ShellContent({ children }: { children: ReactNode }) {
         <Panel
           open={panel === 'commands'}
           onClose={close}
-          title="Commands & shortcuts"
+          title={t('Commands & shortcuts')}
           returnFocus={focus.current}
           variant="palette"
         >
@@ -290,8 +293,8 @@ function ShellContent({ children }: { children: ReactNode }) {
             <Command size={17} />
             <input
               autoFocus
-              aria-label="Find a command"
-              placeholder="Find a command…"
+              aria-label={t('Find a command')}
+              placeholder={t('Find a command…')}
               value={query}
               onChange={(e) => setQuery(e.target.value)}
             />
@@ -317,7 +320,7 @@ function ShellContent({ children }: { children: ReactNode }) {
               </button>
             ))}
             {!filtered.length ? (
-              <p className="field-note">No matching commands.</p>
+              <p className="field-note">{t('No matching commands.')}</p>
             ) : null}
           </div>
         </Panel>
@@ -337,12 +340,13 @@ export function PageTitle({
   children?: ReactNode;
   back?: string;
 }) {
+  const { t } = useI18n();
   return (
     <header className="page-title">
       {back ? (
         <Link className="back-link" to={back}>
           <ArrowLeft size={16} />
-          Back
+          {t('Back')}
         </Link>
       ) : null}
       {eyebrow ? <p className="eyebrow">{eyebrow}</p> : null}

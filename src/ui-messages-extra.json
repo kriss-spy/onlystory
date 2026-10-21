@@ -27,7 +27,10 @@
     "zh-CN": "消息窗口变化后，播放一段六秒的示例视频。",
     "ja": "メッセージウィンドウが変化し、6秒のサンプル動画を再生します。"
   },
-  "All games": { "zh-CN": "全部游戏", "ja": "すべてのゲーム" },
+  "All games": {
+    "zh-CN": "全部游戏",
+    "ja": "すべてのゲーム"
+  },
   "An episode without a device copy has a recovery path to the local library.": {
     "zh-CN": "未下载到设备的故事可返回本地库进行恢复。",
     "ja": "端末に未保存のストーリーからローカルライブラリへ戻れます。"
@@ -36,9 +39,18 @@
     "zh-CN": "更新已就绪。",
     "ja": "更新の準備ができました。"
   },
-  "App installation": { "zh-CN": "安装应用", "ja": "アプリのインストール" },
-  "Available to download": { "zh-CN": "可下载", "ja": "ダウンロード可能" },
-  "Blue Archive": { "zh-CN": "蔚蓝档案", "ja": "ブルーアーカイブ" },
+  "App installation": {
+    "zh-CN": "安装应用",
+    "ja": "アプリのインストール"
+  },
+  "Available to download": {
+    "zh-CN": "可下载",
+    "ja": "ダウンロード可能"
+  },
+  "Blue Archive": {
+    "zh-CN": "蔚蓝档案",
+    "ja": "ブルーアーカイブ"
+  },
   "Bookmark removed.": {
     "zh-CN": "书签已移除。",
     "ja": "ブックマークを削除しました。"
@@ -47,7 +59,10 @@
     "zh-CN": "两个选项通向不同段落，历史与书签会保留分支。",
     "ja": "選択肢ごとに異なる場面へ進み、履歴とブックマークに分岐を保存します。"
   },
-  "Branch included": { "zh-CN": "包含分支", "ja": "分岐を含む" },
+  "Branch included": {
+    "zh-CN": "包含分支",
+    "ja": "分岐を含む"
+  },
   "Browse main stories and events to download": {
     "zh-CN": "浏览并下载主线与活动剧情",
     "ja": "メインストーリーやイベントを探してダウンロード"
@@ -56,14 +71,26 @@
     "zh-CN": "浏览可下载或导入的故事",
     "ja": "ダウンロードやインポートするストーリーを探す"
   },
-  "Browse the library": { "zh-CN": "浏览书库", "ja": "ライブラリを見る" },
+  "Browse the library": {
+    "zh-CN": "浏览书库",
+    "ja": "ライブラリを見る"
+  },
   "Cancel download {story}": {
     "zh-CN": "取消下载 {story}",
     "ja": "{story} のダウンロードをキャンセル"
   },
-  "Cards": { "zh-CN": "卡片", "ja": "カード" },
-  "Check for updates": { "zh-CN": "检查更新", "ja": "更新を確認" },
-  "Checking for updates…": { "zh-CN": "正在检查更新…", "ja": "更新を確認中…" },
+  "Cards": {
+    "zh-CN": "卡片",
+    "ja": "カード"
+  },
+  "Check for updates": {
+    "zh-CN": "检查更新",
+    "ja": "更新を確認"
+  },
+  "Checking for updates…": {
+    "zh-CN": "正在检查更新…",
+    "ja": "更新を確認中…"
+  },
   "Chinese text and preserved source scripts": {
     "zh-CN": "简中原文与保留的剧本",
     "ja": "中国語テキストと保存された原本スクリプト"
@@ -76,8 +103,14 @@
     "zh-CN": "选项与场景效果",
     "ja": "選択肢とシーン効果"
   },
-  "Clear selection": { "zh-CN": "清除选择", "ja": "選択を解除" },
-  "Collection layout": { "zh-CN": "合集布局", "ja": "コレクションの表示形式" },
+  "Clear selection": {
+    "zh-CN": "清除选择",
+    "ja": "選択を解除"
+  },
+  "Collection layout": {
+    "zh-CN": "合集布局",
+    "ja": "コレクションの表示形式"
+  },
   "Concurrent motion & voice": {
     "zh-CN": "动作与语音同步",
     "ja": "動きと音声の同時再生"
@@ -86,13 +119,22 @@
     "zh-CN": "跨游戏界面检查",
     "ja": "ゲーム共通の表示テスト"
   },
-  "Default movie voice": { "zh-CN": "默认视频语音", "ja": "動画音声の既定値" },
-  "Disconnected server": { "zh-CN": "服务器断开连接", "ja": "サーバー切断" },
+  "Default movie voice": {
+    "zh-CN": "默认视频语音",
+    "ja": "動画音声の既定値"
+  },
+  "Disconnected server": {
+    "zh-CN": "服务器断开连接",
+    "ja": "サーバー切断"
+  },
   "Download canceled. Your progress is unchanged.": {
     "zh-CN": "下载已取消，阅读进度不变。",
     "ja": "ダウンロードをキャンセルしました。読書の進捗は変わりません。"
   },
-  "Download game": { "zh-CN": "下载的游戏", "ja": "ダウンロードするゲーム" },
+  "Download game": {
+    "zh-CN": "下载的游戏",
+    "ja": "ダウンロードするゲーム"
+  },
   "Download pages": {
     "zh-CN": "下载列表分页",
     "ja": "ダウンロード一覧のページ"
@@ -113,7 +155,10 @@
     "zh-CN": "暂不支持下载",
     "ja": "ダウンローダーは未対応です"
   },
-  "Downloading": { "zh-CN": "正在下载", "ja": "ダウンロード中" },
+  "Downloading": {
+    "zh-CN": "正在下载",
+    "ja": "ダウンロード中"
+  },
   "Downloading {story}": {
     "zh-CN": "正在下载 {story}",
     "ja": "{story} をダウンロード中"
@@ -154,12 +199,18 @@
     "zh-CN": "重启前请完成或取消下载。",
     "ja": "再起動前にダウンロードを完了またはキャンセルしてください。"
   },
-  "Fixture downloads": { "zh-CN": "示例下载", "ja": "サンプルのダウンロード" },
+  "Fixture downloads": {
+    "zh-CN": "示例下载",
+    "ja": "サンプルのダウンロード"
+  },
   "Import original files for offline reading": {
     "zh-CN": "导入原始文件以离线阅读",
     "ja": "オフラインで読むには原本ファイルをインポート"
   },
-  "Incomplete archive": { "zh-CN": "不完整的存档", "ja": "不完全なアーカイブ" },
+  "Incomplete archive": {
+    "zh-CN": "不完整的存档",
+    "ja": "不完全なアーカイブ"
+  },
   "Install Onlystory": {
     "zh-CN": "安装 Onlystory",
     "ja": "Onlystory をインストール"
@@ -172,17 +223,38 @@
     "zh-CN": "日文文本、角色动画、CG 与音频",
     "ja": "日本語テキスト、キャラクターアニメ、CG、音声"
   },
-  "List": { "zh-CN": "列表", "ja": "リスト" },
+  "List": {
+    "zh-CN": "列表",
+    "ja": "リスト"
+  },
   "Loading download…": {
     "zh-CN": "正在加载下载…",
     "ja": "ダウンロードを読み込み中…"
   },
-  "Loading scene": { "zh-CN": "加载场景", "ja": "シーンの読み込み" },
-  "MILESTONE ONE": { "zh-CN": "第一阶段", "ja": "第1段階" },
-  "Missing background": { "zh-CN": "背景缺失", "ja": "背景の欠落" },
-  "Missing voice": { "zh-CN": "语音缺失", "ja": "音声の欠落" },
-  "Movie voice": { "zh-CN": "视频语音", "ja": "動画音声" },
-  "Next": { "zh-CN": "下一页", "ja": "次へ" },
+  "Loading scene": {
+    "zh-CN": "加载场景",
+    "ja": "シーンの読み込み"
+  },
+  "MILESTONE ONE": {
+    "zh-CN": "第一阶段",
+    "ja": "第1段階"
+  },
+  "Missing background": {
+    "zh-CN": "背景缺失",
+    "ja": "背景の欠落"
+  },
+  "Missing voice": {
+    "zh-CN": "语音缺失",
+    "ja": "音声の欠落"
+  },
+  "Movie voice": {
+    "zh-CN": "视频语音",
+    "ja": "動画音声"
+  },
+  "Next": {
+    "zh-CN": "下一页",
+    "ja": "次へ"
+  },
   "No matching bookmarks": {
     "zh-CN": "没有匹配的书签",
     "ja": "一致するブックマークがありません"
@@ -195,7 +267,10 @@
     "zh-CN": "暂无书签",
     "ja": "ブックマークはまだありません"
   },
-  "ON THIS DEVICE": { "zh-CN": "此设备上", "ja": "この端末" },
+  "ON THIS DEVICE": {
+    "zh-CN": "此设备上",
+    "ja": "この端末"
+  },
   "Offline launch is not ready.": {
     "zh-CN": "尚未准备好离线启动。",
     "ja": "オフライン起動の準備ができていません。"
@@ -212,7 +287,10 @@
     "zh-CN": "少女前线2 原版开场演出",
     "ja": "ドールズフロントライン2の原作オープニング"
   },
-  "Page not found": { "zh-CN": "找不到页面", "ja": "ページが見つかりません" },
+  "Page not found": {
+    "zh-CN": "找不到页面",
+    "ja": "ページが見つかりません"
+  },
   "Partial archive · missing scene is disclosed in the reader": {
     "zh-CN": "部分存档 · 阅读器会标注缺失场景",
     "ja": "一部のみのアーカイブ · 欠落シーンはリーダーに表示されます"
@@ -221,8 +299,14 @@
     "zh-CN": "正在准备离线使用…",
     "ja": "オフライン利用を準備中…"
   },
-  "Previous": { "zh-CN": "上一页", "ja": "前へ" },
-  "Project SEKAI": { "zh-CN": "世界计划", "ja": "プロジェクトセカイ" },
+  "Previous": {
+    "zh-CN": "上一页",
+    "ja": "前へ"
+  },
+  "Project SEKAI": {
+    "zh-CN": "世界计划",
+    "ja": "プロジェクトセカイ"
+  },
   "Purpose-built fixtures for checking the shared interface. These exercise UI behavior, not original game playback.": {
     "zh-CN": "用于检查通用界面的示例数据，演示界面行为，不包含原版游戏演出。",
     "ja": "共通インターフェースの動作を確認するサンプルです。原作のゲーム演出ではありません。"
@@ -231,7 +315,10 @@
     "zh-CN": "已可离线启动，请在断网前下载故事。",
     "ja": "オフラインで起動できます。接続を切る前にストーリーをダウンロードしてください。"
   },
-  "Remove bookmark": { "zh-CN": "移除书签", "ja": "ブックマークを削除" },
+  "Remove bookmark": {
+    "zh-CN": "移除书签",
+    "ja": "ブックマークを削除"
+  },
   "Remove download {story}": {
     "zh-CN": "移除下载 {story}",
     "ja": "{story} のダウンロードを削除"
@@ -244,7 +331,10 @@
     "zh-CN": "移除故事会保留阅读进度和书签。30 秒内可撤销，此后会清理不再使用的播放资源。其他故事所需的资源和本机原始文件缓存会保留。",
     "ja": "ストーリーを削除しても読書の進捗とブックマークは残ります。30秒以内なら元に戻せます。その後、未使用の再生データを削除します。他のストーリーで使うデータと原本ファイルのキャッシュは残ります。"
   },
-  "Restart to update": { "zh-CN": "重启以更新", "ja": "再起動して更新" },
+  "Restart to update": {
+    "zh-CN": "重启以更新",
+    "ja": "再起動して更新"
+  },
   "Restart when you are ready. Progress and downloads are kept.": {
     "zh-CN": "准备好后即可重启，阅读进度和下载会保留。",
     "ja": "準備ができたら再起動してください。進捗とダウンロードは保持されます。"
@@ -257,30 +347,54 @@
     "zh-CN": "重试离线设置",
     "ja": "オフライン設定を再試行"
   },
-  "Return to library": { "zh-CN": "返回书库", "ja": "ライブラリへ戻る" },
-  "Saved passages": { "zh-CN": "收藏的段落", "ja": "保存した台詞" },
+  "Return to library": {
+    "zh-CN": "返回书库",
+    "ja": "ライブラリへ戻る"
+  },
+  "Saved passages": {
+    "zh-CN": "收藏的段落",
+    "ja": "保存した台詞"
+  },
   "Scene failure stays inside the stage. Dialogue and navigation remain usable.": {
     "zh-CN": "场景加载失败仅影响舞台，仍可阅读对话与导航。",
     "ja": "シーンの読み込み失敗はステージ内に留まり、台詞とナビゲーションは使えます。"
   },
-  "Search bookmarks": { "zh-CN": "搜索书签", "ja": "ブックマークを検索" },
-  "Search downloads": { "zh-CN": "搜索下载", "ja": "ダウンロードを検索" },
+  "Search bookmarks": {
+    "zh-CN": "搜索书签",
+    "ja": "ブックマークを検索"
+  },
+  "Search downloads": {
+    "zh-CN": "搜索下载",
+    "ja": "ダウンロードを検索"
+  },
   "Select all visible episodes": {
     "zh-CN": "选择当前显示的全部故事",
     "ja": "表示中のストーリーをすべて選択"
   },
-  "Select visible": { "zh-CN": "选择当前显示项", "ja": "表示中の項目を選択" },
-  "Select {story}": { "zh-CN": "选择 {story}", "ja": "{story} を選択" },
+  "Select visible": {
+    "zh-CN": "选择当前显示项",
+    "ja": "表示中の項目を選択"
+  },
+  "Select {story}": {
+    "zh-CN": "选择 {story}",
+    "ja": "{story} を選択"
+  },
   "Show stories awaiting a downloader": {
     "zh-CN": "显示尚无下载器的故事",
     "ja": "ダウンローダー未対応のストーリーも表示"
   },
-  "Story opening": { "zh-CN": "故事开头", "ja": "ストーリー冒頭" },
+  "Story opening": {
+    "zh-CN": "故事开头",
+    "ja": "ストーリー冒頭"
+  },
   "System messages & video": {
     "zh-CN": "系统消息与视频",
     "ja": "システムメッセージと動画"
   },
-  "Table": { "zh-CN": "表格", "ja": "表" },
+  "Table": {
+    "zh-CN": "表格",
+    "ja": "表"
+  },
   "Take the stories you want with you. Keep your reading history either way.": {
     "zh-CN": "下载想随身阅读的故事，阅读历史始终保留。",
     "ja": "読みたいストーリーを持ち歩けます。ダウンロードの有無にかかわらず読書履歴は残ります。"
@@ -321,12 +435,18 @@
     "zh-CN": "播放示例语音时，两位示例角色同时留在舞台上。",
     "ja": "サンプル音声を再生する間、2人の仮キャラクターがステージに残ります。"
   },
-  "Undo": { "zh-CN": "撤销", "ja": "元に戻す" },
+  "Undo": {
+    "zh-CN": "撤销",
+    "ja": "元に戻す"
+  },
   "Unknown control flow is disclosed and never silently skipped.": {
     "zh-CN": "无法识别的控制流程会明确标注，不会静默跳过。",
     "ja": "未対応の制御は明示し、無断でスキップしません。"
   },
-  "Unsupported command": { "zh-CN": "不支持的指令", "ja": "未対応のコマンド" },
+  "Unsupported command": {
+    "zh-CN": "不支持的指令",
+    "ja": "未対応のコマンド"
+  },
   "Use the bookmark icon or B while reading to keep a passage.": {
     "zh-CN": "阅读时点击书签图标或按 B 保存段落。",
     "ja": "読書中にブックマークアイコンを押すか B キーで台詞を保存できます。"
@@ -335,7 +455,10 @@
     "zh-CN": "已验证的故事来源",
     "ja": "確認済みのストーリー配信元"
   },
-  "YOUR COLLECTION": { "zh-CN": "我的收藏", "ja": "コレクション" },
+  "YOUR COLLECTION": {
+    "zh-CN": "我的收藏",
+    "ja": "コレクション"
+  },
   "Your saved progress is still on this device.": {
     "zh-CN": "阅读进度仍保存在此设备上。",
     "ja": "保存した進捗はこの端末に残っています。"
@@ -351,5 +474,613 @@
   "{size} cached media": {
     "zh-CN": "已缓存资源 {size}",
     "ja": "キャッシュ済みデータ {size}"
+  },
+  "All source commands are retained. Unknown control flow blocks import instead of being treated as ordinary dialogue.": {
+    "zh-CN": "保留全部原始指令。遇到未知控制流程会停止导入，不会将其当作普通对话。",
+    "ja": "原本の命令をすべて保持します。未知の制御は通常の台詞として扱わず、インポートを停止します。"
+  },
+  "Alternate branch": {
+    "zh-CN": "其他分支",
+    "ja": "別の分岐"
+  },
+  "Auto reading": {
+    "zh-CN": "自动阅读",
+    "ja": "自動再生"
+  },
+  "Back": {
+    "zh-CN": "返回",
+    "ja": "戻る"
+  },
+  "Back to stories": {
+    "zh-CN": "返回故事列表",
+    "ja": "ストーリー一覧へ戻る"
+  },
+  "Battle skipped. The next story continues after the battle.": {
+    "zh-CN": "已跳过战斗。下一个故事从战斗结束后继续。",
+    "ja": "戦闘をスキップしました。次のストーリーは戦闘後に続きます。"
+  },
+  "Battle skipped. This story continues after the battle.": {
+    "zh-CN": "已跳过战斗。本故事从战斗结束后继续。",
+    "ja": "戦闘をスキップしました。このストーリーは戦闘後に続きます。"
+  },
+  "Bookmark passage": {
+    "zh-CN": "收藏段落",
+    "ja": "台詞をブックマーク"
+  },
+  "Bookmarked": {
+    "zh-CN": "已收藏",
+    "ja": "ブックマーク済み"
+  },
+  "Bookmarks": {
+    "zh-CN": "书签",
+    "ja": "ブックマーク"
+  },
+  "Bookmarks only": {
+    "zh-CN": "仅显示书签",
+    "ja": "ブックマークのみ"
+  },
+  "Cancel download": {
+    "zh-CN": "取消下载",
+    "ja": "ダウンロードをキャンセル"
+  },
+  "Chapter unavailable": {
+    "zh-CN": "章节不可用",
+    "ja": "チャプターを利用できません"
+  },
+  "Chapters": {
+    "zh-CN": "章节",
+    "ja": "チャプター"
+  },
+  "Chinese: C · Japanese: J · English: E": {
+    "zh-CN": "中文：C · 日文：J · 英文：E",
+    "ja": "中国語：C · 日本語：J · 英語：E"
+  },
+  "Choose a response": {
+    "zh-CN": "选择回答",
+    "ja": "返答を選択"
+  },
+  "Collapse chapters": {
+    "zh-CN": "收起章节",
+    "ja": "チャプターを折りたたむ"
+  },
+  "Commands & shortcuts": {
+    "zh-CN": "命令与快捷键",
+    "ja": "コマンドとショートカット"
+  },
+  "Current source": {
+    "zh-CN": "当前来源",
+    "ja": "現在のソース"
+  },
+  "Design fixture": {
+    "zh-CN": "界面示例",
+    "ja": "表示テスト"
+  },
+  "Design fixture · no private server is connected.": {
+    "zh-CN": "界面示例 · 未连接私有服务器。",
+    "ja": "表示テスト · プライベートサーバーには接続していません。"
+  },
+  "Dismiss notification": {
+    "zh-CN": "关闭通知",
+    "ja": "通知を閉じる"
+  },
+  "Download canceled. Retry to reuse saved files.": {
+    "zh-CN": "下载已取消。重试会复用已保存的文件。",
+    "ja": "ダウンロードをキャンセルしました。再試行時に保存済みファイルを再利用します。"
+  },
+  "Download episode": {
+    "zh-CN": "下载故事",
+    "ja": "ストーリーをダウンロード"
+  },
+  "Download or import story": {
+    "zh-CN": "下载或导入故事",
+    "ja": "ストーリーをダウンロード・インポート"
+  },
+  "Download or import this story’s original files for offline reading.": {
+    "zh-CN": "下载或导入此故事的原始文件以离线阅读。",
+    "ja": "オフラインで読むには、このストーリーの原本ファイルをダウンロードまたはインポートしてください。"
+  },
+  "Download original script data": {
+    "zh-CN": "下载原始剧本数据",
+    "ja": "原本スクリプトをダウンロード"
+  },
+  "Download story": {
+    "zh-CN": "下载故事",
+    "ja": "ストーリーをダウンロード"
+  },
+  "Download this episode": {
+    "zh-CN": "下载此故事",
+    "ja": "このストーリーをダウンロード"
+  },
+  "Download this story for offline reading.": {
+    "zh-CN": "下载此故事以离线阅读。",
+    "ja": "オフラインで読むには、このストーリーをダウンロードしてください。"
+  },
+  "Downloader pending": {
+    "zh-CN": "下载器尚未就绪",
+    "ja": "ダウンローダー未対応"
+  },
+  "Downloading ·": {
+    "zh-CN": "正在下载 ·",
+    "ja": "ダウンロード中 ·"
+  },
+  "Downloading…": {
+    "zh-CN": "正在下载…",
+    "ja": "ダウンロード中…"
+  },
+  "Enable audio": {
+    "zh-CN": "启用音频",
+    "ja": "音声を有効にする"
+  },
+  "English · Original scenes": {
+    "zh-CN": "英文 · 原版演出",
+    "ja": "英語 · 原作シーン"
+  },
+  "English · Text mode": {
+    "zh-CN": "英文 · 文本模式",
+    "ja": "英語 · テキストモード"
+  },
+  "Episode finished": {
+    "zh-CN": "故事已读完",
+    "ja": "ストーリー完了"
+  },
+  "Episode not found": {
+    "zh-CN": "找不到故事",
+    "ja": "ストーリーが見つかりません"
+  },
+  "Event stories": {
+    "zh-CN": "合集故事",
+    "ja": "コレクションのストーリー"
+  },
+  "Fast-forward": {
+    "zh-CN": "快进",
+    "ja": "早送り"
+  },
+  "Fast-forward stops at choices, movies and unavailable scenes.": {
+    "zh-CN": "快进会在选项、视频和不可用场景处停止。",
+    "ja": "早送りは選択肢、動画、利用できないシーンで停止します。"
+  },
+  "Find a chapter…": {
+    "zh-CN": "查找章节…",
+    "ja": "チャプターを検索…"
+  },
+  "Find a command": {
+    "zh-CN": "查找命令",
+    "ja": "コマンドを検索"
+  },
+  "Find a command…": {
+    "zh-CN": "查找命令…",
+    "ja": "コマンドを検索…"
+  },
+  "Find a passage…": {
+    "zh-CN": "查找段落…",
+    "ja": "台詞を検索…"
+  },
+  "Finish scene": {
+    "zh-CN": "完成场景演出",
+    "ja": "シーン演出を完了"
+  },
+  "General settings": {
+    "zh-CN": "通用设置",
+    "ja": "全般設定"
+  },
+  "Hide controls": {
+    "zh-CN": "隐藏阅读界面",
+    "ja": "読書画面のUIを非表示"
+  },
+  "History": {
+    "zh-CN": "历史",
+    "ja": "履歴"
+  },
+  "Include unread passages and alternate branches": {
+    "zh-CN": "包含未读段落与其他分支",
+    "ja": "未読の台詞と別の分岐を含める"
+  },
+  "Jumping back restores that passage and its branch context.": {
+    "zh-CN": "跳回时会恢复对应段落及其分支状态。",
+    "ja": "戻ると、その台詞と分岐の状態を復元します。"
+  },
+  "Library": {
+    "zh-CN": "书库",
+    "ja": "ライブラリ"
+  },
+  "Loading chapter": {
+    "zh-CN": "正在加载章节",
+    "ja": "チャプターを読み込み中"
+  },
+  "Loading scene…": {
+    "zh-CN": "正在加载场景…",
+    "ja": "シーンを読み込み中…"
+  },
+  "Loading the original text.": {
+    "zh-CN": "正在加载原始文本。",
+    "ja": "原本のテキストを読み込んでいます。"
+  },
+  "Loading…": {
+    "zh-CN": "正在加载…",
+    "ja": "読み込み中…"
+  },
+  "Main navigation": {
+    "zh-CN": "主导航",
+    "ja": "メインナビゲーション"
+  },
+  "Maximize reader": {
+    "zh-CN": "最大化阅读器",
+    "ja": "リーダーを最大化"
+  },
+  "Next passage": {
+    "zh-CN": "下一段",
+    "ja": "次の台詞"
+  },
+  "Next section": {
+    "zh-CN": "下一节",
+    "ja": "次のセクション"
+  },
+  "Next section ·": {
+    "zh-CN": "下一节 ·",
+    "ja": "次のセクション ·"
+  },
+  "No matching commands.": {
+    "zh-CN": "没有匹配的命令。",
+    "ja": "一致するコマンドがありません。"
+  },
+  "No matching passages.": {
+    "zh-CN": "没有匹配的段落。",
+    "ja": "一致する台詞がありません。"
+  },
+  "No named checkpoints for this episode yet.": {
+    "zh-CN": "此故事暂无命名存档点。",
+    "ja": "このストーリーには名前付きチェックポイントがまだありません。"
+  },
+  "Open episode from the start": {
+    "zh-CN": "从头打开故事",
+    "ja": "ストーリーを最初から開く"
+  },
+  "Original passages": {
+    "zh-CN": "原始段落",
+    "ja": "原本の台詞"
+  },
+  "Original scene playback": {
+    "zh-CN": "原版场景演出",
+    "ja": "原作シーンの再生"
+  },
+  "Original text reading": {
+    "zh-CN": "原文阅读",
+    "ja": "原文を読む"
+  },
+  "Passage unavailable": {
+    "zh-CN": "段落不可用",
+    "ja": "台詞を利用できません"
+  },
+  "Pause auto reading": {
+    "zh-CN": "暂停自动阅读",
+    "ja": "自動再生を一時停止"
+  },
+  "Preferences are saved on this device.": {
+    "zh-CN": "偏好设置保存在此设备上。",
+    "ja": "設定はこの端末に保存されます。"
+  },
+  "Previous passage": {
+    "zh-CN": "上一段",
+    "ja": "前の台詞"
+  },
+  "Progress saves automatically. Named checkpoints keep a separate restorable reading state.": {
+    "zh-CN": "阅读进度会自动保存。命名存档点可单独保留并恢复当时的阅读状态。",
+    "ja": "進捗は自動保存されます。名前付きチェックポイントには、別途復元できる読書状態を保存します。"
+  },
+  "Read available text": {
+    "zh-CN": "阅读已收录文本",
+    "ja": "収録済みテキストを読む"
+  },
+  "Reader settings": {
+    "zh-CN": "阅读器设置",
+    "ja": "リーダー設定"
+  },
+  "Reading controls": {
+    "zh-CN": "阅读控制",
+    "ja": "読書の操作"
+  },
+  "Reading language": {
+    "zh-CN": "阅读语言",
+    "ja": "読む言語"
+  },
+  "Reconnect preview": {
+    "zh-CN": "重新连接预览",
+    "ja": "プレビューに再接続"
+  },
+  "Remove checkpoint": {
+    "zh-CN": "移除存档点",
+    "ja": "チェックポイントを削除"
+  },
+  "Restore checkpoint": {
+    "zh-CN": "恢复存档点",
+    "ja": "チェックポイントを復元"
+  },
+  "Restore reader": {
+    "zh-CN": "还原阅读器大小",
+    "ja": "リーダーの大きさを戻す"
+  },
+  "Retry chapter": {
+    "zh-CN": "重试加载章节",
+    "ja": "チャプターの読み込みを再試行"
+  },
+  "Retry download": {
+    "zh-CN": "重试下载",
+    "ja": "ダウンロードを再試行"
+  },
+  "Return to device library": {
+    "zh-CN": "返回设备书库",
+    "ja": "端末のライブラリへ戻る"
+  },
+  "Reveal text": {
+    "zh-CN": "显示全部文本",
+    "ja": "テキストをすべて表示"
+  },
+  "Save checkpoint": {
+    "zh-CN": "保存存档点",
+    "ja": "チェックポイントを保存"
+  },
+  "Save current point": {
+    "zh-CN": "保存当前位置",
+    "ja": "現在の位置を保存"
+  },
+  "Save points": {
+    "zh-CN": "存档点",
+    "ja": "チェックポイント"
+  },
+  "Search chapters": {
+    "zh-CN": "搜索章节",
+    "ja": "チャプターを検索"
+  },
+  "Search episode history": {
+    "zh-CN": "搜索故事历史",
+    "ja": "ストーリーの履歴を検索"
+  },
+  "Section": {
+    "zh-CN": "章节",
+    "ja": "セクション"
+  },
+  "Select stories to download": {
+    "zh-CN": "选择要下载的故事",
+    "ja": "ダウンロードするストーリーを選択"
+  },
+  "Server session expired": {
+    "zh-CN": "服务器会话已过期",
+    "ja": "サーバーセッションの期限が切れました"
+  },
+  "Settings": {
+    "zh-CN": "设置",
+    "ja": "設定"
+  },
+  "Show controls": {
+    "zh-CN": "显示阅读界面",
+    "ja": "読書画面のUIを表示"
+  },
+  "Side story": {
+    "zh-CN": "支线故事",
+    "ja": "サイドストーリー"
+  },
+  "Stop fast-forward": {
+    "zh-CN": "停止快进",
+    "ja": "早送りを停止"
+  },
+  "Story information": {
+    "zh-CN": "故事信息",
+    "ja": "ストーリー情報"
+  },
+  "Story reader": {
+    "zh-CN": "故事阅读器",
+    "ja": "ストーリーリーダー"
+  },
+  "The chapter could not be loaded.": {
+    "zh-CN": "无法加载章节。",
+    "ja": "チャプターを読み込めませんでした。"
+  },
+  "The sample media will be cached on this device. Downloads do not require a game installation.": {
+    "zh-CN": "示例资源会缓存在此设备上，下载不需要安装游戏。",
+    "ja": "サンプルデータをこの端末に保存します。ダウンロードにゲームのインストールは不要です。"
+  },
+  "The server is disconnected. Read an installed episode or reconnect to download this one.": {
+    "zh-CN": "服务器已断开。可阅读已下载的故事，或重新连接后下载此故事。",
+    "ja": "サーバーとの接続が切れています。保存済みのストーリーを読むか、再接続してこのストーリーをダウンロードしてください。"
+  },
+  "This archive contains an unsupported or missing scene. It will not be skipped.": {
+    "zh-CN": "此存档中有不支持或缺失的场景，阅读器不会将其跳过。",
+    "ja": "このアーカイブには未対応または欠落したシーンがあり、スキップしません。"
+  },
+  "This chapter follows the recovered script rows with original text and speaker names. Character visuals, backgrounds, effects, voice and music are not played in this mode.": {
+    "zh-CN": "本章按恢复的原始剧本顺序显示文本与说话人。此模式不播放角色、背景、特效、语音和音乐。",
+    "ja": "復元した原本スクリプトの順序でテキストと話者名を表示します。このモードではキャラクター、背景、効果、音声、音楽を再生しません。"
+  },
+  "This chapter plays original JP backgrounds, Spine character animations and expressions, Japanese dialogue voices, music and sound effects. Scene commands and waits follow the archived source script. Assets are stored locally and included in episode downloads.": {
+    "zh-CN": "本章播放日服原版背景、Spine 角色动画与表情、日语对话、音乐和音效。演出指令与等待遵循存档剧本，资源保存在本地并包含在故事下载中。",
+    "ja": "日本版の背景、Spineキャラクターの動きと表情、会話音声、音楽、効果音を再生します。演出と待機は保存した原本スクリプトに従います。データはローカルに保存され、ストーリーのダウンロードにも含まれます。"
+  },
+  "This chapter plays recovered backgrounds, Live2D models, expressions, holograms and music in original script order. Movies support Chinese and Japanese audio. Regular dialogue has no voice track. Some Unity effects and browser rendering remain approximate.": {
+    "zh-CN": "本章按原始剧本顺序播放恢复的背景、Live2D 模型、表情、全息影像和音乐。视频支持中日语音，普通对话无语音。部分 Unity 特效与浏览器渲染为近似呈现。",
+    "ja": "復元した背景、Live2Dモデル、表情、ホログラム、音楽を原本の順序で再生します。動画は中国語と日本語音声に対応し、通常会話に音声はありません。一部のUnity効果とブラウザー描画は近似表現です。"
+  },
+  "This chapter uses original Steam global English text, backgrounds, portrait expressions, communication frames, music and sound effects. Portrait placement, transmission scanning and scene transitions approximate the game. A gameplay map is not imported; transmissions retain the previous illustrated background where available. Dialogue voices are not imported. Open the source script to inspect the original commands.": {
+    "zh-CN": "本章使用 Steam 国际服原版英文、背景、立绘表情、通讯框、音乐和音效。立绘位置、通讯扫描和转场为近似呈现。未导入战斗地图，通讯画面尽量保留此前的插画背景。未导入对话语音，可打开原始剧本查看指令。",
+    "ja": "Steamグローバル版の英語テキスト、背景、立ち絵の表情、通信枠、音楽、効果音を使用します。配置、通信スキャン、場面転換は近似表現です。ゲーム用マップはインポートせず、通信時は可能な限り直前の背景を維持します。会話音声は未収録です。原本スクリプトで命令を確認できます。"
+  },
+  "This episode is not on this device": {
+    "zh-CN": "此故事尚未下载到设备",
+    "ja": "このストーリーは端末に保存されていません"
+  },
+  "This episode plays original Chinese text with Japanese voices, Live2D characters, motions, facial animation, backgrounds, music and sound effects. Browser transitions and timing approximate the original game.": {
+    "zh-CN": "本故事播放原版中文文本、日语语音、Live2D 角色、动作、表情、背景、音乐和音效。浏览器转场与时序为原作的近似呈现。",
+    "ja": "原作の中国語テキスト、日本語音声、Live2Dキャラクター、動き、表情、背景、音楽、効果音を再生します。ブラウザーでの場面転換とタイミングは原作の近似表現です。"
+  },
+  "This link does not match an episode in your library.": {
+    "zh-CN": "此链接与书库中的故事不匹配。",
+    "ja": "このリンクに対応するストーリーがライブラリにありません。"
+  },
+  "This story does not have a verified downloader yet. Its catalog and saved progress remain on this device.": {
+    "zh-CN": "此故事暂无已验证的下载器，目录和已保存进度仍保留在此设备上。",
+    "ja": "このストーリーの確認済みダウンローダーはまだありません。カタログと保存した進捗はこの端末に残ります。"
+  },
+  "Unread": {
+    "zh-CN": "未读",
+    "ja": "未読"
+  },
+  "View downloads": {
+    "zh-CN": "查看下载",
+    "ja": "ダウンロードを表示"
+  },
+  "Voice unavailable. Reading can continue.": {
+    "zh-CN": "语音不可用，可继续阅读。",
+    "ja": "音声を利用できませんが、読書は続けられます。"
+  },
+  "Your browser paused audio.": {
+    "zh-CN": "浏览器已暂停音频。",
+    "ja": "ブラウザーが音声を一時停止しました。"
+  },
+  "Your local progress is safe. Reconnect to your private server or return to your device library.": {
+    "zh-CN": "本地进度已保留。请重新连接私有服务器，或返回设备书库。",
+    "ja": "ローカルの進捗は保持されています。プライベートサーバーに再接続するか、端末のライブラリへ戻ってください。"
+  },
+  "files": {
+    "zh-CN": "个文件",
+    "ja": "ファイル"
+  },
+  "· row": {
+    "zh-CN": "· 原文行",
+    "ja": "· 原本の行"
+  },
+  "Background unavailable. You can keep reading.": {
+    "zh-CN": "背景不可用，可继续阅读。",
+    "ja": "背景を利用できませんが、読書は続けられます。"
+  },
+  "Continue story": {
+    "zh-CN": "继续故事",
+    "ja": "ストーリーを続ける"
+  },
+  "English": {
+    "zh-CN": "英语",
+    "ja": "英語"
+  },
+  "Retry": {
+    "zh-CN": "重试",
+    "ja": "再試行"
+  },
+  "Retry scene": {
+    "zh-CN": "重试加载场景",
+    "ja": "シーンの読み込みを再試行"
+  },
+  "Sample archive recording": {
+    "zh-CN": "存档录音示例",
+    "ja": "アーカイブ録音サンプル"
+  },
+  "Sample recording · 6 seconds": {
+    "zh-CN": "录音示例 · 6 秒",
+    "ja": "録音サンプル · 6秒"
+  },
+  "Seek along your selected story route.": {
+    "zh-CN": "沿已选择的剧情路线跳转。",
+    "ja": "選択したストーリーのルート内を移動できます。"
+  },
+  "Skip this movie": {
+    "zh-CN": "跳过此视频",
+    "ja": "この動画をスキップ"
+  },
+  "Song performance": {
+    "zh-CN": "歌曲演出",
+    "ja": "楽曲の演出"
+  },
+  "Song performance · original audio": {
+    "zh-CN": "歌曲演出 · 原版音频",
+    "ja": "楽曲の演出 · 原作の音声"
+  },
+  "Story movie": {
+    "zh-CN": "剧情视频",
+    "ja": "ストーリー動画"
+  },
+  "Story position": {
+    "zh-CN": "故事位置",
+    "ja": "ストーリーの位置"
+  },
+  "The movie could not be loaded.": {
+    "zh-CN": "无法加载视频。",
+    "ja": "動画を読み込めませんでした。"
+  },
+  "The shaded range is locked until you answer the next choice. The remaining length is an estimate of the longest route without repeated visits.": {
+    "zh-CN": "回答下一个选项前，阴影区域不可跳转。剩余长度按不重复经过段落的最长路线估算。",
+    "ja": "次の選択肢に答えるまで、影付きの範囲には移動できません。残りの長さは同じ場面を繰り返さない最長ルートの推定値です。"
+  },
+  "This story requires an unavailable scene renderer.": {
+    "zh-CN": "此故事所需的场景渲染器不可用。",
+    "ja": "このストーリーに必要なシーンレンダラーを利用できません。"
+  },
+  "This movie language is not downloaded. The current audio remains available.": {
+    "zh-CN": "尚未下载此视频语言，仍可使用当前音频。",
+    "ja": "この動画の言語は未ダウンロードです。現在の音声は引き続き利用できます。"
+  },
+  "This movie language is not downloaded. Download it to play offline.": {
+    "zh-CN": "尚未下载此视频语言，请下载后离线播放。",
+    "ja": "この動画の言語は未ダウンロードです。オフライン再生にはダウンロードが必要です。"
+  },
+  "{name}, original sample character stand-in": {
+    "zh-CN": "{name}，示例角色",
+    "ja": "{name}、サンプル用の仮キャラクター"
+  },
+  "Passage {current}, {total} reachable, choose an answer to continue": {
+    "zh-CN": "第 {current} 段，可到达 {total} 段，请选择回答以继续",
+    "ja": "台詞 {current}、移動可能な台詞は {total}、続けるには返答を選択してください"
+  },
+  "Passage {current} of {total}": {
+    "zh-CN": "第 {current} / {total} 段",
+    "ja": "台詞 {current} / {total}"
+  },
+  "{count} choice point on the estimated route. ": {
+    "zh-CN": "预计路线上有 {count} 个选项。",
+    "ja": "推定ルート上に選択肢が {count} 箇所あります。"
+  },
+  "{count} choice points on the estimated route. ": {
+    "zh-CN": "预计路线上有 {count} 个选项。",
+    "ja": "推定ルート上に選択肢が {count} 箇所あります。"
+  },
+  "{count} choice point on your selected route. ": {
+    "zh-CN": "所选路线上有 {count} 个选项。",
+    "ja": "選択したルート上に選択肢が {count} 箇所あります。"
+  },
+  "{count} choice points on your selected route. ": {
+    "zh-CN": "所选路线上有 {count} 个选项。",
+    "ja": "選択したルート上に選択肢が {count} 箇所あります。"
+  },
+  "Checkpoint removed.": {
+    "zh-CN": "存档点已移除。",
+    "ja": "チェックポイントを削除しました。"
+  },
+  "Checkpoint saved.": {
+    "zh-CN": "存档点已保存。",
+    "ja": "チェックポイントを保存しました。"
+  },
+  "Chinese · Original opening": {
+    "zh-CN": "中文 · 原版开场",
+    "ja": "中国語 · 原作オープニング"
+  },
+  "Chinese · Original scenes": {
+    "zh-CN": "中文 · 原版演出",
+    "ja": "中国語 · 原作シーン"
+  },
+  "Chinese · Text mode": {
+    "zh-CN": "中文 · 文本模式",
+    "ja": "中国語 · テキストモード"
+  },
+  "Japanese · Original scenes": {
+    "zh-CN": "日文 · 原版演出",
+    "ja": "日本語 · 原作シーン"
+  },
+  "Japanese · Text mode": {
+    "zh-CN": "日文 · 文本模式",
+    "ja": "日本語 · テキストモード"
+  },
+  "Passage {number}": {
+    "zh-CN": "第 {number} 段",
+    "ja": "台詞 {number}"
+  },
+  "This checkpoint is unavailable.": {
+    "zh-CN": "此存档点不可用。",
+    "ja": "このチェックポイントは利用できません。"
   }
 }

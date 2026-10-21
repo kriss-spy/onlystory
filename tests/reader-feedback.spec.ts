@@ -50,7 +50,9 @@ test('reader commands preserve copying and hide only the scene UI', async ({
 }) => {
   await prepare(page);
   await page.keyboard.press('Control+s');
-  await expect(page.getByRole('status')).toContainText('Checkpoint saved.');
+  await expect(page.locator('.toast[role="status"]')).toContainText(
+    'Checkpoint saved.',
+  );
   await page.keyboard.press('Control+h');
   await expect(page.getByRole('dialog')).toContainText('History');
   const search = page.getByRole('searchbox', {

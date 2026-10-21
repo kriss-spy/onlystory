@@ -3,6 +3,7 @@ import { translate } from './i18n';
 import { emptyData, parseData, mergeData } from './model';
 import messages from './ui-messages.json';
 import extraMessages from './ui-messages-extra.json';
+import playbackMessages from './ui-messages-playback.json';
 
 describe('application language', () => {
   it('preserves interpolation parameters in Chinese and Japanese messages', () => {
@@ -12,6 +13,7 @@ describe('application language', () => {
       (text.match(/\{\w+\}/g) ?? []).sort();
     for (const [source, entry] of Object.entries({
       ...messages,
+      ...playbackMessages,
       ...extraMessages,
     })) {
       for (const locale of ['zh-CN', 'ja'] as const) {

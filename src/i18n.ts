@@ -1,10 +1,18 @@
-import { useEffect, useCallback } from 'react';
+import {
+  createContext,
+  createElement,
+  useContext,
+  useEffect,
+  useMemo,
+} from 'react';
+import type { ReactNode } from 'react';
 import { useStore } from './store';
 import type { Locale } from './model';
 import messages from './ui-messages.json';
 import extraMessages from './ui-messages-extra.json';
+import playbackMessages from './ui-messages-playback.json';
 
-const translations = { ...messages, ...extraMessages };
+const translations = { ...messages, ...playbackMessages, ...extraMessages };
 
 export type TranslationParams = Record<string, string | number>;
 export function translate(
@@ -21,17 +29,30 @@ export function translate(
   );
 }
 
-/** App chrome only. Catalog titles and authored story text have separate preferences. */
-export function useI18n() {
+const I18nContext = createContext({
+  locale: 'en' as Locale,
+  t: (source: string, params?: TranslationParams) =>
+    translate('en', source, params),
+});
+
+export function I18nProvider({ children }: { children: ReactNode }) {
   const { data } = useStore();
   const locale = data.preferences.uiLocale ?? 'en';
   useEffect(() => {
     document.documentElement.lang = locale;
   }, [locale]);
-  const t = useCallback(
-    (source: string, params?: TranslationParams) =>
-      translate(locale, source, params),
+  const value = useMemo(
+    () => ({
+      locale,
+      t: (source: string, params?: TranslationParams) =>
+        translate(locale, source, params),
+    }),
     [locale],
   );
-  return { locale, t };
+  return createElement(I18nContext.Provider, { value }, children);
+}
+
+/** App chrome only. Catalog titles and authored story text have separate preferences. */
+export function useI18n() {
+  return useContext(I18nContext);
 }

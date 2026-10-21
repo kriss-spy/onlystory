@@ -1,6 +1,7 @@
 import { useRef, useState, useId } from 'react';
 import type { CSSProperties } from 'react';
 import type { Frame } from '../model';
+import { useI18n } from '../i18n';
 
 export function StoryProgress({
   frames,
@@ -19,6 +20,7 @@ export function StoryProgress({
   onSeek: (frame: Frame, index: number, frames: Frame[]) => void;
   onPause: () => void;
 }) {
+  const { t } = useI18n();
   const description = useId();
   const gesture = useRef<{
     frames: Frame[];
@@ -50,12 +52,18 @@ export function StoryProgress({
       <input
         className="reader-progress"
         type="range"
-        aria-label="Story position"
+        aria-label={t('Story position')}
         aria-describedby={description}
         aria-valuetext={
           locked
-            ? `Passage ${index + 1}, ${path.length} reachable, choose an answer to continue`
-            : `Passage ${index + 1} of ${path.length}`
+            ? t(
+                'Passage {current}, {total} reachable, choose an answer to continue',
+                { current: index + 1, total: path.length },
+              )
+            : t('Passage {current} of {total}', {
+                current: index + 1,
+                total: path.length,
+              })
         }
         min={0}
         max={Math.max(0, scale - 1)}
@@ -96,10 +104,24 @@ export function StoryProgress({
         ))}
       </div>
       <span id={description} className="sr-only">
-        {`${marks.length} choice ${marks.length === 1 ? 'point' : 'points'} on ${locked ? 'the estimated' : 'your selected'} route. `}
         {locked
-          ? 'The shaded range is locked until you answer the next choice. The remaining length is an estimate of the longest route without repeated visits.'
-          : 'Seek along your selected story route.'}
+          ? t(
+              marks.length === 1
+                ? '{count} choice point on the estimated route. '
+                : '{count} choice points on the estimated route. ',
+              { count: marks.length },
+            )
+          : t(
+              marks.length === 1
+                ? '{count} choice point on your selected route. '
+                : '{count} choice points on your selected route. ',
+              { count: marks.length },
+            )}
+        {locked
+          ? t(
+              'The shaded range is locked until you answer the next choice. The remaining length is an estimate of the longest route without repeated visits.',
+            )
+          : t('Seek along your selected story route.')}
       </span>
     </div>
   );
