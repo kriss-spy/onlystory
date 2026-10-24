@@ -1000,7 +1000,7 @@ function Reader({
               >
                 <small>{String(e.order).padStart(2, '0')}</small>
                 <span>
-                  <strong>{e.title}</strong>
+                  <strong>{episodeTitle(e, p.catalogLocale)}</strong>
                   {branch ? (
                     <small>
                       {t('Side story')}
@@ -1012,14 +1012,21 @@ function Reader({
               </Link>
             ),
           );
+          const chapterTitle = section.chapter
+            ? localizedTitle(
+                section.chapter.title,
+                section.chapter.titleLocales,
+                p.catalogLocale,
+              )
+            : '';
           return section.chapter ? (
             <details
               className="reader-chapter-section"
               key={`${section.id}:${!!query}`}
               open={!!query || section.id === episode.chapter?.id}
             >
-              <summary>{section.chapter.title}</summary>
-              <nav aria-label={section.chapter.title}>{links}</nav>
+              <summary>{chapterTitle}</summary>
+              <nav aria-label={chapterTitle}>{links}</nav>
             </details>
           ) : (
             <nav key={section.id} aria-label={t('Event stories')}>
@@ -1443,7 +1450,8 @@ function Reader({
                     )}
                     state={location.state}
                   >
-                    {t('Next section ·')} {following?.title}
+                    {t('Next section ·')}{' '}
+                    {episodeTitle(following, p.catalogLocale)}
                     <ChevronRight size={14} />
                   </Link>
                 ) : null}

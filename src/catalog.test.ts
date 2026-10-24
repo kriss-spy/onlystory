@@ -163,7 +163,12 @@ describe('event reading structure', () => {
     ).toHaveLength(2);
   });
   it('keeps chapters inside one event and preserves branches and cross-chapter continuation', () => {
-    const upper = { id: 'upper', title: '上篇', order: 1 };
+    const upper = {
+      id: 'upper',
+      title: '上篇',
+      order: 1,
+      titleLocales: { en: 'First half' },
+    };
     const lower = { id: 'lower', title: '下篇', order: 2 };
     const a = { ...mainA, chapter: upper };
     const b = { ...mainB, chapter: lower };
@@ -180,5 +185,13 @@ describe('event reading structure', () => {
     ]);
     expect(nextStory(grouped[0], a)?.id).toBe('main-b');
     expect(storySections(grouped[0], b.title).length).toBeGreaterThan(0);
+    for (const query of ['上篇', 'first half']) {
+      const matches = storySections(grouped[0], query);
+      expect(matches.map((section) => section.id)).toEqual(['upper']);
+      expect(matches[0].main.map((row) => row.episode.id)).toEqual([
+        'main-a',
+        'side-a',
+      ]);
+    }
   });
 });

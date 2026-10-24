@@ -45,6 +45,8 @@ export const collectionTitle = (
 export const titleSearchValues = (episode: Episode) => [
   episode.title,
   episode.story,
+  ...(episode.chapter ? [episode.chapter.title] : []),
+  ...Object.values(episode.chapter?.titleLocales ?? {}),
   ...Object.values(episode.titleLocales ?? {}),
   ...Object.values(episode.collectionLocales ?? {}),
   ...(episode.titleAliases ?? []),
