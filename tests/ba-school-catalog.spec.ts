@@ -79,7 +79,7 @@ test('BA school and story filters combine and survive event navigation', async (
     labelledSearch('gehenna', 'ヒナ'),
   );
   await page.getByRole('link', { name: /ヒナ委員長/ }).click();
-  await expect(page.locator('.event-heading')).toContainText('Gehenna');
+  await expect(page.getByRole('complementary')).toContainText('Gehenna');
   await expect(page.getByAltText('Gehenna school mark')).toBeVisible();
   await page.getByRole('link', { name: 'Back', exact: true }).click();
   await expect(school).toHaveValue('gehenna');
@@ -152,6 +152,8 @@ test('the BA events show decoded original covers, title logos and school emblems
       path: info.outputPath(`catalog-${size.width}.png`),
     });
     await page.getByRole('link', { name: /ヒナ委員長/ }).click();
+    if (size.width < 900)
+      await page.getByRole('complementary').locator('summary').click();
     await expect(
       page.locator('.event-heading-cover .event-artwork-logo'),
     ).toBeVisible();

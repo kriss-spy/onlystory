@@ -38,7 +38,9 @@ test('BA Club group stories are selectable and open the original scene reader', 
     )
     .toBe(true);
   await group.getByRole('link').click();
-  await expect(page.locator('.event-heading')).toContainText('美食研究会');
+  await expect(
+    page.getByRole('heading', { name: '美食研究会', level: 1, exact: true }),
+  ).toBeVisible();
   await expect(page.locator('.event-heading-cover')).toBeVisible();
   await expect(page.getByAltText('Gehenna school mark')).toBeVisible();
   await expect(page.getByText('4 stories', { exact: true })).toBeVisible();

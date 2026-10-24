@@ -28,9 +28,9 @@ for (const [game, language] of [
     const row = page.locator('.event-row').first();
     const badges = await row.locator('.text-language').allTextContents();
     await row.locator('a').first().click();
-    await expect(page.locator('.event-heading .text-language')).toHaveText(
-      badges,
-    );
+    await expect(
+      page.getByRole('complementary').locator('.text-language'),
+    ).toHaveText(badges);
   });
 }
 
@@ -52,24 +52,26 @@ test('BA labels distinguish Japanese-only and partial English coverage, and wrap
     localStorage.setItem('onlystory.v1', JSON.stringify(data));
   }, initial);
   await page.goto(`/games/ba/events/${japaneseOnly.collectionId}`);
-  await expect(page.locator('.event-heading .text-language')).toHaveText([
-    'JP',
-  ]);
+  await expect(
+    page.getByRole('complementary').locator('.text-language'),
+  ).toHaveText(['JP']);
   const [id, stories] = partial;
   const english = stories.filter((story) =>
     story.textLocales.includes('en'),
   ).length;
   await page.goto(`/games/ba/events/${id}`);
-  const badges = page.locator('.event-heading .text-language');
+  const badges = page.getByRole('complementary').locator('.text-language');
   await expect(badges).toHaveText([
     `EN · ${english}/${stories.length} stories`,
     'JP',
   ]);
   await page.screenshot({ path: info.outputPath('event-languages-light.png') });
   await page.setViewportSize({ width: 390, height: 844 });
+  await page.getByRole('complementary').locator('summary').click();
   await expect(badges.first()).toBeVisible();
   const bounds = await page
-    .locator('.event-heading .text-languages')
+    .getByRole('complementary')
+    .getByRole('group', { name: 'Supported text languages' })
     .evaluate((element) => {
       const box = element.getBoundingClientRect();
       return { left: box.left, right: box.right, width: innerWidth };

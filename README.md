@@ -8,9 +8,9 @@ Read stories from **Blue Archive, Project SEKAI, and Girls' Frontline 1 & 2** in
 
 | Platform    | Download                                                                                                          | Open                                     |
 | ----------- | ----------------------------------------------------------------------------------------------------------------- | ---------------------------------------- |
-| Windows x64 | [Portable .exe](https://github.com/kriss-spy/onlystory/releases/latest/download/Onlystory-0.2.0-portable-x64.exe) | Run it. No installation needed.          |
-| Windows x64 | [Installer .exe](https://github.com/kriss-spy/onlystory/releases/latest/download/Onlystory-0.2.0-Setup-x64.exe)   | Install, then open Onlystory.            |
-| Linux x64   | [tar.gz](https://github.com/kriss-spy/onlystory/releases/latest/download/Onlystory-0.2.0-linux-x64.tar.gz)        | Extract, then run `./onlystory-desktop`. |
+| Windows x64 | [Portable .exe](https://github.com/kriss-spy/onlystory/releases/latest/download/Onlystory-0.3.0-portable-x64.exe) | Run it. No installation needed.          |
+| Windows x64 | [Installer .exe](https://github.com/kriss-spy/onlystory/releases/latest/download/Onlystory-0.3.0-Setup-x64.exe)   | Install, then open Onlystory.            |
+| Linux x64   | [tar.gz](https://github.com/kriss-spy/onlystory/releases/latest/download/Onlystory-0.3.0-linux-x64.tar.gz)        | Extract, then run `./onlystory-desktop`. |
 
 Windows apps are unsigned. Linux needs a graphical desktop and Electron's system libraries. See the release notes for verification details and checksums.
 
@@ -28,7 +28,7 @@ Event badges **JP / CN / EN** show supported dialogue languages. Availability va
 
 For Blue Archive, follow the [getting-started guide](docs/blue-archive-get-started.md) to download a whole collection, choose a dialogue language and set up the reader.
 
-Using a browser instead? See [web setup and BA file imports](docs/standalone-app.md).
+To run Onlystory in a browser, follow the [web app setup instructions](docs/standalone-app.md#using-the-web-app). Blue Archive stories require downloading the original files and selecting them in the app to import.
 
 ## Screenshots
 

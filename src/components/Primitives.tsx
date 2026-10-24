@@ -56,6 +56,7 @@ export function Panel({
   returnFocus?: HTMLElement | null;
 }) {
   const descriptionId = useId();
+  const { t } = useI18n();
   return (
     <Dialog.Root
       open={open}
@@ -85,9 +86,14 @@ export function Panel({
               ) : null}
             </div>
             <Dialog.Close asChild>
-              <IconButton label="Close">
-                <X size={18} />
-              </IconButton>
+              <button
+                type="button"
+                className="icon-button"
+                aria-label={t('Close')}
+                title={t('Close')}
+              >
+                <X size={18} aria-hidden="true" />
+              </button>
             </Dialog.Close>
           </header>
           <div className="panel-content">{children}</div>

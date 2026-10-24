@@ -1,4 +1,13 @@
 import { test, expect } from '@playwright/test';
+import packages from '../src/generated/gfl2-packages.json' with { type: 'json' };
+import goldfinch from '../src/generated/gfl2-event.json' with { type: 'json' };
+import ilion from '../src/generated/gfl2-ilion.json' with { type: 'json' };
+
+const eventCount = new Set([
+  ...packages.map(({ event }) => event.id),
+  ...(goldfinch ? ['gfl2-activity33-text'] : []),
+  ...(ilion ? ['gfl2-ilion'] : []),
+]).size;
 
 test('Goldfinch story names include source codes and distinguish battle halves on existing links', async ({
   page,
@@ -36,8 +45,18 @@ test('real game opens events before stories, with direct links and a return to t
       requests.push(request.url());
   });
   await page.goto('/games/gfl2');
-  await expect(page.getByText('36 events', { exact: true })).toBeVisible();
-  await expect(page.locator('.event-row')).toHaveCount(36);
+  const heading = page.getByRole('heading', {
+    name: 'Events',
+    level: 2,
+    exact: true,
+  });
+  await expect(heading).toBeVisible();
+  await expect(
+    heading
+      .locator('..')
+      .getByText(eventCount.toLocaleString(), { exact: true }),
+  ).toBeVisible();
+  await expect(page.locator('.event-row')).toHaveCount(eventCount);
   await page.screenshot({ path: 'private-review/events/gfl2-events.png' });
   await page.getByRole('link', { name: /金翅雀与橄榄枝/ }).click();
   await expect(page).toHaveURL(/\/games\/gfl2\/events\/gfl2-activity33-text/);

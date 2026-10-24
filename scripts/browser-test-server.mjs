@@ -1,6 +1,6 @@
 import { createServer as createHttpServer } from 'node:http';
-import { cpSync, mkdirSync, mkdtempSync } from 'node:fs';
-import { resolve } from 'node:path';
+import { cpSync, mkdirSync, mkdtempSync, rmSync } from 'node:fs';
+import { dirname, resolve } from 'node:path';
 import { createServer as createViteServer } from 'vite';
 import { libraryMiddleware } from './library-server.mjs';
 import { compressedRecipeMiddleware } from './compressed-recipes.mjs';
@@ -15,6 +15,20 @@ import {
 // A separate snapshot prevents another build from removing files mid-test.
 mkdirSync('.cache', { recursive: true });
 const frontendRoot = mkdtempSync(resolve('.cache/browser-build-'));
+// Remove only this process's snapshot, including when startup fails.
+process.once('exit', () => {
+  if (dirname(frontendRoot) !== resolve('.cache')) return;
+  try {
+    rmSync(frontendRoot, {
+      recursive: true,
+      force: true,
+      maxRetries: 3,
+      retryDelay: 100,
+    });
+  } catch (error) {
+    console.warn(`Could not remove browser snapshot ${frontendRoot}:`, error);
+  }
+});
 cpSync(resolve(process.env.ONLYSTORY_BROWSER_DIST || 'dist'), frontendRoot, {
   recursive: true,
 });

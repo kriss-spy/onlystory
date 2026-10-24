@@ -1879,6 +1879,10 @@ input.reader-progress {
   background: #12242c;
   z-index: 4;
 }
+.stage:has(> .movie-container) {
+  /* Keep movie actions above the progress rail's 24px scene markers. */
+  margin-bottom: 32px;
+}
 .movie-container video {
   width: 100%;
   flex: 1;
