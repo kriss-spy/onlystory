@@ -24,5 +24,7 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      # The original game library is acquired locally and is not in Git.
+      - run: node scripts/setup-ci.mjs
       # check runs formatting, catalog rules, unit/import tests, then TypeScript and Vite.
       - run: npm run check

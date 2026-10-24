@@ -1,6 +1,5 @@
-import chapter from '../../../public/private/ba-jp/11000/chapter.json';
+import { existsSync, readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
-import manifest from '../../generated/ba-stories.json';
 import type { Episode, StoryNode } from '../../model';
 import {
   advance,
@@ -13,9 +12,16 @@ import {
 } from '../../model';
 import { decodeBaChapter } from './text';
 
-const episode = manifest[0] as Episode;
-const input = () => structuredClone(chapter);
-describe('real BA prologue chapter', () => {
+const fixture = <T>(path: string): T | undefined =>
+  existsSync(path) ? JSON.parse(readFileSync(path, 'utf8')) : undefined;
+const chapter = fixture<{ id: string; nodes: StoryNode[] }>(
+  'public/private/ba-jp/11000/chapter.json',
+);
+const episode = fixture<Episode[]>('src/generated/ba-stories.json')?.find(
+  (entry) => entry.id === chapter?.id,
+)!;
+const input = () => structuredClone(chapter!);
+describe.skipIf(!chapter || !episode)('real BA prologue chapter', () => {
   it('accepts resolved JP event movie nodes and rejects external movie sources', () => {
     const value = input();
     const node = value.nodes.find(

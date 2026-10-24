@@ -1,29 +1,43 @@
 import { expect, it } from 'vitest';
-import program from '../../../public/private/ba-jp/11000/scenes.json';
-import carrot from '../../../public/private/ba-jp/41085/scenes.json';
+import { existsSync, readFileSync } from 'node:fs';
 import type { BaProgram, BaRow } from './types';
 import { applyBaRow, initialBaState, rowDelay } from './state';
 
-const rows = (program as unknown as BaProgram).steps.flatMap(
-  (step) => step.rows,
+const fixture = (path: string): BaProgram | undefined =>
+  existsSync(path) ? JSON.parse(readFileSync(path, 'utf8')) : undefined;
+const program = fixture('public/private/ba-jp/11000/scenes.json');
+const carrot = fixture('public/private/ba-jp/41085/scenes.json');
+const rows = program?.steps.flatMap((step) => step.rows) ?? [];
+const baseRow: BaRow = {
+  row: 0,
+  ScriptKr: '',
+  TextJp: '',
+  BGName: 0,
+  BGMId: 0,
+  Sound: '',
+  Transition: 0,
+  BGEffect: 0,
+};
+it.skipIf(!carrot)(
+  'ends the Operation Carrot close-up montage before the bath dialogue',
+  () => {
+    const montage = (carrot as unknown as BaProgram).steps.find(
+      (step) => step.id === '41085:206',
+    )!;
+    let state = initialBaState();
+    for (const row of montage.rows) {
+      state = applyBaRow(state, row);
+      if (row.row === 199)
+        expect(state.zoom).toEqual({ x: -316, y: -111, size: 1300 });
+      if (row.row === 203)
+        expect(state.zoom).toEqual({ x: 250, y: 333, size: 1300 });
+      if (row.row >= 204) expect(state.zoom).toEqual(initialBaState().zoom);
+    }
+  },
 );
-it('ends the Operation Carrot close-up montage before the bath dialogue', () => {
-  const montage = (carrot as unknown as BaProgram).steps.find(
-    (step) => step.id === '41085:206',
-  )!;
-  let state = initialBaState();
-  for (const row of montage.rows) {
-    state = applyBaRow(state, row);
-    if (row.row === 199)
-      expect(state.zoom).toEqual({ x: -316, y: -111, size: 1300 });
-    if (row.row === 203)
-      expect(state.zoom).toEqual({ x: 250, y: 333, size: 1300 });
-    if (row.row >= 204) expect(state.zoom).toEqual(initialBaState().zoom);
-  }
-});
 it('retains camera framing during waits but resets effect-free rows and new backgrounds', () => {
   const row = {
-    ...rows[0],
+    ...baseRow,
     BGName: 123,
     BGEffect: 0,
     ScriptKr: '#ZMC;instant;250,333;1300',
@@ -42,12 +56,12 @@ it('retains camera framing during waits but resets effect-free rows and new back
 it('starts without a prologue-specific background before an event supplies its first cue', () => {
   expect(initialBaState().background).toBe(0);
   expect(
-    applyBaRow(initialBaState(), { ...rows[0], BGName: 123 }).background,
+    applyBaRow(initialBaState(), { ...baseRow, BGName: 123 }).background,
   ).toBe(123);
 });
 it('renders event title cards and moves characters into the two intermediate slots', () => {
   const row = {
-    ...rows[0],
+    ...baseRow,
     ScriptKr: '#title;프롤로그;축제를 준비합시다!',
     TextJp: 'プロローグ;祭りの準備',
   };
@@ -61,7 +75,7 @@ it('renders event title cards and moves characters into the two intermediate slo
 });
 it('restores event silhouettes, communication filters, falls, popup and ending cues', () => {
   const row = {
-    ...rows[0],
+    ...baseRow,
     ScriptKr: '3;린;01;hello\n#3;black\n#3;sig',
     PopupFileName: 'popup22',
   };
@@ -87,39 +101,47 @@ it('restores event silhouettes, communication filters, falls, popup and ending c
       .title,
   ).toBe('イベント');
 });
-it('accounts for every presentation row including montage, captions and waits', () => {
-  expect(rows.map((r) => r.row)).toEqual(
-    Array.from({ length: 229 }, (_, i) => i),
-  );
-  let state = initialBaState();
-  for (const row of rows.filter((r) => r.row <= 6))
-    state = applyBaRow(state, row);
-  expect(state.captions).toHaveLength(2);
-  expect(state.captions[0].color).toBe('#ff6666');
-  expect(rowDelay(rows[1])).toBe(2000);
-  state = applyBaRow(state, rows[8]);
-  expect(state.captions).toHaveLength(0);
-});
+it.skipIf(!program)(
+  'accounts for every presentation row including montage, captions and waits',
+  () => {
+    expect(rows.map((r) => r.row)).toEqual(
+      Array.from({ length: 229 }, (_, i) => i),
+    );
+    let state = initialBaState();
+    for (const row of rows.filter((r) => r.row <= 6))
+      state = applyBaRow(state, row);
+    expect(state.captions).toHaveLength(2);
+    expect(state.captions[0].color).toBe('#ff6666');
+    expect(rowDelay(rows[1])).toBe(2000);
+    state = applyBaRow(state, rows[8]);
+    expect(state.captions).toHaveLength(0);
+  },
+);
 it('preserves distinct screen-text anchors for prose and positioned labels', () => {
   const anchors = ['#st', '#stm', '#str'].map(
     (command) =>
       applyBaRow(initialBaState(), {
-        ...rows[0],
+        ...baseRow,
         ScriptKr: `${command};[0,100];instant;64;caption`,
         TextJp: 'caption',
       }).captions[0].alignment,
   );
   expect(anchors).toEqual(['left', 'center', 'right']);
 });
-it('restores authored characters, movement, effects and audio without sharing mutable state', () => {
-  let state = initialBaState();
-  for (const row of rows.filter((r) => r.row <= 207))
-    state = applyBaRow(state, row);
-  expect(state.effect).toBe(1377724294);
-  expect(applyBaRow(state, rows[208]).effect).toBe(3134544579);
-  expect(applyBaRow(state, rows[209]).effect).toBe(0);
+it.skipIf(!program)(
+  'restores authored background effects from the prologue',
+  () => {
+    let state = initialBaState();
+    for (const row of rows.filter((r) => r.row <= 207))
+      state = applyBaRow(state, row);
+    expect(state.effect).toBe(1377724294);
+    expect(applyBaRow(state, rows[208]).effect).toBe(3134544579);
+    expect(applyBaRow(state, rows[209]).effect).toBe(0);
+  },
+);
+it('restores characters, movement and audio without sharing mutable state', () => {
   const raw: BaRow = {
-    ...rows[0],
+    ...baseRow,
     BGName: 0,
     BGMId: 9,
     ScriptKr: '3;린;01;test\n#3;m1\n#3;greeting',

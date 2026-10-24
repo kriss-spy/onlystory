@@ -1,6 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
+import { existsSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import { compileStory } from './ba-story.mjs';
 import { compileBaScenes } from './ba-scenes.mjs';
@@ -21,7 +22,13 @@ const definitions = await read('scripts/ba-library.json');
 const events = definitions.filter((d) => d.category === 'Event');
 test(
   'the selected JP event batch publishes every chapter with complete verified media',
-  { skip: !events.length },
+  {
+    skip:
+      !events.length ||
+      !existsSync(
+        new URL(`public/private/ba-jp/${events[0].group}/source.json`, root),
+      ),
+  },
   async () => {
     assert.ok(
       new Set(events.map((e) => e.collectionId)).size >= 5,

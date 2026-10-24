@@ -1,6 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
+import { existsSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import {
   TextureAtlas,
@@ -25,7 +26,16 @@ const definitions = (await read('scripts/ba-library.json')).filter(
 
 test(
   'every selected JP Club group story has a complete graph, source accounting and verified assets',
-  { skip: !definitions.length },
+  {
+    skip:
+      !definitions.length ||
+      !existsSync(
+        new URL(
+          `public/private/ba-jp/${definitions[0].group}/source.json`,
+          root,
+        ),
+      ),
+  },
   async () => {
     const coverage = await read('.cache/ba-group-source/coverage.json');
     assert.equal(coverage.eligibleModes, 68);

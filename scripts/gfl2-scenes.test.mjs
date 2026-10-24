@@ -8,6 +8,7 @@ test('published events cover every named CN catalog identity and all 28 remainin
   const path = 'src/generated/gfl2-packages.json';
   if (!existsSync(path)) return t.skip('Import private library first.');
   const packages = JSON.parse(readFileSync(path, 'utf8'));
+  if (!packages.length) return t.skip('Private batch unavailable.');
   const catalog = JSON.parse(
     readFileSync('docs/gfl2-cn-event-catalog.json', 'utf8'),
   );

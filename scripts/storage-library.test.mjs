@@ -13,11 +13,15 @@ import { resolve, dirname } from 'node:path';
 import { digest, shareAssets, publicFile } from './storage-library.mjs';
 import { readdirSync, statSync } from 'node:fs';
 
-test('shared movie descriptors reference complete immutable fragment inventories and retain combined compatibility paths', () => {
+test('shared movie descriptors reference complete immutable fragment inventories and retain combined compatibility paths', (t) => {
   const root = process.cwd();
+  if (!existsSync(resolve('public/private/shared/index.json')))
+    return t.skip('Import private library first.');
   const index = JSON.parse(
     readFileSync(resolve('public/private/shared/index.json'), 'utf8'),
   );
+  if (!Object.keys(index.objects).length)
+    return t.skip('Private shared payloads unavailable.');
   let descriptors = 0;
   for (const directory of readdirSync(resolve('public/private'), {
     withFileTypes: true,

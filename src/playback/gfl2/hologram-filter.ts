@@ -19,7 +19,9 @@ export async function loadHologramTextures(
   effect: string,
   signal?: AbortSignal,
 ): Promise<HologramTextures> {
-  const entry = assets.effects[effect as keyof typeof assets.effects];
+  const entry = (
+    assets.effects as Record<string, { mask: string; turbulence: string }>
+  )[effect];
   if (!entry) throw new Error(`Unknown GFL2 hologram material: ${effect}`);
   const loaded = new Map<string, Texture>();
   const release = () => {

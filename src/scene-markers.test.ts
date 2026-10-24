@@ -2,12 +2,22 @@ import { expect, it } from 'vitest';
 import { sceneMarkers } from './scene-markers';
 import type { Episode } from './model';
 import type { BaProgram, BaRow } from './playback/ba/types';
-import carrot from '../public/private/ba-jp/41085/scenes.json';
-import prologue from '../public/private/ba-jp/10000005/scenes.json';
-import opening from '../public/private/ba-jp/11000/scenes.json';
-import openingChapter from '../public/private/ba-jp/11000/chapter.json';
-import fight from '../public/private/ba-jp/13290/scenes.json';
-import fightChapter from '../public/private/ba-jp/13290/chapter.json';
+import { existsSync, readFileSync } from 'node:fs';
+
+const fixture = <T>(path: string): T | undefined =>
+  existsSync(path) ? JSON.parse(readFileSync(path, 'utf8')) : undefined;
+const carrot = fixture<BaProgram>('public/private/ba-jp/41085/scenes.json');
+const prologue = fixture<BaProgram>(
+  'public/private/ba-jp/10000005/scenes.json',
+);
+const opening = fixture<BaProgram>('public/private/ba-jp/11000/scenes.json');
+const openingChapter = fixture<Episode>(
+  'public/private/ba-jp/11000/chapter.json',
+);
+const fight = fixture<BaProgram>('public/private/ba-jp/13290/scenes.json');
+const fightChapter = fixture<Episode>(
+  'public/private/ba-jp/13290/chapter.json',
+);
 
 const episode = (
   steps: BaProgram['steps'],
@@ -26,23 +36,29 @@ const step = (id: string, ScriptKr: string, BGName = 0) => ({
   rows: [{ ScriptKr, BGName } as BaRow],
 });
 
-it('groups the bath montage and its alternate CG into one sequence', () => {
-  expect([
-    ...sceneMarkers(
-      episode((carrot as unknown as BaProgram).steps, [], carrot.assets),
-    ),
-  ]).toEqual([['41085:206', 'CG scene']]);
-});
-it('marks only the movie and CG in the real festival prologue', () => {
-  expect([
-    ...sceneMarkers(
-      episode((prologue as unknown as BaProgram).steps, [], prologue.assets),
-    ),
-  ]).toEqual([
-    ['10000005:56', 'Movie'],
-    ['10000005:143', 'CG scene'],
-  ]);
-});
+it.skipIf(!carrot)(
+  'groups the bath montage and its alternate CG into one sequence',
+  () => {
+    expect([
+      ...sceneMarkers(
+        episode((carrot as unknown as BaProgram).steps, [], carrot!.assets),
+      ),
+    ]).toEqual([['41085:206', 'CG scene']]);
+  },
+);
+it.skipIf(!prologue)(
+  'marks only the movie and CG in the real festival prologue',
+  () => {
+    expect([
+      ...sceneMarkers(
+        episode((prologue as unknown as BaProgram).steps, [], prologue!.assets),
+      ),
+    ]).toEqual([
+      ['10000005:56', 'Movie'],
+      ['10000005:143', 'CG scene'],
+    ]);
+  },
+);
 it('ignores camera moves, transitions, ordinary animated backgrounds and standalone timelines', () => {
   expect([
     ...sceneMarkers(
@@ -117,34 +133,40 @@ it('marks shared movie nodes and keeps unplayed branch-tail commands off the own
   ]).toEqual([['video', 'Movie']]);
 });
 
-it('groups the main prologue montage and later office CG as two sequences', () => {
-  expect([
-    ...sceneMarkers(
-      episode(
-        (opening as unknown as BaProgram).steps,
-        openingChapter.nodes as Episode['nodes'],
-        opening.assets,
+it.skipIf(!opening || !openingChapter)(
+  'groups the main prologue montage and later office CG as two sequences',
+  () => {
+    expect([
+      ...sceneMarkers(
+        episode(
+          (opening as unknown as BaProgram).steps,
+          openingChapter!.nodes as Episode['nodes'],
+          opening!.assets,
+        ),
       ),
-    ),
-  ]).toEqual([
-    ['11000:4', 'CG scene'],
-    ['11000:110', 'CG scene'],
-  ]);
-});
-it('keeps the reported fight together through its dialogue interlude and marks its movie separately', () => {
-  expect([
-    ...sceneMarkers(
-      episode(
-        (fight as unknown as BaProgram).steps,
-        fightChapter.nodes as Episode['nodes'],
-        (fight as unknown as BaProgram).assets,
+    ]).toEqual([
+      ['11000:4', 'CG scene'],
+      ['11000:110', 'CG scene'],
+    ]);
+  },
+);
+it.skipIf(!fight || !fightChapter)(
+  'keeps the reported fight together through its dialogue interlude and marks its movie separately',
+  () => {
+    expect([
+      ...sceneMarkers(
+        episode(
+          (fight as unknown as BaProgram).steps,
+          fightChapter!.nodes as Episode['nodes'],
+          (fight as unknown as BaProgram).assets,
+        ),
       ),
-    ),
-  ]).toEqual([
-    ['13290:51', 'CG scene'],
-    ['13290:116', 'Movie'],
-  ]);
-});
+    ]).toEqual([
+      ['13290:51', 'CG scene'],
+      ['13290:116', 'Movie'],
+    ]);
+  },
+);
 const groupingAssets = {
   backgrounds: {
     1: { name: 'BG_CS_A.jpg', url: '/a.jpg' },

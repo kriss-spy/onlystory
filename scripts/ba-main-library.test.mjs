@@ -1,6 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
+import { existsSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import {
   TextureAtlas,
@@ -22,7 +23,11 @@ const definitions = (await read('scripts/ba-library.json')).filter(
 );
 test(
   'every selected JP main-story chapter has a complete graph, source accounting and verified assets',
-  { skip: definitions.length < 2 },
+  {
+    skip:
+      definitions.length < 2 ||
+      !existsSync(`public/private/ba-jp/${definitions[0].group}/source.json`),
+  },
   async () => {
     assert.ok(
       definitions.length >= 600,
