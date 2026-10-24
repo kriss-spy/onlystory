@@ -3405,6 +3405,10 @@ input.reader-progress {
 .scene-markers .scene-marker:hover {
   background: var(--soft);
 }
+.scene-markers .scene-marker[aria-disabled='true'] {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
 
 .collection-grid {
   display: grid;

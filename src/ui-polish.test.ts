@@ -20,6 +20,16 @@ describe('branch-aware timeline', () => {
     expect(timeline.total).toBeGreaterThan(timeline.frames.length);
     expect(timeline.frames.at(-1)?.node).toBe('decision');
     expect(timeline.choices).toEqual([2]);
+    expect(timeline.upcoming.map((item) => item.node)).toEqual(
+      expect.arrayContaining(['follow', 'listen', 'system', 'recording']),
+    );
+    expect(
+      timeline.upcoming.every(
+        (item) =>
+          item.position >= timeline.frames.length &&
+          item.position < timeline.total,
+      ),
+    ).toBe(true);
   });
   it('retains the chosen route when seeking back and preserves the choice position', () => {
     let save = advance(episode, advance(episode, startSave(episode)));
@@ -30,6 +40,7 @@ describe('branch-aware timeline', () => {
     expect(after.frames).toEqual(before.frames);
     expect(after.frames.some((frame) => frame.node === 'listen')).toBe(false);
     expect(after.choices).toEqual(before.choices);
+    expect(after.upcoming).toEqual([]);
   });
   it('previews later choice points before answering and updates for the selected branch', () => {
     const branching = structuredClone(episode);
@@ -42,6 +53,8 @@ describe('branch-aware timeline', () => {
     expect(initial.choices).toEqual([2, 4]);
     expect(initial.frames.at(-1)?.node).toBe('decision');
     expect(initial.choices[1]).toBeGreaterThan(initial.frames.length - 1);
+    expect(initial.upcoming.some((item) => item.node === 'listen')).toBe(true);
+    expect(initial.upcoming.some((item) => item.node === 'system')).toBe(true);
     const atChoice = advance(
       branching,
       advance(branching, startSave(branching)),
@@ -68,6 +81,11 @@ describe('branch-aware timeline', () => {
     expect(timeline.total).toBeLessThan(100);
     expect(timeline.frames.at(-1)?.node).toBe('decision');
     expect(timeline.locked).toBe(true);
+    expect(
+      timeline.upcoming.some((item) =>
+        timeline.frames.some((frame) => frame.node === item.node),
+      ),
+    ).toBe(false);
   });
 });
 

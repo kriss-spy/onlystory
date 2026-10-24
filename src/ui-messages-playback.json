@@ -1,4 +1,8 @@
 {
+  "{scene} near passage {passage} · Answer earlier choices to replay": {
+    "zh-CN": "约第 {passage} 段的{scene} · 回答之前的选项后可重播",
+    "ja": "第 {passage} パッセージ付近の{scene} · 手前の選択肢に回答すると再生できます"
+  },
   "Camera sequence": {
     "zh-CN": "镜头演出",
     "ja": "カメラ演出"

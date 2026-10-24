@@ -75,7 +75,12 @@ Markers have hover/focus tooltips and work with mouse, touch and keyboard.
 
 Blue Archive camera moves longer than the 10 ms setup commands, authored movies
 and native cutscenes receive markers; shared movie passages do as well. Routine
-actor effects and waits do not. Only the reachable selected route is marked.
+actor effects and waits do not. Upcoming scenes beyond unanswered choices are
+shown dimmed, with focus/hover explanations; they cannot seek or replay until
+the selected route reaches them. Their positions use the same longest-route
+estimate as the progress bar. All possible continuations are represented until
+a choice excludes a branch, and equal-position alternatives stack vertically.
+Already reachable scenes use their actual route positions and remain replayable.
 Replaying pauses auto/fast-forward, seeks with the selected answers, and runs
 the passage presentation again. Reduced motion remains respected. Movie replay
 starts at zero and resets completion so Next waits for it again.

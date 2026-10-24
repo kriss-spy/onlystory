@@ -1503,6 +1503,7 @@ function Reader({
       </div>
       <StoryProgress
         frames={timeline.frames}
+        upcoming={timeline.upcoming}
         total={timeline.total}
         choices={timeline.choices}
         locked={timeline.locked}
