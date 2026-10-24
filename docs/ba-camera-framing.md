@@ -65,3 +65,21 @@ global-localization audits skip. Five optional native GFL1 interaction audits
 also skip. Prepared small source coverage and GFL1 text fixtures come from the
 earlier ticket worktree. No game assets are acquired or regenerated for this
 change.
+
+## Scene replay markers
+
+An extra click during the montage intentionally finishes its presentation and
+reveals the dialogue. Clapperboard markers above the progress bar now make
+these sequences discoverable and replayable without stepping backward first.
+Markers have hover/focus tooltips and work with mouse, touch and keyboard.
+
+Blue Archive camera moves longer than the 10 ms setup commands, authored movies
+and native cutscenes receive markers; shared movie passages do as well. Routine
+actor effects and waits do not. Only the reachable selected route is marked.
+Replaying pauses auto/fast-forward, seeks with the selected answers, and runs
+the passage presentation again. Reduced motion remains respected. Movie replay
+starts at zero and resets completion so Next waits for it again.
+
+`scene-markers.test.ts` checks detection against the actual bath montage and
+synthetic source commands. Browser checks cover keyboard replay from the same
+passage, mouse replay after advancing, and replaying a completed movie.

@@ -59,10 +59,34 @@ test('Operation Carrot plays both pans and returns to the whole CG', async ({
   await page.screenshot({ path: info.outputPath('second-closeup.png') });
   await ready(page);
   expect(await framing(page)).toEqual({ scale: 1, x: 0, y: 0, animations: 0 });
+  const replay = page.getByRole('button', {
+    name: 'Replay Camera sequence at passage 116',
+    exact: true,
+  });
+  await expect(replay).toBeVisible();
+  await replay.focus();
+  await expect(page.getByRole('tooltip')).toContainText(
+    'Replay Camera sequence at passage 116',
+  );
+  await page.screenshot({ path: info.outputPath('scene-marker.png') });
+  await replay.press('Enter');
+  await expect
+    .poll(async () => (await framing(page)).scale, { timeout: 10000 })
+    .toBeGreaterThan(2);
+  // An ordinary click can still finish the replay. The marker can restart it
+  // from the same passage without requiring a previous-passage detour.
+  await page.getByRole('button', { name: 'Finish scene', exact: true }).click();
+  await ready(page);
+  expect(await framing(page)).toEqual({ scale: 1, x: 0, y: 0, animations: 0 });
   await page.screenshot({ path: info.outputPath('whole-cg.png') });
   await page.getByRole('button', { name: 'Next passage', exact: true }).click();
   await ready(page);
   expect(await framing(page)).toEqual({ scale: 1, x: 0, y: 0, animations: 0 });
+  await replay.click();
+  await expect(page).toHaveURL(/line=41085%3A206/);
+  await expect
+    .poll(async () => (await framing(page)).scale, { timeout: 10000 })
+    .toBeGreaterThan(2);
 });
 
 test('seeking and reloading the reported dialogue reconstructs the full frame', async ({

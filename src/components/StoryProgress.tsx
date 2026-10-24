@@ -2,6 +2,9 @@ import { useRef, useState, useId } from 'react';
 import type { CSSProperties } from 'react';
 import type { Frame } from '../model';
 import { useI18n } from '../i18n';
+import type { SceneMarkerKind } from '../scene-markers';
+import { IconButton } from './Primitives';
+import { Clapperboard } from 'lucide-react';
 
 export function StoryProgress({
   frames,
@@ -11,6 +14,8 @@ export function StoryProgress({
   current,
   onSeek,
   onPause,
+  scenes,
+  onReplay,
 }: {
   frames: Frame[];
   total: number;
@@ -19,6 +24,8 @@ export function StoryProgress({
   current: number;
   onSeek: (frame: Frame, index: number, frames: Frame[]) => void;
   onPause: () => void;
+  scenes: Map<string, SceneMarkerKind>;
+  onReplay: (frame: Frame, index: number, frames: Frame[]) => void;
 }) {
   const { t } = useI18n();
   const description = useId();
@@ -102,6 +109,31 @@ export function StoryProgress({
             style={{ left: `${scale > 1 ? (choice / (scale - 1)) * 100 : 0}%` }}
           />
         ))}
+      </div>
+      <div className="scene-markers">
+        {path.flatMap((frame, position) => {
+          const kind = scenes.get(frame.node);
+          if (!kind) return [];
+          return [
+            <IconButton
+              key={`${frame.node}:${position}`}
+              className="scene-marker"
+              label={t('Replay {scene} at passage {passage}', {
+                scene: t(kind),
+                passage: position + 1,
+              })}
+              style={{
+                left: `${scale > 1 ? (position / (scale - 1)) * 100 : 0}%`,
+              }}
+              onClick={() => {
+                onPause();
+                onReplay(frame, position, path);
+              }}
+            >
+              <Clapperboard size={13} />
+            </IconButton>,
+          ];
+        })}
       </div>
       <span id={description} className="sr-only">
         {locked

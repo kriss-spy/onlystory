@@ -19,6 +19,7 @@ export default function BaScene({
   fastForward,
   seekVersion,
   finishVersion,
+  replayVersion,
   path,
   onReady,
   textComplete,
@@ -28,6 +29,7 @@ export default function BaScene({
   fastForward: boolean;
   seekVersion: number;
   finishVersion: number;
+  replayVersion: number;
   path: string[];
   onReady: (node: string, ready: boolean) => void;
   textComplete: boolean;
@@ -66,6 +68,7 @@ export default function BaScene({
     node: '',
     seek: seekVersion,
     finish: finishVersion,
+    replay: 0,
     path: '',
   });
   const currentNode = useRef(nodeId);
@@ -141,6 +144,7 @@ export default function BaScene({
       node: '',
       seek: seekVersion,
       finish: finishVersion,
+      replay: 0,
       path: '',
     };
     return () => {
@@ -167,17 +171,20 @@ export default function BaScene({
     const controller = new AbortController();
     const before = previous.current;
     const advancing = before.node && pathKey === `${before.path}|${nodeId}`;
+    const replaying = replayVersion > 0 && before.replay !== replayVersion;
     const silent =
-      fastForward ||
-      before.seek !== seekVersion ||
-      before.finish !== finishVersion ||
-      (!advancing && (before.node !== '' || program.steps[0].id !== nodeId));
+      !replaying &&
+      (fastForward ||
+        before.seek !== seekVersion ||
+        before.finish !== finishVersion ||
+        (!advancing && (before.node !== '' || program.steps[0].id !== nodeId)));
     const instant = silent || reduced || isBaScreenTextStep(program, nodeId);
     previous.current = {
       node: nodeId,
       path: pathKey,
       seek: seekVersion,
       finish: finishVersion,
+      replay: replayVersion,
     };
     const byId = new Map(program.steps.map((s) => [s.id, s]));
     const current = byId.get(nodeId);
@@ -317,6 +324,7 @@ export default function BaScene({
     pathKey,
     seekVersion,
     finishVersion,
+    replayVersion,
     fastForward,
     reduced,
     p.textLocale,

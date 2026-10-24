@@ -3345,7 +3345,7 @@ input.reader-progress {
   position: relative;
   flex-shrink: 0;
   height: 2px;
-  z-index: 2;
+  z-index: 8;
 }
 .story-progress input.reader-progress {
   display: block;
@@ -3381,6 +3381,29 @@ input.reader-progress {
   border-radius: 50%;
   background: var(--accent);
   transform: translate(-50%, -50%);
+}
+.scene-markers {
+  position: absolute;
+  inset: 0 6px;
+  z-index: 3;
+  pointer-events: none;
+}
+.scene-markers .scene-marker {
+  position: absolute;
+  bottom: 6px;
+  width: 24px;
+  height: 24px;
+  min-width: 0;
+  padding: 3px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--surface);
+  color: var(--accent);
+  transform: translateX(-50%);
+  pointer-events: auto;
+}
+.scene-markers .scene-marker:hover {
+  background: var(--soft);
 }
 
 .collection-grid {

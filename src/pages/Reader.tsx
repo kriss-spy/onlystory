@@ -78,6 +78,7 @@ import { StoryProgress } from '../components/StoryProgress';
 import { episodeTitle, localizedTitle } from '../localized-titles';
 import { battleNotice } from '../battle-notices';
 import { useI18n } from '../i18n';
+import { sceneMarkers } from '../scene-markers';
 
 type ReaderPanel = 'history' | 'chapters' | 'saves' | 'information';
 type FastForwardControl = {
@@ -421,6 +422,20 @@ function Reader({
         (textOnly || !gfl1Frame.interaction.spots.length)));
   const [sceneStatus, setSceneStatus] = useState({ node: '', ready: false });
   const [finishSceneVersion, setFinishSceneVersion] = useState(0);
+  const [sceneReplay, setSceneReplay] = useState({
+    episode: '',
+    node: '',
+    version: 0,
+  });
+  const specialScenes = useMemo(() => sceneMarkers(episode), [episode]);
+  useEffect(() => {
+    setSceneReplay((request) =>
+      request.node &&
+      (request.episode !== episode.id || request.node !== node.id)
+        ? { ...request, node: '' }
+        : request,
+    );
+  }, [episode.id, node.id]);
   const onSceneReady = useCallback(
     (node: string, ready: boolean) => setSceneStatus({ node, ready }),
     [],
@@ -1309,6 +1324,11 @@ function Reader({
             path={save.frames.map((frame) => frame.node)}
             textOnly={textOnly}
             finishVersion={finishSceneVersion}
+            replayVersion={
+              sceneReplay.episode === episode.id && sceneReplay.node === node.id
+                ? sceneReplay.version
+                : 0
+            }
             onSceneReady={onSceneReady}
             textComplete={complete}
             key={
@@ -1489,6 +1509,17 @@ function Reader({
         current={save.frames.length - 1}
         onPause={pausePlayback}
         onSeek={seek}
+        scenes={textOnly ? new Map() : specialScenes}
+        onReplay={(frame, index, frames) => {
+          setVideoDone(false);
+          setRevealed(0);
+          setSceneReplay((previous) => ({
+            episode: episode.id,
+            node: frame.node,
+            version: previous.version + 1,
+          }));
+          seek(frame, index, frames);
+        }}
       />
       <nav className="reader-toolbar" aria-label={t('Reading controls')}>
         <div className="toolbar-group">

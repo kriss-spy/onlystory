@@ -1,4 +1,20 @@
 {
+  "Camera sequence": {
+    "zh-CN": "镜头演出",
+    "ja": "カメラ演出"
+  },
+  "Movie": {
+    "zh-CN": "影片",
+    "ja": "ムービー"
+  },
+  "Cutscene": {
+    "zh-CN": "过场动画",
+    "ja": "カットシーン"
+  },
+  "Replay {scene} at passage {passage}": {
+    "zh-CN": "重播第 {passage} 段的{scene}",
+    "ja": "第 {passage} パッセージの{scene}を再生"
+  },
   "Enable scene audio": {
     "zh-CN": "启用场景音频",
     "ja": "シーン音声を有効にする"
