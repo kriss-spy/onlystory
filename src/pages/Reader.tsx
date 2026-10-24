@@ -412,6 +412,12 @@ function Reader({
     episode.renderer?.id === 'gfl1'
       ? (episode.renderer.payload as Gfl1Program).frames[node.id]
       : undefined;
+  const showChoices =
+    node.kind === 'choice' &&
+    (!gfl1Frame?.interaction ||
+      gfl1Frame.interaction.kind === 'quiz' ||
+      (gfl1Frame.interaction.kind === 'exploration' &&
+        (textOnly || !gfl1Frame.interaction.spots.length)));
   const [sceneStatus, setSceneStatus] = useState({ node: '', ready: false });
   const [finishSceneVersion, setFinishSceneVersion] = useState(0);
   const onSceneReady = useCallback(
@@ -906,7 +912,12 @@ function Reader({
         setHidden(false);
         return;
       }
-      if (command === 'next') next();
+      if (command.startsWith('choice-')) {
+        if (!showChoices || !textReady || hidden || panel || ui.active) return;
+        const answer =
+          node.choices?.[Number(command.slice('choice-'.length)) - 1];
+        if (answer) next(answer.id);
+      } else if (command === 'next') next();
       else if (command === 'next-repeat') next(undefined, false, true);
       else if (command === 'previous') previous();
       else if (command === 'auto') {
@@ -947,6 +958,10 @@ function Reader({
     },
     [
       hidden,
+      showChoices,
+      textReady,
+      panel,
+      ui.active,
       saveCheckpoint,
       setReadingLanguage,
       next,
@@ -1341,19 +1356,16 @@ function Reader({
               }
             />
           ) : null}
-          {node.kind === 'choice' &&
-          textReady &&
-          (!gfl1Frame?.interaction ||
-            gfl1Frame.interaction.kind === 'quiz' ||
-            (gfl1Frame.interaction.kind === 'exploration' &&
-              (textOnly || !gfl1Frame.interaction.spots.length))) ? (
+          {showChoices && textReady ? (
             <div className="story-choices" aria-label={t('Choose a response')}>
               {node.choices?.map((answer, i) => (
                 <button
                   ref={i === 0 ? choice : undefined}
                   key={answer.id}
+                  aria-keyshortcuts={i < 9 ? String(i + 1) : undefined}
                   onClick={() => next(answer.id)}
                 >
+                  {i < 9 ? <kbd aria-hidden="true">{i + 1}</kbd> : null}
                   {(p.textVariant === 'female'
                     ? answer.femaleLabel?.[p.textLocale]
                     : undefined) ?? localizedText(answer.label, p.textLocale)}

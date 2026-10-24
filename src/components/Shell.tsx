@@ -130,6 +130,12 @@ function ShellContent({ children }: { children: ReactNode }) {
         return;
       }
       if (!inReader) return;
+      if (!event.shiftKey && /^[1-9]$/.test(event.key)) {
+        event.preventDefault();
+        if (!event.repeat)
+          readerCommand(`choice-${event.key}` as ReaderCommand);
+        return;
+      }
       const map: Record<string, ReaderCommand> = {
         ArrowLeft: 'previous',
         ArrowRight: 'next',

@@ -4,6 +4,7 @@ export type ReaderCommand =
   | 'previous'
   | 'next'
   | 'next-repeat'
+  | `choice-${number}`
   | 'auto'
   | 'skip'
   | 'history'
