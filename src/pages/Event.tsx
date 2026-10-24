@@ -11,6 +11,7 @@ import { groupStoryEvents, storyRows } from '../catalog';
 import { catalogMode, catalogSource, modeSearch } from '../catalog-source';
 import { EmptyState } from '../components/Primitives';
 import { PageTitle } from '../components/Shell';
+import { CatalogWorkspace } from '../components/CatalogWorkspace';
 import { StorySections } from '../components/StorySections';
 import { eventArtwork, artworkStyle } from '../covers';
 import { PjskGroupMark } from '../components/PjskGroupMark';
@@ -70,79 +71,92 @@ export function EventPage() {
       </main>
     );
   return (
-    <main
-      className="page event-page"
+    <CatalogWorkspace
+      className="event-page"
       style={{ '--game-accent': game.accent } as React.CSSProperties}
-    >
-      <div className="event-heading">
-        <PageTitle
-          eyebrow={`${game.shortName} · ${t(event.category)}`}
-          title={collectionTitle(
-            event,
-            gamePreferences(data.preferences, game.id).catalogLocale,
-          )}
-          back={from}
-        >
-          <p className="event-summary">
-            {event.game === 'pjsk' ? (
-              <PjskGroupMark group={event.stories[0]?.group} />
-            ) : null}
-            {event.stories.length === 1
-              ? t('1 story')
-              : t('{count} stories', { count: event.stories.length })}
-            {event.branches.length
-              ? t(' · {value0} main · {value1} side', {
-                  value0: event.main.length,
-                  value1: event.stories.length - event.main.length,
-                })
-              : ''}
-          </p>
-          <p className="event-download-status">
-            {t('{downloaded} of {total} downloaded · {read} read', {
-              downloaded: event.stories.filter((story) =>
-                isInstalled(data, story),
-              ).length,
-              total: event.stories.length,
-              read: event.stories.filter(
-                (story) => data.saves[story.id]?.completed,
-              ).length,
-            })}
-          </p>
-          <TextLanguages stories={event.stories} />
-          {event.notice ? <p role="note">{event.notice}</p> : null}
-          <SchoolMarks event={event} />
-        </PageTitle>
-        {cover ? (
-          cover.logo ? (
-            <EventCover
-              className={`event-heading-cover${event.game === 'pjsk' ? ' pjsk-event-cover' : ''}`}
-              cover={cover}
-            />
-          ) : (
-            <figure className="event-artwork">
-              <img
+      title={collectionTitle(
+        event,
+        gamePreferences(data.preferences, game.id).catalogLocale,
+      )}
+      back={from}
+      sidebar={
+        <>
+          {cover ? (
+            cover.logo ? (
+              <EventCover
                 className={`event-heading-cover${event.game === 'pjsk' ? ' pjsk-event-cover' : ''}`}
-                src={cover.url}
-                alt=""
-                width={cover.width}
-                height={cover.height}
-                style={artworkStyle(cover)}
+                cover={cover}
               />
-              {cover.credit && cover.page ? (
-                <figcaption>
-                  <a href={cover.page} target="_blank" rel="noreferrer">
-                    {cover.kind === 'unofficial-art'
-                      ? t('Unofficial artwork')
-                      : t('Official artwork')}{' '}
-                    · {cover.credit}
-                  </a>
-                </figcaption>
+            ) : (
+              <figure className="event-artwork">
+                <img
+                  className={`event-heading-cover${event.game === 'pjsk' ? ' pjsk-event-cover' : ''}`}
+                  src={cover.url}
+                  alt=""
+                  width={cover.width}
+                  height={cover.height}
+                  style={artworkStyle(cover)}
+                />
+                {cover.credit && cover.page ? (
+                  <figcaption>
+                    <a href={cover.page} target="_blank" rel="noreferrer">
+                      {cover.kind === 'unofficial-art'
+                        ? t('Unofficial artwork')
+                        : t('Official artwork')}{' '}
+                      · {cover.credit}
+                    </a>
+                  </figcaption>
+                ) : null}
+              </figure>
+            )
+          ) : null}
+
+          <PageTitle
+            eyebrow={`${game.shortName} · ${t(event.category)}`}
+            title={collectionTitle(
+              event,
+              gamePreferences(data.preferences, game.id).catalogLocale,
+            )}
+          >
+            <p className="event-summary">
+              {event.game === 'pjsk' ? (
+                <PjskGroupMark group={event.stories[0]?.group} />
               ) : null}
-            </figure>
-          )
-        ) : null}
-      </div>
-      <GettingStarted game={game.id} />
+              {event.stories.length === 1
+                ? t('1 story')
+                : t('{count} stories', { count: event.stories.length })}
+              {event.branches.length
+                ? t(' · {value0} main · {value1} side', {
+                    value0: event.main.length,
+                    value1: event.stories.length - event.main.length,
+                  })
+                : ''}
+            </p>
+            <p className="event-download-status">
+              {t('{downloaded} of {total} downloaded · {read} read', {
+                downloaded: event.stories.filter((story) =>
+                  isInstalled(data, story),
+                ).length,
+                total: event.stories.length,
+                read: event.stories.filter(
+                  (story) => data.saves[story.id]?.completed,
+                ).length,
+              })}
+            </p>
+            <TextLanguages stories={event.stories} />
+            {event.notice ? <p role="note">{event.notice}</p> : null}
+            <SchoolMarks event={event} />
+          </PageTitle>
+          <GettingStarted game={game.id} />
+        </>
+      }
+    >
+      <header className="catalog-content-heading">
+        <h2>{t('Stories')}</h2>
+        <span className="muted">
+          {rows.main.length + rows.independent.length}
+        </span>
+      </header>
       <div className="catalog-toolbar">
         <label className="search-field">
           <Search size={17} />
@@ -180,6 +194,6 @@ export function EventPage() {
           />
         </div>
       )}
-    </main>
+    </CatalogWorkspace>
   );
 }
