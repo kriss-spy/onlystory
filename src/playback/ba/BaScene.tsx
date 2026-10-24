@@ -12,6 +12,7 @@ import { canonicalBaScriptLine } from './script';
 import { baSoundForRow } from './source-gaps';
 import { baEmotionSounds } from './emotion-sounds';
 import { isBaScreenTextStep } from './screen-text';
+import { baSceneText } from './scene-text';
 
 export default function BaScene({
   payload,
@@ -237,7 +238,7 @@ export default function BaScene({
         controller.signal.addEventListener('abort', stop, { once: true });
       });
     void (async () => {
-      player.stage.show(state, true);
+      player.stage.show(baSceneText(state, p), true);
       if (!silent) player.audio?.setMusic(state.music);
       for (const row of [...leaving, ...current.rows]) {
         if (controller.signal.aborted) return;
@@ -246,7 +247,7 @@ export default function BaScene({
           if (fade) await wait(fade);
         }
         state = applyBaRow(state, sceneRow(row), program.assets);
-        player.stage.show(state, instant);
+        player.stage.show(baSceneText(state, p), instant);
         player.stage.moveCamera(row, instant);
         if (!silent) {
           player.audio?.setMusic(state.music);
@@ -328,6 +329,7 @@ export default function BaScene({
     fastForward,
     reduced,
     p.textLocale,
+    p.playerName,
   ]);
 
   useEffect(() => {

@@ -57,6 +57,7 @@ import {
   rewind,
   startSave,
   passageText,
+  playerNameText,
   localizedText,
   gamePreferences,
   readingTimeline,
@@ -1405,9 +1406,13 @@ function Reader({
                       className={`auto-choice-spinner${p.reducedMotion ? '' : ' spin'}`}
                     />
                   ) : null}
-                  {(p.textVariant === 'female'
-                    ? answer.femaleLabel?.[p.textLocale]
-                    : undefined) ?? localizedText(answer.label, p.textLocale)}
+                  {playerNameText(
+                    (p.textVariant === 'female'
+                      ? answer.femaleLabel?.[p.textLocale]
+                      : undefined) ?? localizedText(answer.label, p.textLocale),
+                    p,
+                    node.playerName,
+                  )}
                 </button>
               ))}
             </div>

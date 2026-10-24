@@ -266,27 +266,36 @@ export function gamePreferences(
 export function passageText(node: StoryNode, preferences: Preferences) {
   const variant =
     preferences.textVariant === 'female' ? node.female : undefined;
+  return {
+    speaker: playerNameText(
+      variant?.speaker ??
+        (node.speakerLocales
+          ? localizedText(node.speakerLocales, preferences.textLocale)
+          : node.speaker),
+      preferences,
+      node.playerName,
+    ),
+    text: playerNameText(
+      localizedText(variant?.text ?? node.text, preferences.textLocale),
+      preferences,
+      node.playerName,
+    ),
+  };
+}
+export function playerNameText(
+  text: string,
+  preferences: Preferences,
+  playerName?: StoryNode['playerName'],
+) {
   const customName = preferences.playerName.trim();
-  const name = node.playerName
+  const name = playerName
     ? customName && customName !== defaultPreferences.playerName
       ? customName
-      : node.playerName.fallbackLocales
-        ? localizedText(node.playerName.fallbackLocales, preferences.textLocale)
-        : node.playerName.fallback
+      : playerName.fallbackLocales
+        ? localizedText(playerName.fallbackLocales, preferences.textLocale)
+        : playerName.fallback
     : customName || '指挥官';
-  const token = node.playerName?.token ?? '{}';
-  return {
-    speaker: (
-      variant?.speaker ??
-      (node.speakerLocales
-        ? localizedText(node.speakerLocales, preferences.textLocale)
-        : node.speaker)
-    ).replaceAll(token, () => name),
-    text: localizedText(
-      variant?.text ?? node.text,
-      preferences.textLocale,
-    ).replaceAll(token, () => name),
-  };
+  return text.replaceAll(playerName?.token ?? '{}', () => name);
 }
 export const localizedText = (text: LocalizedText, locale: Locale) =>
   text[locale] || text.ja || text.en || text['zh-CN'];
