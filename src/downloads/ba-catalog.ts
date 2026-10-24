@@ -32,10 +32,9 @@ export const baDownloadById = new Map(
   baDownloads.map((entry) => [entry.episode?.id ?? entry.id!, entry]),
 );
 const recipes = import.meta.glob('./ba/recipes/*.json.gz', {
-  eager: true,
   query: '?url',
   import: 'default',
-}) as Record<string, string>;
+}) as Record<string, () => Promise<string>>;
 export async function loadBaRecipe(
   episode: Episode,
   signal: AbortSignal,
@@ -45,9 +44,10 @@ export async function loadBaRecipe(
   const descriptor = baDownloadById.get(episode.id);
   if (!descriptor)
     throw Error('Download instructions are not available for this BA story.');
-  const url = recipes['./ba/recipes/' + descriptor.recipe];
-  if (!url)
+  const loadUrl = recipes['./ba/recipes/' + descriptor.recipe];
+  if (!loadUrl)
     throw Error('Download instructions are missing. Update the app and retry.');
+  const url = await loadUrl();
   const cache = await caches.open('onlystory.ba-recipes.v1');
   async function verified(response: Response) {
     if (!response.ok)

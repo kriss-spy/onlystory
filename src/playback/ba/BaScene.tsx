@@ -41,6 +41,7 @@ export default function BaScene({
   const [loaded, setLoaded] = useState(false);
   const [blocked, setBlocked] = useState(false);
   const [error, setError] = useState('');
+  const [audioError, setAudioError] = useState('');
   const [attempt, setAttempt] = useState(0);
   const [busy, setBusy] = useState(true);
   const [touchScript, setTouchScript] = useState('');
@@ -89,6 +90,8 @@ export default function BaScene({
     if (!host.current) return;
     setLoaded(false);
     setError('');
+    setAudioError('');
+    setBlocked(false);
     let active = true;
     let stage: BaStage;
     try {
@@ -101,11 +104,11 @@ export default function BaScene({
     try {
       audio = new BaAudio(
         program.assets,
-        (message) => active && setError(message),
+        (message) => active && setAudioError(message),
         (value) => active && setBlocked(value),
       );
     } catch {
-      setError('Scene audio could not be initialized.');
+      setAudioError('Scene audio could not be initialized.');
     }
     players.current = { stage, audio };
     Object.defineProperty(host.current, 'playbackDiagnostics', {
@@ -116,7 +119,18 @@ export default function BaScene({
         node: currentNode.current,
       }),
     });
-    void Promise.all([stage.prepare(), audio?.prepare()])
+    // Optional audio must not delay or reject the visual scene's readiness.
+    void audio?.prepare().catch(() => {
+      if (active) {
+        setAudioError('Scene audio is unavailable in this browser.');
+        setBlocked(false);
+        audio?.dispose();
+        audio = null;
+        if (players.current?.stage === stage) players.current.audio = null;
+      }
+    });
+    void stage
+      .prepare()
       .then(() => {
         if (active) setLoaded(true);
       })
@@ -376,11 +390,19 @@ export default function BaScene({
             window.dispatchEvent(new Event('onlystory-enable-audio'));
             void players.current?.audio
               ?.enable()
-              .catch((e) => setError(String(e)));
+              .catch((e) => setAudioError(String(e)));
           }}
         >
           <Volume2 size={18} />
         </button>
+      ) : null}
+      {audioError && !error ? (
+        <div className="scene-notices" role="status">
+          {playbackMessage(t, audioError)}
+          <button onClick={() => setAttempt((a) => a + 1)}>
+            {t('Retry scene')}
+          </button>
+        </div>
       ) : null}
       {error ? (
         <div className="scene-notices" role="alert">

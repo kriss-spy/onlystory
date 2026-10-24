@@ -65,6 +65,31 @@ npm run dev
 
 Open <http://127.0.0.1:4173>. Run `npm run check` before committing.
 
+### Read the host library from an iPad through Tailscale
+
+Use the optimized build for remote reading. The development server includes large
+debugging files and takes much longer to load over the network.
+
+```sh
+npm run serve:library
+```
+
+In another terminal:
+
+```sh
+tailscale serve --bg 4174
+```
+
+Open <https://wtb.tailf4ab12.ts.net/> on the iPad with Tailscale connected, without
+adding a port. Prepared stories in this host's local library open directly; the
+iPad does not need to download or import them first. Browser downloads are only
+needed for reading offline on the iPad.
+
+After rebooting, run `npm run serve:library` again and leave it running. Tailscale
+Serve retains its background configuration. The Vite configuration permits the
+exact hostname above for both development and preview. After fixing a connection
+failure, reload the iPad tab to refresh host-library detection.
+
 ## More
 
 - [Available stories, languages, and voices](docs/content-inventory.md)

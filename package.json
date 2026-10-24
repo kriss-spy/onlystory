@@ -29,6 +29,7 @@
     "test:desktop-sources": "node --test scripts/desktop-sources.test.mjs",
     "verify:desktop": "node scripts/verify-desktop.mjs --live",
     "preview": "vite preview",
+    "serve:library": "npm run build && vite preview --port 4174",
     "start": "node scripts/library-server.mjs",
     "storage:audit": "python scripts/storage-audit.py",
     "storage:images": "python scripts/storage-images.py",
