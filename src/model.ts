@@ -474,10 +474,22 @@ export function readingTimeline(
     position++;
     next = continuation.get(next);
   }
+  const reachableNodes = new Set(frames.map((frame) => frame.node));
+  const total =
+    frames.length + Math.max(0, (depth.get(boundary?.id ?? '') ?? 1) - 1);
   return {
     frames,
-    total:
-      frames.length + Math.max(0, (depth.get(boundary?.id ?? '') ?? 1) - 1),
+    upcoming: [...depth].flatMap(([node, remaining]) =>
+      reachableNodes.has(node)
+        ? []
+        : [
+            {
+              node,
+              position: total - remaining,
+            },
+          ],
+    ),
+    total,
     choices,
     locked: boundary?.kind === 'choice',
   };

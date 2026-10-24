@@ -44,6 +44,7 @@ export function Stage({
   onVideoTime,
   skipVideo,
   embedded = false,
+  playOnLoad = false,
 }: {
   node: StoryNode;
   fixture: Fixture;
@@ -54,6 +55,7 @@ export function Stage({
   onVideoTime: (time: number) => void;
   skipVideo: () => void;
   embedded?: boolean;
+  playOnLoad?: boolean;
 }) {
   const preferences = usePlaybackPreferences();
   const { t } = useI18n();
@@ -172,7 +174,7 @@ export function Stage({
     if (!sameNode || !restoring.current)
       restore.current = {
         time: sameNode ? player.currentTime : videoTime,
-        playing: sameNode && !player.paused && !player.ended,
+        playing: sameNode ? !player.paused && !player.ended : playOnLoad,
         rate: sameNode ? player.playbackRate : 1,
       };
     restoring.current = true;
@@ -198,7 +200,15 @@ export function Stage({
     }
     player.src = movie!;
     player.load();
-  }, [movie, streaming, streamVoice, streamReady, node.id, movieAttempt]);
+  }, [
+    movie,
+    streaming,
+    streamVoice,
+    streamReady,
+    node.id,
+    movieAttempt,
+    playOnLoad,
+  ]);
   useEffect(() => {
     if (video.current) video.current.volume = preferences.voiceVolume;
   }, [preferences.voiceVolume, movie]);

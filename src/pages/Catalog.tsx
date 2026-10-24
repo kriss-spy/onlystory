@@ -15,6 +15,7 @@ import { GettingStarted } from '../components/GettingStarted';
 import { useI18n } from '../i18n';
 import { EmptyState } from '../components/Primitives';
 import { PageTitle } from '../components/Shell';
+import { CatalogWorkspace } from '../components/CatalogWorkspace';
 import { eventArtwork } from '../covers';
 import { pjskGroups } from '../pjsk-groups';
 import { PjskGroupMark } from '../components/PjskGroupMark';
@@ -351,25 +352,117 @@ export function CatalogPage() {
     );
   };
   return (
-    <main
-      className={`page catalog-page catalog-layout-${layout}`}
+    <CatalogWorkspace
+      className={`catalog-page catalog-layout-${layout}`}
       style={{ '--game-accent': game.accent } as React.CSSProperties}
+      title={game.name}
+      back="/library"
+      sidebar={
+        <>
+          <PageTitle title={game.name} />
+          <div className="catalog-filters">
+            <select
+              aria-label={
+                game.id === 'gfl1'
+                  ? t('Story type')
+                  : game.id === 'ba'
+                    ? t('Story category')
+                    : t('Event category')
+              }
+              value={
+                showEventTypes && eventType !== 'all'
+                  ? `event:${eventType}`
+                  : category
+              }
+              onChange={(e) =>
+                update(
+                  game.id === 'gfl1' ? 'storyType' : 'category',
+                  e.target.value,
+                )
+              }
+            >
+              <option value="all">{t('All collections')}</option>
+              {game.id === 'gfl1' ? (
+                <>
+                  <option value="Main story">{t('Main story')}</option>
+                  <option value="Event">{t('All Events')}</option>
+                  {eventTypes.map((type) => {
+                    const count = events.filter(
+                      (event) =>
+                        event.category === 'Event' &&
+                        event.eventType === type.value,
+                    ).length;
+                    return (
+                      <option
+                        key={type.value}
+                        value={`event:${type.value}`}
+                        disabled={!count}
+                      >
+                        {t(type.label)} ({count})
+                      </option>
+                    );
+                  })}
+                </>
+              ) : (
+                categories.map((value) => (
+                  <option key={value} value={value}>
+                    {t(value)}
+                    {game.id === 'ba'
+                      ? t(' ({value0})', {
+                          value0: events.filter(
+                            (event) => event.category === value,
+                          ).length,
+                        })
+                      : ''}
+                  </option>
+                ))
+              )}
+            </select>
+            {game.id === 'pjsk' ? (
+              <select
+                aria-label={t('Story group')}
+                value={group ?? 'all'}
+                onChange={(e) => update('group', e.target.value)}
+              >
+                <option value="all">{t('All groups')}</option>
+                {pjskGroups.map(({ id, label }) => (
+                  <option key={id} value={id}>
+                    {label}
+                  </option>
+                ))}
+              </select>
+            ) : null}
+            {game.id === 'ba' ? (
+              <select
+                aria-label={t('School')}
+                value={school}
+                onChange={(e) => update('school', e.target.value)}
+              >
+                <option value="all">{t('All schools / affiliations')}</option>
+                {baSchools.map((s) => (
+                  <option value={s.id} key={s.id}>
+                    {s.name} (
+                    {
+                      events.filter((event) =>
+                        featuredSchools(event).some(
+                          (school) => school.id === s.id,
+                        ),
+                      ).length
+                    }
+                    )
+                  </option>
+                ))}
+              </select>
+            ) : null}
+          </div>
+          <GettingStarted game={game.id} />
+        </>
+      }
     >
-      <PageTitle title={game.name} back="/library">
-        <div className="catalog-heading-meta">
-          <span className="muted">
-            {filtered.length.toLocaleString()}{' '}
-            {game.id === 'ba'
-              ? filtered.length === 1
-                ? t('collection')
-                : t('collections')
-              : filtered.length === 1
-                ? t('event')
-                : t('events')}
-          </span>
-        </div>
-      </PageTitle>
-      <GettingStarted game={game.id} />
+      <header className="catalog-content-heading">
+        <h2>{game.id === 'ba' ? t('Collections') : t('Events')}</h2>
+        <span className="muted">{filtered.length.toLocaleString()}</span>
+      </header>
       <div className="catalog-toolbar">
         <label className="search-field">
           <Search size={17} />
@@ -381,96 +474,6 @@ export function CatalogPage() {
             onValueChange={(value) => update('q', value)}
           />
         </label>
-        <select
-          aria-label={
-            game.id === 'gfl1'
-              ? t('Story type')
-              : game.id === 'ba'
-                ? t('Story category')
-                : t('Event category')
-          }
-          value={
-            showEventTypes && eventType !== 'all'
-              ? `event:${eventType}`
-              : category
-          }
-          onChange={(e) =>
-            update(
-              game.id === 'gfl1' ? 'storyType' : 'category',
-              e.target.value,
-            )
-          }
-        >
-          <option value="all">{t('All collections')}</option>
-          {game.id === 'gfl1' ? (
-            <>
-              <option value="Main story">{t('Main story')}</option>
-              <option value="Event">{t('All Events')}</option>
-              {eventTypes.map((type) => {
-                const count = events.filter(
-                  (event) =>
-                    event.category === 'Event' &&
-                    event.eventType === type.value,
-                ).length;
-                return (
-                  <option
-                    key={type.value}
-                    value={`event:${type.value}`}
-                    disabled={!count}
-                  >
-                    {t(type.label)} ({count})
-                  </option>
-                );
-              })}
-            </>
-          ) : (
-            categories.map((value) => (
-              <option key={value} value={value}>
-                {t(value)}
-                {game.id === 'ba'
-                  ? t(' ({value0})', {
-                      value0: events.filter((event) => event.category === value)
-                        .length,
-                    })
-                  : ''}
-              </option>
-            ))
-          )}
-        </select>
-        {game.id === 'pjsk' ? (
-          <select
-            aria-label={t('Story group')}
-            value={group ?? 'all'}
-            onChange={(e) => update('group', e.target.value)}
-          >
-            <option value="all">{t('All groups')}</option>
-            {pjskGroups.map(({ id, label }) => (
-              <option key={id} value={id}>
-                {label}
-              </option>
-            ))}
-          </select>
-        ) : null}
-        {game.id === 'ba' ? (
-          <select
-            aria-label={t('School')}
-            value={school}
-            onChange={(e) => update('school', e.target.value)}
-          >
-            <option value="all">{t('All schools / affiliations')}</option>
-            {baSchools.map((s) => (
-              <option value={s.id} key={s.id}>
-                {s.name} (
-                {
-                  events.filter((event) =>
-                    featuredSchools(event).some((school) => school.id === s.id),
-                  ).length
-                }
-                )
-              </option>
-            ))}
-          </select>
-        ) : null}
         <select
           aria-label={t('Event order')}
           value={sort}
@@ -640,6 +643,6 @@ export function CatalogPage() {
           )}
         </div>
       )}
-    </main>
+    </CatalogWorkspace>
   );
 }

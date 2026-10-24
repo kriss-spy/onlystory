@@ -19,6 +19,7 @@ export function SceneHost({
   onReadyChange,
   voiceLevel,
   finishVersion = 0,
+  replayVersion = 0,
   onSceneReady,
   textComplete = false,
   ...props
@@ -31,6 +32,7 @@ export function SceneHost({
   onReadyChange?: (value: boolean) => void;
   voiceLevel?: () => number;
   finishVersion?: number;
+  replayVersion?: number;
   onSceneReady?: (node: string, ready: boolean) => void;
   textComplete?: boolean;
 }) {
@@ -42,7 +44,9 @@ export function SceneHost({
     props.node.kind === 'video' &&
     (episode.renderer?.id !== 'pjsk' || textOnly)
   )
-    return <Stage {...props} />;
+    return (
+      <Stage key={replayVersion} {...props} playOnLoad={replayVersion > 0} />
+    );
   if (textOnly) return null;
   if (episode.renderer?.id === 'pjsk')
     return (
@@ -62,7 +66,12 @@ export function SceneHost({
           voiceLevel={voiceLevel}
           movie={
             props.node.kind === 'video' ? (
-              <Stage {...props} embedded />
+              <Stage
+                key={replayVersion}
+                {...props}
+                embedded
+                playOnLoad={replayVersion > 0}
+              />
             ) : undefined
           }
         />
@@ -92,6 +101,7 @@ export function SceneHost({
           fastForward={fastForward}
           seekVersion={seekVersion}
           finishVersion={finishVersion}
+          replayVersion={replayVersion}
           path={path}
           onReady={onSceneReady}
           textComplete={textComplete}
