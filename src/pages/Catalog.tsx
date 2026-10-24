@@ -28,6 +28,7 @@ import { CatalogLayout } from '../components/CatalogLayout';
 import { TextLanguages } from '../components/TextLanguages';
 import { gamePreferences } from '../model';
 import { collectionTitle, titleSearchValues } from '../localized-titles';
+import { SearchInput } from '../components/SearchInput';
 import {
   DownloadCheckbox,
   DownloadSupportNotice,
@@ -372,12 +373,12 @@ export function CatalogPage() {
       <div className="catalog-toolbar">
         <label className="search-field">
           <Search size={17} />
-          <input
+          <SearchInput
             type="search"
             aria-label={t('Search events')}
             placeholder={t('Find an event or story…')}
             value={query}
-            onChange={(e) => update('q', e.target.value)}
+            onValueChange={(value) => update('q', value)}
           />
         </label>
         <select
