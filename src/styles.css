@@ -1619,14 +1619,21 @@ kbd {
   gap: 11px;
 }
 .story-choices > button {
+  position: relative;
   min-height: 48px;
-  padding: 13px 20px;
+  padding: 13px 36px;
   box-shadow: 0 8px 24px #0003;
   background: var(--raised);
   border-color: var(--line);
   font-size: var(--reader-font-size, 20px);
   line-height: 1.5;
   font-weight: 500;
+}
+.story-choices > button > kbd {
+  position: absolute;
+  left: 12px;
+  opacity: 0.65;
+  font: inherit;
 }
 .story-choices > button:hover {
   background: var(--soft);
@@ -2364,7 +2371,7 @@ input.reader-progress {
   }
   .story-choices > button {
     min-height: 34px;
-    padding: 8px 12px;
+    padding: 8px 36px;
   }
 }
 @media (prefers-reduced-motion: reduce) {

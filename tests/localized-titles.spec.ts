@@ -7,11 +7,11 @@ for (const width of [1365, 487]) {
   }) => {
     await page.setViewportSize({ width, height: 900 });
     const initial = emptyData();
+    initial.preferences.chaptersOpen = true;
     initial.preferences.games = {
       ba: {
         catalogLocale: 'en',
         textLocale: 'ja',
-        chaptersOpen: true,
         layout: 'text',
         textSpeed: 0,
       },
@@ -51,6 +51,9 @@ for (const width of [1365, 487]) {
     await page.getByRole('button', { name: 'Close', exact: true }).click();
     await openChapters();
     // Searching English still finds the story when its source title is displayed.
+    await page
+      .getByRole('searchbox', { name: 'Search chapters', exact: true })
+      .fill('Welcome to Momoyodou');
     await expect(chapters.locator('strong')).not.toHaveText([
       'Episode 1 · Welcome to Momoyodou',
     ]);
