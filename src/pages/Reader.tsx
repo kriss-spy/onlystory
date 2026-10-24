@@ -868,8 +868,12 @@ function Reader({
   const previous = useCallback(() => {
     setAuto(false);
     setSkipping(false);
-    if (save.frames.length > 1) commit(rewind(save, save.frames.length - 2));
-  }, [save, commit, setSkipping]);
+    // Navigation can update the URL before React commits the new save state.
+    // A quick rewind must use the passage just committed by the previous input.
+    const current = latest.current;
+    if (current.frames.length > 1)
+      commit(rewind(current, current.frames.length - 2));
+  }, [commit, setSkipping]);
   const retryScene = () => {
     const nextParams = new URLSearchParams(params);
     nextParams.delete('fixture');
