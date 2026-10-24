@@ -1,11 +1,44 @@
 import { expect, it } from 'vitest';
 import program from '../../../public/private/ba-jp/11000/scenes.json';
+import carrot from '../../../public/private/ba-jp/41085/scenes.json';
 import type { BaProgram, BaRow } from './types';
 import { applyBaRow, initialBaState, rowDelay } from './state';
 
 const rows = (program as unknown as BaProgram).steps.flatMap(
   (step) => step.rows,
 );
+it('ends the Operation Carrot close-up montage before the bath dialogue', () => {
+  const montage = (carrot as unknown as BaProgram).steps.find(
+    (step) => step.id === '41085:206',
+  )!;
+  let state = initialBaState();
+  for (const row of montage.rows) {
+    state = applyBaRow(state, row);
+    if (row.row === 199)
+      expect(state.zoom).toEqual({ x: -316, y: -111, size: 1300 });
+    if (row.row === 203)
+      expect(state.zoom).toEqual({ x: 250, y: 333, size: 1300 });
+    if (row.row >= 204) expect(state.zoom).toEqual(initialBaState().zoom);
+  }
+});
+it('retains camera framing during waits but resets effect-free rows and new backgrounds', () => {
+  const row = {
+    ...rows[0],
+    BGName: 123,
+    BGEffect: 0,
+    ScriptKr: '#ZMC;instant;250,333;1300',
+  };
+  const zoomed = applyBaRow(initialBaState(), row);
+  const wait = applyBaRow(zoomed, { ...row, BGName: 0, ScriptKr: '#wait;500' });
+  expect(wait.zoom).toEqual(zoomed.zoom);
+  expect(
+    applyBaRow(wait, { ...row, BGName: 0, ScriptKr: '#na;dialogue' }).zoom,
+  ).toEqual(initialBaState().zoom);
+  expect(
+    applyBaRow(wait, { ...row, BGName: 456, ScriptKr: '#wait;500' }).zoom,
+  ).toEqual(initialBaState().zoom);
+  expect(zoomed.zoom).toEqual({ x: 250, y: 333, size: 1300 });
+});
 it('starts without a prologue-specific background before an event supplies its first cue', () => {
   expect(initialBaState().background).toBe(0);
   expect(

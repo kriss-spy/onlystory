@@ -49,6 +49,15 @@ export function applyBaRow(
   state.title = '';
   state.popup = row.PopupFileName ?? '';
   state.globalFx = [];
+  // Camera effects end on an effect-free row. Wait/shake rows retain the
+  // current framing, while a replacement background starts at its base frame.
+  // Matches the pinned reference player's playEffect/removeZmc lifecycle.
+  const script = canonicalBaScript(row.ScriptKr);
+  if (
+    (row.BGName && state.background === row.BGName) ||
+    (!state.effect && !/^#(?:zmc|zmlt|wait|bgshake);?/m.test(script))
+  )
+    state.zoom = { x: 0, y: 0, size: 3000 };
   for (const actor of Object.values(state.actors)) {
     actor.highlight = false;
     actor.action = '';

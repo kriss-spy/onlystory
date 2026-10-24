@@ -16,6 +16,7 @@ import { baResource } from './resources';
 import { resolveBaExpression } from './expressions';
 import { BaSpineBackground } from './background-spine';
 import { faceBounds, type FaceBounds } from './emotion-layout';
+import { canonicalBaScript } from './script';
 
 interface Model {
   skeleton: Skeleton;
@@ -229,7 +230,8 @@ export class BaStage {
     this.background.style.backgroundImage = image ? `url("${image}")` : 'none';
     this.spineBackground?.show(state.background);
     this.background.dataset.backgroundId = String(state.background);
-    this.oldTransform = this.background.style.transform;
+    this.oldTransform = getComputedStyle(this.background).transform;
+    for (const animation of this.background.getAnimations()) animation.cancel();
     const zoom = Math.max(0.5, Math.min(3, 3000 / state.zoom.size));
     this.background.style.transform = `scale(${zoom}) translate(${-state.zoom.x / 30}%, ${state.zoom.y / 30}%)`;
     this.emotions.replaceChildren();
@@ -353,7 +355,9 @@ export class BaStage {
     return transition.TransitionOutDuration;
   }
   moveCamera(row: BaRow, instant: boolean) {
-    const camera = /#(?:zmc|zmlt);move;[^;]+;[^;]+;(\d+)/.exec(row.ScriptKr);
+    const camera = /#(?:zmc|zmlt);move;[^;]+;[^;]+;(\d+)/.exec(
+      canonicalBaScript(row.ScriptKr),
+    );
     if (camera && !instant && !this.reduced)
       this.animations.push(
         this.background.animate(
@@ -361,7 +365,9 @@ export class BaStage {
             { transform: this.oldTransform },
             { transform: this.background.style.transform },
           ],
-          { duration: Number(camera[1]), fill: 'forwards' },
+          // show() already sets the destination. A forwards fill would mask
+          // later instant/reset commands after this pan has finished.
+          { duration: Number(camera[1]) },
         ),
       );
   }
