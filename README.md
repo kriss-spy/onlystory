@@ -8,9 +8,9 @@ Read stories from **Blue Archive, Project SEKAI, and Girls' Frontline 1 & 2** in
 
 | Platform    | Download                                                                                                          | Open                                     |
 | ----------- | ----------------------------------------------------------------------------------------------------------------- | ---------------------------------------- |
-| Windows x64 | [Portable .exe](https://github.com/kriss-spy/onlystory/releases/latest/download/Onlystory-0.3.0-portable-x64.exe) | Run it. No installation needed.          |
-| Windows x64 | [Installer .exe](https://github.com/kriss-spy/onlystory/releases/latest/download/Onlystory-0.3.0-Setup-x64.exe)   | Install, then open Onlystory.            |
-| Linux x64   | [tar.gz](https://github.com/kriss-spy/onlystory/releases/latest/download/Onlystory-0.3.0-linux-x64.tar.gz)        | Extract, then run `./onlystory-desktop`. |
+| Windows x64 | [Portable .exe](https://github.com/kriss-spy/onlystory/releases/latest/download/Onlystory-0.3.1-portable-x64.exe) | Run it. No installation needed.          |
+| Windows x64 | [Installer .exe](https://github.com/kriss-spy/onlystory/releases/latest/download/Onlystory-0.3.1-Setup-x64.exe)   | Install, then open Onlystory.            |
+| Linux x64   | [tar.gz](https://github.com/kriss-spy/onlystory/releases/latest/download/Onlystory-0.3.1-linux-x64.tar.gz)        | Extract, then run `./onlystory-desktop`. |
 
 Windows apps are unsigned. Linux needs a graphical desktop and Electron's system libraries. See the release notes for verification details and checksums.
 

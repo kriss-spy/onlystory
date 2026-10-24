@@ -21,12 +21,12 @@ dialogue.
 
 ## Using the desktop app
 
-Run `Onlystory-0.3.0-portable-x64.exe`, or install
-`Onlystory-0.3.0-Setup-x64.exe`. The portable executable needs no installation;
+Run `Onlystory-0.3.1-portable-x64.exe`, or install
+`Onlystory-0.3.1-Setup-x64.exe`. The portable executable needs no installation;
 its saved library still lives in the current user's app-data folder. These are
 unsigned development builds.
 
-On Linux x64, extract `Onlystory-0.3.0-linux-x64.tar.gz`, open a terminal in
+On Linux x64, extract `Onlystory-0.3.1-linux-x64.tar.gz`, open a terminal in
 the extracted directory and run `./onlystory-desktop`. If your archive tool drops
 the executable permission, restore it with `chmod +x onlystory-desktop`. Run it as
 your normal desktop user. This archive needs a graphical Linux desktop and the
