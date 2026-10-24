@@ -32,13 +32,19 @@ To run Onlystory in a browser, follow the [web app setup instructions](docs/stan
 
 ## Screenshots
 
+Shown in dark mode.
+
 Game library and reading progress.
 
 ![Game library and reading progress](docs/screenshots/game-library.png)
 
-Blue Archive catalog and collection downloads.
+Blue Archive collections with school filters, search and card layouts.
 
-![Blue Archive catalog and collection downloads](docs/screenshots/blue-archive-downloads.png)
+![Blue Archive collections with a left sidebar, school filters and searchable cards](docs/screenshots/blue-archive-catalog.png)
+
+Story lists keep collection artwork, dialogue languages and reading progress beside searchable chapters.
+
+![Blue Archive collection sidebar beside its searchable story list](docs/screenshots/blue-archive-stories.png)
 
 Blue Archive reader with chapter navigation and English dialogue.
 
@@ -46,6 +52,7 @@ Blue Archive reader with chapter navigation and English dialogue.
 
 ## Main features
 
+- Shared catalog and story-list sidebars, with search, filters and list, table or card layouts.
 - Original story scenes with character animation, backgrounds, music, voices and choices where supported.
 - A story progress bar with choice markers. Seek along your selected route; unanswered choices pause further navigation.
 - A dialogue language switch in the reader. App menus and catalog titles have separate language settings.
