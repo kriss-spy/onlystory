@@ -23,6 +23,7 @@ import { gamePreferences } from '../model';
 import { GettingStarted } from '../components/GettingStarted';
 import { useI18n } from '../i18n';
 import { collectionTitle } from '../localized-titles';
+import { SearchInput } from '../components/SearchInput';
 
 const scrollPositions = new Map<string, number>();
 export function EventPage() {
@@ -145,14 +146,14 @@ export function EventPage() {
       <div className="catalog-toolbar">
         <label className="search-field">
           <Search size={17} />
-          <input
+          <SearchInput
             type="search"
             aria-label={t('Search stories')}
             placeholder={t('Find a story…')}
             value={query}
-            onChange={(e) => {
+            onValueChange={(value) => {
               const next = new URLSearchParams(params);
-              if (e.target.value) next.set('q', e.target.value);
+              if (value) next.set('q', value);
               else next.delete('q');
               setParams(next, { replace: true });
             }}
