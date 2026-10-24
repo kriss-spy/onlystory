@@ -127,21 +127,30 @@ test('library, branch history, bookmarks and checkpoint restore retain passage U
   expect(errors).toEqual([]);
 });
 
-test('auto stops at choices, fast-forward stops at movies, and actual video seeks and restores', async ({
+test('auto schedules the first choice, fast-forward stops at movies, and actual video seeks and restores', async ({
   page,
 }) => {
   await instant(page);
   await page.getByRole('button', { name: 'Settings', exact: true }).click();
-  await page.getByRole('slider', { name: /Auto reading delay/ }).fill('0.5');
+  await page.getByRole('slider', { name: /Auto reading delay/ }).fill('2');
   await page.getByRole('button', { name: 'Close', exact: true }).click();
-  await page.goto('/read/pjsk/pjsk-1');
+  await page.goto('/read/pjsk/pjsk-1?line=signal');
   await page.getByRole('button', { name: 'Auto reading', exact: true }).click();
   await expect(
     page.getByRole('button', { name: 'Follow the signal', exact: true }),
   ).toBeVisible();
   await expect(
-    page.getByRole('button', { name: 'Auto reading', exact: true }),
-  ).toBeDisabled();
+    page.getByRole('button', { name: 'Pause auto reading', exact: true }),
+  ).toBeEnabled();
+  await expect(
+    page
+      .locator('.story-choices > button')
+      .first()
+      .locator('.auto-choice-spinner'),
+  ).toBeVisible();
+  await page
+    .getByRole('button', { name: 'Pause auto reading', exact: true })
+    .click();
   await page
     .getByRole('button', { name: 'Stay and listen', exact: true })
     .click();

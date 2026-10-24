@@ -37,6 +37,7 @@ import {
   Trash2,
   Volume2,
   Info,
+  LoaderCircle,
 } from 'lucide-react';
 import {
   episodeById,
@@ -525,6 +526,20 @@ function Reader({
         (episode.preview ? '?previews=1' : episode.origin ? '' : '?examples=1');
   const returnState = { from: location.state?.catalogFrom };
   const blocked = !!linkError || expired || unavailable || needsDownload;
+  const canAutoRead =
+    node.kind === 'text' || (showChoices && !!node.choices?.length);
+  const autoReady =
+    auto &&
+    (textOnly || sceneReady) &&
+    !panel &&
+    !ui.active &&
+    !hidden &&
+    !blocked &&
+    !unsupported &&
+    complete &&
+    canAutoRead &&
+    !(p.waitVoice && activeVoice && !voiceDone && !voiceError);
+  const autoChoicePending = autoReady && showChoices;
   const commit = useCallback(
     (next: ReadingSave, mode: 'advance' | 'seek' = 'seek') => {
       if (mode === 'seek') setSceneRevision((value) => value + 1);
@@ -566,6 +581,7 @@ function Reader({
       (line !== latest.current.frames.at(-1)?.node ||
         answers !== currentAnswers)
     ) {
+      pausePlayback();
       try {
         const restored = restorePassage(episode, line, params.get('choices'));
         const merged = { ...restored, seen: latest.current.seen };
@@ -580,7 +596,7 @@ function Reader({
         );
       }
     }
-  }, [params, episode, store.save]);
+  }, [params, episode, store.save, pausePlayback]);
   useEffect(() => {
     if (!blocked) {
       if (!params.get('line')) commit(save);
@@ -787,45 +803,18 @@ function Reader({
     next,
   ]);
   useEffect(() => {
-    if (
-      !auto ||
-      (!textOnly && !sceneReady) ||
-      panel ||
-      ui.active ||
-      hidden ||
-      blocked ||
-      unsupported ||
-      !complete ||
-      node.kind !== 'text' ||
-      (p.waitVoice && activeVoice && !voiceDone && !voiceError)
-    )
-      return;
-    const timer = setTimeout(() => next(), p.autoDelay * 1000);
+    if (!autoReady) return;
+    const frame = latest.current.frames.at(-1);
+    const answer = autoChoicePending ? node.choices?.[0]?.id : undefined;
+    const timer = setTimeout(() => {
+      // Manual choices and navigation invalidate a pending answer immediately.
+      if (latest.current.frames.at(-1) === frame) next(answer);
+    }, p.autoDelay * 1000);
     return () => clearTimeout(timer);
-  }, [
-    auto,
-    sceneReady,
-    textOnly,
-    panel,
-    ui.active,
-    hidden,
-    blocked,
-    unsupported,
-    complete,
-    node.id,
-    node.kind,
-    p.autoDelay,
-    p.waitVoice,
-    activeVoice,
-    voiceDone,
-    voiceError,
-    next,
-  ]);
+  }, [autoReady, autoChoicePending, node.id, node.choices, p.autoDelay, next]);
   useEffect(() => {
-    if (node.kind !== 'text' || unsupported) {
-      setAuto(false);
-    }
-  }, [node.kind, unsupported]);
+    if (!canAutoRead || unsupported) setAuto(false);
+  }, [canAutoRead, unsupported]);
   useEffect(() => {
     if (!skipping || blocked || unsupported || panel || ui.active || !canSkip) {
       if (skipping) setSkipping(false);
@@ -921,7 +910,7 @@ function Reader({
       else if (command === 'next-repeat') next(undefined, false, true);
       else if (command === 'previous') previous();
       else if (command === 'auto') {
-        if (node.kind === 'text' && !blocked && !unsupported) {
+        if (canAutoRead && !blocked && !unsupported) {
           setSkipping(false);
           setAuto((value) => !value);
         }
@@ -959,6 +948,7 @@ function Reader({
     [
       hidden,
       showChoices,
+      canAutoRead,
       textReady,
       panel,
       ui.active,
@@ -1365,14 +1355,33 @@ function Reader({
           ) : null}
           {showChoices && textReady ? (
             <div className="story-choices" aria-label={t('Choose a response')}>
+              {autoChoicePending ? (
+                <span id="auto-choice-status" className="sr-only" role="status">
+                  {t('Choosing the first response in {seconds} seconds.', {
+                    seconds: p.autoDelay,
+                  })}
+                </span>
+              ) : null}
               {node.choices?.map((answer, i) => (
                 <button
                   ref={i === 0 ? choice : undefined}
                   key={answer.id}
                   aria-keyshortcuts={i < 9 ? String(i + 1) : undefined}
+                  aria-describedby={
+                    i === 0 && autoChoicePending
+                      ? 'auto-choice-status'
+                      : undefined
+                  }
                   onClick={() => next(answer.id)}
                 >
                   {i < 9 ? <kbd aria-hidden="true">{i + 1}</kbd> : null}
+                  {i === 0 && autoChoicePending ? (
+                    <LoaderCircle
+                      aria-hidden="true"
+                      size={18}
+                      className={`auto-choice-spinner${p.reducedMotion ? '' : ' spin'}`}
+                    />
+                  ) : null}
                   {(p.textVariant === 'female'
                     ? answer.femaleLabel?.[p.textLocale]
                     : undefined) ?? localizedText(answer.label, p.textLocale)}
@@ -1529,7 +1538,7 @@ function Reader({
             label={auto ? t('Pause auto reading') : t('Auto reading')}
             shortcut="A"
             aria-pressed={auto}
-            disabled={node.kind !== 'text' || unsupported}
+            disabled={!canAutoRead || unsupported}
             onClick={() => execute('auto')}
           >
             {auto ? <Pause size={20} /> : <Play size={20} />}

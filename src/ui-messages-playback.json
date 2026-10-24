@@ -250,5 +250,9 @@
   "particle": {
     "zh-CN": "粒子效果",
     "ja": "パーティクル効果"
+  },
+  "Choosing the first response in {seconds} seconds.": {
+    "zh-CN": "将在 {seconds} 秒后选择第一项。",
+    "ja": "{seconds}秒後に最初の選択肢を選びます。"
   }
 }
