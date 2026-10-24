@@ -60,13 +60,13 @@ test('Operation Carrot plays both pans and returns to the whole CG', async ({
   await ready(page);
   expect(await framing(page)).toEqual({ scale: 1, x: 0, y: 0, animations: 0 });
   const replay = page.getByRole('button', {
-    name: 'Replay Camera sequence at passage 116',
+    name: 'Replay CG scene at passage 116',
     exact: true,
   });
   await expect(replay).toBeVisible();
   await replay.focus();
   await expect(page.getByRole('tooltip')).toContainText(
-    'Replay Camera sequence at passage 116',
+    'Replay CG scene at passage 116',
   );
   await page.screenshot({ path: info.outputPath('scene-marker.png') });
   await replay.press('Enter');

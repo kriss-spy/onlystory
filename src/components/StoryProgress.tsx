@@ -4,7 +4,7 @@ import type { Frame } from '../model';
 import { useI18n } from '../i18n';
 import type { SceneMarkerKind } from '../scene-markers';
 import { IconButton } from './Primitives';
-import { Clapperboard } from 'lucide-react';
+import { Clapperboard, Image as ImageIcon } from 'lucide-react';
 
 export function StoryProgress({
   frames,
@@ -174,7 +174,11 @@ export function StoryProgress({
                 onReplay(frame, position, path);
               }}
             >
-              <Clapperboard size={13} />
+              {kind === 'Movie' ? (
+                <Clapperboard size={13} />
+              ) : (
+                <ImageIcon size={13} />
+              )}
             </IconButton>
           );
         })}

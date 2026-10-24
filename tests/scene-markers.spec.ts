@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { emptyData } from '../src/model';
 
-test('upcoming camera marker is visible and locked until its earlier choices are answered', async ({
+test('upcoming CG marker is visible and locked until its earlier choices are answered', async ({
   page,
 }, info) => {
   await page.addInitScript(
@@ -9,8 +9,10 @@ test('upcoming camera marker is visible and locked until its earlier choices are
     emptyData(),
   );
   await page.goto('/read/ba/ba-jp-41040?line=41040%3A0');
-  const marker = page.locator('[data-scene-node="41040:51"]');
+  const marker = page.locator('[data-scene-node="41040:35"]');
   await expect(marker).toBeVisible();
+  await expect(marker.locator('svg.lucide-image')).toBeVisible();
+  await expect(marker.locator('svg.lucide-clapperboard')).toHaveCount(0);
   await expect(marker).toHaveAttribute('aria-disabled', 'true');
   await expect(marker).toHaveCSS('opacity', '0.45');
   await marker.focus();
@@ -31,7 +33,7 @@ test('upcoming camera marker is visible and locked until its earlier choices are
   await page.locator('.story-choices > button').first().click();
   await expect(marker).toHaveAttribute('aria-disabled', 'false');
   await marker.click();
-  await expect(page).toHaveURL(/line=41040%3A51/);
+  await expect(page).toHaveURL(/line=41040%3A35/);
 });
 
 test('all prologue scenes appear at entry and unlock only up to the next unanswered choice', async ({
@@ -44,9 +46,12 @@ test('all prologue scenes appear at entry and unlock only up to the next unanswe
   );
   await page.goto('/read/ba/ba-jp-10000005?line=10000005%3A0');
   const markers = page.locator('.scene-marker');
-  await expect(markers).toHaveCount(6);
+  await expect(
+    page.locator('[data-scene-node="10000005:56"] svg.lucide-clapperboard'),
+  ).toBeVisible();
+  await expect(markers).toHaveCount(2);
   await expect(page.locator('.scene-marker[aria-disabled="true"]')).toHaveCount(
-    6,
+    2,
   );
   const boxes = await markers.evaluateAll((elements) =>
     elements.map((element) => {
@@ -86,12 +91,12 @@ test('all prologue scenes appear at entry and unlock only up to the next unanswe
     'aria-disabled',
     'false',
   );
-  await expect(page.locator('[data-scene-node="10000005:74"]')).toHaveAttribute(
-    'aria-disabled',
-    'false',
-  );
+  await expect(page.locator('[data-scene-node="10000005:74"]')).toHaveCount(0);
+  await expect(
+    page.locator('[data-scene-node="10000005:143"]'),
+  ).toHaveAttribute('aria-disabled', 'true');
   await expect(page.locator('.scene-marker[aria-disabled="true"]')).toHaveCount(
-    4,
+    1,
   );
 });
 
@@ -122,4 +127,25 @@ test('a completed movie marker restarts playback and gates Next again', async ({
   expect(
     await video.evaluate((el: HTMLVideoElement) => el.currentTime),
   ).toBeLessThan(3);
+});
+
+test('groups the fight and prologue images and uses different movie and CG icons', async ({
+  page,
+}) => {
+  await page.goto('/read/ba/ba-jp-13290?line=13290%3A51');
+  await expect(page.locator('.scene-marker')).toHaveCount(2);
+  await expect(
+    page.locator('[data-scene-node="13290:51"] svg.lucide-image'),
+  ).toBeVisible();
+  await expect(
+    page.locator('[data-scene-node="13290:116"] svg.lucide-clapperboard'),
+  ).toBeVisible();
+  await page.goto('/read/ba/ba-jp-11000');
+  await expect(page.locator('.scene-marker')).toHaveCount(2);
+  await expect(
+    page.locator('[data-scene-node="11000:4"] svg.lucide-image'),
+  ).toBeVisible();
+  await expect(
+    page.locator('[data-scene-node="11000:110"] svg.lucide-image'),
+  ).toBeVisible();
 });

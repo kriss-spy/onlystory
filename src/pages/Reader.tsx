@@ -427,7 +427,6 @@ function Reader({
     node: '',
     version: 0,
   });
-  const specialScenes = useMemo(() => sceneMarkers(episode), [episode]);
   useEffect(() => {
     setSceneReplay((request) =>
       request.node &&
@@ -462,6 +461,10 @@ function Reader({
   const timeline = useMemo(
     () => readingTimeline(episode, save, rememberedPath.current),
     [episode, save],
+  );
+  const specialScenes = useMemo(
+    () => sceneMarkers(episode, timeline.frames.at(-1)?.answers),
+    [episode, timeline.frames],
   );
   const canSkip =
     canFastForward(node) || (node.kind === 'end' && !!following?.id);
